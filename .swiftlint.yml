@@ -1,0 +1,62 @@
+# Default rules only, yellow warning, no error kcuali in some cases biar ga fail terus
+
+included:
+  - Sources
+  - Tests
+
+# Rules that are errors by default, turned into warnings
+force_cast: warning
+force_try: warning
+
+# Rules with a warning & an error limit
+line_length:
+  warning: 200
+  error: 800
+  ignores_urls: true
+  ignores_comments: true
+file_length:
+  warning: 400
+  error: 1000
+type_body_length:
+  warning: 300
+  error: 1000
+function_body_length:
+  warning: 60
+  error: 1000
+cyclomatic_complexity:
+  warning: 15
+  error: 1000
+function_parameter_count:
+  warning: 10
+  error: 15
+large_tuple:
+  warning: 3
+  error: 100
+nesting:
+  type_level:
+    warning: 2
+    error: 3
+identifier_name:
+  min_length:
+    warning: 2
+    error: 0
+  max_length:
+    warning: 50
+    error: 100
+  # ga include loop counters (i, j, k), compared pairs (a, b) & coordinates (x, y)
+  excluded:
+    - i
+    - j
+    - k
+    - a
+    - b
+    - x
+    - y
+    - p
+type_name:
+  min_length:
+    warning: 3
+    error: 0
+  max_length:
+    warning: 50
+    error: 100
