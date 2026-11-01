@@ -2,7 +2,7 @@
 
 A Swift package for iRead. When a chapter opens, it finds the phrases a skimming reader may not follow (events such as "began to whistle", places, things, people) and underlines each one only if it can point to **the author's own earlier sentence that explains it**. Tapping an underline shows that passage. It never writes an explanation, never uses text at or after the underlined sentence, and runs on-device only (NaturalLanguage and Foundation Models).
 
-It is the underline sibling of [TextEngine](../TextEngine): same layers, same iRead data contract, a different flow (no question step).
+It is the underline sibling of [TextEngine](../TextEngine): same type suffixes, same iRead data contract, a different flow (no question step). Its folders follow the pipeline phases instead of layers, so the reading order shows in the tree.
 
 Design: [docs/superpowers/specs/2026-10-30-underline-engine-design.md](docs/superpowers/specs/2026-10-30-underline-engine-design.md) · Build plan: [docs/superpowers/plans/2026-10-30-underline-engine.md](docs/superpowers/plans/2026-10-30-underline-engine.md)
 
@@ -26,10 +26,11 @@ Data in and out match iRead's `BookContent` (global paragraph and sentence index
 ### Structure
 | Folder | What's in it |
 |---|---|
-| `Sources/UnderlineEngine/Models` | `ChapterInput`, `IndexedChapter`, `EventPhrase`, `Underline`, `UnderlineKind`, `ChapterUnderlines`, `PromptVariant`, `UnderlineRecord`, `AnswerPassage`, `Candidate`, `KnobSnapshot` |
-| `Sources/UnderlineEngine/Rules` | Pure logic: `ReadBoundary`, `SentenceSplitter`, `EventSplitter`, `EventRoles`, `UnderlineDetector`, `CandidateScorer`, `UnderlineGuard`, `RulesPicker`, `UnderlineLimiter`, `TokenBudget`, `TextMatch` |
-| `Sources/UnderlineEngine/Svc` | `ChapterIndexSvc` (NaturalLanguage), `EmbeddingSvc`, `UnderlineModelSvc` (Foundation Models), `PromptBuilder` |
-| `Sources/UnderlineEngine/Ctrl` | `UnderlineCtrl`: one candidate (`+Evaluate`), the chapter and the stream (`+Chapter`) |
+| `Sources/UnderlineEngine/Pipeline` | `UnderlineCtrl`, where the flow starts and ends: prepare, one candidate (`+Evaluate`), the chapter and the stream (`+Chapter`) |
+| `Sources/UnderlineEngine/1-Preprocessing` | Prepare and Detect: `ChapterIndexSvc` (NaturalLanguage), `EmbeddingSvc`, `SentenceSplitter`, `EventSplitter`, `EventRoles`, `UnderlineDetector` |
+| `Sources/UnderlineEngine/2-Model` | Search, Pick and Confirm: `CandidateScorer`, `UnderlineModelSvc` (Foundation Models), `PromptBuilder`, `RulesPicker`, `TokenBudget` |
+| `Sources/UnderlineEngine/3-Postprocessing` | Guards and Limit: `UnderlineGuard`, `UnderlineLimiter` |
+| `Sources/UnderlineEngine/Shared` | `ReadBoundary`, `TextMatch`, and `Models/`: `ChapterInput`, `IndexedChapter`, `EventPhrase`, `Underline`, `UnderlineKind`, `ChapterUnderlines`, `PromptVariant`, `UnderlineRecord`, `AnswerPassage`, `Candidate`, `KnobSnapshot` |
 | `Tests/UnderlineEngineTests` | Unit tests, with a scripted `FakeUnderlineModel` |
 | `Tests/UnderlineEngineEvals` | The harness (Apple Evaluations) and the qualitative CSV |
 | `Dataset/` | Little Women chapter 1 and the golden set `underline-gold.json` |
@@ -40,11 +41,11 @@ Knobs sit at the top of the file that uses them. Change a value, run the harness
 
 | Knobs | File | Tunes |
 |---|---|---|
-| `EventKnobs` | `Rules/EventSplitter.swift` | speech verbs, reaction cues, emotion/want/result/state verbs, place and time words |
-| `UnderlineKnobs` | `Rules/UnderlineDetector.swift` | `minPhraseWords`, `generalWords`, `nameGapSentences`, `maxPerParagraph`, `kindOrder` |
-| `SearchKnobs` | `Rules/CandidateScorer.swift` | `embedWeight`, `wordsWeight`, bonuses, role links, `maxCandidates`, `minRawScore` |
-| `JudgeKnobs` | `Rules/RulesPicker.swift` | rules-pick thresholds per search mode |
-| `ModelKnobs` | `Svc/UnderlineModelSvcFoundation.swift` | the "explains" definition, pick and confirm instructions per `PromptVariant`, sampling, candidate length |
+| `EventKnobs` | `1-Preprocessing/EventSplitter.swift` | speech verbs, reaction cues, emotion/want/result/state verbs, place and time words |
+| `UnderlineKnobs` | `1-Preprocessing/UnderlineDetector.swift` | `minPhraseWords`, `generalWords`, `nameGapSentences`, `maxPerParagraph`, `kindOrder` |
+| `SearchKnobs` | `2-Model/CandidateScorer.swift` | `embedWeight`, `wordsWeight`, bonuses, role links, `maxCandidates`, `minRawScore` |
+| `JudgeKnobs` | `2-Model/RulesPicker.swift` | rules-pick thresholds per search mode |
+| `ModelKnobs` | `2-Model/UnderlineModelSvcFoundation.swift` | the "explains" definition, pick and confirm instructions per `PromptVariant`, sampling, candidate length |
 
 ### Harness (Apple Evaluations)
 The `UnderlineEngineEvals` test target, on Apple's **Evaluations** framework (Xcode 27, macOS 27). Plain `swift test` runs only the unit tests; the evaluations call the on-device model and need a flag:

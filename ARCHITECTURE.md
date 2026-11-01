@@ -1,18 +1,26 @@
 # UnderlineEngine architecture
 
-A Swift package, no UI. Layers follow iRead's (`EReader/iRead/ARCHITECTURE.md`) and TextEngine's, with only the layers this package needs.
+A Swift package, no UI. Type suffixes follow iRead's (`EReader/iRead/ARCHITECTURE.md`) and TextEngine's, with only the layers this package needs. Folders follow the pipeline phases, so the reading order shows in the tree. They are one module, so a folder is not a dependency boundary.
 
-## Folders and dependency direction
+## Folders
 
 ```
 Sources/UnderlineEngine/
-  Ctrl/     UnderlineCtrl            the use case: prepare, evaluate a candidate, the chapter, the stream
-  Svc/      ChapterIndexSvc          NaturalLanguage (sentences, tags, names) + events + embeddings
-            EmbeddingSvc             NLEmbedding (protocol: Apple, Unavailable)
-            UnderlineModelSvc        Foundation Models (protocol: Foundation, Unavailable) + PromptBuilder
-  Rules/    pure functions           boundary, detector, search, guards, rules pick/confirm, limiter
-  Models/   plain data               inputs, indexed chapter, underlines, records
+  Pipeline/          UnderlineCtrl            the flow starts and ends here: prepare, evaluate a candidate, the chapter, the stream
+  1-Preprocessing/   ChapterIndexSvc          NaturalLanguage (sentences, tags, names) + events + embeddings
+                     EmbeddingSvc             NLEmbedding (protocol: Apple, Unavailable)
+                     SentenceSplitter, EventSplitter, EventRoles, UnderlineDetector
+  2-Model/           CandidateScorer          search, before the underlined sentence only
+                     UnderlineModelSvc        Foundation Models (protocol: Foundation, Unavailable) + PromptBuilder, TokenBudget
+                     RulesPicker              rules pick and confirm, when there is no model
+  3-Postprocessing/  UnderlineGuard, UnderlineLimiter
+  Shared/            ReadBoundary, TextMatch
+                     Models/                  plain data: inputs, indexed chapter, underlines, records
 ```
+
+## Dependency direction
+
+By type suffix, not by folder:
 
 ```
         Ctrl
