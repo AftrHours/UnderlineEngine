@@ -21,7 +21,7 @@ Data in and out match iRead's `BookContent` (global paragraph and sentence index
 5. **Confirm** (Foundation Models, a separate session): sees only the phrase, its sentence and the one picked passage, and says whether it explains the phrase. Both must agree. Without a model, `RulesPicker` picks and confirms (shared word, same name, or role link).
 6. **Limit** (`UnderlineLimiter`): at most `maxPerParagraph` per paragraph, best first, never overlapping.
 
-`allUnderlines(in:)` returns every underline and a `UnderlineRecord` for every phrase considered (kept or dropped). `underlines(in:startingAt:)` streams them from the reader's paragraph, then wraps; it gives the same set. Records contain book text: local logs only, never analytics.
+`allUnderlines(in:)` returns every underline and a `UnderlineRecord` for every phrase considered (kept or dropped). `underlines(in:startingAt:)` streams them from the reader's paragraph, then wraps; it gives the same set. `paragraphResults(in:startingAt:)` streams the same paragraphs with every record, so an app can show why a phrase was dropped. Records contain book text: local logs only, never analytics.
 
 ### Structure
 | Folder | What's in it |

@@ -30,10 +30,7 @@ extension UnderlineCtrl {
     /// Underlines in reading order from the paragraph holding `sentence` (the first one when it's outside the chapter),
     /// to the end, then from the start. Ends after the last paragraph, or when the consuming task is cancelled.
     public func underlines(in chapter: IndexedChapter, startingAt sentence: Int) -> AsyncStream<(Underline, UnderlineRecord)> {
-        let all = Self.paragraphs(of: chapter)
-        let start = chapter.sentence(sentence)?.paragraph
-        let split = all.firstIndex { $0.first?.paragraph == start } ?? 0
-        let ordered = Array(all[split...] + all[..<split])
+        let ordered = Self.paragraphs(of: chapter, startingAt: sentence)
         return AsyncStream { continuation in
             let task = Task {
                 for paragraph in ordered {
@@ -47,7 +44,24 @@ extension UnderlineCtrl {
         }
     }
 
-    /// One paragraph: detect, evaluate every candidate, then the limiter. The stream and `allUnderlines` both use it,
+    /// The same order and the same underlines as `underlines(in:startingAt:)`, one paragraph at a time, with a record for
+    /// every phrase considered (kept or dropped). For showing why a phrase got no underline.
+    public func paragraphResults(in chapter: IndexedChapter, startingAt sentence: Int) -> AsyncStream<ParagraphResult> {
+        let ordered = Self.paragraphs(of: chapter, startingAt: sentence)
+        return AsyncStream { continuation in
+            let task = Task {
+                for paragraph in ordered {
+                    if Task.isCancelled { break }
+                    let (shown, records) = await self.pass(paragraph, in: chapter)
+                    continuation.yield(ParagraphResult(underlines: shown.map(\.0), records: records))
+                }
+                continuation.finish()
+            }
+            continuation.onTermination = { _ in task.cancel() }
+        }
+    }
+
+    /// One paragraph: detect, evaluate every candidate, then the limiter. The streams and `allUnderlines` all use it,
     /// so they can't disagree. Returns each shown underline with its own record, and every record. Stops early when cancelled.
     private func pass(_ paragraph: [IndexedSentence], in chapter: IndexedChapter) async -> ([(Underline, UnderlineRecord)], [UnderlineRecord]) {
         var kept: [(KeptUnderline, Int)] = []
@@ -85,6 +99,14 @@ extension UnderlineCtrl {
             if out.last?.last?.paragraph == sentence.paragraph { out[out.count - 1].append(sentence) } else { out.append([sentence]) }
         }
         return out
+    }
+
+    /// The chapter's paragraphs from the one holding `sentence` (the first one when it's outside the chapter), then wrapping.
+    private static func paragraphs(of chapter: IndexedChapter, startingAt sentence: Int) -> [[IndexedSentence]] {
+        let all = paragraphs(of: chapter)
+        let start = chapter.sentence(sentence)?.paragraph
+        let split = all.firstIndex { $0.first?.paragraph == start } ?? 0
+        return Array(all[split...] + all[..<split])
     }
 
     /// Person names in the `UnderlineKnobs.nameGapSentences` sentences before `index` (earlier text only).

@@ -31,6 +31,26 @@ private func collect(_ stream: AsyncStream<(Underline, UnderlineRecord)>) async 
     }
 }
 
+@Test func paragraphResultsMatchAllUnderlines() async throws {
+    let ch = try await littleWomen()
+    let c = ctrl(autoAccepting())
+    let (all, records) = await c.allUnderlines(in: ch)
+    for start in [ch.first, ch.sentences[100].index] {
+        var underlines: [Underline] = []
+        var seen: [UnderlineRecord] = []
+        for await result in c.paragraphResults(in: ch, startingAt: start) {
+            underlines += result.underlines
+            seen += result.records
+        }
+        #expect(Set(underlines) == Set(all.underlines))
+        // Timings differ between runs, so compare what was decided.
+        func decisions(_ records: [UnderlineRecord]) -> [String] {
+            records.map { "\($0.sentence) \($0.phrase) \($0.kept) \(String(describing: $0.dropped))" }.sorted()
+        }
+        #expect(decisions(seen) == decisions(records))
+    }
+}
+
 @Test func streamStartsAtTheReadersParagraphThenWraps() async throws {
     let ch = try await littleWomen()
     let start = ch.sentences[100]
@@ -93,6 +113,8 @@ private func collect(_ stream: AsyncStream<(Underline, UnderlineRecord)>) async 
     }
     let seen = await consumer.value
     #expect(seen >= 1)
+    // The phrase in flight when the cancel lands still finishes its pick and confirm, then nothing more starts.
+    try await Task.sleep(for: .milliseconds(200))
     let afterCancel = fake.calls.count
     try await Task.sleep(for: .milliseconds(200))
     #expect(fake.calls.count == afterCancel)
