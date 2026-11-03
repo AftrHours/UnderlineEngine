@@ -26,26 +26,9 @@ enum ModelKnobs {
         Judge only from the text given. First copy the words from the passage that show it explains the phrase \
         (empty if none), then answer whether it explains it.
         """
-    static let strict = " Be strict: if you would have to guess, or link several ideas yourself, the answer is no. A wrong link is much worse than none."
-    // Worked examples are invented, not from Little Women, so the golden set never grades the model on its own examples.
-    static let pickExamples = """
-         Example: Sentence: "Tom slammed the door and refused to come down." Phrase: "refused to come down". \
-        Earlier sentences: 1. "The house was cold that winter." 2. "His father had sold Tom's horse that morning." \
-        Answer: quote "sold Tom's horse", number 2. \
-        Example: Sentence: "Ann rubbed her sore feet." Phrase: "rubbed her sore feet". \
-        Earlier sentences: 1. "Ben's feet were always cold." Answer: quote "", number 0, because Ben's feet don't explain Ann's.
-        """
-    static let confirmExamples = """
-         Example: Phrase "refused to come down", passage "His father had sold Tom's horse that morning." Explains: yes. \
-        Example: Phrase "rubbed her sore feet", passage "Ben's feet were always cold." Explains: no, it only shares a word.
-        """
 
-    static let pickInstructions: [PromptVariant: String] = [
-        .baseline: basePick, .strictDefinition: basePick + strict, .fewShot: basePick + pickExamples
-    ]
-    static let confirmInstructions: [PromptVariant: String] = [
-        .baseline: baseConfirm, .strictDefinition: baseConfirm + strict, .fewShot: baseConfirm + confirmExamples
-    ]
+    static let pickInstructions: [PromptVariant: String] = [.baseline: basePick]
+    static let confirmInstructions: [PromptVariant: String] = [.baseline: baseConfirm]
 }
 
 @Generable

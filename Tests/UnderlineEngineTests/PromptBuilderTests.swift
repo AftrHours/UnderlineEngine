@@ -34,13 +34,6 @@ func confirmPromptHoldsOnlyThePhraseSentenceAndOnePassage(variant: PromptVariant
     #expect(p.prompt.contains("began to whistle"))
 }
 
-@Test func instructionsDifferBetweenVariants() {
-    let picks = Set(PromptVariant.allCases.map { PromptBuilder.pick(phrase: "a b", roleHint: nil, sentence: underlined, candidates: candidates, variant: $0).instructions })
-    let confirms = Set(PromptVariant.allCases.map { PromptBuilder.confirm(phrase: "a b", sentence: underlined, passage: candidates[0], variant: $0).instructions })
-    #expect(picks.count == PromptVariant.allCases.count)
-    #expect(confirms.count == PromptVariant.allCases.count)
-}
-
 @Test func roleHintsInPlainWords() {
     #expect(PromptBuilder.roleHint(.reaction) == "a reaction: look for what it reacts to")
     #expect(PromptBuilder.roleHint(nil) == nil)

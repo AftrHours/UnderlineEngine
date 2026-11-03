@@ -60,5 +60,5 @@ public struct ChapterUnderlines: Sendable, Codable, Hashable {
 
 /// A named set of instructions and prompt layout, compared by the harness (spec §5.5).
 public enum PromptVariant: String, Sendable, Codable, Hashable, CaseIterable {
-    case baseline, strictDefinition, fewShot
+    case baseline
 }
