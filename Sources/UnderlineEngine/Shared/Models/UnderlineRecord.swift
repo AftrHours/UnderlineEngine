@@ -5,6 +5,8 @@ public enum DropReason: String, Sendable, Codable, Hashable {
     case noCandidate, pickedNone, confirmRejected, guardRejected, densityLimit
     /// The model failed for a reason other than its context size; precision first, so no rules fallback.
     case modelFailed
+    /// The picked reference is in the phrase's own paragraph: the reader has just read it, so no underline.
+    case explainedInParagraph
 }
 
 /// What the confirm step said about the one picked passage.

@@ -52,7 +52,7 @@ final class FakeUnderlineModel: UnderlineModelSvc, @unchecked Sendable {
     }
 }
 
-let fixtureText = "Father had gone away to the war. Meg sewed by the fire. Beth played the old piano. Amy drew a small picture. Jo said she would face the war like Father."
+let fixtureText = "Father had gone away to the war. Meg sewed by the fire. Beth played the old piano. Amy drew a small picture.\n\nJo said she would face the war like Father."
 
 /// The fixture chapter, prepared without embeddings, so search runs on words only.
 func fixtureChapter(firstSentence: Int = 0) async -> IndexedChapter {
