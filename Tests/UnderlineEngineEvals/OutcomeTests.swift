@@ -59,6 +59,7 @@ private func resolved(_ i: GoldItem) async throws -> ResolvedItem { try #require
     #expect(OutcomeClassifier.classify(r, underlines: none, records: [record(.guardRejected)]) == .missed(.guardRejected))
     #expect(OutcomeClassifier.classify(r, underlines: none, records: [record(.densityLimit)]) == .missed(.densityLimit))
     #expect(OutcomeClassifier.classify(r, underlines: none, records: [record(.modelFailed)]) == .missed(.modelFailed))
+    #expect(OutcomeClassifier.classify(r, underlines: none, records: [record(.explainedInParagraph)]) == .missed(.explainedInParagraph))
 }
 
 @Test func spoilerBeatsEverything() async throws {

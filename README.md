@@ -17,7 +17,7 @@ Data in and out match iRead's `BookContent` (global paragraph and sentence index
 1. **Prepare** (`UnderlineCtrl.prepare`, once per chapter): split sentences exactly like iRead's parser, tag words (`NLTagger`), split each sentence into events with a causal role, embed every sentence (`NLEmbedding`).
 2. **Detect** (`UnderlineDetector`): each sentence's events and person names, minus short or general phrases, reasons given in the same sentence ("…because…"), and names seen in the last 20 sentences.
 3. **Search** (`CandidateScorer`, `UnderlineSearch`): ranks only sentences **before** the underlined one (`ReadBoundary`), meaning first, shared words second, plus role links and nearness. Below a floor (`minRawScore`) the phrase is dropped before any model call.
-4. **Pick** (Foundation Models): the model picks one numbered candidate, quoting it first. `UnderlineGuard` rejects a number not offered, a sentence not earlier, or a quote not in the pick.
+4. **Pick** (Foundation Models): the model picks one numbered candidate, quoting it first. `UnderlineGuard` rejects a number not offered, a sentence not earlier, or a quote not in the pick. A pick in the phrase's own paragraph drops the phrase, because the reader has just read it.
 5. **Confirm** (Foundation Models, a separate session): sees only the phrase, its sentence and the one picked passage, and says whether it explains the phrase. Both must agree. Without a model, `RulesPicker` picks and confirms (shared word, same name, or role link).
 6. **Limit** (`UnderlineLimiter`): at most `maxPerParagraph` per paragraph, best first, never overlapping.
 
@@ -57,7 +57,7 @@ UNDERLINE_EVALS=1 swift test --filter searchModeComparison      # embed vs words
 UNDERLINE_EVALS=1 UNDERLINE_SWEEP=1 swift test --filter sweepEvaluation   # every underline in the chapter (UNDERLINE_SWEEP_LIMIT=60 for the first 60 sentences)
 ```
 - **Golden set:** `Dataset/underline-gold.json` (67 items, provisional until the product owner reviews them). Each item is a phrase in a sentence with either the acceptable earlier references or `none` with a reason (`explanationLater`, `sameSentence`, `temptingWrongPassage`, `noExplanation`).
-- **Outcomes:** ⛔ spoiler, ❌ mismatch, ⚠️ missed (detect, search, pick, confirm, guard or density), ✅ underlined with the right reference, ✅ correctly none. The **mismatch rate** (of underlines shown, how many point at the wrong passage) comes first in every report.
+- **Outcomes:** ⛔ spoiler, ❌ mismatch, ⚠️ missed (detect, search, pick, confirm, guard, density or explained in paragraph), ✅ underlined with the right reference, ✅ correctly none. The **mismatch rate** (of underlines shown, how many point at the wrong passage) comes first in every report.
 - **Model judge:** a `ModelJudgeEvaluator` grades whether each shown reference explains its phrase (Private Cloud Compute when it answers, otherwise the on-device model). Its agreement with the human labels is printed. The spoiler check never depends on a model.
 - **Output:** the report (headline numbers, summary by kind, items worst first, judge agreement, changes since the last run) and the full `EvaluationResult` under `Eval/results/<kind>/`.
 

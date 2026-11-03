@@ -3,7 +3,7 @@ import Foundation
 
 /// Why an expected underline wasn't made; says what to fix (spec §8.3).
 enum MissCause: String, Codable, Hashable, Sendable, CaseIterable {
-    case detectMiss, searchMiss, pickMiss, confirmRejected, guardRejected, densityLimit, modelFailed
+    case detectMiss, searchMiss, pickMiss, confirmRejected, guardRejected, densityLimit, modelFailed, explainedInParagraph
 
     var label: String {
         switch self {
@@ -14,6 +14,7 @@ enum MissCause: String, Codable, Hashable, Sendable, CaseIterable {
         case .guardRejected: "guard rejected"
         case .densityLimit: "density limit"
         case .modelFailed: "model failed"
+        case .explainedInParagraph: "explained in paragraph"
         }
     }
 }
@@ -78,6 +79,7 @@ enum OutcomeClassifier {
         case .guardRejected?: return .missed(.guardRejected)
         case .densityLimit?: return .missed(.densityLimit)
         case .modelFailed?: return .missed(.modelFailed)
+        case .explainedInParagraph?: return .missed(.explainedInParagraph)
         case nil: return .missed(.detectMiss)
         }
     }

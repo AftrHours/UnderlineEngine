@@ -40,6 +40,7 @@ extension UnderlineCtrl {
             guard let pick = RulesPicker.decide(result.ranking, mode: result.modeUsed), let ref = chapter.sentence(pick) else { return drop(.pickedNone) }
             record.pickedSentence = pick
             record.quote = nil
+            if UnderlineGuard.isInSameParagraph(ref, as: sentence) { return drop(.explainedInParagraph) }
             let explains = RulesPicker.confirm(phrase: candidate.phrase, in: sentence, reference: ref)
             record.confirm = ConfirmTrace(explains: explains, evidence: nil)
             guard explains else { return drop(.confirmRejected) }
@@ -103,6 +104,7 @@ extension UnderlineCtrl {
         case .rejected: return .dropped(.guardRejected)
         case .accepted(let index):
             guard let ref = chapter.sentence(index) else { return .dropped(.guardRejected) }
+            if UnderlineGuard.isInSameParagraph(ref, as: sentence) { return .dropped(.explainedInParagraph) }
             let passage = IndexedText(index: ref.index, text: ref.text)
             record.promptSentences = Array(Set(record.promptSentences).union([me.index, passage.index])).sorted()
             let confirmStart = clock.now

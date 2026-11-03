@@ -66,6 +66,31 @@ private func accepting(_ ch: IndexedChapter) -> FakeUnderlineModel {
     #expect(record.pickedSentence == 0)
 }
 
+/// The phrase and the sentence that explains it, in one paragraph.
+private func oneParagraphChapter() async -> IndexedChapter {
+    await ChapterIndexSvc().prepare(ChapterInput(chapterIndex: 0, plainText: "Father had gone away to the war. Jo said she would face the war like Father."),
+                                    embedding: EmbeddingSvcUnavailable())
+}
+
+@Test func modelPickInTheSameParagraphDropsBeforeConfirm() async throws {
+    let ch = await oneParagraphChapter()
+    let fake = accepting(ch)
+    let (kept, record) = await ctrl(fake).evaluate(try warCandidate(ch), in: ch)
+    #expect(kept == nil)
+    #expect(record.dropped == .explainedInParagraph)
+    #expect(record.pickedSentence == 0)
+    #expect(!fake.calls.contains { $0.kind == .confirm })
+}
+
+@Test func rulesPickInTheSameParagraphDrops() async throws {
+    let ch = await oneParagraphChapter()
+    let (kept, record) = await ctrl(UnderlineModelSvcUnavailable()).evaluate(try warCandidate(ch), in: ch)
+    #expect(kept == nil)
+    #expect(record.path == .rules)
+    #expect(record.dropped == .explainedInParagraph)
+    #expect(record.pickedSentence == 0)
+}
+
 @Test func pickOfSentenceNotInCandidatesDropsWithGuardRejected() async throws {
     let ch = await fixtureChapter()
     let fake = accepting(ch)
