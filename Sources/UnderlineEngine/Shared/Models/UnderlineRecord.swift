@@ -30,6 +30,17 @@ public struct StepTimes: Sendable, Codable, Hashable {
     }
 }
 
+/// One finished paragraph: its underlines and a record for every phrase considered.
+public struct ParagraphResult: Sendable {
+    public let underlines: [Underline]
+    public let records: [UnderlineRecord]
+
+    public init(underlines: [Underline], records: [UnderlineRecord]) {
+        self.underlines = underlines
+        self.records = records
+    }
+}
+
 /// What happened to one candidate phrase, kept or dropped (spec §5.7). Contains book text: local logs only.
 public struct UnderlineRecord: Sendable, Codable, Hashable {
     public let chapterIndex: Int
