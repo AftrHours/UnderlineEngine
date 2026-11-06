@@ -15,6 +15,7 @@ enum EventRoles {
         return .attempt
     }
 
+    /// The track a role maps to, after Zwaan's event-indexing model (spec §4.2).
     static func track(for role: EventRole, phrase: [WordToken]) -> Track {
         switch role {
         case .setting:
