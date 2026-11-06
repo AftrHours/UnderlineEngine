@@ -1,0 +1,663 @@
+{
+  "durationInMilliseconds" : 41473,
+  "endTime" : "2026-11-05T05:52:14.189Z",
+  "evaluationID" : "SweepEvaluation",
+  "evaluationInfo" : {
+    "embeddings" : "sentence",
+    "embedWeight" : "0.65",
+    "judge model" : "onDevice",
+    "maxCandidates" : "3",
+    "maxPerParagraph" : "1",
+    "minRawScore" : "both=0.35 embed=0.425 words=0.25",
+    "path" : "model",
+    "prompt variant" : "baseline",
+    "search" : "both",
+    "wordsWeight" : "0.35"
+  },
+  "reportMetadata" : {
+    "ColumnOrdering" : [
+      "Input",
+      "Response",
+      "no spoiler",
+      "explains the phrase"
+    ],
+    "SummaryColumnOrdering" : [
+      "Mean of no spoiler",
+      "Mean of explains the phrase"
+    ]
+  },
+  "resultID" : "FDA8550F-3DF5-4669-93F6-2EF672C5B08B",
+  "results" : [
+    {
+      "explains the phrase" : {
+        "evaluatorKind" : "custom",
+        "kind" : "fail",
+        "rationale" : "The response does not name the same person (Beth), the action (looking at her rough hands), or the cause\/goal of the sigh. It only shares a similar theme of a sigh and a personal reflection, which a reader would still find confusing.",
+        "value" : false
+      },
+      "Input" : "{\n  \"paragraph\" : 12,\n  \"phrase\" : \"looked at her rough hands with a sigh that any one could hear that time\",\n  \"sentence\" : 23,\n  \"sentenceText\" : \"And Beth looked at her rough hands with a sigh that any one could hear that time.\"\n}",
+      "no spoiler" : {
+        "evaluatorKind" : "custom",
+        "kind" : "pass",
+        "value" : true
+      },
+      "Response" : {
+        "typeName" : "EngineResult",
+        "value" : "{\n  \"candidates\" : [\n    14,\n    5,\n    19\n  ],\n  \"confirm\" : true,\n  \"confirmEvidence\" : \"I planned to spend mine in new music,\",\n  \"confirmMs\" : 522,\n  \"highestUsed\" : 19,\n  \"path\" : \"model\",\n  \"phrase\" : \"looked at her rough hands with a sigh that any one could hear that time\",\n  \"pickMs\" : 1217,\n  \"pickedSentence\" : 14,\n  \"quote\" : \"I planned to spend mine in new music,\",\n  \"referenceSentence\" : 14,\n  \"referenceText\" : \"\\\"I planned to spend mine in new music,\\\" said Beth, with a little sigh, which no one heard but the hearth brush and kettle-holder.\",\n  \"searchMs\" : 5,\n  \"underlined\" : true\n}"
+      }
+    },
+    {
+      "explains the phrase" : {
+        "evaluatorKind" : "custom",
+        "kind" : "pass",
+        "rationale" : "The response names Meg, the underlined phrase, by showing her action of sighing, which directly connects to the context of her remembering better times.",
+        "value" : true
+      },
+      "Input" : "{\n  \"paragraph\" : 16,\n  \"phrase\" : \"Meg\",\n  \"sentence\" : 32,\n  \"sentenceText\" : \"said Meg, who could remember better times.\"\n}",
+      "no spoiler" : {
+        "evaluatorKind" : "custom",
+        "kind" : "pass",
+        "value" : true
+      },
+      "Response" : {
+        "typeName" : "EngineResult",
+        "value" : "{\n  \"candidates\" : [\n    2,\n    9,\n    18\n  ],\n  \"confirm\" : true,\n  \"confirmEvidence\" : \"said Meg, who could remember better times.\",\n  \"confirmMs\" : 557,\n  \"highestUsed\" : 31,\n  \"path\" : \"model\",\n  \"phrase\" : \"Meg\",\n  \"pickMs\" : 1208,\n  \"pickedSentence\" : 2,\n  \"quote\" : \"sighed Meg, looking down at her old dress.\",\n  \"referenceSentence\" : 2,\n  \"referenceText\" : \"sighed Meg, looking down at her old dress.\",\n  \"searchMs\" : 2,\n  \"underlined\" : true\n}"
+      }
+    },
+    {
+      "explains the phrase" : {
+        "evaluatorKind" : "custom",
+        "kind" : "pass",
+        "rationale" : "The passage directly quotes Jo, who is the person mentioned in the sentence and whose words define the meaning of 'make fun of ourselves' in the context of the scene.",
+        "value" : true
+      },
+      "Input" : "{\n  \"paragraph\" : 18,\n  \"phrase\" : \"make fun of ourselves\",\n  \"sentence\" : 36,\n  \"sentenceText\" : \"For though we do have to work, we make fun of ourselves, and are a pretty jolly set, as Jo would say.\\\"\"\n}",
+      "no spoiler" : {
+        "evaluatorKind" : "custom",
+        "kind" : "pass",
+        "value" : true
+      },
+      "Response" : {
+        "typeName" : "EngineResult",
+        "value" : "{\n  \"candidates\" : [\n    17,\n    30,\n    22\n  ],\n  \"confirm\" : true,\n  \"confirmEvidence\" : \"Let's each buy what we want, and have a little fun; I'm sure we work hard enough to earn it,\",\n  \"confirmMs\" : 839,\n  \"highestUsed\" : 35,\n  \"path\" : \"model\",\n  \"phrase\" : \"make fun of ourselves\",\n  \"pickMs\" : 1715,\n  \"pickedSentence\" : 17,\n  \"quote\" : \"Let's each buy what we want, and have a little fun; I'm sure we work hard enough to earn it,\",\n  \"referenceSentence\" : 17,\n  \"referenceText\" : \"Let's each buy what we want, and have a little fun; I'm sure we work hard enough to earn it,\\\" cried Jo, examining the heels of her shoes in a gentlemanly manner.\",\n  \"searchMs\" : 4,\n  \"underlined\" : true\n}"
+      }
+    },
+    {
+      "explains the phrase" : {
+        "evaluatorKind" : "custom",
+        "kind" : "fail",
+        "rationale" : "The response only shares the topic ('boyish tricks') and uses similar words; a reader shown it would still not know why or what the phrase is about.",
+        "value" : false
+      },
+      "Input" : "{\n  \"paragraph\" : 26,\n  \"phrase\" : \"are old enough to leave off boyish tricks\",\n  \"sentence\" : 47,\n  \"sentenceText\" : \"\\\"You are old enough to leave off boyish tricks, and to behave better, Josephine.\"\n}",
+      "no spoiler" : {
+        "evaluatorKind" : "custom",
+        "kind" : "pass",
+        "value" : true
+      },
+      "Response" : {
+        "typeName" : "EngineResult",
+        "value" : "{\n  \"candidates\" : [\n    41,\n    20,\n    17\n  ],\n  \"confirm\" : true,\n  \"confirmEvidence\" : \"It's so boyish!\",\n  \"confirmMs\" : 557,\n  \"highestUsed\" : 41,\n  \"path\" : \"model\",\n  \"phrase\" : \"are old enough to leave off boyish tricks\",\n  \"pickMs\" : 1174,\n  \"pickedSentence\" : 41,\n  \"quote\" : \"It's so boyish!\",\n  \"referenceSentence\" : 41,\n  \"referenceText\" : \"It's so boyish!\\\"\",\n  \"searchMs\" : 5,\n  \"underlined\" : true\n}"
+      }
+    },
+    {
+      "explains the phrase" : {
+        "evaluatorKind" : "custom",
+        "kind" : "fail",
+        "rationale" : "The response only repeats the phrase and does not explain its meaning or context, failing to name the person, cause, or goal it depends on.",
+        "value" : false
+      },
+      "Input" : "{\n  \"paragraph\" : 27,\n  \"phrase\" : \"turning up my hair makes me one\",\n  \"sentence\" : 50,\n  \"sentenceText\" : \"And if turning up my hair makes me one, I'll wear it in two tails till I'm twenty,\\\" cried Jo, pulling off her net, and shaking down a chestnut mane.\"\n}",
+      "no spoiler" : {
+        "evaluatorKind" : "custom",
+        "kind" : "pass",
+        "value" : true
+      },
+      "Response" : {
+        "typeName" : "EngineResult",
+        "value" : "{\n  \"candidates\" : [\n    22,\n    42,\n    30\n  ],\n  \"confirm\" : true,\n  \"confirmEvidence\" : \"That's why I do it.\",\n  \"confirmMs\" : 597,\n  \"highestUsed\" : 44,\n  \"path\" : \"model\",\n  \"phrase\" : \"turning up my hair makes me one\",\n  \"pickMs\" : 1308,\n  \"pickedSentence\" : 42,\n  \"quote\" : \"That's why I do it.\",\n  \"referenceSentence\" : 42,\n  \"referenceText\" : \"\\\"That's why I do it.\\\"\",\n  \"searchMs\" : 6,\n  \"underlined\" : true\n}"
+      }
+    },
+    {
+      "explains the phrase" : {
+        "evaluatorKind" : "custom",
+        "kind" : "fail",
+        "rationale" : "The response does not name the same person, thing, place or situation as the underlined phrase, or gives the cause, goal or earlier event the phrase depends on. Instead, it only shares a similar topic about being poor, which a reader shown it would still not know why or what the phrase is about.",
+        "value" : false
+      },
+      "Input" : "{\n  \"paragraph\" : 29,\n  \"phrase\" : \"It's too bad\",\n  \"sentence\" : 58,\n  \"sentenceText\" : \"It's too bad, but it can't be helped.\"\n}",
+      "no spoiler" : {
+        "evaluatorKind" : "custom",
+        "kind" : "pass",
+        "value" : true
+      },
+      "Response" : {
+        "typeName" : "EngineResult",
+        "value" : "{\n  \"candidates\" : [\n    1,\n    52,\n    41\n  ],\n  \"confirm\" : true,\n  \"confirmEvidence\" : \"It's so dreadful to be poor!\",\n  \"confirmMs\" : 588,\n  \"highestUsed\" : 53,\n  \"path\" : \"model\",\n  \"phrase\" : \"It's too bad\",\n  \"pickMs\" : 1179,\n  \"pickedSentence\" : 1,\n  \"quote\" : \"It's so dreadful to be poor!\",\n  \"referenceSentence\" : 1,\n  \"referenceText\" : \"\\\"It's so dreadful to be poor!\\\"\",\n  \"searchMs\" : 5,\n  \"underlined\" : true\n}"
+      }
+    },
+    {
+      "explains the phrase" : {
+        "evaluatorKind" : "custom",
+        "kind" : "pass",
+        "rationale" : "The response directly names Jo, the person referenced in the phrase 'Jo's slang', which explains the context and reason behind the underlined phrase.",
+        "value" : true
+      },
+      "Input" : "{\n  \"paragraph\" : 30,\n  \"phrase\" : \"are as bad as Jo's slang\",\n  \"sentence\" : 63,\n  \"sentenceText\" : \"But your absurd words are as bad as Jo's slang.\\\"\"\n}",
+      "no spoiler" : {
+        "evaluatorKind" : "custom",
+        "kind" : "pass",
+        "value" : true
+      },
+      "Response" : {
+        "typeName" : "EngineResult",
+        "value" : "{\n  \"candidates\" : [\n    37,\n    19,\n    57\n  ],\n  \"confirm\" : true,\n  \"confirmEvidence\" : \"Jo does use such slang words!\",\n  \"confirmMs\" : 508,\n  \"highestUsed\" : 57,\n  \"path\" : \"model\",\n  \"phrase\" : \"are as bad as Jo's slang\",\n  \"pickMs\" : 1117,\n  \"pickedSentence\" : 37,\n  \"quote\" : \"Jo does use such slang words!\",\n  \"referenceSentence\" : 37,\n  \"referenceText\" : \"\\\"Jo does use such slang words!\\\"\",\n  \"searchMs\" : 4,\n  \"underlined\" : true\n}"
+      }
+    },
+    {
+      "explains the phrase" : {
+        "evaluatorKind" : "custom",
+        "kind" : "fail",
+        "rationale" : "The response does not name the same person as the underlined phrase 'Mother' or provide a cause, goal, or earlier event that explains its significance. Instead, it shares a different topic unrelated to the underlined phrase.",
+        "value" : false
+      },
+      "Input" : "{\n  \"paragraph\" : 35,\n  \"phrase\" : \"Mother\",\n  \"sentence\" : 80,\n  \"sentenceText\" : \"Somehow the sight of the old shoes had a good effect upon the girls, for Mother was coming, and everyone brightened to welcome her.\"\n}",
+      "no spoiler" : {
+        "evaluatorKind" : "custom",
+        "kind" : "pass",
+        "value" : true
+      },
+      "Response" : {
+        "typeName" : "EngineResult",
+        "value" : "{\n  \"candidates\" : [\n    4,\n    16,\n    7\n  ],\n  \"confirm\" : true,\n  \"confirmEvidence\" : \"Mother didn't say anything about our money, and she won't wish us to give up everything.\",\n  \"confirmMs\" : 729,\n  \"highestUsed\" : 65,\n  \"path\" : \"model\",\n  \"phrase\" : \"Mother\",\n  \"pickMs\" : 1562,\n  \"pickedSentence\" : 16,\n  \"quote\" : \"Mother didn't say anything about our money, and she won't wish us to give up everything.\",\n  \"referenceSentence\" : 16,\n  \"referenceText\" : \"\\\"Mother didn't say anything about our money, and she won't wish us to give up everything.\",\n  \"searchMs\" : 3,\n  \"underlined\" : true\n}"
+      }
+    },
+    {
+      "explains the phrase" : {
+        "evaluatorKind" : "custom",
+        "kind" : "pass",
+        "rationale" : "The response names the same person as the underlined phrase, providing a cause for the state described.",
+        "value" : true
+      },
+      "Input" : "{\n  \"paragraph\" : 36,\n  \"phrase\" : \"are quite worn out\",\n  \"sentence\" : 82,\n  \"sentenceText\" : \"\\\"They are quite worn out.\"\n}",
+      "no spoiler" : {
+        "evaluatorKind" : "custom",
+        "kind" : "pass",
+        "value" : true
+      },
+      "Response" : {
+        "typeName" : "EngineResult",
+        "value" : "{\n  \"candidates\" : [\n    13,\n    51,\n    35\n  ],\n  \"confirm\" : true,\n  \"confirmEvidence\" : \"Well, I think we are.\",\n  \"confirmMs\" : 557,\n  \"highestUsed\" : 51,\n  \"path\" : \"model\",\n  \"phrase\" : \"are quite worn out\",\n  \"pickMs\" : 1173,\n  \"pickedSentence\" : 35,\n  \"quote\" : \"Well, I think we are.\",\n  \"referenceSentence\" : 35,\n  \"referenceText\" : \"Well, I think we are.\",\n  \"searchMs\" : 6,\n  \"underlined\" : true\n}"
+      }
+    },
+    {
+      "explains the phrase" : {
+        "evaluatorKind" : "custom",
+        "kind" : "fail",
+        "rationale" : "The response only shares the topic (getting something for Christmas), but does not name the same person (Beth) or explain the goal, leaving the reader uncertain about the phrase's meaning.",
+        "value" : false
+      },
+      "Input" : "{\n  \"paragraph\" : 40,\n  \"phrase\" : \"let's each get her something for Christmas\",\n  \"sentence\" : 88,\n  \"sentenceText\" : \"\\\"I'll tell you what we'll do,\\\" said Beth, \\\"let's each get her something for Christmas, and not get anything for ourselves.\\\"\"\n}",
+      "no spoiler" : {
+        "evaluatorKind" : "custom",
+        "kind" : "pass",
+        "value" : true
+      },
+      "Response" : {
+        "typeName" : "EngineResult",
+        "value" : "{\n  \"candidates\" : [\n    0,\n    84,\n    7\n  ],\n  \"confirm\" : true,\n  \"confirmEvidence\" : \"I thought I'd get her some with my dollar,\",\n  \"confirmMs\" : 623,\n  \"highestUsed\" : 87,\n  \"path\" : \"model\",\n  \"phrase\" : \"let's each get her something for Christmas\",\n  \"pickMs\" : 1350,\n  \"pickedSentence\" : 84,\n  \"quote\" : \"I thought I'd get her some with my dollar,\",\n  \"referenceSentence\" : 84,\n  \"referenceText\" : \"\\\"I thought I'd get her some with my dollar,\\\" said Beth.\",\n  \"searchMs\" : 8,\n  \"underlined\" : true\n}"
+      }
+    },
+    {
+      "explains the phrase" : {
+        "evaluatorKind" : "custom",
+        "kind" : "fail",
+        "rationale" : "The response does not name the same person, thing, place or situation as the underlined phrase. It only shares the topic (buying pencils) and uses similar words, but does not explain the reason or context for the phrase.",
+        "value" : false
+      },
+      "Input" : "{\n  \"paragraph\" : 45,\n  \"phrase\" : \"I'll have some left to buy my pencils\",\n  \"sentence\" : 96,\n  \"sentenceText\" : \"She likes it, and it won't cost much, so I'll have some left to buy my pencils,\\\" added Amy.\"\n}",
+      "no spoiler" : {
+        "evaluatorKind" : "custom",
+        "kind" : "pass",
+        "value" : true
+      },
+      "Response" : {
+        "typeName" : "EngineResult",
+        "value" : "{\n  \"candidates\" : [\n    17,\n    15,\n    78\n  ],\n  \"confirm\" : true,\n  \"confirmEvidence\" : \"I shall get a nice box of Faber's drawing pencils; I really need them,\",\n  \"confirmMs\" : 670,\n  \"highestUsed\" : 78,\n  \"path\" : \"model\",\n  \"phrase\" : \"I'll have some left to buy my pencils\",\n  \"pickMs\" : 1471,\n  \"pickedSentence\" : 15,\n  \"quote\" : \"I shall get a nice box of Faber's drawing pencils; I really need them,\",\n  \"referenceSentence\" : 15,\n  \"referenceText\" : \"\\\"I shall get a nice box of Faber's drawing pencils; I really need them,\\\" said Amy decidedly.\",\n  \"searchMs\" : 8,\n  \"underlined\" : true\n}"
+      }
+    },
+    {
+      "explains the phrase" : {
+        "evaluatorKind" : "custom",
+        "kind" : "pass",
+        "rationale" : "The passage names Meg, the person who is contemplating giving the 'things', directly connecting to the underlined phrase.",
+        "value" : true
+      },
+      "Input" : "{\n  \"paragraph\" : 46,\n  \"phrase\" : \"will we give the things\",\n  \"sentence\" : 97,\n  \"sentenceText\" : \"\\\"How will we give the things?\\\"\"\n}",
+      "no spoiler" : {
+        "evaluatorKind" : "custom",
+        "kind" : "pass",
+        "value" : true
+      },
+      "Response" : {
+        "typeName" : "EngineResult",
+        "value" : "{\n  \"candidates\" : [\n    16,\n    11,\n    9\n  ],\n  \"confirm\" : true,\n  \"confirmEvidence\" : \"all the pretty things she wanted\",\n  \"confirmMs\" : 531,\n  \"highestUsed\" : 16,\n  \"path\" : \"model\",\n  \"phrase\" : \"will we give the things\",\n  \"pickMs\" : 1186,\n  \"pickedSentence\" : 9,\n  \"quote\" : \"all the pretty things she wanted.\",\n  \"referenceSentence\" : 9,\n  \"referenceText\" : \"But I am afraid I don't,\\\" and Meg shook her head, as she thought regretfully of all the pretty things she wanted.\",\n  \"searchMs\" : 7,\n  \"underlined\" : true\n}"
+      }
+    },
+    {
+      "explains the phrase" : {
+        "evaluatorKind" : "custom",
+        "kind" : "pass",
+        "rationale" : "The passage names Meg, who is directly tied to the ",
+        "value" : true
+      },
+      "Input" : "{\n  \"paragraph\" : 47,\n  \"phrase\" : \"Don't you remember how we used to do on our birthdays\",\n  \"sentence\" : 100,\n  \"sentenceText\" : \"Don't you remember how we used to do on our birthdays?\\\"\"\n}",
+      "no spoiler" : {
+        "evaluatorKind" : "custom",
+        "kind" : "pass",
+        "value" : true
+      },
+      "Response" : {
+        "typeName" : "EngineResult",
+        "value" : "{\n  \"candidates\" : [\n    29,\n    37,\n    32\n  ],\n  \"confirm\" : true,\n  \"confirmEvidence\" : \"said Meg, who could remember better times.\",\n  \"confirmMs\" : 522,\n  \"highestUsed\" : 37,\n  \"path\" : \"model\",\n  \"phrase\" : \"Don't you remember how we used to do on our birthdays\",\n  \"pickMs\" : 1151,\n  \"pickedSentence\" : 32,\n  \"quote\" : \"said Meg, who could remember better times.\",\n  \"referenceSentence\" : 32,\n  \"referenceText\" : \"said Meg, who could remember better times.\",\n  \"searchMs\" : 9,\n  \"underlined\" : true\n}"
+      }
+    },
+    {
+      "explains the phrase" : {
+        "evaluatorKind" : "custom",
+        "kind" : "pass",
+        "rationale" : "The response directly names 'Marmee' as the subject, linking it to the earlier event of 'Marmee must have a new pair,' which explains the context and reason behind the underlined phrase.",
+        "value" : true
+      },
+      "Input" : "{\n  \"paragraph\" : 49,\n  \"phrase\" : \"Marmee\",\n  \"sentence\" : 104,\n  \"sentenceText\" : \"\\\"Let Marmee think we are getting things for ourselves, and then surprise her.\"\n}",
+      "no spoiler" : {
+        "evaluatorKind" : "custom",
+        "kind" : "pass",
+        "value" : true
+      },
+      "Response" : {
+        "typeName" : "EngineResult",
+        "value" : "{\n  \"candidates\" : [\n    83\n  ],\n  \"confirm\" : true,\n  \"confirmEvidence\" : \"Marmee must have a new pair.\",\n  \"confirmMs\" : 564,\n  \"highestUsed\" : 97,\n  \"path\" : \"model\",\n  \"phrase\" : \"Marmee\",\n  \"pickMs\" : 1111,\n  \"pickedSentence\" : 83,\n  \"quote\" : \"Marmee must have a new pair.\",\n  \"referenceSentence\" : 83,\n  \"referenceText\" : \"Marmee must have a new pair.\\\"\",\n  \"searchMs\" : 3,\n  \"underlined\" : true\n}"
+      }
+    },
+    {
+      "explains the phrase" : {
+        "evaluatorKind" : "custom",
+        "kind" : "fail",
+        "rationale" : "The response does not name the same person or provide the cause\/goal related to the underlined phrase. It shares a similar topic but lacks the necessary context to explain why the phrase is emphasized.",
+        "value" : false
+      },
+      "Input" : "{\n  \"paragraph\" : 51,\n  \"phrase\" : \"are the best actress we've got\",\n  \"sentence\" : 110,\n  \"sentenceText\" : \"You are the best actress we've got, and there'll be an end of everything if you quit the boards,\\\" said Jo.\"\n}",
+      "no spoiler" : {
+        "evaluatorKind" : "custom",
+        "kind" : "pass",
+        "value" : true
+      },
+      "Response" : {
+        "typeName" : "EngineResult",
+        "value" : "{\n  \"candidates\" : [\n    31,\n    93,\n    80\n  ],\n  \"confirm\" : true,\n  \"confirmEvidence\" : \"Army shoes, best to be had,\",\n  \"confirmMs\" : 588,\n  \"highestUsed\" : 93,\n  \"path\" : \"model\",\n  \"phrase\" : \"are the best actress we've got\",\n  \"pickMs\" : 1197,\n  \"pickedSentence\" : 93,\n  \"quote\" : \"Army shoes, best to be had,\",\n  \"referenceSentence\" : 93,\n  \"referenceText\" : \"\\\"Army shoes, best to be had,\\\" cried Jo.\",\n  \"searchMs\" : 9,\n  \"underlined\" : true\n}"
+      }
+    },
+    {
+      "explains the phrase" : {
+        "evaluatorKind" : "custom",
+        "kind" : "pass",
+        "rationale" : "The response directly names the situation the phrase 'can't help it' refers to, which is a cause\/goal the phrase depends on.",
+        "value" : true
+      },
+      "Input" : "{\n  \"paragraph\" : 52,\n  \"phrase\" : \"can't help it\",\n  \"sentence\" : 113,\n  \"sentenceText\" : \"\\\"I can't help it.\"\n}",
+      "no spoiler" : {
+        "evaluatorKind" : "custom",
+        "kind" : "pass",
+        "value" : true
+      },
+      "Response" : {
+        "typeName" : "EngineResult",
+        "value" : "{\n  \"candidates\" : [\n    58,\n    53,\n    22\n  ],\n  \"confirm\" : true,\n  \"confirmEvidence\" : \"It's too bad, but it can't be helped.\",\n  \"confirmMs\" : 588,\n  \"highestUsed\" : 58,\n  \"path\" : \"model\",\n  \"phrase\" : \"can't help it\",\n  \"pickMs\" : 1277,\n  \"pickedSentence\" : 58,\n  \"quote\" : \"It's too bad, but it can't be helped.\",\n  \"referenceSentence\" : 58,\n  \"referenceText\" : \"It's too bad, but it can't be helped.\",\n  \"searchMs\" : 8,\n  \"underlined\" : true\n}"
+      }
+    },
+    {
+      "explains the phrase" : {
+        "evaluatorKind" : "custom",
+        "kind" : "fail",
+        "rationale" : "The response does not name the same person, thing, place or situation as the underlined phrase. The phrase 'crying frantically, 'Roderigo' refers to a specific event involving a character named Roderigo, but the response only states 'cried Amy', which does not explain why the phrase is underlined.",
+        "value" : false
+      },
+      "Input" : "{\n  \"paragraph\" : 53,\n  \"phrase\" : \"crying frantically, 'Roderigo\",\n  \"sentence\" : 119,\n  \"sentenceText\" : \"Clasp your hands so, and stagger across the room, crying frantically, 'Roderigo!\"\n}",
+      "no spoiler" : {
+        "evaluatorKind" : "custom",
+        "kind" : "pass",
+        "value" : true
+      },
+      "Response" : {
+        "typeName" : "EngineResult",
+        "value" : "{\n  \"candidates\" : [\n    86,\n    93,\n    20\n  ],\n  \"confirm\" : true,\n  \"confirmEvidence\" : \"cried Amy.\",\n  \"confirmMs\" : 510,\n  \"highestUsed\" : 93,\n  \"path\" : \"model\",\n  \"phrase\" : \"crying frantically, 'Roderigo\",\n  \"pickMs\" : 1078,\n  \"pickedSentence\" : 86,\n  \"quote\" : \"cried Amy.\",\n  \"referenceSentence\" : 86,\n  \"referenceText\" : \"cried Amy.\",\n  \"searchMs\" : 9,\n  \"underlined\" : true\n}"
+      }
+    },
+    {
+      "explains the phrase" : {
+        "evaluatorKind" : "custom",
+        "kind" : "fail",
+        "rationale" : "The response only shares the topic of the character Meg and the context of her thoughts, but does not name the phrase 'Come on, Meg' or explain its cause or context.",
+        "value" : false
+      },
+      "Input" : "{\n  \"paragraph\" : 54,\n  \"phrase\" : \"Come on, Meg\",\n  \"sentence\" : 128,\n  \"sentenceText\" : \"Come on, Meg.\\\"\"\n}",
+      "no spoiler" : {
+        "evaluatorKind" : "custom",
+        "kind" : "pass",
+        "value" : true
+      },
+      "Response" : {
+        "typeName" : "EngineResult",
+        "value" : "{\n  \"candidates\" : [\n    98,\n    9,\n    105\n  ],\n  \"confirm\" : true,\n  \"confirmEvidence\" : \"But I am afraid I don't,\",\n  \"confirmMs\" : 505,\n  \"highestUsed\" : 105,\n  \"path\" : \"model\",\n  \"phrase\" : \"Come on, Meg\",\n  \"pickMs\" : 1098,\n  \"pickedSentence\" : 9,\n  \"quote\" : \"But I am afraid I don't,\",\n  \"referenceSentence\" : 9,\n  \"referenceText\" : \"But I am afraid I don't,\\\" and Meg shook her head, as she thought regretfully of all the pretty things she wanted.\",\n  \"searchMs\" : 9,\n  \"underlined\" : true\n}"
+      }
+    },
+    {
+      "explains the phrase" : {
+        "evaluatorKind" : "custom",
+        "kind" : "pass",
+        "rationale" : "The response directly names Meg, the underlined phrase, providing context from the earlier passage.",
+        "value" : true
+      },
+      "Input" : "{\n  \"paragraph\" : 56,\n  \"phrase\" : \"Meg\",\n  \"sentence\" : 133,\n  \"sentenceText\" : \"\\\"It's the best we've had yet,\\\" said Meg, as the dead villain sat up and rubbed his elbows.\"\n}",
+      "no spoiler" : {
+        "evaluatorKind" : "custom",
+        "kind" : "pass",
+        "value" : true
+      },
+      "Response" : {
+        "typeName" : "EngineResult",
+        "value" : "{\n  \"candidates\" : [\n    128,\n    98,\n    60\n  ],\n  \"confirm\" : true,\n  \"confirmEvidence\" : \"Come on, Meg.\",\n  \"confirmMs\" : 507,\n  \"highestUsed\" : 128,\n  \"path\" : \"model\",\n  \"phrase\" : \"Meg\",\n  \"pickMs\" : 1069,\n  \"pickedSentence\" : 128,\n  \"quote\" : \"Come on, Meg.\",\n  \"referenceSentence\" : 128,\n  \"referenceText\" : \"Come on, Meg.\\\"\",\n  \"searchMs\" : 4,\n  \"underlined\" : true\n}"
+      }
+    },
+    {
+      "explains the phrase" : {
+        "evaluatorKind" : "custom",
+        "kind" : "pass",
+        "rationale" : "The response directly names the same person, Jo, who is the subject of the underlined phrase, explaining the context and intent behind 'act such splendid things, Jo'.",
+        "value" : true
+      },
+      "Input" : "{\n  \"paragraph\" : 57,\n  \"phrase\" : \"act such splendid things, Jo\",\n  \"sentence\" : 134,\n  \"sentenceText\" : \"\\\"I don't see how you can write and act such splendid things, Jo.\"\n}",
+      "no spoiler" : {
+        "evaluatorKind" : "custom",
+        "kind" : "pass",
+        "value" : true
+      },
+      "Response" : {
+        "typeName" : "EngineResult",
+        "value" : "{\n  \"candidates\" : [\n    37,\n    107,\n    108\n  ],\n  \"confirm\" : true,\n  \"confirmEvidence\" : \"I don't mean to act any more after this time.\",\n  \"confirmMs\" : 618,\n  \"highestUsed\" : 108,\n  \"path\" : \"model\",\n  \"phrase\" : \"act such splendid things, Jo\",\n  \"pickMs\" : 1285,\n  \"pickedSentence\" : 107,\n  \"quote\" : \"I don't mean to act any more after this time.\",\n  \"referenceSentence\" : 107,\n  \"referenceText\" : \"\\\"I don't mean to act any more after this time.\",\n  \"searchMs\" : 9,\n  \"underlined\" : true\n}"
+      }
+    },
+    {
+      "explains the phrase" : {
+        "evaluatorKind" : "custom",
+        "kind" : "fail",
+        "rationale" : "The response does not name the same person or explain the cause or goal of the phrase; it only shares a similar topic, leaving the reader without understanding why the phrase is underlined.",
+        "value" : false
+      },
+      "Input" : "{\n  \"paragraph\" : 58,\n  \"phrase\" : \"wanted to do the killing part\",\n  \"sentence\" : 139,\n  \"sentenceText\" : \"I always wanted to do the killing part.\"\n}",
+      "no spoiler" : {
+        "evaluatorKind" : "custom",
+        "kind" : "pass",
+        "value" : true
+      },
+      "Response" : {
+        "typeName" : "EngineResult",
+        "value" : "{\n  \"candidates\" : [\n    13,\n    9,\n    17\n  ],\n  \"confirm\" : true,\n  \"confirmEvidence\" : \"I've wanted it so long,\",\n  \"confirmMs\" : 549,\n  \"highestUsed\" : 17,\n  \"path\" : \"model\",\n  \"phrase\" : \"wanted to do the killing part\",\n  \"pickMs\" : 1219,\n  \"pickedSentence\" : 13,\n  \"quote\" : \"I've wanted it so long,\",\n  \"referenceSentence\" : 13,\n  \"referenceText\" : \"I've wanted it so long,\\\" said Jo, who was a bookworm.\",\n  \"searchMs\" : 10,\n  \"underlined\" : true\n}"
+      }
+    },
+    {
+      "explains the phrase" : {
+        "evaluatorKind" : "custom",
+        "kind" : "pass",
+        "rationale" : "The passage mentions 'Mother' as the person who was coming, directly linking the underlined phrase to the context of Mother's presence.",
+        "value" : true
+      },
+      "Input" : "{\n  \"paragraph\" : 59,\n  \"phrase\" : \"Mother\",\n  \"sentence\" : 142,\n  \"sentenceText\" : \"\\\"No, it's the toasting fork, with Mother's shoe on it instead of the bread.\"\n}",
+      "no spoiler" : {
+        "evaluatorKind" : "custom",
+        "kind" : "pass",
+        "value" : true
+      },
+      "Response" : {
+        "typeName" : "EngineResult",
+        "value" : "{\n  \"candidates\" : [\n    4,\n    80,\n    16\n  ],\n  \"confirm\" : true,\n  \"confirmEvidence\" : \"Mother was coming\",\n  \"confirmMs\" : 500,\n  \"highestUsed\" : 103,\n  \"path\" : \"model\",\n  \"phrase\" : \"Mother\",\n  \"pickMs\" : 1205,\n  \"pickedSentence\" : 80,\n  \"quote\" : \"Mother was coming, and everyone brightened to welcome her.\",\n  \"referenceSentence\" : 80,\n  \"referenceText\" : \"Somehow the sight of the old shoes had a good effect upon the girls, for Mother was coming, and everyone brightened to welcome her.\",\n  \"searchMs\" : 4,\n  \"underlined\" : true\n}"
+      }
+    },
+    {
+      "explains the phrase" : {
+        "evaluatorKind" : "custom",
+        "kind" : "fail",
+        "rationale" : "The response does not name the same person, thing, place or situation as the underlined phrase, nor does it explain the cause, goal or earlier event it depends on. It only shares a similar topic.",
+        "value" : false
+      },
+      "Input" : "{\n  \"paragraph\" : 61,\n  \"phrase\" : \"was so much to do\",\n  \"sentence\" : 148,\n  \"sentenceText\" : \"There was so much to do, getting the boxes ready to go tomorrow, that I didn't come home to dinner.\"\n}",
+      "no spoiler" : {
+        "evaluatorKind" : "custom",
+        "kind" : "pass",
+        "value" : true
+      },
+      "Response" : {
+        "typeName" : "EngineResult",
+        "value" : "{\n  \"candidates\" : [\n    106,\n    96,\n    31\n  ],\n  \"confirm\" : true,\n  \"confirmEvidence\" : \"There is so much to do about the play for Christmas night,\",\n  \"confirmMs\" : 668,\n  \"highestUsed\" : 127,\n  \"path\" : \"model\",\n  \"phrase\" : \"was so much to do\",\n  \"pickMs\" : 1435,\n  \"pickedSentence\" : 106,\n  \"quote\" : \"There is so much to do about the play for Christmas night,\",\n  \"referenceSentence\" : 106,\n  \"referenceText\" : \"There is so much to do about the play for Christmas night,\\\" said Jo, marching up and down, with her hands behind her back, and her nose in the air.\",\n  \"searchMs\" : 10,\n  \"underlined\" : true\n}"
+      }
+    },
+    {
+      "explains the phrase" : {
+        "evaluatorKind" : "custom",
+        "kind" : "pass",
+        "rationale" : "The response directly names Amy, the underlined phrase, as the subject of the action, explaining who is crying.",
+        "value" : true
+      },
+      "Input" : "{\n  \"paragraph\" : 62,\n  \"phrase\" : \"Amy\",\n  \"sentence\" : 153,\n  \"sentenceText\" : \"While making these maternal inquiries Mrs. March got her wet things off, her warm slippers on, and sitting down in the easy chair, drew Amy to her lap, preparing to enjoy the happiest hour of her busy day.\"\n}",
+      "no spoiler" : {
+        "evaluatorKind" : "custom",
+        "kind" : "pass",
+        "value" : true
+      },
+      "Response" : {
+        "typeName" : "EngineResult",
+        "value" : "{\n  \"candidates\" : [\n    64,\n    86,\n    60\n  ],\n  \"confirm\" : true,\n  \"confirmEvidence\" : \"cried Amy.\",\n  \"confirmMs\" : 527,\n  \"highestUsed\" : 122,\n  \"path\" : \"model\",\n  \"phrase\" : \"Amy\",\n  \"pickMs\" : 1128,\n  \"pickedSentence\" : 86,\n  \"quote\" : \"cried Amy.\",\n  \"referenceSentence\" : 86,\n  \"referenceText\" : \"cried Amy.\",\n  \"searchMs\" : 4,\n  \"underlined\" : true\n}"
+      }
+    },
+    {
+      "explains the phrase" : {
+        "evaluatorKind" : "custom",
+        "kind" : "pass",
+        "rationale" : "The passage explicitly names Mrs. March and describes her actions related to the event, showing why the phrase is significant.",
+        "value" : true
+      },
+      "Input" : "{\n  \"paragraph\" : 63,\n  \"phrase\" : \"Mrs. March\",\n  \"sentence\" : 157,\n  \"sentenceText\" : \"As they gathered about the table, Mrs. March said, with a particularly happy face, \\\"I've got a treat for you after supper.\\\"\"\n}",
+      "no spoiler" : {
+        "evaluatorKind" : "custom",
+        "kind" : "pass",
+        "value" : true
+      },
+      "Response" : {
+        "typeName" : "EngineResult",
+        "value" : "{\n  \"candidates\" : [\n    153\n  ],\n  \"confirm\" : true,\n  \"confirmEvidence\" : \"While making these maternal inquiries Mrs. March got her wet things off, her warm slippers on, and sitting down in the easy chair, drew Amy to her lap, preparing to enjoy the happiest hour of her busy day.\",\n  \"confirmMs\" : 1185,\n  \"highestUsed\" : 155,\n  \"path\" : \"model\",\n  \"phrase\" : \"Mrs. March\",\n  \"pickMs\" : 3517,\n  \"pickedSentence\" : 153,\n  \"quote\" : \"While making these maternal inquiries Mrs. March got her wet things off, her warm slippers on, and sitting down in the easy chair, drew Amy to her lap, preparing to enjoy the happiest hour of her busy day.\",\n  \"referenceSentence\" : 153,\n  \"referenceText\" : \"While making these maternal inquiries Mrs. March got her wet things off, her warm slippers on, and sitting down in the easy chair, drew Amy to her lap, preparing to enjoy the happiest hour of her busy day.\",\n  \"searchMs\" : 4,\n  \"underlined\" : true\n}"
+      }
+    },
+    {
+      "explains the phrase" : {
+        "evaluatorKind" : "custom",
+        "kind" : "pass",
+        "rationale" : "The response directly names Jo, the person in the original sentence who is described as dropping her bread with the butter side down, thereby explaining the action and context of the underlined phrase.",
+        "value" : true
+      },
+      "Input" : "{\n  \"paragraph\" : 66,\n  \"phrase\" : \"dropping her bread, butter side down\",\n  \"sentence\" : 166,\n  \"sentenceText\" : \"Don't stop to quirk your little finger and simper over your plate, Amy,\\\" cried Jo, choking on her tea and dropping her bread, butter side down, on the carpet in her haste to get at the treat.\"\n}",
+      "no spoiler" : {
+        "evaluatorKind" : "custom",
+        "kind" : "pass",
+        "value" : true
+      },
+      "Response" : {
+        "typeName" : "EngineResult",
+        "value" : "{\n  \"candidates\" : [\n    155,\n    142,\n    103\n  ],\n  \"confirm\" : true,\n  \"confirmEvidence\" : \"dropping, over-turning, and clattering everything she touched.\",\n  \"confirmMs\" : 686,\n  \"highestUsed\" : 157,\n  \"path\" : \"model\",\n  \"phrase\" : \"dropping her bread, butter side down\",\n  \"pickMs\" : 1424,\n  \"pickedSentence\" : 155,\n  \"quote\" : \"dropping, over-turning, and clattering everything she touched.\",\n  \"referenceSentence\" : 155,\n  \"referenceText\" : \"Meg arranged the tea table, Jo brought wood and set chairs, dropping, over-turning, and clattering everything she touched.\",\n  \"searchMs\" : 12,\n  \"underlined\" : true\n}"
+      }
+    },
+    {
+      "explains the phrase" : {
+        "evaluatorKind" : "custom",
+        "kind" : "pass",
+        "rationale" : "The response directly references the letter, which is the same object as the underlined phrase 'hear the letter', explaining what the phrase refers to.",
+        "value" : true
+      },
+      "Input" : "{\n  \"paragraph\" : 72,\n  \"phrase\" : \"hear the letter\",\n  \"sentence\" : 176,\n  \"sentenceText\" : \"Now come and hear the letter.\\\"\"\n}",
+      "no spoiler" : {
+        "evaluatorKind" : "custom",
+        "kind" : "pass",
+        "value" : true
+      },
+      "Response" : {
+        "typeName" : "EngineResult",
+        "value" : "{\n  \"candidates\" : [\n    160,\n    162,\n    14\n  ],\n  \"confirm\" : true,\n  \"confirmEvidence\" : \"A letter!\",\n  \"confirmMs\" : 480,\n  \"highestUsed\" : 162,\n  \"path\" : \"model\",\n  \"phrase\" : \"hear the letter\",\n  \"pickMs\" : 1037,\n  \"pickedSentence\" : 160,\n  \"quote\" : \"A letter!\",\n  \"referenceSentence\" : 160,\n  \"referenceText\" : \"A letter!\",\n  \"searchMs\" : 11,\n  \"underlined\" : true\n}"
+      }
+    },
+    {
+      "explains the phrase" : {
+        "evaluatorKind" : "custom",
+        "kind" : "pass",
+        "rationale" : "The response directly names the person ('Come and kiss me, baby.') who is the recipient of the 'dear love and a kiss' mentioned in the underlined phrase, explaining the context and cause of the action.",
+        "value" : true
+      },
+      "Input" : "{\n  \"paragraph\" : 74,\n  \"phrase\" : \"Give them all of my dear love and a kiss\",\n  \"sentence\" : 181,\n  \"sentenceText\" : \"\\\"Give them all of my dear love and a kiss.\"\n}",
+      "no spoiler" : {
+        "evaluatorKind" : "custom",
+        "kind" : "pass",
+        "value" : true
+      },
+      "Response" : {
+        "typeName" : "EngineResult",
+        "value" : "{\n  \"candidates\" : [\n    164,\n    92,\n    152\n  ],\n  \"confirm\" : true,\n  \"confirmEvidence\" : \"Come and kiss me, baby.\",\n  \"confirmMs\" : 523,\n  \"highestUsed\" : 164,\n  \"path\" : \"model\",\n  \"phrase\" : \"Give them all of my dear love and a kiss\",\n  \"pickMs\" : 1195,\n  \"pickedSentence\" : 152,\n  \"quote\" : \"Come and kiss me, baby.\",\n  \"referenceSentence\" : 152,\n  \"referenceText\" : \"Come and kiss me, baby.\\\"\",\n  \"searchMs\" : 13,\n  \"underlined\" : true\n}"
+      }
+    },
+    {
+      "explains the phrase" : {
+        "evaluatorKind" : "custom",
+        "kind" : "fail",
+        "rationale" : "The response only shares the topic ('I can't help it') but does not explain the cause, goal, or earlier event tied to the underlined phrase 'can help it'.",
+        "value" : false
+      },
+      "Input" : "{\n  \"paragraph\" : 75,\n  \"phrase\" : \"can help it\",\n  \"sentence\" : 189,\n  \"sentenceText\" : \"\\\"I think too much of my looks and hate to work, but won't any more, if I can help it.\\\"\"\n}",
+      "no spoiler" : {
+        "evaluatorKind" : "custom",
+        "kind" : "pass",
+        "value" : true
+      },
+      "Response" : {
+        "typeName" : "EngineResult",
+        "value" : "{\n  \"candidates\" : [\n    113,\n    58,\n    170\n  ],\n  \"confirm\" : true,\n  \"confirmEvidence\" : \"I can't help it.\",\n  \"confirmMs\" : 513,\n  \"highestUsed\" : 187,\n  \"path\" : \"model\",\n  \"phrase\" : \"can help it\",\n  \"pickMs\" : 1138,\n  \"pickedSentence\" : 113,\n  \"quote\" : \"I can't help it.\",\n  \"referenceSentence\" : 113,\n  \"referenceText\" : \"\\\"I can't help it.\",\n  \"searchMs\" : 12,\n  \"underlined\" : true\n}"
+      }
+    },
+    {
+      "explains the phrase" : {
+        "evaluatorKind" : "custom",
+        "kind" : "pass",
+        "rationale" : "The response directly names the action of putting the bundles on the table, which explains the context and cause behind the phrase 'Where are our bundles'.",
+        "value" : true
+      },
+      "Input" : "{\n  \"paragraph\" : 83,\n  \"phrase\" : \"Where are our bundles\",\n  \"sentence\" : 202,\n  \"sentenceText\" : \"Where are our bundles?\\\"\"\n}",
+      "no spoiler" : {
+        "evaluatorKind" : "custom",
+        "kind" : "pass",
+        "value" : true
+      },
+      "Response" : {
+        "typeName" : "EngineResult",
+        "value" : "{\n  \"candidates\" : [\n    99,\n    150,\n    103\n  ],\n  \"confirm\" : true,\n  \"confirmEvidence\" : \"Put them on the table, and bring her in and see her open the bundles.\",\n  \"confirmMs\" : 790,\n  \"highestUsed\" : 150,\n  \"path\" : \"model\",\n  \"phrase\" : \"Where are our bundles\",\n  \"pickMs\" : 1981,\n  \"pickedSentence\" : 99,\n  \"quote\" : \"Put them on the table, and bring her in and see her open the bundles.\",\n  \"referenceSentence\" : 99,\n  \"referenceText\" : \"\\\"Put them on the table, and bring her in and see her open the bundles.\",\n  \"searchMs\" : 13,\n  \"underlined\" : true\n}"
+      }
+    },
+    {
+      "explains the phrase" : {
+        "evaluatorKind" : "custom",
+        "kind" : "fail",
+        "rationale" : "The response mentions washing dishes and keeping things tidy, which are related activities but do not directly name the person, object, or context of 'dishes and dusters' as the underlined phrase. A reader would still not understand the specific meaning of the phrase.",
+        "value" : false
+      },
+      "Input" : "{\n  \"paragraph\" : 85,\n  \"phrase\" : \"is dishes and dusters\",\n  \"sentence\" : 207,\n  \"sentenceText\" : \"Mine is dishes and dusters, and envying girls with nice pianos, and being afraid of people.\\\"\"\n}",
+      "no spoiler" : {
+        "evaluatorKind" : "custom",
+        "kind" : "pass",
+        "value" : true
+      },
+      "Response" : {
+        "typeName" : "EngineResult",
+        "value" : "{\n  \"candidates\" : [\n    202,\n    21,\n    59\n  ],\n  \"confirm\" : true,\n  \"confirmEvidence\" : \"washing dishes and keeping things tidy\",\n  \"confirmMs\" : 555,\n  \"highestUsed\" : 202,\n  \"path\" : \"model\",\n  \"phrase\" : \"is dishes and dusters\",\n  \"pickMs\" : 1262,\n  \"pickedSentence\" : 21,\n  \"quote\" : \"washing dishes and keeping things tidy is the worst work in the world.\",\n  \"referenceSentence\" : 21,\n  \"referenceText\" : \"\\\"It's naughty to fret, but I do think washing dishes and keeping things tidy is the worst work in the world.\",\n  \"searchMs\" : 13,\n  \"underlined\" : true\n}"
+      }
+    },
+    {
+      "explains the phrase" : {
+        "evaluatorKind" : "custom",
+        "kind" : "fail",
+        "rationale" : "The response does not name the same person, thing, place or situation as the underlined phrase, nor does it explain the cause or goal of the phrase. Instead, it introduces a different context with a different character and event.",
+        "value" : false
+      },
+      "Input" : "{\n  \"paragraph\" : 86,\n  \"phrase\" : \"was such a funny one that everybody wanted to laugh\",\n  \"sentence\" : 208,\n  \"sentenceText\" : \"Beth's bundle was such a funny one that everybody wanted to laugh, but nobody did, for it would have hurt her feelings very much.\"\n}",
+      "no spoiler" : {
+        "evaluatorKind" : "custom",
+        "kind" : "pass",
+        "value" : true
+      },
+      "Response" : {
+        "typeName" : "EngineResult",
+        "value" : "{\n  \"candidates\" : [\n    45,\n    9,\n    13\n  ],\n  \"confirm\" : true,\n  \"confirmEvidence\" : \"with such a funny face that both sharp voices softened to a laugh\",\n  \"confirmMs\" : 687,\n  \"highestUsed\" : 189,\n  \"path\" : \"model\",\n  \"phrase\" : \"was such a funny one that everybody wanted to laugh\",\n  \"pickMs\" : 1402,\n  \"pickedSentence\" : 45,\n  \"quote\" : \"with such a funny face that both sharp voices softened to a laugh\",\n  \"referenceSentence\" : 45,\n  \"referenceText\" : \"\\\"Birds in their little nests agree,\\\" sang Beth, the peacemaker, with such a funny face that both sharp voices softened to a laugh, and the \\\"pecking\\\" ended for that time.\",\n  \"searchMs\" : 14,\n  \"underlined\" : true\n}"
+      }
+    },
+    {
+      "explains the phrase" : {
+        "evaluatorKind" : "custom",
+        "kind" : "fail",
+        "rationale" : "The response does not directly explain why 'it's hard work' is underlined. It shares a similar theme of effort but does not name the phrase or its context.",
+        "value" : false
+      },
+      "Input" : "{\n  \"paragraph\" : 87,\n  \"phrase\" : \"it's hard work\",\n  \"sentence\" : 210,\n  \"sentenceText\" : \"\\\"It is only another name for trying to be good, and the story may help us, for though we do want to be good, it's hard work and we forget, and don't do our best.\\\"\"\n}",
+      "no spoiler" : {
+        "evaluatorKind" : "custom",
+        "kind" : "pass",
+        "value" : true
+      },
+      "Response" : {
+        "typeName" : "EngineResult",
+        "value" : "{\n  \"candidates\" : [\n    52,\n    183,\n    1\n  ],\n  \"confirm\" : true,\n  \"confirmEvidence\" : \"it's hard work\",\n  \"confirmMs\" : 546,\n  \"highestUsed\" : 208,\n  \"path\" : \"model\",\n  \"phrase\" : \"it's hard work\",\n  \"pickMs\" : 1187,\n  \"pickedSentence\" : 183,\n  \"quote\" : \"so that these hard days need not be wasted.\",\n  \"referenceSentence\" : 183,\n  \"referenceText\" : \"A year seems very long to wait before I see them, but remind them that while we wait we may all work, so that these hard days need not be wasted.\",\n  \"searchMs\" : 13,\n  \"underlined\" : true\n}"
+      }
+    },
+    {
+      "explains the phrase" : {
+        "evaluatorKind" : "custom",
+        "kind" : "pass",
+        "rationale" : "The response names Beth, the same person mentioned in the original sentence, providing context for why the phrase 'sang, as usual' is significant.",
+        "value" : true
+      },
+      "Input" : "{\n  \"paragraph\" : 91,\n  \"phrase\" : \"sang, as usual\",\n  \"sentence\" : 219,\n  \"sentenceText\" : \"At nine they stopped work, and sang, as usual, before they went to bed.\"\n}",
+      "no spoiler" : {
+        "evaluatorKind" : "custom",
+        "kind" : "pass",
+        "value" : true
+      },
+      "Response" : {
+        "typeName" : "EngineResult",
+        "value" : "{\n  \"candidates\" : [\n    45,\n    169,\n    201\n  ],\n  \"confirm\" : true,\n  \"confirmEvidence\" : \"sang Beth, the peacemaker\",\n  \"confirmMs\" : 545,\n  \"highestUsed\" : 201,\n  \"path\" : \"model\",\n  \"phrase\" : \"sang, as usual\",\n  \"pickMs\" : 1167,\n  \"pickedSentence\" : 45,\n  \"quote\" : \"Birds in their little nests agree,\",\n  \"referenceSentence\" : 45,\n  \"referenceText\" : \"\\\"Birds in their little nests agree,\\\" sang Beth, the peacemaker, with such a funny face that both sharp voices softened to a laugh, and the \\\"pecking\\\" ended for that time.\",\n  \"searchMs\" : 14,\n  \"underlined\" : true\n}"
+      }
+    }
+  ],
+  "startTime" : "2026-11-05T05:51:32.716Z",
+  "summary" : [
+    {
+      "Mean of explains the phrase" : {
+        "operation" : {
+          "metric" : "explains the phrase",
+          "type" : "mean"
+        },
+        "value" : 0.52941176470588236
+      },
+      "Mean of no spoiler" : {
+        "operation" : {
+          "metric" : "no spoiler",
+          "type" : "mean"
+        },
+        "value" : 1
+      }
+    }
+  ]
+}
