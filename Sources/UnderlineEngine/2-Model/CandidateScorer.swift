@@ -1,7 +1,7 @@
 import Foundation
 
 enum SearchKnobs {
-    static let maxCandidates = 6
+    static let maxCandidates = 3
     /// Below this unscaled score a candidate is dropped before any model call (spec §5.4). Half of TextEngine's rules-judge minimums.
     static let minRawScore: [SearchMode: Double] = [.embed: 0.425, .words: 0.25, .both: 0.35]
     /// Meaning leads, words come second (spec §5.5). Keep `embedWeight > wordsWeight`.

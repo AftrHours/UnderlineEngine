@@ -2,7 +2,7 @@ import Foundation
 
 enum UnderlineKnobs {
     /// Event phrases shorter than this (in words) are never underlined. Names are exempt.
-    static let minPhraseWords = 2
+    static let minPhraseWords = 3
     /// A phrase made only of these words says nothing a reader could be confused about.
     static let generalWords: Set<String> = [
         "this", "that", "it", "these", "those", "there", "here", "so", "do", "did", "does", "done", "be", "was", "were", "is",
@@ -11,7 +11,7 @@ enum UnderlineKnobs {
     /// A proper name is a candidate only if it wasn't mentioned in this many earlier sentences.
     static let nameGapSentences = 20
     /// Most underlines kept per paragraph, best first (spec §5.6).
-    static let maxPerParagraph = 2
+    static let maxPerParagraph = 1
     /// Tie-break order in the limiter; `person` last (spec §4.2).
     static let kindOrder: [UnderlineKind] = [.reaction, .action, .feeling, .outcome, .place, .thing, .person]
 }
