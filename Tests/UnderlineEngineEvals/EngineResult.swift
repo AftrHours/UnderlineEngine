@@ -13,12 +13,10 @@ struct EngineResult: Codable, Sendable {
     var highestUsed: Int?
     var candidates: [Int] = []
     var pickedSentence: Int?
-    var quote: String?
     var confirm: Bool?
     var confirmEvidence: String?
     var dropped: String?
     var searchMs: Int?
-    var pickMs: Int?
     var confirmMs: Int?
     /// The outcome against the golden item (golden runs only).
     var outcome: Outcome?
@@ -58,12 +56,10 @@ struct EngineResult: Codable, Sendable {
         path = path ?? rec.path?.rawValue
         candidates = rec.candidates
         pickedSentence = rec.pickedSentence
-        quote = rec.quote
         confirm = rec.confirm?.explains
         confirmEvidence = rec.confirm?.evidence
         dropped = rec.dropped?.rawValue
         searchMs = rec.times.searchMs
-        pickMs = rec.times.pickMs
         confirmMs = rec.times.confirmMs
     }
 }

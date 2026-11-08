@@ -26,10 +26,10 @@ private func phrase(_ role: EventRole?, _ track: Track) -> EventPhrase {
     #expect(try JSONDecoder().decode(Underline.self, from: JSONEncoder().encode(u)) == u)
     #expect(u.id == "39:55")
     let r = UnderlineRecord(chapterIndex: 0, sentence: 39, phrase: "began to whistle", kind: .action, path: .model,
-                            promptVariant: .baseline, searchModeUsed: .both, embedding: .sentence, candidates: [38, 36],
-                            promptSentences: [39, 38, 36], pickedSentence: 38, quote: "slang words",
+                            searchModeUsed: .both, embedding: .sentence, candidates: [38, 36],
+                            promptSentences: [39, 38, 36], pickedSentence: 38,
                             confirm: ConfirmTrace(explains: true, evidence: "Amy scolds Jo"), kept: true, dropped: nil,
-                            times: StepTimes(searchMs: 3, pickMs: 400, confirmMs: 300))
+                            times: StepTimes(searchMs: 3, confirmMs: 300))
     let back = try JSONDecoder().decode(UnderlineRecord.self, from: JSONEncoder().encode(r))
     #expect(back.promptSentences == [39, 38, 36])
     #expect(back.confirm == ConfirmTrace(explains: true, evidence: "Amy scolds Jo"))

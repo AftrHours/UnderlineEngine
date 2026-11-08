@@ -22,12 +22,10 @@ public struct ConfirmTrace: Sendable, Codable, Hashable {
 
 public struct StepTimes: Sendable, Codable, Hashable {
     public var searchMs: Int?
-    public var pickMs: Int?
     public var confirmMs: Int?
 
-    public init(searchMs: Int? = nil, pickMs: Int? = nil, confirmMs: Int? = nil) {
+    public init(searchMs: Int? = nil, confirmMs: Int? = nil) {
         self.searchMs = searchMs
-        self.pickMs = pickMs
         self.confirmMs = confirmMs
     }
 }
@@ -50,15 +48,14 @@ public struct UnderlineRecord: Sendable, Codable, Hashable {
     public let phrase: String
     public let kind: UnderlineKind
     public var path: AnswerPath?
-    public var promptVariant: PromptVariant?
-    public var searchModeUsed: SearchMode?
+    /// Harness only: the app always searches with `.both`, or `.words` when there are no vectors.
+    var searchModeUsed: SearchMode?
     public let embedding: EmbeddingEngine
     /// Sentences sent to the model (or ranked top by the rules), best first.
     public var candidates: [Int]
     /// Every sentence index inside every prompt actually sent (pick and confirm), for the spoiler check.
     public var promptSentences: [Int]
     public var pickedSentence: Int?
-    public var quote: String?
     public var confirm: ConfirmTrace?
     public var kept: Bool
     public var dropped: DropReason?
@@ -68,22 +65,20 @@ public struct UnderlineRecord: Sendable, Codable, Hashable {
     /// The unscaled search score of each entry in `candidates`, in the same order.
     public var candidateScores: [Double]
 
-    public init(chapterIndex: Int, sentence: Int, phrase: String, kind: UnderlineKind, path: AnswerPath?, promptVariant: PromptVariant?,
-                searchModeUsed: SearchMode?, embedding: EmbeddingEngine, candidates: [Int], promptSentences: [Int], pickedSentence: Int?,
-                quote: String?, confirm: ConfirmTrace?, kept: Bool, dropped: DropReason?, times: StepTimes,
+    init(chapterIndex: Int, sentence: Int, phrase: String, kind: UnderlineKind, path: AnswerPath?,
+         searchModeUsed: SearchMode?, embedding: EmbeddingEngine, candidates: [Int], promptSentences: [Int], pickedSentence: Int?,
+                confirm: ConfirmTrace?, kept: Bool, dropped: DropReason?, times: StepTimes,
                 phraseRange: NSRange? = nil, candidateScores: [Double] = []) {
         self.chapterIndex = chapterIndex
         self.sentence = sentence
         self.phrase = phrase
         self.kind = kind
         self.path = path
-        self.promptVariant = promptVariant
         self.searchModeUsed = searchModeUsed
         self.embedding = embedding
         self.candidates = candidates
         self.promptSentences = promptSentences
         self.pickedSentence = pickedSentence
-        self.quote = quote
         self.confirm = confirm
         self.kept = kept
         self.dropped = dropped

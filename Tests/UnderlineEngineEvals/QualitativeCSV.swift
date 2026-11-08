@@ -5,21 +5,20 @@ import Foundation
 struct RunInfo: Sendable {
     let runID: String
     let runKind: String
-    let promptVariant: String
     let searchMode: String
 }
 
 /// One row of the qualitative analysis CSV (spec §8.7): one value per column, in `header` order.
 struct QualitativeRow: Sendable {
     static let header = [
-        "run_id", "run_kind", "prompt_variant", "search_mode", "gold_id",
+        "run_id", "run_kind", "search_mode", "gold_id",
         "sentence", "paragraph", "sentence_text", "sentence_with_underline", "phrase", "phrase_range",
         "tagging_engine", "words", "names", "events", "phrase_role", "kind",
         "embedding", "search_mode_used", "candidates", "top_candidate_text",
-        "path", "pick", "picked_sentence", "pick_quote", "confirm", "confirm_evidence",
+        "path", "pick", "picked_sentence", "confirm", "confirm_evidence",
         "underlined", "dropped_reason", "reference", "reference_text", "distance",
         "expected", "outcome", "miss_cause", "judge", "judge_rationale",
-        "search_ms", "pick_ms", "confirm_ms",
+        "search_ms", "confirm_ms",
         "reviewer_verdict", "reviewer_note"
     ]
 
@@ -78,7 +77,7 @@ enum QualitativeCSV {
         case nil: ""
         }
         let values: [String] = [
-            run.runID, run.runKind, run.promptVariant, run.searchMode, item?.item.id ?? "",
+            run.runID, run.runKind, run.searchMode, item?.item.id ?? "",
             "\(index)", s.map { "\($0.paragraph)" } ?? "", text, marked(text, range), phrase, range.map { "\($0.location)+\($0.length)" } ?? "",
             chapter.tagging.rawValue,
             s?.tokens.map { "\($0.text)/\($0.lemma)/\($0.wordClass)" }.joined(separator: " · ") ?? "",
@@ -92,13 +91,13 @@ enum QualitativeCSV {
             record?.candidates.first.flatMap { chapter.sentence($0)?.text } ?? "",
             record?.path?.rawValue ?? "",
             picked.flatMap { p in record?.candidates.firstIndex(of: p).map { "\($0 + 1)" } } ?? "",
-            picked.map { "\($0)" } ?? "", record?.quote ?? "",
+            picked.map { "\($0)" } ?? "",
             record?.confirm.map { $0.explains ? "yes" : "no" } ?? "", record?.confirm?.evidence ?? "",
             record == nil ? "" : (kept ? "yes" : "no"), record?.dropped?.rawValue ?? "",
             reference.map { "\($0)" } ?? "", reference.flatMap { chapter.sentence($0)?.text } ?? "",
             reference.map { "\(index - $0)" } ?? "",
             expected, outcome?.label ?? "", missCause, judge?.verdict ?? "", judge?.rationale ?? "",
-            record?.times.searchMs.map(String.init) ?? "", record?.times.pickMs.map(String.init) ?? "", record?.times.confirmMs.map(String.init) ?? "",
+            record?.times.searchMs.map(String.init) ?? "", record?.times.confirmMs.map(String.init) ?? "",
             "", ""
         ]
         let rank = outcome?.rank ?? (judge?.verdict == "fail" ? 1 : 50)

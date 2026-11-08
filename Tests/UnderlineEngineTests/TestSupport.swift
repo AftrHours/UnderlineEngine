@@ -19,34 +19,21 @@ func datasetURL(_ name: String, file: StaticString = #filePath) -> URL {
         .appendingPathComponent(name)
 }
 
-/// A scripted model: returns the given pick and confirm (or throws), and logs the sentence indexes it was given.
+/// A scripted model: returns the given confirm (or throws), and logs the sentence indexes it was given.
 final class FakeUnderlineModel: UnderlineModelSvc, @unchecked Sendable {
-    enum Kind: Equatable { case pick, confirm }
     var isAvailable = true
-    var contextSize = 4096
-    var pickResult = ModelPick(quote: "", candidate: 0)
     var confirmResult = ModelConfirm(evidence: "", explains: false)
-    var pickError: ModelFailure?
     var confirmError: ModelFailure?
-    /// Always picks candidate 1, quoting its first three words, and always confirms.
+    /// Always confirms.
     var autoAccept = false
     private let lock = NSLock()
-    private var log: [(kind: Kind, indexes: [Int])] = []
+    private var log: [[Int]] = []
 
-    var calls: [(kind: Kind, indexes: [Int])] { lock.withLock { log } }
+    /// The sentence indexes of each confirm call: the underlined sentence, then the passage.
+    var calls: [[Int]] { lock.withLock { log } }
 
-    func pick(phrase: String, roleHint: String?, sentence: IndexedText, candidates: [IndexedText],
-              variant: PromptVariant) async throws(ModelFailure) -> ModelPick {
-        lock.withLock { log.append((.pick, [sentence.index] + candidates.map(\.index))) }
-        if let pickError { throw pickError }
-        if autoAccept, let first = candidates.first {
-            return ModelPick(quote: first.text.split(separator: " ").prefix(3).joined(separator: " "), candidate: 1)
-        }
-        return pickResult
-    }
-
-    func confirm(phrase: String, sentence: IndexedText, passage: IndexedText, variant: PromptVariant) async throws(ModelFailure) -> ModelConfirm {
-        lock.withLock { log.append((.confirm, [sentence.index, passage.index])) }
+    func confirm(phrase: String, sentence: IndexedText, passage: IndexedText) async throws(ModelFailure) -> ModelConfirm {
+        lock.withLock { log.append([sentence.index, passage.index]) }
         if let confirmError { throw confirmError }
         return autoAccept ? ModelConfirm(evidence: "x", explains: true) : confirmResult
     }
@@ -61,5 +48,5 @@ func fixtureChapter(firstSentence: Int = 0) async -> IndexedChapter {
 }
 
 func ctrl(_ model: any UnderlineModelSvc) -> UnderlineCtrl {
-    UnderlineCtrl(modelSvc: model, embeddingSvc: EmbeddingSvcUnavailable(), search: .both, prompt: .baseline)
+    UnderlineCtrl(modelSvc: model, embeddingSvc: EmbeddingSvcUnavailable())
 }

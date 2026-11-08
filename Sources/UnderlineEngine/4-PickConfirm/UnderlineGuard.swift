@@ -1,32 +1,7 @@
 import Foundation
 
-public enum GuardReject: String, Sendable, Codable, Hashable {
-    case outOfRange, notEarlier, quoteNotInPick
-}
-
-/// What the guard made of the model's pick.
-public enum PickCheck: Sendable, Codable, Hashable {
-    case accepted(Int)
-    /// The model said none of the candidates explains the phrase.
-    case none
-    case rejected(GuardReject)
-}
-
 /// Checks everything the model returns before it can become an underline (spec §5.5). Pure.
 enum UnderlineGuard {
-    /// `pick` is 1-based into `sent`; 0 means "none". The quote must come from the picked sentence,
-    /// and the picked sentence must be before the underlined one.
-    static func checkPick(pick: Int, quote: String, sent: [Candidate], chapter: IndexedChapter, sentence: Int) -> PickCheck {
-        if pick == 0 { return .none }
-        guard sent.indices.contains(pick - 1) else { return .rejected(.outOfRange) }
-        let chosen = sent[pick - 1].sentence
-        guard chosen < sentence else { return .rejected(.notEarlier) }
-        let normalizedQuote = TextMatch.normalized(quote)
-        guard !normalizedQuote.isEmpty, let text = chapter.sentence(chosen)?.text,
-              TextMatch.normalized(text).contains(normalizedQuote) else { return .rejected(.quoteNotInPick) }
-        return .accepted(chosen)
-    }
-
     /// The reference is in the phrase's own paragraph: the reader has just read it.
     static func isInSameParagraph(_ reference: IndexedSentence, as sentence: IndexedSentence) -> Bool {
         reference.paragraph == sentence.paragraph

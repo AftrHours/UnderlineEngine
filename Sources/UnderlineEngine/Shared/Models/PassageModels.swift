@@ -1,7 +1,7 @@
 import Foundation
 
-/// Which main search signals are used (spec §5.5). The app always uses `.both`.
-public enum SearchMode: String, Sendable, Codable, Hashable, CaseIterable {
+/// Which main search signals are used (spec §5.5). The app always uses `.both`; only the harness compares the others.
+enum SearchMode: String, Sendable, Codable, Hashable, CaseIterable {
     case embed, words, both
 }
 

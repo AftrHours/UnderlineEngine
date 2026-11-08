@@ -14,8 +14,8 @@ private func item(_ expected: GoldExpected, phrase: String = "face the war like 
 }
 
 private func record(_ dropped: DropReason?, candidates: [Int] = [0], prompt: [Int] = [4, 0], phrase: String = "would face the war like Father") -> UnderlineRecord {
-    UnderlineRecord(chapterIndex: 0, sentence: 4, phrase: phrase, kind: .action, path: .model, promptVariant: .baseline, searchModeUsed: .words,
-                    embedding: .none, candidates: candidates, promptSentences: prompt, pickedSentence: nil, quote: nil, confirm: nil,
+    UnderlineRecord(chapterIndex: 0, sentence: 4, phrase: phrase, kind: .action, path: .model, searchModeUsed: .words,
+                    embedding: .none, candidates: candidates, promptSentences: prompt, pickedSentence: nil, confirm: nil,
                     kept: dropped == nil, dropped: dropped, times: StepTimes())
 }
 

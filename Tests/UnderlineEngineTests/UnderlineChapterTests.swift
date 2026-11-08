@@ -127,8 +127,7 @@ private func results(_ c: UnderlineCtrl, _ ch: IndexedChapter, from start: Int? 
     func pair(_ length: Int, _ score: Double, _ phrase: String) -> (KeptUnderline, UnderlineRecord) {
         let u = Underline(sentence: 1, paragraph: 0, range: NSRange(location: 0, length: length), text: phrase, kind: .action, role: nil,
                           reference: ref, decidedBy: .model)
-        let r = UnderlineRecord(chapterIndex: 0, sentence: 1, phrase: phrase, kind: .action, path: .model, promptVariant: .baseline,
-                                searchModeUsed: .words, embedding: .none, candidates: [0], promptSentences: [1, 0], pickedSentence: 0, quote: "r",
+        let r = UnderlineRecord(chapterIndex: 0, sentence: 1, phrase: phrase, kind: .action, path: .model, searchModeUsed: .words, embedding: .none, candidates: [0], promptSentences: [1, 0], pickedSentence: 0,
                                 confirm: nil, kept: true, dropped: nil, times: StepTimes(), phraseRange: NSRange(location: 0, length: length))
         return (KeptUnderline(underline: u, score: score), r)
     }
