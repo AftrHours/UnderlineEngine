@@ -1,19 +1,7 @@
 import Foundation
 
 extension UnderlineCtrl {
-    /// Every underline of the chapter, and a record for every phrase considered (kept or dropped). For the harness and tests.
-    public func allUnderlines(in chapter: IndexedChapter) async -> (ChapterUnderlines, [UnderlineRecord]) {
-        var underlines: [Underline] = []
-        var records: [UnderlineRecord] = []
-        for paragraph in Self.paragraphs(of: chapter) {
-            let (shown, recs) = await pass(paragraph, in: chapter)
-            underlines += shown.map(\.0)
-            records += recs
-        }
-        return (ChapterUnderlines(chapterIndex: chapter.chapterIndex, underlines: underlines), records)
-    }
-
-    /// Only the paragraphs holding these sentences, in order. Same result for them as `allUnderlines`, because the
+    /// Only the paragraphs holding these sentences, in order. Same result for them as the whole chapter, because the
     /// limiter is per paragraph. For the harness, which needs only the golden items' paragraphs.
     func underlines(paragraphsHolding sentences: Set<Int>, in chapter: IndexedChapter) async -> (ChapterUnderlines, [UnderlineRecord]) {
         let wanted = Set(sentences.compactMap { chapter.sentence($0)?.paragraph })
@@ -27,25 +15,9 @@ extension UnderlineCtrl {
         return (ChapterUnderlines(chapterIndex: chapter.chapterIndex, underlines: underlines), records)
     }
 
-    /// Underlines in reading order from the paragraph holding `sentence` (the first one when it's outside the chapter),
-    /// to the end, then from the start. Ends after the last paragraph, or when the consuming task is cancelled.
-    public func underlines(in chapter: IndexedChapter, startingAt sentence: Int) -> AsyncStream<(Underline, UnderlineRecord)> {
-        let ordered = Self.paragraphs(of: chapter, startingAt: sentence)
-        return AsyncStream { continuation in
-            let task = Task {
-                for paragraph in ordered {
-                    if Task.isCancelled { break }
-                    let (shown, _) = await self.pass(paragraph, in: chapter)
-                    for pair in shown { continuation.yield(pair) }
-                }
-                continuation.finish()
-            }
-            continuation.onTermination = { _ in task.cancel() }
-        }
-    }
-
-    /// The same order and the same underlines as `underlines(in:startingAt:)`, one paragraph at a time, with a record for
-    /// every phrase considered (kept or dropped). For showing why a phrase got no underline.
+    /// One result per paragraph, in reading order from the paragraph holding `sentence` (the first one when it's outside
+    /// the chapter), to the end, then from the start. Each has its underlines and a record for every phrase considered
+    /// (kept or dropped). Ends after the last paragraph, or when the consuming task is cancelled.
     public func paragraphResults(in chapter: IndexedChapter, startingAt sentence: Int) -> AsyncStream<ParagraphResult> {
         let ordered = Self.paragraphs(of: chapter, startingAt: sentence)
         return AsyncStream { continuation in
@@ -61,7 +33,7 @@ extension UnderlineCtrl {
         }
     }
 
-    /// One paragraph: detect, evaluate every candidate, then the limiter. The streams and `allUnderlines` all use it,
+    /// One paragraph: detect, evaluate every candidate, then the limiter. The stream and the harness both use it,
     /// so they can't disagree. Returns each shown underline with its own record, and every record. Stops early when cancelled.
     private func pass(_ paragraph: [IndexedSentence], in chapter: IndexedChapter) async -> ([(Underline, UnderlineRecord)], [UnderlineRecord]) {
         var kept: [(KeptUnderline, Int)] = []

@@ -1,7 +1,7 @@
 import Foundation
 
 public enum GuardReject: String, Sendable, Codable, Hashable {
-    case outOfRange, notEarlier, quoteNotInPick, phraseNotInSentence
+    case outOfRange, notEarlier, quoteNotInPick
 }
 
 /// What the guard made of the model's pick.

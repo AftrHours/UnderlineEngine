@@ -13,40 +13,30 @@ private func autoAccepting() -> FakeUnderlineModel {
     return fake
 }
 
-private func collect(_ stream: AsyncStream<(Underline, UnderlineRecord)>) async -> [Underline] {
-    var out: [Underline] = []
-    for await (u, _) in stream { out.append(u) }
-    return out
-}
-
-@Test func streamSetEqualsAllUnderlines() async throws {
-    let ch = try await littleWomen()
-    let c = ctrl(autoAccepting())
-    let (all, _) = await c.allUnderlines(in: ch)
-    #expect(!all.underlines.isEmpty)
-    for start in [ch.first, ch.sentences[100].index, 99_999] {
-        let streamed = await collect(c.underlines(in: ch, startingAt: start))
-        #expect(Set(streamed) == Set(all.underlines))
-        #expect(streamed.count == all.underlines.count)
+/// Every underline and record `paragraphResults` gives, from `start` (the chapter's first sentence when `nil`).
+private func results(_ c: UnderlineCtrl, _ ch: IndexedChapter, from start: Int? = nil) async -> ([Underline], [UnderlineRecord]) {
+    var underlines: [Underline] = []
+    var records: [UnderlineRecord] = []
+    for await result in c.paragraphResults(in: ch, startingAt: start ?? ch.first) {
+        underlines += result.underlines
+        records += result.records
     }
+    return (underlines, records)
 }
 
-@Test func paragraphResultsMatchAllUnderlines() async throws {
+@Test func everyStartGivesTheSameResults() async throws {
     let ch = try await littleWomen()
     let c = ctrl(autoAccepting())
-    let (all, records) = await c.allUnderlines(in: ch)
-    for start in [ch.first, ch.sentences[100].index] {
-        var underlines: [Underline] = []
-        var seen: [UnderlineRecord] = []
-        for await result in c.paragraphResults(in: ch, startingAt: start) {
-            underlines += result.underlines
-            seen += result.records
-        }
-        #expect(Set(underlines) == Set(all.underlines))
-        // Timings differ between runs, so compare what was decided.
-        func decisions(_ records: [UnderlineRecord]) -> [String] {
-            records.map { "\($0.sentence) \($0.phrase) \($0.kept) \(String(describing: $0.dropped))" }.sorted()
-        }
+    let (all, records) = await results(c, ch)
+    #expect(!all.isEmpty)
+    // Timings differ between runs, so compare what was decided.
+    func decisions(_ records: [UnderlineRecord]) -> [String] {
+        records.map { "\($0.sentence) \($0.phrase) \($0.kept) \(String(describing: $0.dropped))" }.sorted()
+    }
+    for start in [ch.sentences[100].index, 99_999] {
+        let (underlines, seen) = await results(c, ch, from: start)
+        #expect(Set(underlines) == Set(all))
+        #expect(underlines.count == all.count)
         #expect(decisions(seen) == decisions(records))
     }
 }
@@ -54,7 +44,7 @@ private func collect(_ stream: AsyncStream<(Underline, UnderlineRecord)>) async 
 @Test func streamStartsAtTheReadersParagraphThenWraps() async throws {
     let ch = try await littleWomen()
     let start = ch.sentences[100]
-    let paragraphs = await collect(ctrl(autoAccepting()).underlines(in: ch, startingAt: start.index)).map(\.paragraph)
+    let paragraphs = await results(ctrl(autoAccepting()), ch, from: start.index).0.map(\.paragraph)
     let firstWrap = paragraphs.firstIndex { $0 < start.paragraph } ?? paragraphs.count
     #expect(paragraphs.prefix(firstWrap).allSatisfy { $0 >= start.paragraph })
     #expect(paragraphs.suffix(from: firstWrap).allSatisfy { $0 < start.paragraph })
@@ -63,31 +53,29 @@ private func collect(_ stream: AsyncStream<(Underline, UnderlineRecord)>) async 
 
 @Test func limitIsPerParagraph() async throws {
     let ch = try await littleWomen()
-    let (all, _) = await ctrl(autoAccepting()).allUnderlines(in: ch)
-    let perParagraph = Dictionary(grouping: all.underlines, by: \.paragraph).mapValues(\.count)
+    let (all, _) = await results(ctrl(autoAccepting()), ch)
+    let perParagraph = Dictionary(grouping: all, by: \.paragraph).mapValues(\.count)
     #expect(perParagraph.values.allSatisfy { $0 <= UnderlineKnobs.maxPerParagraph })
 }
 
 @Test func densityDropsAppearInRecords() async throws {
     let ch = try await littleWomen()
-    let (all, records) = await ctrl(autoAccepting()).allUnderlines(in: ch)
+    let (all, records) = await results(ctrl(autoAccepting()), ch)
     let limited = records.filter { $0.dropped == .densityLimit }
     #expect(!limited.isEmpty)
     #expect(limited.allSatisfy { !$0.kept })
-    #expect(records.filter(\.kept).count == all.underlines.count)
+    #expect(records.filter(\.kept).count == all.count)
 }
 
 @Test func emptyChapterFinishesImmediately() async {
     let ch = await ChapterIndexSvc().prepare(ChapterInput(chapterIndex: 0, paragraphs: [], sentences: []), embedding: EmbeddingSvcUnavailable())
-    let c = ctrl(autoAccepting())
-    #expect(await collect(c.underlines(in: ch, startingAt: 0)).isEmpty)
-    #expect(await c.allUnderlines(in: ch).0.underlines.isEmpty)
+    #expect(await results(ctrl(autoAccepting()), ch, from: 0).0.isEmpty)
 }
 
 @Test func chapterWithNoEventsYieldsNothing() async {
     let ch = await ChapterIndexSvc().prepare(ChapterInput(chapterIndex: 0, plainText: "Oh. Ah. Hm."), embedding: EmbeddingSvcUnavailable())
     let fake = autoAccepting()
-    #expect(await collect(ctrl(fake).underlines(in: ch, startingAt: 0)).isEmpty)
+    #expect(await results(ctrl(fake), ch, from: 0).0.isEmpty)
     #expect(fake.calls.isEmpty)
 }
 
@@ -95,7 +83,7 @@ private func collect(_ stream: AsyncStream<(Underline, UnderlineRecord)>) async 
     let ch = await ChapterIndexSvc().prepare(ChapterInput(chapterIndex: 0, plainText: "Jo immediately sat up and began to whistle."),
                                              embedding: EmbeddingSvcUnavailable())
     let fake = autoAccepting()
-    #expect(await ctrl(fake).allUnderlines(in: ch).0.underlines.isEmpty)
+    #expect(await results(ctrl(fake), ch).0.isEmpty)
     #expect(fake.calls.isEmpty)
 }
 
@@ -105,7 +93,7 @@ private func collect(_ stream: AsyncStream<(Underline, UnderlineRecord)>) async 
     let c = ctrl(fake)
     let consumer = Task {
         var seen = 0
-        for await _ in c.underlines(in: ch, startingAt: ch.first) {
+        for await _ in c.paragraphResults(in: ch, startingAt: ch.first) {
             seen += 1
             if seen == 1 { withUnsafeCurrentTask { $0?.cancel() } }
         }
@@ -118,18 +106,17 @@ private func collect(_ stream: AsyncStream<(Underline, UnderlineRecord)>) async 
     let afterCancel = fake.calls.count
     try await Task.sleep(for: .milliseconds(200))
     #expect(fake.calls.count == afterCancel)
-    let (all, _) = await c.allUnderlines(in: ch)
-    #expect(seen < all.underlines.count)
+    #expect(seen < UnderlineCtrl.paragraphs(of: ch).count)
 }
 
 @Test func paragraphsHoldingMatchesTheWholeChapterForThoseParagraphs() async throws {
     let ch = try await littleWomen()
     let c = ctrl(autoAccepting())
-    let (all, allRecords) = await c.allUnderlines(in: ch)
+    let (all, allRecords) = await results(c, ch)
     let picked: Set<Int> = [23, 39, 54, 190]
     let paragraphs = Set(picked.compactMap { ch.sentence($0)?.paragraph })
     let (some, records) = await c.underlines(paragraphsHolding: picked, in: ch)
-    #expect(Set(some.underlines) == Set(all.underlines.filter { paragraphs.contains($0.paragraph) }))
+    #expect(Set(some.underlines) == Set(all.filter { paragraphs.contains($0.paragraph) }))
     let inThose = allRecords.filter { r in ch.sentence(r.sentence).map { paragraphs.contains($0.paragraph) } ?? false }
     let key = { (r: UnderlineRecord) in "\(r.sentence)|\(r.phrase)|\(r.kept)|\(r.dropped?.rawValue ?? "")|\(r.candidates)|\(r.pickedSentence ?? -1)" }
     #expect(records.map(key) == inThose.map(key))
@@ -156,7 +143,7 @@ private func collect(_ stream: AsyncStream<(Underline, UnderlineRecord)>) async 
 
 @Test func noRecordInTheWholeChapterUsesALaterSentence() async throws {
     let ch = try await littleWomen()
-    let (_, records) = await ctrl(autoAccepting()).allUnderlines(in: ch)
+    let (_, records) = await results(ctrl(autoAccepting()), ch)
     #expect(records.count > 100)
     for r in records {
         #expect(r.candidates.allSatisfy { $0 < r.sentence }, "S\(r.sentence) \(r.phrase): candidates")

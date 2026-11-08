@@ -28,22 +28,6 @@ enum EventRoles {
         }
     }
 
-    /// Tracks a question about an event with this role may use (`nil`: a name or no event).
-    static func allowedTracks(for role: EventRole?) -> Set<Track> {
-        switch role {
-        case .setting?: [.character, .place, .time]
-        case .goal?, .attempt?: [.goal, .cause]
-        case nil: Set(Track.allCases)
-        default: [.cause, .goal]
-        }
-    }
-
-    /// The event starts with a reaction cue ("immediately", "suddenly"): its cause is just before.
-    static func hasReactionCue(_ event: EventPhrase) -> Bool {
-        let words = event.text.lowercased().split { !$0.isLetter }.map(String.init)
-        return words.contains(where: EventKnobs.reactionCues.contains) || event.text.lowercased().contains("at once")
-    }
-
     /// The reason clause after `target` in the same sentence ("…because it is going to be a hard winter"),
     /// up to the next `;` `.` `!` `?` or closing quote. `nil` when there's none (spec §4.3, `explainedHere`).
     /// The connective must come before `stopAt` (the start of the next event), so a reason that belongs to a later

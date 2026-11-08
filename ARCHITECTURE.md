@@ -54,4 +54,4 @@ By type suffix, not by folder:
 1. `UnderlineCtrl.prepare(ChapterInput)` → `ChapterIndexSvc.prepare` → `IndexedChapter` (sentences, tags, events, vectors).
 2. Per paragraph: `UnderlineDetector.candidates` → for each, `UnderlineCtrl.evaluate`: `CandidateScorer.rank(before:)` → `UnderlineSearch.candidates` → `UnderlineModelSvc.pick` → `UnderlineGuard.checkPick` → `UnderlineGuard.isInSameParagraph` → `UnderlineModelSvc.confirm` (or `RulesPicker.decide` / `confirm`) → `UnderlineGuard.paragraphRange`.
 3. `UnderlineLimiter.apply` on the paragraph's kept underlines.
-4. `allUnderlines(in:)` loops over paragraphs in order; `underlines(in:startingAt:)` uses the same per-paragraph pass from the reader's paragraph, then wraps.
+4. `paragraphResults(in:startingAt:)` runs the per-paragraph pass from the reader's paragraph, then wraps. The harness runs the same pass on the golden items' paragraphs only (`underlines(paragraphsHolding:in:)`).
