@@ -9,7 +9,7 @@ enum UnderlineKnobs {
         "are", "been", "am", "had", "has", "have", "not", "then", "now", "too", "very", "just"
     ]
     /// A proper name is a candidate only if it wasn't mentioned in this many earlier sentences.
-    static let nameGapSentences = 20
+    static let nameGapSentences = 30
     /// Most underlines kept per paragraph, best first (spec §5.6).
     static let maxPerParagraph = 1
     /// Tie-break order in the limiter; `person` last (spec §4.2).
