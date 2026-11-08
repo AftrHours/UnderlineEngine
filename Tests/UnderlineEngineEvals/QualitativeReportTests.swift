@@ -17,7 +17,8 @@ private func record(_ sentence: Int, _ phrase: String, range: NSRange? = nil, ke
 }
 
 private func column(_ row: QualitativeRow, _ name: String) -> String {
-    row.values[QualitativeRow.header.firstIndex(of: name)!]
+    #expect(QualitativeRow.header.contains(name), "no column \(name)")
+    return row[name]
 }
 
 @Test func headerMatchesSpecOrder() {
@@ -29,33 +30,22 @@ private func column(_ row: QualitativeRow, _ name: String) -> String {
         "path", "pick", "picked_sentence", "confirm", "confirm_evidence",
         "underlined", "dropped_reason", "reference", "reference_text", "distance",
         "expected", "outcome", "miss_cause", "judge", "judge_rationale",
-        "search_ms", "confirm_ms",
-        "reviewer_verdict", "reviewer_note"
+        "search_ms", "confirm_ms"
     ])
-}
-
-@Test func quotesCommasQuotesAndLineBreaks() {
-    let line = QualitativeCSV.line(["plain", "a, b", "say \"hi\"", "two\nlines"])
-    #expect(line == "plain,\"a, b\",\"say \"\"hi\"\"\",\"two\nlines\"")
-}
-
-@Test func startsWithByteOrderMarkAndHeader() {
-    let csv = QualitativeCSV.encode([])
-    #expect(csv.hasPrefix("\u{FEFF}run_id,run_kind,"))
 }
 
 @Test func underlineMarkedAtItsOwnRange() async {
     let ch = await chapter("A cat ran home. She ran home, and then she ran home again.")
     let s = ch.sentence(1)!
     let second = (s.text as NSString).range(of: "ran home", options: .backwards)
-    let rows = QualitativeCSV.rows(run: run, chapter: ch, records: [record(1, "ran home", range: second)], gold: nil, outcomes: [:], judge: [:])
+    let rows = QualitativeReport.rows(run: run, chapter: ch, records: [record(1, "ran home", range: second)], gold: nil, outcomes: [:], judge: [:])
     #expect(column(rows[0], "sentence_with_underline") == "She ran home, and then she [[ran home]] again.")
     #expect(column(rows[0], "phrase_range") == "\(second.location)+\(second.length)")
 }
 
 @Test func wordsNamesAndEventsColumns() async {
     let ch = await chapter("Jo immediately sat up, put her hands in her pockets, and began to whistle.")
-    let rows = QualitativeCSV.rows(run: run, chapter: ch, records: [record(0, "began to whistle")], gold: nil, outcomes: [:], judge: [:])
+    let rows = QualitativeReport.rows(run: run, chapter: ch, records: [record(0, "began to whistle")], gold: nil, outcomes: [:], judge: [:])
     #expect(column(rows[0], "words").hasPrefix("Jo/"))
     #expect(column(rows[0], "words").contains(" · "))
     #expect(column(rows[0], "names").contains("Jo (person)"))
@@ -64,7 +54,7 @@ private func column(_ row: QualitativeRow, _ name: String) -> String {
 
 @Test func droppedPhraseHasRowWithReason() async {
     let ch = await chapter("Meg sewed. Jo began to whistle.")
-    let rows = QualitativeCSV.rows(run: run, chapter: ch, records: [record(1, "began to whistle", dropped: .confirmRejected, picked: 0, candidates: [0])],
+    let rows = QualitativeReport.rows(run: run, chapter: ch, records: [record(1, "began to whistle", dropped: .confirmRejected, picked: 0, candidates: [0])],
                                    gold: nil, outcomes: [:], judge: [:])
     #expect(column(rows[0], "underlined") == "no")
     #expect(column(rows[0], "dropped_reason") == "confirmRejected")
@@ -76,7 +66,7 @@ private func column(_ row: QualitativeRow, _ name: String) -> String {
 
 @Test func keptPhraseShowsReferenceAndDistance() async {
     let ch = await chapter("Meg sewed. Amy drew. Jo began to whistle.")
-    let rows = QualitativeCSV.rows(run: run, chapter: ch, records: [record(2, "began to whistle", kept: true, picked: 0, candidates: [0, 1])],
+    let rows = QualitativeReport.rows(run: run, chapter: ch, records: [record(2, "began to whistle", kept: true, picked: 0, candidates: [0, 1])],
                                    gold: nil, outcomes: [:], judge: ["2:began to whistle": ("pass", "fine")])
     #expect(column(rows[0], "underlined") == "yes")
     #expect(column(rows[0], "reference") == "0")
@@ -91,7 +81,7 @@ private func column(_ row: QualitativeRow, _ name: String) -> String {
     let item = GoldItem(id: "g1", sentence: GoldRef(index: 1, text: "Jo began to whistle."), phrase: "began to whistle", kind: .action,
                         expected: .underline(references: [0]), provisional: true, note: nil)
     let resolved = try #require(item.resolve(in: ch))
-    let rows = QualitativeCSV.rows(run: run, chapter: ch, records: [], gold: [resolved], outcomes: ["g1": .missed(.detectMiss)], judge: [:])
+    let rows = QualitativeReport.rows(run: run, chapter: ch, records: [], gold: [resolved], outcomes: ["g1": .missed(.detectMiss)], judge: [:])
     #expect(rows.count == 1)
     #expect(column(rows[0], "gold_id") == "g1")
     #expect(column(rows[0], "outcome") == Outcome.missed(.detectMiss).label)
@@ -108,23 +98,60 @@ private func column(_ row: QualitativeRow, _ name: String) -> String {
     }
     let items = [try gold("right", 1, "drew"), try gold("miss", 2, "sang"), try gold("wrong", 3, "began to whistle"), try gold("leak", 4, "came in")]
     let outcomes: [String: Outcome] = ["right": .underlinedRight, "miss": .missed(.pickMiss), "wrong": .mismatch, "leak": .spoiler]
-    let rows = QualitativeCSV.rows(run: run, chapter: ch, records: [], gold: items, outcomes: outcomes, judge: [:])
+    let rows = QualitativeReport.rows(run: run, chapter: ch, records: [], gold: items, outcomes: outcomes, judge: [:])
     #expect(rows.map { column($0, "gold_id") } == ["leak", "wrong", "miss", "right"])
 }
 
-@Test func reviewColumnsAlwaysEmpty() async {
+@Test func everyRowHasOneValuePerColumn() async {
     let ch = await chapter("Meg sewed. Jo began to whistle.")
-    let rows = QualitativeCSV.rows(run: run, chapter: ch, records: [record(1, "began to whistle", kept: true, picked: 0)], gold: nil, outcomes: [:], judge: [:])
-    #expect(column(rows[0], "reviewer_verdict").isEmpty)
-    #expect(column(rows[0], "reviewer_note").isEmpty)
+    let rows = QualitativeReport.rows(run: run, chapter: ch, records: [record(1, "began to whistle", kept: true, picked: 0)], gold: nil, outcomes: [:], judge: [:])
     #expect(rows[0].values.count == QualitativeRow.header.count)
 }
 
 @Test func sweepRowsHaveNoExpectedOrOutcome() async {
     let ch = await chapter("Meg sewed. Jo began to whistle.")
     let sweep = RunInfo(runID: "R2", runKind: "sweep", searchMode: "both")
-    let rows = QualitativeCSV.rows(run: sweep, chapter: ch, records: [record(1, "began to whistle", kept: true, picked: 0)], gold: nil, outcomes: [:], judge: [:])
+    let rows = QualitativeReport.rows(run: sweep, chapter: ch, records: [record(1, "began to whistle", kept: true, picked: 0)], gold: nil, outcomes: [:], judge: [:])
     #expect(column(rows[0], "expected").isEmpty)
     #expect(column(rows[0], "outcome").isEmpty)
     #expect(column(rows[0], "run_kind") == "sweep")
+}
+
+@Test func markdownShowsUnderlineWithReferenceAndReviewBoxes() async {
+    let ch = await chapter("Meg sewed. Amy drew. Jo began to whistle.")
+    let rows = QualitativeReport.rows(run: run, chapter: ch, records: [record(2, "began to whistle", kept: true, picked: 0, candidates: [0, 1])],
+                                      gold: nil, outcomes: [:], judge: ["2:began to whistle": ("fail", "only shares a topic")])
+    let md = QualitativeReport.markdown(rows, run: run)
+    #expect(md.hasPrefix("# R1\n"))
+    #expect(md.contains("**1 underlined** · judge 0 pass / 1 fail"))
+    #expect(md.contains("### S2 · began to whistle"))
+    #expect(md.contains("> Jo **began to whistle**."))
+    #expect(md.contains("**Reference S0**, 2 sentences earlier:"))
+    #expect(md.contains("> Meg sewed."))
+    #expect(md.contains("- Judge: **fail** · only shares a topic"))
+    #expect(md.contains("- [ ] right\n- [ ] wrong passage\n- [ ] shouldn't be underlined"))
+    #expect(!md.contains("Golden outcomes"))
+}
+
+@Test func markdownListsDroppedPhrasesInATable() async {
+    let ch = await chapter("Meg sewed. Jo began to whistle.")
+    let rows = QualitativeReport.rows(run: run, chapter: ch, records: [record(1, "began | to whistle", dropped: .confirmRejected, picked: 0, candidates: [0])],
+                                      gold: nil, outcomes: [:], judge: [:])
+    let md = QualitativeReport.markdown(rows, run: run)
+    #expect(md.contains("| `confirmRejected` | 1 |"))
+    #expect(md.contains("## Underlined\n\nTick one box per phrase and write a note if needed.\n\nNone."))
+    #expect(md.contains("| 1 | began \\| to whistle | `confirmRejected` | S0:0.62 |"))
+}
+
+@Test func markdownForGoldenRunCountsOutcomes() async throws {
+    let ch = await chapter("Meg sewed. Jo began to whistle.")
+    let item = GoldItem(id: "g1", sentence: GoldRef(index: 1, text: "Jo began to whistle."), phrase: "began to whistle", kind: .action,
+                        expected: .underline(references: [0]), provisional: true, note: nil)
+    let resolved = try #require(item.resolve(in: ch))
+    let rows = QualitativeReport.rows(run: run, chapter: ch, records: [], gold: [resolved], outcomes: ["g1": .missed(.detectMiss)], judge: [:])
+    let md = QualitativeReport.markdown(rows, run: run)
+    #expect(md.contains("## Golden outcomes"))
+    #expect(md.contains("| ⚠️ missed (detect miss) | 1 |"))
+    #expect(md.contains("| `never considered` | 1 |"))
+    #expect(md.contains("| 1 | began to whistle | never considered |  | underline: S0 | ⚠️ missed (detect miss) |"))
 }

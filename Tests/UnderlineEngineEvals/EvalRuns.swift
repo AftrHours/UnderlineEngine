@@ -141,8 +141,8 @@ enum Evals {
         if changed.isEmpty { print("  no outcome changed") }
     }
 
-    /// The qualitative analysis CSV of a golden run (spec §8.7), written next to the saved result.
-    static func goldenCSV(_ result: EvaluationResult, _ evaluation: GoldenEvaluation, chapter: IndexedChapter, ctrl: UnderlineCtrl,
+    /// The qualitative report of a golden run (spec §8.7), written next to the saved result.
+    static func goldenReport(_ result: EvaluationResult, _ evaluation: GoldenEvaluation, chapter: IndexedChapter, ctrl: UnderlineCtrl,
                           kind: String, saved: URL) async throws -> URL {
         let inputs = result.detailed[evaluation.inputColumn]
         let responses = result.detailed[evaluation.responseColumn]
@@ -159,9 +159,9 @@ enum Evals {
         let (_, records) = await evaluation.run.result()
         let run = RunInfo(runID: saved.deletingPathExtension().lastPathComponent, runKind: kind,
                           searchMode: ctrl.searchMode.rawValue)
-        let rows = QualitativeCSV.rows(run: run, chapter: chapter, records: records, gold: evaluation.samples.map(\.resolved),
+        let rows = QualitativeReport.rows(run: run, chapter: chapter, records: records, gold: evaluation.samples.map(\.resolved),
                                        outcomes: outcomes, judge: judge)
-        return try saveCSV(rows, beside: saved)
+        return try saveReport(rows, run: run, beside: saved)
     }
 
     /// One golden run: evaluate, save, print the report. Returns the result and where it was saved.
@@ -174,8 +174,8 @@ enum Evals {
         let result = try await evaluation.run(info: info(ctrl, chapter, judge: judgeName))
         let (saved, previous) = try save(result, kind: kind(ctrl))
         print("\n\(result.groupedSummary)\nsaved: \(saved.path)\nrun errors: \(result.errors)")
-        let csv = try await goldenCSV(result, evaluation, chapter: chapter, ctrl: ctrl, kind: kind(ctrl), saved: saved)
-        print("qualitative CSV: \(csv.path)")
+        let reportFile = try await goldenReport(result, evaluation, chapter: chapter, ctrl: ctrl, kind: kind(ctrl), saved: saved)
+        print("qualitative report: \(reportFile.path)")
         if printReport { await report(result, evaluation, previous: previous) }
         #expect(result.aggregateValue(.mean(of: EvalMetric.noSpoiler)) == 1, "a sentence at or after the underlined one was used")
         return (result, evaluation, saved)
@@ -251,8 +251,9 @@ func sweepEvaluation() async throws {
     }
     let run = RunInfo(runID: saved.deletingPathExtension().lastPathComponent, runKind: kind,
                       searchMode: ctrl.searchMode.rawValue)
-    let csv = try Evals.saveCSV(QualitativeCSV.rows(run: run, chapter: chapter, records: records, gold: nil, outcomes: [:], judge: verdicts), beside: saved)
-    print("qualitative CSV: \(csv.path)")
+    let reportFile = try Evals.saveReport(QualitativeReport.rows(run: run, chapter: chapter, records: records, gold: nil, outcomes: [:], judge: verdicts),
+                                      run: run, beside: saved)
+    print("qualitative report: \(reportFile.path)")
     print("\n== Underlines, judge failures first ==")
     for (s, verdict) in rows.sorted(by: { a, b in
         let fa = a.1?.value == .failing, fb = b.1?.value == .failing

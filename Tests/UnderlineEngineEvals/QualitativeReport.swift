@@ -1,14 +1,14 @@
 import Foundation
 @testable import UnderlineEngine
 
-/// Which run a CSV row comes from.
+/// Which run a report row comes from.
 struct RunInfo: Sendable {
     let runID: String
     let runKind: String
     let searchMode: String
 }
 
-/// One row of the qualitative analysis CSV (spec §8.7): one value per column, in `header` order.
+/// One phrase in the qualitative report (spec §8.7): one value per column, in `header` order.
 struct QualitativeRow: Sendable {
     static let header = [
         "run_id", "run_kind", "search_mode", "gold_id",
@@ -18,8 +18,7 @@ struct QualitativeRow: Sendable {
         "path", "pick", "picked_sentence", "confirm", "confirm_evidence",
         "underlined", "dropped_reason", "reference", "reference_text", "distance",
         "expected", "outcome", "miss_cause", "judge", "judge_rationale",
-        "search_ms", "confirm_ms",
-        "reviewer_verdict", "reviewer_note"
+        "search_ms", "confirm_ms"
     ]
 
     let values: [String]
@@ -27,10 +26,15 @@ struct QualitativeRow: Sendable {
     let sortRank: Int
     let sentence: Int
     let phrase: String
+
+    /// The value of one `header` column.
+    subscript(_ column: String) -> String {
+        QualitativeRow.header.firstIndex(of: column).map { values[$0] } ?? ""
+    }
 }
 
-/// Builds and writes the qualitative analysis CSV (spec §8.7). Written by the harness only.
-enum QualitativeCSV {
+/// Builds and writes the qualitative report (spec §8.7) as Markdown. Written by the harness only.
+enum QualitativeReport {
     /// One row per phrase considered (kept or dropped), plus one per golden item the engine never considered.
     /// `outcomes` is keyed by golden item id; `judge` by `"<sentence>:<phrase>"` of the record.
     static func rows(run: RunInfo, chapter: IndexedChapter, records: [UnderlineRecord], gold: [ResolvedItem]?,
@@ -49,16 +53,78 @@ enum QualitativeCSV {
         return rows.sorted { ($0.sortRank, $0.sentence, $0.phrase) < ($1.sortRank, $1.sentence, $1.phrase) }
     }
 
-    /// UTF-8 with a byte-order mark (so Excel shows curly quotes), a header row, standard quoting.
-    static func encode(_ rows: [QualitativeRow]) -> String {
-        "\u{FEFF}" + ([line(QualitativeRow.header)] + rows.map { line($0.values) }).joined(separator: "\n") + "\n"
+    /// The report: a summary, one section per underline shown (with boxes to tick when reviewing),
+    /// then a table of every phrase not underlined. Rows keep the order `rows` gives them, worst first.
+    static func markdown(_ rows: [QualitativeRow], run: RunInfo) -> String {
+        let shown = rows.filter { $0["underlined"] == "yes" }
+        let notShown = rows.filter { $0["underlined"] != "yes" }
+        let golden = rows.contains { !$0["gold_id"].isEmpty }
+        let pass = shown.filter { $0["judge"] == "pass" }.count, fail = shown.filter { $0["judge"] == "fail" }.count
+
+        var out = ["# \(run.runID)", ""]
+        out.append("Run `\(run.runKind)` · search `\(run.searchMode)` · \(rows.count) phrases · **\(shown.count) underlined**"
+                   + (pass + fail > 0 ? " · judge \(pass) pass / \(fail) fail" : ""))
+        out.append("")
+        if golden {
+            out += ["## Golden outcomes", "", "| Outcome | Items |", "|---|---|"]
+            out += counts(rows.filter { !$0["gold_id"].isEmpty }.map { $0["outcome"] }).map { "| \($0.0) | \($0.1) |" }
+            out.append("")
+        }
+        out += ["## Not underlined, by reason", "", "| Reason | Phrases |", "|---|---|"]
+        out += counts(notShown.map { $0["dropped_reason"].isEmpty ? "never considered" : $0["dropped_reason"] })
+            .map { "| `\($0.0)` | \($0.1) |" }
+
+        out += ["", "## Underlined", "", "Tick one box per phrase and write a note if needed.", ""]
+        if shown.isEmpty { out += ["None.", ""] }
+        for r in shown { out += section(r) }
+
+        out += ["## Not underlined", ""]
+        if notShown.isEmpty {
+            out.append("None.")
+        } else {
+            out += golden
+                ? ["| S | Phrase | Reason | Top candidate | Expected | Outcome |", "|---|---|---|---|---|---|"]
+                : ["| S | Phrase | Reason | Top candidate |", "|---|---|---|---|"]
+            for r in notShown {
+                var cells = [r["sentence"], r["phrase"], r["dropped_reason"].isEmpty ? "never considered" : "`\(r["dropped_reason"])`",
+                             r["candidates"].split(separator: " ").first.map(String.init) ?? ""]
+                if golden { cells += [r["expected"], r["outcome"]] }
+                out.append("| " + cells.map(cell).joined(separator: " | ") + " |")
+            }
+        }
+        return out.joined(separator: "\n") + "\n"
     }
 
-    /// A field with a comma, quote or line break is quoted, inner quotes doubled.
-    static func line(_ fields: [String]) -> String {
-        fields.map { f in
-            f.contains(where: { $0 == "," || $0 == "\"" || $0 == "\n" || $0 == "\r" }) ? "\"" + f.replacingOccurrences(of: "\"", with: "\"\"") + "\"" : f
-        }.joined(separator: ",")
+    /// One underline: the sentence with the phrase in bold, its reference, why it was kept, and the review boxes.
+    private static func section(_ r: QualitativeRow) -> [String] {
+        var out = ["### S\(r["sentence"]) · \(r["phrase"])", ""]
+        out.append(quote(r["sentence_with_underline"].replacingOccurrences(of: "[[", with: "**").replacingOccurrences(of: "]]", with: "**")))
+        out += ["", "**Reference S\(r["reference"])**, \(r["distance"]) sentences earlier:", "", quote(r["reference_text"]), ""]
+        if !r["gold_id"].isEmpty { out.append("- Golden `\(r["gold_id"])`: expected \(r["expected"]) · \(r["outcome"])") }
+        out.append("- Kind `\(r["kind"])` · role `\(r["phrase_role"])` · path `\(r["path"])` · candidates \(r["candidates"])")
+        if !r["confirm"].isEmpty { out.append("- Confirm: \(r["confirm"]) · \"\(r["confirm_evidence"])\"") }
+        if !r["judge"].isEmpty { out.append("- Judge: **\(r["judge"])** · \(r["judge_rationale"])") }
+        out.append("- Time: search \(r["search_ms"]) ms, confirm \(r["confirm_ms"].isEmpty ? "-" : r["confirm_ms"]) ms")
+        out += ["", "<details><summary>NLTagger</summary>", "",
+                "- Words: \(r["words"])", "- Names: \(r["names"].isEmpty ? "-" : r["names"])", "- Events: \(r["events"])",
+                "", "</details>", ""]
+        out += ["- [ ] right", "- [ ] wrong passage", "- [ ] shouldn't be underlined", "", "Note:", ""]
+        return out
+    }
+
+    /// Each distinct value with how often it appears, most first.
+    private static func counts(_ values: [String]) -> [(String, Int)] {
+        Dictionary(grouping: values, by: { $0 }).map { ($0.key, $0.value.count) }.sorted { ($1.1, $0.0) < ($0.1, $1.0) }
+    }
+
+    /// A Markdown quote, every line prefixed.
+    private static func quote(_ text: String) -> String {
+        text.split(separator: "\n", omittingEmptySubsequences: false).map { "> " + $0 }.joined(separator: "\n")
+    }
+
+    /// A table cell: pipes escaped, line breaks flattened.
+    static func cell(_ text: String) -> String {
+        text.replacingOccurrences(of: "|", with: "\\|").replacingOccurrences(of: "\n", with: " ")
     }
 
     private static func row(run: RunInfo, chapter: IndexedChapter, sentence index: Int, phrase: String, record: UnderlineRecord?,
@@ -97,8 +163,7 @@ enum QualitativeCSV {
             reference.map { "\($0)" } ?? "", reference.flatMap { chapter.sentence($0)?.text } ?? "",
             reference.map { "\(index - $0)" } ?? "",
             expected, outcome?.label ?? "", missCause, judge?.verdict ?? "", judge?.rationale ?? "",
-            record?.times.searchMs.map(String.init) ?? "", record?.times.confirmMs.map(String.init) ?? "",
-            "", ""
+            record?.times.searchMs.map(String.init) ?? "", record?.times.confirmMs.map(String.init) ?? ""
         ]
         let rank = outcome?.rank ?? (judge?.verdict == "fail" ? 1 : 50)
         return QualitativeRow(values: values, sortRank: rank, sentence: index, phrase: phrase)
@@ -119,10 +184,10 @@ enum QualitativeCSV {
 
 @available(macOS 27, *)
 extension Evals {
-    /// Writes the CSV next to the saved result, with the same base name.
-    static func saveCSV(_ rows: [QualitativeRow], beside json: URL) throws -> URL {
-        let url = json.deletingPathExtension().appendingPathExtension("csv")
-        try QualitativeCSV.encode(rows).write(to: url, atomically: true, encoding: .utf8)
+    /// Writes the report next to the saved result, with the same base name.
+    static func saveReport(_ rows: [QualitativeRow], run: RunInfo, beside json: URL) throws -> URL {
+        let url = json.deletingPathExtension().appendingPathExtension("md")
+        try QualitativeReport.markdown(rows, run: run).write(to: url, atomically: true, encoding: .utf8)
         return url
     }
 }
