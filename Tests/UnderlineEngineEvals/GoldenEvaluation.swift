@@ -16,7 +16,6 @@ enum EvalMetric {
     static let candidateRecall = Metric("candidate recall")
     static let confirmAgreement = Metric("confirm agreement")
     static let searchMs = Metric("search ms")
-    static let pickMs = Metric("pick ms")
     static let confirmMs = Metric("confirm ms")
     static let explains = Metric("explains the phrase")
 
@@ -32,7 +31,7 @@ enum EvalMetric {
     }
 
     static let deterministic = [mismatch, noSpoiler, outcome, referencePrecision, underlineRecall, phraseAccuracy, candidateRecall,
-                                confirmAgreement, searchMs, pickMs, confirmMs]
+                                confirmAgreement, searchMs, confirmMs]
 }
 
 /// The §4.3 definition, as the model judge's pass and fail descriptions.
@@ -170,7 +169,6 @@ struct GoldenEvaluation: Evaluation {
                 : EvalMetric.confirmAgreement.passing(rationale: "rejected a wrong pick S\(picked)")
         }
         Evaluator<GoldSample> { _, subject in subject.value.searchMs.map { EvalMetric.searchMs.scoring(Double($0)) } ?? EvalMetric.searchMs.ignore() }
-        Evaluator<GoldSample> { _, subject in subject.value.pickMs.map { EvalMetric.pickMs.scoring(Double($0)) } ?? EvalMetric.pickMs.ignore() }
         Evaluator<GoldSample> { _, subject in subject.value.confirmMs.map { EvalMetric.confirmMs.scoring(Double($0)) } ?? EvalMetric.confirmMs.ignore() }
         // The model judge only grades rows where an underline was shown: there's nothing else to grade.
         Evaluator<GoldSample> { [judge] s, subject in

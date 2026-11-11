@@ -18,24 +18,25 @@ public final class UnderlineCtrl: Sendable {
     let modelSvc: any UnderlineModelSvc
     let embeddingSvc: any EmbeddingSvc
     let indexSvc: ChapterIndexSvc
-    public let searchMode: SearchMode
-    public let promptVariant: PromptVariant
+    let searchMode: SearchMode
 
-    public convenience init(model: ModelChoice = .automatic, embedding: EmbeddingChoice = .automatic, search: SearchMode = .both,
-                            prompt: PromptVariant = .baseline) {
+    public convenience init(model: ModelChoice = .automatic, embedding: EmbeddingChoice = .automatic) {
+        self.init(model: model, embedding: embedding, search: .both)
+    }
+
+    /// Harness only: compares search modes. The app always gets `.both`.
+    convenience init(model: ModelChoice, embedding: EmbeddingChoice = .automatic, search: SearchMode) {
         let modelSvc: any UnderlineModelSvc = model == .automatic && SystemLanguageModel.default.availability == .available
             ? UnderlineModelSvcFoundation() : UnderlineModelSvcUnavailable()
         let embeddingSvc: any EmbeddingSvc = embedding == .automatic ? EmbeddingSvcApple() : EmbeddingSvcUnavailable()
-        self.init(modelSvc: modelSvc, embeddingSvc: embeddingSvc, search: search, prompt: prompt)
+        self.init(modelSvc: modelSvc, embeddingSvc: embeddingSvc, search: search)
     }
 
-    init(modelSvc: any UnderlineModelSvc, embeddingSvc: any EmbeddingSvc, indexSvc: ChapterIndexSvc = .init(), search: SearchMode,
-         prompt: PromptVariant) {
+    init(modelSvc: any UnderlineModelSvc, embeddingSvc: any EmbeddingSvc, indexSvc: ChapterIndexSvc = .init(), search: SearchMode = .both) {
         self.modelSvc = modelSvc
         self.embeddingSvc = embeddingSvc
         self.indexSvc = indexSvc
         self.searchMode = search
-        self.promptVariant = prompt
     }
 
     /// Whether pick and confirm use the on-device model.

@@ -314,27 +314,19 @@ Each is an `Evaluator` in `GoldenEvaluation` (`.ignore` when it doesn't apply). 
 
 (\*) = starting targets, to be confirmed.
 
-### 8.7 Qualitative analysis CSV
+### 8.7 Qualitative report
 
-After every run (golden, rules baseline, each prompt variant and search mode, sweep), the harness writes a **CSV next to the saved JSON**, with the same base name (`Eval/results/<kind>/<name>.csv`). It is for reading in Numbers or Excel: **one column per value, one row per example**.
+After every run (golden, rules baseline, each search mode, sweep), the harness writes a **Markdown report next to the saved result**, with the same base name (`Eval/results/<kind>/<name>.md`). It is for reading and reviewing by hand. It replaced a CSV on 9 Nov 2026: one row of 40 columns was too wide to read a phrase from.
 
-**Rows.** One row for **every phrase the engine considered**, kept or dropped, not only the underlines shown, because the dropped ones explain the misses. On a golden run, a golden item the engine never considered (a detect miss) also gets a row, with the engine columns empty. Rows are sorted worst outcome first (⛔, ❌, ⚠️ by cause, ✅), then by sentence. **[author's call]**
+**What it covers.** **Every phrase the engine considered**, kept or dropped, not only the underlines shown, because the dropped ones explain the misses. On a golden run, a golden item the engine never considered (a detect miss) is listed too. Phrases go worst outcome first (⛔, ❌, ⚠️ by cause, ✅; on a sweep, judge failures first), then by sentence. **[author's call]**
 
-**Columns**, in this order (grouped as in the mockup of 30 Oct 2026):
+**Layout:**
 
-| Group | Columns |
-|---|---|
-| Run | `run_id`, `run_kind`, `prompt_variant`, `search_mode`, `gold_id` |
-| Original sentence | `sentence`, `paragraph`, `sentence_text`, `sentence_with_underline` (the phrase wrapped in `[[…]]` at its own range), `phrase`, `phrase_range` |
-| NLTagger | `tagging_engine`, `words` (`word/lemma/class`, joined by ` · `), `names` (`name (kind)`), `events` (every event of the sentence with its role), `phrase_role`, `kind` |
-| Search (harness) | `embedding`, `search_mode_used`, `candidates` (`S<index>:<rawScore>`, best first), `top_candidate_text` |
-| Pick and confirm | `path`, `pick`, `picked_sentence`, `pick_quote`, `confirm`, `confirm_evidence` |
-| Result | `underlined`, `dropped_reason`, `reference`, `reference_text`, `distance` (sentence − reference) |
-| Evaluation | `expected`, `outcome`, `miss_cause`, `judge`, `judge_rationale` (empty on golden rows the judge didn't grade; sweep rows have no `expected` or `outcome`) |
-| Timings | `search_ms`, `pick_ms`, `confirm_ms` |
-| Your review | `reviewer_verdict`, `reviewer_note`: always empty, for the product owner to fill in |
+1. **Summary:** the run, the search mode, phrases considered, underlines shown, judge pass and fail; golden outcomes with counts (golden runs only); phrases not underlined, by reason.
+2. **Underlined:** one section per underline shown, headed `S<sentence> · <phrase>`. The sentence with the phrase in bold at its own range; the reference sentence and its distance (sentence − reference); on golden runs, the item, what was expected and the outcome; kind, role, path, candidates (`S<index>:<rawScore>`, best first); the confirm answer and evidence; the judge's verdict and rationale; search and confirm times; the NLTagger output (`word/lemma/class`, names, every event of the sentence with its role) folded in a `<details>` block. It ends with three boxes for the product owner to tick (`right`, `wrong passage`, `shouldn't be underlined`) and a `Note:` line.
+3. **Not underlined:** a table, one row per phrase: sentence, phrase, reason (or "never considered"), top candidate, and on golden runs expected and outcome.
 
-The values come from the `UnderlineRecord`s, the `IndexedChapter` (words, names, events), the golden set, and the evaluation's outcomes and judge verdicts. The package itself is unchanged: the CSV is written by the harness only. Format: UTF-8 with a byte-order mark (so Excel shows curly quotes correctly), comma-separated, standard quoting (a field with a comma, quote or line break is quoted, inner quotes doubled), a header row. **[author's call]** `run_id`, `phrase_range`, `distance`, the timings and the two review columns were added by the author beyond the product owner's list.
+The values come from the `UnderlineRecord`s, the `IndexedChapter` (words, names, events), the golden set, and the evaluation's outcomes and judge verdicts. The package itself is unchanged: the report is written by the harness only, and nothing reads the review boxes back.
 
 ## 9. Decided in the conversation
 
@@ -344,7 +336,7 @@ The values come from the `UnderlineRecord`s, the `IndexedChapter` (words, names,
 - Same architecture as `TextEngine`: the same layers, the same iRead data contract, the same read-boundary principle, and an Evaluations harness. A **new package** with a **different user flow** (underlines prepared ahead, no question step).
 - **Prompt engineering in Apple Foundation Models, measured by the harness.**
 - **The failure to avoid is a popover that doesn't explain the phrase or mismatches the reference.** No underline is better than a wrong one.
-- **After every run, a CSV for qualitative analysis:** each value in its own column, one row per example, covering the original sentence with the underline, the NLTagger data, the harness steps, the evaluation, and the reference (§8.7).
+- **After every run, a report for qualitative analysis**, one entry per example, covering the original sentence with the underline, the NLTagger data, the harness steps, the evaluation, and the reference (§8.7). First a CSV; since 9 Nov 2026 a Markdown report.
 
 ## 10. Left to the builder
 
