@@ -1,4 +1,4 @@
-# UnderlineEngine v1.0.1
+# UnderlineEngine v1.1.0
 
 A Swift package for iRead. When a chapter opens, it finds the phrases a skimming reader may not follow (events such as "began to whistle", places, things, people) and underlines each one only if it can point to **the author's own earlier sentence that explains it**. Tapping an underline shows that passage. It never writes an explanation, never uses text at or after the underlined sentence, and runs on-device only (NaturalLanguage and Foundation Models).
 
