@@ -11,6 +11,8 @@ enum EventKnobs {
     static let coordinators: Set<String> = ["and", "but", "or"]
     /// Characters that end one event and start the next.
     static let boundaryCharacters: Set<Character> = [",", ";", ":", "\u{2014}", "\u{2013}", "\"", "\u{201C}", "\u{201D}", "(", ")"]
+    /// An event never ends on one of these ("softened to a laugh, and the", "welcome a tall"): the cut fell inside a noun phrase.
+    static let danglingArticles: Set<String> = ["a", "an", "the"]
     static let relativePronouns: Set<String> = ["who", "which", "that", "whom", "whose"]
     /// Words that open a clause and stay in its event ("where the fighting was").
     static let clauseOpeners: Set<String> = relativePronouns.union(["where", "when"])
@@ -49,13 +51,16 @@ enum EventSplitter {
         var events: [EventPhrase] = []
         var lastEventEnd: Int?
 
-        for chunk in chunks(tokens, in: text) {
+        let allChunks = chunks(tokens, in: text)
+        for (position, chunk) in allChunks.enumerated() {
             let verbs = chunk.filter { tokens[$0].wordClass == "Verb" && !isSpeechTag($0, tokens, quoted, sentence) }
             guard let firstVerb = verbs.first else {
                 // A chunk without a verb ("thin", "and Mother") belongs to the event before it,
-                // but never across a speech tag or into or out of quotation marks.
+                // but never across a speech tag or into or out of quotation marks, and not when it is only a stub:
+                // an article ("the" before a quote) or the first subject of the next clause ("…recesses, chrysanthemums and roses bloomed").
                 let isTag = chunk.contains { isSpeechTag($0, tokens, quoted, sentence) }
-                if let previousEnd = lastEventEnd, !isTag, quoted[chunk[0]] == quoted[previousEnd], let end = chunk.last {
+                if let previousEnd = lastEventEnd, !isTag, quoted[chunk[0]] == quoted[previousEnd], let end = chunk.last,
+                   !endsInsideNounPhrase(end, tokens, in: text), !startsCoordinatedSubject(position, of: allChunks, tokens, in: text) {
                     lastEventEnd = end
                     events[events.count - 1] = extend(events[events.count - 1], to: tokens[end], in: text, sentence: sentence)
                 } else {
@@ -69,7 +74,9 @@ enum EventSplitter {
             if start > chunk[0], tokens[start].text.first.map({ $0 == "'" || $0 == "\u{2019}" }) == true { start -= 1 }
             let opensClause = EventKnobs.clauseOpeners.contains(tokens[chunk[0]].lemma)
             if opensClause { start = chunk[0] }
-            let end = chunk.last!
+            var end = chunk.last!
+            // A chunk cut at a comma or a quote can stop inside a noun phrase; drop that stub.
+            while end > start, endsInsideNounPhrase(end, tokens, in: text) { end -= 1 }
             let range = NSRange(location: tokens[start].range.location,
                                 length: NSMaxRange(tokens[end].range) - tokens[start].range.location)
             let phraseTokens = Array(tokens[start...end])
@@ -97,6 +104,35 @@ enum EventSplitter {
             chunks[chunks.count - 1].append(i)
         }
         return chunks.filter { !$0.isEmpty }
+    }
+
+    /// The token at `i` is an article, or an adjective that follows one and is itself followed by a comma and more of the phrase
+    /// ("a tall, motherly lady"). A phrase that stops here is a fragment.
+    private static func endsInsideNounPhrase(_ i: Int, _ tokens: [WordToken], in text: NSString) -> Bool {
+        let token = tokens[i]
+        if token.wordClass == "Determiner", EventKnobs.danglingArticles.contains(token.text.lowercased()) { return true }
+        guard token.wordClass == "Adjective", i > 0, i + 1 < tokens.count,
+              tokens[i - 1].wordClass == "Determiner", EventKnobs.danglingArticles.contains(tokens[i - 1].text.lowercased()),
+              ["Adjective", "Adverb", "Noun"].contains(tokens[i + 1].wordClass) else { return false }
+        let gap = text.substring(with: NSRange(location: NSMaxRange(token.range), length: tokens[i + 1].range.location - NSMaxRange(token.range)))
+        return gap.contains(",")
+    }
+
+    /// A chunk without a verb, set off by a comma, followed by "and" and a clause whose verb has a plain subject of its own
+    /// ("…the recesses, chrysanthemums and Christmas roses bloomed") starts that subject. It is not part of the event before it.
+    /// A list that goes on with a participle or a relative clause ("…her warm slippers on, and sitting down…") is not this.
+    private static func startsCoordinatedSubject(_ position: Int, of chunks: [[Int]], _ tokens: [WordToken], in text: NSString) -> Bool {
+        let chunk = chunks[position]
+        guard let first = chunk.first, let last = chunk.last, last + 1 < tokens.count, position + 1 < chunks.count,
+              tokens[last + 1].wordClass == "Conjunction", EventKnobs.coordinators.contains(tokens[last + 1].lemma),
+              chunks[position + 1].first == last + 2,
+              let verb = chunks[position + 1].first(where: { tokens[$0].wordClass == "Verb" }) else { return false }
+        let subject = chunks[position + 1].prefix { $0 < verb }
+        let plain: Set<String> = ["Noun", "Adjective", "Determiner", "Number", "Pronoun"]
+        guard !subject.isEmpty, subject.allSatisfy({ plain.contains(tokens[$0].wordClass) && !EventKnobs.relativePronouns.contains(tokens[$0].lemma) })
+        else { return false }
+        let gapStart = first == 0 ? 0 : NSMaxRange(tokens[first - 1].range)
+        return text.substring(with: NSRange(location: gapStart, length: tokens[first].range.location - gapStart)).contains(",")
     }
 
     /// For each token, whether it sits inside quotation marks.
