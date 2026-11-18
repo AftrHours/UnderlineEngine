@@ -75,7 +75,7 @@ enum OutcomeClassifier {
         switch record.dropped {
         case .noCandidate?: return .missed(.searchMiss)
         case .pickedNone?: return .missed(refInCandidates ? .pickMiss : .searchMiss)
-        case .confirmRejected?: return .missed(.confirmRejected)
+        case .confirmRejected?, .evidenceNotInPassage?: return .missed(.confirmRejected)
         case .guardRejected?: return .missed(.guardRejected)
         case .densityLimit?: return .missed(.densityLimit)
         case .modelFailed?: return .missed(.modelFailed)

@@ -150,3 +150,22 @@ private func oneParagraphChapter() async -> IndexedChapter {
     let (_, dropped) = await ctrl(FakeUnderlineModel()).evaluate(c, in: ch)
     #expect(dropped.phraseRange == c.phrase.range)
 }
+
+@Test func yesWithEvidenceFromOutsideThePassageIsDropped() async throws {
+    let ch = await fixtureChapter()
+    let fake = accepting(ch)
+    fake.confirmResult = ModelConfirm(evidence: "Jo said she would face the war", explains: true)
+    let (kept, record) = await ctrl(fake).evaluate(try warCandidate(ch), in: ch)
+    #expect(kept == nil)
+    #expect(record.dropped == .evidenceNotInPassage)
+    #expect(record.confirm == ConfirmTrace(explains: true, evidence: "Jo said she would face the war"))
+}
+
+@Test func yesWithEmptyEvidenceIsDropped() async throws {
+    let ch = await fixtureChapter()
+    let fake = accepting(ch)
+    fake.confirmResult = ModelConfirm(evidence: "", explains: true)
+    let (kept, record) = await ctrl(fake).evaluate(try warCandidate(ch), in: ch)
+    #expect(kept == nil)
+    #expect(record.dropped == .evidenceNotInPassage)
+}

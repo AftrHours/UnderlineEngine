@@ -24,7 +24,7 @@ final class FakeUnderlineModel: UnderlineModelSvc, @unchecked Sendable {
     var isAvailable = true
     var confirmResult = ModelConfirm(evidence: "", explains: false)
     var confirmError: ModelFailure?
-    /// Always confirms.
+    /// Always confirms, quoting the passage as its evidence.
     var autoAccept = false
     private let lock = NSLock()
     private var log: [[Int]] = []
@@ -35,7 +35,7 @@ final class FakeUnderlineModel: UnderlineModelSvc, @unchecked Sendable {
     func confirm(phrase: String, sentence: IndexedText, passage: IndexedText) async throws(ModelFailure) -> ModelConfirm {
         lock.withLock { log.append([sentence.index, passage.index]) }
         if let confirmError { throw confirmError }
-        return autoAccept ? ModelConfirm(evidence: "x", explains: true) : confirmResult
+        return autoAccept ? ModelConfirm(evidence: PromptBuilder.cut(passage.text), explains: true) : confirmResult
     }
 }
 

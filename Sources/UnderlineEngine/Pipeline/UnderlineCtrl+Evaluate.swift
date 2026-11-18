@@ -59,7 +59,7 @@ extension UnderlineCtrl {
     }
 
     /// One model call: the phrase, its sentence and the one earlier passage. Both sentence indexes go into the record before the call.
-    /// Returns the drop reason, or `nil` when the model says the passage explains the phrase.
+    /// Returns the drop reason, or `nil` when the model says the passage explains the phrase and backs it with a quote from the passage.
     private func modelConfirm(_ candidate: UnderlineCandidate, sentence: IndexedSentence, reference ref: IndexedSentence,
                               record: inout UnderlineRecord) async -> DropReason? {
         let clock = ContinuousClock()
@@ -71,6 +71,7 @@ extension UnderlineCtrl {
         guard let confirm = try? await modelSvc.confirm(phrase: candidate.phrase.text, sentence: me, passage: passage)
         else { return .modelFailed }
         record.confirm = ConfirmTrace(explains: confirm.explains, evidence: confirm.evidence)
-        return confirm.explains ? nil : .confirmRejected
+        guard confirm.explains else { return .confirmRejected }
+        return UnderlineGuard.quotes(confirm.evidence, from: PromptBuilder.cut(passage.text)) ? nil : .evidenceNotInPassage
     }
 }

@@ -7,6 +7,9 @@ public enum DropReason: String, Sendable, Codable, Hashable {
     case modelFailed
     /// The picked reference is in the phrase's own paragraph: the reader has just read it, so no underline.
     case explainedInParagraph
+    /// The model said yes, but its evidence is not a quote from the passage it was shown (it repeated the phrase or made words up),
+    /// so the yes is not trusted.
+    case evidenceNotInPassage
 }
 
 /// What the confirm step said about the one picked passage.
