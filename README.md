@@ -44,9 +44,9 @@ Data in and out match iRead's `BookContent` (global paragraph and sentence index
 | `Sources/UnderlineEngine/5-Limit` | DFD process 5: `UnderlineLimiter` |
 | `Sources/UnderlineEngine/Shared` | `ReadBoundary` and `Models/`: `ChapterInput`, `IndexedChapter`, `EventPhrase`, `Underline`, `UnderlineKind`, `ChapterUnderlines`, `UnderlineRecord`, `AnswerPassage`, `Candidate`, `KnobSnapshot` |
 | `Tests/UnderlineEngineTests` | Unit tests, with a scripted `FakeUnderlineModel` |
-| `Tests/UnderlineEngineEvals` | The harness (Apple Evaluations) and the qualitative report |
+| `Tests/UnderlineEngineEvals` | The harness (Apple Evaluations), the qualitative report and the CSV |
 | `Dataset/` | Little Women chapter 1 and the golden set `underline-gold.json` |
-| `Eval/results/` | Saved `EvaluationResult` JSON and a Markdown report per run. Created by the harness on your machine and ignored by git |
+| `Eval/results/` | Saved `EvaluationResult` JSON, a Markdown report and a CSV per run. Created by the harness on your machine and ignored by git |
 
 ### Tuning
 Knobs sit at the top of the file that uses them. Change a value, run the harness, read the report.
@@ -73,10 +73,10 @@ UNDERLINE_EVALS=1 UNDERLINE_SWEEP=1 swift test --filter sweepEvaluation   # ever
 - **Output:** the report (headline numbers, summary by kind, items worst first, judge agreement, changes since the last run) and the full `EvaluationResult` under `Eval/results/<kind>/`.
 
 ### Qualitative report
-Every run also writes a Markdown report next to its saved result (`Eval/results/<kind>/<name>.md`), worst first (spec §8.7):
+Every run also writes a Markdown report to read and a CSV of the same rows to sort and filter in Numbers or Excel, next to its saved result (`Eval/results/<kind>/<name>.md` and `.csv`), worst first (spec §8.7):
 
 - **Summary:** phrases considered, underlines shown, judge pass and fail, golden outcomes (golden runs only), and phrases not underlined by reason.
 - **Underlined:** one section per underline shown. The sentence with the phrase in bold, the reference and its distance, kind and role, candidates with scores, the confirm evidence, the judge's verdict, timings, and the NLTagger output (folded). Each ends with boxes to tick (`right`, `wrong passage`, `shouldn't be underlined`) and a `Note:` line for your review.
 - **Not underlined:** a table of every other phrase with its reason and top candidate, plus expected and outcome on golden runs.
 
-Nothing reads the ticks back; the report is for reading and reviewing by hand.
+Nothing reads the ticks back; the report is for reading and reviewing by hand. The CSV has one column per value (the row columns of `QualitativeRow`), UTF-8 with a byte-order mark so Excel shows curly quotes, and two empty review columns at the end (`reviewer_verdict`, `reviewer_note`).
