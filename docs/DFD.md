@@ -103,7 +103,7 @@ flowchart TD
 |---|---|---|---|
 | 1.1 | Sort sentences; leave out a duplicate index, a missing paragraph or a range outside its paragraph | `ChapterIndexSvc.index` | |
 | 1.2 | Lemma and word class per word, and person, place and organization names (`NLTagger`, or a capital-letter fallback without English models) | `ChapterIndexSvc.tag`, `fallbackTag` | `TaggingKnobs` |
-| 1.3 | Cut at commas, quotes and "and/but/or"; keep each chunk with a verb as an event; drop speech tags | `EventSplitter.events` | `EventKnobs` |
+| 1.3 | Cut at commas, quotes and "and/but/or"; keep each chunk with a verb as an event; drop speech tags. An event never ends on an article or on an adjective cut from its noun ("softened to a laugh, and the"), and a stub that starts the next clause's subject is not glued back ("…the recesses, chrysanthemums and roses bloomed") | `EventSplitter.events`, `endsInsideNounPhrase`, `startsCoordinatedSubject` | `EventKnobs` |
 | 1.4 | Give each event a `role` from word rules, then derive its `track` from the role | `EventRoles.role`, `EventRoles.track` | `EventKnobs` |
 | 1.5 | Turn each sentence into a 512-number vector | `EmbeddingSvc.vector` | |
 
@@ -226,7 +226,7 @@ flowchart TD
 |---|---|---|---|---|
 | 4.1 | Take the first candidate from 3.4 | `UnderlineCtrl.evaluate` | | |
 | 4.2 | The reference must be in another paragraph: one in the phrase's own paragraph was just read | `UnderlineGuard.isInSameParagraph` | | `explainedInParagraph` |
-| 4.3 | A new session sees only the phrase, its sentence and the one reference (cut to a set length), and answers yes or no | `UnderlineModelSvc.confirm`, `PromptBuilder.confirm`, `PromptBuilder.cut` | `ModelKnobs` | `confirmRejected`, `modelFailed` |
+| 4.3 | A new session sees only the phrase, its sentence and the one reference (cut to a set length), and answers yes or no with the words that show it. A yes counts only when those words are a quote from the reference | `UnderlineModelSvc.confirm`, `PromptBuilder.confirm`, `PromptBuilder.cut`, `UnderlineGuard.quotes` | `ModelKnobs` | `confirmRejected`, `evidenceNotInPassage`, `modelFailed` |
 | 4.4 | Move the phrase's range into paragraph coordinates and build the `Underline` with its `AnswerPassage` | `UnderlineGuard.paragraphRange`, `UnderlineCtrl.evaluate` | | `guardRejected` |
 
 Process 4 does not always run in full:
