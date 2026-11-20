@@ -78,7 +78,7 @@ The loop that drives processes 2 to 5 is `UnderlineCtrl.pass` in [`UnderlineCtrl
 
 Runs once per chapter, from `UnderlineCtrl.prepare`. The result lives in memory only, and every later process reads it.
 
-```mermaid
+```markup
 flowchart TD
     iRead["iRead"]:::proc
     IC[("IndexedChapter")]:::store
@@ -103,7 +103,7 @@ flowchart TD
 |---|---|---|---|
 | 1.1 | Sort sentences; leave out a duplicate index, a missing paragraph or a range outside its paragraph | `ChapterIndexSvc.index` | |
 | 1.2 | Lemma and word class per word, and person, place and organization names (`NLTagger`, or a capital-letter fallback without English models) | `ChapterIndexSvc.tag`, `fallbackTag` | `TaggingKnobs` |
-| 1.3 | Cut at commas, quotes and "and/but/or"; keep each chunk with a verb as an event; drop speech tags | `EventSplitter.events` | `EventKnobs` |
+| 1.3 | Cut at commas, quotes and "and/but/or"; keep each chunk with a verb as an event; drop speech tags. An event never ends on an article or on an adjective cut from its noun ("softened to a laugh, and the"), and a stub that starts the next clause's subject is not glued back ("…the recesses, chrysanthemums and roses bloomed") | `EventSplitter.events`, `endsInsideNounPhrase`, `startsCoordinatedSubject` | `EventKnobs` |
 | 1.4 | Give each event a `role` from word rules, then derive its `track` from the role | `EventRoles.role`, `EventRoles.track` | `EventKnobs` |
 | 1.5 | Turn each sentence into a 512-number vector | `EmbeddingSvc.vector` | |
 
@@ -176,7 +176,7 @@ flowchart TD
 
 | Step | What happens | Code | Knobs | Drops as |
 |---|---|---|---|---|
-| 3.1 | Build a `SearchQuery`: content lemmas, the phrase's vector, person names in it, a reaction cue; `text`, `track` and `role` copied as they are | `SearchQuery.make` | `stopLemmas` | |
+| 3.1 | Build a `SearchQuery`: content lemmas, the phrase's vector, person names in it, a reaction cue (an event phrase also takes the cue from any other event in its sentence); `text`, `track` and `role` copied as they are | `SearchQuery.make` | `stopLemmas` | |
 | 3.2 | Only sentences before the phrase's sentence; for a name, only sentences holding that name | `ReadBoundary.searchable`, `CandidateScorer.rank` | | |
 | 3.3 | Compare the phrase's vector with each sentence's (meaning) and its lemmas with the sentence's (words); add bonuses for track hints, role links and nearness | `CandidateScorer.rank`, `bonus`, `Cosine.similarity` | `embedWeight`, `wordsWeight`, bonuses, `roleLinks` | |
 | 3.4 | Drop a raw score under the floor, then keep the best `maxCandidates` by ranking score | `UnderlineSearch.candidates` | `minRawScore`, `maxCandidates` | `noCandidate` |
@@ -226,7 +226,7 @@ flowchart TD
 |---|---|---|---|---|
 | 4.1 | Take the first candidate from 3.4 | `UnderlineCtrl.evaluate` | | |
 | 4.2 | The reference must be in another paragraph: one in the phrase's own paragraph was just read | `UnderlineGuard.isInSameParagraph` | | `explainedInParagraph` |
-| 4.3 | A new session sees only the phrase, its sentence and the one reference (cut to a set length), and answers yes or no | `UnderlineModelSvc.confirm`, `PromptBuilder.confirm`, `PromptBuilder.cut` | `ModelKnobs` | `confirmRejected`, `modelFailed` |
+| 4.3 | A new session sees only the phrase, its sentence and the one reference (cut to a set length), and answers yes or no with the words that show it. A yes counts only when those words are a quote from the reference | `UnderlineModelSvc.confirm`, `PromptBuilder.confirm`, `PromptBuilder.cut`, `UnderlineGuard.quotes` | `ModelKnobs` | `confirmRejected`, `evidenceNotInPassage`, `modelFailed` |
 | 4.4 | Move the phrase's range into paragraph coordinates and build the `Underline` with its `AnswerPassage` | `UnderlineGuard.paragraphRange`, `UnderlineCtrl.evaluate` | | `guardRejected` |
 
 Process 4 does not always run in full:
@@ -264,7 +264,7 @@ flowchart TD
 
 | Step | What happens | Code | Knobs | Drops as |
 |---|---|---|---|---|
-| 5.1 | Sort the paragraph's kept underlines by their reference's raw score; ties go to the earlier phrase, then by kind | `UnderlineLimiter.apply`, `isBetter` | `UnderlineKnobs.kindOrder` | |
+| 5.1 | Sort the paragraph's kept underlines by their reference's raw score; ties go to the earlier phrase, then by kind, then the shorter one | `UnderlineLimiter.apply`, `isBetter` | `UnderlineKnobs.kindOrder` | |
 | 5.2 | Take the best `maxPerParagraph`, skipping any that overlaps one already taken | `UnderlineLimiter.apply` | `UnderlineKnobs.maxPerParagraph` | |
 | 5.3 | Mark the records of the ones left out | `UnderlineCtrl.limit` | | `densityLimit` |
 | 5.4 | Send the shown underlines and every record of the paragraph | `UnderlineCtrl.paragraphResults` | | |

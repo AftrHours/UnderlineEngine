@@ -52,3 +52,43 @@ private func chapterWithIndexes(_ indexes: [Int], extra: [SentenceInput] = [], d
     let ch = await chapterWithIndexes([1, 2, 3, 4], extra: [bad, missing], duplicateParagraph: true)
     #expect(ch.sentences.map(\.index) == [1, 2, 3, 4])
 }
+
+@Test func bookStatsCountTheWholeBookAndReplaceTheChapters() async {
+    let engine = UnderlineCtrl(model: .rulesOnly, embedding: .none)
+    let one = ChapterInput(chapterIndex: 0, plainText: "Jo found a parrot. Meg sewed by the fire.")
+    let two = ChapterInput(chapterIndex: 1, plainText: "The parrot screamed. Amy drew a picture.", firstParagraph: 1, firstSentence: 2)
+    let stats = engine.prepareBook([one, two])
+    #expect(stats.sentenceCount == 4)
+    #expect(stats.sentencesWith["parrot"] == 2)
+    let own = await engine.prepare(two)
+    let book = await engine.prepare(two, bookStats: stats)
+    #expect(own.wordStats?.sentenceCount == 2)
+    #expect(book.wordStats == stats)
+}
+
+@Test func preparingByBookUsesTheWholeBookOnceAndRedoesItForAnotherBook() async {
+    let engine = UnderlineCtrl(model: .rulesOnly, embedding: .none)
+    let one = ChapterInput(chapterIndex: 0, plainText: "Jo found a parrot. Meg sewed by the fire.")
+    let two = ChapterInput(chapterIndex: 1, plainText: "The parrot screamed. Amy drew a picture.", firstParagraph: 1, firstSentence: 2)
+    let other = ChapterInput(chapterIndex: 0, plainText: "A dragon slept. The hobbit crept by.")
+    let calls = Calls()
+    let first = await engine.prepare(two, ofBook: "little-women") { calls.add(); return [one, two] }
+    let again = await engine.prepare(one, ofBook: "little-women") { calls.add(); return [one, two] }
+    #expect(first.wordStats == engine.prepareBook([one, two]))
+    #expect(again.wordStats == first.wordStats)
+    #expect(calls.count == 1)
+    let hobbit = await engine.prepare(other, ofBook: "hobbit") { calls.add(); return [other] }
+    #expect(hobbit.wordStats?.sentenceCount == 2)
+    #expect(calls.count == 2)
+}
+
+private final class Calls: @unchecked Sendable {
+    private let lock = NSLock()
+    private var value = 0
+    var count: Int { lock.withLock { value } }
+    func add() { lock.withLock { value += 1 } }
+}
+
+@Test func contextualFallsBackWhenAskedFromTheSyncInit() {
+    #expect(UnderlineCtrl(model: .rulesOnly, embedding: .contextual).embeddingEngine != .contextual)
+}

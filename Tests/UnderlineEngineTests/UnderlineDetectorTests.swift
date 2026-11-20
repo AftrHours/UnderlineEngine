@@ -18,11 +18,11 @@ import Testing
     #expect(!found.contains { $0.phrase.range.location < because && [Track.cause, .goal].contains($0.phrase.track) })
 }
 
-@Test func oneWordEventIsDroppedButANameIsKept() {
+@Test func phrasesAndNamesShorterThanThreeWordsAreDropped() {
     let s = indexed("Jo laughed.")
     let found = UnderlineDetector.candidates(in: s)
-    #expect(!found.contains { $0.phrase.role != nil && $0.phrase.text.split(separator: " ").count < UnderlineKnobs.minPhraseWords })
-    #expect(found.contains { $0.kind == .person && $0.phrase.text == "Jo" })
+    #expect(!found.contains { $0.phrase.text.split(separator: " ").count < UnderlineKnobs.minPhraseWords })
+    #expect(!found.contains { $0.phrase.role == nil })
 }
 
 @Test func generalWordsOnlyPhraseIsDropped() {
@@ -37,7 +37,10 @@ import Testing
 }
 
 @Test func nameSeenRecentlyIsNotACandidate() {
-    let s = indexed("Jo laughed at the joke for a long time.")
-    #expect(!UnderlineDetector.candidates(in: s, recentNames: ["Jo"]).contains { $0.kind == .person })
-    #expect(UnderlineDetector.candidates(in: s).contains { $0.kind == .person })
+    let s = indexed("John Henry Smith laughed at the joke for a long time.")
+    let name = s.names.first { $0.kind == .person }?.text ?? ""
+    #expect(!UnderlineDetector.candidates(in: s, recentNames: [name]).contains { $0.phrase.role == nil })
+    if name.split(separator: " ").count >= UnderlineKnobs.minPhraseWords {
+        #expect(UnderlineDetector.candidates(in: s).contains { $0.phrase.role == nil })
+    }
 }

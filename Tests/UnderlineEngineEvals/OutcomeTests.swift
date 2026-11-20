@@ -10,7 +10,7 @@ private func chapter(firstSentence: Int = 0) async -> IndexedChapter {
 
 private func item(_ expected: GoldExpected, phrase: String = "face the war like Father", index: Int = 4,
                   sentenceText: String = "Jo said she would face the war like Father.") -> GoldItem {
-    GoldItem(id: "t", sentence: GoldRef(index: index, text: sentenceText), phrase: phrase, kind: .action, expected: expected, provisional: true, note: nil)
+    GoldItem(id: "t", sentence: GoldRef(index: index, text: sentenceText), phrase: phrase, kind: "action", expected: expected, provisional: true, note: nil)
 }
 
 private func record(_ dropped: DropReason?, candidates: [Int] = [0], prompt: [Int] = [4, 0], phrase: String = "would face the war like Father") -> UnderlineRecord {
@@ -107,7 +107,7 @@ private func resolved(_ i: GoldItem) async throws -> ResolvedItem { try #require
 }
 
 @Test func aPersonItemMatchesOnlyTheNameItself() {
-    let person = GoldItem(id: "p", sentence: GoldRef(index: 4, text: "x"), phrase: "Hugo", kind: .person, expected: .none(.sameSentence),
+    let person = GoldItem(id: "p", sentence: GoldRef(index: 4, text: "x"), phrase: "Hugo", kind: "person", expected: .none(.sameSentence),
                           provisional: true, note: nil)
     #expect(matches("Hugo", person))
     #expect(!matches("don't care if Hugo does come at me with a pistol", person))

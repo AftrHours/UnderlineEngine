@@ -1,0 +1,86 @@
+[
+  {
+    "number": 1,
+    "title": "I. A SCANDAL IN BOHEMIA",
+    "file": "ch01.txt",
+    "paragraphs": 256,
+    "words": 8518
+  },
+  {
+    "number": 2,
+    "title": "II. THE RED-HEADED LEAGUE",
+    "file": "ch02.txt",
+    "paragraphs": 215,
+    "words": 9105
+  },
+  {
+    "number": 3,
+    "title": "III. A CASE OF IDENTITY",
+    "file": "ch03.txt",
+    "paragraphs": 137,
+    "words": 6975
+  },
+  {
+    "number": 4,
+    "title": "IV. THE BOSCOMBE VALLEY MYSTERY",
+    "file": "ch04.txt",
+    "paragraphs": 215,
+    "words": 9616
+  },
+  {
+    "number": 5,
+    "title": "V. THE FIVE ORANGE PIPS",
+    "file": "ch05.txt",
+    "paragraphs": 178,
+    "words": 7314
+  },
+  {
+    "number": 6,
+    "title": "VI. THE MAN WITH THE TWISTED LIP",
+    "file": "ch06.txt",
+    "paragraphs": 222,
+    "words": 9199
+  },
+  {
+    "number": 7,
+    "title": "VII. THE ADVENTURE OF THE BLUE CARBUNCLE",
+    "file": "ch07.txt",
+    "paragraphs": 214,
+    "words": 7808
+  },
+  {
+    "number": 8,
+    "title": "VIII. THE ADVENTURE OF THE SPECKLED BAND",
+    "file": "ch08.txt",
+    "paragraphs": 251,
+    "words": 9805
+  },
+  {
+    "number": 9,
+    "title": "IX. THE ADVENTURE OF THE ENGINEER'S THUMB",
+    "file": "ch09.txt",
+    "paragraphs": 176,
+    "words": 8283
+  },
+  {
+    "number": 10,
+    "title": "X. THE ADVENTURE OF THE NOBLE BACHELOR",
+    "file": "ch10.txt",
+    "paragraphs": 226,
+    "words": 8102
+  },
+  {
+    "number": 11,
+    "title": "XI. THE ADVENTURE OF THE BERYL CORONET",
+    "file": "ch11.txt",
+    "paragraphs": 222,
+    "words": 9679
+  },
+  {
+    "number": 12,
+    "title": "XII. THE ADVENTURE OF THE COPPER BEECHES",
+    "file": "ch12.txt",
+    "paragraphs": 211,
+    "words": 9944
+  }
+]

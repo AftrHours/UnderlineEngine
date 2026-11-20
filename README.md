@@ -4,7 +4,9 @@ A Swift package for iRead. When a chapter opens, it finds the phrases a skimming
 
 It is the underline sibling of [TextEngine](../TextEngine): same type suffixes, same iRead data contract, a different flow (no question step). Its folders are numbered after the processes in [docs/DFD.md](docs/DFD.md) instead of layers, so the reading order shows in the tree.
 
-Design: [docs/superpowers/specs/2026-10-30-underline-engine-design.md](docs/superpowers/specs/2026-10-30-underline-engine-design.md) · Build plan: [docs/superpowers/plans/2026-10-30-underline-engine.md](docs/superpowers/plans/2026-10-30-underline-engine.md) · Data flow: [docs/DFD.md](docs/DFD.md) · Types: [ARCHITECTURE.md](ARCHITECTURE.md)
+How it works, for a presentation (pipeline, funnel, worked example): [docs/pipeline.md](docs/pipeline.md)
+
+Design: [docs/superpowers/specs/2026-10-30-underline-engine-design.md](docs/superpowers/specs/2026-10-30-underline-engine-design.md) · Build plan: [docs/superpowers/plans/2026-10-30-underline-engine.md](docs/superpowers/plans/2026-10-30-underline-engine.md) · Data flow: [docs/DFD.md](docs/DFD.md), v2 on `link-quality`: [docs/DFD-v2.md](docs/DFD-v2.md) · Types: [ARCHITECTURE.md](ARCHITECTURE.md) · Release 1.1.0 vs v2, chapters 1–3 in reading order: [docs/qualitative-ch1-3-release-vs-v2.md](docs/qualitative-ch1-3-release-vs-v2.md) · Every experiment's results and timing: [docs/result.md](docs/result.md)
 
 ### Start reading here
 New to the code? Read in this order. The numbers are the processes in [docs/DFD.md](docs/DFD.md), which has a diagram and a step → code table for each.
@@ -28,7 +30,7 @@ Data in and out match iRead's `BookContent` (global paragraph and sentence index
 1. **Prepare** (`UnderlineCtrl.prepare`, once per chapter): check the sentences iRead sends, tag words (`NLTagger`), split each sentence into events with a causal role, embed every sentence (`NLEmbedding`). iRead splits the sentences; the harness uses `ChapterInput(plainText:)`, which splits them the same way.
 2. **Detect** (`UnderlineDetector`): each sentence's events and person names, minus short or general phrases, reasons given in the same sentence ("…because…"), and names seen in the last 30 sentences (`nameGapSentences`).
 3. **Search** (`CandidateScorer`, `UnderlineSearch`): ranks only sentences **before** the underlined one (`ReadBoundary`), meaning first, shared words second, plus role links and nearness. Below a floor (`minRawScore`) the phrase is dropped before any model call.
-4. **Pick and confirm** (Foundation Models, one call per phrase): take search's top candidate. If it is in the phrase's own paragraph the phrase is dropped, because the reader has just read it. Otherwise the model sees only the phrase, its sentence and that one passage, and says whether it explains the phrase. Without a model, `RulesPicker` picks and confirms (shared word, same name, or role link).
+4. **Pick and confirm** (Foundation Models, one call per phrase): take search's top candidate. If it is in the phrase's own paragraph the phrase is dropped, because the reader has just read it. Otherwise the model sees only the phrase, its sentence and that one passage, and says whether it explains the phrase, quoting the words that show it. A yes whose quote is not in the passage is not trusted and the phrase is dropped (`evidenceNotInPassage`). Without a model, `RulesPicker` picks and confirms (shared word, same name, or role link).
 5. **Limit** (`UnderlineLimiter`): at most `maxPerParagraph` per paragraph, best first, never overlapping.
 
 `paragraphResults(in:startingAt:)` streams one result per paragraph from the reader's paragraph, then wraps: its underlines and a `UnderlineRecord` for every phrase considered (kept or dropped), so an app can show why a phrase was dropped. Records contain book text: local logs only, never analytics.
@@ -44,9 +46,9 @@ Data in and out match iRead's `BookContent` (global paragraph and sentence index
 | `Sources/UnderlineEngine/5-Limit` | DFD process 5: `UnderlineLimiter` |
 | `Sources/UnderlineEngine/Shared` | `ReadBoundary` and `Models/`: `ChapterInput`, `IndexedChapter`, `EventPhrase`, `Underline`, `UnderlineKind`, `ChapterUnderlines`, `UnderlineRecord`, `AnswerPassage`, `Candidate`, `KnobSnapshot` |
 | `Tests/UnderlineEngineTests` | Unit tests, with a scripted `FakeUnderlineModel` |
-| `Tests/UnderlineEngineEvals` | The harness (Apple Evaluations) and the qualitative report |
+| `Tests/UnderlineEngineEvals` | The harness (Apple Evaluations), the qualitative report and the CSV |
 | `Dataset/` | Little Women chapter 1 and the golden set `underline-gold.json` |
-| `Eval/results/` | Saved `EvaluationResult` JSON and a Markdown report per run. Created by the harness on your machine and ignored by git |
+| `Eval/results/` | Saved `EvaluationResult` JSON, a Markdown report and a CSV per run. Created by the harness on your machine and ignored by git |
 
 ### Tuning
 Knobs sit at the top of the file that uses them. Change a value, run the harness, read the report.
@@ -66,6 +68,7 @@ UNDERLINE_EVALS=1 swift test --filter goldenEvaluation          # golden set, mo
 UNDERLINE_EVALS=1 swift test --filter rulesBaselineEvaluation   # golden set, rules only
 UNDERLINE_EVALS=1 swift test --filter searchModeComparison      # embed vs words vs both (the app always uses both)
 UNDERLINE_EVALS=1 UNDERLINE_SWEEP=1 swift test --filter sweepEvaluation   # every underline in the chapter (UNDERLINE_SWEEP_LIMIT=60 for the first 60 sentences)
+UNDERLINE_BOOK=little-women swift test --filter bookRun          # every chapter of a book in Dataset/<book>/, rules only (no model, no judge); UNDERLINE_BOOK_CHAPTERS=1-5 for a range, UNDERLINE_BOOK_MODEL=1 for Foundation Models
 ```
 - **Golden set:** `Dataset/underline-gold.json` (67 items, provisional until the product owner reviews them). Each item is a phrase in a sentence with either the acceptable earlier references or `none` with a reason (`explanationLater`, `sameSentence`, `temptingWrongPassage`, `noExplanation`).
 - **Outcomes:** ⛔ spoiler, ❌ mismatch, ⚠️ missed (detect, search, pick, confirm, guard, density or explained in paragraph), ✅ underlined with the right reference, ✅ correctly none. The **mismatch rate** (of underlines shown, how many point at the wrong passage) comes first in every report.
@@ -73,10 +76,10 @@ UNDERLINE_EVALS=1 UNDERLINE_SWEEP=1 swift test --filter sweepEvaluation   # ever
 - **Output:** the report (headline numbers, summary by kind, items worst first, judge agreement, changes since the last run) and the full `EvaluationResult` under `Eval/results/<kind>/`.
 
 ### Qualitative report
-Every run also writes a Markdown report next to its saved result (`Eval/results/<kind>/<name>.md`), worst first (spec §8.7):
+Every run also writes a Markdown report to read and a CSV of the same rows to sort and filter in Numbers or Excel, next to its saved result (`Eval/results/<kind>/<name>.md` and `.csv`), worst first (spec §8.7):
 
 - **Summary:** phrases considered, underlines shown, judge pass and fail, golden outcomes (golden runs only), and phrases not underlined by reason.
 - **Underlined:** one section per underline shown. The sentence with the phrase in bold, the reference and its distance, kind and role, candidates with scores, the confirm evidence, the judge's verdict, timings, and the NLTagger output (folded). Each ends with boxes to tick (`right`, `wrong passage`, `shouldn't be underlined`) and a `Note:` line for your review.
 - **Not underlined:** a table of every other phrase with its reason and top candidate, plus expected and outcome on golden runs.
 
-Nothing reads the ticks back; the report is for reading and reviewing by hand.
+Nothing reads the ticks back; the report is for reading and reviewing by hand. The CSV has one column per value (the row columns of `QualitativeRow`), UTF-8 with a byte-order mark so Excel shows curly quotes, and two empty review columns at the end (`reviewer_verdict`, `reviewer_note`).

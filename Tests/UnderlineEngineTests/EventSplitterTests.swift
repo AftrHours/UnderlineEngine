@@ -68,3 +68,40 @@ import Testing
     let e = EventSplitter.events(in: indexed("\"I know I do,\" began Meg, in the complaining tone again."))
     #expect(e.map(\.text) == ["know I do"])
 }
+
+@Test func eventNeverEndsOnAnArticle() {
+    let e = EventSplitter.events(in: indexed("Both sharp voices softened to a laugh, and the \"pecking\" ended for that time."))
+    #expect(e.contains { $0.text == "softened to a laugh" })
+    #expect(!e.contains { $0.text.hasSuffix(" the") || $0.text.hasSuffix(" and the") })
+}
+
+@Test func eventDropsAnAdjectiveCutOffFromItsNoun() {
+    let e = EventSplitter.events(in: indexed("Actors and audience turned to welcome a tall, motherly lady who smiled at them."))
+    #expect(e.first?.text == "turned to welcome")
+}
+
+@Test func nounPhraseCutByACommaIsRejoinedWhenNothingElseFollows() {
+    let e = EventSplitter.events(in: indexed("Actors and audience turned to welcome a tall, motherly lady."))
+    #expect(e.first?.text == "turned to welcome a tall, motherly lady")
+}
+
+@Test func firstSubjectOfACoordinatedClauseIsNotGluedToTheEventBefore() {
+    let e = EventSplitter.events(in: indexed("Books filled the recesses, chrysanthemums and Christmas roses bloomed in the windows."))
+    #expect(e.first?.text == "filled the recesses")
+    #expect(!e.contains { $0.text.contains("chrysanthemums") })
+}
+
+@Test func aListOfNounsStaysInOneEvent() {
+    let e = EventSplitter.events(in: indexed("She was calling the quarters Europe, Asia, Africa, and America."))
+    #expect(e.first?.text.hasSuffix("Europe, Asia, Africa, and America") == true)
+}
+
+@Test func aListThatGoesOnWithAParticipleKeepsItsItems() {
+    let e = EventSplitter.events(in: indexed("Mrs. March got her wet things off, her warm slippers on, and sitting down in the easy chair, drew Amy to her lap."))
+    #expect(e.first?.text.hasSuffix("her warm slippers on") == true)
+}
+
+@Test func aListThatGoesOnWithARelativeClauseKeepsItsItems() {
+    let e = EventSplitter.events(in: indexed("Jo had big hands and feet, a flyaway look to her clothes, and the appearance of a girl who was shooting up into a woman."))
+    #expect(e.contains { $0.text.contains("a flyaway look to her clothes") })
+}

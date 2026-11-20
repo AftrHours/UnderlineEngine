@@ -25,13 +25,13 @@ func loadGold() throws -> GoldSet {
         }
         #expect(item.provisional || item.note != nil, "\(item.id): reviewed items keep their note")
     }
-    let count = { (kinds: [UnderlineKind]) in gold.items.filter { kinds.contains($0.kind) }.count }
-    #expect(count([.action]) >= 8)
-    #expect(count([.reaction]) >= 8)
-    #expect(count([.place, .thing]) >= 8)
-    #expect(count([.feeling]) >= 4)
-    #expect(count([.outcome]) >= 4)
-    #expect(count([.person]) >= 4)
+    let count = { (kinds: [String]) in gold.items.filter { kinds.contains($0.kind) }.count }
+    #expect(count(["action"]) >= 8)
+    #expect(count(["reaction"]) >= 8)
+    #expect(count(["place", "thing"]) >= 8)
+    #expect(count(["feeling"]) >= 4)
+    #expect(count(["outcome"]) >= 4)
+    #expect(count(["person"]) >= 4)
     let reasons = gold.items.compactMap { item -> NoneReason? in if case .none(let r) = item.expected { r } else { nil } }
     #expect(reasons.count >= 10)
     #expect(reasons.filter { $0 == .explanationLater }.count >= 3)

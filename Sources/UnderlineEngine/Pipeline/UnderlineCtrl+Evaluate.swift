@@ -1,7 +1,7 @@
 import Foundation
 
 extension UnderlineCtrl {
-    /// One candidate phrase through search → confirm the top candidate → guards (spec §5.4–5.5). The limiter runs later, per paragraph.
+    /// One candidate phrase through search → rules pick and confirm → (with Foundation Models) the model's confirm → guards (spec §5.4–5.5). The limiter runs later, per paragraph.
     func evaluate(_ candidate: UnderlineCandidate, in chapter: IndexedChapter) async -> (KeptUnderline?, UnderlineRecord) {
         let clock = ContinuousClock()
         var record = UnderlineRecord(chapterIndex: chapter.chapterIndex, sentence: candidate.sentence, phrase: candidate.phrase.text,
@@ -25,26 +25,19 @@ extension UnderlineCtrl {
         record.times.searchMs = Self.milliseconds(clock.now - searchStart)
         guard !candidates.isEmpty else { return drop(.noCandidate) }
 
-        // Pick: the model path takes search's top candidate; the rules path picks by score and margin.
-        let picked: Int?
-        if modelSvc.isAvailable {
-            record.path = .model
-            picked = candidates.first?.sentence
-        } else {
-            record.path = .rules
-            picked = RulesPicker.decide(result.ranking, mode: result.modeUsed)
-        }
-        guard let pick = picked, let ref = chapter.sentence(pick) else { return drop(.pickedNone) }
+        // Pick and confirm by rules on both paths: no stub reference, a clear top score, a shared rare word or name.
+        // With Foundation Models the model then has the last word on what the rules accepted; it can only take away.
+        record.path = modelSvc.isAvailable ? .model : .rules
+        let ranking = result.ranking.filter { chapter.sentence($0.sentence).map { !UnderlineGuard.isStub($0) } ?? false }
+        guard let pick = RulesPicker.decide(ranking, mode: result.modeUsed), let ref = chapter.sentence(pick) else { return drop(.pickedNone) }
         record.pickedSentence = pick
         if UnderlineGuard.isInSameParagraph(ref, as: sentence) { return drop(.explainedInParagraph) }
 
-        // Confirm: does this one earlier sentence explain the phrase?
-        if modelSvc.isAvailable {
-            if let reason = await modelConfirm(candidate, sentence: sentence, reference: ref, record: &record) { return drop(reason) }
-        } else {
-            let explains = RulesPicker.confirm(phrase: candidate.phrase, in: sentence, reference: ref)
-            record.confirm = ConfirmTrace(explains: explains, evidence: nil)
-            guard explains else { return drop(.confirmRejected) }
+        let explains = RulesPicker.confirm(phrase: candidate.phrase, in: sentence, reference: ref, stats: chapter.wordStats)
+        record.confirm = ConfirmTrace(explains: explains, evidence: nil)
+        guard explains else { return drop(.confirmRejected) }
+        if modelSvc.isAvailable, let reason = await modelConfirm(candidate, sentence: sentence, reference: ref, stats: chapter.wordStats, record: &record) {
+            return drop(reason)
         }
 
         guard pick < candidate.sentence, let range = UnderlineGuard.paragraphRange(of: candidate.phrase, in: sentence)
@@ -59,18 +52,22 @@ extension UnderlineCtrl {
     }
 
     /// One model call: the phrase, its sentence and the one earlier passage. Both sentence indexes go into the record before the call.
-    /// Returns the drop reason, or `nil` when the model says the passage explains the phrase.
+    /// Returns the drop reason, or `nil` when the model says the passage is linked (and, when its evidence is meant as a quote,
+    /// the quote is in the passage). The words the rules found in both go into the prompt as an anchor.
     private func modelConfirm(_ candidate: UnderlineCandidate, sentence: IndexedSentence, reference ref: IndexedSentence,
-                              record: inout UnderlineRecord) async -> DropReason? {
+                              stats: WordStats?, record: inout UnderlineRecord) async -> DropReason? {
         let clock = ContinuousClock()
         let me = IndexedText(index: sentence.index, text: sentence.text)
         let passage = IndexedText(index: ref.index, text: ref.text)
         record.promptSentences = [passage.index, me.index].sorted()
         let start = clock.now
         defer { record.times.confirmMs = Self.milliseconds(clock.now - start) }
-        guard let confirm = try? await modelSvc.confirm(phrase: candidate.phrase.text, sentence: me, passage: passage)
+        let shared = RulesPicker.sharedRareWords(phrase: candidate.phrase, in: sentence, reference: ref, stats: stats)
+        guard let confirm = try? await modelSvc.confirm(phrase: candidate.phrase.text, sentence: me, passage: passage, shared: shared)
         else { return .modelFailed }
         record.confirm = ConfirmTrace(explains: confirm.explains, evidence: confirm.evidence)
-        return confirm.explains ? nil : .confirmRejected
+        guard confirm.explains else { return .confirmRejected }
+        guard confirm.isQuote else { return nil }
+        return UnderlineGuard.quotes(confirm.evidence, from: PromptBuilder.cut(passage.text)) ? nil : .evidenceNotInPassage
     }
 }

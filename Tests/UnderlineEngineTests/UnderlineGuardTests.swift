@@ -19,3 +19,37 @@ import Testing
     let past = EventPhrase(text: "home", range: NSRange(location: 20, length: 4), role: .attempt, track: .goal)
     #expect(UnderlineGuard.paragraphRange(of: past, in: sentence) == nil)
 }
+
+@Test func evidenceThatIsAQuoteFromThePassageIsAccepted() {
+    let passage = "\"I planned to spend mine in new music,\" said Beth, with a little sigh."
+    #expect(UnderlineGuard.quotes("I planned to spend mine in new music,", from: passage))
+    #expect(UnderlineGuard.quotes("i planned to SPEND mine", from: passage))
+    #expect(UnderlineGuard.quotes("said Beth, with a little sigh", from: passage))
+}
+
+@Test func evidenceMayJumpWordsWithAnEllipsis() {
+    let passage = "I've wanted it so long, said Jo, who was a bookworm."
+    #expect(UnderlineGuard.quotes("wanted it so long … a bookworm", from: passage))
+    #expect(UnderlineGuard.quotes("wanted it so long... a bookworm", from: passage))
+}
+
+@Test func evidenceThatIsNotInThePassageIsRejected() {
+    let passage = "It's so dreadful to be poor!"
+    #expect(!UnderlineGuard.quotes("thinking of Father far away", from: passage))
+    #expect(!UnderlineGuard.quotes("dreadful to be rich", from: passage))
+    #expect(!UnderlineGuard.quotes("", from: passage))
+    #expect(!UnderlineGuard.quotes("  ...  ", from: passage))
+}
+
+@Test func evidenceMatchesWholeWordsOnly() {
+    #expect(!UnderlineGuard.quotes("a", from: "It was bad."))
+    #expect(UnderlineGuard.quotes("it\u{2019}s so dreadful", from: "It's so dreadful to be poor!"))
+}
+
+@Test func speechTagsAndTinySentencesAreStubs() {
+    #expect(UnderlineGuard.isStub(indexed("cried Amy.")))
+    #expect(UnderlineGuard.isStub(indexed("asked Meg.")))
+    #expect(UnderlineGuard.isStub(indexed("Only see!")))
+    #expect(!UnderlineGuard.isStub(indexed("Hide the basket, quick!")))
+    #expect(!UnderlineGuard.isStub(indexed("I'll lift my eyebrows if anything is wrong.")))
+}

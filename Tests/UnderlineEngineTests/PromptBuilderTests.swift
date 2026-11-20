@@ -5,12 +5,13 @@ import Testing
 private let underlined = IndexedText(index: 9, text: "Jo immediately sat up and began to whistle.")
 private let candidates = [IndexedText(index: 3, text: "Meg spoke of money."), IndexedText(index: 7, text: "\"Jo does use such slang words!\" observed Amy.")]
 
-@Test func candidateTextIsCutTo40Words() {
-    let long = (1...60).map(String.init).joined(separator: " ")
+@Test func candidateTextIsCutToCandidateWords() {
+    let n = ModelKnobs.candidateWords
+    let long = (1...(n + 20)).map(String.init).joined(separator: " ")
     let p = PromptBuilder.confirm(phrase: "x y", sentence: underlined, passage: IndexedText(index: 1, text: long))
-    #expect(PromptBuilder.cut(long).split(separator: " ").count == 41)   // 40 words + "…"
+    #expect(PromptBuilder.cut(long).split(separator: " ").count == n + 1)   // n words + "…"
     #expect(p.prompt.contains(PromptBuilder.cut(long)))
-    #expect(!p.prompt.contains(" 41 "))
+    #expect(!p.prompt.contains(" \(n + 1) "))
 }
 
 @Test

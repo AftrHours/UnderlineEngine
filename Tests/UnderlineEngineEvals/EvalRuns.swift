@@ -98,17 +98,17 @@ enum Evals {
         print("  density: \(underlines.underlines.count) underlines over the \(sentencesRun) sentences with phrases in the golden paragraphs")
 
         print("\n== Summary by kind ==")
-        for kind in UnderlineKind.allCases {
+        for kind in Set(rows.map(\.sample.item.kind)).sorted() {
             let k = rows.filter { $0.sample.item.kind == kind }
             if k.isEmpty { continue }
             let counts = Dictionary(grouping: k, by: \.outcome).sorted { $0.key < $1.key }.map { "\($0.key.label) \($0.value.count)" }
-            print("  \(kind.rawValue): " + counts.joined(separator: " · "))
+            print("  \(kind): " + counts.joined(separator: " · "))
         }
 
         print("\n== Items, worst first ==")
         for row in rows.sorted(by: { ($0.outcome, $0.sample.item.id) < ($1.outcome, $1.sample.item.id) }) {
             let s = row.sample, r = row.r
-            print("\(row.outcome.label) · \(s.item.kind.rawValue) · \(s.item.id) · S\(s.resolved.sentence)")
+            print("\(row.outcome.label) · \(s.item.kind) · \(s.item.id) · S\(s.resolved.sentence)")
             print("    sentence: \"\(s.sentenceText)\"")
             print("    phrase: \"\(s.item.phrase)\"\(r.phrase.map { $0 == s.item.phrase ? "" : " · engine phrase \"\($0)\"" } ?? "")")
             print("    shown: \(r.underlined ? "S\(r.referenceSentence ?? -1) \"\(r.referenceText ?? "")\"" : "no underline\(r.dropped.map { " (\($0))" } ?? "")")")
@@ -141,9 +141,9 @@ enum Evals {
         if changed.isEmpty { print("  no outcome changed") }
     }
 
-    /// The qualitative report of a golden run (spec §8.7), written next to the saved result.
+    /// The qualitative report and CSV of a golden run (spec §8.7), written next to the saved result.
     static func goldenReport(_ result: EvaluationResult, _ evaluation: GoldenEvaluation, chapter: IndexedChapter, ctrl: UnderlineCtrl,
-                          kind: String, saved: URL) async throws -> URL {
+                          kind: String, saved: URL) async throws -> (report: URL, csv: URL) {
         let inputs = result.detailed[evaluation.inputColumn]
         let responses = result.detailed[evaluation.responseColumn]
         let judged = result.detailed[metric: EvalMetric.explains]
@@ -161,7 +161,7 @@ enum Evals {
                           searchMode: ctrl.searchMode.rawValue)
         let rows = QualitativeReport.rows(run: run, chapter: chapter, records: records, gold: evaluation.samples.map(\.resolved),
                                        outcomes: outcomes, judge: judge)
-        return try saveReport(rows, run: run, beside: saved)
+        return try saveQualitative(rows, run: run, beside: saved)
     }
 
     /// One golden run: evaluate, save, print the report. Returns the result and where it was saved.
@@ -174,8 +174,8 @@ enum Evals {
         let result = try await evaluation.run(info: info(ctrl, chapter, judge: judgeName))
         let (saved, previous) = try save(result, kind: kind(ctrl))
         print("\n\(result.groupedSummary)\nsaved: \(saved.path)\nrun errors: \(result.errors)")
-        let reportFile = try await goldenReport(result, evaluation, chapter: chapter, ctrl: ctrl, kind: kind(ctrl), saved: saved)
-        print("qualitative report: \(reportFile.path)")
+        let files = try await goldenReport(result, evaluation, chapter: chapter, ctrl: ctrl, kind: kind(ctrl), saved: saved)
+        print("qualitative report: \(files.report.path)\nqualitative CSV: \(files.csv.path)")
         if printReport { await report(result, evaluation, previous: previous) }
         #expect(result.aggregateValue(.mean(of: EvalMetric.noSpoiler)) == 1, "a sentence at or after the underlined one was used")
         return (result, evaluation, saved)
@@ -220,7 +220,9 @@ func searchModeComparison() async throws {
 @available(macOS 27, *)
 @Test(.enabled(if: Evals.sweepEnabled), .timeLimit(.minutes(240)))
 func sweepEvaluation() async throws {
-    let (ctrl, chapter, _) = try await Evals.load(model: .automatic, search: .both)
+    // UNDERLINE_SWEEP_RULES=1: confirm without Foundation Models (the rules path). The grader below still uses a model.
+    let model: ModelChoice = ProcessInfo.processInfo.environment["UNDERLINE_SWEEP_RULES"] != nil ? .rulesOnly : .automatic
+    let (ctrl, chapter, _) = try await Evals.load(model: model, search: .both)
     let (judge, judgeName) = await Evals.judgeModel()
     let limit = ProcessInfo.processInfo.environment["UNDERLINE_SWEEP_LIMIT"].flatMap(Int.init)
     let swept = chapter.sentences.prefix(limit ?? chapter.sentences.count).map(\.index)
@@ -251,9 +253,9 @@ func sweepEvaluation() async throws {
     }
     let run = RunInfo(runID: saved.deletingPathExtension().lastPathComponent, runKind: kind,
                       searchMode: ctrl.searchMode.rawValue)
-    let reportFile = try Evals.saveReport(QualitativeReport.rows(run: run, chapter: chapter, records: records, gold: nil, outcomes: [:], judge: verdicts),
-                                      run: run, beside: saved)
-    print("qualitative report: \(reportFile.path)")
+    let files = try Evals.saveQualitative(QualitativeReport.rows(run: run, chapter: chapter, records: records, gold: nil, outcomes: [:], judge: verdicts),
+                                          run: run, beside: saved)
+    print("qualitative report: \(files.report.path)\nqualitative CSV: \(files.csv.path)")
     print("\n== Underlines, judge failures first ==")
     for (s, verdict) in rows.sorted(by: { a, b in
         let fa = a.1?.value == .failing, fb = b.1?.value == .failing
@@ -263,5 +265,6 @@ func sweepEvaluation() async throws {
         print("\(verdict?.value == .failing ? "✗" : "✓") S\(s.sentence) \"\(s.phrase)\" → S\(r?.referenceSentence ?? -1) \"\(r?.referenceText ?? "")\"")
         if verdict?.value == .failing { print("    judge: \(verdict?.rationale ?? "")") }
     }
-    #expect(result.aggregateValue(.mean(of: EvalMetric.noSpoiler)) == 1)
+    // With no underline there is nothing to average (a short sweep can end up with none); the record-level check above still ran.
+    #expect(rows.isEmpty || result.aggregateValue(.mean(of: EvalMetric.noSpoiler)) == 1)
 }

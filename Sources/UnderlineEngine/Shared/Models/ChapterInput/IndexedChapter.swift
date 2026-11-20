@@ -5,7 +5,7 @@ public enum TaggingEngine: String, Sendable, Codable {
 }
 
 public enum EmbeddingEngine: String, Sendable, Codable {
-    case sentence, wordAverage, none
+    case sentence, wordAverage, contextual, none
 }
 
 public enum NameKind: String, Sendable, Codable {
@@ -48,6 +48,9 @@ public struct IndexedChapter: Sendable, Codable {
     public let sentences: [IndexedSentence]
     public let tagging: TaggingEngine
     public let embedding: EmbeddingEngine
+    /// How rare each word is. `prepare` counts the chapter; a caller with the whole book can swap in the book's counts,
+    /// which tell rare words from common ones far better.
+    public var wordStats: WordStats? = nil
 
     /// Global index of the chapter's first sentence.
     public var first: Int { sentences.first?.index ?? 0 }

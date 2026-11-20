@@ -13,7 +13,7 @@ struct QualitativeRow: Sendable {
     static let header = [
         "run_id", "run_kind", "search_mode", "gold_id",
         "sentence", "paragraph", "sentence_text", "sentence_with_underline", "phrase", "phrase_range",
-        "tagging_engine", "words", "names", "events", "phrase_role", "kind",
+        "tagging_engine", "words", "names", "events", "phrase_role",
         "embedding", "search_mode_used", "candidates", "top_candidate_text",
         "path", "pick", "picked_sentence", "confirm", "confirm_evidence",
         "underlined", "dropped_reason", "reference", "reference_text", "distance",
@@ -149,7 +149,7 @@ enum QualitativeReport {
             s?.tokens.map { "\($0.text)/\($0.lemma)/\($0.wordClass)" }.joined(separator: " · ") ?? "",
             s?.names.map { "\($0.text) (\($0.kind.rawValue))" }.joined(separator: " · ") ?? "",
             s?.events.map { "\($0.text) (\($0.role?.rawValue ?? "name"))" }.joined(separator: " · ") ?? "",
-            record == nil ? "" : (phraseEvent?.role?.rawValue ?? "name"), record?.kind.rawValue ?? item?.item.kind.rawValue ?? "",
+            record == nil ? "" : (phraseEvent?.role?.rawValue ?? "name"),
             record?.embedding.rawValue ?? "", record?.searchModeUsed?.rawValue ?? "",
             record.map { r in r.candidates.enumerated().map { i, s in
                 r.candidateScores.indices.contains(i) ? "S\(s):" + String(format: "%.2f", r.candidateScores[i]) : "S\(s)"

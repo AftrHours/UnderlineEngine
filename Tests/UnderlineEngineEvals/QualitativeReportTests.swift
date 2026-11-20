@@ -25,7 +25,7 @@ private func column(_ row: QualitativeRow, _ name: String) -> String {
     #expect(QualitativeRow.header == [
         "run_id", "run_kind", "search_mode", "gold_id",
         "sentence", "paragraph", "sentence_text", "sentence_with_underline", "phrase", "phrase_range",
-        "tagging_engine", "words", "names", "events", "phrase_role", "kind",
+        "tagging_engine", "words", "names", "events", "phrase_role",
         "embedding", "search_mode_used", "candidates", "top_candidate_text",
         "path", "pick", "picked_sentence", "confirm", "confirm_evidence",
         "underlined", "dropped_reason", "reference", "reference_text", "distance",
@@ -78,7 +78,7 @@ private func column(_ row: QualitativeRow, _ name: String) -> String {
 
 @Test func goldItemWithoutRecordGetsDetectMissRow() async throws {
     let ch = await chapter("Meg sewed. Jo began to whistle.")
-    let item = GoldItem(id: "g1", sentence: GoldRef(index: 1, text: "Jo began to whistle."), phrase: "began to whistle", kind: .action,
+    let item = GoldItem(id: "g1", sentence: GoldRef(index: 1, text: "Jo began to whistle."), phrase: "began to whistle", kind: "action",
                         expected: .underline(references: [0]), provisional: true, note: nil)
     let resolved = try #require(item.resolve(in: ch))
     let rows = QualitativeReport.rows(run: run, chapter: ch, records: [], gold: [resolved], outcomes: ["g1": .missed(.detectMiss)], judge: [:])
@@ -93,7 +93,7 @@ private func column(_ row: QualitativeRow, _ name: String) -> String {
 @Test func rowsSortedWorstFirst() async throws {
     let ch = await chapter("Meg sewed. Amy drew. Beth sang. Jo began to whistle. Hannah came in.")
     func gold(_ id: String, _ s: Int, _ phrase: String) throws -> ResolvedItem {
-        try #require(GoldItem(id: id, sentence: GoldRef(index: s, text: ch.sentence(s)!.text), phrase: phrase, kind: .action,
+        try #require(GoldItem(id: id, sentence: GoldRef(index: s, text: ch.sentence(s)!.text), phrase: phrase, kind: "action",
                               expected: .underline(references: [0]), provisional: true, note: nil).resolve(in: ch))
     }
     let items = [try gold("right", 1, "drew"), try gold("miss", 2, "sang"), try gold("wrong", 3, "began to whistle"), try gold("leak", 4, "came in")]
@@ -145,7 +145,7 @@ private func column(_ row: QualitativeRow, _ name: String) -> String {
 
 @Test func markdownForGoldenRunCountsOutcomes() async throws {
     let ch = await chapter("Meg sewed. Jo began to whistle.")
-    let item = GoldItem(id: "g1", sentence: GoldRef(index: 1, text: "Jo began to whistle."), phrase: "began to whistle", kind: .action,
+    let item = GoldItem(id: "g1", sentence: GoldRef(index: 1, text: "Jo began to whistle."), phrase: "began to whistle", kind: "action",
                         expected: .underline(references: [0]), provisional: true, note: nil)
     let resolved = try #require(item.resolve(in: ch))
     let rows = QualitativeReport.rows(run: run, chapter: ch, records: [], gold: [resolved], outcomes: ["g1": .missed(.detectMiss)], judge: [:])

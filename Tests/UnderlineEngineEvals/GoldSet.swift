@@ -53,7 +53,8 @@ struct GoldItem: Codable, Hashable, Sendable {
     let sentence: GoldRef
     /// An exact substring of the sentence.
     let phrase: String
-    let kind: UnderlineKind
+    /// The golden file's own label for the item (action, reaction, feeling, outcome, place, thing, person).
+    let kind: String
     let expected: GoldExpected
     /// Drafted by the builder, not yet reviewed by the product owner (spec §8.2).
     let provisional: Bool

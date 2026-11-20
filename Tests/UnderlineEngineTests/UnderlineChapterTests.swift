@@ -51,18 +51,15 @@ private func results(_ c: UnderlineCtrl, _ ch: IndexedChapter, from start: Int? 
     #expect(Array(paragraphs.prefix(firstWrap)) == paragraphs.prefix(firstWrap).sorted())
 }
 
-@Test func limitIsPerParagraph() async throws {
-    let ch = try await littleWomen()
-    let (all, _) = await results(ctrl(autoAccepting()), ch)
-    let perParagraph = Dictionary(grouping: all, by: \.paragraph).mapValues(\.count)
-    #expect(perParagraph.values.allSatisfy { $0 <= UnderlineKnobs.maxPerParagraph })
-}
-
-@Test func densityDropsAppearInRecords() async throws {
+@Test func shownUnderlinesNeverOverlap() async throws {
     let ch = try await littleWomen()
     let (all, records) = await results(ctrl(autoAccepting()), ch)
+    for (i, a) in all.enumerated() {
+        for b in all[(i + 1)...] where a.sentence == b.sentence {
+            #expect(NSIntersectionRange(a.range, b.range).length == 0)
+        }
+    }
     let limited = records.filter { $0.dropped == .densityLimit }
-    #expect(!limited.isEmpty)
     #expect(limited.allSatisfy { !$0.kept })
     #expect(records.filter(\.kept).count == all.count)
 }

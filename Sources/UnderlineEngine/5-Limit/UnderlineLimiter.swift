@@ -7,7 +7,7 @@ struct KeptUnderline: Sendable, Hashable {
     let score: Double
 }
 
-/// Density (spec §5.6): at most `maxPerParagraph` per paragraph, best first, never two overlapping phrases.
+/// Density (spec §5.6): never two overlapping phrases, best first, and at most `maxPerParagraph` per paragraph (no limit by default).
 /// Per paragraph only, so the result doesn't depend on the order underlines arrive in.
 enum UnderlineLimiter {
     /// `dropped` are positions in `kept`: an id can repeat (a name and an event starting at the same place).

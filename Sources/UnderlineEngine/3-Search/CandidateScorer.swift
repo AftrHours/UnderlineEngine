@@ -7,11 +7,14 @@ enum SearchKnobs {
     /// Meaning leads, words come second (spec §5.5). Keep `embedWeight > wordsWeight`.
     static let embedWeight = 0.65
     static let wordsWeight = 0.35
+    /// Maps each embedding's similarity onto `NLEmbedding`'s scale, so the floors above keep their meaning:
+    /// `a * similarity + b`, from the 10th and 90th percentiles of sentence pairs in Little Women chapter 1.
+    static let similarityScale: [EmbeddingEngine: (a: Double, b: Double)] = [.contextual: (a: 0.703, b: 0.295)]
     static let trackHintBonus = 0.10
     static let roleLinkBonus = 0.10
     /// Divided by `1 + distance` from the tap.
-    static let causeNear = 0.15
     static let reactionNear = 0.30
+    static let causeNear = 0.15
     /// Content lemmas that say little about meaning.
     static let stopLemmas: Set<String> = ["be", "have", "do", "say", "get", "go", "make", "let", "can", "will", "shall", "would", "could", "should"]
     static let goalWords: Set<String> = ["want", "wish", "hope", "plan", "mean", "try", "decide", "like", "love", "hate", "need", "tell", "ask", "promise"]
@@ -26,14 +29,19 @@ enum SearchKnobs {
 }
 
 extension SearchQuery {
-    /// The query for one candidate phrase: the phrase itself, with its track, role, person names and reaction cue.
+    /// The query for one candidate phrase: the phrase itself, with its track, role, person names and reaction cue
+    /// (from the phrase, or from another event in its sentence).
     static func make(candidate: UnderlineCandidate, in sentence: IndexedSentence, embedding: any EmbeddingSvc, tagger: ChapterIndexSvc) -> SearchQuery {
         let phrase = candidate.phrase
         let tokens = tagger.index(ChapterInput(chapterIndex: 0, plainText: phrase.text)).flatMap(\.tokens)
         let names = sentence.names.filter { $0.kind == .person && NSIntersectionRange($0.range, phrase.range).length > 0 }.map(\.text)
         let words = Set(phrase.text.lowercased().split { !$0.isLetter }.map(String.init))
+        // A cue anywhere in an event phrase's sentence ("immediately sat up, …, and began to whistle") says the whole sentence
+        // answers the one before, so every event in it looks there. A name doesn't use it.
+        let sentenceCue = phrase.role != nil
+            && (sentence.events.contains { $0.role == .reaction } || sentence.tokens.contains { EventKnobs.reactionCues.contains($0.lemma) })
         return SearchQuery(text: phrase.text, lemmas: contentLemmas(tokens), track: phrase.track, role: phrase.role, names: names,
-                           reactionCue: !words.isDisjoint(with: EventKnobs.reactionCues), vector: embedding.vector(for: phrase.text))
+                           reactionCue: !words.isDisjoint(with: EventKnobs.reactionCues) || sentenceCue, vector: embedding.vector(for: phrase.text))
     }
 
     /// Lemmas of nouns, verbs and adjectives, without the ones that say little.
@@ -54,9 +62,15 @@ enum CandidateScorer {
         let hasVectors = q.vector != nil && pool.contains { $0.vector != nil }
         let modeUsed: SearchMode = hasVectors ? mode : .words
 
-        let rawMeaning = pool.map { s in q.vector.flatMap { qv in s.vector.map { Cosine.similarity(qv, $0) } } ?? 0 }
+        let scale = SearchKnobs.similarityScale[ch.embedding] ?? (a: 1, b: 0)
+        let rawMeaning = pool.map { s in
+            q.vector.flatMap { qv in s.vector.map { min(1, max(0, scale.a * Cosine.similarity(qv, $0) + scale.b)) } } ?? 0
+        }
+        // Shared words count by rarity (IDF): sharing "limes" means more than sharing "want".
+        let weight: (String) -> Double = { lemma in ch.wordStats?.idf(lemma) ?? 1 }
+        let queryWeight = q.lemmas.reduce(0) { $0 + weight($1) }
         let rawWords = pool.map { s in
-            q.lemmas.isEmpty ? 0 : Double(SearchQuery.contentLemmas(s.tokens).intersection(q.lemmas).count) / Double(q.lemmas.count)
+            queryWeight <= 0 ? 0 : SearchQuery.contentLemmas(s.tokens).intersection(q.lemmas).reduce(0) { $0 + weight($1) } / queryWeight
         }
         let meaning = scaled(rawMeaning)
         let words = scaled(rawWords)

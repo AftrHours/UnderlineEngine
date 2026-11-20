@@ -2,3 +2,15 @@
 .swiftpm/
 .superpowers/
 Eval/
+.obsidian/
+# Copyrighted books: local only, never committed (text, chapters, labels and hand-picks).
+Dataset/before-the-coffee-gets-cold.epub
+Dataset/before-the-coffee-gets-cold/
+Dataset/the-hobbit.epub
+Dataset/the-hobbit/
+Dataset/sunrise-on-the-reaping.epub
+Dataset/sunrise-on-the-reaping/
+Dataset/labels/claude-labels-before-the-coffee-gets-cold.csv
+Dataset/labels/claude-labels-the-hobbit.csv
+Dataset/labels/claude-labels-sunrise-on-the-reaping.csv
+Dataset/labels/handpick-sunrise/
