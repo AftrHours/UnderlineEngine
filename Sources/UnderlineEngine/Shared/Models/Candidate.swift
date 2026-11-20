@@ -11,7 +11,7 @@ public struct Candidate: Sendable, Codable, Hashable {
     /// `rawMeaning` and `rawWords` scaled to 0…1 within this search.
     public let meaning: Double
     public let words: Double
-    /// Track hint, role link and distance bonuses.
+    /// Track hint, role link and reaction-cue bonuses.
     public let bonus: Double
     /// The ranking score (scaled signals + bonus).
     public let score: Double
@@ -29,7 +29,7 @@ struct SearchQuery: Sendable {
     let role: EventRole?
     /// Person names inside the phrase.
     let names: [String]
-    /// The phrase has "immediately", "then"…: its cause is just before.
+    /// The phrase, or another event in its sentence, has "immediately", "then"…: its cause is just before.
     let reactionCue: Bool
     let vector: [Float]?
 }

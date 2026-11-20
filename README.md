@@ -4,7 +4,9 @@ A Swift package for iRead. When a chapter opens, it finds the phrases a skimming
 
 It is the underline sibling of [TextEngine](../TextEngine): same type suffixes, same iRead data contract, a different flow (no question step). Its folders are numbered after the processes in [docs/DFD.md](docs/DFD.md) instead of layers, so the reading order shows in the tree.
 
-Design: [docs/superpowers/specs/2026-10-30-underline-engine-design.md](docs/superpowers/specs/2026-10-30-underline-engine-design.md) · Build plan: [docs/superpowers/plans/2026-10-30-underline-engine.md](docs/superpowers/plans/2026-10-30-underline-engine.md) · Data flow: [docs/DFD.md](docs/DFD.md) · Types: [ARCHITECTURE.md](ARCHITECTURE.md)
+How it works, for a presentation (pipeline, funnel, worked example): [docs/pipeline.md](docs/pipeline.md)
+
+Design: [docs/superpowers/specs/2026-10-30-underline-engine-design.md](docs/superpowers/specs/2026-10-30-underline-engine-design.md) · Build plan: [docs/superpowers/plans/2026-10-30-underline-engine.md](docs/superpowers/plans/2026-10-30-underline-engine.md) · Data flow: [docs/DFD.md](docs/DFD.md), v2 on `link-quality`: [docs/DFD-v2.md](docs/DFD-v2.md) · Types: [ARCHITECTURE.md](ARCHITECTURE.md) · Release 1.1.0 vs v2, chapters 1–3 in reading order: [docs/qualitative-ch1-3-release-vs-v2.md](docs/qualitative-ch1-3-release-vs-v2.md) · Every experiment's results and timing: [docs/result.md](docs/result.md)
 
 ### Start reading here
 New to the code? Read in this order. The numbers are the processes in [docs/DFD.md](docs/DFD.md), which has a diagram and a step → code table for each.
@@ -66,6 +68,7 @@ UNDERLINE_EVALS=1 swift test --filter goldenEvaluation          # golden set, mo
 UNDERLINE_EVALS=1 swift test --filter rulesBaselineEvaluation   # golden set, rules only
 UNDERLINE_EVALS=1 swift test --filter searchModeComparison      # embed vs words vs both (the app always uses both)
 UNDERLINE_EVALS=1 UNDERLINE_SWEEP=1 swift test --filter sweepEvaluation   # every underline in the chapter (UNDERLINE_SWEEP_LIMIT=60 for the first 60 sentences)
+UNDERLINE_BOOK=little-women swift test --filter bookRun          # every chapter of a book in Dataset/<book>/, rules only (no model, no judge); UNDERLINE_BOOK_CHAPTERS=1-5 for a range, UNDERLINE_BOOK_MODEL=1 for Foundation Models
 ```
 - **Golden set:** `Dataset/underline-gold.json` (67 items, provisional until the product owner reviews them). Each item is a phrase in a sentence with either the acceptable earlier references or `none` with a reason (`explanationLater`, `sameSentence`, `temptingWrongPassage`, `noExplanation`).
 - **Outcomes:** ⛔ spoiler, ❌ mismatch, ⚠️ missed (detect, search, pick, confirm, guard, density or explained in paragraph), ✅ underlined with the right reference, ✅ correctly none. The **mismatch rate** (of underlines shown, how many point at the wrong passage) comes first in every report.

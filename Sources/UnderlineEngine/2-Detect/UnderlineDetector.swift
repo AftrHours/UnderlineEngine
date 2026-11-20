@@ -1,7 +1,8 @@
 import Foundation
 
 enum UnderlineKnobs {
-    /// Event phrases shorter than this (in words) are never underlined. Names are exempt.
+    /// Phrases shorter than this (in words) are never underlined, names included: a lone "Meg" or "Mrs. March" tells
+    /// the reader little, and the underline should read as a phrase.
     static let minPhraseWords = 3
     /// A phrase made only of these words says nothing a reader could be confused about.
     static let generalWords: Set<String> = [
@@ -10,8 +11,10 @@ enum UnderlineKnobs {
     ]
     /// A proper name is a candidate only if it wasn't mentioned in this many earlier sentences.
     static let nameGapSentences = 30
-    /// Most underlines kept per paragraph, best first (spec §5.6).
-    static let maxPerParagraph = 1
+    /// Most underlines kept per paragraph, best first (spec §5.6). No limit: the underlines the old limit of 1 dropped were as
+    /// often right as the ones shown (20 of 40 sampled, Little Women). Two overlapping phrases still never both show, and a
+    /// reference in the phrase's own paragraph is still dropped (`explainedInParagraph`).
+    static let maxPerParagraph = Int.max
     /// Tie-break order in the limiter; `person` last (spec §4.2).
     static let kindOrder: [UnderlineKind] = [.reaction, .action, .feeling, .outcome, .place, .thing, .person]
 }
@@ -39,6 +42,7 @@ enum UnderlineDetector {
         }
         var seen = Set<String>()
         let names = sentence.names.filter { $0.kind == .person && !recentNames.contains($0.text) && seen.insert($0.text).inserted }
+            .filter { $0.text.split(whereSeparator: \.isWhitespace).count >= UnderlineKnobs.minPhraseWords }
             .map { EventPhrase(text: $0.text, range: $0.range, role: nil, track: .character) }
         return (events + names).map { UnderlineCandidate(sentence: sentence.index, phrase: $0, kind: UnderlineKind.of($0)) }
     }

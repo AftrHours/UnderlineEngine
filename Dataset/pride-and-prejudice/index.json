@@ -1,0 +1,429 @@
+[
+  {
+    "number": 1,
+    "title": "CHAPTER I",
+    "file": "ch01.txt",
+    "paragraphs": 34,
+    "words": 847
+  },
+  {
+    "number": 2,
+    "title": "CHAPTER II",
+    "file": "ch02.txt",
+    "paragraphs": 27,
+    "words": 797
+  },
+  {
+    "number": 3,
+    "title": "CHAPTER III",
+    "file": "ch03.txt",
+    "paragraphs": 21,
+    "words": 1698
+  },
+  {
+    "number": 4,
+    "title": "CHAPTER IV",
+    "file": "ch04.txt",
+    "paragraphs": 16,
+    "words": 1060
+  },
+  {
+    "number": 5,
+    "title": "CHAPTER V",
+    "file": "ch05.txt",
+    "paragraphs": 23,
+    "words": 952
+  },
+  {
+    "number": 6,
+    "title": "CHAPTER VI",
+    "file": "ch06.txt",
+    "paragraphs": 54,
+    "words": 2340
+  },
+  {
+    "number": 7,
+    "title": "CHAPTER VII",
+    "file": "ch07.txt",
+    "paragraphs": 49,
+    "words": 1984
+  },
+  {
+    "number": 8,
+    "title": "CHAPTER VIII",
+    "file": "ch08.txt",
+    "paragraphs": 59,
+    "words": 1925
+  },
+  {
+    "number": 9,
+    "title": "CHAPTER IX",
+    "file": "ch09.txt",
+    "paragraphs": 39,
+    "words": 1727
+  },
+  {
+    "number": 10,
+    "title": "CHAPTER X",
+    "file": "ch10.txt",
+    "paragraphs": 67,
+    "words": 2212
+  },
+  {
+    "number": 11,
+    "title": "CHAPTER XI",
+    "file": "ch11.txt",
+    "paragraphs": 34,
+    "words": 1595
+  },
+  {
+    "number": 12,
+    "title": "CHAPTER XII",
+    "file": "ch12.txt",
+    "paragraphs": 7,
+    "words": 673
+  },
+  {
+    "number": 13,
+    "title": "CHAPTER XIII",
+    "file": "ch13.txt",
+    "paragraphs": 30,
+    "words": 1687
+  },
+  {
+    "number": 14,
+    "title": "CHAPTER XIV",
+    "file": "ch14.txt",
+    "paragraphs": 18,
+    "words": 1115
+  },
+  {
+    "number": 15,
+    "title": "CHAPTER XV",
+    "file": "ch15.txt",
+    "paragraphs": 13,
+    "words": 1688
+  },
+  {
+    "number": 16,
+    "title": "CHAPTER XVI",
+    "file": "ch16.txt",
+    "paragraphs": 60,
+    "words": 3360
+  },
+  {
+    "number": 17,
+    "title": "CHAPTER XVII",
+    "file": "ch17.txt",
+    "paragraphs": 15,
+    "words": 1274
+  },
+  {
+    "number": 18,
+    "title": "CHAPTER XVIII",
+    "file": "ch18.txt",
+    "paragraphs": 77,
+    "words": 5167
+  },
+  {
+    "number": 19,
+    "title": "CHAPTER XIX",
+    "file": "ch19.txt",
+    "paragraphs": 22,
+    "words": 1909
+  },
+  {
+    "number": 20,
+    "title": "CHAPTER XX",
+    "file": "ch20.txt",
+    "paragraphs": 35,
+    "words": 1643
+  },
+  {
+    "number": 21,
+    "title": "CHAPTER XXI",
+    "file": "ch21.txt",
+    "paragraphs": 28,
+    "words": 1998
+  },
+  {
+    "number": 22,
+    "title": "CHAPTER XXII",
+    "file": "ch22.txt",
+    "paragraphs": 20,
+    "words": 1730
+  },
+  {
+    "number": 23,
+    "title": "CHAPTER XXIII",
+    "file": "ch23.txt",
+    "paragraphs": 25,
+    "words": 1609
+  },
+  {
+    "number": 24,
+    "title": "CHAPTER XXIV",
+    "file": "ch24.txt",
+    "paragraphs": 31,
+    "words": 1926
+  },
+  {
+    "number": 25,
+    "title": "CHAPTER XXV",
+    "file": "ch25.txt",
+    "paragraphs": 20,
+    "words": 1514
+  },
+  {
+    "number": 26,
+    "title": "CHAPTER XXVI",
+    "file": "ch26.txt",
+    "paragraphs": 30,
+    "words": 2328
+  },
+  {
+    "number": 27,
+    "title": "CHAPTER XXVII",
+    "file": "ch27.txt",
+    "paragraphs": 23,
+    "words": 1254
+  },
+  {
+    "number": 28,
+    "title": "CHAPTER XXVIII",
+    "file": "ch28.txt",
+    "paragraphs": 20,
+    "words": 1448
+  },
+  {
+    "number": 29,
+    "title": "CHAPTER XXIX",
+    "file": "ch29.txt",
+    "paragraphs": 42,
+    "words": 2380
+  },
+  {
+    "number": 30,
+    "title": "CHAPTER XXX",
+    "file": "ch30.txt",
+    "paragraphs": 13,
+    "words": 1229
+  },
+  {
+    "number": 31,
+    "title": "CHAPTER XXXI",
+    "file": "ch31.txt",
+    "paragraphs": 30,
+    "words": 1552
+  },
+  {
+    "number": 32,
+    "title": "CHAPTER XXXII",
+    "file": "ch32.txt",
+    "paragraphs": 31,
+    "words": 1492
+  },
+  {
+    "number": 33,
+    "title": "CHAPTER XXXIII",
+    "file": "ch33.txt",
+    "paragraphs": 41,
+    "words": 1854
+  },
+  {
+    "number": 34,
+    "title": "CHAPTER XXXIV",
+    "file": "ch34.txt",
+    "paragraphs": 31,
+    "words": 2097
+  },
+  {
+    "number": 35,
+    "title": "CHAPTER XXXV",
+    "file": "ch35.txt",
+    "paragraphs": 6,
+    "words": 2993
+  },
+  {
+    "number": 36,
+    "title": "CHAPTER XXXVI",
+    "file": "ch36.txt",
+    "paragraphs": 14,
+    "words": 1997
+  },
+  {
+    "number": 37,
+    "title": "CHAPTER XXXVII",
+    "file": "ch37.txt",
+    "paragraphs": 20,
+    "words": 1368
+  },
+  {
+    "number": 38,
+    "title": "CHAPTER XXXVIII",
+    "file": "ch38.txt",
+    "paragraphs": 17,
+    "words": 1037
+  },
+  {
+    "number": 39,
+    "title": "CHAPTER XXXIX",
+    "file": "ch39.txt",
+    "paragraphs": 26,
+    "words": 1628
+  },
+  {
+    "number": 40,
+    "title": "CHAPTER XL",
+    "file": "ch40.txt",
+    "paragraphs": 35,
+    "words": 1676
+  },
+  {
+    "number": 41,
+    "title": "CHAPTER XLI",
+    "file": "ch41.txt",
+    "paragraphs": 40,
+    "words": 2263
+  },
+  {
+    "number": 42,
+    "title": "CHAPTER XLII",
+    "file": "ch42.txt",
+    "paragraphs": 18,
+    "words": 1823
+  },
+  {
+    "number": 43,
+    "title": "CHAPTER XLIII",
+    "file": "ch43.txt",
+    "paragraphs": 79,
+    "words": 4844
+  },
+  {
+    "number": 44,
+    "title": "CHAPTER XLIV",
+    "file": "ch44.txt",
+    "paragraphs": 18,
+    "words": 2332
+  },
+  {
+    "number": 45,
+    "title": "CHAPTER XLV",
+    "file": "ch45.txt",
+    "paragraphs": 20,
+    "words": 1728
+  },
+  {
+    "number": 46,
+    "title": "CHAPTER XLVI",
+    "file": "ch46.txt",
+    "paragraphs": 32,
+    "words": 3009
+  },
+  {
+    "number": 47,
+    "title": "CHAPTER XLVII",
+    "file": "ch47.txt",
+    "paragraphs": 73,
+    "words": 4074
+  },
+  {
+    "number": 48,
+    "title": "CHAPTER XLVIII",
+    "file": "ch48.txt",
+    "paragraphs": 35,
+    "words": 2250
+  },
+  {
+    "number": 49,
+    "title": "CHAPTER XLIX",
+    "file": "ch49.txt",
+    "paragraphs": 55,
+    "words": 2237
+  },
+  {
+    "number": 50,
+    "title": "CHAPTER L",
+    "file": "ch50.txt",
+    "paragraphs": 23,
+    "words": 2198
+  },
+  {
+    "number": 51,
+    "title": "CHAPTER LI",
+    "file": "ch51.txt",
+    "paragraphs": 40,
+    "words": 2068
+  },
+  {
+    "number": 52,
+    "title": "CHAPTER LII",
+    "file": "ch52.txt",
+    "paragraphs": 38,
+    "words": 3024
+  },
+  {
+    "number": 53,
+    "title": "CHAPTER LIII",
+    "file": "ch53.txt",
+    "paragraphs": 60,
+    "words": 2933
+  },
+  {
+    "number": 54,
+    "title": "CHAPTER LIV",
+    "file": "ch54.txt",
+    "paragraphs": 35,
+    "words": 1592
+  },
+  {
+    "number": 55,
+    "title": "CHAPTER LV",
+    "file": "ch55.txt",
+    "paragraphs": 56,
+    "words": 2324
+  },
+  {
+    "number": 56,
+    "title": "CHAPTER LVI",
+    "file": "ch56.txt",
+    "paragraphs": 76,
+    "words": 2722
+  },
+  {
+    "number": 57,
+    "title": "CHAPTER LVII",
+    "file": "ch57.txt",
+    "paragraphs": 21,
+    "words": 1650
+  },
+  {
+    "number": 58,
+    "title": "CHAPTER LVIII",
+    "file": "ch58.txt",
+    "paragraphs": 46,
+    "words": 2431
+  },
+  {
+    "number": 59,
+    "title": "CHAPTER LIX",
+    "file": "ch59.txt",
+    "paragraphs": 48,
+    "words": 2468
+  },
+  {
+    "number": 60,
+    "title": "CHAPTER LX",
+    "file": "ch60.txt",
+    "paragraphs": 29,
+    "words": 1584
+  },
+  {
+    "number": 61,
+    "title": "CHAPTER LXI",
+    "file": "ch61.txt",
+    "paragraphs": 14,
+    "words": 1236
+  }
+]

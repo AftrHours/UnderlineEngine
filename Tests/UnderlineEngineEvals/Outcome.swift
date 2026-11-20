@@ -56,7 +56,7 @@ enum Outcome: Codable, Hashable, Sendable, Comparable {
 func matches(_ enginePhrase: String, _ item: GoldItem) -> Bool {
     let e = TextMatch.normalized(enginePhrase), g = TextMatch.normalized(item.phrase)
     guard !e.isEmpty, !g.isEmpty else { return false }
-    if item.kind == .person { return e == g }
+    if item.kind == "person" { return e == g }
     return e.contains(g) || (g.contains(e) && e.count * 2 >= g.count)
 }
 

@@ -9,12 +9,13 @@ struct BuiltPrompt: Sendable, Equatable {
 
 /// Builds the confirm prompt. Pure, so tests and the record see exactly what the model sees.
 enum PromptBuilder {
-    static func confirm(phrase: String, sentence: IndexedText, passage: IndexedText) -> BuiltPrompt {
+    static func confirm(phrase: String, sentence: IndexedText, passage: IndexedText, shared: [String] = []) -> BuiltPrompt {
         let prompt = """
             Sentence: \(sentence.text)
             Underlined phrase: "\(phrase)"
 
             Earlier passage: \(cut(passage.text))
+            Words in both: \(shared.isEmpty ? "(none)" : shared.joined(separator: ", "))
             """
         return BuiltPrompt(instructions: ModelKnobs.confirmInstructions, prompt: prompt,
                            sentenceIndexes: [sentence.index, passage.index])

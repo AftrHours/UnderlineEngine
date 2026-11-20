@@ -1,9 +1,10 @@
 import Foundation
 
 enum JudgeKnobs {
-    /// Starting values, set to underline little and rarely wrongly (precision over recall). Tuned with the harness.
     /// Compared with `Candidate.rawScore` (unscaled), because scaled scores collapse to 0 with one candidate.
-    static let minScore: [SearchMode: Double] = [.embed: 0.85, .words: 0.50, .both: 0.70]
+    /// `.both` is 0.60 from the rules parameter sweep on Little Women: the strict rare-word confirm keeps precision,
+    /// so a lower floor nearly doubles the right links (about 188 → 345) for a small precision cost (54% → 50%).
+    static let minScore: [SearchMode: Double] = [.embed: 0.85, .words: 0.50, .both: 0.60]
     static let margin: [SearchMode: Double] = [.embed: 0.03, .words: 0.15, .both: 0.05]
 }
 
@@ -18,14 +19,43 @@ enum RulesPicker {
         return top.sentence
     }
 
-    /// The rules confirm: the reference shares a content word or the same person name with the phrase,
-    /// or has an event in a role that usually answers the phrase's role.
-    static func confirm(phrase: EventPhrase, in sentence: IndexedSentence, reference: IndexedSentence) -> Bool {
+    /// The rules path's confirm: the phrase and the reference share a rare noun or adjective, two rare words
+    /// of any class, or a person name. Words count as shared only with the same lemma and word class.
+    /// `rareShare` and `nounOrTwo` exist for the harness's parameter sweep; the engine uses the defaults.
+    static func confirm(phrase: EventPhrase, in sentence: IndexedSentence, reference: IndexedSentence, stats: WordStats? = nil,
+                        rareShare: Double = WordKnobs.rareShare, nounOrTwo: Bool = true) -> Bool {
         let phraseTokens = sentence.tokens.filter { NSIntersectionRange($0.range, phrase.range).length > 0 }
-        if !SearchQuery.contentLemmas(phraseTokens).isDisjoint(with: SearchQuery.contentLemmas(reference.tokens)) { return true }
+        let shared = contentWords(phraseTokens).intersection(contentWords(reference.tokens))
+        if let stats {
+            let rare = shared.filter { stats.isRare($0.lemma, share: rareShare) }
+            let rareOK = !nounOrTwo ? !rare.isEmpty
+                : rare.contains(where: { $0.wordClass != "Verb" }) || Set(rare.map(\.lemma)).count >= 2
+            if rareOK { return true }
+        } else if !shared.isEmpty {
+            return true
+        }
         let names = sentence.names.filter { $0.kind == .person && NSIntersectionRange($0.range, phrase.range).length > 0 }.map(\.text)
-        if names.contains(where: { name in reference.names.contains { $0.text == name } }) { return true }
-        guard let role = phrase.role, let linked = SearchKnobs.roleLinks[role] else { return false }
-        return reference.events.contains { $0.role.map(linked.contains) == true }
+        return names.contains(where: { name in reference.names.contains { $0.text == name } })
+    }
+
+    /// The rare words and person names the phrase shares with the reference, for the model's prompt.
+    static func sharedRareWords(phrase: EventPhrase, in sentence: IndexedSentence, reference: IndexedSentence, stats: WordStats?) -> [String] {
+        let phraseTokens = sentence.tokens.filter { NSIntersectionRange($0.range, phrase.range).length > 0 }
+        let shared = contentWords(phraseTokens).intersection(contentWords(reference.tokens))
+        let words = stats.map { st in shared.filter { st.isRare($0.lemma) } } ?? shared
+        let names = sentence.names.filter { $0.kind == .person && NSIntersectionRange($0.range, phrase.range).length > 0 }.map(\.text)
+            .filter { name in reference.names.contains { $0.text == name } }
+        return Array(Set(words.map(\.lemma))).sorted() + names
+    }
+
+    private struct Word: Hashable {
+        let lemma: String
+        let wordClass: String
+    }
+
+    /// Nouns, verbs and adjectives, with their class, without the lemmas that say little.
+    private static func contentWords(_ tokens: [WordToken]) -> Set<Word> {
+        Set(tokens.filter { ["Noun", "Verb", "Adjective"].contains($0.wordClass) && !SearchKnobs.stopLemmas.contains($0.lemma) }
+            .map { Word(lemma: $0.lemma, wordClass: $0.wordClass) })
     }
 }

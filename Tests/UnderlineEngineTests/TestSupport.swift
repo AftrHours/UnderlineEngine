@@ -32,7 +32,7 @@ final class FakeUnderlineModel: UnderlineModelSvc, @unchecked Sendable {
     /// The sentence indexes of each confirm call: the underlined sentence, then the passage.
     var calls: [[Int]] { lock.withLock { log } }
 
-    func confirm(phrase: String, sentence: IndexedText, passage: IndexedText) async throws(ModelFailure) -> ModelConfirm {
+    func confirm(phrase: String, sentence: IndexedText, passage: IndexedText, shared: [String]) async throws(ModelFailure) -> ModelConfirm {
         lock.withLock { log.append([sentence.index, passage.index]) }
         if let confirmError { throw confirmError }
         return autoAccept ? ModelConfirm(evidence: PromptBuilder.cut(passage.text), explains: true) : confirmResult

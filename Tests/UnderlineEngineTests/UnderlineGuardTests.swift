@@ -45,3 +45,11 @@ import Testing
     #expect(!UnderlineGuard.quotes("a", from: "It was bad."))
     #expect(UnderlineGuard.quotes("it\u{2019}s so dreadful", from: "It's so dreadful to be poor!"))
 }
+
+@Test func speechTagsAndTinySentencesAreStubs() {
+    #expect(UnderlineGuard.isStub(indexed("cried Amy.")))
+    #expect(UnderlineGuard.isStub(indexed("asked Meg.")))
+    #expect(UnderlineGuard.isStub(indexed("Only see!")))
+    #expect(!UnderlineGuard.isStub(indexed("Hide the basket, quick!")))
+    #expect(!UnderlineGuard.isStub(indexed("I'll lift my eyebrows if anything is wrong.")))
+}

@@ -27,6 +27,13 @@ enum UnderlineGuard {
             .map { $0.trimmingCharacters(in: CharacterSet(charactersIn: "'")) }.filter { !$0.isEmpty }
     }
 
+    /// Too thin to be a reference: three words or fewer ("Jo!", "Only see!"), or a short speech tag ("cried Amy.", "asked Meg.").
+    static func isStub(_ sentence: IndexedSentence) -> Bool {
+        if sentence.tokens.count <= 3 { return true }
+        guard sentence.tokens.count <= 6, let first = sentence.tokens.first else { return false }
+        return first.wordClass == "Verb" && EventKnobs.speechVerbs.contains(first.lemma)
+    }
+
     /// The phrase's range within the paragraph, or `nil` unless the sentence text at the phrase's own range is the phrase.
     static func paragraphRange(of phrase: EventPhrase, in sentence: IndexedSentence) -> NSRange? {
         let text = sentence.text as NSString

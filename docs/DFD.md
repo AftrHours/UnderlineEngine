@@ -78,7 +78,7 @@ The loop that drives processes 2 to 5 is `UnderlineCtrl.pass` in [`UnderlineCtrl
 
 Runs once per chapter, from `UnderlineCtrl.prepare`. The result lives in memory only, and every later process reads it.
 
-```mermaid
+```markup
 flowchart TD
     iRead["iRead"]:::proc
     IC[("IndexedChapter")]:::store
@@ -176,7 +176,7 @@ flowchart TD
 
 | Step | What happens | Code | Knobs | Drops as |
 |---|---|---|---|---|
-| 3.1 | Build a `SearchQuery`: content lemmas, the phrase's vector, person names in it, a reaction cue; `text`, `track` and `role` copied as they are | `SearchQuery.make` | `stopLemmas` | |
+| 3.1 | Build a `SearchQuery`: content lemmas, the phrase's vector, person names in it, a reaction cue (an event phrase also takes the cue from any other event in its sentence); `text`, `track` and `role` copied as they are | `SearchQuery.make` | `stopLemmas` | |
 | 3.2 | Only sentences before the phrase's sentence; for a name, only sentences holding that name | `ReadBoundary.searchable`, `CandidateScorer.rank` | | |
 | 3.3 | Compare the phrase's vector with each sentence's (meaning) and its lemmas with the sentence's (words); add bonuses for track hints, role links and nearness | `CandidateScorer.rank`, `bonus`, `Cosine.similarity` | `embedWeight`, `wordsWeight`, bonuses, `roleLinks` | |
 | 3.4 | Drop a raw score under the floor, then keep the best `maxCandidates` by ranking score | `UnderlineSearch.candidates` | `minRawScore`, `maxCandidates` | `noCandidate` |
@@ -264,7 +264,7 @@ flowchart TD
 
 | Step | What happens | Code | Knobs | Drops as |
 |---|---|---|---|---|
-| 5.1 | Sort the paragraph's kept underlines by their reference's raw score; ties go to the earlier phrase, then by kind | `UnderlineLimiter.apply`, `isBetter` | `UnderlineKnobs.kindOrder` | |
+| 5.1 | Sort the paragraph's kept underlines by their reference's raw score; ties go to the earlier phrase, then by kind, then the shorter one | `UnderlineLimiter.apply`, `isBetter` | `UnderlineKnobs.kindOrder` | |
 | 5.2 | Take the best `maxPerParagraph`, skipping any that overlaps one already taken | `UnderlineLimiter.apply` | `UnderlineKnobs.maxPerParagraph` | |
 | 5.3 | Mark the records of the ones left out | `UnderlineCtrl.limit` | | `densityLimit` |
 | 5.4 | Send the shown underlines and every record of the paragraph | `UnderlineCtrl.paragraphResults` | | |

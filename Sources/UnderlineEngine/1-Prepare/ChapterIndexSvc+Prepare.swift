@@ -9,6 +9,7 @@ extension ChapterIndexSvc {
             sentences[i].events = EventSplitter.events(in: sentences[i], previous: i > 0 ? sentences[i - 1] : nil)
             sentences[i].vector = embedding.vector(for: sentences[i].text)
         }
-        return IndexedChapter(chapterIndex: input.chapterIndex, sentences: sentences, tagging: engine, embedding: embedding.engine)
+        return IndexedChapter(chapterIndex: input.chapterIndex, sentences: sentences, tagging: engine, embedding: embedding.engine,
+                              wordStats: WordStats(sentences: sentences))
     }
 }

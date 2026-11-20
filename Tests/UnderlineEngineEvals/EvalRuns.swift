@@ -98,17 +98,17 @@ enum Evals {
         print("  density: \(underlines.underlines.count) underlines over the \(sentencesRun) sentences with phrases in the golden paragraphs")
 
         print("\n== Summary by kind ==")
-        for kind in UnderlineKind.allCases {
+        for kind in Set(rows.map(\.sample.item.kind)).sorted() {
             let k = rows.filter { $0.sample.item.kind == kind }
             if k.isEmpty { continue }
             let counts = Dictionary(grouping: k, by: \.outcome).sorted { $0.key < $1.key }.map { "\($0.key.label) \($0.value.count)" }
-            print("  \(kind.rawValue): " + counts.joined(separator: " · "))
+            print("  \(kind): " + counts.joined(separator: " · "))
         }
 
         print("\n== Items, worst first ==")
         for row in rows.sorted(by: { ($0.outcome, $0.sample.item.id) < ($1.outcome, $1.sample.item.id) }) {
             let s = row.sample, r = row.r
-            print("\(row.outcome.label) · \(s.item.kind.rawValue) · \(s.item.id) · S\(s.resolved.sentence)")
+            print("\(row.outcome.label) · \(s.item.kind) · \(s.item.id) · S\(s.resolved.sentence)")
             print("    sentence: \"\(s.sentenceText)\"")
             print("    phrase: \"\(s.item.phrase)\"\(r.phrase.map { $0 == s.item.phrase ? "" : " · engine phrase \"\($0)\"" } ?? "")")
             print("    shown: \(r.underlined ? "S\(r.referenceSentence ?? -1) \"\(r.referenceText ?? "")\"" : "no underline\(r.dropped.map { " (\($0))" } ?? "")")")
@@ -220,7 +220,9 @@ func searchModeComparison() async throws {
 @available(macOS 27, *)
 @Test(.enabled(if: Evals.sweepEnabled), .timeLimit(.minutes(240)))
 func sweepEvaluation() async throws {
-    let (ctrl, chapter, _) = try await Evals.load(model: .automatic, search: .both)
+    // UNDERLINE_SWEEP_RULES=1: confirm without Foundation Models (the rules path). The grader below still uses a model.
+    let model: ModelChoice = ProcessInfo.processInfo.environment["UNDERLINE_SWEEP_RULES"] != nil ? .rulesOnly : .automatic
+    let (ctrl, chapter, _) = try await Evals.load(model: model, search: .both)
     let (judge, judgeName) = await Evals.judgeModel()
     let limit = ProcessInfo.processInfo.environment["UNDERLINE_SWEEP_LIMIT"].flatMap(Int.init)
     let swept = chapter.sentences.prefix(limit ?? chapter.sentences.count).map(\.index)
