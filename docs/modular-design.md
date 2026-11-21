@@ -1,0 +1,57 @@
+# UnderlineEngine: the modular design
+
+Goal: an app gives the engine a book and gets back underlines with the passage each one points to. Nothing else crosses the line,
+so a new method (a new embedding, tracks removed, key-point linking, cross-chapter search) is built, measured and released in this
+package, and the app only moves its version pin.
+
+```
+App (iRead)                              UnderlineKit (the door)              UnderlineEngine (inside)
+───────────                              ───────────────────────              ────────────────────────
+UnderlineRepo ──depends on──► protocol Underlining ◄──implements── Underliner ──runs one──► protocol LinkMethod
+ (save / iCloud only)           underlines(inChapter:of:startingAt:)                          ├─ Linker        (released)
+                                version, summary                                              ├─ KeyPointLinker  (idea, not built)
+AppContainer injects:                                                                         └─ …
+ • Underliner.make(.release)  in the app                                       each method is built from the stages
+ • StubUnderliner             in tests                                         Prepare → Detect → Search → Pick/Confirm → Limit
+```
+
+## What crosses the door
+
+| Direction | Type | Notes |
+|---|---|---|
+| in | `BookSource` (protocol), `BookText` (value for tests) | plain text with the app's paragraph and sentence numbers; the app's book type conforms, nothing is copied up front |
+| out | `UnderlineBatch` → `[UnderlineResult]` + `[ConsideredPhrase]` | one batch per paragraph, reader's paragraph first |
+| out | `version`, `summary` | the app saves `version` with each chapter; `summary` is one line for a debug sheet |
+
+`UnderlineResult` is **frozen**: `id, sentence, paragraph, range, text, kind, decidedBy, reference{sentence, paragraph, range, text}`.
+These are the fields iRead keeps on disk and in iCloud. They are never renamed, retyped or removed; a field a method no longer fills
+keeps a fixed value. `FrozenShapeTests` checks the field names and reads a real saved underline.
+
+## SOLID, as used here
+
+| | How |
+|---|---|
+| **S** | The app's repo only saves, loads and syncs. `Underliner` only runs a method. Each pipeline stage keeps one job. |
+| **O** | A new method is a new type that conforms to `LinkMethod`. `Underliner`, the door and the app do not change. |
+| **L** | Every method keeps the same promises, checked by one shared contract (`ContractTests`): references are earlier sentences in the same chapter, texts sit at their ranges, ids are unique, same input gives same output, empty chapters give nothing, results start at the reader's paragraph. A second, unrelated test method passes the same contract. |
+| **I** | The app sees `Underlining`: one function and two read-only values. Records, scores and harness types stay behind it. |
+| **D** | The app depends on the `Underlining` protocol; `AppContainer` injects `Underliner` or `StubUnderliner`. Inside, methods depend on `EmbeddingSvc` and `UnderlineModelSvc` protocols, as before. |
+
+Not done on purpose: a protocol for every helper, a plugin system, dynamic loading. There are two seams, `Underlining` (app ↔ engine)
+and `LinkMethod` (engine ↔ methods).
+
+## Versions
+
+`LinkMethod.version` is saved with every chapter. When a method's output changes, raise it (R8 is 5; the next method that changes the
+output takes 6) and every chapter saved by an older one is worked out again, with no change in the app. Never lower it.
+A new method ships as `.release` only after it has been measured against R8 on the books in `Dataset/` and reviewed.
+
+## What is not done yet
+
+1. The engine's old `public` API (`UnderlineCtrl`, `ChapterInput`, `UnderlineRecord`, …) is still public, so 1.2.0 apps keep building.
+   It becomes `package` in a later release, once the app uses only `UnderlineKit`. Until then the door is a convention the compiler
+   does not yet enforce.
+2. iRead still uses the old API. It switches in one change: `UnderlineRepo+Engine`, `ChapterInputMapper`, `UnderlineRepo`,
+   the debug view model, and removing `ModelCheckSvc`; `engineVersion` becomes `Underliner.version`.
+3. The harness (`BookRun`) still drives `UnderlineCtrl` directly. It should run methods through `LinkMethod` so a method is measured
+   exactly as the app runs it.

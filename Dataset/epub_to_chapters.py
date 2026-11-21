@@ -77,6 +77,23 @@ def chapters_by_file(path: str):
             headings = [h for h in headings if h]
             if not headings:
                 continue
+            if sum(h.lower().startswith("chapter") for h in headings) > 1:
+                # Several chapters in one file (Moby-Dick): split at every heading that starts with "Chapter" or "Epilogue".
+                parts = re.split(r"(<h[1-4][^>]*>.*?</h[1-4]>)", body, flags=re.S)
+                title, paragraphs = None, []
+                for part in parts:
+                    heading = re.fullmatch(r"<h[1-4][^>]*>(.*?)</h[1-4]>", part, re.S)
+                    if heading:
+                        text = text_of(heading.group(1))
+                        if text.lower().startswith(("chapter", "epilogue")):
+                            if title:
+                                out.append((title, paragraphs))
+                            title, paragraphs = text, []
+                    elif title:
+                        paragraphs += [t for t in (text_of(x) for x in re.findall(r"<p[^>]*>(.*?)</p>", part, re.S)) if t]
+                if title:
+                    out.append((title, paragraphs))
+                continue
             if headings[0].lower().startswith("chapter"):
                 title = " ".join(headings[:2])
             elif re.match(r"[IVXLC]+\. ", headings[0]):  # story collections: "I. A SCANDAL IN BOHEMIA"
