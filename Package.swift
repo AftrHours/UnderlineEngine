@@ -13,6 +13,6 @@ let package = Package(
         .target(name: "UnderlineKit", dependencies: ["UnderlineEngine"]),
         .testTarget(name: "UnderlineKitTests", dependencies: ["UnderlineKit", "UnderlineEngine"]),
         .testTarget(name: "UnderlineEngineTests", dependencies: ["UnderlineEngine"]),
-        .testTarget(name: "UnderlineEngineEvals", dependencies: ["UnderlineEngine"])
+        .testTarget(name: "UnderlineEngineEvals", dependencies: ["UnderlineEngine", "UnderlineKit"])
     ]
 )

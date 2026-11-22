@@ -27,7 +27,7 @@ Two names look alike: `UnderlineCandidate` is a **phrase** that may get underlin
 ### Pipeline
 Data in and out match iRead's `BookContent` (global paragraph and sentence indexes, UTF-16 ranges; spec §6.1).
 
-1. **Prepare** (`UnderlineCtrl.prepare`, once per chapter): check the sentences iRead sends, tag words (`NLTagger`), split each sentence into events with a causal role, embed every sentence (`NLEmbedding`). iRead splits the sentences; the harness uses `ChapterInput(plainText:)`, which splits them the same way.
+1. **Prepare** (`UnderlineCtrl.prepare`, once per chapter): check the sentences iRead sends, tag words (`NLTagger`), split each sentence into events with a causal role, embed every sentence (`NLEmbedding`). iRead splits the sentences; the book run uses `ChapterInput(plainText:)`, which splits them the same way.
 2. **Detect** (`UnderlineDetector`): each sentence's events and person names, minus short or general phrases, reasons given in the same sentence ("…because…"), and names seen in the last 30 sentences (`nameGapSentences`).
 3. **Search** (`CandidateScorer`, `UnderlineSearch`): ranks only sentences **before** the underlined one (`ReadBoundary`), meaning first, shared words second, plus role links and nearness. Below a floor (`minRawScore`) the phrase is dropped before any model call.
 4. **Pick and confirm** (Foundation Models, one call per phrase): take search's top candidate. If it is in the phrase's own paragraph the phrase is dropped, because the reader has just read it. Otherwise the model sees only the phrase, its sentence and that one passage, and says whether it explains the phrase, quoting the words that show it. A yes whose quote is not in the passage is not trusted and the phrase is dropped (`evidenceNotInPassage`). Without a model, `RulesPicker` picks and confirms (shared word, same name, or role link).
@@ -46,12 +46,12 @@ Data in and out match iRead's `BookContent` (global paragraph and sentence index
 | `Sources/UnderlineEngine/5-Limit` | DFD process 5: `UnderlineLimiter` |
 | `Sources/UnderlineEngine/Shared` | `ReadBoundary` and `Models/`: `ChapterInput`, `IndexedChapter`, `EventPhrase`, `Underline`, `UnderlineKind`, `ChapterUnderlines`, `UnderlineRecord`, `AnswerPassage`, `Candidate`, `KnobSnapshot` |
 | `Tests/UnderlineEngineTests` | Unit tests, with a scripted `FakeUnderlineModel` |
-| `Tests/UnderlineEngineEvals` | The harness (Apple Evaluations), the qualitative report and the CSV |
+| `Tests/UnderlineEngineEvals` | The evaluation tests (Apple Evaluations), the book run, the qualitative report and the CSV |
 | `Dataset/` | Little Women chapter 1 and the golden set `underline-gold.json` |
-| `Eval/results/` | Saved `EvaluationResult` JSON, a Markdown report and a CSV per run. Created by the harness on your machine and ignored by git |
+| `Eval/results/` | Saved `EvaluationResult` JSON, a Markdown report and a CSV per run. Created by the evaluation tests and the book run on your machine and ignored by git |
 
 ### Tuning
-Knobs sit at the top of the file that uses them. Change a value, run the harness, read the report.
+Knobs sit at the top of the file that uses them. Change a value, run the book run, read the report.
 
 | Knobs | File | Tunes |
 |---|---|---|
@@ -61,14 +61,14 @@ Knobs sit at the top of the file that uses them. Change a value, run the harness
 | `JudgeKnobs` | `4-PickConfirm/RulesPicker.swift` | rules-pick thresholds per search mode |
 | `ModelKnobs` | `4-PickConfirm/UnderlineModelSvcFoundation.swift` | the "explains" definition, confirm instructions, sampling, passage length |
 
-### Harness (Apple Evaluations)
+### Evaluation tests and the book run (Apple Evaluations)
 The `UnderlineEngineEvals` test target, on Apple's **Evaluations** framework (Xcode 27, macOS 27). Plain `swift test` runs only the unit tests; the evaluations call the on-device model and need a flag:
 ```
 UNDERLINE_EVALS=1 swift test --filter goldenEvaluation          # golden set, model path
 UNDERLINE_EVALS=1 swift test --filter rulesBaselineEvaluation   # golden set, rules only
 UNDERLINE_EVALS=1 swift test --filter searchModeComparison      # embed vs words vs both (the app always uses both)
 UNDERLINE_EVALS=1 UNDERLINE_SWEEP=1 swift test --filter sweepEvaluation   # every underline in the chapter (UNDERLINE_SWEEP_LIMIT=60 for the first 60 sentences)
-UNDERLINE_BOOK=little-women swift test --filter bookRun          # every chapter of a book in Dataset/<book>/, rules only (no model, no judge); UNDERLINE_BOOK_CHAPTERS=1-5 for a range, UNDERLINE_BOOK_MODEL=1 for Foundation Models
+UNDERLINE_BOOK=little-women UNDERLINE_BOOK_EMBEDDING=contextual swift test --filter bookRun   # every chapter of a book in Dataset/<book>/, run through a LinkMethod the way the app runs it (UNDERLINE_METHOD=r8 by default; UNDERLINE_BOOK_CHAPTERS=1-5 for a range); output in Eval/results/book-<book>-<method>-contextual/
 ```
 - **Golden set:** `Dataset/underline-gold.json` (67 items, provisional until the product owner reviews them). Each item is a phrase in a sentence with either the acceptable earlier references or `none` with a reason (`explanationLater`, `sameSentence`, `temptingWrongPassage`, `noExplanation`).
 - **Outcomes:** ⛔ spoiler, ❌ mismatch, ⚠️ missed (detect, search, pick, confirm, guard, density or explained in paragraph), ✅ underlined with the right reference, ✅ correctly none. The **mismatch rate** (of underlines shown, how many point at the wrong passage) comes first in every report.

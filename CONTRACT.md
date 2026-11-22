@@ -58,7 +58,7 @@ iRead saves these fields to disk and to iCloud, and sends `kind`, `decidedBy` an
 | **Pipeline, different underlines** | New rule, new knob values, new method behind `.release` | minor: `1.2.x` → `1.3.0` | **bump** | bump the pin and regenerate the seeds |
 | **Contract change** | Anything in §1 or §2 | major: `1.x` → `2.0.0` | bump if the output changes | change its own code |
 
-When unsure whether underlines change, run the book harness (`bookRun` in the README) before and after. If any underline differs, it's the second row.
+When unsure whether underlines change, run the book run (`bookRun` in the README) before and after. If any underline differs, it's the second row.
 
 ## 4. Why `Linker.version` matters to iRead
 
