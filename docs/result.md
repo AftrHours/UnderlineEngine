@@ -1,201 +1,220 @@
 # UnderlineEngine: experiment results
 
-One row per full-book run. Every run was produced by the `bookRun` harness on this Mac (Apple silicon), on Project Gutenberg texts of *Little Women* and *Pride and Prejudice*. Right / partial / wrong are **Claude's verdicts**, not ground truth (see Notes).
+Task: for a phrase $p$ in a novel, return the earlier sentence it refers back to, or nothing. Every number below comes from the `bookRun` test on this Mac (Apple silicon) and is scored with LLM-as-judge labels (Claude), not human labels. Full per-run records: `docs/record.md`.
 
-## Data
+## 1. Data
 
-| Book | Chapters | Paragraphs | Sentences | Words | Phrases evaluated |
+| Book | Chapters | Paragraphs | Sentences | Words | Phrases $p$ evaluated |
 |---|---|---|---|---|---|
-| Little Women | 47 | 3,798 | 9,617 | 185,663 | 18,718 (20,087 before the 3-word rule) |
+| Little Women | 47 | 3,798 | 9,617 | 185,663 | 18,718 |
 | Pride and Prejudice | 61 | 2,059 | 6,024 | 121,553 | 11,535 |
-| Before the Coffee Gets Cold (Kawaguchi, English translation; local copy, not committed) | 4 | 2,415 | 5,237 | 55,506 | 5,797 |
-| The Hobbit (Tolkien; local copy, not committed) | 19 | 1,852 | 6,124 | 95,176 | 9,142 |
 | The Adventures of Sherlock Holmes | 12 stories | 2,523 | 6,887 | 104,348 | 9,767 |
-| Sunrise on the Reaping (Collins; local copy, not committed) | 28 (27 + epilogue) | 3,040 | 10,861 | 112,751 | 11,572 |
-| Anne of Green Gables | 38 | – | – | 101,965 | – (not run yet) |
-| Moby-Dick | 136 (135 + epilogue) | – | – | 207,769 | – (not run yet) |
+| Anne of Green Gables | 38 | – | – | 101,965 | – |
+| Moby-Dick | 136 | – | – | 207,769 | – |
+| The Hobbit ¹ | 19 | 1,852 | 6,124 | 95,176 | 9,142 |
+| Before the Coffee Gets Cold ¹ | 4 | 2,415 | 5,237 | 55,506 | 5,797 |
+| Sunrise on the Reaping ¹ | 28 | 3,040 | 10,861 | 112,751 | 11,572 |
 
-Datasets: `Dataset/little-women/`, `Dataset/pride-and-prejudice/` (built by `Dataset/epub_to_chapters.py`). Verdicts: `Dataset/labels/claude-labels.csv` (Little Women, 2,536 pairs) `claude-labels-pride-and-prejudice.csv` (352 pairs) `claude-labels-before-the-coffee-gets-cold.csv` (502 pairs) and `claude-labels-the-hobbit.csv` (469 pairs); the last two are local only because they contain copyrighted excerpts. A verdict is keyed by chapter, sentence, phrase and reference, so the same pair is reused across runs.
+¹ Copyrighted: text, labels and silver standard stay local, never committed. Texts: `Dataset/<book>/` (`Dataset/epub_to_chapters.py`). Labels: `Dataset/labels/claude-labels*.csv`, keyed by (chapter, $t$, $p$, $j$), so a label is reused whenever a run makes the same link.
 
-## Target
+## 2. Notation
 
-The goal is the **Sherlock Holmes seed that Claude made by hand** for iRead (`EReader/iRead/App/Resources/UnderlineSeed/048b…`, row the Sherlock hand pick below). It is what a careful reader would underline: scene-specific clues ("Black Jack of Ballarat" → "So and so, of Ballarat", "the speckled band" → Julia's dying words, "the twelve-mile drive" → "only seven miles"), not repeated everyday phrases.
+- Phrase $p$ in sentence $s_t$. Candidates: earlier sentences $s_j$ of the same chapter, $j < t$, $\text{para}(j) < \text{para}(t)$. Distance $d = t - j$.
+- $L(x)$: content lemmas of $x$ (nouns, verbs, adjectives; `NLTagger`; minus a stop-list). $\text{names}(x)$: person names (`NLTagger .nameType`).
+- Book statistics: $N$ sentences, $\text{df}(w)$ sentences containing $w$. $\text{IDF}(w) = \ln\big(1 + N/\text{df}(w)\big)$. $\text{rare}(w) \iff \text{df}(w) \le \max(2,\ \rho N)$.
+- Shared lemmas $Sh_j = L(p) \cap L(s_j)$; shared rare lemmas $R_j = \{w \in Sh_j : \text{rare}(w)\}$.
+- Lexical score $W_j = \sum_{w \in Sh_j} \text{IDF}(w) \,/\, \sum_{w \in L(p)} \text{IDF}(w)$.
+- Embedding score $V_j = \text{clip}_{[0,1]}\big(a\,c(e(p), e(s_j)) + b\big)$, $c = (1+\cos)/2$, $e$ = mean-pooled sentence embedding (`NLEmbedding`, or `NLContextualEmbedding` centred on the book mean); $(a, b) = (0.703, 0.295)$ for the contextual model, $(1, 0)$ otherwise.
+- Token MaxSim $M_j(U) = \sum_{w \in U} \text{IDF}(w) \max_{u \in s_j} \cos(h_w, h_u) \,/\, \sum_{w \in U} \text{IDF}(w)$, $h$ = contextual token vectors centred on the chapter mean. $M^{\text{all}}_j = M_j(L(p))$, $M^{\text{new}}_j = M_j(L(p) \setminus L(s_j))$.
+- Raw score $r_j = \lambda V_j + (1-\lambda) W_j$. Ranking score $S_j = \lambda \tilde V_j + (1-\lambda) \tilde W_j + \beta_j$, with $\tilde{\ }$ = min–max over the pool and $\beta_j$ = kind/track bonuses. Retrieval $K$ = top $k$ by $S$ with $r_j \ge \phi$.
+- Selection $\text{P}(\tau, \delta)$: $j^* = \arg\max_K S$, kept iff $r_{j^*} \ge \tau$ and $r_{j^*} - r_{j_2} \ge \delta$.
+- Verification $C_8(j) \iff \big(\exists\, w \in R_j \text{ noun/adj}\big) \vee |R_j| \ge 2 \vee \text{names}(p) \cap \text{names}(s_j) \ne \emptyset$.
+- Points $\pi_j = 2\cdot\mathbb{1}[\exists\, w \in R_j \text{ noun/adj}] + \mathbb{1}[|R_j| \ge 2] + \mathbb{1}[M^{\text{new}}_j \ge 0.3]$; threshold $\theta(d) = 2$ if $d \le 50$, else $3$.
+- Output: the engine's links $\hat P = \{(t, j)\}$. Silver standard $G$: links Claude picked while reading; $G^+ \subseteq G$ those labelled right.
 
-| Measure | Target (hand pick, hand seed) | R8 (R17, current) | Gap (current) |
-|---|---|---|---|
-| Precision (right ÷ links) | **95%** (aim ≥ 90%) | 54.6% | −40 points |
-| Wrong links | 2 of 516 (0.4%) | 290 of 857 (34%) | 288 too many |
-| Right links per 1,000 words | 4.7 | 4.5 | about equal |
-| All links per 1,000 words | 4.9 | 8.2 | +3.3 (noise) |
-| Overlap with the target | 516 | 50 identical pairs | 466 target links missed |
+## 3. Evaluation
 
-So R8 already finds about as many right links as the target, but different ones, and buries them under word echoes. Closing the gap means two things, in this order:
+- Label $y \in \{\text{right}, \text{partial}, \text{wrong}\}$ per link, LLM-as-judge (Claude reads $s_t$ with $p$ marked, and $s_j$). Partial = related but not the exact moment.
+- Precision $= \#\text{right} / |\hat P|$ (partial counts as not right). Exact when every link is labelled; † = estimated from earlier labels plus a uniform random sample of 150 unlabelled links, with a 95% CI.
+- Silver-standard recall $= |\hat P \cap G^+| / |G^+|$, matched as sentence pairs $(t, j)$.
+- Retrieval recall@$k = \Pr[\text{rank}(j_{\text{gold}}) \le k]$ over $G^+$, before selection and verification.
+- Feature separation: AUC $= \Pr[f(x^+) > f(x^-)]$, $x^+$ a right link, $x^-$ a wrong one (0.5 = none; < 0.5 = lower values are right).
+- Bias: the thresholds were tuned on the same labels they are scored on, and Claude also made $G$; both numbers are likely optimistic. No human labels yet.
 
-1. **Drop the echoes**: confirm that the phrase and the reference describe the same event or clue, not only that they share a rare word (see the three kinds of wrong links in `Eval/results/book-the-adventures-of-sherlock-holmes-rules-contextual/wrong-underlines.md`).
-2. **Pick the links a reader would ask about**: prefer clue-like phrases (names of things, places, objects, numbers) over generic actions, so the overlap with the target rises.
+## 4. Target: the silver standard $G$
 
+| Book | $\lvert G \rvert$ | Precision of $G$ | Wrong in $G$ | Right links / 1,000 words |
+|---|---|---|---|---|
+| The Adventures of Sherlock Holmes ² | 516 | **95.3%** | 2 | 4.7 |
+| Little Women | 1,507 | **79.3%** | 16 | 6.4 |
+| Pride and Prejudice | 788 | **81.9%** | 8 | 5.3 |
+| Anne of Green Gables | 722 | **89.5%** | 4 | 6.3 |
+| Moby-Dick | 1,353 | **86.8%** | 6 | 5.7 |
+| Sunrise on the Reaping | 2,655 | not labelled | – | – |
 
-Caveat: the target was reviewed by Claude, who also made it, so 95% is likely optimistic. Verdicts: `Dataset/labels/claude-labels-sherlock-hand-seed.csv`. Right links per 1,000 words for R8 on the other books: Little Women 2.3, The Hobbit 3.4, Before the Coffee Gets Cold 4.8.
+² The hand seed bundled in iRead (`UnderlineSeed/048b…`); may cross chapters and was labelled by the same Claude session that made it. The others: same chapter, $\text{para}(j) < \text{para}(t)$, made by ten agents and labelled by twelve other agents; one Little Women batch was stricter (84.8% without it). Files: `Dataset/labels/handpick-<book>/`, checked by `handpick_check.py`.
 
-## Results
+## 5. Pipeline (R8, UnderlineEngine 1.2.0, in iRead)
 
-Right / partial / wrong count the run's underlines. **Every run is fully reviewed**: each underline in every run has a verdict, so every precision below is exact (precision = right ÷ underlines; partial counts as not right).
-
-| Run | Book | Method | Parameters (change from the previous run) | Underlines | Right | Partial | Wrong | Reviewed | Precision |
-|---|---|---|---|---|---|---|---|---|---|
-| R1 | Little Women | Rules · NLEmbedding · unweighted shared words | minScore 0.70 · margin 0.05 · old confirm (shared content word or role link) · names 1+ words (30-sentence gap) · 1 per paragraph · no word statistics | 986 | 364 | 97 | 525 | 986 (all) | **36.9%** exact |
-| R2 | Little Women | R1 + IDF | R1 + IDF word weights (`ln(1+N/df)`), book-level statistics | 485 | 280 | 39 | 166 | 485 (all) | **57.7%** exact |
-| R3 | Little Women | R2 + rare-word confirm + stub ban | R2 + confirm: rare noun/adjective (≤ 0.85%), two rare lemmas, or same name · references of ≤ 3 tokens or a speech tag dropped | 367 | 235 | 24 | 108 | 367 (all) | **64.0%** exact (includes name-only links) |
-| R5 | Little Women | R3 + 3-word minimum, NLEmbedding | R3 + `minPhraseWords` 3 for names | 271 | 153 | 24 | 94 | 271 (all) | **56.5%** exact |
-| R6 | Little Women | R5 with NLContextual | R5 + NLC (mean-pooled tokens, centred on 1/5 of the book, scale 0.703 / 0.295) | 349 | 206 | 39 | 104 | 349 (all) | **59.0%** exact |
-| R7 | Little Women | R6 + knobs from the parameter sweep | minScore 0.60 · rare share 0.4% | 684 | 360 | 106 | 218 | 684 (all) | **52.6%** exact |
-| R8 | Little Women | R7 without the paragraph cap ← **current** | `maxPerParagraph` unlimited (overlaps still prevented) | 831 | 432 | 129 | 270 | 831 (all) | **52.0%** exact |
-| R15 | Before the Coffee Gets Cold | **R8 configuration (current)** | identical to R8, no tuning | 549 | 266 | 95 | 188 | 549 (all) | **48.5%** exact |
-| RC | Before the Coffee Gets Cold | **Release 1.1.0 engine as the app runs it** | as RH | 1,289 | 455 | 217 | 617 | 1,289 (all) | **35.3%** exact |
-| Release seed | Little Women | **Release 1.1.0 seed bundled in iRead** (Foundation Models, iRead's text split) | iRead commit `1e94ca8`, engine 4 | 1,826 | 453 | 241 | 1,132 | 1,826 (all) | **24.8%** exact (27 links in the Gutenberg licence) |
-| Release seed | Pride and Prejudice | same, made by rules (no Apple Intelligence when made) | same | 284 | 128 | 78 | 78 | 284 (all) | **45.1%** exact (16 in the licence) |
-| Release seed | Anne of Green Gables | same as Little Women | same | 1,020 | 280 | 182 | 558 | 1,020 (all) | **27.5%** exact (28 in the licence) |
-| Release seed | Moby-Dick | same as Little Women | same | 1,175 | 288 | 217 | 670 | 1,175 (all) | **24.5%** exact (27 in the licence) |
-| R16 | The Hobbit | **R8 configuration (current)** | identical to R8, no tuning | 525 | 319 | 86 | 120 | 525 (all) | **60.8%** exact |
-| RH | The Hobbit | **Release 1.1.0 engine as the app runs it**: Foundation Models confirm, NLEmbedding, per-chapter search | no IDF · no word statistics · names 1+ words · 1 per paragraph · model confirms the top candidate | 1,009 | 365 | 172 | 472 | 1,009 (all) | **36.2%** exact |
-| R17 | The Adventures of Sherlock Holmes | **R8 configuration (current)** on a story collection | identical to R8, no tuning; compared with the iRead seed Claude made by hand (516 links) | 857 | 468 | 99 | 290 | 857 (all) | **54.6%** exact; 50 links identical to the hand seed |
-| Hand pick | The Adventures of Sherlock Holmes | **iRead seed made by hand by Claude** (not an engine run) | 516 links chosen while reading; 15 are shorter than 3 words | 516 | 492 | 22 | 2 | 516 (all) | **95.3%** (reviewed by Claude, who also made it, so likely optimistic) |
-| R22 | The Adventures of Sherlock Holmes | **R8 without the underline kind and Zwaan's event-indexing tracks** (best measured; reverted for the release, see Notes) | removed: `UnderlineKind`, `Track`, the track-hint bonus (place / time / goal words) and the cause-nearby bonus; a name still searches only sentences that mention it | 871 | 479 | 99 | 293 | 871 (all) | **55.0%** exact (R8: 54.6%) |
-| R23 | Little Women | same as R22 | identical | 851 | 451 | 130 | 270 | 851 (all) | **53.0%** exact (R8: 51.6%) |
-| R24 | The Hobbit | same as R22 | identical | 535 | 329 | 86 | 120 | 535 (all) | **61.5%** exact (R8: 60.8%) |
-| R25 | Before the Coffee Gets Cold | same as R22 | identical | 537 | 264 | 87 | 186 | 537 (all) | **49.2%** exact (R8: 48.5%) |
-| R26 | Sunrise on the Reaping | same as R22 | identical, no tuning; compared with links Claude hand-picked for the whole book (hand pick, 2,655 links) | 812 | 344 | 198 | 270 | 812 (all) | **42.4%** exact; 111 links identical to the hand-pick, 206 more on a hand-picked phrase with a different reference |
-| Hand pick | Sunrise on the Reaping | **Links hand-picked by Claude while reading** (not an engine run) | every chapter read in full; each link = phrase + earlier sentence in the same chapter, text-checked | 2,655 | – | – | – | – | not reviewed (used as the reference set, not scored) |
-| Hand pick | Little Women | **Links hand-picked by Claude while reading** (not an engine run) | same rules as the Sunrise hand pick: every chapter read in full; phrase + earlier passage in an earlier paragraph of the same chapter; text-checked by `Dataset/labels/handpick_check.py` | 1,507 | 1,195 | 296 | 16 | 1,507 (all) | **79.3%** exact (84.8% without the strictest reviewer, see Notes); R8 finds 92 of them (6%), and 94 of R8's 836 links (11%) are identical to one |
-| Hand pick | Pride and Prejudice | same as the Little Women hand pick | identical | 788 | 645 | 135 | 8 | 788 (all) | **81.9%** exact |
-| Hand pick | Anne of Green Gables | same as the Little Women hand pick | identical | 722 | 646 | 72 | 4 | 722 (all) | **89.5%** exact |
-| Hand pick | Moby-Dick | same as the Little Women hand pick | identical | 1,353 | 1,175 | 172 | 6 | 1,353 (all) | **86.8%** exact |
-| E1 | Little Women ch1–5 | **Entity semantic-role matching (SRL), ceiling test** (not an engine: roles labelled by Claude) | each sentence's events labelled with semantic roles, who (agent) · did (predicate) · what (patient) · where (location), names and pronouns resolved by Claude; a later sentence links to the earlier sentence (earlier paragraph, same chapter) whose roles have the same *what* plus one more equal role, most slots then nearest | 311 | 145 | 88 | 78 | 311 (all) | **46.6%** exact (R8 on the same chapters: 97 links, 51.5%); finds 18% of the hand pick (R8 10%) |
-
-
-### Ablation: main versions
-
-Each row changes one stage from the row above it. Precision = right ÷ underlines (Claude's verdicts, every link reviewed); "–" = not run on that book. \* = measured on the seed iRead bundled with release 1.1.0 (its own text split of the EPUB, including the Project Gutenberg licence at the end), not a harness run.
-
-| Version | Method | Parameters | Sherlock | Little Women | Hobbit | Coffee | Sunrise | Pride and Prejudice | Anne of Green Gables | Moby-Dick |
-|---|---|---|---|---|---|---|---|---|---|---|
-| **Release 1.1.0** (previous app engine) | Foundation Models confirm · NLEmbedding · per-chapter search | no IDF · no word statistics · names 1+ words · 1 underline per paragraph · the model confirms the top candidate | – | 24.8%* | 36.2% | 35.3% | – | 45.1%* | 27.5%* | 24.5%* |
-| **R8** (UnderlineEngine 1.2.0, in the app) | Rules confirm · NLContextualEmbedding · IDF word weights · book-level word statistics | score = 0.65 meaning + 0.35 shared rare words · floor 0.35 · top 6 · pick at 0.60, margin 0.05 · confirm needs a shared rare noun/adjective (≤ 0.4% of sentences), 2 rare lemmas or the same name · phrases 3+ words · no paragraph cap · underline kind and Zwaan tracks (place / time / goal / cause bonuses) | 54.6% | 51.6% | 60.8% | 48.5% | – | – | – | – |
-| **R22** (best measured, not shipped) | R8 minus the underline kind and Zwaan's event-indexing tracks | same as R8, without the track-hint and cause-nearby bonuses; ties broken by score, then position | 55.0% | 53.0% | 61.5% | 49.2% | 42.4% | – | – | – |
-| **Hand pick** (Claude, target, not an engine) | Claude reads each chapter and links a phrase to the earlier passage it recalls | no thresholds; any phrase length; Sherlock's seed may cross chapters, the others stay in the chapter (passage in an earlier paragraph) | 95.3% | 79.3% | – | – | – | 81.9% | 89.5% | 86.8% |
-
-- **Release → R8:** rules with rare-word evidence replace the model confirm; precision goes up 14–25 points on the two books both were run on.
-- **R8 → R22:** removing the kind and the tracks adds 0.4–1.4 points on every book (39 more right links, 5 fewer wrong across the four books; 92% of underlines unchanged).
-- **R8 / R22 → hand-pick:** a careful reader's links are right 79–95% of the time against 49–62% for the engine (on Little Women 79.3% vs 51.6%), and the two pick mostly different links: R8 finds 6% of the Little Women hand-pick, R22 4% of Sunrise's. The hand-pick numbers are Claude judging Claude's picks, so likely optimistic; one Little Women reviewer was stricter (84.8% without that batch).
-- R8 has not been run yet on Pride and Prejudice, Anne of Green Gables or Moby-Dick.
-
-#### Bundled seeds in iRead: release 1.1.0 vs 1.2.0 (R8) — counts only, **not reviewed**
-
-Unlike the rows above, these are **not** reviewed runs. They are the seeds iRead ships for its sample books, made by each engine on iRead's own parse of the EPUBs (old: iRead commit `1e94ca8`, engine 4; new: `e126f75`, engine 5, exported from a phone with "Underline whole book"). Same engine code as the measured runs, but a different text split from `Dataset/`, so the counts differ from R8's runs.
-
-| Book | Old seed (1.1.0) | New seed (1.2.0, R8) | Same link in both |
-|---|---|---|---|
-| Little Women | 1,826 (Foundation Models) | 892 (rules) | 130 |
-| Pride and Prejudice | 284 (rules) | 201 (rules) | 65 |
-| Anne of Green Gables | 1,020 (Foundation Models) | 643 (rules) | 138 |
-| Moby Dick | 1,175 (Foundation Models) | 744 (rules) | 134 |
-| Sherlock Holmes | 516 (hand) | 516 (hand, relabelled to engine 5) | 516 |
-
-- 1.2.0 underlines 30–51% less than 1.1.0 and keeps only about 15–20% of its links. Pride and Prejudice stays low (201) because this EPUB is split into 472 parts and the engine searches within a part.
-- **Old seeds (1.1.0) are now fully reviewed** (2026-11-21, 565 verdicts reused from identical earlier links, 3,740 reviewed by eleven Claude agents; `Dataset/labels/claude-labels-seed-1.1.0-<book>.csv`): Little Women 24.8%, Pride and Prejudice 45.1%, Anne 27.5%, Moby-Dick 24.5% right, in line with the book runs of release 1.1.0 (RH 36.2%, RC 35.3%). The new R8 seeds are still not reviewed. Both the old and the new seeds underline text in the Project Gutenberg licence at the end of each book (new seeds: 35–39 links per book), because iRead treats that back matter as a chapter.
-- To measure them: review a sample of each seed (about 100 links per book per version gives roughly ±10 points).
-
-### Retrieval recall: R8's search, before confirm (2026-11-22)
-
-For each hand-picked link judged right, where R8's own ranking (`CandidateScorer.rank`) puts the earlier sentence the reader linked to. The query is the hand-picked phrase; the pool is the earlier paragraphs of the same chapter (median 109 sentences, the linked one a median 25 sentences back). Little Women, 1,195 links, all usable. `Tests/UnderlineEngineEvals/RetrievalRecall.swift`, `Eval/results/recall-little-women/`.
-
-| Ranking | @1 | @3 | @6 | @10 | @20 | @50 |
-|---|---|---|---|---|---|---|
-| R8 (vector + words + bonus) | 28.6% | 44.2% | 53.1% | 59.9% | 67.9% | 81.9% |
-| Meaning only (`NLContextualEmbedding`) | 9.3% | 17.2% | 24.5% | 32.6% | 45.4% | 69.7% |
-| Words only (IDF lemmas) | 35.2% | 50.3% | 60.1% | 67.6% | 75.8% | 86.1% |
-| Random | 2.7% | 6.7% | 11.6% | 17.1% | 29.0% | 54.6% |
-
-| Stage | Hand-picked links still reachable |
-|---|---|
-| Detect makes a phrase overlapping the reader's | 88.3% |
-| Search puts the linked sentence in the top 6 sent to confirm | 53.1% |
-| Both | 47.7% |
-| Underlined by R8 (book run) | 7% |
-
-- Most of the loss is after search: R8 brings about half of the reader's links to confirm, and confirm and pick drop nearly all of them.
-- The vector is the weak signal: alone it is near random at the top, and mixed in at 0.65 it pulls the word signal down (35.2% → 28.6% at @1).
-- Caveat: the hand pick was made by Claude, which may favour links that share words, so the words-only ranking may be flattered somewhat.
-
-**Stage 3, entities (2026-11-22).** `EntityResolver` (rules on NaturalLanguage's person names; moved to `Experiments/retrieval/stages/`): "Jo March" → Jo, titled names kept apart ("Mrs. March"), gender per name from the pronouns after it, and he/she/him/her → the last person of that gender within 4 sentences. Each sentence gets one token per person, counted like a rare word.
-
-| Ranking | @1 | @3 | @6 | @10 | @20 | @50 |
-|---|---|---|---|---|---|---|
-| Words only | 35.2% | 50.3% | 60.1% | 67.6% | 75.8% | 86.1% |
-| Words + entities | 34.1% | 50.5% | 60.0% | 66.9% | 75.3% | 86.5% |
-| R8 mix with words + entities | 28.2% | 44.7% | 53.0% | 59.6% | 68.0% | 82.3% |
-
-- No gain: 41% of the hand-picked phrases carry a person token, but names were already content lemmas (the tagger lemmatises "Jo" to "jo"), so the stage only adds resolved pronouns and merged full names, and those point mostly at the main characters, who are in so many sentences that sharing them says little.
-- The tagger's person names are noisy ("because thou", "cake", "beyond"), and some genders come out wrong (Antonio, Apollyon female), but fixing that would not change the result above: the people a reader links on are the frequent ones.
-
-**Stage 5, roles (2026-11-22).** `RoleLabeler` (rules; moved to `Experiments/retrieval/stages/`): for each clause of `EventSplitter`, agent = the person (stage 3) or noun before the main verb, else the previous clause's agent; predicate = the main verb's lemma; patient = the first noun or person after it; location = a noun after a place preposition. Each clause gives role pairs as tokens (predicate>patient, agent>predicate, predicate>location, agent>patient), weighted by IDF. 80.5% of the hand-picked phrases get at least one pair.
-
-| Ranking | @1 | @3 | @6 | @10 | @20 | @50 |
-|---|---|---|---|---|---|---|
-| Words only | 35.2% | 50.3% | 60.1% | 67.6% | 75.8% | 86.1% |
-| Words + roles | 34.1% | 49.9% | 59.7% | 67.6% | 75.6% | 86.0% |
-| Words + ½ roles on top (roles can only add) | 35.1% | 50.0% | 59.9% | 67.6% | 75.6% | 86.0% |
-| Words + entities + roles | 33.6% | 49.7% | 59.5% | 66.4% | 75.1% | 86.5% |
-| R8 mix with words + entities + roles | 27.9% | 43.8% | 52.3% | 58.9% | 67.4% | 82.1% |
-| Roles only | 6.3% | 12.5% | 20.7% | 26.7% | 38.1% | 57.0% |
-
-- No gain, in any mix. Role pairs alone find something (20.7% at @6, against 11.6% random), but nothing the shared words don't already find: a clause pair matches only when both words of it are shared, and then the word signal has already ranked that sentence high.
-- This fits E1: with Claude's ideal roles, SRL found links words missed because Claude resolved pronouns and named the same thing the same way across paraphrases ("Christmas presents"). Rules on NaturalLanguage tags can do neither, so their roles are a rearrangement of the same words.
-- Stages 3 and 5 were moved out of the engine to `Experiments/retrieval/stages/` with their tests and the recall test that measured them. Retrieval on the phone is at its limit with these tools: the remaining levers are the search mix (words alone beat R8's mix by 7 points at @6) and what happens after search (confirm keeps about 7 of the 48% that reach it).
-
-## Runtime
-
-**Total** = the whole test, including preparing every chapter (tagging, embedding, word statistics). **Processing** = the sum of the chapters' underline time (search, pick, confirm). Per-chapter, paragraph, sentence and word figures use processing time, except the last column.
-
-| Run | Total (s) | Prepare (s) | Processing (s) | s / chapter | ms / paragraph | ms / sentence | ms / word | ms / word (total) |
-|---|---|---|---|---|---|---|---|---|
-| R1 | 225 | ≈0 (no word statistics) | 226 | 4.8 | 60 | 23.5 | 1.22 | 1.21 |
-| R2 | 233 | 59 | 174 | 3.7 | 46 | 18.1 | 0.94 | 1.26 |
-| R3 | 243 | 61 | 182 | 3.9 | 48 | 18.9 | 0.98 | 1.31 |
-| R5 | 230 | 60 | 170 | 3.6 | 45 | 17.7 | 0.92 | 1.24 |
-| R6 | 375 | 111 | 264 | 5.6 | 70 | 27.5 | 1.42 | 2.02 |
-| R7 | 377 | 112 | 265 | 5.6 | 70 | 27.6 | 1.43 | 2.03 |
-| R8 | 400 | 117 | 283 | 6.0 | 75 | 29.4 | 1.52 | 2.15 |
-| RC | 3280 | – | 3280 | 820.1 | 1358 | 626.4 | 59.10 | 59.10 |
-| RH | 4431 | – | 4431 | 233.2 | 2393 | 723.6 | 46.56 | 46.56 |
-
-## Knobs of R22 (R8 is the same plus the track-hint bonus 0.10 and cause-nearby bonus 0.15, and the underline kind)
-
-| Knob | Value | File |
+| Stage | Function | Apple API |
 |---|---|---|
-| `UnderlineKnobs.minPhraseWords` | 3 (names too) | `2-Detect/UnderlineDetector.swift` |
-| `UnderlineKnobs.nameGapSentences` | 30 | same |
-| `UnderlineKnobs.maxPerParagraph` | unlimited (`Int.max`) | same |
-| `SearchKnobs.embedWeight` / `wordsWeight` | 0.65 / 0.35 | `3-Search/CandidateScorer.swift` |
-| `SearchKnobs.minRawScore[.both]` | 0.35 | same |
-| `SearchKnobs.maxCandidates` | 6 | same |
-| `SearchKnobs.similarityScale[.contextual]` | a 0.703 · b 0.295 | same |
-| `WordKnobs.rareShare` / `rareMin` | 0.4% / 2 sentences | `3-Search/WordStats.swift` |
-| `JudgeKnobs.minScore[.both]` / `margin[.both]` | 0.60 / 0.05 | `4-PickConfirm/RulesPicker.swift` |
-| `ModelChoice` default | `.rulesOnly` (Foundation Models optional via `.automatic`) | `Pipeline/UnderlineCtrl.swift` |
-| Embedding (harness) | `NLContextualEmbedding`, phrase text only | `1-Prepare/EmbeddingSvc.swift` |
-| `WordStats` (harness) | whole book | `Tests/UnderlineEngineEvals/BookRun.swift` |
+| 0 Clean | drop Gutenberg header, licence, contents (not yet wired in) | Swift only |
+| 1 Prepare | sentences; $L(x)$, word class, $\text{names}(x)$; $e(x)$; $\text{df}$ over the book | `NLTokenizer`, `NLTagger`, `NLContextualEmbedding` (fallback `NLEmbedding` after 10 s) |
+| 2 Detect | phrases $p$: clauses of ≥ 3 words, not only general words; names unseen in the last 30 sentences | Swift only |
+| 3 Retrieve | $K$: top $k = 6$ by $S_j$, $\lambda = 0.65$, $r_j \ge \phi = 0.35$ | Swift only |
+| 4 Select + verify | $\text{P}(0.60, 0.05)$, then $C_8(j^*)$ with $\rho = 0.004$ | Swift only (`FoundationModels` confirm exists but is off) |
+| 5 Limit | no overlapping underlines; drop $s_j$ in the same paragraph | Swift only |
 
-## Notes
+No Core ML model and no training.
 
-- **Reviewer.** Every verdict is Claude's, reading the underlined sentence and its reference. The rules knobs were tuned against the same verdicts, so rules precision may be slightly optimistic. No blind human review yet.
-- **Partial** = the reference is related but not exact, or only partly explains the phrase.
-- **Parameter sweep** (360 settings, `Eval/results/rules-parameter-sweep-contextual/sweep.csv`) is not a full run; it was used to choose R7. R8 rerun through the public app API on 2026-11-19 gives 836 underlines, 431 right, 129 partial, 276 wrong (**51.6%**), with 826 identical to the first R8 run.
-- **R22–R25 (2026-11-20).** Removing the underline kind changed nothing (every underline identical on four books). Removing Zwaan's event-indexing tracks (and the two search bonuses built on them) changed 7–11% of the underlines: across the four books 39 more right links and 5 fewer wrong ones, precision up 0.4–1.4 points on every book. Kept.
-- **Back to R8 for the release (2026-11-20).** The underline kind and the tracks are back in the engine, because iRead stores `kind` in each reader's iCloud chapters and in the shared ratings, and the release must not touch that. The restored engine was checked on Before the Coffee Gets Cold: 549 of 549 underlines identical to R15 (`Eval/results/book-before-the-coffee-gets-cold-rules-contextual.r8-restored-check/`). R22 (+0.4–1.4 points) can follow once the iCloud records can change.
-- **Hand picks for the four public-domain books (2026-11-21).** Made like the Sunrise hand pick: Claude read every chapter (ten agents in parallel) and wrote `phrase || earlier passage` lines in `Dataset/labels/handpick-<book>/chNN.txt`, same chapter only, the passage in an earlier paragraph, both strings unique in the chapter; `Dataset/labels/handpick_check.py` passes on every chapter (4,370 links, 0 bad). Density: Little Women 8.1, Pride and Prejudice 6.5, Anne 7.1, Moby-Dick 6.5 links per 1,000 words; chapters whose callbacks point to earlier chapters came out sparse, because cross-chapter links were left out. Anne and Moby-Dick were split for the first time (`epub_to_chapters.py` now splits a file at each "Chapter" heading when it holds several, as Moby-Dick's EPUB does; the other books split exactly as before). All 4,370 links were then reviewed by twelve other Claude agents (fresh, not the pickers) with the usual rubric: Little Women 79.3%, Pride and Prejudice 81.9%, Anne 89.5%, Moby-Dick 86.8% right; only 34 links (0.8%) were judged wrong, the rest of the misses are partial (same topic, a different moment, or a passage one sentence off). One Little Women reviewer (chapters 38–47) also marked a link partial when its passage is only the line just above, which the others did not; its batch scored 58% against 84–85% for the other three, so Little Women is 84.8% without it. Claude reviewing Claude's picks is likely optimistic, as for the Sherlock hand pick (95.3%). Verdicts: `Dataset/labels/claude-labels-handpick-<book>.csv`. On Little Women, R8 and the hand-pick overlap little (6% of the hand links found), the same pattern as Sunrise (4%): the engine and a careful reader pick mostly different links.
-- **E1, entity semantic-role (SRL) ceiling test (2026-11-22).** The mentor's Subject–Verb–Object–Place idea, which in NLP is semantic role labeling (SRL: agent · predicate · patient · location), tried with the best possible labels: Claude labelled 1,690 role sets in Little Women chapters 1–5 (`Experiments/srl/`), resolving pronouns and keeping names and objects worded the same. Matching on the same patient (object) plus one more role gave 311 links, 46.6% right, against R8's 97 links at 51.5%: about three times as many right links (145 vs 50) at a similar precision. The patient (object) role carries it; "same person + same verb" alone found half as much. But it reaches few of a careful reader's links: 18% of the hand pick (R8 10%), and no rule that needs an equal role can ever reach more than 27–41% of them, because most hand-picked links are paraphrases, consequences or feelings with no role in common. SRL matching and R8 share only 14 links, so they find different things (together 25% of the hand pick). Caveats: links here are sentence to sentence (R8 underlines a phrase), the roles are ideal (a phone version, without pronoun resolution, would do worse), and it is five chapters of one book.
-- **E1 with rough SRL (2026-11-22), not reviewed.** The same matching on roles labelled only with Apple's NaturalLanguage, what a phone can do (`Experiments/srl/rough_roles.swift`: predicate = each verb's lemma; agent = the nearest person name before it, he/she = the last person named; patient = the first noun or name after it; location = a noun after in/at/into/to; 4 seconds for the whole book). On chapters 1–5 the same rule (same patient plus one more role) makes 95 links and finds 4% of the hand pick, against 18% with Claude's roles and 10% for R8. On the whole book it makes 795 links and finds 2% of the hand pick (R8: 832 links, 7%); only 4% of its links coincide with a hand-picked one (R8 10%). Loosening to "same patient only" finds 8% but makes 3,396 links. Most of the ceiling's gain comes from what a tagger can't do: resolving pronouns and naming the same thing the same way ("Christmas presents" vs "present"/"Christmas"). Precision not measured; counts only.
-- **R26 and the Sunrise hand pick (2026-11-20), Sunrise on the Reaping.** A new, modern, first-person book, imported locally (copyrighted; text, labels and hand-picks stay local). The R22 engine, untouched, scores **42.4%**, its lowest book (others 49–62%). Claude hand-picked 2,655 links over all 28 chapters (`Dataset/labels/handpick-sunrise/`); R26 reproduces only 111 of them exactly (4%), so the engine and a reader pick mostly different links. Of the 206 R26 links that land on a hand-picked phrase but point elsewhere, 72 were still right. The 111 identical links were counted right without review; the other 701 were reviewed by four Claude subagents with the usual rubric (not by the main session, so slightly less consistent with the other books). Many wrong links share one common word or name (the narrator's name, everyday nouns). Verdicts: `Dataset/labels/claude-labels-sunrise-on-the-reaping.csv`. The release 1.1.0 run on this book is still in progress; its row will follow.
-- **RH** and **RC** were produced from a separate worktree at tag `1.1.0` with a small runner (`ReleaseBookRun.swift`) that calls `UnderlineCtrl(model: .automatic)` exactly as the app does, on the same chapter texts as R16 and R15. Their runtime is one figure (prepare and model calls together); 135 of its underlines are shorter than 3 words, and 101 of those are wrong.
-- **iRead app** still uses the release 1.1.0 engine (Little Women seed ≈10% right in a 40-item sample) and does not yet use NLContextual, book-level word statistics or rules-only.
+### R8 and R9 by stage
+
+| Stage | R8 | R9 | Different? |
+|---|---|---|---|
+| 1 Prepare | Split sentences, tag words, compute a mean-pooled sentence vector, count word rarity over the book, and cut events with role, track and kind. | The same, plus contextual vectors for each content word, computed when a chapter's links are first verified (for the soft lexical match). | Small addition |
+| 2 Detect | Event phrases of 3+ words, plus names not seen in the last 30 sentences. | The same. | No |
+| 3 Retrieve | Score = 0.65 × sentence-vector similarity + 0.35 × shared rare words + role bonuses + Zwaan track bonuses; must clear a floor; top 6. | Score = shared rare words + role bonuses; no sentence vector and no Zwaan bonuses; top 6. | Yes |
+| 4 Select + verify | Selection takes only the top candidate, and only if its score is at least 0.60 and 0.05 ahead of the second. Verification accepts a shared rare noun or adjective, two shared rare words, or the same name. | Selection takes, of the top 6, any candidate sharing a content word, nearer first when scores are close, with no minimum score or lead. Verification counts evidence points (rare noun or adjective 2, two rare words 1, soft lexical match 1) and needs 2 within 20 sentences, 3 further; a shared name counts like any shared noun. | Yes, the biggest change |
+| 5 Limit | No overlapping underlines; on a full tie, kind decides. | The same, but kind never decides. | Tiny |
+
+R8 decides mostly in selection (strict: most phrases stop there) and verifies leniently; R9 lets almost everything through selection and decides in verification, with evidence that gets stricter with distance. Stages 1, 2 and 5 are practically the same, so the whole difference in output comes from stages 3 and 4.
+
+## 6. Ablation: main versions
+
+Precision per book. "–" = not run. \* = the seed bundled with iRead 1.1.0 (iRead's own text split, licence included), not a `bookRun`.
+
+| Version | Definition | Sherlock | Little Women | Hobbit | Coffee | Sunrise | Pride and Prejudice | Anne | Moby-Dick |
+|---|---|---|---|---|---|---|---|---|---|
+| **Release 1.1.0** | $e$ = `NLEmbedding`; IDF ≡ 1; $\text{P}(\tau, \delta)$, then Foundation Models yes/no instead of $C_8$; ≤ 1 link per paragraph | – | 24.8%\* | 36.2% | 35.3% | – | 45.1%\* | 27.5%\* | 24.5%\* |
+| **R8** (shipped) | $e$ = `NLContextualEmbedding`; $\lambda = 0.65$, $k = 6$, $\phi = 0.35$; $\text{P}(0.60, 0.05)$; $C_8$, $\rho = 0.004$; $\beta_j \ne 0$ | 54.6% | 51.6% | 60.8% | 48.5% | – | – | – | – |
+| **R22** (not shipped) | R8 with $\beta_j = 0$ | 55.0% | 53.0% | 61.5% | 49.2% | 42.4% | – | – | – |
+| **R9** (with the distance fix) | $\lambda = 0$; $K$ = top 6 with $W_j > 0$, ties within 0.05 to larger $j$; no $\text{P}$; first $j \in K$ with $\pi_j \ge \theta(d)$, $\theta = 2$ for $d \le 20$, 3 further | 45.2% | 43.4% | 43.1% | 50.4% | ≈ 47.2%† | ≈ 44.0%† | 48.6% | ≈ 36.7%† |
+| **$G$** (target) | picked by Claude while reading | 95.3% | 79.3% | – | – | – | 81.9% | 89.5% | 86.8% |
+
+| Change | Effect |
+|---|---|
+| Release → R8 | FM yes/no → $C_8$, `NLEmbedding` → `NLContextualEmbedding`, IDF ≡ 1 → book IDF: precision +14 to +25 points (Hobbit, Coffee) |
+| R8 → R22 | $\beta_j \to 0$: +0.4 to +1.4 points on every book; +39 right, −5 wrong over four books; 92% of links unchanged. Not shipped: iRead stores the kind in iCloud records |
+| R8 → R9 before the distance fix (Little Women, every link labelled) | $\lvert \hat P \rvert$ 836 → 1,980; #right 431 → 775; #partial 129 → 443; #wrong 276 → 762; precision 0.516 → 0.391; silver-standard recall 0.070 → 0.145. By $d$: ≤ 20 sentences 0.487 (1,035 links), 21–50 0.303 (687), > 50 0.244 (258). Without $\text{P}$, 4.5× as many pairs reach verification |
+| R8 → R9 before the distance fix (Sherlock, every link labelled) | $\lvert \hat P \rvert$ 857 → 1,609; #right 468 → 682; #partial 99 → 363; #wrong 290 → 564; precision 0.546 → 0.424. By $d$: ≤ 20 sentences 0.491 (640 links), 21–50 0.393 (453), > 50 0.368 (516) |
+| R8 → R9 before the distance fix (Hobbit, every link labelled) | $\lvert \hat P \rvert$ 525 → 1,026; #right 319 → 420; #partial 86 → 273; #wrong 120 → 333; precision 0.608 → 0.409. By $d$: ≤ 20 sentences 0.508 (492 links), 21–50 0.360 (331), > 50 0.251 (203) |
+| R9 distance fix ($\theta$: 2 points within 50 → within 20) | Removes only links: Little Women 1,980 → 1,469 (right 775 → 637, 43.4%), Sherlock 1,609 → 1,300 (682 → 588, 45.2%), Hobbit 1,026 → 795 (420 → 343, 43.1%). Against R8: more right links on every book measured (Little Women 637 vs 431, Sherlock 588 vs 468, Hobbit 343 vs 319, Coffee 300 vs 266) at 8–17 points lower precision except Coffee (50.4% vs 48.5%). † = estimated from earlier labels plus a random sample of 150 new links (95% CI: Sunrise 43.1–51.3%, Pride and Prejudice 40.5–47.6%, Moby-Dick 29.6–43.7%) |
+| R8 vs $G$ | silver-standard recall of R8: 0.06 (Little Women); of R22: 0.04 (Sunrise). The engine and $G$ contain mostly different links |
+
+## 7. Where links are lost (Little Women)
+
+Retrieval recall@$k$ of $G^+$ (1,195 links; pool median 109 sentences, $d$ median 25):
+
+| Ranking | @1 | @3 | @6 | @10 | @20 | @50 |
+|---|---|---|---|---|---|---|
+| $S_j$ (R8) | 28.6% | 44.2% | 53.1% | 59.9% | 67.9% | 81.9% |
+| $V_j$ only | 9.3% | 17.2% | 24.5% | 32.6% | 45.4% | 69.7% |
+| $W_j$ only | 35.2% | 50.3% | 60.1% | 67.6% | 75.8% | 86.1% |
+| BM25 ($k_1 = 1.2$, $b = 0.75$) | 33.1% | 48.4% | 58.5% | 65.8% | 75.6% | 86.1% |
+| $M^{\text{all}}_j$ only | 32.1% | 46.6% | 55.6% | 63.1% | 73.1% | 84.6% |
+| $\tfrac12 \tilde W_j + \tfrac12 \tilde M^{\text{all}}_j$ | 36.4% | 51.8% | 60.7% | 66.9% | 75.1% | 86.2% |
+| random | 2.7% | 6.7% | 11.6% | 17.1% | 29.0% | 54.6% |
+
+| Stage | Share of $G^+$ still reachable |
+|---|---|
+| Detect produces a $p$ overlapping the silver-standard phrase | 88.3% |
+| $j_{\text{gold}} \in K$ | 53.1% |
+| both | 47.7% |
+| $(t, j_{\text{gold}}) \in \hat P$ (R8) | 7% |
+
+- Most of the loss is in selection + verification (47.7% → 7%), not retrieval.
+- $V_j$ is the weakest signal and lowers recall when mixed in ($W_j$ alone beats $S_j$ by 7 points at @6). But dropping it alone ($\lambda = 0$ with R8's untuned words-mode $\text{P}(0.50, 0.15)$) lowered end-to-end precision.
+- Entity resolution (he/she → last person of that gender) and rule-based semantic roles added to $W_j$ changed @6 by ≤ 0.4 points.
+
+## 8. Feature analysis for verification (Little Women)
+
+2,657 labelled engine links (1,137 right · 353 partial · 1,167 wrong) and 1,195 links of $G^+$. `Tests/UnderlineEngineEvals/LinkFeatures.swift`, `Experiments/retrieval/features.py`.
+
+| Feature $f$ | Median, right | Median, wrong | Median, $G^+$ | AUC right vs wrong |
+|---|---|---|---|---|
+| $d$ | 22 | 54 | 25 | **0.32** |
+| $\sum_{w \in Sh_j} \text{IDF}(w)$ | 7.1 | 5.7 | 4.3 | 0.68 |
+| $\mathbb{1}[R_j \ne \emptyset]$ | 1 | 0 | 0 | 0.62 |
+| $M^{\text{all}}_j$ | 0.59 | 0.53 | 0.34 | 0.61 |
+| $c(e(p), e(s_j))$ | 0.61 | 0.57 | 0.56 | 0.57 |
+| $c(e(s_t), e(s_j))$ | 0.65 | 0.63 | 0.62 | 0.55 |
+| $\mathbb{1}[\text{names}(p) \cap \text{names}(s_j) \ne \emptyset]$ | 0 | 0 | 0 | 0.54 |
+| $M^{\text{new}}_j$ | 0.12 | 0.00 | 0.22 | 0.53 |
+| $\lvert (L(s_t) \setminus L(p)) \cap L(s_j) \rvert$ | 0 | 0 | 0 | 0.53 |
+
+- $d$ separates best; embedding, name and outside-phrase features are near chance (0.53–0.57).
+- $C_8$ rejects 64% of $G^+$: silver-standard links share fewer and commoner lemmas ($\sum \text{IDF}$ 4.3 vs 7.1) and have higher $M^{\text{new}}_j$ (0.22 vs 0.12).
+
+Verification rules scored offline on the same links (so optimistic):
+
+| Rule | Right | Partial | Wrong | Precision | Share of $G^+$ accepted |
+|---|---|---|---|---|---|
+| $C_8$ | 851 | 258 | 611 | 49.5% | 35.6% |
+| $C_8 \wedge (d \le 50 \vee M^{\text{all}} \ge 0.6)$ | 738 | 180 | 362 | 57.7% | 27.6% |
+| $C_8 \vee d \le 20$ | 1,020 | 301 | 745 | 49.4% | 64.4% |
+| $\big(C_8 \wedge (d \le 50 \vee M^{\text{all}} \ge 0.6)\big) \vee d \le 20$ | 907 | 223 | 496 | 55.8% | 56.4% |
+
+In full runs on The Hobbit and Sherlock Holmes the last rule did not generalise: links added by $d \le 20$ alone were about 25% right, and the far filter removed right links with wrong ones. $d$ helps only together with lexical evidence.
+
+## 9. Oracle experiment E1: semantic role labelling (Little Women ch. 1–5)
+
+Each sentence as role tuples (agent, predicate, patient, location); link $s_t \to s_j$ iff the patients match and one more role matches (nearest, most roles first).
+
+| Roles from | $\lvert \hat P \rvert$ | Precision | Silver-standard recall |
+|---|---|---|---|
+| Claude (pronouns resolved, consistent naming) | 311 | 46.6% (145 right) | 0.18 |
+| `NLTagger` rules (rough) | 95 | not labelled | 0.04 |
+| R8, same chapters | 97 | 51.5% (50 right) | 0.10 |
+
+- With ideal roles: ~3× R8's right links at similar precision, and only 14 links shared with R8. No equal-role rule can reach more than 27–41% of $G^+$ (most silver-standard links are paraphrases or consequences).
+- With rough roles the gain disappears (whole book: recall 0.02 vs R8 0.07): it needs coreference and consistent naming, which `NLTagger` does not give. `Experiments/srl/`.
+
+## 10. Bundled seeds in iRead (counts only, not labelled)
+
+| Book | Seed 1.1.0 | Seed 1.2.0 (R8) | Same link in both |
+|---|---|---|---|
+| Little Women | 1,826 (Foundation Models) | 892 | 130 |
+| Pride and Prejudice | 284 (rules) | 201 | 65 |
+| Anne of Green Gables | 1,020 (Foundation Models) | 643 | 138 |
+| Moby-Dick | 1,175 (Foundation Models) | 744 | 134 |
+| Sherlock Holmes | 516 (hand) | 516 (hand) | 516 |
+
+The 1.1.0 seeds are fully labelled (precision in §6, marked \*); the 1.2.0 seeds are not. Both put 35–39 links per book in the Gutenberg licence, which iRead parses as a chapter. Pride and Prejudice's EPUB is split into 472 parts, so the within-part search finds few links.
+
+## 11. Runtime (Little Women, Mac)
+
+Total = whole test including Prepare; Processing = retrieval + selection + verification.
+
+| Run | Total (s) | Prepare (s) | Processing (s) | s / chapter | ms / sentence | ms / word (total) |
+|---|---|---|---|---|---|---|
+| R1 | 225 | ≈ 0 | 226 | 4.8 | 23.5 | 1.21 |
+| R2 | 233 | 59 | 174 | 3.7 | 18.1 | 1.26 |
+| R3 | 243 | 61 | 182 | 3.9 | 18.9 | 1.31 |
+| R5 | 230 | 60 | 170 | 3.6 | 17.7 | 1.24 |
+| R6 | 375 | 111 | 264 | 5.6 | 27.5 | 2.02 |
+| R7 | 377 | 112 | 265 | 5.6 | 27.6 | 2.03 |
+| R8 | 400 | 117 | 283 | 6.0 | 29.4 | 2.15 |
+| RC (1.1.0, Coffee) | 3,280 | – | 3,280 | 820.1 | 626.4 | 59.10 |
+| RH (1.1.0, Hobbit) | 4,431 | – | 4,431 | 233.2 | 723.6 | 46.56 |
+
+## 12. R8 parameters
+
+| Symbol | Value | Code |
+|---|---|---|
+| $\lambda$ | 0.65 | `SearchKnobs.embedWeight` |
+| $k$, $\phi$ | 6, 0.35 | `SearchKnobs.maxCandidates`, `minRawScore[.both]` |
+| $(a, b)$ | 0.703, 0.295 | `SearchKnobs.similarityScale[.contextual]` |
+| $\rho$ | 0.004 (min 2 sentences) | `WordKnobs.rareShare`, `rareMin` |
+| $\tau$, $\delta$ | 0.60, 0.05 | `JudgeKnobs.minScore[.both]`, `margin[.both]` |
+| $\beta_j$ | track hint 0.10, cause nearby 0.15 / $(1+d)$, role link 0.10, reaction nearby 0.30 / $(1+d)$ | `SearchKnobs` |
+| min $\lvert p \rvert$, name gap | 3 words, 30 sentences | `UnderlineKnobs` |
+| paragraph cap | none | `UnderlineKnobs.maxPerParagraph` |
+| verification | rules only ($C_8$) | `ModelChoice.rulesOnly` |
+
+## 13. Notes
+
+- R8 rerun through the public API (2026-11-19): 836 links, 431 right, 129 partial, 276 wrong (51.6%); 826 identical to the first run. The thresholds were chosen with a 360-setting sweep (`Eval/results/rules-parameter-sweep-contextual/`).
+- R8 kept $\beta_j$ and the kind (R22 is better) because iRead stores `kind` in iCloud chapters and shared ratings; the restored engine reproduces R15 exactly (549 of 549 links).
+- Sunrise (R26, R22 engine): 812 links, 42.4%; 111 of them in $G$ (counted right without review), the other 701 labelled by four Claude agents.
+- RH and RC ran the 1.1.0 tag with `UnderlineCtrl(model: .automatic)`, as the app did; 135 of their links are shorter than 3 words, 101 of those wrong.
+- iRead pins UnderlineEngine 1.2.0 (R8, rules only, `NLContextualEmbedding`, book-level df).

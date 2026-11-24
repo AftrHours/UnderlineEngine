@@ -13,16 +13,19 @@ private func item(_ expected: GoldExpected, phrase: String = "face the war like 
     GoldItem(id: "t", sentence: GoldRef(index: index, text: sentenceText), phrase: phrase, kind: "action", expected: expected, provisional: true, note: nil)
 }
 
-private func record(_ dropped: DropReason?, candidates: [Int] = [0], prompt: [Int] = [4, 0], phrase: String = "would face the war like Father") -> UnderlineRecord {
-    UnderlineRecord(chapterIndex: 0, sentence: 4, phrase: phrase, kind: .action, path: .model, searchModeUsed: .words,
-                    embedding: .none, candidates: candidates, promptSentences: prompt, pickedSentence: nil, confirm: nil,
-                    kept: dropped == nil, dropped: dropped, times: StepTimes())
+private func record(_ dropped: DropReason?, candidates: [Int] = [0], picked: Int? = nil, phrase: String = "would face the war like Father") -> UnderlineRecord {
+    var r = UnderlineRecord(chapterIndex: 0, sentence: 4, phrase: phrase, kind: .action, embedding: .none, phraseRange: nil)
+    r.candidates = candidates
+    r.pickedSentence = picked
+    r.kept = dropped == nil
+    r.dropped = dropped
+    return r
 }
 
 private func underline(reference: Int, phrase: String = "would face the war like Father") -> ChapterUnderlines {
     let ref = AnswerPassage(sentence: reference, paragraph: 0, range: NSRange(location: 0, length: 1), text: "r")
     return ChapterUnderlines(chapterIndex: 0, underlines: [Underline(sentence: 4, paragraph: 0, range: NSRange(location: 60, length: 30), text: phrase,
-                                                                     kind: .action, role: .attempt, reference: ref, decidedBy: .model)])
+                                                                     kind: .action, role: .attempt, reference: ref, decidedBy: .rules)])
 }
 
 private let none = ChapterUnderlines(chapterIndex: 0, underlines: [])
@@ -58,14 +61,13 @@ private func resolved(_ i: GoldItem) async throws -> ResolvedItem { try #require
     #expect(OutcomeClassifier.classify(r, underlines: none, records: [record(.confirmRejected)]) == .missed(.confirmRejected))
     #expect(OutcomeClassifier.classify(r, underlines: none, records: [record(.guardRejected)]) == .missed(.guardRejected))
     #expect(OutcomeClassifier.classify(r, underlines: none, records: [record(.densityLimit)]) == .missed(.densityLimit))
-    #expect(OutcomeClassifier.classify(r, underlines: none, records: [record(.modelFailed)]) == .missed(.modelFailed))
     #expect(OutcomeClassifier.classify(r, underlines: none, records: [record(.explainedInParagraph)]) == .missed(.explainedInParagraph))
 }
 
 @Test func spoilerBeatsEverything() async throws {
     let r = try await resolved(item(.underline(references: [0])))
-    #expect(OutcomeClassifier.classify(r, underlines: underline(reference: 0), records: [record(nil, prompt: [4, 0])]) == .underlinedRight)
-    #expect(OutcomeClassifier.classify(r, underlines: underline(reference: 0), records: [record(nil, prompt: [4, 0, 5])]) == .spoiler)
+    #expect(OutcomeClassifier.classify(r, underlines: underline(reference: 0), records: [record(nil, picked: 0)]) == .underlinedRight)
+    #expect(OutcomeClassifier.classify(r, underlines: underline(reference: 0), records: [record(nil, picked: 5)]) == .spoiler)
     #expect(OutcomeClassifier.classify(r, underlines: underline(reference: 0), records: [record(nil, candidates: [0, 4])]) == .spoiler)
 }
 

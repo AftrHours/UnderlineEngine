@@ -1,0 +1,954 @@
+[
+  {
+    "number": 1,
+    "title": "CHAPTER 1. Loomings.",
+    "file": "ch01.txt",
+    "paragraphs": 15,
+    "words": 2190
+  },
+  {
+    "number": 2,
+    "title": "CHAPTER 2. The Carpet-Bag.",
+    "file": "ch02.txt",
+    "paragraphs": 12,
+    "words": 1416
+  },
+  {
+    "number": 3,
+    "title": "CHAPTER 3. The Spouter-Inn.",
+    "file": "ch03.txt",
+    "paragraphs": 74,
+    "words": 5783
+  },
+  {
+    "number": 4,
+    "title": "CHAPTER 4. The Counterpane.",
+    "file": "ch04.txt",
+    "paragraphs": 7,
+    "words": 1640
+  },
+  {
+    "number": 5,
+    "title": "CHAPTER 5. Breakfast.",
+    "file": "ch05.txt",
+    "paragraphs": 9,
+    "words": 734
+  },
+  {
+    "number": 6,
+    "title": "CHAPTER 6. The Street.",
+    "file": "ch06.txt",
+    "paragraphs": 9,
+    "words": 807
+  },
+  {
+    "number": 7,
+    "title": "CHAPTER 7. The Chapel.",
+    "file": "ch07.txt",
+    "paragraphs": 10,
+    "words": 940
+  },
+  {
+    "number": 8,
+    "title": "CHAPTER 8. The Pulpit.",
+    "file": "ch08.txt",
+    "paragraphs": 7,
+    "words": 943
+  },
+  {
+    "number": 9,
+    "title": "CHAPTER 9. The Sermon.",
+    "file": "ch09.txt",
+    "paragraphs": 22,
+    "words": 3552
+  },
+  {
+    "number": 10,
+    "title": "CHAPTER 10. A Bosom Friend.",
+    "file": "ch10.txt",
+    "paragraphs": 10,
+    "words": 1544
+  },
+  {
+    "number": 11,
+    "title": "CHAPTER 11. Nightgown.",
+    "file": "ch11.txt",
+    "paragraphs": 4,
+    "words": 721
+  },
+  {
+    "number": 12,
+    "title": "CHAPTER 12. Biographical.",
+    "file": "ch12.txt",
+    "paragraphs": 8,
+    "words": 875
+  },
+  {
+    "number": 13,
+    "title": "CHAPTER 13. Wheelbarrow.",
+    "file": "ch13.txt",
+    "paragraphs": 15,
+    "words": 1673
+  },
+  {
+    "number": 14,
+    "title": "CHAPTER 14. Nantucket.",
+    "file": "ch14.txt",
+    "paragraphs": 5,
+    "words": 752
+  },
+  {
+    "number": 15,
+    "title": "CHAPTER 15. Chowder.",
+    "file": "ch15.txt",
+    "paragraphs": 16,
+    "words": 1178
+  },
+  {
+    "number": 16,
+    "title": "CHAPTER 16. The Ship.",
+    "file": "ch16.txt",
+    "paragraphs": 82,
+    "words": 5418
+  },
+  {
+    "number": 17,
+    "title": "CHAPTER 17. The Ramadan.",
+    "file": "ch17.txt",
+    "paragraphs": 30,
+    "words": 2251
+  },
+  {
+    "number": 18,
+    "title": "CHAPTER 18. His Mark.",
+    "file": "ch18.txt",
+    "paragraphs": 27,
+    "words": 1344
+  },
+  {
+    "number": 19,
+    "title": "CHAPTER 19. The Prophet.",
+    "file": "ch19.txt",
+    "paragraphs": 35,
+    "words": 1195
+  },
+  {
+    "number": 20,
+    "title": "CHAPTER 20. All Astir.",
+    "file": "ch20.txt",
+    "paragraphs": 8,
+    "words": 917
+  },
+  {
+    "number": 21,
+    "title": "CHAPTER 21. Going Aboard.",
+    "file": "ch21.txt",
+    "paragraphs": 38,
+    "words": 1064
+  },
+  {
+    "number": 22,
+    "title": "CHAPTER 22. Merry Christmas.",
+    "file": "ch22.txt",
+    "paragraphs": 21,
+    "words": 1610
+  },
+  {
+    "number": 23,
+    "title": "CHAPTER 23. The Lee Shore.",
+    "file": "ch23.txt",
+    "paragraphs": 4,
+    "words": 359
+  },
+  {
+    "number": 24,
+    "title": "CHAPTER 24. The Advocate.",
+    "file": "ch24.txt",
+    "paragraphs": 23,
+    "words": 1645
+  },
+  {
+    "number": 25,
+    "title": "CHAPTER 25. Postscript.",
+    "file": "ch25.txt",
+    "paragraphs": 4,
+    "words": 277
+  },
+  {
+    "number": 26,
+    "title": "CHAPTER 26. Knights and Squires.",
+    "file": "ch26.txt",
+    "paragraphs": 6,
+    "words": 1216
+  },
+  {
+    "number": 27,
+    "title": "CHAPTER 27. Knights and Squires.",
+    "file": "ch27.txt",
+    "paragraphs": 9,
+    "words": 1660
+  },
+  {
+    "number": 28,
+    "title": "CHAPTER 28. Ahab.",
+    "file": "ch28.txt",
+    "paragraphs": 7,
+    "words": 1393
+  },
+  {
+    "number": 29,
+    "title": "CHAPTER 29. Enter Ahab; to Him, Stubb.",
+    "file": "ch29.txt",
+    "paragraphs": 10,
+    "words": 1180
+  },
+  {
+    "number": 30,
+    "title": "CHAPTER 30. The Pipe.",
+    "file": "ch30.txt",
+    "paragraphs": 4,
+    "words": 287
+  },
+  {
+    "number": 31,
+    "title": "CHAPTER 31. Queen Mab.",
+    "file": "ch31.txt",
+    "paragraphs": 7,
+    "words": 842
+  },
+  {
+    "number": 32,
+    "title": "CHAPTER 32. Cetology.",
+    "file": "ch32.txt",
+    "paragraphs": 47,
+    "words": 5107
+  },
+  {
+    "number": 33,
+    "title": "CHAPTER 33. The Specksnyder.",
+    "file": "ch33.txt",
+    "paragraphs": 7,
+    "words": 962
+  },
+  {
+    "number": 34,
+    "title": "CHAPTER 34. The Cabin-Table.",
+    "file": "ch34.txt",
+    "paragraphs": 11,
+    "words": 2189
+  },
+  {
+    "number": 35,
+    "title": "CHAPTER 35. The Mast-Head.",
+    "file": "ch35.txt",
+    "paragraphs": 12,
+    "words": 2531
+  },
+  {
+    "number": 36,
+    "title": "CHAPTER 36. The Quarter-Deck.",
+    "file": "ch36.txt",
+    "paragraphs": 51,
+    "words": 2769
+  },
+  {
+    "number": 37,
+    "title": "CHAPTER 37. Sunset.",
+    "file": "ch37.txt",
+    "paragraphs": 5,
+    "words": 498
+  },
+  {
+    "number": 38,
+    "title": "CHAPTER 38. Dusk.",
+    "file": "ch38.txt",
+    "paragraphs": 4,
+    "words": 388
+  },
+  {
+    "number": 39,
+    "title": "CHAPTER 39. First Night-Watch.",
+    "file": "ch39.txt",
+    "paragraphs": 4,
+    "words": 254
+  },
+  {
+    "number": 40,
+    "title": "CHAPTER 40. Midnight, Forecastle.",
+    "file": "ch40.txt",
+    "paragraphs": 49,
+    "words": 1509
+  },
+  {
+    "number": 41,
+    "title": "CHAPTER 41. Moby Dick.",
+    "file": "ch41.txt",
+    "paragraphs": 24,
+    "words": 3757
+  },
+  {
+    "number": 42,
+    "title": "CHAPTER 42. The Whiteness of the Whale.",
+    "file": "ch42.txt",
+    "paragraphs": 31,
+    "words": 3601
+  },
+  {
+    "number": 43,
+    "title": "CHAPTER 43. Hark!",
+    "file": "ch43.txt",
+    "paragraphs": 13,
+    "words": 295
+  },
+  {
+    "number": 44,
+    "title": "CHAPTER 44. The Chart.",
+    "file": "ch44.txt",
+    "paragraphs": 11,
+    "words": 2022
+  },
+  {
+    "number": 45,
+    "title": "CHAPTER 45. The Affidavit.",
+    "file": "ch45.txt",
+    "paragraphs": 25,
+    "words": 3536
+  },
+  {
+    "number": 46,
+    "title": "CHAPTER 46. Surmises.",
+    "file": "ch46.txt",
+    "paragraphs": 6,
+    "words": 989
+  },
+  {
+    "number": 47,
+    "title": "CHAPTER 47. The Mat-Maker.",
+    "file": "ch47.txt",
+    "paragraphs": 14,
+    "words": 914
+  },
+  {
+    "number": 48,
+    "title": "CHAPTER 48. The First Lowering.",
+    "file": "ch48.txt",
+    "paragraphs": 51,
+    "words": 3907
+  },
+  {
+    "number": 49,
+    "title": "CHAPTER 49. The Hyena.",
+    "file": "ch49.txt",
+    "paragraphs": 9,
+    "words": 830
+  },
+  {
+    "number": 50,
+    "title": "CHAPTER 50. Ahab's Boat and Crew. Fedallah.",
+    "file": "ch50.txt",
+    "paragraphs": 8,
+    "words": 1000
+  },
+  {
+    "number": 51,
+    "title": "CHAPTER 51. The Spirit-Spout.",
+    "file": "ch51.txt",
+    "paragraphs": 12,
+    "words": 1500
+  },
+  {
+    "number": 52,
+    "title": "CHAPTER 52. The Albatross.",
+    "file": "ch52.txt",
+    "paragraphs": 8,
+    "words": 711
+  },
+  {
+    "number": 53,
+    "title": "CHAPTER 53. The Gam.",
+    "file": "ch53.txt",
+    "paragraphs": 9,
+    "words": 1601
+  },
+  {
+    "number": 54,
+    "title": "CHAPTER 54. The Town-Ho's Story.",
+    "file": "ch54.txt",
+    "paragraphs": 112,
+    "words": 7913
+  },
+  {
+    "number": 55,
+    "title": "CHAPTER 55. Of the Monstrous Pictures of Whales.",
+    "file": "ch55.txt",
+    "paragraphs": 14,
+    "words": 1876
+  },
+  {
+    "number": 56,
+    "title": "CHAPTER 56. Of the Less Erroneous Pictures of Whales, and the True Pictures of Whaling Scenes.",
+    "file": "ch56.txt",
+    "paragraphs": 8,
+    "words": 1290
+  },
+  {
+    "number": 57,
+    "title": "CHAPTER 57. Of Whales in Paint; in Teeth; in Wood; in Sheet-Iron; in Stone; in Mountains; in Stars.",
+    "file": "ch57.txt",
+    "paragraphs": 11,
+    "words": 926
+  },
+  {
+    "number": 58,
+    "title": "CHAPTER 58. Brit.",
+    "file": "ch58.txt",
+    "paragraphs": 12,
+    "words": 1006
+  },
+  {
+    "number": 59,
+    "title": "CHAPTER 59. Squid.",
+    "file": "ch59.txt",
+    "paragraphs": 13,
+    "words": 917
+  },
+  {
+    "number": 60,
+    "title": "CHAPTER 60. The Line.",
+    "file": "ch60.txt",
+    "paragraphs": 10,
+    "words": 1452
+  },
+  {
+    "number": 61,
+    "title": "CHAPTER 61. Stubb Kills a Whale.",
+    "file": "ch61.txt",
+    "paragraphs": 24,
+    "words": 1944
+  },
+  {
+    "number": 62,
+    "title": "CHAPTER 62. The Dart.",
+    "file": "ch62.txt",
+    "paragraphs": 5,
+    "words": 564
+  },
+  {
+    "number": 63,
+    "title": "CHAPTER 63. The Crotch.",
+    "file": "ch63.txt",
+    "paragraphs": 5,
+    "words": 472
+  },
+  {
+    "number": 64,
+    "title": "CHAPTER 64. Stubb's Supper.",
+    "file": "ch64.txt",
+    "paragraphs": 59,
+    "words": 2963
+  },
+  {
+    "number": 65,
+    "title": "CHAPTER 65. The Whale as a Dish.",
+    "file": "ch65.txt",
+    "paragraphs": 7,
+    "words": 980
+  },
+  {
+    "number": 66,
+    "title": "CHAPTER 66. The Shark Massacre.",
+    "file": "ch66.txt",
+    "paragraphs": 5,
+    "words": 625
+  },
+  {
+    "number": 67,
+    "title": "CHAPTER 67. Cutting In.",
+    "file": "ch67.txt",
+    "paragraphs": 3,
+    "words": 727
+  },
+  {
+    "number": 68,
+    "title": "CHAPTER 68. The Blanket.",
+    "file": "ch68.txt",
+    "paragraphs": 8,
+    "words": 1191
+  },
+  {
+    "number": 69,
+    "title": "CHAPTER 69. The Funeral.",
+    "file": "ch69.txt",
+    "paragraphs": 6,
+    "words": 429
+  },
+  {
+    "number": 70,
+    "title": "CHAPTER 70. The Sphynx.",
+    "file": "ch70.txt",
+    "paragraphs": 11,
+    "words": 863
+  },
+  {
+    "number": 71,
+    "title": "CHAPTER 71. The Jeroboam's Story.",
+    "file": "ch71.txt",
+    "paragraphs": 29,
+    "words": 2231
+  },
+  {
+    "number": 72,
+    "title": "CHAPTER 72. The Monkey-Rope.",
+    "file": "ch72.txt",
+    "paragraphs": 20,
+    "words": 1617
+  },
+  {
+    "number": 73,
+    "title": "CHAPTER 73. Stubb and Flask kill a Right Whale; and Then Have a Talk over Him.",
+    "file": "ch73.txt",
+    "paragraphs": 42,
+    "words": 2143
+  },
+  {
+    "number": 74,
+    "title": "CHAPTER 74. The Sperm Whale's Head—Contrasted View.",
+    "file": "ch74.txt",
+    "paragraphs": 14,
+    "words": 1619
+  },
+  {
+    "number": 75,
+    "title": "CHAPTER 75. The Right Whale's Head—Contrasted View.",
+    "file": "ch75.txt",
+    "paragraphs": 11,
+    "words": 1216
+  },
+  {
+    "number": 76,
+    "title": "CHAPTER 76. The Battering-Ram.",
+    "file": "ch76.txt",
+    "paragraphs": 4,
+    "words": 863
+  },
+  {
+    "number": 77,
+    "title": "CHAPTER 77. The Great Heidelburgh Tun.",
+    "file": "ch77.txt",
+    "paragraphs": 8,
+    "words": 630
+  },
+  {
+    "number": 78,
+    "title": "CHAPTER 78. Cistern and Buckets.",
+    "file": "ch78.txt",
+    "paragraphs": 15,
+    "words": 1628
+  },
+  {
+    "number": 79,
+    "title": "CHAPTER 79. The Prairie.",
+    "file": "ch79.txt",
+    "paragraphs": 6,
+    "words": 927
+  },
+  {
+    "number": 80,
+    "title": "CHAPTER 80. The Nut.",
+    "file": "ch80.txt",
+    "paragraphs": 7,
+    "words": 892
+  },
+  {
+    "number": 81,
+    "title": "CHAPTER 81. The Pequod Meets The Virgin.",
+    "file": "ch81.txt",
+    "paragraphs": 48,
+    "words": 4274
+  },
+  {
+    "number": 82,
+    "title": "CHAPTER 82. The Honor and Glory of Whaling.",
+    "file": "ch82.txt",
+    "paragraphs": 9,
+    "words": 1142
+  },
+  {
+    "number": 83,
+    "title": "CHAPTER 83. Jonah Historically Regarded.",
+    "file": "ch83.txt",
+    "paragraphs": 5,
+    "words": 766
+  },
+  {
+    "number": 84,
+    "title": "CHAPTER 84. Pitchpoling.",
+    "file": "ch84.txt",
+    "paragraphs": 8,
+    "words": 802
+  },
+  {
+    "number": 85,
+    "title": "CHAPTER 85. The Fountain.",
+    "file": "ch85.txt",
+    "paragraphs": 12,
+    "words": 2052
+  },
+  {
+    "number": 86,
+    "title": "CHAPTER 86. The Tail.",
+    "file": "ch86.txt",
+    "paragraphs": 15,
+    "words": 1839
+  },
+  {
+    "number": 87,
+    "title": "CHAPTER 87. The Grand Armada.",
+    "file": "ch87.txt",
+    "paragraphs": 35,
+    "words": 4720
+  },
+  {
+    "number": 88,
+    "title": "CHAPTER 88. Schools and Schoolmasters.",
+    "file": "ch88.txt",
+    "paragraphs": 11,
+    "words": 1180
+  },
+  {
+    "number": 89,
+    "title": "CHAPTER 89. Fast-Fish and Loose-Fish.",
+    "file": "ch89.txt",
+    "paragraphs": 17,
+    "words": 1390
+  },
+  {
+    "number": 90,
+    "title": "CHAPTER 90. Heads or Tails.",
+    "file": "ch90.txt",
+    "paragraphs": 21,
+    "words": 1041
+  },
+  {
+    "number": 91,
+    "title": "CHAPTER 91. The Pequod Meets The Rose-Bud.",
+    "file": "ch91.txt",
+    "paragraphs": 50,
+    "words": 2477
+  },
+  {
+    "number": 92,
+    "title": "CHAPTER 92. Ambergris.",
+    "file": "ch92.txt",
+    "paragraphs": 7,
+    "words": 966
+  },
+  {
+    "number": 93,
+    "title": "CHAPTER 93. The Castaway.",
+    "file": "ch93.txt",
+    "paragraphs": 14,
+    "words": 1596
+  },
+  {
+    "number": 94,
+    "title": "CHAPTER 94. A Squeeze of the Hand.",
+    "file": "ch94.txt",
+    "paragraphs": 13,
+    "words": 1255
+  },
+  {
+    "number": 95,
+    "title": "CHAPTER 95. The Cassock.",
+    "file": "ch95.txt",
+    "paragraphs": 4,
+    "words": 494
+  },
+  {
+    "number": 96,
+    "title": "CHAPTER 96. The Try-Works.",
+    "file": "ch96.txt",
+    "paragraphs": 12,
+    "words": 1807
+  },
+  {
+    "number": 97,
+    "title": "CHAPTER 97. The Lamp.",
+    "file": "ch97.txt",
+    "paragraphs": 3,
+    "words": 238
+  },
+  {
+    "number": 98,
+    "title": "CHAPTER 98. Stowing Down and Clearing Up.",
+    "file": "ch98.txt",
+    "paragraphs": 8,
+    "words": 1008
+  },
+  {
+    "number": 99,
+    "title": "CHAPTER 99. The Doubloon.",
+    "file": "ch99.txt",
+    "paragraphs": 22,
+    "words": 2401
+  },
+  {
+    "number": 100,
+    "title": "CHAPTER 100. Leg and Arm.",
+    "file": "ch100.txt",
+    "paragraphs": 42,
+    "words": 2637
+  },
+  {
+    "number": 101,
+    "title": "CHAPTER 101. The Decanter.",
+    "file": "ch101.txt",
+    "paragraphs": 13,
+    "words": 1747
+  },
+  {
+    "number": 102,
+    "title": "CHAPTER 102. A Bower in the Arsacides.",
+    "file": "ch102.txt",
+    "paragraphs": 14,
+    "words": 1524
+  },
+  {
+    "number": 103,
+    "title": "CHAPTER 103. Measurement of The Whale's Skeleton.",
+    "file": "ch103.txt",
+    "paragraphs": 11,
+    "words": 915
+  },
+  {
+    "number": 104,
+    "title": "CHAPTER 104. The Fossil Whale.",
+    "file": "ch104.txt",
+    "paragraphs": 11,
+    "words": 1411
+  },
+  {
+    "number": 105,
+    "title": "CHAPTER 105. Does the Whale's Magnitude Diminish?—Will He Perish?",
+    "file": "ch105.txt",
+    "paragraphs": 15,
+    "words": 1540
+  },
+  {
+    "number": 106,
+    "title": "CHAPTER 106. Ahab's Leg.",
+    "file": "ch106.txt",
+    "paragraphs": 6,
+    "words": 918
+  },
+  {
+    "number": 107,
+    "title": "CHAPTER 107. The Carpenter.",
+    "file": "ch107.txt",
+    "paragraphs": 6,
+    "words": 1030
+  },
+  {
+    "number": 108,
+    "title": "CHAPTER 108. Ahab and the Carpenter.",
+    "file": "ch108.txt",
+    "paragraphs": 36,
+    "words": 1539
+  },
+  {
+    "number": 109,
+    "title": "CHAPTER 109. Ahab and Starbuck in the Cabin.",
+    "file": "ch109.txt",
+    "paragraphs": 20,
+    "words": 896
+  },
+  {
+    "number": 110,
+    "title": "CHAPTER 110. Queequeg in His Coffin.",
+    "file": "ch110.txt",
+    "paragraphs": 19,
+    "words": 2225
+  },
+  {
+    "number": 111,
+    "title": "CHAPTER 111. The Pacific.",
+    "file": "ch111.txt",
+    "paragraphs": 4,
+    "words": 415
+  },
+  {
+    "number": 112,
+    "title": "CHAPTER 112. The Blacksmith.",
+    "file": "ch112.txt",
+    "paragraphs": 8,
+    "words": 922
+  },
+  {
+    "number": 113,
+    "title": "CHAPTER 113. The Forge.",
+    "file": "ch113.txt",
+    "paragraphs": 28,
+    "words": 1206
+  },
+  {
+    "number": 114,
+    "title": "CHAPTER 114. The Gilder.",
+    "file": "ch114.txt",
+    "paragraphs": 10,
+    "words": 632
+  },
+  {
+    "number": 115,
+    "title": "CHAPTER 115. The Pequod Meets The Bachelor.",
+    "file": "ch115.txt",
+    "paragraphs": 14,
+    "words": 866
+  },
+  {
+    "number": 116,
+    "title": "CHAPTER 116. The Dying Whale.",
+    "file": "ch116.txt",
+    "paragraphs": 7,
+    "words": 507
+  },
+  {
+    "number": 117,
+    "title": "CHAPTER 117. The Whale Watch.",
+    "file": "ch117.txt",
+    "paragraphs": 15,
+    "words": 462
+  },
+  {
+    "number": 118,
+    "title": "CHAPTER 118. The Quadrant.",
+    "file": "ch118.txt",
+    "paragraphs": 8,
+    "words": 881
+  },
+  {
+    "number": 119,
+    "title": "CHAPTER 119. The Candles.",
+    "file": "ch119.txt",
+    "paragraphs": 37,
+    "words": 2511
+  },
+  {
+    "number": 120,
+    "title": "CHAPTER 120. The Deck Towards the End of the First Night Watch.",
+    "file": "ch120.txt",
+    "paragraphs": 7,
+    "words": 167
+  },
+  {
+    "number": 121,
+    "title": "CHAPTER 121. Midnight.—The Forecastle Bulwarks.",
+    "file": "ch121.txt",
+    "paragraphs": 5,
+    "words": 614
+  },
+  {
+    "number": 122,
+    "title": "CHAPTER 122. Midnight Aloft.—Thunder and Lightning.",
+    "file": "ch122.txt",
+    "paragraphs": 2,
+    "words": 44
+  },
+  {
+    "number": 123,
+    "title": "CHAPTER 123. The Musket.",
+    "file": "ch123.txt",
+    "paragraphs": 13,
+    "words": 1193
+  },
+  {
+    "number": 124,
+    "title": "CHAPTER 124. The Needle.",
+    "file": "ch124.txt",
+    "paragraphs": 21,
+    "words": 1191
+  },
+  {
+    "number": 125,
+    "title": "CHAPTER 125. The Log and Line.",
+    "file": "ch125.txt",
+    "paragraphs": 29,
+    "words": 1091
+  },
+  {
+    "number": 126,
+    "title": "CHAPTER 126. The Life-Buoy.",
+    "file": "ch126.txt",
+    "paragraphs": 19,
+    "words": 1349
+  },
+  {
+    "number": 127,
+    "title": "CHAPTER 127. The Deck.",
+    "file": "ch127.txt",
+    "paragraphs": 23,
+    "words": 692
+  },
+  {
+    "number": 128,
+    "title": "CHAPTER 128. The Pequod Meets The Rachel.",
+    "file": "ch128.txt",
+    "paragraphs": 19,
+    "words": 1367
+  },
+  {
+    "number": 129,
+    "title": "CHAPTER 129. The Cabin.",
+    "file": "ch129.txt",
+    "paragraphs": 10,
+    "words": 570
+  },
+  {
+    "number": 130,
+    "title": "CHAPTER 130. The Hat.",
+    "file": "ch130.txt",
+    "paragraphs": 15,
+    "words": 1668
+  },
+  {
+    "number": 131,
+    "title": "CHAPTER 131. The Pequod Meets The Delight.",
+    "file": "ch131.txt",
+    "paragraphs": 12,
+    "words": 414
+  },
+  {
+    "number": 132,
+    "title": "CHAPTER 132. The Symphony.",
+    "file": "ch132.txt",
+    "paragraphs": 19,
+    "words": 1577
+  },
+  {
+    "number": 133,
+    "title": "CHAPTER 133. The Chase—First Day.",
+    "file": "ch133.txt",
+    "paragraphs": 51,
+    "words": 3487
+  },
+  {
+    "number": 134,
+    "title": "CHAPTER 134. The Chase—Second Day.",
+    "file": "ch134.txt",
+    "paragraphs": 47,
+    "words": 3231
+  },
+  {
+    "number": 135,
+    "title": "CHAPTER 135. The Chase.—Third Day.",
+    "file": "ch135.txt",
+    "paragraphs": 62,
+    "words": 4446
+  },
+  {
+    "number": 136,
+    "title": "Epilogue",
+    "file": "ch136.txt",
+    "paragraphs": 2,
+    "words": 256
+  }
+]

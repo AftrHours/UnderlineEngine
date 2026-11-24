@@ -1,0 +1,786 @@
+[
+{
+"id": 0,
+"paragraph": 0,
+"start": 0,
+"end": 75,
+"text": "When Jo came home that spring, she had been struck with the change in Beth."
+},
+{
+"id": 1,
+"paragraph": 0,
+"start": 76,
+"end": 303,
+"text": "No one spoke of it or seemed aware of it, for it had come too gradually to startle those who saw her daily, but to eyes sharpened by absence, it was very plain and a heavy weight fell on Jo's heart as she saw her sister's face."
+},
+{
+"id": 2,
+"paragraph": 0,
+"start": 304,
+"end": 551,
+"text": "It was no paler and but littler thinner than in the autumn, yet there was a strange, transparent look about it, as if the mortal was being slowly refined away, and the immortal shining through the frail flesh with an indescribably pathetic beauty."
+},
+{
+"id": 3,
+"paragraph": 0,
+"start": 552,
+"end": 784,
+"text": "Jo saw and felt it, but said nothing at the time, and soon the first impression lost much of its power, for Beth seemed happy, no one appeared to doubt that she was better, and presently in other cares Jo for a time forgot her fear."
+},
+{
+"id": 4,
+"paragraph": 1,
+"start": 786,
+"end": 882,
+"text": "But when Laurie was gone, and peace prevailed again, the vague anxiety returned and haunted her."
+},
+{
+"id": 5,
+"paragraph": 1,
+"start": 883,
+"end": 1065,
+"text": "She had confessed her sins and been forgiven, but when she showed her savings and proposed a mountain trip, Beth had thanked her heartily, but begged not to go so far away from home."
+},
+{
+"id": 6,
+"paragraph": 1,
+"start": 1066,
+"end": 1342,
+"text": "Another little visit to the seashore would suit her better, and as Grandma could not be prevailed upon to leave the babies, Jo took Beth down to the quiet place, where she could live much in the open air, and let the fresh sea breezes blow a little color into her pale cheeks."
+},
+{
+"id": 7,
+"paragraph": 2,
+"start": 1344,
+"end": 1481,
+"text": "It was not a fashionable place, but even among the pleasant people there, the girls made few friends, preferring to live for one another."
+},
+{
+"id": 8,
+"paragraph": 2,
+"start": 1482,
+"end": 1570,
+"text": "Beth was too shy to enjoy society, and Jo too wrapped up in her to care for anyone else."
+},
+{
+"id": 9,
+"paragraph": 2,
+"start": 1571,
+"end": 1856,
+"text": "So they were all in all to each other, and came and went, quite unconscious of the interest they excited in those about them, who watched with sympathetic eyes the strong sister and the feeble one, always together, as if they felt instinctively that a long separation was not far away."
+},
+{
+"id": 10,
+"paragraph": 3,
+"start": 1858,
+"end": 2022,
+"text": "They did feel it, yet neither spoke of it, for often between ourselves and those nearest and dearest to us there exists a reserve which it is very hard to overcome."
+},
+{
+"id": 11,
+"paragraph": 3,
+"start": 2023,
+"end": 2209,
+"text": "Jo felt as if a veil had fallen between her heart and Beth's, but when she put out her hand to lift it up, there seemed something sacred in the silence, and she waited for Beth to speak."
+},
+{
+"id": 12,
+"paragraph": 3,
+"start": 2210,
+"end": 2471,
+"text": "She wondered, and was thankful also, that her parents did not seem to see what she saw, and during the quiet weeks when the shadows grew so plain to her, she said nothing of it to those at home, believing that it would tell itself when Beth came back no better."
+},
+{
+"id": 13,
+"paragraph": 3,
+"start": 2472,
+"end": 2746,
+"text": "She wondered still more if her sister really guessed the hard truth, and what thoughts were passing through her mind during the long hours when she lay on the warm rocks with her head in Jo's lap, while the winds blew healthfully over her and the sea made music at her feet."
+},
+{
+"id": 14,
+"paragraph": 4,
+"start": 2748,
+"end": 2770,
+"text": "One day Beth told her."
+},
+{
+"id": 15,
+"paragraph": 4,
+"start": 2771,
+"end": 2945,
+"text": "Jo thought she was asleep, she lay so still, and putting down her book, sat looking at her with wistful eyes, trying to see signs of hope in the faint color on Beth's cheeks."
+},
+{
+"id": 16,
+"paragraph": 4,
+"start": 2946,
+"end": 3116,
+"text": "But she could not find enough to satisfy her, for the cheeks were very thin, and the hands seemed too feeble to hold even the rosy little shells they had been collecting."
+},
+{
+"id": 17,
+"paragraph": 4,
+"start": 3117,
+"end": 3294,
+"text": "It came to her then more bitterly than ever that Beth was slowly drifting away from her, and her arms instinctively tightened their hold upon the dearest treasure she possessed."
+},
+{
+"id": 18,
+"paragraph": 4,
+"start": 3295,
+"end": 3483,
+"text": "For a minute her eyes were too dim for seeing, and when they cleared, Beth was looking up at her so tenderly that there was hardly any need for her to say, \"Jo, dear, I'm glad you know it."
+},
+{
+"id": 19,
+"paragraph": 4,
+"start": 3484,
+"end": 3524,
+"text": "I've tried to tell you, but I couldn't.\""
+},
+{
+"id": 20,
+"paragraph": 5,
+"start": 3526,
+"end": 3648,
+"text": "There was no answer except her sister's cheek against her own, not even tears, for when most deeply moved, Jo did not cry."
+},
+{
+"id": 21,
+"paragraph": 5,
+"start": 3649,
+"end": 3789,
+"text": "She was the weaker then, and Beth tried to comfort and sustain her, with her arms about her and the soothing words she whispered in her ear."
+},
+{
+"id": 22,
+"paragraph": 6,
+"start": 3791,
+"end": 3891,
+"text": "\"I've known it for a good while, dear, and now I'm used to it, it isn't hard to think of or to bear."
+},
+{
+"id": 23,
+"paragraph": 6,
+"start": 3892,
+"end": 3974,
+"text": "Try to see it so and don't be troubled about me, because it's best, indeed it is.\""
+},
+{
+"id": 24,
+"paragraph": 7,
+"start": 3976,
+"end": 4030,
+"text": "\"Is this what made you so unhappy in the autumn, Beth?"
+},
+{
+"id": 25,
+"paragraph": 7,
+"start": 4031,
+"end": 4099,
+"text": "You did not feel it then, and keep it to yourself so long, did you?\""
+},
+{
+"id": 26,
+"paragraph": 7,
+"start": 4100,
+"end": 4210,
+"text": "asked Jo, refusing to see or say that it was best, but glad to know that Laurie had no part in Beth's trouble."
+},
+{
+"id": 27,
+"paragraph": 8,
+"start": 4212,
+"end": 4269,
+"text": "\"Yes, I gave up hoping then, but I didn't like to own it."
+},
+{
+"id": 28,
+"paragraph": 8,
+"start": 4270,
+"end": 4344,
+"text": "I tried to think it was a sick fancy, and would not let it trouble anyone."
+},
+{
+"id": 29,
+"paragraph": 8,
+"start": 4345,
+"end": 4494,
+"text": "But when I saw you all so well and strong and full of happy plans, it was hard to feel that I could never be like you, and then I was miserable, Jo.\""
+},
+{
+"id": 30,
+"paragraph": 9,
+"start": 4496,
+"end": 4566,
+"text": "\"Oh, Beth, and you didn't tell me, didn't let me comfort and help you?"
+},
+{
+"id": 31,
+"paragraph": 9,
+"start": 4567,
+"end": 4613,
+"text": "How could you shut me out, bear it all alone?\""
+},
+{
+"id": 32,
+"paragraph": 10,
+"start": 4615,
+"end": 4829,
+"text": "Jo's voice was full of tender reproach, and her heart ached to think of the solitary struggle that must have gone on while Beth learned to say goodbye to health, love, and life, and take up her cross so cheerfully."
+},
+{
+"id": 33,
+"paragraph": 11,
+"start": 4831,
+"end": 4878,
+"text": "\"Perhaps it was wrong, but I tried to do right."
+},
+{
+"id": 34,
+"paragraph": 11,
+"start": 4879,
+"end": 4943,
+"text": "I wasn't sure, no one said anything, and I hoped I was mistaken."
+},
+{
+"id": 35,
+"paragraph": 11,
+"start": 4944,
+"end": 5100,
+"text": "It would have been selfish to frighten you all when Marmee was so anxious about Meg, and Amy away, and you so happy with Laurie—at least I thought so then.\""
+},
+{
+"id": 36,
+"paragraph": 12,
+"start": 5102,
+"end": 5211,
+"text": "\"And I thought you loved him, Beth, and I went away because I couldn't,\" cried Jo, glad to say all the truth."
+},
+{
+"id": 37,
+"paragraph": 13,
+"start": 5213,
+"end": 5327,
+"text": "Beth looked so amazed at the idea that Jo smiled in spite of her pain, and added softly, \"Then you didn't, dearie?"
+},
+{
+"id": 38,
+"paragraph": 13,
+"start": 5328,
+"end": 5424,
+"text": "I was afraid it was so, and imagined your poor little heart full of lovelornity all that while.\""
+},
+{
+"id": 39,
+"paragraph": 14,
+"start": 5426,
+"end": 5477,
+"text": "\"Why, Jo, how could I, when he was so fond of you?\""
+},
+{
+"id": 40,
+"paragraph": 14,
+"start": 5478,
+"end": 5515,
+"text": "asked Beth, as innocently as a child."
+},
+{
+"id": 41,
+"paragraph": 14,
+"start": 5516,
+"end": 5538,
+"text": "\"I do love him dearly."
+},
+{
+"id": 42,
+"paragraph": 14,
+"start": 5539,
+"end": 5578,
+"text": "He is so good to me, how can I help It?"
+},
+{
+"id": 43,
+"paragraph": 14,
+"start": 5579,
+"end": 5631,
+"text": "But he could never be anything to me but my brother."
+},
+{
+"id": 44,
+"paragraph": 14,
+"start": 5632,
+"end": 5667,
+"text": "I hope he truly will be, sometime.\""
+},
+{
+"id": 45,
+"paragraph": 15,
+"start": 5669,
+"end": 5705,
+"text": "\"Not through me,\" said Jo decidedly."
+},
+{
+"id": 46,
+"paragraph": 15,
+"start": 5706,
+"end": 5802,
+"text": "\"Amy is left for him, and they would suit excellently, but I have no heart for such things, now."
+},
+{
+"id": 47,
+"paragraph": 15,
+"start": 5803,
+"end": 5854,
+"text": "I don't care what becomes of anybody but you, Beth."
+},
+{
+"id": 48,
+"paragraph": 15,
+"start": 5855,
+"end": 5874,
+"text": "You must get well.\""
+},
+{
+"id": 49,
+"paragraph": 16,
+"start": 5876,
+"end": 5900,
+"text": "\"I want to, oh, so much!"
+},
+{
+"id": 50,
+"paragraph": 16,
+"start": 5901,
+"end": 5990,
+"text": "I try, but every day I lose a little, and feel more sure that I shall never gain it back."
+},
+{
+"id": 51,
+"paragraph": 16,
+"start": 5991,
+"end": 6071,
+"text": "It's like the tide, Jo, when it turns, it goes slowly, but it can't be stopped.\""
+},
+{
+"id": 52,
+"paragraph": 17,
+"start": 6073,
+"end": 6156,
+"text": "\"It shall be stopped, your tide must not turn so soon, nineteen is too young, Beth."
+},
+{
+"id": 53,
+"paragraph": 17,
+"start": 6157,
+"end": 6176,
+"text": "I can't let you go."
+},
+{
+"id": 54,
+"paragraph": 17,
+"start": 6177,
+"end": 6217,
+"text": "I'll work and pray and fight against it."
+},
+{
+"id": 55,
+"paragraph": 17,
+"start": 6218,
+"end": 6255,
+"text": "I'll keep you in spite of everything."
+},
+{
+"id": 56,
+"paragraph": 17,
+"start": 6256,
+"end": 6297,
+"text": "There must be ways, it can't be too late."
+},
+{
+"id": 57,
+"paragraph": 17,
+"start": 6298,
+"end": 6432,
+"text": "God won't be so cruel as to take you from me,\" cried poor Jo rebelliously, for her spirit was far less piously submissive than Beth's."
+},
+{
+"id": 58,
+"paragraph": 18,
+"start": 6434,
+"end": 6490,
+"text": "Simple, sincere people seldom speak much of their piety."
+},
+{
+"id": 59,
+"paragraph": 18,
+"start": 6491,
+"end": 6591,
+"text": "It shows itself in acts rather than in words, and has more influence than homilies or protestations."
+},
+{
+"id": 60,
+"paragraph": 18,
+"start": 6592,
+"end": 6722,
+"text": "Beth could not reason upon or explain the faith that gave her courage and patience to give up life, and cheerfully wait for death."
+},
+{
+"id": 61,
+"paragraph": 18,
+"start": 6723,
+"end": 6957,
+"text": "Like a confiding child, she asked no questions, but left everything to God and nature, Father and Mother of us all, feeling sure that they, and they only, could teach and strengthen heart and spirit for this life and the life to come."
+},
+{
+"id": 62,
+"paragraph": 18,
+"start": 6958,
+"end": 7201,
+"text": "She did not rebuke Jo with saintly speeches, only loved her better for her passionate affection, and clung more closely to the dear human love, from which our Father never means us to be weaned, but through which He draws us closer to Himself."
+},
+{
+"id": 63,
+"paragraph": 18,
+"start": 7202,
+"end": 7271,
+"text": "She could not say, \"I'm glad to go,\" for life was very sweet for her."
+},
+{
+"id": 64,
+"paragraph": 18,
+"start": 7272,
+"end": 7417,
+"text": "She could only sob out, \"I try to be willing,\" while she held fast to Jo, as the first bitter wave of this great sorrow broke over them together."
+},
+{
+"id": 65,
+"paragraph": 19,
+"start": 7419,
+"end": 7505,
+"text": "By and by Beth said, with recovered serenity, \"You'll tell them this when we go home?\""
+},
+{
+"id": 66,
+"paragraph": 20,
+"start": 7507,
+"end": 7613,
+"text": "\"I think they will see it without words,\" sighed Jo, for now it seemed to her that Beth changed every day."
+},
+{
+"id": 67,
+"paragraph": 21,
+"start": 7615,
+"end": 7628,
+"text": "\"Perhaps not."
+},
+{
+"id": 68,
+"paragraph": 21,
+"start": 7629,
+"end": 7704,
+"text": "I've heard that the people who love best are often blindest to such things."
+},
+{
+"id": 69,
+"paragraph": 21,
+"start": 7705,
+"end": 7753,
+"text": "If they don't see it, you will tell them for me."
+},
+{
+"id": 70,
+"paragraph": 21,
+"start": 7754,
+"end": 7812,
+"text": "I don't want any secrets, and it's kinder to prepare them."
+},
+{
+"id": 71,
+"paragraph": 21,
+"start": 7813,
+"end": 7912,
+"text": "Meg has John and the babies to comfort her, but you must stand by Father and Mother, won't you Jo?\""
+},
+{
+"id": 72,
+"paragraph": 22,
+"start": 7914,
+"end": 7924,
+"text": "\"If I can."
+},
+{
+"id": 73,
+"paragraph": 22,
+"start": 7925,
+"end": 7956,
+"text": "But, Beth, I don't give up yet."
+},
+{
+"id": 74,
+"paragraph": 22,
+"start": 7957,
+"end": 8036,
+"text": "I'm going to believe that it is a sick fancy, and not let you think it's true.\""
+},
+{
+"id": 75,
+"paragraph": 22,
+"start": 8037,
+"end": 8073,
+"text": "said Jo, trying to speak cheerfully."
+},
+{
+"id": 76,
+"paragraph": 23,
+"start": 8075,
+"end": 8251,
+"text": "Beth lay a minute thinking, and then said in her quiet way, \"I don't know how to express myself, and shouldn't try to anyone but you, because I can't speak out except to my Jo."
+},
+{
+"id": 77,
+"paragraph": 23,
+"start": 8252,
+"end": 8339,
+"text": "I only mean to say that I have a feeling that it never was intended I should live long."
+},
+{
+"id": 78,
+"paragraph": 23,
+"start": 8340,
+"end": 8369,
+"text": "I'm not like the rest of you."
+},
+{
+"id": 79,
+"paragraph": 23,
+"start": 8370,
+"end": 8426,
+"text": "I never made any plans about what I'd do when I grew up."
+},
+{
+"id": 80,
+"paragraph": 23,
+"start": 8427,
+"end": 8476,
+"text": "I never thought of being married, as you all did."
+},
+{
+"id": 81,
+"paragraph": 23,
+"start": 8477,
+"end": 8597,
+"text": "I couldn't seem to imagine myself anything but stupid little Beth, trotting about at home, of no use anywhere but there."
+},
+{
+"id": 82,
+"paragraph": 23,
+"start": 8598,
+"end": 8670,
+"text": "I never wanted to go away, and the hard part now is the leaving you all."
+},
+{
+"id": 83,
+"paragraph": 23,
+"start": 8671,
+"end": 8751,
+"text": "I'm not afraid, but it seems as if I should be homesick for you even in heaven.\""
+},
+{
+"id": 84,
+"paragraph": 24,
+"start": 8753,
+"end": 8869,
+"text": "Jo could not speak, and for several minutes there was no sound but the sigh of the wind and the lapping of the tide."
+},
+{
+"id": 85,
+"paragraph": 24,
+"start": 8870,
+"end": 8948,
+"text": "A white-winged gull flew by, with the flash of sunshine on its silvery breast."
+},
+{
+"id": 86,
+"paragraph": 24,
+"start": 8949,
+"end": 9017,
+"text": "Beth watched it till it vanished, and her eyes were full of sadness."
+},
+{
+"id": 87,
+"paragraph": 24,
+"start": 9018,
+"end": 9137,
+"text": "A little gray-coated sand bird came tripping over the beach 'peeping' softly to itself, as if enjoying the sun and sea."
+},
+{
+"id": 88,
+"paragraph": 24,
+"start": 9138,
+"end": 9273,
+"text": "It came quite close to Beth, and looked at her with a friendly eye and sat upon a warm stone, dressing its wet feathers, quite at home."
+},
+{
+"id": 89,
+"paragraph": 24,
+"start": 9274,
+"end": 9423,
+"text": "Beth smiled and felt comforted, for the tiny thing seemed to offer its small friendship and remind her that a pleasant world was still to be enjoyed."
+},
+{
+"id": 90,
+"paragraph": 25,
+"start": 9425,
+"end": 9443,
+"text": "\"Dear little bird!"
+},
+{
+"id": 91,
+"paragraph": 25,
+"start": 9444,
+"end": 9468,
+"text": "See, Jo, how tame it is."
+},
+{
+"id": 92,
+"paragraph": 25,
+"start": 9469,
+"end": 9504,
+"text": "I like peeps better than the gulls."
+},
+{
+"id": 93,
+"paragraph": 25,
+"start": 9505,
+"end": 9585,
+"text": "They are not so wild and handsome, but they seem happy, confiding little things."
+},
+{
+"id": 94,
+"paragraph": 25,
+"start": 9586,
+"end": 9780,
+"text": "I used to call them my birds last summer, and Mother said they reminded her of me—busy, quaker-colored creatures, always near the shore, and always chirping that contented little song of theirs."
+},
+{
+"id": 95,
+"paragraph": 25,
+"start": 9781,
+"end": 9895,
+"text": "You are the gull, Jo, strong and wild, fond of the storm and the wind, flying far out to sea, and happy all alone."
+},
+{
+"id": 96,
+"paragraph": 25,
+"start": 9896,
+"end": 10042,
+"text": "Meg is the turtledove, and Amy is like the lark she writes about, trying to get up among the clouds, but always dropping down into its nest again."
+},
+{
+"id": 97,
+"paragraph": 25,
+"start": 10043,
+"end": 10060,
+"text": "Dear little girl!"
+},
+{
+"id": 98,
+"paragraph": 25,
+"start": 10061,
+"end": 10176,
+"text": "She's so ambitious, but her heart is good and tender, and no matter how high she flies, she never will forget home."
+},
+{
+"id": 99,
+"paragraph": 25,
+"start": 10177,
+"end": 10234,
+"text": "I hope I shall see her again, but she seems so far away.\""
+},
+{
+"id": 100,
+"paragraph": 26,
+"start": 10236,
+"end": 10326,
+"text": "\"She is coming in the spring, and I mean that you shall be all ready to see and enjoy her."
+},
+{
+"id": 101,
+"paragraph": 26,
+"start": 10327,
+"end": 10560,
+"text": "I'm going to have you well and rosy by that time,\" began Jo, feeling that of all the changes in Beth, the talking change was the greatest, for it seemed to cost no effort now, and she thought aloud in a way quite unlike bashful Beth."
+},
+{
+"id": 102,
+"paragraph": 27,
+"start": 10562,
+"end": 10593,
+"text": "\"Jo, dear, don't hope any more."
+},
+{
+"id": 103,
+"paragraph": 27,
+"start": 10594,
+"end": 10615,
+"text": "It won't do any good."
+},
+{
+"id": 104,
+"paragraph": 27,
+"start": 10616,
+"end": 10633,
+"text": "I'm sure of that."
+},
+{
+"id": 105,
+"paragraph": 27,
+"start": 10634,
+"end": 10696,
+"text": "We won't be miserable, but enjoy being together while we wait."
+},
+{
+"id": 106,
+"paragraph": 27,
+"start": 10697,
+"end": 10803,
+"text": "We'll have happy times, for I don't suffer much, and I think the tide will go out easily, if you help me.\""
+},
+{
+"id": 107,
+"paragraph": 28,
+"start": 10805,
+"end": 10918,
+"text": "Jo leaned down to kiss the tranquil face, and with that silent kiss, she dedicated herself soul and body to Beth."
+},
+{
+"id": 108,
+"paragraph": 29,
+"start": 10920,
+"end": 10934,
+"text": "She was right."
+},
+{
+"id": 109,
+"paragraph": 29,
+"start": 10935,
+"end": 11069,
+"text": "There was no need of any words when they got home, for Father and Mother saw plainly now what they had prayed to be saved from seeing."
+},
+{
+"id": 110,
+"paragraph": 29,
+"start": 11070,
+"end": 11259,
+"text": "Tired with her short journey, Beth went at once to bed, saying how glad she was to be home, and when Jo went down, she found that she would be spared the hard task of telling Beth's secret."
+},
+{
+"id": 111,
+"paragraph": 29,
+"start": 11260,
+"end": 11442,
+"text": "Her father stood leaning his head on the mantelpiece and did not turn as she came in, but her mother stretched out her arms as if for help, and Jo went to comfort her without a word."
+}
+]

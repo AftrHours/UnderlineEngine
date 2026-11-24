@@ -4,7 +4,7 @@ import FoundationModels
 import Testing
 @testable import UnderlineEngine
 
-/// The harness runs (spec §8), on Apple's Evaluations framework. They call the model, so they only run with
+/// The harness runs (spec §8), on Apple's Evaluations framework. A model judges the engine's links, so they only run with
 /// `UNDERLINE_EVALS=1 swift test --filter UnderlineEngineEvals` (the sweep also needs `UNDERLINE_SWEEP=1`;
 /// `UNDERLINE_SWEEP_LIMIT=60` sweeps only the first 60 sentences).
 /// Results are saved with `EvaluationResult.saveJSON` under `Eval/results/<kind>/`.
@@ -15,8 +15,8 @@ enum Evals {
 
     static let root = URL(fileURLWithPath: "\(#filePath)").deletingLastPathComponent().deletingLastPathComponent().deletingLastPathComponent()
 
-    static func load(model: ModelChoice, search: SearchMode) async throws -> (UnderlineCtrl, IndexedChapter, GoldSet) {
-        let ctrl = UnderlineCtrl(model: model, search: search)
+    static func load() async throws -> (UnderlineCtrl, IndexedChapter, GoldSet) {
+        let ctrl = await UnderlineCtrl.make()
         let text = try String(contentsOf: root.appendingPathComponent("Dataset/little-women-ch1.txt"), encoding: .utf8)
         let chapter = await ctrl.prepare(ChapterInput(chapterIndex: 0, plainText: text))
         return (ctrl, chapter, try loadGold())
@@ -34,11 +34,10 @@ enum Evals {
     }
 
     static func info(_ ctrl: UnderlineCtrl, _ chapter: IndexedChapter, judge: String) -> [String: String] {
-        let k = KnobSnapshot.current
-        return ["search": ctrl.searchMode.rawValue, "path": ctrl.usesModel ? "model" : "rules",
-                "judge model": judge, "embeddings": chapter.embedding.rawValue, "embedWeight": "\(k.embedWeight)",
-                "wordsWeight": "\(k.wordsWeight)", "maxCandidates": "\(k.maxCandidates)", "maxPerParagraph": "\(k.maxPerParagraph)",
-                "minRawScore": k.minRawScore.sorted { $0.key < $1.key }.map { "\($0.key)=\($0.value)" }.joined(separator: " ")]
+        ["engine": "R9 (version \(Linker.version))", "judge model": judge, "embeddings": chapter.embedding.rawValue,
+         "maxCandidates": "\(SearchKnobs.maxCandidates)", "maxPerParagraph": "\(UnderlineKnobs.maxPerParagraph)",
+         "softMatch": "\(JudgeKnobs.softMatch)",
+         "pointsNeeded": JudgeKnobs.pointsNeeded.map { "\($0.within == Int.max ? "further" : "≤\($0.within)")=\($0.points)" }.joined(separator: " ")]
     }
 
     /// Saves the result and returns the newest earlier result of the same kind, for "changed since last run".
@@ -94,7 +93,7 @@ enum Evals {
         print("  no spoiler: \(mean(result, EvalMetric.noSpoiler)) · reference precision: \(mean(result, EvalMetric.referencePrecision))"
               + " · underline recall: \(mean(result, EvalMetric.underlineRecall)) · judge pass: \(mean(result, EvalMetric.explains))")
         print("  candidate recall: \(mean(result, EvalMetric.candidateRecall)) · confirm agreement: \(mean(result, EvalMetric.confirmAgreement))"
-              + " · search/confirm ms: \(mean(result, EvalMetric.searchMs))/\(mean(result, EvalMetric.confirmMs))")
+              + " · search ms: \(mean(result, EvalMetric.searchMs))")
         print("  density: \(underlines.underlines.count) underlines over the \(sentencesRun) sentences with phrases in the golden paragraphs")
 
         print("\n== Summary by kind ==")
@@ -114,7 +113,7 @@ enum Evals {
             print("    shown: \(r.underlined ? "S\(r.referenceSentence ?? -1) \"\(r.referenceText ?? "")\"" : "no underline\(r.dropped.map { " (\($0))" } ?? "")")")
             print("    expected: \(s.expected?.referenceText ?? "")")
             if !r.candidates.isEmpty { print("    candidates: \(r.candidates.map { "S\($0)" }.joined(separator: " "))") }
-            if let c = r.confirm { print("    confirm: \(c ? "yes" : "no")\(r.confirmEvidence.map { $0.isEmpty ? "" : " — \"\($0)\"" } ?? "")") }
+            if let c = r.confirm { print("    confirm: \(c ? "yes" : "no")") }
             if let j = row.judge, j.value != .ignore { print("    model judge: \(j.value == .passing ? "pass" : "fail") — \(j.rationale ?? "")") }
         }
 
@@ -157,24 +156,22 @@ enum Evals {
             }
         }
         let (_, records) = await evaluation.run.result()
-        let run = RunInfo(runID: saved.deletingPathExtension().lastPathComponent, runKind: kind,
-                          searchMode: ctrl.searchMode.rawValue)
+        let run = RunInfo(runID: saved.deletingPathExtension().lastPathComponent, runKind: kind)
         let rows = QualitativeReport.rows(run: run, chapter: chapter, records: records, gold: evaluation.samples.map(\.resolved),
                                        outcomes: outcomes, judge: judge)
         return try saveQualitative(rows, run: run, beside: saved)
     }
 
     /// One golden run: evaluate, save, print the report. Returns the result and where it was saved.
-    static func golden(model: ModelChoice, search: SearchMode, kind: (UnderlineCtrl) -> String,
-                       printReport: Bool = true) async throws -> (EvaluationResult, GoldenEvaluation, URL) {
-        let (ctrl, chapter, gold) = try await load(model: model, search: search)
+    static func golden(kind: String, printReport: Bool = true) async throws -> (EvaluationResult, GoldenEvaluation, URL) {
+        let (ctrl, chapter, gold) = try await load()
         let (judge, judgeName) = await judgeModel()
         let evaluation = GoldenEvaluation(gold: gold, ctrl: ctrl, chapter: chapter, judgeModel: judge)
         #expect(evaluation.samples.count == gold.items.count, "some golden items are stale (sentence text or phrase not found)")
         let result = try await evaluation.run(info: info(ctrl, chapter, judge: judgeName))
-        let (saved, previous) = try save(result, kind: kind(ctrl))
+        let (saved, previous) = try save(result, kind: kind)
         print("\n\(result.groupedSummary)\nsaved: \(saved.path)\nrun errors: \(result.errors)")
-        let files = try await goldenReport(result, evaluation, chapter: chapter, ctrl: ctrl, kind: kind(ctrl), saved: saved)
+        let files = try await goldenReport(result, evaluation, chapter: chapter, ctrl: ctrl, kind: kind, saved: saved)
         print("qualitative report: \(files.report.path)\nqualitative CSV: \(files.csv.path)")
         if printReport { await report(result, evaluation, previous: previous) }
         #expect(result.aggregateValue(.mean(of: EvalMetric.noSpoiler)) == 1, "a sentence at or after the underlined one was used")
@@ -185,55 +182,24 @@ enum Evals {
 @available(macOS 27, *)
 @Test(.enabled(if: Evals.enabled), .timeLimit(.minutes(60)))
 func goldenEvaluation() async throws {
-    _ = try await Evals.golden(model: .automatic, search: .both, kind: { "golden-\($0.usesModel ? "model" : "rules")" })
-}
-
-@available(macOS 27, *)
-@Test(.enabled(if: Evals.enabled), .timeLimit(.minutes(30)))
-func rulesBaselineEvaluation() async throws {
-    _ = try await Evals.golden(model: .rulesOnly, search: .both, kind: { _ in "golden-rules" })
-}
-
-@available(macOS 27, *)
-@Test(.enabled(if: Evals.enabled), .timeLimit(.minutes(180)))
-func searchModeComparison() async throws {
-    var lines = ["search  cand. recall  mismatch  precision  recall  judge pass"]
-    var recall: [SearchMode: Double] = [:]
-    for mode in SearchMode.allCases {
-        let (result, _, _) = try await Evals.golden(model: .automatic, search: mode,
-                                                    kind: { _ in "search-\(mode.rawValue)" }, printReport: false)
-        recall[mode] = result.aggregateValue(.mean(of: EvalMetric.candidateRecall))
-        lines.append([mode.rawValue.padding(toLength: 7, withPad: " ", startingAt: 0),
-                      Evals.mean(result, EvalMetric.candidateRecall).padding(toLength: 13, withPad: " ", startingAt: 0),
-                      Evals.mean(result, EvalMetric.mismatch).padding(toLength: 9, withPad: " ", startingAt: 0),
-                      Evals.mean(result, EvalMetric.referencePrecision).padding(toLength: 10, withPad: " ", startingAt: 0),
-                      Evals.mean(result, EvalMetric.underlineRecall).padding(toLength: 7, withPad: " ", startingAt: 0),
-                      Evals.mean(result, EvalMetric.explains)].joined(separator: " "))
-    }
-    let words = recall[.words] ?? 0
-    if (recall[.embed] ?? 0) <= words, (recall[.both] ?? 0) <= words {
-        print("\nNOTE: embed and both don't beat words on candidate recall: take these numbers to the product owner before tuning (spec §8.1).")
-    }
-    print("\n" + lines.joined(separator: "\n"))
+    _ = try await Evals.golden(kind: "golden-r9")
 }
 
 @available(macOS 27, *)
 @Test(.enabled(if: Evals.sweepEnabled), .timeLimit(.minutes(240)))
 func sweepEvaluation() async throws {
-    // UNDERLINE_SWEEP_RULES=1: confirm without Foundation Models (the rules path). The grader below still uses a model.
-    let model: ModelChoice = ProcessInfo.processInfo.environment["UNDERLINE_SWEEP_RULES"] != nil ? .rulesOnly : .automatic
-    let (ctrl, chapter, _) = try await Evals.load(model: model, search: .both)
+    let (ctrl, chapter, _) = try await Evals.load()
     let (judge, judgeName) = await Evals.judgeModel()
     let limit = ProcessInfo.processInfo.environment["UNDERLINE_SWEEP_LIMIT"].flatMap(Int.init)
     let swept = chapter.sentences.prefix(limit ?? chapter.sentences.count).map(\.index)
     let (underlines, records) = await ChapterRun(ctrl: ctrl, chapter: chapter, sentences: Set(swept)).result()
     // The spoiler check covers every phrase considered, not only the underlines shown.
-    let leaks = records.filter { r in r.candidates.contains { $0 >= r.sentence } || r.promptSentences.contains { $0 > r.sentence } }
+    let leaks = records.filter { r in r.candidates.contains { $0 >= r.sentence } || (r.pickedSentence ?? -1) >= r.sentence }
     #expect(leaks.isEmpty, "spoiler in \(leaks.map { "S\($0.sentence) \"\($0.phrase)\"" })")
 
     let evaluation = SweepEvaluation(chapter: chapter, underlines: underlines, records: records, judgeModel: judge)
     let result = try await evaluation.run(info: Evals.info(ctrl, chapter, judge: judgeName))
-    let kind = "sweep-\(ctrl.usesModel ? "model" : "rules")\(limit.map { "-first\($0)" } ?? "")"
+    let kind = "sweep-r9\(limit.map { "-first\($0)" } ?? "")"
     let (saved, _) = try Evals.save(result, kind: kind)
     print("\n\(result.groupedSummary)\nsaved: \(saved.path)")
 
@@ -251,8 +217,7 @@ func sweepEvaluation() async throws {
     for (s, j) in rows where j?.value == .passing || j?.value == .failing {
         verdicts[s.key] = (j?.value == .passing ? "pass" : "fail", j?.rationale ?? "")
     }
-    let run = RunInfo(runID: saved.deletingPathExtension().lastPathComponent, runKind: kind,
-                      searchMode: ctrl.searchMode.rawValue)
+    let run = RunInfo(runID: saved.deletingPathExtension().lastPathComponent, runKind: kind)
     let files = try Evals.saveQualitative(QualitativeReport.rows(run: run, chapter: chapter, records: records, gold: nil, outcomes: [:], judge: verdicts),
                                           run: run, beside: saved)
     print("qualitative report: \(files.report.path)\nqualitative CSV: \(files.csv.path)")

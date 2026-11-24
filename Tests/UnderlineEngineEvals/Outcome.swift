@@ -3,7 +3,7 @@ import Foundation
 
 /// Why an expected underline wasn't made; says what to fix (spec §8.3).
 enum MissCause: String, Codable, Hashable, Sendable, CaseIterable {
-    case detectMiss, searchMiss, pickMiss, confirmRejected, guardRejected, densityLimit, modelFailed, explainedInParagraph
+    case detectMiss, searchMiss, pickMiss, confirmRejected, guardRejected, densityLimit, explainedInParagraph
 
     var label: String {
         switch self {
@@ -13,7 +13,6 @@ enum MissCause: String, Codable, Hashable, Sendable, CaseIterable {
         case .confirmRejected: "confirm rejected"
         case .guardRejected: "guard rejected"
         case .densityLimit: "density limit"
-        case .modelFailed: "model failed"
         case .explainedInParagraph: "explained in paragraph"
         }
     }
@@ -64,7 +63,7 @@ enum OutcomeClassifier {
     static func classify(_ item: ResolvedItem, underlines: ChapterUnderlines, records: [UnderlineRecord]) -> Outcome {
         let s = item.sentence
         let inSentence = records.filter { $0.sentence == s }
-        if inSentence.contains(where: { $0.candidates.contains { $0 >= s } || $0.promptSentences.contains { $0 > s } }) { return .spoiler }
+        if inSentence.contains(where: { $0.candidates.contains { $0 >= s } || ($0.pickedSentence ?? -1) >= s }) { return .spoiler }
         let shown = underlines.underlines.first { $0.sentence == s && matches($0.text, item.item) }
         guard item.item.expected.isAnswerable else { return shown == nil ? .correctlyNone : .mismatch }
         if let shown { return item.references.contains(shown.reference.sentence) ? .underlinedRight : .mismatch }
@@ -75,10 +74,9 @@ enum OutcomeClassifier {
         switch record.dropped {
         case .noCandidate?: return .missed(.searchMiss)
         case .pickedNone?: return .missed(refInCandidates ? .pickMiss : .searchMiss)
-        case .confirmRejected?, .evidenceNotInPassage?: return .missed(.confirmRejected)
+        case .confirmRejected?: return .missed(.confirmRejected)
         case .guardRejected?: return .missed(.guardRejected)
         case .densityLimit?: return .missed(.densityLimit)
-        case .modelFailed?: return .missed(.modelFailed)
         case .explainedInParagraph?: return .missed(.explainedInParagraph)
         case nil: return .missed(.detectMiss)
         }

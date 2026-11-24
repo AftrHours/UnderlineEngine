@@ -5,20 +5,19 @@ import Foundation
 struct RunInfo: Sendable {
     let runID: String
     let runKind: String
-    let searchMode: String
 }
 
 /// One phrase in the qualitative report (spec §8.7): one value per column, in `header` order.
 struct QualitativeRow: Sendable {
     static let header = [
-        "run_id", "run_kind", "search_mode", "gold_id",
+        "run_id", "run_kind", "gold_id",
         "sentence", "paragraph", "sentence_text", "sentence_with_underline", "phrase", "phrase_range",
         "tagging_engine", "words", "names", "events", "phrase_role",
-        "embedding", "search_mode_used", "candidates", "top_candidate_text",
-        "path", "pick", "picked_sentence", "confirm", "confirm_evidence",
+        "embedding", "candidates", "top_candidate_text",
+        "pick", "picked_sentence", "confirm",
         "underlined", "dropped_reason", "reference", "reference_text", "distance",
         "expected", "outcome", "miss_cause", "judge", "judge_rationale",
-        "search_ms", "confirm_ms"
+        "search_ms"
     ]
 
     let values: [String]
@@ -62,7 +61,7 @@ enum QualitativeReport {
         let pass = shown.filter { $0["judge"] == "pass" }.count, fail = shown.filter { $0["judge"] == "fail" }.count
 
         var out = ["# \(run.runID)", ""]
-        out.append("Run `\(run.runKind)` · search `\(run.searchMode)` · \(rows.count) phrases · **\(shown.count) underlined**"
+        out.append("Run `\(run.runKind)` · \(rows.count) phrases · **\(shown.count) underlined**"
                    + (pass + fail > 0 ? " · judge \(pass) pass / \(fail) fail" : ""))
         out.append("")
         if golden {
@@ -101,10 +100,10 @@ enum QualitativeReport {
         out.append(quote(r["sentence_with_underline"].replacingOccurrences(of: "[[", with: "**").replacingOccurrences(of: "]]", with: "**")))
         out += ["", "**Reference S\(r["reference"])**, \(r["distance"]) sentences earlier:", "", quote(r["reference_text"]), ""]
         if !r["gold_id"].isEmpty { out.append("- Golden `\(r["gold_id"])`: expected \(r["expected"]) · \(r["outcome"])") }
-        out.append("- Kind `\(r["kind"])` · role `\(r["phrase_role"])` · path `\(r["path"])` · candidates \(r["candidates"])")
-        if !r["confirm"].isEmpty { out.append("- Confirm: \(r["confirm"]) · \"\(r["confirm_evidence"])\"") }
+        out.append("- Kind `\(r["kind"])` · role `\(r["phrase_role"])` · candidates \(r["candidates"])")
+        if !r["confirm"].isEmpty { out.append("- Confirm: \(r["confirm"])") }
         if !r["judge"].isEmpty { out.append("- Judge: **\(r["judge"])** · \(r["judge_rationale"])") }
-        out.append("- Time: search \(r["search_ms"]) ms, confirm \(r["confirm_ms"].isEmpty ? "-" : r["confirm_ms"]) ms")
+        out.append("- Time: search \(r["search_ms"]) ms")
         out += ["", "<details><summary>NLTagger</summary>", "",
                 "- Words: \(r["words"])", "- Names: \(r["names"].isEmpty ? "-" : r["names"])", "- Events: \(r["events"])",
                 "", "</details>", ""]
@@ -143,27 +142,26 @@ enum QualitativeReport {
         case nil: ""
         }
         let values: [String] = [
-            run.runID, run.runKind, run.searchMode, item?.item.id ?? "",
+            run.runID, run.runKind, item?.item.id ?? "",
             "\(index)", s.map { "\($0.paragraph)" } ?? "", text, marked(text, range), phrase, range.map { "\($0.location)+\($0.length)" } ?? "",
             chapter.tagging.rawValue,
             s?.tokens.map { "\($0.text)/\($0.lemma)/\($0.wordClass)" }.joined(separator: " · ") ?? "",
             s?.names.map { "\($0.text) (\($0.kind.rawValue))" }.joined(separator: " · ") ?? "",
             s?.events.map { "\($0.text) (\($0.role?.rawValue ?? "name"))" }.joined(separator: " · ") ?? "",
             record == nil ? "" : (phraseEvent?.role?.rawValue ?? "name"),
-            record?.embedding.rawValue ?? "", record?.searchModeUsed?.rawValue ?? "",
+            record?.embedding.rawValue ?? "",
             record.map { r in r.candidates.enumerated().map { i, s in
                 r.candidateScores.indices.contains(i) ? "S\(s):" + String(format: "%.2f", r.candidateScores[i]) : "S\(s)"
             }.joined(separator: " ") } ?? "",
             record?.candidates.first.flatMap { chapter.sentence($0)?.text } ?? "",
-            record?.path?.rawValue ?? "",
             picked.flatMap { p in record?.candidates.firstIndex(of: p).map { "\($0 + 1)" } } ?? "",
             picked.map { "\($0)" } ?? "",
-            record?.confirm.map { $0.explains ? "yes" : "no" } ?? "", record?.confirm?.evidence ?? "",
+            record?.confirmed.map { $0 ? "yes" : "no" } ?? "",
             record == nil ? "" : (kept ? "yes" : "no"), record?.dropped?.rawValue ?? "",
             reference.map { "\($0)" } ?? "", reference.flatMap { chapter.sentence($0)?.text } ?? "",
             reference.map { "\(index - $0)" } ?? "",
             expected, outcome?.label ?? "", missCause, judge?.verdict ?? "", judge?.rationale ?? "",
-            record?.times.searchMs.map(String.init) ?? "", record?.times.confirmMs.map(String.init) ?? ""
+            record?.searchMs.map(String.init) ?? ""
         ]
         let rank = outcome?.rank ?? (judge?.verdict == "fail" ? 1 : 50)
         return QualitativeRow(values: values, sortRank: rank, sentence: index, phrase: phrase)

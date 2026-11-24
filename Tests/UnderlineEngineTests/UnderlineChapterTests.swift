@@ -7,12 +7,6 @@ private func littleWomen() async throws -> IndexedChapter {
     return await ChapterIndexSvc().prepare(ChapterInput(chapterIndex: 0, plainText: text), embedding: EmbeddingSvcUnavailable())
 }
 
-private func autoAccepting() -> FakeUnderlineModel {
-    let fake = FakeUnderlineModel()
-    fake.autoAccept = true
-    return fake
-}
-
 /// Every underline and record `paragraphResults` gives, from `start` (the chapter's first sentence when `nil`).
 private func results(_ c: UnderlineCtrl, _ ch: IndexedChapter, from start: Int? = nil) async -> ([Underline], [UnderlineRecord]) {
     var underlines: [Underline] = []
@@ -26,7 +20,7 @@ private func results(_ c: UnderlineCtrl, _ ch: IndexedChapter, from start: Int? 
 
 @Test func everyStartGivesTheSameResults() async throws {
     let ch = try await littleWomen()
-    let c = ctrl(autoAccepting())
+    let c = ctrl()
     let (all, records) = await results(c, ch)
     #expect(!all.isEmpty)
     // Timings differ between runs, so compare what was decided.
@@ -44,7 +38,7 @@ private func results(_ c: UnderlineCtrl, _ ch: IndexedChapter, from start: Int? 
 @Test func streamStartsAtTheReadersParagraphThenWraps() async throws {
     let ch = try await littleWomen()
     let start = ch.sentences[100]
-    let paragraphs = await results(ctrl(autoAccepting()), ch, from: start.index).0.map(\.paragraph)
+    let paragraphs = await results(ctrl(), ch, from: start.index).0.map(\.paragraph)
     let firstWrap = paragraphs.firstIndex { $0 < start.paragraph } ?? paragraphs.count
     #expect(paragraphs.prefix(firstWrap).allSatisfy { $0 >= start.paragraph })
     #expect(paragraphs.suffix(from: firstWrap).allSatisfy { $0 < start.paragraph })
@@ -53,7 +47,7 @@ private func results(_ c: UnderlineCtrl, _ ch: IndexedChapter, from start: Int? 
 
 @Test func shownUnderlinesNeverOverlap() async throws {
     let ch = try await littleWomen()
-    let (all, records) = await results(ctrl(autoAccepting()), ch)
+    let (all, records) = await results(ctrl(), ch)
     for (i, a) in all.enumerated() {
         for b in all[(i + 1)...] where a.sentence == b.sentence {
             #expect(NSIntersectionRange(a.range, b.range).length == 0)
@@ -66,28 +60,23 @@ private func results(_ c: UnderlineCtrl, _ ch: IndexedChapter, from start: Int? 
 
 @Test func emptyChapterFinishesImmediately() async {
     let ch = await ChapterIndexSvc().prepare(ChapterInput(chapterIndex: 0, paragraphs: [], sentences: []), embedding: EmbeddingSvcUnavailable())
-    #expect(await results(ctrl(autoAccepting()), ch, from: 0).0.isEmpty)
+    #expect(await results(ctrl(), ch, from: 0).0.isEmpty)
 }
 
 @Test func chapterWithNoEventsYieldsNothing() async {
     let ch = await ChapterIndexSvc().prepare(ChapterInput(chapterIndex: 0, plainText: "Oh. Ah. Hm."), embedding: EmbeddingSvcUnavailable())
-    let fake = autoAccepting()
-    #expect(await results(ctrl(fake), ch, from: 0).0.isEmpty)
-    #expect(fake.calls.isEmpty)
+    #expect(await results(ctrl(), ch, from: 0).0.isEmpty)
 }
 
-@Test func oneSentenceChapterMakesNoModelCall() async {
+@Test func oneSentenceChapterHasNoUnderline() async {
     let ch = await ChapterIndexSvc().prepare(ChapterInput(chapterIndex: 0, plainText: "Jo immediately sat up and began to whistle."),
                                              embedding: EmbeddingSvcUnavailable())
-    let fake = autoAccepting()
-    #expect(await results(ctrl(fake), ch).0.isEmpty)
-    #expect(fake.calls.isEmpty)
+    #expect(await results(ctrl(), ch).0.isEmpty)
 }
 
 @Test(.timeLimit(.minutes(1))) func cancellationStopsTheStream() async throws {
     let ch = try await littleWomen()
-    let fake = autoAccepting()
-    let c = ctrl(fake)
+    let c = ctrl()
     let consumer = Task {
         var seen = 0
         for await _ in c.paragraphResults(in: ch, startingAt: ch.first) {
@@ -98,17 +87,12 @@ private func results(_ c: UnderlineCtrl, _ ch: IndexedChapter, from start: Int? 
     }
     let seen = await consumer.value
     #expect(seen >= 1)
-    // The phrase in flight when the cancel lands still finishes its pick and confirm, then nothing more starts.
-    try await Task.sleep(for: .milliseconds(200))
-    let afterCancel = fake.calls.count
-    try await Task.sleep(for: .milliseconds(200))
-    #expect(fake.calls.count == afterCancel)
     #expect(seen < UnderlineCtrl.paragraphs(of: ch).count)
 }
 
 @Test func paragraphsHoldingMatchesTheWholeChapterForThoseParagraphs() async throws {
     let ch = try await littleWomen()
-    let c = ctrl(autoAccepting())
+    let c = ctrl()
     let (all, allRecords) = await results(c, ch)
     let picked: Set<Int> = [23, 39, 54, 190]
     let paragraphs = Set(picked.compactMap { ch.sentence($0)?.paragraph })
@@ -123,9 +107,12 @@ private func results(_ c: UnderlineCtrl, _ ch: IndexedChapter, from start: Int? 
     let ref = AnswerPassage(sentence: 0, paragraph: 0, range: NSRange(location: 0, length: 1), text: "r")
     func pair(_ length: Int, _ score: Double, _ phrase: String) -> (KeptUnderline, UnderlineRecord) {
         let u = Underline(sentence: 1, paragraph: 0, range: NSRange(location: 0, length: length), text: phrase, kind: .action, role: nil,
-                          reference: ref, decidedBy: .model)
-        let r = UnderlineRecord(chapterIndex: 0, sentence: 1, phrase: phrase, kind: .action, path: .model, searchModeUsed: .words, embedding: .none, candidates: [0], promptSentences: [1, 0], pickedSentence: 0,
-                                confirm: nil, kept: true, dropped: nil, times: StepTimes(), phraseRange: NSRange(location: 0, length: length))
+                          reference: ref, decidedBy: .rules)
+        var r = UnderlineRecord(chapterIndex: 0, sentence: 1, phrase: phrase, kind: .action, embedding: .none,
+                                phraseRange: NSRange(location: 0, length: length))
+        r.candidates = [0]
+        r.pickedSentence = 0
+        r.kept = true
         return (KeptUnderline(underline: u, score: score), r)
     }
     let (a, ra) = pair(2, 0.9, "Jo"), (b, rb) = pair(20, 0.5, "Jo's going to the war")
@@ -139,11 +126,10 @@ private func results(_ c: UnderlineCtrl, _ ch: IndexedChapter, from start: Int? 
 
 @Test func noRecordInTheWholeChapterUsesALaterSentence() async throws {
     let ch = try await littleWomen()
-    let (_, records) = await results(ctrl(autoAccepting()), ch)
+    let (_, records) = await results(ctrl(), ch)
     #expect(records.count > 100)
     for r in records {
         #expect(r.candidates.allSatisfy { $0 < r.sentence }, "S\(r.sentence) \(r.phrase): candidates")
-        #expect(r.promptSentences.allSatisfy { $0 <= r.sentence }, "S\(r.sentence) \(r.phrase): prompts")
         #expect(r.pickedSentence.map { $0 < r.sentence } ?? true)
     }
 }

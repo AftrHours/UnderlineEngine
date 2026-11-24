@@ -3,7 +3,7 @@ import Foundation
 /// An underline that passed pick, confirm and the guards, with the score the limiter ranks it by.
 struct KeptUnderline: Sendable, Hashable {
     let underline: Underline
-    /// The reference's unscaled search score (confirm is yes/no, so it can't rank).
+    /// The reference's unscaled search score, the share of the phrase's word weight it shares (confirm is yes/no, so it can't rank).
     let score: Double
 }
 
@@ -28,13 +28,11 @@ enum UnderlineLimiter {
         return (survivors.map { kept[$0] }.sorted { order($0.underline) < order($1.underline) }, dropped.sorted())
     }
 
-    /// Higher score first; ties: earlier sentence, earlier phrase, then `UnderlineKnobs.kindOrder`.
+    /// Higher score first; ties: earlier sentence, earlier phrase, then the shorter phrase.
     private static func isBetter(_ a: KeptUnderline, _ b: KeptUnderline) -> Bool {
         if a.score != b.score { return a.score > b.score }
         if a.underline.sentence != b.underline.sentence { return a.underline.sentence < b.underline.sentence }
         if a.underline.range.location != b.underline.range.location { return a.underline.range.location < b.underline.range.location }
-        let rank = { (k: UnderlineKind) in UnderlineKnobs.kindOrder.firstIndex(of: k) ?? Int.max }
-        if rank(a.underline.kind) != rank(b.underline.kind) { return rank(a.underline.kind) < rank(b.underline.kind) }
         return a.underline.range.length < b.underline.range.length
     }
 }

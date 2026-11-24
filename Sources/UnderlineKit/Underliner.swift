@@ -6,9 +6,9 @@ import UnderlineEngine
 public final class Underliner: Underlining {
     /// What an app asks for. The engine decides what each one means.
     public enum Preset: Sendable {
-        /// What the engine ships: today R8 with the contextual embedding.
+        /// What the engine ships: R9 with the contextual embedding.
         case release
-        /// Same method with `NLEmbedding`, which needs no download, for tests that must not wait for the model.
+        /// The same method without the embedding (no word vectors), for tests that must not wait for the model.
         case testing
     }
 
@@ -30,7 +30,7 @@ public final class Underliner: Underlining {
     public static func make(_ preset: Preset = .release) async -> Underliner {
         switch preset {
         case .release: Underliner(method: await Linker.make(embedding: .contextual))
-        case .testing: Underliner(method: await Linker.make(embedding: .automatic))
+        case .testing: Underliner(method: await Linker.make(embedding: .none))
         }
     }
 
@@ -78,7 +78,7 @@ public final class Underliner: Underlining {
             ? "explained by s\(record.pickedSentence.map(String.init) ?? "?")"
             : "dropped: \(record.dropped?.rawValue ?? "unknown")"
         return ConsideredPhrase(sentence: record.sentence, phrase: record.phrase,
-                                detail: ["s\(record.sentence)", record.kind.rawValue, record.path?.rawValue, outcome]
+                                detail: ["s\(record.sentence)", record.kind.rawValue, outcome]
                                     .compactMap { $0 }.joined(separator: " · "),
                                 isUnderlined: record.kept)
     }

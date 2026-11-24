@@ -1,0 +1,789 @@
+book,chapter,line,phrase,passage,verdict,batch,note
+pride-and-prejudice,1,1,Netherfield is taken by a young man of large fortune,Netherfield Park is let at last,yes,1,same news: Netherfield let
+pride-and-prejudice,1,2,A single man of large fortune; four or five thousand a year,a single man in possession of a good fortune must be in want of a wife,partial,1,"echoes opening maxim, generic not Bingley"
+pride-and-prejudice,1,3,I am thinking of his marrying one of them,he is considered as the rightful property of some one or other of their daughters,partial,1,"general maxim, not her plan itself"
+pride-and-prejudice,1,4,many young men of four thousand a year,four or five thousand a year,yes,1,Bingley's income recalled
+pride-and-prejudice,1,5,since you will not visit them,"It is more than I engage for, I assure you.",yes,1,his earlier refusal to visit
+pride-and-prejudice,1,6,she fancied herself nervous,You have no compassion on my poor nerves,yes,1,her nerves complaint
+pride-and-prejudice,1,7,The business of her life was to get her daughters married,I am thinking of his marrying one of them,partial,1,one example of her trait
+pride-and-prejudice,1,8,"sarcastic humour, reserve, and caprice",You take delight in vexing me.,partial,1,"teasing shown, not the trait named"
+pride-and-prejudice,2,1,"I hope Mr. Bingley will like it, Lizzy.",employed in trimming a hat,yes,1,the hat being trimmed
+pride-and-prejudice,2,2,since we are not to visit,assuring his wife that he should not go,yes,1,he said he would not go
+pride-and-prejudice,2,3,it will be impossible for her to introduce him,Mrs. Long has promised to introduce him,yes,1,Mrs Long's promise
+pride-and-prejudice,2,4,Mrs. Long and her nieces must stand their chance,She has two nieces of her own.,yes,1,her two nieces
+pride-and-prejudice,2,5,A fortnight's acquaintance is certainly very little,To-morrow fortnight.,yes,1,ball in a fortnight
+pride-and-prejudice,2,6,I certainly would not have called on him,He had always intended to visit him,yes,1,he always meant to visit
+pride-and-prejudice,2,7,as I have actually paid the visit,till the evening after the visit was paid she had no knowledge of it,yes,1,the visit already paid
+pride-and-prejudice,2,8,But I knew I should persuade you at last,though to the last always assuring his wife,partial,1,"ironic contrast, fragment only"
+pride-and-prejudice,2,9,never said a word about it till now,she had no knowledge of it,yes,1,she knew nothing of visit
+pride-and-prejudice,2,10,"Now, Kitty, you may cough as much as you choose","Don't keep coughing so, Kitty",yes,1,Kitty's coughing
+pride-and-prejudice,2,11,Mr. Bingley will dance with you at the next ball,"When is your next ball to be, Lizzy?",yes,1,same next ball
+pride-and-prejudice,2,12,how soon he would return Mr. Bennet's visit,MR. BENNET was among the earliest of those who waited on Mr. Bingley,yes,1,Mr Bennet's visit to Bingley
+pride-and-prejudice,3,1,being gone to London only to get a large party for the ball,he meant to be at the next assembly with a large party,yes,1,large party for assembly
+pride-and-prejudice,3,2,danced every dance,To be fond of dancing was a certain step towards falling in love,partial,1,generic dancing remark
+pride-and-prejudice,3,3,What a contrast between him and his friend!,unworthy to be compared with his friend,yes,1,contrast with friend
+pride-and-prejudice,3,4,I certainly shall not. You know how I detest it,declined being introduced to any other lady,partial,1,"related refusal, different moment"
+pride-and-prejudice,3,5,young ladies who are slighted by other men,to sit down for two dances,yes,1,Elizabeth sitting out = slighted
+pride-and-prejudice,3,6,Elizabeth remained with no very cordial feelings towards him,She is tolerable: but not handsome enough to tempt me,yes,1,Darcy's insult
+pride-and-prejudice,3,7,Mr. Bingley had danced with her twice,You are dancing with the only handsome girl in the room,partial,1,"same dance, not the twice"
+pride-and-prejudice,3,8,He had rather hoped that all his wife's views on the stranger would be disappointed,If I can but see one of my daughters happily settled at Netherfield,yes,1,her hope of settling a daughter
+pride-and-prejudice,3,9,Mr. Bingley thought her quite beautiful,she is the most beautiful creature I ever beheld,yes,1,Bingley's praise of Jane
+pride-and-prejudice,3,10,his sisters are charming women,"His sisters were fine women, with an air of decided fashion.",yes,1,sisters described
+pride-and-prejudice,3,11,the shocking rudeness of Mr. Darcy,by his having slighted one of her daughters,yes,1,Darcy slighting her daughter
+pride-and-prejudice,3,12,Lizzy does not lose much by not suiting his fancy,he looked for a moment at Elizabeth,partial,1,"lead-in, not the insult itself"
+pride-and-prejudice,3,13,"he is a most disagreeable, horrid man","He was the proudest, most disagreeable man in the world",yes,1,disagreeable man verdict
+pride-and-prejudice,3,14,So high and so conceited,"he was discovered to be proud, to be above his company",yes,1,Darcy found proud
+pride-and-prejudice,3,15,"He walked here, and he walked there",spent the rest of the evening in walking about the room,yes,1,walking about the room
+pride-and-prejudice,3,16,Not handsome enough to dance with!,not handsome enough to tempt me; and I am in no humour,yes,1,tolerable insult
+pride-and-prejudice,4,1,"Elizabeth listened in silence, but was not convinced",I am much mistaken if we shall not find a very charming neighbour in her,yes,1,"what Jane claimed, unconvinced"
+pride-and-prejudice,4,2,less pliancy of temper than her sister,You never see a fault in anybody.,yes,1,Jane's indulgent temper
+pride-and-prejudice,4,3,but proud and conceited,Their manners are not equal to his.,partial,1,vague hint of their manners
+pride-and-prejudice,4,4,His sisters were very anxious for his having an estate of his own,"who had intended to purchase an estate, but did not live to do it",yes,1,father's estate plan
+pride-and-prejudice,4,5,Miss Bingley was by no means unwilling to preside at his table,"Miss Bingley is to live with her brother, and keep his house",yes,1,she keeps his house
+pride-and-prejudice,4,6,"the easiness, openness, and ductility of his temper",those who best knew the easiness of his temper,yes,1,easiness of his temper
+pride-and-prejudice,4,7,Bingley had never met with pleasanter people or prettier girls,Bingley was sure of being liked wherever he appeared,partial,1,"adjacent contrast, not the assembly view"
+pride-and-prejudice,4,8,"Darcy, on the contrary, had seen a collection of people",Darcy was continually giving offence,partial,1,"generic trait, not his assembly view"
+pride-and-prejudice,4,9,he could not conceive an angel more beautiful,about five times as pretty as every other woman in the room,yes,1,Jane prettiest in his eyes
+pride-and-prejudice,4,10,but still they admired her and liked her,they are very pleasing women when you converse with them,partial,1,"Jane's view of them, reversed"
+pride-and-prejudice,5,1,"You began the evening well, Charlotte","a sensible, intelligent young woman, about twenty-seven, was Elizabeth's intimate friend",partial,1,introduces Charlotte only
+pride-and-prejudice,5,2,"'Oh, the eldest Miss Bennet, beyond a doubt",Yes; but he seemed to like his second better.,yes,1,liked his second better
+pride-and-prejudice,5,3,he would have talked to Mrs. Long,he sat close to her for half an hour without once opening his lips,yes,1,silent beside Mrs Long
+pride-and-prejudice,5,4,I do not mind his not talking to Mrs. Long,I certainly saw Mr. Darcy speaking to her,partial,1,"Jane's correction, not the silence"
+pride-and-prejudice,5,5,but I wish he had danced with Eliza,Poor Eliza! to be only just tolerable.,yes,1,tolerable slight
+pride-and-prejudice,5,6,"His pride,"" said Miss Lucas",everybody says that he is eat up with pride,yes,1,his pride
+pride-and-prejudice,5,7,"I could easily forgive his pride, if he had not mortified mine",to be only just tolerable,yes,1,tolerable slight mortified her
+pride-and-prejudice,5,8,I should not care how proud I was,he has a right to be proud,yes,1,right to be proud
+pride-and-prejudice,5,9,the argument ended only with the visit,the morning after the assembly brought the former to Longbourn,yes,1,the visit begun
+pride-and-prejudice,6,1,Bingley likes your sister undoubtedly,"It was generally evident, whenever they met, that he did admire her",yes,1,his evident admiration
+pride-and-prejudice,6,2,"But she does help him on, as much as her nature will allow",which would guard her from the suspicions of the impertinent,yes,1,her composed reserve
+pride-and-prejudice,6,3,If I can perceive her regard for him,Jane was yielding to the preference which she had begun to entertain for him,yes,1,Jane's preference
+pride-and-prejudice,6,4,Your plan is a good one,Jane should therefore make the most of every half hour,yes,1,Charlotte's plan stated
+pride-and-prejudice,6,5,four evenings may do a great deal,has since dined in company with him four times,yes,1,four dinners together
+pride-and-prejudice,6,6,you would never act in this way yourself,Happiness in marriage is entirely a matter of chance.,yes,1,Charlotte's marriage view
+pride-and-prejudice,6,7,by listening to my conversation with Colonel Forster,attended to her conversation with others,yes,1,his listening to her talk
+pride-and-prejudice,6,8,Miss Lucas defied her friend to mention such a subject to him,I shall certainly let him know that I see what he is about,yes,1,Eliza's vow to confront him
+pride-and-prejudice,6,9,Mr. Darcy stood near them in silent indignation,joined eagerly in dancing at one end of the room,yes,1,the dancing that annoyed him
+pride-and-prejudice,6,10,"Indeed, sir, I have not the least intention of dancing",who had not thought her handsome enough to dance with,partial,1,"old slight, not stated motive"
+pride-and-prejudice,6,11,requested to be allowed the honour of her hand,He began to wish to know more of her,partial,1,"his interest, not the request"
+pride-and-prejudice,6,12,though this gentleman dislikes the amusement in general,every savage can dance,yes,1,his scorn of dancing
+pride-and-prejudice,6,13,"Elizabeth looked archly, and turned away",he was caught by their easy playfulness,partial,1,her playfulness generic
+pride-and-prejudice,6,14,he was thinking of her with some complacency,becoming an object of some interest in the eyes of his friend,yes,1,his growing interest
+pride-and-prejudice,6,15,how insupportable it would be to pass many evenings in this manner,in silent indignation at such a mode of passing the evening,yes,1,his indignation at evening
+pride-and-prejudice,6,16,a pair of fine eyes in the face of a pretty woman,the beautiful expression of her dark eyes,yes,1,her fine dark eyes
+pride-and-prejudice,6,17,You will have a charming mother-in-law,though the mother was found to be intolerable,yes,1,the intolerable mother
+pride-and-prejudice,7,1,They could talk of nothing but officers,the recent arrival of a militia regiment in the neighbourhood,yes,1,regiment's arrival
+pride-and-prejudice,7,2,you must be two of the silliest girls in the country,their minds were more vacant than their sisters',yes,1,their vacant minds
+pride-and-prejudice,7,3,my aunt says that Colonel Forster and Captain Carter,they always contrived to learn some from their aunt,partial,1,"aunt as news source, generic"
+pride-and-prejudice,7,4,I wonder my aunt did not tell us of that,Their visits to Mrs. Philips were now productive of the most interesting intelligence,partial,1,"aunt's news habit, generic"
+pride-and-prejudice,7,5,an acknowledgment that the horses were engaged,"They are wanted in the farm, Mr. Bennet, are not they?",yes,1,horses wanted on farm
+pride-and-prejudice,7,6,Jane had not been gone long before it rained hard,because it seems likely to rain; and then you must stay all night,yes,1,rain predicted
+pride-and-prejudice,7,7,"This was a lucky idea of mine, indeed!","No, my dear, you had better go on horseback",yes,1,her horseback scheme
+pride-and-prejudice,7,8,my getting wet through yesterday,The rain continued the whole evening without intermission,yes,1,the rain that soaked her
+pride-and-prejudice,7,9,"it was all in pursuit of Mr. Bingley, and under your orders",her mother attended her to the door with many cheerful prognostics of a bad day,partial,1,"her hopes, not the order itself"
+pride-and-prejudice,7,10,though the carriage was not to be had,your father cannot spare the horses,yes,1,horses not spared
+pride-and-prejudice,7,11,"perhaps we may see something of Captain Carter, before he goes",as he was going the next morning to London,yes,1,Carter leaving for London
+pride-and-prejudice,7,12,"with weary ancles, dirty stockings",in all this dirt! You will not be fit to be seen,yes,1,mother warned of dirt
+pride-and-prejudice,7,13,That she should have walked three miles so early in the day,only three miles. I shall be back by dinner.,yes,1,only three miles
+pride-and-prejudice,7,14,Elizabeth began to like them herself,Elizabeth was convinced that they held her in contempt for it,partial,1,contrast with prior contempt
+pride-and-prejudice,7,15,The apothecary came,They insist also on my seeing Mr. Jones,yes,1,Mr Jones to be seen
+pride-and-prejudice,7,16,from expressing in her note how much she longed for such a visit,"My dearest Lizzie,",yes,1,Jane's note
+pride-and-prejudice,7,17,the extraordinary kindness she was treated with,My kind friends will not hear of my returning home till I am better.,yes,1,kind friends keep her
+pride-and-prejudice,8,1,I thought Miss Elizabeth Bennet looked remarkably well,She really looked almost wild.,yes,1,Mrs Hurst says she looked wild
+pride-and-prejudice,8,2,"above her ancles in dirt, and alone, quite alone!","She has nothing, in short, to recommend her, but being an excellent walker.",partial,1,"same mockery, not the walk"
+pride-and-prejudice,8,3,It shows an affection for her sister that is very pleasing,"Why must she be scampering about the country, because her sister had a cold?",yes,1,scampering for sister's cold
+pride-and-prejudice,8,4,If they had uncles enough to fill all Cheapside,who lives somewhere near Cheapside,yes,1,uncle near Cheapside
+pride-and-prejudice,8,5,But it must very materially lessen their chance of marrying,I am afraid there is no chance of it.,yes,1,no chance of settling
+pride-and-prejudice,8,6,their dear friend's vulgar relations,and such low connections,yes,1,low connections
+pride-and-prejudice,8,7,"With a renewal of tenderness, however, they repaired to her room","their indifference towards Jane, when not immediately before them",yes,1,their indifference when away
+pride-and-prejudice,8,8,Do you prefer reading to cards?,"who lived only to eat, drink, and play at cards",partial,1,"Hurst's cards, not her choice"
+pride-and-prejudice,8,9,And I wish my collection were larger for your benefit,all that his library afforded,yes,1,his library offer
+pride-and-prejudice,8,10,as to leave her very little attention for her book,"for the short time she could stay below, with a book",yes,1,she took a book
+pride-and-prejudice,8,11,the improvement of her mind by extensive reading,"She is a great reader, and has no pleasure in anything else.",yes,1,she is a great reader
+pride-and-prejudice,8,12,I am no longer surprised at your knowing only six accomplished women,I cannot boast of knowing more than half-a-dozen,yes,1,half-a-dozen accomplished
+pride-and-prejudice,8,13,they knew many women who answered this description,"Nor I, I am sure,"" said Miss Bingley.",yes,1,Miss Bingley agreed before
+pride-and-prejudice,8,14,when Mr. Hurst called them to order,she found the whole party at loo,yes,1,the loo game
+pride-and-prejudice,8,15,undervaluing their own; and with many men,Are you so severe upon your own sex,yes,1,severe upon own sex
+pride-and-prejudice,8,16,Bingley was quite uncomfortable,His anxiety for Jane was evident,yes,1,his anxiety for Jane
+pride-and-prejudice,8,17,his sisters declared that they were miserable,how excessively they disliked being ill themselves,yes,1,their hollow concern
+pride-and-prejudice,9,1,She is a great deal too ill to be moved,she had no wish of her recovering immediately,yes,1,her wish Jane stay
+pride-and-prejudice,9,2,Mr. Jones says we must not think of moving her,"neither did the apothecary, who arrived about the same time, think it at all advisable",yes,1,apothecary's advice
+pride-and-prejudice,9,3,"My sister, I am sure, will not hear of her removal",her daughter's proposal of being carried home,yes,1,proposal to go home
+pride-and-prejudice,9,4,Yes; but intricate characters are the most amusing,"It does not necessarily follow that a deep, intricate character",yes,1,intricate character
+pride-and-prejudice,9,5,offended by his manner of mentioning a country neighbourhood,In a country neighbourhood you move in a very confined and unvarying society,yes,1,Darcy's country remark
+pride-and-prejudice,9,6,seemed to think the country was nothing at all,can in general supply but few subjects for such a study,yes,1,Darcy's country remark
+pride-and-prejudice,9,7,those persons who fancy themselves very important and never open their mouths,"Darcy, after looking at her for a moment, turned silently away",yes,1,Darcy turned silently away
+pride-and-prejudice,9,8,Elizabeth tremble lest her mother should be exposing herself again,I know we dine with four-and-twenty families.,yes,1,her first gaffe
+pride-and-prejudice,9,9,Mrs. Bennet began repeating her thanks to Mr. Bingley,Mrs. Bennet was profuse in her acknowledgments.,yes,1,her earlier thanks
+pride-and-prejudice,9,10,forced his younger sister to be civil also,directed her eye towards Mr. Darcy with a very expressive smile,partial,1,"sister's sneer, not civility"
+pride-and-prejudice,9,11,"She performed her part, indeed, without much graciousness","said Miss Bingley, with cold civility",yes,1,her cold civility
+pride-and-prejudice,9,12,The two girls had been whispering to each other during the whole visit,accompanied by her two youngest girls,yes,1,two youngest came along
+pride-and-prejudice,9,13,abruptly reminded him of his promise,having promised on his first coming into the country to give a ball at Netherfield,yes,1,ball promise
+pride-and-prejudice,9,14,leaving her own and her relations' behaviour to the remarks,Nothing but concern for Elizabeth could enable Bingley to keep his countenance,partial,1,one instance of mockery
+pride-and-prejudice,10,1,"I have already told her so once, by your desire.",repeatedly calling off his attention by messages to his sister,yes,1,messages to his sister
+pride-and-prejudice,10,2,a person who can write a long letter with ease,or on the length of his letter,yes,1,length of his letter
+pride-and-prejudice,10,3,because he does not write with ease,You are mistaken. I write rather slowly.,yes,1,he writes slowly
+pride-and-prejudice,10,4,you are really proud of your defects in writing,"He leaves out half his words, and blots the rest.",yes,1,Bingley's blotted writing
+pride-and-prejudice,10,5,To yield readily—easily—to the persuasion of a friend,"'Bingley, you had better stay till next week,'",yes,1,the stay-till-next-week case
+pride-and-prejudice,10,6,such a case as you have supposed about Mr. Bingley,as you were mounting your horse,yes,1,the supposed horse case
+pride-and-prejudice,10,7,Mr. Darcy had much better finish his letter,was watching the progress of his letter,yes,1,the letter in progress
+pride-and-prejudice,10,8,opportunity of dancing a reel,Miss Bingley varied the charm by a lively Scotch air,yes,1,the Scotch air
+pride-and-prejudice,10,9,that you might have the pleasure of despising my taste,that he should look at her because he disliked her was still more strange,partial,1,her guess he dislikes her
+pride-and-prejudice,10,10,"Miss Bingley saw, or suspected, enough to be jealous",Darcy had never been so bewitched by any woman as he was by her,yes,1,Darcy bewitched
+pride-and-prejudice,10,11,her great anxiety for the recovery of her dear friend Jane,had spent some hours of the morning with the invalid,partial,1,"visits to Jane, not the motive"
+pride-and-prejudice,10,12,Have you anything else to propose for my domestic felicity?,by talking of their supposed marriage,yes,1,teasing about marriage
+pride-and-prejudice,10,13,lest they had been overheard,you will give your mother-in-law a few hints,yes,1,what she said in shrubbery
+pride-and-prejudice,10,14,The picturesque would be spoilt by admitting a fourth,The path just admitted three.,yes,1,path admitted three
+pride-and-prejudice,10,15,in the hope of being at home again in a day or two,her desire of getting rid of Elizabeth,no,1,"Miss Bingley's wish, not hers"
+pride-and-prejudice,10,16,Jane was already so much recovered,"who continued, though slowly, to mend",yes,1,Jane mending
+pride-and-prejudice,11,1,"But when the gentlemen entered, Jane was no longer the first object",Elizabeth had never seen them so agreeable as they were during the hour,yes,1,the agreeable hour before
+pride-and-prejudice,11,2,watching Mr. Darcy's progress through his book,Miss Bingley did the same,yes,1,she also took a book
+pride-and-prejudice,11,3,hearing her brother mentioning a ball to Miss Bennet,"He then sat down by her, and talked scarcely to anyone else.",partial,1,"brother talking to Jane, no ball"
+pride-and-prejudice,11,4,"Darcy, at whom it was all aimed, was still inflexibly studious",he merely answered her question and read on,yes,1,he read on
+pride-and-prejudice,11,5,unconsciously closed his book,Darcy took up a book.,yes,1,he took up a book
+pride-and-prejudice,11,6,requiring an explanation of his two motives,he could imagine but two motives for their choosing to walk up and down the room,yes,1,his two motives
+pride-and-prejudice,11,7,your figures appear to the greatest advantage in walking,"Her figure was elegant, and she walked well",yes,1,her elegant walk
+pride-and-prejudice,11,8,I am perfectly convinced by it that Mr. Darcy has no defect,"But these, I suppose, are precisely what you are without.",yes,1,Darcy claims no follies
+pride-and-prejudice,11,9,And your defect is a propensity to hate everybody,My good opinion once lost is lost for ever.,yes,1,his implacable resentment
+pride-and-prejudice,11,10,"Louisa, you will not mind my waking Mr. Hurst",nothing to do but to stretch himself on one of the sofas and go to sleep,yes,1,Hurst went to sleep
+pride-and-prejudice,11,11,He began to feel the danger of paying Elizabeth too much attention,He was as much awake to the novelty of attention in that quarter,partial,1,"her attention, not his danger"
+pride-and-prejudice,12,1,"the separation, so agreeable to almost all",To Mr. Darcy it was welcome intelligence,yes,1,Darcy glad she leaves
+pride-and-prejudice,12,2,Miss Bingley's civility to Elizabeth increased at last very rapidly,her jealousy and dislike of one sister much exceeded her affection for the other,yes,1,her jealousy explains it
+pride-and-prejudice,12,3,Elizabeth took leave of the whole party in the liveliest spirits,for she was impatient to get home,yes,1,impatient to get home
+pride-and-prejudice,12,4,They were not welcomed home very cordially by their mother,could not bring herself to receive them with pleasure before,yes,1,mother unwilling to receive
+pride-and-prejudice,12,5,thought them very wrong to give so much trouble,she urged Jane to borrow Mr. Bingley's carriage immediately,partial,1,"borrowed carriage, loose tie"
+pride-and-prejudice,12,6,was sure Jane would have caught cold again,that she was not enough recovered,partial,1,"Bingley's worry, not hers"
+pride-and-prejudice,13,1,very impertinent of him to write to you at all,About a month ago I received this letter,yes,1,the letter received
+pride-and-prejudice,13,2,The disagreement subsisting between yourself and my late honoured father,as his father did before him,yes,1,father's quarrel
+pride-and-prejudice,13,3,my being next in the entail of Longbourn estate,may turn you all out of this house as soon as he pleases,yes,1,entail turns them out
+pride-and-prejudice,13,4,"At four o'clock, therefore, we may expect this peace-making gentleman","Monday, November 18th, by four o'clock",yes,1,letter names four o'clock
+pride-and-prejudice,13,5,if he is disposed to make them any amends,assure you of my readiness to make them every possible amends,yes,1,his offered amends
+pride-and-prejudice,13,6,his extraordinary deference for Lady Catherine,the patronage of the Right Honourable Lady Catherine de Bourgh,yes,1,his patroness named
+pride-and-prejudice,13,7,"christening, marrying, and burying his parishioners",be ever ready to perform those rites and ceremonies,yes,1,rites and ceremonies
+pride-and-prejudice,13,8,what can he mean by apologizing for being next in the entail?,I cannot be otherwise than concerned at being the means of injuring your amiable daughters,yes,1,his apology in letter
+pride-and-prejudice,13,9,The idea of the olive branch,not lead you to reject the offered olive branch,yes,1,the olive branch line
+pride-and-prejudice,13,10,Mr. Collins's letter had done away much of her ill-will,Pray do not talk of that odious man.,yes,1,her earlier ill-will
+pride-and-prejudice,13,11,Mr. Collins was punctual to his time,"At four o'clock, therefore",yes,1,the four o'clock arrival
+pride-and-prejudice,13,12,There is no knowing how estates will go when once they come to be entailed,attempted to explain to her the nature of an entail,yes,1,her grasp of entail
+pride-and-prejudice,13,13,"perhaps, when we are better acquainted",but of this hereafter,yes,1,same deferred hint
+pride-and-prejudice,13,14,his viewing it all as his own future property,nothing can clear Mr. Collins from the guilt of inheriting Longbourn,yes,1,his inheriting Longbourn
+pride-and-prejudice,13,15,he continued to apologize for about a quarter of an hour,There is a mixture of servility and self-importance in his letter,partial,1,"servility trait, not this act"
+pride-and-prejudice,14,1,often condescends to drive by my humble abode,The garden in which stands my humble abode is separated only by a lane from Rosings Park,yes,1,his humble abode
+pride-and-prejudice,14,2,Her indifferent state of health unhappily prevents her being in town,She is unfortunately of a sickly constitution,yes,1,her sickly health
+pride-and-prejudice,14,3,you possess the talent of flattering with delicacy,those little delicate compliments which are always acceptable to ladies,yes,1,his delicate compliments
+pride-and-prejudice,14,4,Mr. Bennet's expectations were fully answered,started a subject in which he expected him to shine,yes,1,the subject he'd shine in
+pride-and-prejudice,14,5,Lydia was bid by her two eldest sisters to hold her tongue,my uncle Philips talks of turning away Richard,yes,1,Lydia's interruption
+pride-and-prejudice,14,6,"Mr. Collins, much offended, laid aside his book","he chose ""Fordyce's Sermons.""",yes,1,the sermons book
+pride-and-prejudice,14,7,"books of a serious stamp, though written solely for their benefit",protested that he never read novels,yes,1,he refused novels
+pride-and-prejudice,14,8,apologized most civilly for Lydia's interruption,she interrupted him with,yes,1,Lydia's interruption
+pride-and-prejudice,15,1,His plan did not vary on seeing them,if he found them as handsome and amiable as they were represented by common report,yes,1,his plan to choose
+pride-and-prejudice,15,2,Mr. Collins had only to change from Jane to Elizabeth,for the first evening she was his settled choice,yes,1,Jane his first choice
+pride-and-prejudice,15,3,Mrs. Bennet treasured up the hint,"she felt it incumbent on her to hint, was likely to be very soon engaged",yes,1,her hint about Jane
+pride-and-prejudice,15,4,In pompous nothings on his side,"a mixture of pride and obsequiousness, self-importance and humility",partial,1,"his trait, not the talk"
+pride-and-prejudice,15,5,"Bingley was the principal spokesman, and Miss Bennet the principal object",her eldest daughter she must just mention,partial,1,weak Jane tie
+pride-and-prejudice,15,6,"In another minute Mr. Bingley, but without seeming to have noticed what passed",Elizabeth happening to see the countenance of both as they looked at each other,yes,1,the Darcy-Wickham meeting
+pride-and-prejudice,15,7,that Mr. Denny had brought him from London,who had returned with him the day before from town,yes,1,came from town with Denny
+pride-and-prejudice,15,8,She had been watching him the last hour,Mrs. Philips's throwing up the parlour window,partial,1,"her window, not the watching"
+pride-and-prejudice,15,9,"were become ""stupid, disagreeable fellows.""",His appearance was greatly in his favour,yes,1,Wickham's charm
+pride-and-prejudice,15,10,Elizabeth related to Jane what she had seen pass between the two gentlemen,"Both changed colour, one looked white, the other red.",yes,1,their changing colour
+pride-and-prejudice,15,11,admiring Mrs. Philips's manners and politeness,She received him with her very best politeness,yes,1,her politeness to him
+pride-and-prejudice,15,12,pointedly included him in her invitation for the next evening,if the family from Longbourn would come in the evening,yes,1,the evening invitation
+pride-and-prejudice,15,13,might be attributed to his connection with them,might be justified by his relationship to the young ladies,yes,1,relationship to the girls
+pride-and-prejudice,16,1,he had still at intervals a kind listener in Mrs. Philips,he found in Mrs. Philips a very attentive listener,yes,1,Mrs Philips listening
+pride-and-prejudice,16,2,by sitting down to whist,most abundantly supplied with coffee and muffin,partial,1,"her kindness he repays, not whist"
+pride-and-prejudice,16,3,If he wishes to avoid seeing me he must go,whether he is likely to be in this country much longer,yes,1,whether Darcy stays
+pride-and-prejudice,16,4,the delicacy of it prevented further inquiry,His behaviour to myself has been scandalous,partial,1,"topic stated, not the delicacy"
+pride-and-prejudice,16,5,had it pleased the gentleman we were speaking of just now,it is not for me to be driven away by Mr. Darcy,yes,1,names the gentleman
+pride-and-prejudice,16,6,"He was my godfather, and excessively attached to me",the truest friend I ever had,yes,1,late Mr Darcy's friendship
+pride-and-prejudice,16,7,Till I can forget his father,disappointing the hopes and disgracing the memory of his father,yes,1,memory of his father
+pride-and-prejudice,16,8,I can never defy or expose him,but what I might proclaim to all the world,yes,1,what he would proclaim
+pride-and-prejudice,16,9,I can hardly be just to him.,It is impossible for me to be impartial.,yes,1,he cannot be impartial
+pride-and-prejudice,16,10,"the godson, the friend, the favourite of his father!",He was my godfather,yes,1,his godfather
+pride-and-prejudice,16,11,"connected together, as I think you said, in the closest manner","I have been connected with his family, in a particular manner, from my infancy",yes,1,connected from infancy
+pride-and-prejudice,16,12,Mr. Darcy gave him a voluntary promise of providing for me,"He meant to provide for me amply, and thought he had done it",yes,1,meant to provide for him
+pride-and-prejudice,16,13,I wonder that the very pride of this Mr. Darcy has not made him just to you,Everybody is disgusted with his pride.,partial,1,general pride talk
+pride-and-prejudice,16,14,there were stronger impulses even than pride,a dislike which I cannot but attribute in some measure to jealousy,yes,1,jealousy motive
+pride-and-prejudice,16,15,Elizabeth could not help reverting once more to the first,the history of his acquaintance with Mr. Darcy,yes,1,the Darcy history topic
+pride-and-prejudice,16,16,with the rich he is liberal-minded,it has often led him to be liberal and generous,yes,1,pride made him liberal
+pride-and-prejudice,16,17,he had lost every point,I know little of the game at present,yes,1,he knew little of game
+pride-and-prejudice,16,18,"Mr. Collins,"" said she, ""speaks highly both of Lady Catherine and her daughter",all the grandeur of Lady Catherine and her mansion,yes,1,his Lady Catherine praise
+pride-and-prejudice,16,19,the rest from the pride of her nephew,she is aunt to the present Mr. Darcy,yes,1,she is Darcy's aunt
+pride-and-prejudice,16,20,"Whatever he said, was said well",might be rendered interesting by the skill of the speaker,yes,1,skill of the speaker
+pride-and-prejudice,16,21,Elizabeth went away with her head full of him,"nor thinking of him since, with the smallest degree of unreasonable admiration",yes,1,her admiration of him
+pride-and-prejudice,16,22,Lydia talked incessantly of lottery tickets,being likewise extremely fond of lottery tickets,yes,1,fond of lottery tickets
+pride-and-prejudice,16,23,he did not in the least regard his losses at whist,he considered the money as a mere trifle,yes,1,money a mere trifle
+pride-and-prejudice,16,24,repeatedly fearing that he crowded his cousins,the coach conveyed him and his five cousins,yes,1,coach with five cousins
+pride-and-prejudice,17,1,Can his most intimate friends be so excessively deceived in him?,she knew not how to believe that Mr. Darcy could be so unworthy of Mr. Bingley's regard,yes,1,Darcy unworthy of Bingley
+pride-and-prejudice,17,2,"if he had been imposed on, would have much to suffer",I can much more easily believe Mr. Bingley's being imposed on,yes,1,Bingley imposed on
+pride-and-prejudice,17,3,receiving the invitation from Mr. Bingley himself,came to give their personal invitation,yes,1,personal invitation
+pride-and-prejudice,17,4,Jane pictured to herself a happy evening in the society of her two friends,The two ladies were delighted to see their dear friend again,yes,1,the two sisters' visit
+pride-and-prejudice,17,5,seeing a confirmation of everything in Mr. Darcy's look and behaviour,"If it be not so, let Mr. Darcy contradict it.",partial,1,"her dare, not her expectation"
+pride-and-prejudice,17,6,Elizabeth felt herself completely taken in,she could not help asking him whether he intended to accept Mr. Bingley's invitation,yes,1,her question invited it
+pride-and-prejudice,17,7,She had fully proposed being engaged by Wickham for those very dances,Elizabeth thought with pleasure of dancing a great deal with Mr. Wickham,yes,1,her hope to dance with Wickham
+pride-and-prejudice,17,8,her liveliness had been never worse timed,Elizabeth's spirits were so high on the occasion,yes,1,her high spirits
+pride-and-prejudice,17,9,from the idea it suggested of something more,"soliciting yours, Miss Elizabeth, for the two first dances especially",partial,1,"the dance request, not the hint"
+pride-and-prejudice,17,10,nothing less than a dance on Tuesday,which was fixed for the following Tuesday,yes,1,ball fixed for Tuesday
+pride-and-prejudice,18,1,Darcy was not less answerable for Wickham's absence than if her first surmise had been just,"the dreadful suspicion of his being purposely omitted, for Mr. Darcy's pleasure",yes,1,her first surmise
+pride-and-prejudice,18,2,To find a man agreeable whom one is determined to hate!,She was resolved against any sort of conversation with him,yes,1,her resolve against him
+pride-and-prejudice,18,3,they were again silent till they had gone down the dance,They stood for some time without speaking a word,yes,1,first silence in dance
+pride-and-prejudice,18,4,A deeper shade of hauteur overspread his features,we had just been forming a new acquaintance,yes,1,her Wickham jab
+pride-and-prejudice,18,5,Sir William's allusion to his friend seemed to strike him forcibly,"(glancing at her sister and Bingley), shall take place",yes,1,his allusion to Bingley-Jane
+pride-and-prejudice,18,6,Sir William's interruption has made me forget,"but let me not interrupt you, sir",yes,1,Sir William's interruption
+pride-and-prejudice,18,7,We have tried two or three subjects already without success,you ought to make some kind of remark on the size of the room,yes,1,subjects she tried
+pride-and-prejudice,18,8,that you were not to sketch my character at the present moment,"You think it a faithful portrait, undoubtedly.",yes,1,the portrait remark
+pride-and-prejudice,18,9,directed all his anger against another,Mr. Wickham is blessed with such happy manners as may insure his making friends,yes,1,Wickham is the other
+pride-and-prejudice,18,10,he was excessively glad to find that he had taken himself out of the way,Wickham had been obliged to go to town on business the day before,yes,1,Wickham's absence
+pride-and-prejudice,18,11,"and of that, I can assure you, he informed me himself","he was the son of old Wickham, the late Mr. Darcy's steward",yes,1,steward's son claim
+pride-and-prejudice,18,12,who had undertaken to make inquiries on the same subject of Bingley,"Your sister has been talking to me about him, and asking me a thousand questions",partial,1,"Jane asked Miss Bingley, not Bingley"
+pride-and-prejudice,18,13,I shall venture still to think of both gentlemen as I did before,"he will vouch for the good conduct, the probity and honour, of his friend",yes,1,Bingley's vouching
+pride-and-prejudice,18,14,the pleasantness of her last partner,who took her so much by surprise in his application for her hand,yes,1,Darcy asked her to dance
+pride-and-prejudice,18,15,"the words ""apology,"" ""Hunsford,""",My total ignorance of the connection must plead my apology.,yes,1,his planned apology
+pride-and-prejudice,18,16,Mr. Darcy seemed much pleased with the attention,Mr. Darcy's contempt seemed abundantly increasing with the length of his second speech,yes,1,Darcy's actual contempt
+pride-and-prejudice,18,17,As Elizabeth had no longer any interest of her own to pursue,though every prospect of her own was destroyed for the evening,yes,1,her prospects destroyed
+pride-and-prejudice,18,18,"the chief of it was overheard by Mr. Darcy, who sat opposite to them","her mother was talking to that one person (Lady Lucas) freely, openly",yes,1,mother talking openly
+pride-and-prejudice,18,19,the repetition of delights which she saw no likelihood of sharing,triumphantly believing there was no chance of it,yes,1,her triumph over Lady Lucas
+pride-and-prejudice,18,20,"And with a bow to Mr. Darcy, he concluded his speech",I believe him to be Lady Catherine's nephew.,partial,1,"earlier intent, different speech"
+pride-and-prejudice,18,21,nor could I think well of the man who should omit an occasion of testifying his respect,I shall entreat his pardon for not having done it earlier.,yes,1,his self-introduction excuse
+pride-and-prejudice,18,22,had her family made an agreement to expose themselves,It vexed her to see him expose himself to such a man.,yes,1,Collins exposing himself
+pride-and-prejudice,18,23,"the silent contempt of the gentleman, or the insolent smiles of the ladies","saw them making signs of derision at each other, and at Darcy",yes,1,their derision
+pride-and-prejudice,18,24,though he could not prevail with her to dance with him again,"The two first dances, however, brought a return of distress",yes,1,the first dances with him
+pride-and-prejudice,18,25,the probable consequence of her allusions to Mr. Wickham,He has been so unlucky as to lose your friendship,yes,1,her Wickham remark
+pride-and-prejudice,18,26,she should undoubtedly see her daughter settled at Netherfield,She saw her in idea settled in that very house,partial,1,"Elizabeth's idea, not mother's"
+pride-and-prejudice,18,27,Of having another daughter married to Mr. Collins,"his chief object was, by delicate attentions, to recommend himself to her",partial,1,"his attentions, indirect"
+pride-and-prejudice,18,28,Mr. Bingley and Jane were standing together a little detached from the rest,"Bingley and Jane, who were dancing together",partial,1,earlier moment together
+pride-and-prejudice,18,29,good-naturedly engaged Mr. Collins's conversation to herself,to point him out to her particular notice,partial,1,loose Charlotte-Collins tie
+pride-and-prejudice,18,30,the happy though modest hopes which Jane entertained of Bingley's regard,Jane met her with a smile of such sweet complacency,yes,1,Jane's happy look
+pride-and-prejudice,19,1,I have your respected mother's permission for this address,I am sure Lizzy will be very happy—I am sure she can have no objection.,yes,1,mother's eager consent
+pride-and-prejudice,19,2,Let me do it without further loss of time,Having resolved to do it without loss of time,no,1,"shared wording, different act"
+pride-and-prejudice,19,3,she would find me in every respect ill qualified for the situation,"your wit and vivacity, I think, must be acceptable to her",yes,1,his claim she'd suit Lady C
+pride-and-prejudice,19,4,"your modesty, economy, and other amiable qualifications",able to make a small income go a good way,yes,1,Lady C's thrift advice
+pride-and-prejudice,19,5,"may take possession of Longbourn estate whenever it falls, without any self-reproach",that the loss to them might be as little as possible when the melancholy event takes place,yes,1,his plan to lessen their loss
+pride-and-prejudice,19,6,the established custom of your sex to reject a man on the first application,it is usual with young ladies to reject the addresses of the man whom they secretly mean to accept,yes,1,his first such claim
+pride-and-prejudice,19,7,my connections with the family of De Bourgh,I do not reckon the notice and kindness of Lady Catherine de Bourgh,yes,1,Lady Catherine's notice
+pride-and-prejudice,19,8,Your portion is unhappily so small,one thousand pounds in the 4 per cents.,yes,1,her thousand pounds
+pride-and-prejudice,19,9,I would rather be paid the compliment of being believed sincere,pay me the compliment of believing what I say,yes,1,her earlier same plea
+pride-and-prejudice,19,10,I thank you again and again for the honour you have done me in your proposals,I am very sensible of the honour of your proposals,yes,1,her first thanks
+pride-and-prejudice,19,11,sanctioned by the express authority of both your excellent parents,"Lizzy, I insist upon your staying and hearing Mr. Collins.",partial,1,"mother's insistence, loose"
+pride-and-prejudice,19,12,her repeated refusals as flattering encouragement,it is impossible for me to do otherwise than decline them,yes,1,her first refusal
+pride-and-prejudice,19,13,the affectation and coquetry of an elegant female,according to the usual practice of elegant females,yes,1,his elegant females line
+pride-and-prejudice,20,1,"This information, however, startled Mrs. Bennet",would naturally flow from her bashful modesty and the genuine delicacy of her character,yes,1,Collins's modesty reading
+pride-and-prejudice,20,2,he will change his mind and not have her,perhaps it were better not to force her into accepting me,yes,1,his hint of withdrawing
+pride-and-prejudice,20,3,Mr. Collins begins to say that he will not have Lizzy,she could not contribute much to my felicity,yes,1,his doubt about her
+pride-and-prejudice,20,4,Your mother insists upon your accepting it,Tell her that you insist upon her marrying him.,yes,1,she asked him to insist
+pride-and-prejudice,20,5,You promised me to insist upon her marrying him.,Let her be called down. She shall hear my opinion.,yes,1,what he actually said
+pride-and-prejudice,20,6,I shall be glad to have the library to myself,Mr. Bennet raised his eyes from his book,partial,1,weak tie to his book
+pride-and-prejudice,20,7,did Mrs. Bennet give up the point. She talked to Elizabeth again and again,Lizzy shall be brought to reason. I will speak to her about it myself directly.,yes,1,her vow to speak to Lizzy
+pride-and-prejudice,20,8,the possibility of her deserving her mother's reproach,"She is a very headstrong, foolish girl, and does not know her own interest",yes,1,her foolish-girl remark
+pride-and-prejudice,20,9,entreating her to persuade her friend Lizzy to comply,She endeavoured to secure Jane in her interest,partial,1,similar tactic with Jane
+pride-and-prejudice,20,10,"I told you in the library, you know, that I should never speak to you again","Yes, or I will never see her again.",yes,1,her never-see-her threat
+pride-and-prejudice,20,11,People who suffer as I do from nervous complaints,nobody feels for my poor nerves,yes,1,her poor nerves
+pride-and-prejudice,20,12,when the blessing denied begins to lose somewhat of its value,His regard for her was quite imaginary,partial,1,"narrator's view, not his remark"
+pride-and-prejudice,20,13,requesting you to interpose your authority in my behalf,"I will go directly to Mr. Bennet, and we shall very soon settle it with her",partial,1,her plan to involve Mr Bennet
+pride-and-prejudice,21,1,Elizabeth had hoped that his resentment might shorten his visit,by stiffness of manner and resentful silence,yes,1,his resentful silence
+pride-and-prejudice,21,2,She highly approved his forbearance,that I had better not meet Mr. Darcy,yes,1,his reason for absence
+pride-and-prejudice,21,3,drew off her attention even from Wickham,during the walk he particularly attended to her,partial,1,"Wickham present, loose"
+pride-and-prejudice,21,4,the delightful intercourse you have known as friends will be renewed,to enjoy many returns of that delightful intercourse we have known,yes,1,Caroline's phrase
+pride-and-prejudice,21,5,Mr. Bingley will not be detained in London by them,it was not to be supposed that their absence from Netherfield would prevent Mr. Bingley's being there,yes,1,her view on his return
+pride-and-prejudice,21,6,Caroline decidedly says that none of the party will return,and without any intention of coming back again,yes,1,no intention of return
+pride-and-prejudice,21,7,wants him to marry Miss Darcy,the hope we dare to entertain of her being hereafter our sister,yes,1,hope of Miss Darcy as sister
+pride-and-prejudice,21,8,She follows him to town in the hope of keeping him there,we have determined on following him thither,yes,1,their plan to follow
+pride-and-prejudice,21,9,her brother greatly admires Miss Darcy,My brother admires her greatly already,yes,1,admires her greatly
+pride-and-prejudice,21,10,Caroline is incapable of wilfully deceiving anyone,tries to persuade you that he does not care about you,yes,1,her persuasion
+pride-and-prejudice,21,11,whose sisters and friends are all wishing him to marry elsewhere,her relations all wish the connection as much as his own,yes,1,relations wish the match
+pride-and-prejudice,21,12,But if he returns no more this winter,none of the party will return into Hertfordshire this winter,yes,1,none returning this winter
+pride-and-prejudice,21,13,The idea of his returning no more Elizabeth treated with the utmost contempt,It is only evident that Miss Bingley does not mean he should.,yes,1,Elizabeth's view of it
+pride-and-prejudice,21,14,a young man so totally independent of everyone,It must be his own doing; he is his own master.,yes,1,his own master
+pride-and-prejudice,21,15,Mr. Bingley would be soon down again,might be concluded in three or four days,yes,1,business of a few days
+pride-and-prejudice,22,1,Charlotte's kindness extended farther than Elizabeth had any conception of,and I am more obliged to you than I can express.,partial,1,"Elizabeth's thanks, not the kindness"
+pride-and-prejudice,22,2,for Charlotte had been tolerably encouraging,was Miss Lucas so kind as to listen to Mr. Collins,yes,1,her listening to Collins
+pride-and-prejudice,22,3,how many years longer Mr. Bennet was likely to live,his prospects of future wealth were exceedingly fair,yes,1,his future inheritance
+pride-and-prejudice,22,4,who could by no means wish for so speedy a return,because it is what I have been hoping to receive,yes,1,Collins's eager acceptance
+pride-and-prejudice,22,5,all of them equally surprised to find that he meditated a quick return,I shall avail myself of it as soon as possible,yes,1,his soon-as-possible promise
+pride-and-prejudice,22,6,related the event of the day before,hasten to Lucas Lodge to throw himself at her feet,yes,1,his dash to Lucas Lodge
+pride-and-prejudice,22,7,The possibility of Mr. Collins's fancying himself in love with her friend,It keeps him in good humour,partial,1,"thanks line, indirect"
+pride-and-prejudice,22,8,"Engaged to Mr. Collins! my dear Charlotte, impossible!","Elizabeth would wonder, and probably would blame her",yes,1,Charlotte foresaw her blame
+pride-and-prejudice,22,9,as it was no more than she expected,the surprise it must occasion to Elizabeth Bennet,yes,1,surprise she foresaw
+pride-and-prejudice,22,10,I ask only a comfortable home,the pure and disinterested desire of an establishment,yes,1,her wish for establishment
+pride-and-prejudice,22,11,Charlotte's opinion of matrimony was not exactly like her own,Without thinking highly either of men or of matrimony,yes,1,her view of matrimony
+pride-and-prejudice,22,12,sacrificed every better feeling to worldly advantage,it was the only honourable provision for well-educated young women of small fortune,yes,1,her worldly reasoning
+pride-and-prejudice,22,13,impossible for that friend to be tolerably happy in the lot she had chosen,my chance of happiness with him is as fair as most people can boast,yes,1,Charlotte's happiness claim
+pride-and-prejudice,23,1,by mentioning her prior knowledge of it from Charlotte herself,doubting whether she was authorized to mention it,yes,1,her doubt about telling
+pride-and-prejudice,23,2,she persisted in disbelieving the whole of the matter,protested he must be entirely mistaken,yes,1,her first protest
+pride-and-prejudice,23,3,Elizabeth was the real cause of all the mischief,Do not you know that Mr. Collins wants to marry Lizzy?,partial,1,hints Lizzy's refusal only
+pride-and-prejudice,23,4,the comfort of having a daughter well married,before she could speak to Sir William or Lady Lucas without being rude,partial,1,"rivalry, different side"
+pride-and-prejudice,23,5,Mr. Collins's return into Hertfordshire was no longer a matter of pleasure,so ready to close with their kind wish of seeing him again at Longbourn,yes,1,his reason to return
+pride-and-prejudice,23,6,It was very strange that he should come to Longbourn instead of to Lucas Lodge,merely with the view of enjoying her society,yes,1,he came for Charlotte
+pride-and-prejudice,23,7,the greater distress of Mr. Bingley's continued absence,"Bingley had now been gone a week, and nothing was heard of his return",yes,1,Bingley gone a week
+pride-and-prejudice,23,8,Day after day passed away without bringing any other tidings of him,was counting the days till she might reasonably hope to hear again,yes,1,waiting for news
+pride-and-prejudice,23,9,require Jane to confess that if he did not come back,she never failed to contradict as a most scandalous falsehood,partial,1,"her denial, not this demand"
+pride-and-prejudice,23,10,Mr. Collins returned most punctually on the Monday fortnight,return on Monday fortnight,yes,1,Monday fortnight
+pride-and-prejudice,23,11,his reception at Longbourn was not quite so gracious,no longer a matter of pleasure to Mrs. Bennet,yes,1,her cooled pleasure
+pride-and-prejudice,23,12,The sight of Miss Lucas was odious to her,many months were gone before she could at all forgive their daughter,yes,1,her grudge on Charlotte
+pride-and-prejudice,23,13,"I never can be thankful, Mr. Bennet, for anything about the entail","If it was not for the entail, I should not mind it.",yes,1,her entail complaint
+pride-and-prejudice,24,1,"Hope was over, entirely over",The very first sentence conveyed the assurance of their being all settled in London for the winter,yes,1,letter's first sentence
+pride-and-prejudice,24,2,To Caroline's assertion of her brother's being partial to Miss Darcy,Miss Darcy's praise occupied the chief of it.,yes,1,Miss Darcy praise in letter
+pride-and-prejudice,24,3,that selfishness is prudence,"Charlotte's prudent, steady character",yes,1,Jane's prudence defence
+pride-and-prejudice,24,4,You mentioned two instances.,I have met with two instances lately,yes,1,the two instances
+pride-and-prejudice,24,5,not to pain me by thinking that person to blame,"one I will not mention, the other is Charlotte's marriage",yes,1,the unnamed instance
+pride-and-prejudice,24,6,"and want of resolution, will do the business","that easiness of temper, that want of proper resolution",yes,1,his want of resolution
+pride-and-prejudice,24,7,"You persist, then, in supposing his sisters influence him?",or were suppressed by his friends' interference,yes,1,friends' interference
+pride-and-prejudice,24,8,"Yes, in conjunction with his friend.",the slave of his designing friends,yes,1,his designing friends
+pride-and-prejudice,24,9,Beyond a doubt they do wish him to choose Miss Darcy,ventured to predict the accomplishment of the wishes which had been unfolded in her former letter,yes,1,their wishes in letter
+pride-and-prejudice,24,10,Mrs. Bennet still continued to wonder and repine at his returning no more,O that my dear mother had more command over herself!,yes,1,mother's constant reflections
+pride-and-prejudice,24,11,what she did not believe herself,"That he was really fond of Jane, she doubted no more than she had ever done",no,1,"Elizabeth's belief, not Jane's"
+pride-and-prejudice,24,12,Mr. Wickham's society was of material service,Let Wickham be your man.,partial,1,"father's joke, not his company"
+pride-and-prejudice,24,13,any extenuating circumstances in the case unknown to the society of Hertfordshire,Let me take it in the best light,partial,1,"Jane's candour, other case"
+pride-and-prejudice,25,1,what you tell us of long sleeves,to distribute her presents and describe the newest fashions,yes,1,her fashion news
+pride-and-prejudice,25,2,to whom the chief of this news had been given before,"Between the two eldest and herself especially, there subsisted a very particular regard.",partial,1,"their bond, not the letters"
+pride-and-prejudice,25,3,"When alone with Elizabeth afterwards, she spoke more on the subject","in compassion to her nieces, turned the conversation",partial,1,"adjacent clause, not the subject"
+pride-and-prejudice,25,4,It seems likely to have been a desirable match for Jane,for Jane would have got Mr. Bingley if she could,yes,1,Mrs Bennet on Jane's loss
+pride-and-prejudice,25,5,Bingley's being withheld from seeing Jane,he is now in the custody of his friend,yes,1,custody of his friend
+pride-and-prejudice,25,6,she did not consider it entirely hopeless,And that is quite impossible,yes,1,she called it impossible
+pride-and-prejudice,25,7,Miss Bennet accepted her aunt's invitation with pleasure,But do you think she would be prevailed on to go back with us?,yes,1,aunt's invitation idea
+pride-and-prejudice,25,8,by Caroline's not living in the same house with her brother,But does not Jane correspond with his sister?,yes,1,Jane and his sister
+pride-and-prejudice,25,9,without any danger of seeing him,it is very improbable they should meet at all,yes,1,unlikely to meet
+pride-and-prejudice,25,10,Mrs. Gardiner had seen Pemberley,in that very part of Derbyshire to which he belonged,yes,1,her Derbyshire stay
+pride-and-prejudice,26,1,a wonderful instance of advice being given on such a point without being resented,"You are too sensible a girl, Lizzy, to fall in love merely because you are warned against it",yes,1,the advice given
+pride-and-prejudice,26,2,their correspondence was as regular and frequent as it ever had been,"I shall depend on hearing from you very often, Eliza.",yes,1,promise to write often
+pride-and-prejudice,26,3,"she must wait for her own visit there, to know the rest","Promise me, therefore, to come to Hunsford.",yes,1,promise to visit Hunsford
+pride-and-prejudice,26,4,my last letter had never reached her,her last letter to her friend from Longbourn had by some accident been lost,yes,1,lost letter guess
+pride-and-prejudice,26,5,accident only could discover to Mr. Bingley her sister's being in town,so much engaged with Mr. Darcy that they scarcely ever saw him,yes,1,Bingley kept with Darcy
+pride-and-prejudice,26,6,the visitor did at last appear,I dare say I shall soon see them here.,yes,1,expected visit
+pride-and-prejudice,26,7,Caroline did not return my visit till yesterday,"She wrote again when the visit was paid, and she had seen Miss Bingley.",yes,1,Jane's call on her
+pride-and-prejudice,26,8,"He knows of my being in town, I am certain",It convinced her that accident only could discover,yes,1,Elizabeth's contrary view
+pride-and-prejudice,26,9,such pleasant accounts from our friends at Hunsford,"She wrote cheerfully, seemed surrounded with comforts",yes,1,Charlotte's cheerful letters
+pride-and-prejudice,26,10,"Pray go to see them, with Sir William and Maria",My father and Maria are to come to me in March,yes,1,March visit plan
+pride-and-prejudice,26,11,"Jane would no longer be duped, by the sister at least",would allow Jane to deceive herself no longer,yes,1,Jane undeceived
+pride-and-prejudice,26,12,she seriously hoped he might really soon marry Mr. Darcy's sister,as if she wanted to persuade herself that he is really partial to Miss Darcy,yes,1,Miss Darcy match
+pride-and-prejudice,26,13,reminded Elizabeth of her promise concerning that gentleman,"All that I can promise you, therefore, is not to be in a hurry.",yes,1,her promise to aunt
+pride-and-prejudice,26,14,"she would have been his only choice, had fortune permitted it",an affection which the want of fortune would make so very imprudent,yes,1,want of fortune warning
+pride-and-prejudice,26,15,"I am now convinced, my dear aunt, that I have never been much in love",At present I am not in love with Mr. Wickham,yes,1,not in love claim
+pride-and-prejudice,26,16,they are even impartial towards Miss King,the young lady to whom he was now rendering himself agreeable,yes,1,Miss King introduced
+pride-and-prejudice,26,17,My watchfulness has been effectual,"When I am in company with him, I will not be wishing.",yes,1,her promise of caution
+pride-and-prejudice,26,18,handsome young men must have something to live on as well as the plain,The sudden acquisition of ten thousand pounds,yes,1,Miss King's fortune
+pride-and-prejudice,27,1,were not of a kind to make her think him less agreeable,he must always be her model of the amiable and pleasing,yes,1,Wickham her model
+pride-and-prejudice,27,2,"Sir William Lucas, and his daughter Maria",She was to accompany Sir William and his second daughter.,yes,1,travel party named
+pride-and-prejudice,27,3,Jane was at a drawing-room window watching their arrival,"The journey would, moreover, give her a peep at Jane",yes,1,hope to see Jane
+pride-and-prejudice,27,4,though Jane always struggled to support her spirits,pleased to see it healthful and lovely as ever,partial,1,"contrast, Jane's looks"
+pride-and-prejudice,27,5,what sort of girl is Miss King?,His present pursuit could not make him forget,partial,1,vague nod to Miss King
+pride-and-prejudice,27,6,a man who has not one agreeable quality,weakened her disgust of Mr. Collins,yes,1,"Collins, her disgust"
+pride-and-prejudice,27,7,Before they were separated by the conclusion of the play,the evening at one of the theatres,yes,1,the theatre evening
+pride-and-prejudice,27,8,Adieu to disappointment and spleen.,that speech savours strongly of disappointment,yes,1,aunt's disappointment remark
+pride-and-prejudice,28,1,Elizabeth was prepared to see him in his glory,his formal civility was just what it had been,partial,1,"his manner, not his glory"
+pride-and-prejudice,28,2,none were to be compared with the prospect of Rosings,The paling of Rosings park was their boundary on one side.,partial,1,"park mentioned, not the view"
+pride-and-prejudice,28,3,to have the opportunity of showing it without her husband's help,but in general Charlotte wisely did not hear,partial,1,"her coping, loose"
+pride-and-prejudice,28,4,Elizabeth supposed he must be often forgotten,owned she encouraged it as much as possible,yes,1,she encourages his gardening
+pride-and-prejudice,28,5,"to understand her address in guiding, and composure in bearing with, her husband",Once or twice she could discern a faint blush,partial,1,"one blush, partial picture"
+pride-and-prejudice,28,6,the gaieties of their intercourse with Rosings,We dine at Rosings twice every week,yes,1,Rosings dinners twice weekly
+pride-and-prejudice,28,7,Maria would tell her nothing more,I will not tell you what it is.,yes,1,Maria's refusal to tell
+pride-and-prejudice,28,8,here is nothing but Lady Catherine and her daughter!,a sudden noise below seemed to speak the whole house in confusion,partial,1,the commotion only
+pride-and-prejudice,28,9,the whole party was asked to dine at Rosings the next day,she will include you and my sister Maria in every invitation,yes,1,promised invitations
+pride-and-prejudice,29,1,"In spite of having been at St. James's, Sir William was so completely awed","About the court, such instances of elegant breeding are not uncommon.",yes,1,his court boast
+pride-and-prejudice,29,2,"his daughter, frightened almost out of her senses","quite frightened Maria Lucas, who had been little used to company",yes,1,Maria frightened
+pride-and-prejudice,29,3,Elizabeth found herself quite equal to the scene,Elizabeth's courage did not fail her.,yes,1,her courage
+pride-and-prejudice,29,4,such as to make her visitors forget their inferior rank,She likes to have the distinction of rank preserved.,yes,1,rank kept distinct
+pride-and-prejudice,29,5,all the articles of plate which Mr. Collins had promised,"so many servants, and so splendid a dinner, might not wholly overpower them",yes,1,promised grandeur
+pride-and-prejudice,29,6,"as he had likewise foretold, he took his seat at the bottom of the table",Mr. Collins was carefully instructing them in what they were to expect,partial,1,"instructions, not the seat"
+pride-and-prejudice,29,7,who was now enough recovered to echo whatever his son-in-law said,he had but just courage enough to make a very low bow,yes,1,his awed bow
+pride-and-prejudice,29,8,the latter said not a word to her all the dinnertime,"she spoke very little, except in a low voice, to Mrs. Jenkinson",yes,1,she spoke little
+pride-and-prejudice,29,9,Mrs. Jenkinson was chiefly employed in watching how little Miss de Bourgh ate,placing a screen in the proper direction before her eyes,yes,1,Mrs Jenkinson's fussing
+pride-and-prejudice,29,10,had all the masters that were necessary,for the benefit of masters,yes,1,masters remark
+pride-and-prejudice,29,11,dared to trifle with so much dignified impertinence,Elizabeth felt all the impertinence of her questions,yes,1,her impertinent questions
+pride-and-prejudice,29,12,Mrs. Jenkinson expressed her fears of Miss De Bourgh's being too hot or too cold,fearing she was indisposed,yes,1,fears she is unwell
+pride-and-prejudice,29,13,Mr. Collins was employed in agreeing to everything her Ladyship said,He carved and ate and praised with delighted alacrity,partial,1,"same fawning, other moment"
+pride-and-prejudice,29,14,stating the mistakes of the three others,she was not used to have her judgment controverted,partial,1,"trait, different moment"
+pride-and-prejudice,29,15,to hear Lady Catherine determine what weather they were to have on the morrow,delivering her opinion on every subject in so decisive a manner,partial,1,"trait, different moment"
+pride-and-prejudice,29,16,take her Ladyship's praise into his own hands,she could not be in such raptures as Mr. Collins expected the scene to inspire,yes,1,Elizabeth's weak raptures
+pride-and-prejudice,30,1,From the drawing-room they could distinguish nothing in the lane,The room in which the ladies sat was backwards.,yes,2,backward room explains why lane invisible
+pride-and-prejudice,30,2,the knowledge of what carriages went along,looking out of window in his own book room,yes,2,Collins watches road from book room
+pride-and-prejudice,30,3,the minutest concerns of which were carried to her by Mr. Collins,Very few days passed in which Mr. Collins did not walk to Rosings,partial,2,"daily Rosings walks are the channel, not the reporting itself"
+pride-and-prejudice,30,4,beyond the reach of Lady Catherine's curiosity,nothing escaped her observation that was passing in the room during these visits,yes,2,her prying observation is the curiosity
+pride-and-prejudice,30,5,the earliest assurance of it,Mr. Darcy was expected there in the course of a few weeks,partial,2,"expected arrival, not the arrival news itself"
+pride-and-prejudice,30,6,hurried home with the great intelligence,Mr. Collins was walking the whole morning within view of the lodges,no,2,same sentence as the phrase
+pride-and-prejudice,30,7,"Charlotte had seen them from her husband's room, crossing the road",which fronted the road. The room,yes,2,book room fronts the road
+pride-and-prejudice,31,1,by no means so acceptable as when she could get nobody else,for while there were visitors in the house they could not be necessary,yes,2,same point: only needed when no visitors
+pride-and-prejudice,31,2,Mr. Darcy looked a little ashamed of his aunt's ill-breeding,"She would be in nobody's way, you know, in that part of the house.",yes,2,the ill-bred remark itself
+pride-and-prejudice,31,3,Colonel Fitzwilliam reminded Elizabeth of having promised to play to him,"We were talking of music, madam",partial,2,"music talk, not the promise to play"
+pride-and-prejudice,31,4,by coming in all this state to hear me,stationed himself so as to command a full view of the fair performer's countenance,yes,2,his stationing himself by the piano
+pride-and-prejudice,31,5,though your sister does play so well,Mr. Darcy spoke with affectionate praise of his sister's proficiency.,yes,2,Darcy's praise of his sister's playing
+pride-and-prejudice,31,6,"I am not afraid of you,"" said he, smilingly.",My courage always rises with every attempt to intimidate me.,partial,2,"her courage claim, his reply mirrors loosely"
+pride-and-prejudice,31,7,because I would not take the trouble of practising,It is because he will not give himself the trouble.,yes,2,deliberate parallel to Fitzwilliam's line
+pride-and-prejudice,31,8,We neither of us perform to strangers.,of conversing easily with those I have never seen before,yes,2,Darcy's admitted unease with strangers
+pride-and-prejudice,31,9,who called out to know what they were talking of,What is it you are talking of?,yes,2,her earlier same interruption
+pride-and-prejudice,31,10,Miss Bennet would not play at all amiss if she practised more,"she will never play really well, unless she practises more",yes,2,same advice repeated
+pride-and-prejudice,31,11,"Anne would have been a delightful performer, had her health allowed her to learn","And so would Anne, if her health had allowed her to apply.",yes,2,same claim about Anne's health
+pride-and-prejudice,31,12,many instructions on execution and taste,or a better natural taste,partial,2,generic link to her claimed taste
+pride-and-prejudice,32,1,he must be supposing her to be thinking of Jane and Netherfield,Mr. Bingley has not much idea of ever returning to Netherfield again?,partial,2,"Bingley/Netherfield topic raised, not the supposition"
+pride-and-prejudice,32,2,under less than half the present distance,It is nearly fifty miles.,yes,2,fifty miles is the present distance
+pride-and-prejudice,32,3,he drew back his chair,Mr. Darcy drew his chair a little towards her,yes,2,he drew the chair forward earlier
+pride-and-prejudice,32,4,The tête-à-tête surprised them,He seemed astonished too on finding her alone,partial,2,"Darcy's surprise, not Charlotte's"
+pride-and-prejudice,32,5,Mr. Darcy related the mistake which had occasioned his intruding,"apologized for his intrusion, by letting her know that he had understood all the ladies to be within",yes,2,his apology for intruding
+pride-and-prejudice,32,6,called on us in this familiar way,"Mr. Darcy, and Mr. Darcy only, entered the room",yes,2,his solo call
+pride-and-prejudice,32,7,when Elizabeth told of his silence,seemed in danger of sinking into total silence,yes,2,the silence during the visit
+pride-and-prejudice,32,8,frequently sat there ten minutes together without opening his lips,"after sitting a few minutes longer, without saying much to anybody",yes,2,first instance of his silent visits
+pride-and-prejudice,32,9,she would have liked to believe this change the effect of love,he must be in love with you,yes,2,Charlotte's love theory
+pride-and-prejudice,32,10,the possibility of his being partial to her,"it did not seem very likely, even to Charlotte's wishes",partial,2,"her doubt, not her suggestion of partiality"
+pride-and-prejudice,32,11,"her former favourite, George Wickham",feeling curious to know what he would say on the subject of their hasty departure,no,2,unrelated to Wickham
+pride-and-prejudice,33,1,instead of being again surprised by Mr. Darcy,"MORE than once did Elizabeth, in her ramble within the park, unexpectedly meet Mr. Darcy",yes,2,earlier chance meetings with Darcy
+pride-and-prejudice,33,2,having somebody at his disposal,But I am at his disposal.,yes,2,"""at his disposal"" echoed"
+pride-and-prejudice,33,3,he may do what he likes with her,seems more to enjoy the power of doing what he likes than Mr. Darcy,yes,2,doing what he likes echoed
+pride-and-prejudice,33,4,"""meant for me?""",Younger sons cannot marry where they like.,yes,2,the marriage-and-money hint she takes personally
+pride-and-prejudice,33,5,she may like to have her own way,He likes to have his own way very well,yes,2,own way echoed
+pride-and-prejudice,33,6,Did Mr. Darcy give you his reasons for this interference?,saved a friend from the inconveniences of a most imprudent marriage,yes,2,the interference described
+pride-and-prejudice,33,7,lessening the honour of my cousin's triumph,he congratulated himself on having lately saved a friend,yes,2,the self-congratulation is the triumph
+pride-and-prejudice,33,8,any other people could be meant than those with whom she was connected,I have no right to suppose that Bingley was the person meant,yes,2,the person meant
+pride-and-prejudice,33,9,two men over whom Mr. Darcy could have such boundless influence,believing him the kind of young man to get into a scrape of that sort,partial,2,"Bingley's pliability, only hints influence"
+pride-and-prejudice,33,10,the measures taken to separate Mr. Bingley and Jane,And what arts did he use to separate them?,yes,2,separating them
+pride-and-prejudice,33,11,were Colonel Fitzwilliam's words,I understood that there were some very strong objections against the lady.,yes,2,exact quoted words
+pride-and-prejudice,33,12,"all that Jane had suffered, and still continued to suffer",dwelling on some passages which proved that Jane had not written in spirits,yes,2,Jane's low-spirited letter
+pride-and-prejudice,33,13,The agitation and tears which the subject occasioned,her heart swelling with indignation,partial,2,"her indignation, not tears"
+pride-and-prejudice,34,1,"you liked me against your will, against your reason",the family obstacles which judgment had always opposed to inclination,yes,2,judgment opposed to inclination
+pride-and-prejudice,34,2,if I was uncivil,"with so little endeavour at civility, I am thus rejected",yes,2,his civility complaint she answers
+pride-and-prejudice,34,3,Can you deny that you have done it?,"the principal, if not the only means of dividing them from each other",yes,2,the accusation of dividing them
+pride-and-prejudice,34,4,I did everything in my power to separate my friend from your sister,"the means of ruining, perhaps for ever, the happiness of a most beloved sister",yes,2,her charge he answers
+pride-and-prejudice,34,5,treat the mention of his misfortunes with contempt,"repeated Darcy, contemptuously",yes,2,his contemptuous repetition
+pride-and-prejudice,34,6,my honest confession of the scruples,were dwelt on with a warmth which seemed due to the consequence he was wounding,yes,2,his dwelling on the scruples
+pride-and-prejudice,34,7,rejoice in the inferiority of your connections,"His sense of her inferiority, of its being a degradation",yes,2,his sense of her inferiority
+pride-and-prejudice,34,8,the mode of your declaration,He spoke well; but there were feelings besides those of the heart to be detailed,yes,2,how he declared
+pride-and-prejudice,34,9,spared me the concern which I might have felt in refusing you,she was at first sorry for the pain he was to receive,yes,2,her initial pity for his pain
+pride-and-prejudice,34,10,Again his astonishment was obvious,he had no doubt of a favourable answer,partial,2,"his confidence explains surprise; ""again"" points elsewhere"
+pride-and-prejudice,34,11,That she should receive an offer of marriage from Mr. Darcy!,You must allow me to tell you how ardently I admire and love you.,yes,2,the proposal itself
+pride-and-prejudice,34,12,gratifying to have inspired unconsciously so strong an affection,she could not be insensible to the compliment of such a man's affection,yes,2,compliment of his affection
+pride-and-prejudice,34,13,his shameless avowal of what he had done with respect to Jane,or that I rejoice in my success,yes,2,his avowal of success
+pride-and-prejudice,34,14,the unfeeling manner which he had mentioned Mr. Wickham,his misfortunes have been great indeed,yes,2,his contemptuous mention of Wickham
+pride-and-prejudice,34,15,his cruelty towards whom he had not attempted to deny,You have reduced him to his present state of poverty,yes,2,the accusation he did not deny
+pride-and-prejudice,35,1,"fearful of its being Mr. Darcy, she was directly retreating",the recollection of Mr. Darcy's sometimes coming there stopped her,yes,2,she had avoided his usual walk
+pride-and-prejudice,35,2,Elizabeth opened the letter,"holding out a letter, which she instinctively took",yes,2,she took the letter
+pride-and-prejudice,35,3,Two offences of a very different nature,"renewal of those offers, which were last night so disgusting to you",partial,2,"the offer, not the two charges"
+pride-and-prejudice,35,4,I am under the necessity of relating feelings which may be offensive to yours,I write without any intention of paining you,partial,2,"disclaims paining her, loose tie"
+pride-and-prejudice,35,5,Here again I shall give you pain,"your feelings, I know, will bestow it unwillingly",partial,2,"anticipated reluctance, not the earlier pain"
+pride-and-prejudice,35,6,putting this letter in your hands in the course of the morning,"I have been walking in the grove some time, in the hope of meeting you.",yes,2,he waited in the grove to hand it over
+pride-and-prejudice,36,1,in half a minute the letter was unfolded again,"put it hastily away, protesting that she would not regard it",yes,2,she had put it away
+pride-and-prejudice,36,2,she once more continued to read,"She put down the letter, weighed every circumstance",yes,2,she had put the letter down
+pride-and-prejudice,36,3,the impropriety of such communications to a stranger,"Of his former way of life, nothing had been known in Hertfordshire but what he told",partial,2,"his self-told past, not the talk with her"
+pride-and-prejudice,36,4,How differently did everything now appear in which he was concerned!,must overthrow every cherished opinion of his worth,yes,2,overthrow of her opinion of him
+pride-and-prejudice,36,5,She grew absolutely ashamed of herself.,which a just sense of shame would not conceal,partial,2,"ironic shame reversal, weak"
+pride-and-prejudice,36,6,"I, who have prided myself on my discernment!",It was all pride and insolence.,no,2,shares only the word pride
+pride-and-prejudice,36,7,"Had I been in love, I could not have been more wretchedly blind.","she had been blind, partial, prejudiced, absurd",yes,2,same blindness thought
+pride-and-prejudice,36,8,Pleased with the preference of one,encouraging the preference which she believed she had most incautiously shown,yes,2,Wickham encouraging her preference
+pride-and-prejudice,36,9,Mr. Darcy's explanation there had appeared very insufficient,"With a strong prejudice against everything he might say, she began his account of what had happened at Netherfield",yes,2,her prejudiced first reading of Netherfield part
+pride-and-prejudice,36,10,Widely different was the effect of a second perusal.,She read with an eagerness which hardly left her power of comprehension,yes,2,the hasty first reading
+pride-and-prejudice,36,11,the justice of his description of Jane,His belief of her sister's insensibility she instantly resolved to be false,yes,2,his view of Jane she first rejected
+pride-and-prejudice,36,12,that part of the letter in which her family were mentioned,"his account of the real, the worst objections to the match, made her too angry",yes,2,objections to the match = her family
+pride-and-prejudice,36,13,After wandering along the lane for two hours,"In this perturbed state of mind, with thoughts that could rest on nothing, she walked on",yes,2,she walked on in a perturbed state
+pride-and-prejudice,36,14,Colonel Fitzwilliam was no longer an object.,At one time she had almost resolved on applying to him,partial,2,"she thought of consulting him; ""object"" means interest"
+pride-and-prejudice,36,15,She could think only of her letter.,"ELIZABETH, when Mr. Darcy gave her the letter",yes,2,the letter being given
+pride-and-prejudice,37,1,Their first subject was the diminution of the Rosings' party.,THE two gentlemen left Rosings the next morning,yes,2,the gentlemen's departure
+pride-and-prejudice,37,2,Darcy seemed to feel it most acutely,in as tolerable spirits as could be expected,partial,2,contrasting report of their spirits
+pride-and-prejudice,37,3,Lady Catherine had many other questions to ask respecting their journey,"Where shall you change horses? Oh, Bromley, of course.",yes,2,sample journey questions
+pride-and-prejudice,37,4,nor could she for a moment repent her refusal,she might by this time have been presented to her as her future niece,yes,2,the refused match recalled
+pride-and-prejudice,37,5,"Jane had been deprived, by the folly and indecorum of her own family","in the unhappy defects of her family, a subject of yet heavier chagrin",yes,2,her family's defects
+pride-and-prejudice,37,6,the happy spirits which had seldom been depressed before,"Lady Catherine observed, after dinner, that Miss Bennet seemed out of spirits",yes,2,Lady C noticed her low spirits
+pride-and-prejudice,37,7,Their engagements at Rosings were as frequent during the last week,she felt herself so dull as to make her very desirous of having them all to dine with her,partial,2,"one dinner invite, not frequency"
+pride-and-prejudice,37,8,her Ladyship again inquired minutely into the particulars of their journey,Lady Catherine had many other questions to ask,yes,2,her earlier journey questions
+pride-and-prejudice,38,1,rejoiced in his domestic comforts,We seem to have been designed for each other.,yes,2,Collins's boast of their harmony
+pride-and-prejudice,38,2,Poor Charlotte! it was melancholy to leave her to such society!,My dear Charlotte and I have but one mind and one way of thinking.,partial,2,"shows his complacency, not the society judged"
+pride-and-prejudice,38,3,"Her home and her housekeeping, her parish and her poultry","Our plain manner of living, our small rooms, and few domestics",partial,2,"Collins's view of their home, loose"
+pride-and-prejudice,38,4,the door was then allowed to be shut,the door was on the point of being closed,yes,2,door nearly closed before the message
+pride-and-prejudice,38,5,"We have dined nine times at Rosings, besides drinking tea there twice!",You see how continually we are engaged there.,yes,2,Collins boasting of frequent visits
+pride-and-prejudice,38,6,she could wait even for Longbourn,at Longbourn there would be leisure enough for observation,no,2,adjacent Longbourn mention about observing Jane
+pride-and-prejudice,38,7,before she told her sister of Mr. Darcy's proposals,And how much I shall have to conceal!,partial,2,"secret to conceal, alludes only"
+pride-and-prejudice,39,1,"As soon as all had ate, and the elder ones paid","but you must lend us the money, for we have just spent ours at the shop out there",yes,2,they had to borrow to pay
+pride-and-prejudice,39,2,the unwelcome addition of Kitty's and Lydia's purchases,happily employed in visiting an opposite milliner,yes,2,the milliner shopping
+pride-and-prejudice,39,3,I am glad I brought my bonnet,"Look here, I have bought this bonnet.",yes,2,the bonnet she bought
+pride-and-prejudice,39,4,Elizabeth was shocked to think that,Who could about such a nasty little freckled thing?,yes,2,the coarse remark
+pride-and-prejudice,39,5,there was no escaping the frequent mention of Wickham's name,it is about dear Wickham; too good for the waiter,yes,2,Lydia's Wickham news
+pride-and-prejudice,39,6,we treated the other three with the nicest cold luncheon in the world,a table set out with such cold meat as an inn larder usually affords,yes,2,the cold-meat table
+pride-and-prejudice,39,7,we talked and laughed so loud,talk and laugh all the way home,yes,2,her plan to talk and laugh
+pride-and-prejudice,39,8,"The comfort to her, of the regiment's approaching removal","after the ——shire have left Meryton, and they are going in a fortnight",yes,2,regiment leaving in a fortnight
+pride-and-prejudice,39,9,"the Brighton scheme, of which Lydia had given them a hint at the inn",I do so want papa to take us all there for the summer!,yes,2,Lydia's Brighton wish
+pride-and-prejudice,39,10,"her mother, though often disheartened","Mamma would like to go, too, of all things!",yes,2,mother keen to go
+pride-and-prejudice,40,1,"It was some time, however, before a smile could be extorted from Jane.",What a stroke was this for poor Jane,yes,2,Jane's shock
+pride-and-prejudice,40,2,"One has got all the goodness, and the other all the appearance of it.","seek to clear one, without involving the other",partial,2,"Jane clearing both, the quip's setup"
+pride-and-prejudice,40,3,my regret and compassion are all done away by seeing you so full of both,I am heartily sorry for him,yes,2,Elizabeth's earlier pity
+pride-and-prejudice,40,4,such very strong expressions in speaking of Wickham to Mr. Darcy,But you blame me for having spoken so warmly of Wickham?,yes,2,she spoke warmly of Wickham
+pride-and-prejudice,40,5,the prejudices I had been encouraging,"taking so decided a dislike to him, without any reason",yes,2,her baseless dislike
+pride-and-prejudice,40,6,every particular relative to his sister was meant to be kept as much as possible to myself,and having to relate such a thing of his sister!,yes,2,the sister's story
+pride-and-prejudice,40,7,To have his errors made public might ruin him for ever.,"whether I ought, or ought not, to make our acquaintance in general understand Wickham's character",yes,2,question of exposing Wickham
+pride-and-prejudice,40,8,She had got rid of two of the secrets,she related to her the next morning the chief of the scene between Mr. Darcy and herself,yes,2,first secret told
+pride-and-prejudice,40,9,She dared not relate the other half of Mr. Darcy's letter,resolving to suppress every particular in which her sister was concerned,yes,2,she suppressed Jane's part
+pride-and-prejudice,40,10,She still cherished a very tender affection for Bingley.,explain to her sister how sincerely she had been valued by his friend,partial,2,"Bingley's regard for Jane, not hers"
+pride-and-prejudice,41,1,But the gloom of Lydia's prospect was shortly cleared away,What is to become of us? What are we to do?,yes,2,the sisters' despair is the gloom
+pride-and-prejudice,41,2,the delight of Mrs. Bennet,observed Mrs. Bennet,partial,2,only her name; her Brighton wish nearby
+pride-and-prejudice,41,3,I cannot see why Mrs. Forster should not ask me as well as Lydia,And my aunt Philips is sure it would do me a great deal of good,yes,2,Kitty's own wish to go
+pride-and-prejudice,41,4,We shall have no peace at Longbourn if Lydia does not go to Brighton,Such were the kind of lamentations resounding perpetually through Longbourn House.,yes,2,the constant lamentations
+pride-and-prejudice,41,5,Had Lydia and her mother known the substance of her conference with her father,she could not help secretly advising her father not to let her go,yes,2,her secret advice to her father
+pride-and-prejudice,41,6,tenderly flirting with at least six officers at once,"she will, at sixteen, be the most determined flirt",yes,2,predicted determined flirt
+pride-and-prejudice,41,7,her husband's never intending to go there himself,But papa is so disagreeable.,partial,2,vague complaint about papa
+pride-and-prejudice,41,8,On the very last day of the regiment's remaining in Meryton,It was the last of the regiment's stay in Meryton,yes,2,regiment's last week
+pride-and-prejudice,41,9,When I said that he improved on acquaintance,but I think Mr. Darcy improves on acquaintance,yes,2,her original remark
+pride-and-prejudice,41,10,Wickham's alarm now appeared in a heightened complexion,"He looked surprised, displeased, alarmed",yes,2,his first alarm
+pride-and-prejudice,41,11,Kitty was the only one who shed tears; but she did weep from vexation and envy,whilst the luckless Kitty continued in the parlour repining at her fate,yes,2,Kitty's repining
+pride-and-prejudice,41,12,the clamorous happiness of Lydia herself in bidding farewell,"Lydia flew about the house in restless ecstasy, calling for everyone's congratulations",yes,2,Lydia's ecstasy
+pride-and-prejudice,42,1,"health, good-humour, and cheerfulness began to reappear at Longbourn",threw a real gloom over their domestic circle,yes,2,the gloom that lifted
+pride-and-prejudice,42,2,Mrs. Bennet was restored to her usual querulous serenity,whose constant repinings at the dulness of everything around them,yes,2,her repinings
+pride-and-prejudice,42,3,Kitty was so much recovered as to be able to enter Meryton without tears,though Kitty might in time regain her natural degree of sense,yes,2,hope Kitty would recover
+pride-and-prejudice,42,4,they were obliged to give up the Lakes,Her tour to the Lakes was now the object of her happiest thoughts,yes,2,her Lakes plan
+pride-and-prejudice,42,5,Elizabeth was excessively disappointed,"Were the whole arrangement complete, my disappointment would be certain.",partial,2,"her ironic forecast, not the actual letdown"
+pride-and-prejudice,42,6,under the particular care of their cousin Jane,could she have included Jane in the scheme,no,2,"Jane's absence from the tour, not childcare"
+pride-and-prejudice,42,7,"To the little town of Lambton, the scene of Mrs. Gardiner's former residence",The town where she had formerly passed some years of her life,yes,2,Mrs. Gardiner's old town
+pride-and-prejudice,42,8,"Elizabeth found, from her aunt, that Pemberley was situated",It was impossible for her to see the word without thinking of Pemberley and its owner.,yes,2,Pemberley in her thoughts
+pride-and-prejudice,42,9,"The possibility of meeting Mr. Darcy, while viewing the place, instantly occurred.","rob it of a few petrified spars, without his perceiving me",yes,2,hoping he wouldn't see her
+pride-and-prejudice,42,10,whether the family were down for the summer?,if her private inquiries as to the absence of the family were unfavourably answered,yes,2,her plan to inquire privately
+pride-and-prejudice,42,11,she had not really any dislike to the scheme,was obliged to assume a disinclination for seeing it,yes,2,her feigned disinclination
+pride-and-prejudice,42,12,"To Pemberley, therefore, they were to go.",Mrs. Gardiner expressed an inclination to see the place again,yes,2,aunt's wish to see it
+pride-and-prejudice,43,1,I might have been mistress!,at that moment she felt that to be mistress of Pemberley might be something!,yes,2,her first mistress-of-Pemberley thought
+pride-and-prejudice,43,2,"Mrs. Gardiner looked at her niece with a smile, but Elizabeth could not return it.",but I am afraid he has turned out very wild,yes,2,housekeeper's remark on Wickham
+pride-and-prejudice,43,3,This accounted to Elizabeth for Mr. Wickham's being among them.,"saw the likeness of Mr. Wickham, suspended, amongst several other miniatures",yes,2,Wickham's miniature
+pride-and-prejudice,43,4,That he was not a good-tempered man had been her firmest opinion.,I have never had a cross word from him in my life,partial,2,"the contrary praise, not her old opinion"
+pride-and-prejudice,43,5,highly amused by the kind of family prejudice,"Mrs. Reynolds, either from pride or attachment, had evidently great pleasure in talking of her master",yes,2,housekeeper's pride in her master
+pride-and-prejudice,43,6,"""He is certainly a good brother,""",a new instrument just come down for her—a present from my master,yes,2,his gift of an instrument to his sister
+pride-and-prejudice,43,7,she beheld a striking resemblance of Mr. Darcy,"in the gallery upstairs you will see a finer, larger picture of him than this",yes,2,housekeeper pointed to the gallery portrait
+pride-and-prejudice,43,8,"As a brother, a landlord, a master","He is the best landlord, and the best master",yes,2,best landlord and master
+pride-and-prejudice,43,9,"the gardener's expression of surprise, on beholding his master","were consigned over to the gardener, who met them at the hall door",yes,2,the gardener introduced
+pride-and-prejudice,43,10,his resemblance to the picture they had just been examining,"She stood several minutes before the picture, in earnest contemplation",yes,2,her study of the portrait
+pride-and-prejudice,43,11,why did he thus come a day before he was expected?,"But we expect him to-morrow, with a large party of friends.",yes,2,expected tomorrow
+pride-and-prejudice,43,12,It is impossible that he should still love me.,"whether, in defiance of everything, she was still dear to him",yes,2,her wondering if still dear to him
+pride-and-prejudice,43,13,Elizabeth's astonishment was quite equal to what it had been at first,the owner of it himself suddenly came forward from the road which led behind it to the stables,yes,2,his first sudden appearance
+pride-and-prejudice,43,14,he had lost none of his recent civility,"if not in terms of perfect composure, at least of perfect civility",yes,2,his civility at first meeting
+pride-and-prejudice,43,15,seeking the acquaintance of some of those very people,I should not have been allowed to invite them,yes,2,her thought she couldn't invite them
+pride-and-prejudice,43,16,The conversation soon turned upon fishing,"was very fond of fishing, and was so much engaged in watching the occasional appearance of some trout",yes,2,uncle's love of fishing
+pride-and-prejudice,43,17,fatigued by the exercise of the morning,"Mrs. Gardiner, who was not a great walker, could go no farther",yes,2,she couldn't walk farther
+pride-and-prejudice,43,18,informed us that you would certainly not be here till to-morrow,She longed to inquire of the housekeeper whether her master were really absent,partial,2,"her wish to ask, answer is next line"
+pride-and-prejudice,43,19,"though some people may call him proud, I have seen nothing of it",Some people call him proud; but I am sure I never saw anything of it.,yes,2,housekeeper's words echoed
+pride-and-prejudice,43,20,I shall not take him at his word about fishing,"invite him, with the greatest civility, to fish there as often as he chose",yes,2,Darcy's fishing invitation
+pride-and-prejudice,43,21,he has done by poor Wickham,is not quite consistent with his behaviour to our poor friend,yes,2,aunt's earlier doubt re Wickham
+pride-and-prejudice,43,22,did give him a most flaming character!,she dwelt with energy on his many merits,yes,2,housekeeper's praise
+pride-and-prejudice,43,23,Fatigued as she had been by the morning's walk,"who, fatigued by the exercise of the morning, found Elizabeth's arm inadequate",yes,2,same fatigue
+pride-and-prejudice,43,24,of his wishing her to be acquainted with his sister,"Will you allow me, or do I ask too much, to introduce my sister",yes,2,his request to introduce his sister
+pride-and-prejudice,44,1,"Miss Darcy and her brother appeared, and this formidable introduction took place.",they saw a gentleman and lady in a curricle driving up the street,yes,2,their curricle arriving
+pride-and-prejudice,44,2,her new acquaintance was at least as much embarrassed as herself,She was quite amazed at her own discomposure,yes,2,her own discomposure
+pride-and-prejudice,44,3,The suspicions which had just arisen of Mr. Darcy and their niece,no other way of accounting for such attentions from such a quarter than by supposing a partiality for their niece,yes,2,the partiality they first supposed
+pride-and-prejudice,44,4,"Bingley was ready, Georgiana was eager, and Darcy determined, to be pleased.",she naturally suspected that every power of pleasing would fail her,yes,2,her fear of failing to please
+pride-and-prejudice,44,5,Bingley expressed great pleasure in the certainty of seeing Elizabeth again,the unaffected cordiality with which he expressed himself on seeing her again,yes,2,his cordial greeting
+pride-and-prejudice,44,6,construing all this into a wish of hearing her speak of her sister,"a wish of saying more that might lead to the mention of her, had he dared",yes,2,his wish to mention Jane
+pride-and-prejudice,44,7,But she had no reason to fear Mr. and Mrs. Gardiner's curiosity,saw such looks of inquiring surprise in her uncle and aunt as made everything worse,yes,2,their inquiring looks
+pride-and-prejudice,44,8,it was evident that he was very much in love with her,but that the gentleman was overflowing with admiration was evident enough,yes,2,his evident admiration
+pride-and-prejudice,44,9,a small market town where the family did not visit,she had heard that Miss Darcy was exceedingly proud,partial,2,"Lambton's view of Miss Darcy's pride, loose"
+pride-and-prejudice,44,10,was soliciting the good opinion of her friends,courting the good opinion of people with whom any intercourse a few months ago would have been a disgrace,yes,2,same courting of her relations
+pride-and-prejudice,44,11,bent on making her known to his sister,this formidable introduction,yes,2,the introduction
+pride-and-prejudice,44,12,in coming to them on the very day of her arrival at Pemberley,for on the very morning after their own arrival at Lambton these visitors came,yes,2,their very prompt visit
+pride-and-prejudice,45,1,Elizabeth soon saw that she was herself closely watched by Miss Bingley,how very unwelcome her appearance at Pemberley must be to her,partial,2,"her jealousy explains, not the watching"
+pride-and-prejudice,45,2,whether she most feared or wished for the appearance of Mr. Darcy,"she wished, she feared, that the master of the house might be amongst them",yes,2,same wish/fear
+pride-and-prejudice,45,3,for jealousy had not yet made her desperate,Miss Bingley's dislike of her had originated in jealousy,yes,2,her jealousy named
+pride-and-prejudice,45,4,"Miss Darcy, on her brother's entrance, exerted herself much more to talk","sometimes did venture a short sentence, when there was least danger of its being heard",yes,2,her earlier timid sentences
+pride-and-prejudice,45,5,"Elizabeth's collected behaviour, however, soon quieted his emotion","Darcy with a heightened complexion, earnestly looking at her",yes,2,his agitation
+pride-and-prejudice,45,6,dared not approach nearer to Wickham,In Darcy's presence she dared not mention Wickham's name,yes,2,she dared not name Wickham
+pride-and-prejudice,45,7,"Georgiana also recovered in time, though not enough to be able to speak any more","his sister overcome with confusion, and unable to lift up her eyes",yes,2,Georgiana's confusion
+pride-and-prejudice,45,8,the very circumstance which had been designed to turn his thoughts from Elizabeth,she had merely intended to discompose Elizabeth,yes,2,Miss Bingley's intent
+pride-and-prejudice,45,9,Her brother's recommendation was enough to insure her favour,he was anxious for his sister and herself to get acquainted,partial,2,"his wish they meet, not his praise"
+pride-and-prejudice,45,10,having forced him to say what gave no one any pain but herself,from a determination of making him speak,yes,2,her goading him to speak
+pride-and-prejudice,45,11,"his house, his fruit, of everything but himself","the beautiful pyramids of grapes, nectarines, and peaches",yes,2,the fruit served
+pride-and-prejudice,46,1,I am afraid you will not be able to make it out,Jane had written the direction remarkably ill,partial,2,"bad direction, not the letter's content"
+pride-and-prejudice,46,2,"By this time, my dearest sister, you have received my hurried letter","Since writing the above, dearest Lizzy, something has occurred",yes,2,the hurried first letter
+pride-and-prejudice,46,3,there is but too much reason to fear they are not gone to Scotland,she was gone off to Scotland with one of his officers,yes,2,first report of Scotland
+pride-and-prejudice,46,4,Though Lydia's short letter to Mrs. F.,"Lydia left a few lines for his wife, informing her of their intention.",yes,2,Lydia's note to Mrs Forster
+pride-and-prejudice,46,5,"Colonel Forster came yesterday, having left Brighton the day before",Colonel Forster gives us reason to expect him here soon.,yes,2,Forster expected
+pride-and-prejudice,46,6,My father and mother believe the worst,My father bears it better.,partial,2,"earlier state of father, contrast"
+pride-and-prejudice,46,7,"My poor mother is really ill, and keeps her room.",Our poor mother is sadly grieved.,yes,2,mother's earlier grief
+pride-and-prejudice,46,8,Poor Kitty has anger for having concealed their attachment,"To Kitty, however, it does not seem so wholly unexpected.",yes,2,Kitty not surprised
+pride-and-prejudice,46,9,"""Oh! where, where is my uncle?""","her uncle and aunt, leaving her to enjoy them in quiet, set off by themselves",yes,2,uncle had gone out
+pride-and-prejudice,46,10,"She has no money, no connections, nothing that can tempt him",for he must know my father can give her nothing.,yes,2,father can give her nothing
+pride-and-prejudice,46,11,"some part of what I learnt, to my own family!","How thankful am I, that we never let them know what has been said against him",yes,2,they kept Wickham's past from family
+pride-and-prejudice,46,12,"were traced almost to London, but not beyond","All that is known after this is, that they were seen to continue the London road.",yes,2,seen on London road
+pride-and-prejudice,46,13,Jane has written to beg my uncle's immediate assistance,In such an exigence my uncle's advice and assistance would be everything in the world,yes,2,Jane's plea for uncle's help
+pride-and-prejudice,46,14,When my eyes were opened to his real character,"""that I might have prevented it! I who knew what he was.",partial,2,"same outburst, not the letter that opened her eyes"
+pride-and-prejudice,46,15,she saw him go with regret,"with only one serious parting look, went away",yes,2,his departure
+pride-and-prejudice,46,16,Never since reading Jane's second letter,"instantly seized the other, and opening it with the utmost impatience",yes,2,opening the second letter
+pride-and-prejudice,46,17,"No one but Jane, she thought, could flatter herself with such an expectation.","But I am willing to hope the best, and that his character has been misunderstood.",yes,2,Jane's hope
+pride-and-prejudice,46,18,that Wickham should marry a girl whom it was impossible he could marry for money,His choice is disinterested at least,yes,2,disinterested choice remark
+pride-and-prejudice,46,19,a mother incapable of exertion,"Could she exert herself, it would be better, but this is not to be expected",yes,2,mother cannot exert herself
+pride-and-prejudice,46,20,"supposing, by the servant's account, that their niece was taken suddenly ill",to fetch his master and mistress home instantly,yes,2,she summoned them home
+pride-and-prejudice,46,21,dwelling on the postscript of the last with trembling energy,I cannot help earnestly begging you all to come here as soon as possible,yes,2,the postscript's plea
+pride-and-prejudice,46,22,Mr. Gardiner readily promised every assistance in his power,I rely upon his goodness,yes,2,Jane relying on him
+pride-and-prejudice,46,23,John told us Mr. Darcy was here when you sent for us,"it was opened by a servant, and Mr. Darcy appeared",yes,2,Darcy arriving
+pride-and-prejudice,46,24,I told him we should not be able to keep our engagement,Be so kind as to apologize for us to Miss Darcy.,yes,2,her apology to Miss Darcy
+pride-and-prejudice,46,25,with false excuses for their sudden departure,Conceal the unhappy truth as long as it is possible.,yes,2,conceal the truth
+pride-and-prejudice,47,1,forego every chance of benefiting himself by marrying well,Not perhaps of neglecting his own interest.,yes,2,his self-interest point
+pride-and-prejudice,47,2,Lydia has no brothers to step forward,Could he expect that her friends would not step forward?,yes,2,friends stepping forward
+pride-and-prejudice,47,3,"But you see that Jane,"" said her aunt, ""does not think so ill of Wickham",I am much more inclined than I was to judge as your eldest sister does of the matter,yes,2,uncle siding with Jane's view
+pride-and-prejudice,47,4,"Fixed there by the keenest of all anguish, self-reproach",That she could be in any danger from the deception never entered my head.,yes,2,her admitted failure to warn
+pride-and-prejudice,47,5,the questions which Elizabeth had already asked were of course repeated by the others,lost not a moment in asking whether anything had been heard of the fugitives,yes,2,her first questions
+pride-and-prejudice,47,6,she still expected that it would all end well,"But now that my dear uncle is come, I hope everything will be well.",yes,2,Jane's hope
+pride-and-prejudice,47,7,keep Mr. Bennet from fighting,"I know he will fight Wickham, wherever he meets him",yes,2,her fear he'll fight
+pride-and-prejudice,47,8,"recommending moderation to her, as well in her hopes as her fears",Do not give way to useless alarm,yes,2,his caution against alarm
+pride-and-prejudice,47,9,"Mary, however, continued to console herself with such kind of moral extractions",the balm of sisterly consolation,yes,2,Mary's moralizing
+pride-and-prejudice,47,10,Had Colonel Forster seen Denny himself?,"His most particular friend, you see by Jane's account, was persuaded of his never intending to marry her.",yes,2,Denny as his particular friend
+pride-and-prejudice,47,11,"Kitty then owned, with a very natural triumph on knowing more than the rest of us",the anger which she had herself incurred in the business,partial,2,"Kitty's involvement, not her admission"
+pride-and-prejudice,47,12,"had we been less secret, had we told what we knew of him",thought it necessary to make our knowledge public,yes,2,their choice not to tell
+pride-and-prejudice,47,13,it shows that she was serious in the object of her journey,I am going to Gretna Green,yes,2,Gretna Green line
+pride-and-prejudice,47,14,it was not on her side a scheme of infamy,as to consent to live with him on any other terms than marriage?,yes,2,question of marriage terms
+pride-and-prejudice,47,15,was there a servant belonging to it who did not know the whole story,she had not prudence enough to hold her tongue before the servants,yes,2,mother's loose tongue before servants
+pride-and-prejudice,47,16,You do not look well. Oh that I had been with you!,You look pale. How much you must have gone through!,yes,2,Jane looked pale
+pride-and-prejudice,47,17,Mary studies so much that her hours of repose should not be broken in on,"One came from her books, and the other from her toilette.",yes,2,Mary from her books
+pride-and-prejudice,47,18,"My aunt Philips came to Longbourn on Tuesday, after my father went away","Yes, he went on Tuesday, as I wrote you word.",yes,2,father left Tuesday
+pride-and-prejudice,47,19,the number of the hackney coach which took them from Clapham,their removing from the chaise into a hackney coach is such a presumption!,yes,2,change into hackney coach
+pride-and-prejudice,48,1,Elizabeth was at no loss to understand from whence this deference for her authority proceeded,perhaps Lizzy could tell us what relations he has now living better than any other person,yes,2,the deference itself
+pride-and-prejudice,48,2,the most anxious part of each was when the post was expected,the post came in without bringing a single line from him,yes,2,post came empty
+pride-and-prejudice,48,3,"Mr. Gardiner did not write again, till he had received an answer from Colonel Forster",I have written to Colonel Forster to desire him to find out,yes,2,letter to Forster
+pride-and-prejudice,48,4,It was not known that Wickham had a single relation with whom he kept up any connection,whether Wickham has any relations or connections who would be likely to know,yes,2,search for relations
+pride-and-prejudice,48,5,it did not appear that he was on terms of particular friendship with any of them,some of his companions in the ——shire might be able to give more information,yes,2,hope in his companions
+pride-and-prejudice,48,6,he had left gaming debts behind him to a very considerable amount,He was declared to be in debt to every tradesman in the place,partial,2,"Meryton debts, not gaming debts"
+pride-and-prejudice,48,7,"""A gamester!"" she cried.","even Jane, who believed still less of it, became almost hopeless",partial,2,"Jane's disbelief, not gaming"
+pride-and-prejudice,48,8,he had yielded to his brother-in-law's entreaty that he would return to his family,Mr. Bennet seemed wholly disinclined at present to leave London,yes,2,his reluctance to leave London
+pride-and-prejudice,48,9,considering what her anxiety for his life had been before,the only security for her husband's not being killed in a duel,yes,2,her duel fear
+pride-and-prejudice,48,10,"What! is he coming home, and without poor Lydia?",to prevail on Mr. Bennet to return to Longbourn as soon as he could,yes,2,plan to bring him home
+pride-and-prejudice,48,11,Mrs. Gardiner went away in all the perplexity,Mrs. Gardiner and the children were to remain in Hertfordshire a few days longer,yes,2,she stayed a few days
+pride-and-prejudice,48,12,where else can they be so well concealed?,in what part of the town he has now concealed himself,yes,2,where he concealed himself
+pride-and-prejudice,49,1,Can it be possible that he will marry her?,I hope it will not be long before they are,yes,2,letter says they'll marry soon
+pride-and-prejudice,49,2,Complied with! I am only ashamed of his asking so little.,"her equal share of the five thousand pounds, secured among your children",yes,2,the stated terms
+pride-and-prejudice,49,3,on so slight a temptation as one hundred a year during my life,one hundred pounds per annum,yes,2,the hundred a year
+pride-and-prejudice,49,4,"His debts to be discharged, and something still to remain!","there will be some little money, even when all his debts are discharged",yes,2,letter on debts discharged
+pride-and-prejudice,49,5,Their father then went to the library to write,come back and write immediately,yes,2,her plea to write
+pride-and-prejudice,49,6,"I cannot believe that ten thousand pounds, or anything like it, has been advanced",Wickham's a fool if he takes her with a farthing less than ten thousand pounds,yes,2,father's ten-thousand guess
+pride-and-prejudice,49,7,because Wickham has not sixpence of his own,Mr. Wickham's circumstances are not so hopeless as they are generally believed to be,yes,2,letter's claim she doubts
+pride-and-prejudice,49,8,"Their taking her home, and affording her their personal protection",We have judged it best that my niece should be married from this house,yes,2,married from their house
+pride-and-prejudice,49,9,By this time she is actually with them!,She comes to us to-day.,yes,2,she comes today
+pride-and-prejudice,49,10,he has pledged himself to assist Mr. Wickham with money,how much money your uncle has laid down to bring it about,yes,2,uncle's outlay
+pride-and-prejudice,49,11,If he had not had a family of his own,"He has children of his own, and may have more.",yes,2,uncle has children
+pride-and-prejudice,49,12,"the particulars of calico, muslin, and cambric","But the clothes, the wedding clothes!",yes,2,wedding clothes
+pride-and-prejudice,49,13,Oh! here comes Hill.,"Ring the bell, Kitty, for Hill.",yes,2,calling for Hill
+pride-and-prejudice,49,14,Mrs. Hill began instantly to express her joy.,I was in hopes you might have got some good news from town,partial,2,"Hill's earlier hope, different moment"
+pride-and-prejudice,50,1,He begged to know further particulars of what he was indebted to his brother,"he was determined, if possible, to find out the extent of his assistance",yes,2,resolve to learn extent of help
+pride-and-prejudice,50,2,"before you take any, or all of these houses",She was busily searching through the neighbourhood for a proper situation for her daughter,yes,2,her house-hunting
+pride-and-prejudice,50,3,would not advance a guinea to buy clothes for his daughter,"fine muslins, new carriages, and servants",yes,2,her wedding-finery plans
+pride-and-prejudice,50,4,He protested that she should receive from him no mark of affection whatever,but was too angry with Lydia to send any message to her,yes,2,too angry to send a message
+pride-and-prejudice,50,5,From such a connection she could not wonder that he should shrink.,an alliance and relationship of the nearest kind with the man whom he so justly scorned,yes,2,"defines ""such a connection"""
+pride-and-prejudice,50,6,"An union of a different tendency, and precluding the possibility of the other",It was an union that must have been to the advantage of both,yes,2,the union that might have been
+pride-and-prejudice,50,7,To Mr. Bennet's acknowledgments he briefly replied,"In terms of grateful acknowledgment for the kindness of his brother, though expressed most concisely",yes,2,Bennet's acknowledgment
+pride-and-prejudice,50,8,entreaties that the subject might never be mentioned to him again,what he was indebted to his brother; but was too angry,partial,2,"debt inquiry, not Gardiner's wish"
+pride-and-prejudice,50,9,saw all the advantages of Wickham's removal from the ——shire,It is an advantage to have it so far from this part of the kingdom.,yes,2,advantage of the north
+pride-and-prejudice,50,10,her plan of their residing in Hertfordshire,I could not bear to have her ten miles from me,yes,2,wanting her near
+pride-and-prejudice,50,11,"His daughter's request, for such it might be considered",my niece is very desirous of seeing you all before she leaves the south,yes,2,Lydia wishes to visit
+pride-and-prejudice,50,12,received at first an absolute negative,"I will not encourage the imprudence of either, by receiving them at Longbourn.",yes,2,his refusal to receive them
+pride-and-prejudice,50,13,she should be able to show her married daughter in the neighbourhood,just when she had expected most pleasure and pride in her company,yes,2,her pride in Lydia's company
+pride-and-prejudice,51,1,the cheeks of the two who caused their confusion suffered no variation of colour,"The easy assurance of the young couple, indeed, was enough to provoke him.",yes,2,the couple's easy assurance
+pride-and-prejudice,51,2,It was not to be supposed that time would give Lydia that embarrassment,"Lydia was Lydia still; untamed, unabashed, wild, noisy, and fearless.",yes,2,Lydia unabashed
+pride-and-prejudice,51,3,"to hear herself called ""Mrs. Wickham"" by each of them",do the people hereabouts know I am married to-day?,yes,2,her eagerness to be known married
+pride-and-prejudice,51,4,she went after dinner to show her ring,"so that he might see the ring, and then I bowed and smiled like anything",yes,2,showing the ring before
+pride-and-prejudice,51,5,I do not particularly like your way of getting husbands,That is the place to get husbands.,yes,2,Brighton to get husbands
+pride-and-prejudice,51,6,No one but Mrs. Bennet regretted that their stay would be so short,I don't at all like your going such a way off,partial,2,"mother's dislike of distance, not short stay"
+pride-and-prejudice,51,7,"Elizabeth was forced to put it out of her power, by running away",Elizabeth could bear it no longer. She got up and ran out of the room,partial,2,"earlier escape from the room, different moment"
+pride-and-prejudice,51,8,Mr. Darcy had been at her sister's wedding.,for Mr. Darcy might have done as well,yes,2,Lydia's slip about Darcy
+pride-and-prejudice,51,9,if it were compatible with the secrecy which had been intended,It was to be such a secret!,yes,2,the secret
+pride-and-prejudice,51,10,"""Not that I shall, though,"" she added to herself","""Oh, certainly,"" said Elizabeth, though burning with curiosity",yes,2,her feigned compliance
+pride-and-prejudice,51,11,Jane's delicate sense of honour would not allow her to speak to Elizabeth privately,say not another word on the subject. You may depend upon my seeking no further.,yes,2,Jane's vow not to seek more
+pride-and-prejudice,52,1,a little writing will not comprise what I have to tell you,the length of the letter convinced her that it did not contain a denial,yes,2,letter's length
+pride-and-prejudice,52,2,He had followed them purposely to town,"he left Derbyshire only one day after ourselves, and came to town with the resolution of hunting for them",yes,2,he came to town to hunt them
+pride-and-prejudice,52,3,supplication had been necessary to a woman whom he must abominate and despise,But it was two or three days before he could get from her what he wanted.,yes,2,his dealing with Mrs Younge
+pride-and-prejudice,52,4,finally bribe the man whom he always most wished to avoid,he was not likely to be proof against the temptation of immediate relief,yes,2,Wickham tempted by relief
+pride-and-prejudice,52,5,Her heart did whisper that he had done it for her.,"If he had another motive, I am sure it would never disgrace him.",yes,2,aunt hints at another motive
+pride-and-prejudice,52,6,Every kind of pride must revolt from the connection.,He generously imputed the whole to his mistaken pride,partial,2,his pride differently meant
+pride-and-prejudice,52,7,"But he had given a reason for his interference, which asked no extraordinary stretch of belief.",The motive professed was his conviction of its being owing to himself,yes,2,his professed motive
+pride-and-prejudice,52,8,"They owed the restoration of Lydia, her character, everything to him.","His debts are to be paid, amounting, I believe, to considerably more than a thousand pounds",yes,2,what he paid
+pride-and-prejudice,52,9,She read over her aunt's commendation of him again and again.,how much I like him?,yes,2,aunt's praise
+pride-and-prejudice,52,10,affection and confidence subsisted between Mr. Darcy and herself,if we had not given him credit for another interest in the affair,yes,2,aunt's assumption of his interest
+pride-and-prejudice,52,11,I am afraid I interrupt your solitary ramble,"hurrying into the little copse, where she was least likely to be interrupted",yes,2,she sought a spot free of interruption
+pride-and-prejudice,52,12,We passed each other several times. I wonder what he can be doing there.,"They met several times, for there was much to be discussed.",yes,2,their several meetings
+pride-and-prejudice,52,13,"Come, Mr. Wickham, we are brother and sister, you know.","We were always good friends, and now we are better.",partial,2,his friendship claim she answers
+pride-and-prejudice,53,1,Mr. Wickham's adieus were much more affectionate than his wife's.,"Oh, Lord! I don't know. Not these two or three years, perhaps.",yes,2,Lydia's careless goodbye
+pride-and-prejudice,53,2,The loss of her daughter made Mrs. Bennet very dull for several days.,Mrs. Bennet was forced to submit to a separation,yes,2,the separation
+pride-and-prejudice,53,3,when my aunt told us of the present report,for Mrs. Philips first brought her the news,yes,2,aunt bringing the news
+pride-and-prejudice,53,4,Elizabeth could easily perceive that her spirits were affected by it,I do assure you that the news does not affect me either with pleasure or pain.,yes,2,Jane's claim to be unaffected
+pride-and-prejudice,53,5,she was the better able to bear her husband's incivility,'Tis an etiquette I despise,yes,2,his refusal to call
+pride-and-prejudice,53,6,"she saw Mr. Darcy with him, and sat down again by her sister","I am glad of one thing, that he comes alone",partial,2,"ironic contrast with ""comes alone"""
+pride-and-prejudice,53,7,her resolution to be civil to him only as Mr. Bingley's friend,any friend of Mr. Bingley's will always be welcome here,yes,2,her stated welcome to his friends
+pride-and-prejudice,53,8,the cold and ceremonious politeness of her courtesy and address of his friend,her resolution to be civil to him only,yes,2,her resolve to be barely civil
+pride-and-prejudice,53,9,who knew that her mother owed to the latter the preservation of her favourite daughter,he was the person to whom the whole family were indebted for the first of benefits,yes,2,family indebted to Darcy
+pride-and-prejudice,53,10,"She was disappointed, and angry with herself for being so.",his affection and wishes must still be unshaken,yes,2,her brief hope
+pride-and-prejudice,53,11,When you have killed all your own birds,to shoot there for several weeks,yes,2,coming to shoot
+pride-and-prejudice,53,12,"Elizabeth's misery increased at such unnecessary, such officious attention!",was in such misery of shame that she could hardly keep her seat,yes,2,her earlier misery
+pride-and-prejudice,53,13,"Yet the misery, for which years of happiness were to offer no compensation",years of happiness could not make Jane or herself amends,yes,2,years of happiness no amends
+pride-and-prejudice,53,14,Mrs. Bennet was mindful of her intended civility,"that shan't prevent my asking him to dine here, I am determined",yes,2,her resolve to invite him
+pride-and-prejudice,53,15,to ask them to stay and dine there that day,so there will be just room at table for him,partial,2,"later dinner plan, not same-day"
+pride-and-prejudice,54,1,Her resolution was for a short time involuntarily kept,"Teasing, teasing man! I will think no more about him.",yes,2,her vow to think no more
+pride-and-prejudice,54,2,They did not see the gentlemen again till Tuesday,I am glad he dines here on Tuesday.,yes,2,Tuesday dinner
+pride-and-prejudice,54,3,His behaviour to her sister was such during dinnertime as showed an admiration of her,I think you are in very great danger of making him as much in love with you as ever.,yes,2,Elizabeth's prediction
+pride-and-prejudice,54,4,she thought he looked as if he would have answered her hopes,I shall give him up for ever.,yes,2,her hope he'd come to her
+pride-and-prejudice,54,5,"He stood by her, however, for some minutes, in silence","""Why, if he came only to be silent, grave, and indifferent,""",yes,2,his silence complained of
+pride-and-prejudice,54,6,"on the young lady's whispering to Elizabeth again, he walked away","The men shan't come and part us, I am determined.",yes,2,the girl's whisper
+pride-and-prejudice,54,7,seeing him fall a victim to her mother's rapacity for whist players,She was in hopes that the evening would afford some opportunity of bringing them together,partial,2,"her hope of talking, not the whist"
+pride-and-prejudice,54,8,I have now learnt to enjoy his conversation as an agreeable and sensible young man,on both sides we meet only as common and indifferent acquaintance,yes,2,Jane's indifference claim
+pride-and-prejudice,54,9,Elizabeth smiled.,"""Yes, very indifferent, indeed,"" said Elizabeth, laughingly.",partial,2,"her earlier skeptical laugh, weak"
+pride-and-prejudice,55,1,"He came, and in such very good time, that the ladies were none of them dressed.","Yes, he had no engagement at all for to-morrow",yes,2,his acceptance for tomorrow
+pride-and-prejudice,55,2,The same anxiety to get them by themselves was visible again in the evening.,"In ran Mrs. Bennet to her daughters' room, in her dressing-gown",yes,2,her morning rush to get Jane down
+pride-and-prejudice,55,3,"remained quietly in the hall till she and Kitty were out of sight, then returned into the drawing-room",her entreaty that she would not give in to it,yes,2,Jane's plea not to give in
+pride-and-prejudice,55,4,Mrs. Bennet's schemes for this day were ineffectual.,"We may as well leave them by themselves, you know",yes,2,her scheme to leave them alone
+pride-and-prejudice,55,5,unless Mr. Darcy returned within the stated time,"His friend had left him that morning for London, but was to return home in ten days' time.",yes,2,Darcy's ten-day return
+pride-and-prejudice,55,6,Bingley was punctual to his appointment,for his coming next morning to shoot with her husband,yes,2,the shooting appointment
+pride-and-prejudice,55,7,her mother had been too ingenious for her,Mrs. Bennet's invention was again at work to get everybody away from him and her daughter,yes,2,her scheming again
+pride-and-prejudice,55,8,He is gone to my father already.,"whispering a few words to her sister, ran out of the room",yes,2,he whispered and ran out
+pride-and-prejudice,55,9,who had purposely broken up the card-party,as the others were all going to sit down to cards,yes,2,the card party
+pride-and-prejudice,55,10,whose conference with her father had been short and to the purpose,He is gone to my father already,yes,2,gone to her father
+pride-and-prejudice,55,11,now smiled at the rapidity and ease with which an affair was finally settled,she perceived her sister and Bingley standing together over the hearth,yes,2,the scene by the hearth
+pride-and-prejudice,55,12,"""Exceed their income!","so generous, that you will always exceed your income",yes,2,Mr Bennet's line quoted
+pride-and-prejudice,55,13,he always attached himself to Elizabeth for the pleasure of talking of her,"she had to listen to all he had to say of his own happiness, and of Jane's perfections",yes,2,his talk of Jane's perfections
+pride-and-prejudice,55,14,It must have been his sisters' doing.,of all his sister's falsehood and contrivance!,yes,2,Elizabeth's own view of sister's contrivance
+pride-and-prejudice,55,15,he had not betrayed the interference of his friend,is the end of all his friend's anxious circumspection!,yes,2,friend's circumspection
+pride-and-prejudice,55,16,I am certainly the most fortunate creature that ever existed!,that she was the happiest creature in the world,yes,2,happiest creature
+pride-and-prejudice,56,1,"my eldest is somewhere about the ground, walking with a young man",walk away with him into the shrubbery,yes,2,they walked into the shrubbery
+pride-and-prejudice,56,2,Elizabeth now expected that she would produce a letter for her from Charlotte,whether you left Mr. and Mrs. Collins well?,yes,2,asking after the Collinses
+pride-and-prejudice,56,3,"pronouncing them, after a short survey, to be decent-looking rooms",This must be a most inconvenient sitting-room for the evening in summer,yes,2,her earlier room criticism
+pride-and-prejudice,56,4,Her carriage remained at the door,they perceived a chaise and four driving up the lawn,yes,2,the chaise arriving
+pride-and-prejudice,56,5,I have not been at all able to account for the honour of seeing you here,"But no letter appeared, and she was completely puzzled.",yes,2,her puzzlement
+pride-and-prejudice,56,6,"Your coming to Longbourn, to see me and my family",I instantly resolved on setting off for this place,yes,2,she set off for Longbourn
+pride-and-prejudice,56,7,I do not pretend to possess equal frankness with your Ladyship.,My character has ever been celebrated for its sincerity and frankness,yes,2,her boast of frankness
+pride-and-prejudice,56,8,Your Ladyship has declared it to be impossible.,though I would not injure him so much as to suppose the truth of it possible,yes,2,she called it impossible
+pride-and-prejudice,56,9,the young man's marrying her was a patched-up business,My youngest of all is lately married,partial,2,"Lydia's marriage mentioned, not its patching"
+pride-and-prejudice,56,10,you have certainly no right to concern yourself in mine,But you are not entitled to know mine,yes,2,not entitled to know mine
+pride-and-prejudice,56,11,"You refuse, then, to oblige me.",I will make no promise of the kind.,yes,2,her refusal to promise
+pride-and-prejudice,56,12,I hoped to find you reasonable,I expected to find a more reasonable young woman.,yes,2,expected a reasonable woman
+pride-and-prejudice,56,13,but depend upon it I will carry my point,I came here with the determined resolution of carrying my purpose,yes,2,resolved to carry her purpose
+pride-and-prejudice,56,14,why Lady Catherine would not come in again and rest herself,"Lady Catherine very resolutely, and not very politely, declined eating anything",partial,2,"declined refreshment, different refusal"
+pride-and-prejudice,56,15,her calling here was prodigiously civil!,"Mrs. Bennet, all amazement, though flattered by having a guest of such high importance",yes,2,mother flattered by her visit
+pride-and-prejudice,56,16,"she only came, I suppose, to tell us the Collinses were well","Yes, very well. I saw them the night before last.",yes,2,Collinses well
+pride-and-prejudice,57,1,It suddenly struck her that it might be from Lady Catherine,it occurred to Elizabeth that she must meditate an application to her nephew,partial,2,"her fear of Lady C's interference, not a letter"
+pride-and-prejudice,57,2,the instantaneous conviction of its being a letter from the nephew,"If, therefore, an excuse for not keeping his promise should come to his friend within a few days",partial,2,"expected excuse letter to Bingley, different letter"
+pride-and-prejudice,57,3,"he has been told by some of the good-natured, gossiping Lucases","her neighbours at Lucas Lodge, therefore, (for through their communication with the Collinses",yes,2,Lucases as the gossip channel
+pride-and-prejudice,57,4,she would never give her consent to what she termed so disgraceful a match,From what she had said of her resolution to prevent the marriage,yes,2,Lady C's resolve to prevent it
+pride-and-prejudice,57,5,"But, Lizzy, you look as if you did not enjoy it.",could only force one most reluctant smile,yes,2,her forced smile
+pride-and-prejudice,57,6,"""I am exceedingly diverted.","""Are you not diverted?""",yes,2,"""Are you not diverted?"""
+pride-and-prejudice,57,7,what said Lady Catherine about this report? Did she call to refuse her consent?,"The surprise of the rest of the family, on hearing who their visitor had been",partial,2,"the visit noted, not its purpose"
+pride-and-prejudice,57,8,what he said of Mr. Darcy's indifference,his perfect indifference and your pointed dislike make it so delightfully absurd!,yes,2,father's indifference remark
+pride-and-prejudice,58,1,Now was the moment for her resolution to be executed,Elizabeth was secretly forming a desperate resolution,yes,2,her secret resolution
+pride-and-prejudice,58,2,"""If you will thank me,"" he replied, ""let it be for yourself alone.",I can no longer help thanking you for your unexampled kindness to my poor sister.,yes,2,her thanks
+pride-and-prejudice,58,3,"""It taught me to hope,""","the efforts of his aunt, who did call on him in her return through London",yes,2,aunt's report to him
+pride-and-prejudice,58,4,"Oh, do not repeat what I then said.","Your reproof, so well applied, I shall never forget",yes,2,his recollection of her words
+pride-and-prejudice,58,5,that your reproofs had been attended to,"By you, I was properly humbled.",yes,2,he was humbled
+pride-and-prejudice,58,6,She expressed her gratitude again,"Let me thank you again and again, in the name of all my family",yes,2,her earlier thanks
+pride-and-prejudice,58,7,"After walking several miles in a leisurely manner, and too busy to know anything about it",They walked on without knowing in what direction.,yes,2,walking without heed
+pride-and-prejudice,58,8,What could have become of Mr. Bingley and Jane?,"Bingley and Jane, however, soon allowed the others to outstrip them.",yes,2,they lagged behind
+pride-and-prejudice,58,9,so easily guided that his worth was invaluable,Elizabeth could not help smiling at his easy manner of directing his friend.,yes,2,his easy directing of Bingley
+pride-and-prejudice,59,1,as left no doubt of his good information,At night she opened her heart to Jane.,partial,2,she told Jane; source of his news only implied
+pride-and-prejudice,59,2,in which Lizzy may lose her way again to-day?,they had wandered about till she was beyond her own knowledge,yes,2,her wandering excuse
+pride-and-prejudice,59,3,Darcy professed a great curiosity to see the view from the Mount,Mr. Darcy has never seen the view,yes,2,he had never seen the view
+pride-and-prejudice,59,4,that you should be forced to have that disagreeable man all to yourself,"Lizzy, you must walk out with him again, that he may not be in Bingley's way.",yes,2,mother sending her off with him
+pride-and-prejudice,59,5,Have not you always hated him?,I know how much you dislike him.,yes,2,Jane's same objection
+pride-and-prejudice,59,6,How earnestly did she then wish that her former opinions had been more reasonable,in such cases as these a good memory is unpardonable,partial,2,"her wish to forget, loose"
+pride-and-prejudice,59,7,But will they make you happy?,are you quite certain that you can be happy with him?,yes,2,Jane's same happiness doubt
+pride-and-prejudice,59,8,she did conquer her father's incredulity,she was absolutely incredulous here,partial,2,"Jane's incredulity, not father's"
+pride-and-prejudice,59,9,she then told him what Mr. Darcy had voluntarily done for Lydia,now she would no longer conceal from her his share in Lydia's marriage,yes,2,Darcy's share in Lydia's marriage
+pride-and-prejudice,59,10,"When her mother went up to her dressing-room at night, she followed her, and made the important communication.",Elizabeth reserved to herself the application for her mother's,yes,2,she reserved telling her mother
+pride-and-prejudice,59,11,pray apologize for my having disliked him so much before,What can he mean by being so tiresome as to be always coming here?,yes,2,mother's dislike shown
+pride-and-prejudice,59,12,This was enough to prove that her approbation need not be doubted,sometimes doubting whether all his wealth and grandeur would be enough to overcome her abhorrence of the man,yes,2,her doubt of mother's reaction
+pride-and-prejudice,59,13,This was a sad omen of what her mother's behaviour to the gentleman himself might be,she could no more bear that Mr. Darcy should hear the first raptures of her joy,yes,2,dread of mother's raptures
+pride-and-prejudice,59,14,he was rising every hour in his esteem,"We all know him to be a proud, unpleasant sort of man",yes,2,father's low opinion before
+pride-and-prejudice,60,1,Lady Catherine has been of infinite use,Lady Catherine's unjustifiable endeavours to separate us were the means of removing all my doubts,yes,2,aunt's interference as the means
+pride-and-prejudice,60,2,"I would have thanked you before, my dear aunt","But I have an aunt, too, who must not be longer neglected.",yes,2,aunt long neglected
+pride-and-prejudice,60,3,Mr. Darcy's letter to Lady Catherine was in a different style,if you will give me a sheet of paper it shall be done directly,yes,2,Darcy to write at once
+pride-and-prejudice,60,4,Console Lady Catherine as well as you can.,Shall you ever have courage to announce to Lady Catherine what is to befall her?,partial,2,"Lady C's reaction anticipated, loose"
+pride-and-prejudice,60,5,The joy which Miss Darcy expressed on receiving similar information,all that was affectionate and insincere,partial,2,contrast with Miss Bingley's letter
+pride-and-prejudice,60,6,Before any answer could arrive from Mr. Collins,"what Mr. Bennet sent to Mr. Collins, in return for his last",yes,2,Bennet's letter to Collins
+pride-and-prejudice,60,7,angry by the contents of her nephew's letter,Mr. Darcy's letter to Lady Catherine,yes,2,Darcy's letter to Lady C
+pride-and-prejudice,60,8,the parading and obsequious civility of her husband,"you were sick of civility, of deference, of officious attention",partial,2,thematic contrast only
+pride-and-prejudice,60,9,the comfort and elegance of their family party at Pemberley,You are all to come to Pemberley at Christmas.,partial,2,"Christmas invite, not their home life"
+pride-and-prejudice,61,1,I am sure Wickham would like a place at court very much,was not wholly without hope that Darcy might yet be prevailed on to make his fortune,yes,2,Wickham's hope Darcy would help
+pride-and-prejudice,61,2,As it happened that Elizabeth had much rather not,"do not speak to Mr. Darcy about it, if you had rather not",yes,2,"Lydia's ""if you had rather not"""
+pride-and-prejudice,61,3,"Such relief, however, as it was in her power to afford",I do not think we shall have quite money enough to live upon without some help,yes,2,Lydia's plea for help
+pride-and-prejudice,61,4,His affection for her soon sunk into indifference: hers lasted a little longer,"If you love Mr. Darcy half so well as I do my dear Wickham, you must be very happy.",partial,2,"Lydia's love, not its decline"
+pride-and-prejudice,61,5,even Bingley's good-humour was overcome,So near a vicinity to her mother and Meryton relations was not desirable even to his easy temper,partial,2,"similar strain on his temper, different cause"
+pride-and-prejudice,61,6,With the Gardiners they were always on the most intimate terms.,the visits of her uncle and aunt from the city,yes,2,the Gardiners' visits

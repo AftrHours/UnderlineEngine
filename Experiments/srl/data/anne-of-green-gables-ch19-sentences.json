@@ -1,0 +1,2074 @@
+[
+{
+"id": 0,
+"paragraph": 0,
+"start": 0,
+"end": 55,
+"text": "MARILLA, can I go over to see Diana just for a minute?\""
+},
+{
+"id": 1,
+"paragraph": 0,
+"start": 56,
+"end": 135,
+"text": "asked Anne, running breathlessly down from the east gable one February evening."
+},
+{
+"id": 2,
+"paragraph": 1,
+"start": 137,
+"end": 224,
+"text": "\"I don't see what you want to be traipsing about after dark for,\" said Marilla shortly."
+},
+{
+"id": 3,
+"paragraph": 1,
+"start": 225,
+"end": 392,
+"text": "\"You and Diana walked home from school together and then stood down there in the snow for half an hour more, your tongues going the whole blessed time, clickety-clack."
+},
+{
+"id": 4,
+"paragraph": 1,
+"start": 393,
+"end": 450,
+"text": "So I don't think you're very badly off to see her again.\""
+},
+{
+"id": 5,
+"paragraph": 2,
+"start": 452,
+"end": 492,
+"text": "\"But she wants to see me,\" pleaded Anne."
+},
+{
+"id": 6,
+"paragraph": 2,
+"start": 493,
+"end": 539,
+"text": "\"She has something very important to tell me.\""
+},
+{
+"id": 7,
+"paragraph": 3,
+"start": 541,
+"end": 567,
+"text": "\"How do you know she has?\""
+},
+{
+"id": 8,
+"paragraph": 4,
+"start": 569,
+"end": 618,
+"text": "\"Because she just signaled to me from her window."
+},
+{
+"id": 9,
+"paragraph": 4,
+"start": 619,
+"end": 683,
+"text": "We have arranged a way to signal with our candles and cardboard."
+},
+{
+"id": 10,
+"paragraph": 4,
+"start": 684,
+"end": 778,
+"text": "We set the candle on the window sill and make flashes by passing the cardboard back and forth."
+},
+{
+"id": 11,
+"paragraph": 4,
+"start": 779,
+"end": 816,
+"text": "So many flashes mean a certain thing."
+},
+{
+"id": 12,
+"paragraph": 4,
+"start": 817,
+"end": 842,
+"text": "It was my idea, Marilla.\""
+},
+{
+"id": 13,
+"paragraph": 5,
+"start": 844,
+"end": 897,
+"text": "\"I'll warrant you it was,\" said Marilla emphatically."
+},
+{
+"id": 14,
+"paragraph": 5,
+"start": 898,
+"end": 987,
+"text": "\"And the next thing you'll be setting fire to the curtains with your signaling nonsense.\""
+},
+{
+"id": 15,
+"paragraph": 6,
+"start": 989,
+"end": 1022,
+"text": "\"Oh, we're very careful, Marilla."
+},
+{
+"id": 16,
+"paragraph": 6,
+"start": 1023,
+"end": 1047,
+"text": "And it's so interesting."
+},
+{
+"id": 17,
+"paragraph": 6,
+"start": 1048,
+"end": 1082,
+"text": "Two flashes mean, 'Are you there?'"
+},
+{
+"id": 18,
+"paragraph": 6,
+"start": 1083,
+"end": 1114,
+"text": "Three mean 'yes' and four 'no.'"
+},
+{
+"id": 19,
+"paragraph": 6,
+"start": 1115,
+"end": 1204,
+"text": "Five mean, 'Come over as soon as possible, because I have something important to reveal.'"
+},
+{
+"id": 20,
+"paragraph": 6,
+"start": 1205,
+"end": 1288,
+"text": "Diana has just signaled five flashes, and I'm really suffering to know what it is.\""
+},
+{
+"id": 21,
+"paragraph": 7,
+"start": 1290,
+"end": 1356,
+"text": "\"Well, you needn't suffer any longer,\" said Marilla sarcastically."
+},
+{
+"id": 22,
+"paragraph": 7,
+"start": 1357,
+"end": 1433,
+"text": "\"You can go, but you're to be back here in just ten minutes, remember that.\""
+},
+{
+"id": 23,
+"paragraph": 8,
+"start": 1435,
+"end": 1652,
+"text": "Anne did remember it and was back in the stipulated time, although probably no mortal will ever know just what it cost her to confine the discussion of Diana's important communication within the limits of ten minutes."
+},
+{
+"id": 24,
+"paragraph": 8,
+"start": 1653,
+"end": 1696,
+"text": "But at least she had made good use of them."
+},
+{
+"id": 25,
+"paragraph": 9,
+"start": 1698,
+"end": 1730,
+"text": "\"Oh, Marilla, what do you think?"
+},
+{
+"id": 26,
+"paragraph": 9,
+"start": 1731,
+"end": 1769,
+"text": "You know tomorrow is Diana's birthday."
+},
+{
+"id": 27,
+"paragraph": 9,
+"start": 1770,
+"end": 1873,
+"text": "Well, her mother told her she could ask me to go home with her from school and stay all night with her."
+},
+{
+"id": 28,
+"paragraph": 9,
+"start": 1874,
+"end": 2004,
+"text": "And her cousins are coming over from Newbridge in a big pung sleigh to go to the Debating Club concert at the hall tomorrow night."
+},
+{
+"id": 29,
+"paragraph": 9,
+"start": 2005,
+"end": 2089,
+"text": "And they are going to take Diana and me to the concert—if you'll let me go, that is."
+},
+{
+"id": 30,
+"paragraph": 9,
+"start": 2090,
+"end": 2119,
+"text": "You will, won't you, Marilla?"
+},
+{
+"id": 31,
+"paragraph": 9,
+"start": 2120,
+"end": 2143,
+"text": "Oh, I feel so excited.\""
+},
+{
+"id": 32,
+"paragraph": 10,
+"start": 2145,
+"end": 2195,
+"text": "\"You can calm down then, because you're not going."
+},
+{
+"id": 33,
+"paragraph": 10,
+"start": 2196,
+"end": 2356,
+"text": "You're better at home in your own bed, and as for that club concert, it's all nonsense, and little girls should not be allowed to go out to such places at all.\""
+},
+{
+"id": 34,
+"paragraph": 11,
+"start": 2358,
+"end": 2430,
+"text": "\"I'm sure the Debating Club is a most respectable affair,\" pleaded Anne."
+},
+{
+"id": 35,
+"paragraph": 12,
+"start": 2432,
+"end": 2457,
+"text": "\"I'm not saying it isn't."
+},
+{
+"id": 36,
+"paragraph": 12,
+"start": 2458,
+"end": 2553,
+"text": "But you're not going to begin gadding about to concerts and staying out all hours of the night."
+},
+{
+"id": 37,
+"paragraph": 12,
+"start": 2554,
+"end": 2581,
+"text": "Pretty doings for children."
+},
+{
+"id": 38,
+"paragraph": 12,
+"start": 2582,
+"end": 2630,
+"text": "I'm surprised at Mrs. Barry's letting Diana go.\""
+},
+{
+"id": 39,
+"paragraph": 13,
+"start": 2632,
+"end": 2709,
+"text": "\"But it's such a very special occasion,\" mourned Anne, on the verge of tears."
+},
+{
+"id": 40,
+"paragraph": 13,
+"start": 2710,
+"end": 2749,
+"text": "\"Diana has only one birthday in a year."
+},
+{
+"id": 41,
+"paragraph": 13,
+"start": 2750,
+"end": 2803,
+"text": "It isn't as if birthdays were common things, Marilla."
+},
+{
+"id": 42,
+"paragraph": 13,
+"start": 2804,
+"end": 2869,
+"text": "Prissy Andrews is going to recite 'Curfew Must Not Ring Tonight.'"
+},
+{
+"id": 43,
+"paragraph": 13,
+"start": 2870,
+"end": 2960,
+"text": "That is such a good moral piece, Marilla, I'm sure it would do me lots of good to hear it."
+},
+{
+"id": 44,
+"paragraph": 13,
+"start": 2961,
+"end": 3058,
+"text": "And the choir are going to sing four lovely pathetic songs that are pretty near as good as hymns."
+},
+{
+"id": 45,
+"paragraph": 13,
+"start": 3059,
+"end": 3162,
+"text": "And oh, Marilla, the minister is going to take part; yes, indeed, he is; he's going to give an address."
+},
+{
+"id": 46,
+"paragraph": 13,
+"start": 3163,
+"end": 3214,
+"text": "That will be just about the same thing as a sermon."
+},
+{
+"id": 47,
+"paragraph": 13,
+"start": 3215,
+"end": 3245,
+"text": "Please, mayn't I go, Marilla?\""
+},
+{
+"id": 48,
+"paragraph": 14,
+"start": 3247,
+"end": 3288,
+"text": "\"You heard what I said, Anne, didn't you?"
+},
+{
+"id": 49,
+"paragraph": 14,
+"start": 3289,
+"end": 3327,
+"text": "Take off your boots now and go to bed."
+},
+{
+"id": 50,
+"paragraph": 14,
+"start": 3328,
+"end": 3345,
+"text": "It's past eight.\""
+},
+{
+"id": 51,
+"paragraph": 15,
+"start": 3347,
+"end": 3452,
+"text": "\"There's just one more thing, Marilla,\" said Anne, with the air of producing the last shot in her locker."
+},
+{
+"id": 52,
+"paragraph": 15,
+"start": 3453,
+"end": 3518,
+"text": "\"Mrs. Barry told Diana that we might sleep in the spare-room bed."
+},
+{
+"id": 53,
+"paragraph": 15,
+"start": 3519,
+"end": 3591,
+"text": "Think of the honor of your little Anne being put in the spare-room bed.\""
+},
+{
+"id": 54,
+"paragraph": 16,
+"start": 3593,
+"end": 3641,
+"text": "\"It's an honor you'll have to get along without."
+},
+{
+"id": 55,
+"paragraph": 16,
+"start": 3642,
+"end": 3706,
+"text": "Go to bed, Anne, and don't let me hear another word out of you.\""
+},
+{
+"id": 56,
+"paragraph": 17,
+"start": 3708,
+"end": 3908,
+"text": "When Anne, with tears rolling over her cheeks, had gone sorrowfully upstairs, Matthew, who had been apparently sound asleep on the lounge during the whole dialogue, opened his eyes and said decidedly:"
+},
+{
+"id": 57,
+"paragraph": 18,
+"start": 3910,
+"end": 3964,
+"text": "\"Well now, Marilla, I think you ought to let Anne go.\""
+},
+{
+"id": 58,
+"paragraph": 19,
+"start": 3966,
+"end": 3999,
+"text": "\"I don't then,\" retorted Marilla."
+},
+{
+"id": 59,
+"paragraph": 19,
+"start": 4000,
+"end": 4051,
+"text": "\"Who's bringing this child up, Matthew, you or me?\""
+},
+{
+"id": 60,
+"paragraph": 20,
+"start": 4053,
+"end": 4087,
+"text": "\"Well now, you,\" admitted Matthew."
+},
+{
+"id": 61,
+"paragraph": 21,
+"start": 4089,
+"end": 4112,
+"text": "\"Don't interfere then.\""
+},
+{
+"id": 62,
+"paragraph": 22,
+"start": 4114,
+"end": 4145,
+"text": "\"Well now, I ain't interfering."
+},
+{
+"id": 63,
+"paragraph": 22,
+"start": 4146,
+"end": 4192,
+"text": "It ain't interfering to have your own opinion."
+},
+{
+"id": 64,
+"paragraph": 22,
+"start": 4193,
+"end": 4242,
+"text": "And my opinion is that you ought to let Anne go.\""
+},
+{
+"id": 65,
+"paragraph": 23,
+"start": 4244,
+"end": 4364,
+"text": "\"You'd think I ought to let Anne go to the moon if she took the notion, I've no doubt,\" was Marilla's amiable rejoinder."
+},
+{
+"id": 66,
+"paragraph": 23,
+"start": 4365,
+"end": 4431,
+"text": "\"I might have let her spend the night with Diana, if that was all."
+},
+{
+"id": 67,
+"paragraph": 23,
+"start": 4432,
+"end": 4473,
+"text": "But I don't approve of this concert plan."
+},
+{
+"id": 68,
+"paragraph": 23,
+"start": 4474,
+"end": 4574,
+"text": "She'd go there and catch cold like as not, and have her head filled up with nonsense and excitement."
+},
+{
+"id": 69,
+"paragraph": 23,
+"start": 4575,
+"end": 4608,
+"text": "It would unsettle her for a week."
+},
+{
+"id": 70,
+"paragraph": 23,
+"start": 4609,
+"end": 4696,
+"text": "I understand that child's disposition and what's good for it better than you, Matthew.\""
+},
+{
+"id": 71,
+"paragraph": 24,
+"start": 4698,
+"end": 4758,
+"text": "\"I think you ought to let Anne go,\" repeated Matthew firmly."
+},
+{
+"id": 72,
+"paragraph": 24,
+"start": 4759,
+"end": 4840,
+"text": "Argument was not his strong point, but holding fast to his opinion certainly was."
+},
+{
+"id": 73,
+"paragraph": 24,
+"start": 4841,
+"end": 4904,
+"text": "Marilla gave a gasp of helplessness and took refuge in silence."
+},
+{
+"id": 74,
+"paragraph": 24,
+"start": 4905,
+"end": 5047,
+"text": "The next morning, when Anne was washing the breakfast dishes in the pantry, Matthew paused on his way out to the barn to say to Marilla again:"
+},
+{
+"id": 75,
+"paragraph": 25,
+"start": 5049,
+"end": 5093,
+"text": "\"I think you ought to let Anne go, Marilla.\""
+},
+{
+"id": 76,
+"paragraph": 26,
+"start": 5095,
+"end": 5155,
+"text": "For a moment Marilla looked things not lawful to be uttered."
+},
+{
+"id": 77,
+"paragraph": 26,
+"start": 5156,
+"end": 5207,
+"text": "Then she yielded to the inevitable and said tartly:"
+},
+{
+"id": 78,
+"paragraph": 27,
+"start": 5209,
+"end": 5268,
+"text": "\"Very well, she can go, since nothing else 'll please you.\""
+},
+{
+"id": 79,
+"paragraph": 28,
+"start": 5270,
+"end": 5326,
+"text": "Anne flew out of the pantry, dripping dishcloth in hand."
+},
+{
+"id": 80,
+"paragraph": 29,
+"start": 5328,
+"end": 5382,
+"text": "\"Oh, Marilla, Marilla, say those blessed words again.\""
+},
+{
+"id": 81,
+"paragraph": 30,
+"start": 5384,
+"end": 5420,
+"text": "\"I guess once is enough to say them."
+},
+{
+"id": 82,
+"paragraph": 30,
+"start": 5421,
+"end": 5472,
+"text": "This is Matthew's doings and I wash my hands of it."
+},
+{
+"id": 83,
+"paragraph": 30,
+"start": 5473,
+"end": 5611,
+"text": "If you catch pneumonia sleeping in a strange bed or coming out of that hot hall in the middle of the night, don't blame me, blame Matthew."
+},
+{
+"id": 84,
+"paragraph": 30,
+"start": 5612,
+"end": 5674,
+"text": "Anne Shirley, you're dripping greasy water all over the floor."
+},
+{
+"id": 85,
+"paragraph": 30,
+"start": 5675,
+"end": 5710,
+"text": "I never saw such a careless child.\""
+},
+{
+"id": 86,
+"paragraph": 31,
+"start": 5712,
+"end": 5782,
+"text": "\"Oh, I know I'm a great trial to you, Marilla,\" said Anne repentantly."
+},
+{
+"id": 87,
+"paragraph": 31,
+"start": 5783,
+"end": 5808,
+"text": "\"I make so many mistakes."
+},
+{
+"id": 88,
+"paragraph": 31,
+"start": 5809,
+"end": 5880,
+"text": "But then just think of all the mistakes I don't make, although I might."
+},
+{
+"id": 89,
+"paragraph": 31,
+"start": 5881,
+"end": 5945,
+"text": "I'll get some sand and scrub up the spots before I go to school."
+},
+{
+"id": 90,
+"paragraph": 31,
+"start": 5946,
+"end": 6006,
+"text": "Oh, Marilla, my heart was just set on going to that concert."
+},
+{
+"id": 91,
+"paragraph": 31,
+"start": 6007,
+"end": 6115,
+"text": "I never was to a concert in my life, and when the other girls talk about them in school I feel so out of it."
+},
+{
+"id": 92,
+"paragraph": 31,
+"start": 6116,
+"end": 6182,
+"text": "You didn't know just how I felt about it, but you see Matthew did."
+},
+{
+"id": 93,
+"paragraph": 31,
+"start": 6183,
+"end": 6251,
+"text": "Matthew understands me, and it's so nice to be understood, Marilla.\""
+},
+{
+"id": 94,
+"paragraph": 32,
+"start": 6253,
+"end": 6333,
+"text": "Anne was too excited to do herself justice as to lessons that morning in school."
+},
+{
+"id": 95,
+"paragraph": 32,
+"start": 6334,
+"end": 6428,
+"text": "Gilbert Blythe spelled her down in class and left her clear out of sight in mental arithmetic."
+},
+{
+"id": 96,
+"paragraph": 32,
+"start": 6429,
+"end": 6548,
+"text": "Anne's consequent humiliation was less than it might have been, however, in view of the concert and the spare-room bed."
+},
+{
+"id": 97,
+"paragraph": 32,
+"start": 6549,
+"end": 6702,
+"text": "She and Diana talked so constantly about it all day that with a stricter teacher than Mr. Phillips dire disgrace must inevitably have been their portion."
+},
+{
+"id": 98,
+"paragraph": 33,
+"start": 6704,
+"end": 6839,
+"text": "Anne felt that she could not have borne it if she had not been going to the concert, for nothing else was discussed that day in school."
+},
+{
+"id": 99,
+"paragraph": 33,
+"start": 6840,
+"end": 7022,
+"text": "The Avonlea Debating Club, which met fortnightly all winter, had had several smaller free entertainments; but this was to be a big affair, admission ten cents, in aid of the library."
+},
+{
+"id": 100,
+"paragraph": 33,
+"start": 7023,
+"end": 7201,
+"text": "The Avonlea young people had been practicing for weeks, and all the scholars were especially interested in it by reason of older brothers and sisters who were going to take part."
+},
+{
+"id": 101,
+"paragraph": 33,
+"start": 7202,
+"end": 7368,
+"text": "Everybody in school over nine years of age expected to go, except Carrie Sloane, whose father shared Marilla's opinions about small girls going out to night concerts."
+},
+{
+"id": 102,
+"paragraph": 33,
+"start": 7369,
+"end": 7464,
+"text": "Carrie Sloane cried into her grammar all the afternoon and felt that life was not worth living."
+},
+{
+"id": 103,
+"paragraph": 34,
+"start": 7466,
+"end": 7637,
+"text": "For Anne the real excitement began with the dismissal of school and increased therefrom in crescendo until it reached to a crash of positive ecstasy in the concert itself."
+},
+{
+"id": 104,
+"paragraph": 34,
+"start": 7638,
+"end": 7757,
+"text": "They had a \"perfectly elegant tea;\" and then came the delicious occupation of dressing in Diana's little room upstairs."
+},
+{
+"id": 105,
+"paragraph": 34,
+"start": 7758,
+"end": 7972,
+"text": "Diana did Anne's front hair in the new pompadour style and Anne tied Diana's bows with the especial knack she possessed; and they experimented with at least half a dozen different ways of arranging their back hair."
+},
+{
+"id": 106,
+"paragraph": 34,
+"start": 7973,
+"end": 8046,
+"text": "At last they were ready, cheeks scarlet and eyes glowing with excitement."
+},
+{
+"id": 107,
+"paragraph": 35,
+"start": 8048,
+"end": 8235,
+"text": "True, Anne could not help a little pang when she contrasted her plain black tam and shapeless, tight-sleeved, homemade gray-cloth coat with Diana's jaunty fur cap and smart little jacket."
+},
+{
+"id": 108,
+"paragraph": 35,
+"start": 8236,
+"end": 8308,
+"text": "But she remembered in time that she had an imagination and could use it."
+},
+{
+"id": 109,
+"paragraph": 36,
+"start": 8310,
+"end": 8437,
+"text": "Then Diana's cousins, the Murrays from Newbridge, came; they all crowded into the big pung sleigh, among straw and furry robes."
+},
+{
+"id": 110,
+"paragraph": 36,
+"start": 8438,
+"end": 8561,
+"text": "Anne reveled in the drive to the hall, slipping along over the satin-smooth roads with the snow crisping under the runners."
+},
+{
+"id": 111,
+"paragraph": 36,
+"start": 8562,
+"end": 8755,
+"text": "There was a magnificent sunset, and the snowy hills and deep-blue water of the St. Lawrence Gulf seemed to rim in the splendor like a huge bowl of pearl and sapphire brimmed with wine and fire."
+},
+{
+"id": 112,
+"paragraph": 36,
+"start": 8756,
+"end": 8868,
+"text": "Tinkles of sleigh bells and distant laughter, that seemed like the mirth of wood elves, came from every quarter."
+},
+{
+"id": 113,
+"paragraph": 37,
+"start": 8870,
+"end": 8987,
+"text": "\"Oh, Diana,\" breathed Anne, squeezing Diana's mittened hand under the fur robe, \"isn't it all like a beautiful dream?"
+},
+{
+"id": 114,
+"paragraph": 37,
+"start": 8988,
+"end": 9023,
+"text": "Do I really look the same as usual?"
+},
+{
+"id": 115,
+"paragraph": 37,
+"start": 9024,
+"end": 9090,
+"text": "I feel so different that it seems to me it must show in my looks.\""
+},
+{
+"id": 116,
+"paragraph": 38,
+"start": 9092,
+"end": 9226,
+"text": "\"You look awfully nice,\" said Diana, who having just received a compliment from one of her cousins, felt that she ought to pass it on."
+},
+{
+"id": 117,
+"paragraph": 38,
+"start": 9227,
+"end": 9260,
+"text": "\"You've got the loveliest color.\""
+},
+{
+"id": 118,
+"paragraph": 39,
+"start": 9262,
+"end": 9434,
+"text": "The program that night was a series of \"thrills\" for at least one listener in the audience, and, as Anne assured Diana, every succeeding thrill was thrillier than the last."
+},
+{
+"id": 119,
+"paragraph": 39,
+"start": 9435,
+"end": 10358,
+"text": "When Prissy Andrews, attired in a new pink-silk waist with a string of pearls about her smooth white throat and real carnations in her hair—rumor whispered that the master had sent all the way to town for them for her—\"climbed the slimy ladder, dark without one ray of light,\" Anne shivered in luxurious sympathy; when the choir sang \"Far Above the Gentle Daisies\" Anne gazed at the ceiling as if it were frescoed with angels; when Sam Sloane proceeded to explain and illustrate \"How Sockery Set a Hen\" Anne laughed until people sitting near her laughed too, more out of sympathy with her than with amusement at a selection that was rather threadbare even in Avonlea; and when Mr. Phillips gave Mark Antony's oration over the dead body of Cæsar in the most heart-stirring tones—looking at Prissy Andrews at the end of every sentence—Anne felt that she could rise and mutiny on the spot if but one Roman citizen led the way."
+},
+{
+"id": 120,
+"paragraph": 40,
+"start": 10360,
+"end": 10414,
+"text": "Only one number on the program failed to interest her."
+},
+{
+"id": 121,
+"paragraph": 40,
+"start": 10415,
+"end": 10634,
+"text": "When Gilbert Blythe recited \"Bingen on the Rhine\" Anne picked up Rhoda Murray's library book and read it until he had finished, when she sat rigidly stiff and motionless while Diana clapped her hands until they tingled."
+},
+{
+"id": 122,
+"paragraph": 41,
+"start": 10636,
+"end": 10769,
+"text": "It was eleven when they got home, sated with dissipation, but with the exceeding sweet pleasure of talking it all over still to come."
+},
+{
+"id": 123,
+"paragraph": 41,
+"start": 10770,
+"end": 10828,
+"text": "Everybody seemed asleep and the house was dark and silent."
+},
+{
+"id": 124,
+"paragraph": 41,
+"start": 10829,
+"end": 10923,
+"text": "Anne and Diana tiptoed into the parlor, a long narrow room out of which the spare room opened."
+},
+{
+"id": 125,
+"paragraph": 41,
+"start": 10924,
+"end": 11002,
+"text": "It was pleasantly warm and dimly lighted by the embers of a fire in the grate."
+},
+{
+"id": 126,
+"paragraph": 42,
+"start": 11004,
+"end": 11037,
+"text": "\"Let's undress here,\" said Diana."
+},
+{
+"id": 127,
+"paragraph": 42,
+"start": 11038,
+"end": 11062,
+"text": "\"It's so nice and warm.\""
+},
+{
+"id": 128,
+"paragraph": 43,
+"start": 11064,
+"end": 11099,
+"text": "\"Hasn't it been a delightful time?\""
+},
+{
+"id": 129,
+"paragraph": 43,
+"start": 11100,
+"end": 11124,
+"text": "sighed Anne rapturously."
+},
+{
+"id": 130,
+"paragraph": 43,
+"start": 11125,
+"end": 11173,
+"text": "\"It must be splendid to get up and recite there."
+},
+{
+"id": 131,
+"paragraph": 43,
+"start": 11174,
+"end": 11228,
+"text": "Do you suppose we will ever be asked to do it, Diana?\""
+},
+{
+"id": 132,
+"paragraph": 44,
+"start": 11230,
+"end": 11255,
+"text": "\"Yes, of course, someday."
+},
+{
+"id": 133,
+"paragraph": 44,
+"start": 11256,
+"end": 11306,
+"text": "They're always wanting the big scholars to recite."
+},
+{
+"id": 134,
+"paragraph": 44,
+"start": 11307,
+"end": 11371,
+"text": "Gilbert Blythe does often and he's only two years older than us."
+},
+{
+"id": 135,
+"paragraph": 44,
+"start": 11372,
+"end": 11425,
+"text": "Oh, Anne, how could you pretend not to listen to him?"
+},
+{
+"id": 136,
+"paragraph": 44,
+"start": 11426,
+"end": 11451,
+"text": "When he came to the line,"
+},
+{
+"id": 137,
+"paragraph": 45,
+"start": 11453,
+"end": 11485,
+"text": "'There's Another, not a sister,'"
+},
+{
+"id": 138,
+"paragraph": 46,
+"start": 11487,
+"end": 11516,
+"text": "he looked right down at you.\""
+},
+{
+"id": 139,
+"paragraph": 47,
+"start": 11518,
+"end": 11635,
+"text": "\"Diana,\" said Anne with dignity, \"you are my bosom friend, but I cannot allow even you to speak to me of that person."
+},
+{
+"id": 140,
+"paragraph": 47,
+"start": 11636,
+"end": 11658,
+"text": "Are you ready for bed?"
+},
+{
+"id": 141,
+"paragraph": 47,
+"start": 11659,
+"end": 11713,
+"text": "Let's run a race and see who'll get to the bed first.\""
+},
+{
+"id": 142,
+"paragraph": 48,
+"start": 11715,
+"end": 11748,
+"text": "The suggestion appealed to Diana."
+},
+{
+"id": 143,
+"paragraph": 48,
+"start": 11749,
+"end": 11879,
+"text": "The two little white-clad figures flew down the long room, through the spare-room door, and bounded on the bed at the same moment."
+},
+{
+"id": 144,
+"paragraph": 48,
+"start": 11880,
+"end": 11983,
+"text": "And then—something—moved beneath them, there was a gasp and a cry—and somebody said in muffled accents:"
+},
+{
+"id": 145,
+"paragraph": 49,
+"start": 11985,
+"end": 12005,
+"text": "\"Merciful goodness!\""
+},
+{
+"id": 146,
+"paragraph": 50,
+"start": 12007,
+"end": 12097,
+"text": "Anne and Diana were never able to tell just how they got off that bed and out of the room."
+},
+{
+"id": 147,
+"paragraph": 50,
+"start": 12098,
+"end": 12194,
+"text": "They only knew that after one frantic rush they found themselves tiptoeing shiveringly upstairs."
+},
+{
+"id": 148,
+"paragraph": 51,
+"start": 12196,
+"end": 12225,
+"text": "\"Oh, who was it—what was it?\""
+},
+{
+"id": 149,
+"paragraph": 51,
+"start": 12226,
+"end": 12284,
+"text": "whispered Anne, her teeth chattering with cold and fright."
+},
+{
+"id": 150,
+"paragraph": 52,
+"start": 12286,
+"end": 12345,
+"text": "\"It was Aunt Josephine,\" said Diana, gasping with laughter."
+},
+{
+"id": 151,
+"paragraph": 52,
+"start": 12346,
+"end": 12409,
+"text": "\"Oh, Anne, it was Aunt Josephine, however she came to be there."
+},
+{
+"id": 152,
+"paragraph": 52,
+"start": 12410,
+"end": 12445,
+"text": "Oh, and I know she will be furious."
+},
+{
+"id": 153,
+"paragraph": 52,
+"start": 12446,
+"end": 12528,
+"text": "It's dreadful—it's really dreadful—but did you ever know anything so funny, Anne?\""
+},
+{
+"id": 154,
+"paragraph": 53,
+"start": 12530,
+"end": 12559,
+"text": "\"Who is your Aunt Josephine?\""
+},
+{
+"id": 155,
+"paragraph": 54,
+"start": 12561,
+"end": 12613,
+"text": "\"She's father's aunt and she lives in Charlottetown."
+},
+{
+"id": 156,
+"paragraph": 54,
+"start": 12614,
+"end": 12694,
+"text": "She's awfully old—seventy anyhow—and I don't believe she was ever a little girl."
+},
+{
+"id": 157,
+"paragraph": 54,
+"start": 12695,
+"end": 12750,
+"text": "We were expecting her out for a visit, but not so soon."
+},
+{
+"id": 158,
+"paragraph": 54,
+"start": 12751,
+"end": 12828,
+"text": "She's awfully prim and proper and she'll scold dreadfully about this, I know."
+},
+{
+"id": 159,
+"paragraph": 54,
+"start": 12829,
+"end": 12906,
+"text": "Well, we'll have to sleep with Minnie May—and you can't think how she kicks.\""
+},
+{
+"id": 160,
+"paragraph": 55,
+"start": 12908,
+"end": 12984,
+"text": "Miss Josephine Barry did not appear at the early breakfast the next morning."
+},
+{
+"id": 161,
+"paragraph": 55,
+"start": 12985,
+"end": 13034,
+"text": "Mrs. Barry smiled kindly at the two little girls."
+},
+{
+"id": 162,
+"paragraph": 56,
+"start": 13036,
+"end": 13073,
+"text": "\"Did you have a good time last night?"
+},
+{
+"id": 163,
+"paragraph": 56,
+"start": 13074,
+"end": 13249,
+"text": "I tried to stay awake until you came home, for I wanted to tell you Aunt Josephine had come and that you would have to go upstairs after all, but I was so tired I fell asleep."
+},
+{
+"id": 164,
+"paragraph": 56,
+"start": 13250,
+"end": 13294,
+"text": "I hope you didn't disturb your aunt, Diana.\""
+},
+{
+"id": 165,
+"paragraph": 57,
+"start": 13296,
+"end": 13411,
+"text": "Diana preserved a discreet silence, but she and Anne exchanged furtive smiles of guilty amusement across the table."
+},
+{
+"id": 166,
+"paragraph": 57,
+"start": 13412,
+"end": 13637,
+"text": "Anne hurried home after breakfast and so remained in blissful ignorance of the disturbance which presently resulted in the Barry household until the late afternoon, when she went down to Mrs. Lynde's on an errand for Marilla."
+},
+{
+"id": 167,
+"paragraph": 58,
+"start": 13639,
+"end": 13716,
+"text": "\"So you and Diana nearly frightened poor old Miss Barry to death last night?\""
+},
+{
+"id": 168,
+"paragraph": 58,
+"start": 13717,
+"end": 13773,
+"text": "said Mrs. Lynde severely, but with a twinkle in her eye."
+},
+{
+"id": 169,
+"paragraph": 58,
+"start": 13774,
+"end": 13835,
+"text": "\"Mrs. Barry was here a few minutes ago on her way to Carmody."
+},
+{
+"id": 170,
+"paragraph": 58,
+"start": 13836,
+"end": 13871,
+"text": "She's feeling real worried over it."
+},
+{
+"id": 171,
+"paragraph": 58,
+"start": 13872,
+"end": 14002,
+"text": "Old Miss Barry was in a terrible temper when she got up this morning—and Josephine Barry's temper is no joke, I can tell you that."
+},
+{
+"id": 172,
+"paragraph": 58,
+"start": 14003,
+"end": 14039,
+"text": "She wouldn't speak to Diana at all.\""
+},
+{
+"id": 173,
+"paragraph": 59,
+"start": 14041,
+"end": 14089,
+"text": "\"It wasn't Diana's fault,\" said Anne contritely."
+},
+{
+"id": 174,
+"paragraph": 59,
+"start": 14090,
+"end": 14103,
+"text": "\"It was mine."
+},
+{
+"id": 175,
+"paragraph": 59,
+"start": 14104,
+"end": 14160,
+"text": "I suggested racing to see who would get into bed first.\""
+},
+{
+"id": 176,
+"paragraph": 60,
+"start": 14162,
+"end": 14174,
+"text": "\"I knew it!\""
+},
+{
+"id": 177,
+"paragraph": 60,
+"start": 14175,
+"end": 14233,
+"text": "said Mrs. Lynde, with the exultation of a correct guesser."
+},
+{
+"id": 178,
+"paragraph": 60,
+"start": 14234,
+"end": 14274,
+"text": "\"I knew that idea came out of your head."
+},
+{
+"id": 179,
+"paragraph": 60,
+"start": 14275,
+"end": 14326,
+"text": "Well, it's made a nice lot of trouble, that's what."
+},
+{
+"id": 180,
+"paragraph": 60,
+"start": 14327,
+"end": 14482,
+"text": "Old Miss Barry came out to stay for a month, but she declares she won't stay another day and is going right back to town tomorrow, Sunday and all as it is."
+},
+{
+"id": 181,
+"paragraph": 60,
+"start": 14483,
+"end": 14534,
+"text": "She'd have gone today if they could have taken her."
+},
+{
+"id": 182,
+"paragraph": 60,
+"start": 14535,
+"end": 14665,
+"text": "She had promised to pay for a quarter's music lessons for Diana, but now she is determined to do nothing at all for such a tomboy."
+},
+{
+"id": 183,
+"paragraph": 60,
+"start": 14666,
+"end": 14726,
+"text": "Oh, I guess they had a lively time of it there this morning."
+},
+{
+"id": 184,
+"paragraph": 60,
+"start": 14727,
+"end": 14755,
+"text": "The Barrys must feel cut up."
+},
+{
+"id": 185,
+"paragraph": 60,
+"start": 14756,
+"end": 14827,
+"text": "Old Miss Barry is rich and they'd like to keep on the good side of her."
+},
+{
+"id": 186,
+"paragraph": 60,
+"start": 14828,
+"end": 14936,
+"text": "Of course, Mrs. Barry didn't say just that to me, but I'm a pretty good judge of human nature, that's what.\""
+},
+{
+"id": 187,
+"paragraph": 61,
+"start": 14938,
+"end": 14979,
+"text": "\"I'm such an unlucky girl,\" mourned Anne."
+},
+{
+"id": 188,
+"paragraph": 61,
+"start": 14980,
+"end": 15099,
+"text": "\"I'm always getting into scrapes myself and getting my best friends—people I'd shed my heart's blood for—into them too."
+},
+{
+"id": 189,
+"paragraph": 61,
+"start": 15100,
+"end": 15142,
+"text": "Can you tell me why it is so, Mrs. Lynde?\""
+},
+{
+"id": 190,
+"paragraph": 62,
+"start": 15144,
+"end": 15212,
+"text": "\"It's because you're too heedless and impulsive, child, that's what."
+},
+{
+"id": 191,
+"paragraph": 62,
+"start": 15213,
+"end": 15328,
+"text": "You never stop to think—whatever comes into your head to say or do you say or do it without a moment's reflection.\""
+},
+{
+"id": 192,
+"paragraph": 63,
+"start": 15330,
+"end": 15378,
+"text": "\"Oh, but that's the best of it,\" protested Anne."
+},
+{
+"id": 193,
+"paragraph": 63,
+"start": 15379,
+"end": 15457,
+"text": "\"Something just flashes into your mind, so exciting, and you must out with it."
+},
+{
+"id": 194,
+"paragraph": 63,
+"start": 15458,
+"end": 15504,
+"text": "If you stop to think it over you spoil it all."
+},
+{
+"id": 195,
+"paragraph": 63,
+"start": 15505,
+"end": 15555,
+"text": "Haven't you never felt that yourself, Mrs. Lynde?\""
+},
+{
+"id": 196,
+"paragraph": 64,
+"start": 15557,
+"end": 15580,
+"text": "No, Mrs. Lynde had not."
+},
+{
+"id": 197,
+"paragraph": 64,
+"start": 15581,
+"end": 15607,
+"text": "She shook her head sagely."
+},
+{
+"id": 198,
+"paragraph": 65,
+"start": 15609,
+"end": 15662,
+"text": "\"You must learn to think a little, Anne, that's what."
+},
+{
+"id": 199,
+"paragraph": 65,
+"start": 15663,
+"end": 15752,
+"text": "The proverb you need to go by is 'Look before you leap'—especially into spare-room beds.\""
+},
+{
+"id": 200,
+"paragraph": 66,
+"start": 15754,
+"end": 15831,
+"text": "Mrs. Lynde laughed comfortably over her mild joke, but Anne remained pensive."
+},
+{
+"id": 201,
+"paragraph": 66,
+"start": 15832,
+"end": 15918,
+"text": "She saw nothing to laugh at in the situation, which to her eyes appeared very serious."
+},
+{
+"id": 202,
+"paragraph": 66,
+"start": 15919,
+"end": 16006,
+"text": "When she left Mrs. Lynde's she took her way across the crusted fields to Orchard Slope."
+},
+{
+"id": 203,
+"paragraph": 66,
+"start": 16007,
+"end": 16041,
+"text": "Diana met her at the kitchen door."
+},
+{
+"id": 204,
+"paragraph": 67,
+"start": 16043,
+"end": 16101,
+"text": "\"Your Aunt Josephine was very cross about it, wasn't she?\""
+},
+{
+"id": 205,
+"paragraph": 67,
+"start": 16102,
+"end": 16117,
+"text": "whispered Anne."
+},
+{
+"id": 206,
+"paragraph": 68,
+"start": 16119,
+"end": 16238,
+"text": "\"Yes,\" answered Diana, stifling a giggle with an apprehensive glance over her shoulder at the closed sitting-room door."
+},
+{
+"id": 207,
+"paragraph": 68,
+"start": 16239,
+"end": 16279,
+"text": "\"She was fairly dancing with rage, Anne."
+},
+{
+"id": 208,
+"paragraph": 68,
+"start": 16280,
+"end": 16300,
+"text": "Oh, how she scolded."
+},
+{
+"id": 209,
+"paragraph": 68,
+"start": 16301,
+"end": 16426,
+"text": "She said I was the worst-behaved girl she ever saw and that my parents ought to be ashamed of the way they had brought me up."
+},
+{
+"id": 210,
+"paragraph": 68,
+"start": 16427,
+"end": 16477,
+"text": "She says she won't stay and I'm sure I don't care."
+},
+{
+"id": 211,
+"paragraph": 68,
+"start": 16478,
+"end": 16504,
+"text": "But Father and Mother do.\""
+},
+{
+"id": 212,
+"paragraph": 69,
+"start": 16506,
+"end": 16549,
+"text": "\"Why didn't you tell them it was my fault?\""
+},
+{
+"id": 213,
+"paragraph": 69,
+"start": 16550,
+"end": 16564,
+"text": "demanded Anne."
+},
+{
+"id": 214,
+"paragraph": 70,
+"start": 16566,
+"end": 16610,
+"text": "\"It's likely I'd do such a thing, isn't it?\""
+},
+{
+"id": 215,
+"paragraph": 70,
+"start": 16611,
+"end": 16638,
+"text": "said Diana with just scorn."
+},
+{
+"id": 216,
+"paragraph": 70,
+"start": 16639,
+"end": 16718,
+"text": "\"I'm no telltale, Anne Shirley, and anyhow I was just as much to blame as you.\""
+},
+{
+"id": 217,
+"paragraph": 71,
+"start": 16720,
+"end": 16782,
+"text": "\"Well, I'm going in to tell her myself,\" said Anne resolutely."
+},
+{
+"id": 218,
+"paragraph": 72,
+"start": 16784,
+"end": 16797,
+"text": "Diana stared."
+},
+{
+"id": 219,
+"paragraph": 73,
+"start": 16799,
+"end": 16826,
+"text": "\"Anne Shirley, you'd never!"
+},
+{
+"id": 220,
+"paragraph": 73,
+"start": 16827,
+"end": 16853,
+"text": "why—she'll eat you alive!\""
+},
+{
+"id": 221,
+"paragraph": 74,
+"start": 16855,
+"end": 16920,
+"text": "\"Don't frighten me any more than I am frightened,\" implored Anne."
+},
+{
+"id": 222,
+"paragraph": 74,
+"start": 16921,
+"end": 16961,
+"text": "\"I'd rather walk up to a cannon's mouth."
+},
+{
+"id": 223,
+"paragraph": 74,
+"start": 16962,
+"end": 16991,
+"text": "But I've got to do it, Diana."
+},
+{
+"id": 224,
+"paragraph": 74,
+"start": 16992,
+"end": 17032,
+"text": "It was my fault and I've got to confess."
+},
+{
+"id": 225,
+"paragraph": 74,
+"start": 17033,
+"end": 17079,
+"text": "I've had practice in confessing, fortunately.\""
+},
+{
+"id": 226,
+"paragraph": 75,
+"start": 17081,
+"end": 17119,
+"text": "\"Well, she's in the room,\" said Diana."
+},
+{
+"id": 227,
+"paragraph": 75,
+"start": 17120,
+"end": 17150,
+"text": "\"You can go in if you want to."
+},
+{
+"id": 228,
+"paragraph": 75,
+"start": 17151,
+"end": 17167,
+"text": "I wouldn't dare."
+},
+{
+"id": 229,
+"paragraph": 75,
+"start": 17168,
+"end": 17213,
+"text": "And I don't believe you'll do a bit of good.\""
+},
+{
+"id": 230,
+"paragraph": 76,
+"start": 17215,
+"end": 17354,
+"text": "With this encouragement Anne bearded the lion in its den—that is to say, walked resolutely up to the sitting-room door and knocked faintly."
+},
+{
+"id": 231,
+"paragraph": 76,
+"start": 17355,
+"end": 17382,
+"text": "A sharp \"Come in\" followed."
+},
+{
+"id": 232,
+"paragraph": 77,
+"start": 17384,
+"end": 17545,
+"text": "Miss Josephine Barry, thin, prim, and rigid, was knitting fiercely by the fire, her wrath quite unappeased and her eyes snapping through her gold-rimmed glasses."
+},
+{
+"id": 233,
+"paragraph": 77,
+"start": 17546,
+"end": 17723,
+"text": "She wheeled around in her chair, expecting to see Diana, and beheld a white-faced girl whose great eyes were brimmed up with a mixture of desperate courage and shrinking terror."
+},
+{
+"id": 234,
+"paragraph": 78,
+"start": 17725,
+"end": 17739,
+"text": "\"Who are you?\""
+},
+{
+"id": 235,
+"paragraph": 78,
+"start": 17740,
+"end": 17788,
+"text": "demanded Miss Josephine Barry, without ceremony."
+},
+{
+"id": 236,
+"paragraph": 79,
+"start": 17790,
+"end": 17948,
+"text": "\"I'm Anne of Green Gables,\" said the small visitor tremulously, clasping her hands with her characteristic gesture, \"and I've come to confess, if you please.\""
+},
+{
+"id": 237,
+"paragraph": 80,
+"start": 17950,
+"end": 17965,
+"text": "\"Confess what?\""
+},
+{
+"id": 238,
+"paragraph": 81,
+"start": 17967,
+"end": 18034,
+"text": "\"That it was all my fault about jumping into bed on you last night."
+},
+{
+"id": 239,
+"paragraph": 81,
+"start": 18035,
+"end": 18050,
+"text": "I suggested it."
+},
+{
+"id": 240,
+"paragraph": 81,
+"start": 18051,
+"end": 18109,
+"text": "Diana would never have thought of such a thing, I am sure."
+},
+{
+"id": 241,
+"paragraph": 81,
+"start": 18110,
+"end": 18152,
+"text": "Diana is a very ladylike girl, Miss Barry."
+},
+{
+"id": 242,
+"paragraph": 81,
+"start": 18153,
+"end": 18200,
+"text": "So you must see how unjust it is to blame her.\""
+},
+{
+"id": 243,
+"paragraph": 82,
+"start": 18202,
+"end": 18219,
+"text": "\"Oh, I must, hey?"
+},
+{
+"id": 244,
+"paragraph": 82,
+"start": 18220,
+"end": 18279,
+"text": "I rather think Diana did her share of the jumping at least."
+},
+{
+"id": 245,
+"paragraph": 82,
+"start": 18280,
+"end": 18322,
+"text": "Such carryings on in a respectable house!\""
+},
+{
+"id": 246,
+"paragraph": 83,
+"start": 18324,
+"end": 18366,
+"text": "\"But we were only in fun,\" persisted Anne."
+},
+{
+"id": 247,
+"paragraph": 83,
+"start": 18367,
+"end": 18439,
+"text": "\"I think you ought to forgive us, Miss Barry, now that we've apologized."
+},
+{
+"id": 248,
+"paragraph": 83,
+"start": 18440,
+"end": 18508,
+"text": "And anyhow, please forgive Diana and let her have her music lessons."
+},
+{
+"id": 249,
+"paragraph": 83,
+"start": 18509,
+"end": 18639,
+"text": "Diana's heart is set on her music lessons, Miss Barry, and I know too well what it is to set your heart on a thing and not get it."
+},
+{
+"id": 250,
+"paragraph": 83,
+"start": 18640,
+"end": 18691,
+"text": "If you must be cross with anyone, be cross with me."
+},
+{
+"id": 251,
+"paragraph": 83,
+"start": 18692,
+"end": 18805,
+"text": "I've been so used in my early days to having people cross at me that I can endure it much better than Diana can.\""
+},
+{
+"id": 252,
+"paragraph": 84,
+"start": 18807,
+"end": 18922,
+"text": "Much of the snap had gone out of the old lady's eyes by this time and was replaced by a twinkle of amused interest."
+},
+{
+"id": 253,
+"paragraph": 84,
+"start": 18923,
+"end": 18951,
+"text": "But she still said severely:"
+},
+{
+"id": 254,
+"paragraph": 85,
+"start": 18953,
+"end": 19019,
+"text": "\"I don't think it is any excuse for you that you were only in fun."
+},
+{
+"id": 255,
+"paragraph": 85,
+"start": 19020,
+"end": 19085,
+"text": "Little girls never indulged in that kind of fun when I was young."
+},
+{
+"id": 256,
+"paragraph": 85,
+"start": 19086,
+"end": 19229,
+"text": "You don't know what it is to be awakened out of a sound sleep, after a long and arduous journey, by two great girls coming bounce down on you.\""
+},
+{
+"id": 257,
+"paragraph": 86,
+"start": 19231,
+"end": 19284,
+"text": "\"I don't know, but I can imagine,\" said Anne eagerly."
+},
+{
+"id": 258,
+"paragraph": 86,
+"start": 19285,
+"end": 19329,
+"text": "\"I'm sure it must have been very disturbing."
+},
+{
+"id": 259,
+"paragraph": 86,
+"start": 19330,
+"end": 19368,
+"text": "But then, there is our side of it too."
+},
+{
+"id": 260,
+"paragraph": 86,
+"start": 19369,
+"end": 19406,
+"text": "Have you any imagination, Miss Barry?"
+},
+{
+"id": 261,
+"paragraph": 86,
+"start": 19407,
+"end": 19451,
+"text": "If you have, just put yourself in our place."
+},
+{
+"id": 262,
+"paragraph": 86,
+"start": 19452,
+"end": 19531,
+"text": "We didn't know there was anybody in that bed and you nearly scared us to death."
+},
+{
+"id": 263,
+"paragraph": 86,
+"start": 19532,
+"end": 19568,
+"text": "It was simply awful the way we felt."
+},
+{
+"id": 264,
+"paragraph": 86,
+"start": 19569,
+"end": 19635,
+"text": "And then we couldn't sleep in the spare room after being promised."
+},
+{
+"id": 265,
+"paragraph": 86,
+"start": 19636,
+"end": 19686,
+"text": "I suppose you are used to sleeping in spare rooms."
+},
+{
+"id": 266,
+"paragraph": 86,
+"start": 19687,
+"end": 19795,
+"text": "But just imagine what you would feel like if you were a little orphan girl who had never had such an honor.\""
+},
+{
+"id": 267,
+"paragraph": 87,
+"start": 19797,
+"end": 19832,
+"text": "All the snap had gone by this time."
+},
+{
+"id": 268,
+"paragraph": 87,
+"start": 19833,
+"end": 19974,
+"text": "Miss Barry actually laughed—a sound which caused Diana, waiting in speechless anxiety in the kitchen outside, to give a great gasp of relief."
+},
+{
+"id": 269,
+"paragraph": 88,
+"start": 19976,
+"end": 20061,
+"text": "\"I'm afraid my imagination is a little rusty—it's so long since I used it,\" she said."
+},
+{
+"id": 270,
+"paragraph": 88,
+"start": 20062,
+"end": 20123,
+"text": "\"I dare say your claim to sympathy is just as strong as mine."
+},
+{
+"id": 271,
+"paragraph": 88,
+"start": 20124,
+"end": 20164,
+"text": "It all depends on the way we look at it."
+},
+{
+"id": 272,
+"paragraph": 88,
+"start": 20165,
+"end": 20207,
+"text": "Sit down here and tell me about yourself.\""
+},
+{
+"id": 273,
+"paragraph": 89,
+"start": 20209,
+"end": 20253,
+"text": "\"I am very sorry I can't,\" said Anne firmly."
+},
+{
+"id": 274,
+"paragraph": 89,
+"start": 20254,
+"end": 20396,
+"text": "\"I would like to, because you seem like an interesting lady, and you might even be a kindred spirit although you don't look very much like it."
+},
+{
+"id": 275,
+"paragraph": 89,
+"start": 20397,
+"end": 20451,
+"text": "But it is my duty to go home to Miss Marilla Cuthbert."
+},
+{
+"id": 276,
+"paragraph": 89,
+"start": 20452,
+"end": 20532,
+"text": "Miss Marilla Cuthbert is a very kind lady who has taken me to bring up properly."
+},
+{
+"id": 277,
+"paragraph": 89,
+"start": 20533,
+"end": 20589,
+"text": "She is doing her best, but it is very discouraging work."
+},
+{
+"id": 278,
+"paragraph": 89,
+"start": 20590,
+"end": 20641,
+"text": "You must not blame her because I jumped on the bed."
+},
+{
+"id": 279,
+"paragraph": 89,
+"start": 20642,
+"end": 20762,
+"text": "But before I go I do wish you would tell me if you will forgive Diana and stay just as long as you meant to in Avonlea.\""
+},
+{
+"id": 280,
+"paragraph": 90,
+"start": 20764,
+"end": 20856,
+"text": "\"I think perhaps I will if you will come over and talk to me occasionally,\" said Miss Barry."
+},
+{
+"id": 281,
+"paragraph": 91,
+"start": 20858,
+"end": 20996,
+"text": "That evening Miss Barry gave Diana a silver bangle bracelet and told the senior members of the household that she had unpacked her valise."
+},
+{
+"id": 282,
+"paragraph": 92,
+"start": 20998,
+"end": 21116,
+"text": "\"I've made up my mind to stay simply for the sake of getting better acquainted with that Anne-girl,\" she said frankly."
+},
+{
+"id": 283,
+"paragraph": 92,
+"start": 21117,
+"end": 21187,
+"text": "\"She amuses me, and at my time of life an amusing person is a rarity.\""
+},
+{
+"id": 284,
+"paragraph": 93,
+"start": 21189,
+"end": 21258,
+"text": "Marilla's only comment when she heard the story was, \"I told you so.\""
+},
+{
+"id": 285,
+"paragraph": 93,
+"start": 21259,
+"end": 21290,
+"text": "This was for Matthew's benefit."
+},
+{
+"id": 286,
+"paragraph": 94,
+"start": 21292,
+"end": 21333,
+"text": "Miss Barry stayed her month out and over."
+},
+{
+"id": 287,
+"paragraph": 94,
+"start": 21334,
+"end": 21409,
+"text": "She was a more agreeable guest than usual, for Anne kept her in good humor."
+},
+{
+"id": 288,
+"paragraph": 94,
+"start": 21410,
+"end": 21435,
+"text": "They became firm friends."
+},
+{
+"id": 289,
+"paragraph": 95,
+"start": 21437,
+"end": 21472,
+"text": "When Miss Barry went away she said:"
+},
+{
+"id": 290,
+"paragraph": 96,
+"start": 21474,
+"end": 21602,
+"text": "\"Remember, you Anne-girl, when you come to town you're to visit me and I'll put you in my very sparest spare-room bed to sleep.\""
+},
+{
+"id": 291,
+"paragraph": 97,
+"start": 21604,
+"end": 21675,
+"text": "\"Miss Barry was a kindred spirit, after all,\" Anne confided to Marilla."
+},
+{
+"id": 292,
+"paragraph": 97,
+"start": 21676,
+"end": 21726,
+"text": "\"You wouldn't think so to look at her, but she is."
+},
+{
+"id": 293,
+"paragraph": 97,
+"start": 21727,
+"end": 21824,
+"text": "You don't find it right out at first, as in Matthew's case, but after a while you come to see it."
+},
+{
+"id": 294,
+"paragraph": 97,
+"start": 21825,
+"end": 21878,
+"text": "Kindred spirits are not so scarce as I used to think."
+},
+{
+"id": 295,
+"paragraph": 97,
+"start": 21879,
+"end": 21945,
+"text": "It's splendid to find out there are so many of them in the world.\""
+}
+]

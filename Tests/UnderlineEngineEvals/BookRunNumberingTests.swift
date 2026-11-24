@@ -12,7 +12,7 @@ import Testing
     func underlines(firstParagraph: Int, firstSentence: Int) async -> [String] {
         let input = ChapterInput(chapterIndex: 0, plainText: text, firstParagraph: firstParagraph, firstSentence: firstSentence)
         let source = BookText(id: "numbering-\(firstSentence)", chapters: [BookRunSource.chapterText(input)])
-        let method = await Linker.make(embedding: .automatic)
+        let method = await Linker.make(embedding: .contextual)
         let chapter = await method.prepare(Underliner.input(0, of: source), ofBook: source.id) { [Underliner.input(0, of: source)] }
         var found: [String] = []
         for await paragraph in method.results(in: chapter, startingAt: chapter.first) {

@@ -33,13 +33,13 @@ func collect(_ underliner: any Underlining, chapter: Int, of book: any BookSourc
     return out
 }
 
-/// A method that is not R8: it underlines the first three words of every sentence but the first, pointing at the sentence before.
+/// A method that is not the engine's: it underlines the first three words of every sentence but the first, pointing at the sentence before.
 /// It exists to show that a new `LinkMethod` plugs in without any other code changing, and to run the contract on a second method.
 struct PreviousSentenceLinker: LinkMethod {
     let name = "PreviousSentence"
     let version = 99
     let summary = "Test method"
-    private let ctrl = UnderlineCtrl(model: .rulesOnly, embedding: .none)
+    private let ctrl = UnderlineCtrl(embeddingSvc: EmbeddingSvcUnavailable())
 
     func prepare(_ chapter: ChapterInput, ofBook book: String, chapters: @escaping @Sendable () -> [ChapterInput]) async -> IndexedChapter {
         await ctrl.prepare(chapter)

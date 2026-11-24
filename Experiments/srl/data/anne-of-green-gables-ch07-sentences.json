@@ -1,0 +1,653 @@
+[
+{
+"id": 0,
+"paragraph": 0,
+"start": 0,
+"end": 61,
+"text": "WHEN Marilla took Anne up to bed that night she said stiffly:"
+},
+{
+"id": 1,
+"paragraph": 1,
+"start": 63,
+"end": 167,
+"text": "\"Now, Anne, I noticed last night that you threw your clothes all about the floor when you took them off."
+},
+{
+"id": 2,
+"paragraph": 1,
+"start": 168,
+"end": 225,
+"text": "That is a very untidy habit, and I can't allow it at all."
+},
+{
+"id": 3,
+"paragraph": 1,
+"start": 226,
+"end": 315,
+"text": "As soon as you take off any article of clothing fold it neatly and place it on the chair."
+},
+{
+"id": 4,
+"paragraph": 1,
+"start": 316,
+"end": 375,
+"text": "I haven't any use at all for little girls who aren't neat.\""
+},
+{
+"id": 5,
+"paragraph": 2,
+"start": 377,
+"end": 477,
+"text": "\"I was so harrowed up in my mind last night that I didn't think about my clothes at all,\" said Anne."
+},
+{
+"id": 6,
+"paragraph": 2,
+"start": 478,
+"end": 509,
+"text": "\"I'll fold them nicely tonight."
+},
+{
+"id": 7,
+"paragraph": 2,
+"start": 510,
+"end": 552,
+"text": "They always made us do that at the asylum."
+},
+{
+"id": 8,
+"paragraph": 2,
+"start": 553,
+"end": 662,
+"text": "Half the time, though, I'd forget, I'd be in such a hurry to get into bed nice and quiet and imagine things.\""
+},
+{
+"id": 9,
+"paragraph": 3,
+"start": 664,
+"end": 743,
+"text": "\"You'll have to remember a little better if you stay here,\" admonished Marilla."
+},
+{
+"id": 10,
+"paragraph": 3,
+"start": 744,
+"end": 778,
+"text": "\"There, that looks something like."
+},
+{
+"id": 11,
+"paragraph": 3,
+"start": 779,
+"end": 818,
+"text": "Say your prayers now and get into bed.\""
+},
+{
+"id": 12,
+"paragraph": 4,
+"start": 820,
+"end": 862,
+"text": "\"I never say any prayers,\" announced Anne."
+},
+{
+"id": 13,
+"paragraph": 5,
+"start": 864,
+"end": 902,
+"text": "Marilla looked horrified astonishment."
+},
+{
+"id": 14,
+"paragraph": 6,
+"start": 904,
+"end": 933,
+"text": "\"Why, Anne, what do you mean?"
+},
+{
+"id": 15,
+"paragraph": 6,
+"start": 934,
+"end": 976,
+"text": "Were you never taught to say your prayers?"
+},
+{
+"id": 16,
+"paragraph": 6,
+"start": 977,
+"end": 1028,
+"text": "God always wants little girls to say their prayers."
+},
+{
+"id": 17,
+"paragraph": 6,
+"start": 1029,
+"end": 1062,
+"text": "Don't you know who God is, Anne?\""
+},
+{
+"id": 18,
+"paragraph": 7,
+"start": 1064,
+"end": 1225,
+"text": "\"'God is a spirit, infinite, eternal and unchangeable, in His being, wisdom, power, holiness, justice, goodness, and truth,'\" responded Anne promptly and glibly."
+},
+{
+"id": 19,
+"paragraph": 8,
+"start": 1227,
+"end": 1258,
+"text": "Marilla looked rather relieved."
+},
+{
+"id": 20,
+"paragraph": 9,
+"start": 1260,
+"end": 1307,
+"text": "\"So you do know something then, thank goodness!"
+},
+{
+"id": 21,
+"paragraph": 9,
+"start": 1308,
+"end": 1335,
+"text": "You're not quite a heathen."
+},
+{
+"id": 22,
+"paragraph": 9,
+"start": 1336,
+"end": 1362,
+"text": "Where did you learn that?\""
+},
+{
+"id": 23,
+"paragraph": 10,
+"start": 1364,
+"end": 1397,
+"text": "\"Oh, at the asylum Sunday-school."
+},
+{
+"id": 24,
+"paragraph": 10,
+"start": 1398,
+"end": 1437,
+"text": "They made us learn the whole catechism."
+},
+{
+"id": 25,
+"paragraph": 10,
+"start": 1438,
+"end": 1461,
+"text": "I liked it pretty well."
+},
+{
+"id": 26,
+"paragraph": 10,
+"start": 1462,
+"end": 1513,
+"text": "There's something splendid about some of the words."
+},
+{
+"id": 27,
+"paragraph": 10,
+"start": 1514,
+"end": 1551,
+"text": "'Infinite, eternal and unchangeable.'"
+},
+{
+"id": 28,
+"paragraph": 10,
+"start": 1552,
+"end": 1569,
+"text": "Isn't that grand?"
+},
+{
+"id": 29,
+"paragraph": 10,
+"start": 1570,
+"end": 1625,
+"text": "It has such a roll to it—just like a big organ playing."
+},
+{
+"id": 30,
+"paragraph": 10,
+"start": 1626,
+"end": 1713,
+"text": "You couldn't quite call it poetry, I suppose, but it sounds a lot like it, doesn't it?\""
+},
+{
+"id": 31,
+"paragraph": 11,
+"start": 1715,
+"end": 1794,
+"text": "\"We're not talking about poetry, Anne—we are talking about saying your prayers."
+},
+{
+"id": 32,
+"paragraph": 11,
+"start": 1795,
+"end": 1875,
+"text": "Don't you know it's a terrible wicked thing not to say your prayers every night?"
+},
+{
+"id": 33,
+"paragraph": 11,
+"start": 1876,
+"end": 1919,
+"text": "I'm afraid you are a very bad little girl.\""
+},
+{
+"id": 34,
+"paragraph": 12,
+"start": 1921,
+"end": 2009,
+"text": "\"You'd find it easier to be bad than good if you had red hair,\" said Anne reproachfully."
+},
+{
+"id": 35,
+"paragraph": 12,
+"start": 2010,
+"end": 2066,
+"text": "\"People who haven't red hair don't know what trouble is."
+},
+{
+"id": 36,
+"paragraph": 12,
+"start": 2067,
+"end": 2162,
+"text": "Mrs. Thomas told me that God made my hair red on purpose, and I've never cared about Him since."
+},
+{
+"id": 37,
+"paragraph": 12,
+"start": 2163,
+"end": 2232,
+"text": "And anyhow I'd always be too tired at night to bother saying prayers."
+},
+{
+"id": 38,
+"paragraph": 12,
+"start": 2233,
+"end": 2308,
+"text": "People who have to look after twins can't be expected to say their prayers."
+},
+{
+"id": 39,
+"paragraph": 12,
+"start": 2309,
+"end": 2346,
+"text": "Now, do you honestly think they can?\""
+},
+{
+"id": 40,
+"paragraph": 13,
+"start": 2348,
+"end": 2417,
+"text": "Marilla decided that Anne's religious training must be begun at once."
+},
+{
+"id": 41,
+"paragraph": 13,
+"start": 2418,
+"end": 2455,
+"text": "Plainly there was no time to be lost."
+},
+{
+"id": 42,
+"paragraph": 14,
+"start": 2457,
+"end": 2519,
+"text": "\"You must say your prayers while you are under my roof, Anne.\""
+},
+{
+"id": 43,
+"paragraph": 15,
+"start": 2521,
+"end": 2583,
+"text": "\"Why, of course, if you want me to,\" assented Anne cheerfully."
+},
+{
+"id": 44,
+"paragraph": 15,
+"start": 2584,
+"end": 2615,
+"text": "\"I'd do anything to oblige you."
+},
+{
+"id": 45,
+"paragraph": 15,
+"start": 2616,
+"end": 2669,
+"text": "But you'll have to tell me what to say for this once."
+},
+{
+"id": 46,
+"paragraph": 15,
+"start": 2670,
+"end": 2741,
+"text": "After I get into bed I'll imagine out a real nice prayer to say always."
+},
+{
+"id": 47,
+"paragraph": 15,
+"start": 2742,
+"end": 2819,
+"text": "I believe that it will be quite interesting, now that I come to think of it.\""
+},
+{
+"id": 48,
+"paragraph": 16,
+"start": 2821,
+"end": 2874,
+"text": "\"You must kneel down,\" said Marilla in embarrassment."
+},
+{
+"id": 49,
+"paragraph": 17,
+"start": 2876,
+"end": 2927,
+"text": "Anne knelt at Marilla's knee and looked up gravely."
+},
+{
+"id": 50,
+"paragraph": 18,
+"start": 2929,
+"end": 2965,
+"text": "\"Why must people kneel down to pray?"
+},
+{
+"id": 51,
+"paragraph": 18,
+"start": 2966,
+"end": 3019,
+"text": "If I really wanted to pray I'll tell you what I'd do."
+},
+{
+"id": 52,
+"paragraph": 18,
+"start": 3020,
+"end": 3208,
+"text": "I'd go out into a great big field all alone or into the deep, deep woods, and I'd look up into the sky—up—up—up—into that lovely blue sky that looks as if there was no end to its blueness."
+},
+{
+"id": 53,
+"paragraph": 18,
+"start": 3209,
+"end": 3241,
+"text": "And then I'd just feel a prayer."
+},
+{
+"id": 54,
+"paragraph": 18,
+"start": 3242,
+"end": 3258,
+"text": "Well, I'm ready."
+},
+{
+"id": 55,
+"paragraph": 18,
+"start": 3259,
+"end": 3277,
+"text": "What am I to say?\""
+},
+{
+"id": 56,
+"paragraph": 19,
+"start": 3279,
+"end": 3319,
+"text": "Marilla felt more embarrassed than ever."
+},
+{
+"id": 57,
+"paragraph": 19,
+"start": 3320,
+"end": 3402,
+"text": "She had intended to teach Anne the childish classic, \"Now I lay me down to sleep.\""
+},
+{
+"id": 58,
+"paragraph": 19,
+"start": 3403,
+"end": 3840,
+"text": "But she had, as I have told you, the glimmerings of a sense of humor—which is simply another name for a sense of the fitness of things; and it suddenly occurred to her that that simple little prayer, sacred to white-robed childhood lisping at motherly knees, was entirely unsuited to this freckled witch of a girl who knew and cared nothing about God's love, since she had never had it translated to her through the medium of human love."
+},
+{
+"id": 59,
+"paragraph": 20,
+"start": 3842,
+"end": 3907,
+"text": "\"You're old enough to pray for yourself, Anne,\" she said finally."
+},
+{
+"id": 60,
+"paragraph": 20,
+"start": 3908,
+"end": 3987,
+"text": "\"Just thank God for your blessings and ask Him humbly for the things you want.\""
+},
+{
+"id": 61,
+"paragraph": 21,
+"start": 3989,
+"end": 4063,
+"text": "\"Well, I'll do my best,\" promised Anne, burying her face in Marilla's lap."
+},
+{
+"id": 62,
+"paragraph": 21,
+"start": 4064,
+"end": 4194,
+"text": "\"Gracious heavenly Father—that's the way the ministers say it in church, so I suppose it's all right in private prayer, isn't it?\""
+},
+{
+"id": 63,
+"paragraph": 21,
+"start": 4195,
+"end": 4242,
+"text": "she interjected, lifting her head for a moment."
+},
+{
+"id": 64,
+"paragraph": 21,
+"start": 4243,
+"end": 4372,
+"text": "\"Gracious heavenly Father, I thank Thee for the White Way of Delight and the Lake of Shining Waters and Bonny and the Snow Queen."
+},
+{
+"id": 65,
+"paragraph": 21,
+"start": 4373,
+"end": 4412,
+"text": "I'm really extremely grateful for them."
+},
+{
+"id": 66,
+"paragraph": 21,
+"start": 4413,
+"end": 4484,
+"text": "And that's all the blessings I can think of just now to thank Thee for."
+},
+{
+"id": 67,
+"paragraph": 21,
+"start": 4485,
+"end": 4635,
+"text": "As for the things I want, they're so numerous that it would take a great deal of time to name them all, so I will only mention the two most important."
+},
+{
+"id": 68,
+"paragraph": 21,
+"start": 4636,
+"end": 4721,
+"text": "Please let me stay at Green Gables; and please let me be good-looking when I grow up."
+},
+{
+"id": 69,
+"paragraph": 21,
+"start": 4722,
+"end": 4731,
+"text": "I remain,"
+},
+{
+"id": 70,
+"paragraph": 22,
+"start": 4733,
+"end": 4767,
+"text": "\"Yours respectfully, Anne Shirley."
+},
+{
+"id": 71,
+"paragraph": 23,
+"start": 4769,
+"end": 4797,
+"text": "\"There, did I do all right?\""
+},
+{
+"id": 72,
+"paragraph": 23,
+"start": 4798,
+"end": 4828,
+"text": "she asked eagerly, getting up."
+},
+{
+"id": 73,
+"paragraph": 23,
+"start": 4829,
+"end": 4917,
+"text": "\"I could have made it much more flowery if I'd had a little more time to think it over.\""
+},
+{
+"id": 74,
+"paragraph": 24,
+"start": 4919,
+"end": 5122,
+"text": "Poor Marilla was only preserved from complete collapse by remembering that it was not irreverence, but simply spiritual ignorance on the part of Anne that was responsible for this extraordinary petition."
+},
+{
+"id": 75,
+"paragraph": 24,
+"start": 5123,
+"end": 5291,
+"text": "She tucked the child up in bed, mentally vowing that she should be taught a prayer the very next day, and was leaving the room with the light when Anne called her back."
+},
+{
+"id": 76,
+"paragraph": 25,
+"start": 5293,
+"end": 5322,
+"text": "\"I've just thought of it now."
+},
+{
+"id": 77,
+"paragraph": 25,
+"start": 5323,
+"end": 5421,
+"text": "I should have said 'Amen' in place of 'yours respectfully,' shouldn't I?—the way the ministers do."
+},
+{
+"id": 78,
+"paragraph": 25,
+"start": 5422,
+"end": 5518,
+"text": "I'd forgotten it, but I felt a prayer should be finished off in some way, so I put in the other."
+},
+{
+"id": 79,
+"paragraph": 25,
+"start": 5519,
+"end": 5563,
+"text": "Do you suppose it will make any difference?\""
+},
+{
+"id": 80,
+"paragraph": 26,
+"start": 5565,
+"end": 5607,
+"text": "\"I—I don't suppose it will,\" said Marilla."
+},
+{
+"id": 81,
+"paragraph": 26,
+"start": 5608,
+"end": 5643,
+"text": "\"Go to sleep now like a good child."
+},
+{
+"id": 82,
+"paragraph": 26,
+"start": 5644,
+"end": 5656,
+"text": "Good night.\""
+},
+{
+"id": 83,
+"paragraph": 27,
+"start": 5658,
+"end": 5769,
+"text": "\"I can say good night tonight with a clear conscience,\" said Anne, cuddling luxuriously down among her pillows."
+},
+{
+"id": 84,
+"paragraph": 28,
+"start": 5771,
+"end": 5863,
+"text": "Marilla retreated to the kitchen, set the candle firmly on the table, and glared at Matthew."
+},
+{
+"id": 85,
+"paragraph": 29,
+"start": 5865,
+"end": 5953,
+"text": "\"Matthew Cuthbert, it's about time somebody adopted that child and taught her something."
+},
+{
+"id": 86,
+"paragraph": 29,
+"start": 5954,
+"end": 5991,
+"text": "She's next door to a perfect heathen."
+},
+{
+"id": 87,
+"paragraph": 29,
+"start": 5992,
+"end": 6063,
+"text": "Will you believe that she never said a prayer in her life till tonight?"
+},
+{
+"id": 88,
+"paragraph": 29,
+"start": 6064,
+"end": 6155,
+"text": "I'll send to the manse tomorrow and borrow the Peep of the Day series, that's what I'll do."
+},
+{
+"id": 89,
+"paragraph": 29,
+"start": 6156,
+"end": 6251,
+"text": "And she shall go to Sunday-school just as soon as I can get some suitable clothes made for her."
+},
+{
+"id": 90,
+"paragraph": 29,
+"start": 6252,
+"end": 6294,
+"text": "I foresee that I shall have my hands full."
+},
+{
+"id": 91,
+"paragraph": 29,
+"start": 6295,
+"end": 6368,
+"text": "Well, well, we can't get through this world without our share of trouble."
+},
+{
+"id": 92,
+"paragraph": 29,
+"start": 6369,
+"end": 6493,
+"text": "I've had a pretty easy life of it so far, but my time has come at last and I suppose I'll just have to make the best of it.\""
+}
+]

@@ -1,0 +1,3172 @@
+[
+ {
+  "id": 0,
+  "roles": [
+   {
+    "who": "Jo",
+    "did": "wake",
+    "what": null,
+    "where": "the bedroom"
+   }
+  ]
+ },
+ {
+  "id": 1,
+  "roles": [
+   {
+    "who": "Jo",
+    "did": "feel disappointed",
+    "what": "the stockings",
+    "where": "the fireplace"
+   }
+  ]
+ },
+ {
+  "id": 2,
+  "roles": [
+   {
+    "who": "Jo",
+    "did": "remember",
+    "what": "Mrs. March's promise",
+    "where": null
+   },
+   {
+    "who": "Jo",
+    "did": "draw out",
+    "what": "the little book",
+    "where": "the pillow"
+   }
+  ]
+ },
+ {
+  "id": 3,
+  "roles": [
+   {
+    "who": "Jo",
+    "did": "know",
+    "what": "the little book",
+    "where": null
+   }
+  ]
+ },
+ {
+  "id": 4,
+  "roles": [
+   {
+    "who": "Jo",
+    "did": "wake",
+    "what": "Meg",
+    "where": null
+   },
+   {
+    "who": "Meg",
+    "did": "look under",
+    "what": "the pillow",
+    "where": null
+   }
+  ]
+ },
+ {
+  "id": 5,
+  "roles": [
+   {
+    "who": "Meg",
+    "did": "find",
+    "what": "the little book",
+    "where": null
+   },
+   {
+    "who": "Mrs. March",
+    "did": "write",
+    "what": "the little book",
+    "where": null
+   }
+  ]
+ },
+ {
+  "id": 6,
+  "roles": [
+   {
+    "who": "Beth",
+    "did": "wake",
+    "what": null,
+    "where": null
+   },
+   {
+    "who": "Amy",
+    "did": "wake",
+    "what": null,
+    "where": null
+   },
+   {
+    "who": "Beth",
+    "did": "find",
+    "what": "the little book",
+    "where": null
+   },
+   {
+    "who": "Amy",
+    "did": "find",
+    "what": "the little book",
+    "where": null
+   }
+  ]
+ },
+ {
+  "id": 7,
+  "roles": [
+   {
+    "who": "Meg",
+    "did": "influence",
+    "what": "her sisters",
+    "where": null
+   },
+   {
+    "who": "Jo",
+    "did": "love",
+    "what": "Meg",
+    "where": null
+   },
+   {
+    "who": "Jo",
+    "did": "obey",
+    "what": "Meg",
+    "where": null
+   }
+  ]
+ },
+ {
+  "id": 8,
+  "roles": [
+   {
+    "who": "Mrs. March",
+    "did": "want",
+    "what": "the girls",
+    "where": null
+   },
+   {
+    "who": "the girls",
+    "did": "read",
+    "what": "the little book",
+    "where": null
+   }
+  ]
+ },
+ {
+  "id": 9,
+  "roles": [
+   {
+    "who": "Mr. March",
+    "did": "go away",
+    "what": null,
+    "where": null
+   },
+   {
+    "who": "the girls",
+    "did": "neglect",
+    "what": "many things",
+    "where": null
+   }
+  ]
+ },
+ {
+  "id": 10,
+  "roles": [
+   {
+    "who": "Meg",
+    "did": "keep",
+    "what": "the little book",
+    "where": "the table"
+   },
+   {
+    "who": "Meg",
+    "did": "read",
+    "what": "the little book",
+    "where": null
+   }
+  ]
+ },
+ {
+  "id": 11,
+  "roles": [
+   {
+    "who": "Meg",
+    "did": "open",
+    "what": "the little book",
+    "where": null
+   },
+   {
+    "who": "Meg",
+    "did": "read",
+    "what": "the little book",
+    "where": null
+   }
+  ]
+ },
+ {
+  "id": 12,
+  "roles": [
+   {
+    "who": "Jo",
+    "did": "put arm round",
+    "what": "Meg",
+    "where": null
+   },
+   {
+    "who": "Jo",
+    "did": "read",
+    "what": "the little book",
+    "where": null
+   }
+  ]
+ },
+ {
+  "id": 13,
+  "roles": []
+ },
+ {
+  "id": 14,
+  "roles": [
+   {
+    "who": "Amy",
+    "did": "do as they do",
+    "what": null,
+    "where": null
+   }
+  ]
+ },
+ {
+  "id": 15,
+  "roles": [
+   {
+    "who": "Beth",
+    "did": "help",
+    "what": "Amy",
+    "where": null
+   },
+   {
+    "who": "Beth",
+    "did": "whisper",
+    "what": null,
+    "where": null
+   }
+  ]
+ },
+ {
+  "id": 16,
+  "roles": [
+   {
+    "who": "Amy",
+    "did": "like",
+    "what": "the little book",
+    "where": null
+   }
+  ]
+ },
+ {
+  "id": 17,
+  "roles": [
+   {
+    "who": "the girls",
+    "did": "turn",
+    "what": "the pages",
+    "where": null
+   }
+  ]
+ },
+ {
+  "id": 18,
+  "roles": []
+ },
+ {
+  "id": 19,
+  "roles": [
+   {
+    "who": "Meg",
+    "did": "run down",
+    "what": null,
+    "where": null
+   },
+   {
+    "who": "Jo",
+    "did": "run down",
+    "what": null,
+    "where": null
+   },
+   {
+    "who": "Meg",
+    "did": "thank",
+    "what": "Mrs. March",
+    "where": null
+   }
+  ]
+ },
+ {
+  "id": 20,
+  "roles": []
+ },
+ {
+  "id": 21,
+  "roles": [
+   {
+    "who": "a poor creature",
+    "did": "beg",
+    "what": null,
+    "where": null
+   },
+   {
+    "who": "Mrs. March",
+    "did": "go off",
+    "what": "the poor family",
+    "where": null
+   }
+  ]
+ },
+ {
+  "id": 22,
+  "roles": [
+   {
+    "who": "Mrs. March",
+    "did": "give away",
+    "what": "food and clothes",
+    "where": null
+   },
+   {
+    "who": "Hannah",
+    "did": "live with",
+    "what": "the family",
+    "where": null
+   }
+  ]
+ },
+ {
+  "id": 23,
+  "roles": [
+   {
+    "who": "Mrs. March",
+    "did": "come back",
+    "what": null,
+    "where": null
+   },
+   {
+    "who": "Hannah",
+    "did": "fry",
+    "what": "the cakes",
+    "where": null
+   },
+   {
+    "who": "Meg",
+    "did": "look over",
+    "what": "the presents",
+    "where": null
+   },
+   {
+    "who": "the girls",
+    "did": "keep",
+    "what": "the basket",
+    "where": "under the sofa"
+   }
+  ]
+ },
+ {
+  "id": 24,
+  "roles": [
+   {
+    "who": "Meg",
+    "did": "ask about",
+    "what": "Amy's cologne",
+    "where": null
+   }
+  ]
+ },
+ {
+  "id": 25,
+  "roles": [
+   {
+    "who": "Meg",
+    "did": "miss",
+    "what": "Amy's cologne",
+    "where": null
+   }
+  ]
+ },
+ {
+  "id": 26,
+  "roles": [
+   {
+    "who": "Amy",
+    "did": "take",
+    "what": "Amy's cologne",
+    "where": null
+   },
+   {
+    "who": "Amy",
+    "did": "put ribbon on",
+    "what": "Amy's cologne",
+    "where": null
+   },
+   {
+    "who": "Jo",
+    "did": "dance",
+    "what": null,
+    "where": "the room"
+   },
+   {
+    "who": "Jo",
+    "did": "wear",
+    "what": "the slippers",
+    "where": null
+   }
+  ]
+ },
+ {
+  "id": 27,
+  "roles": [
+   {
+    "who": "Beth",
+    "did": "show",
+    "what": "Beth's handkerchiefs",
+    "where": null
+   }
+  ]
+ },
+ {
+  "id": 28,
+  "roles": [
+   {
+    "who": "Hannah",
+    "did": "wash",
+    "what": "Beth's handkerchiefs",
+    "where": null
+   },
+   {
+    "who": "Beth",
+    "did": "mark",
+    "what": "Beth's handkerchiefs",
+    "where": null
+   },
+   {
+    "who": "Beth",
+    "did": "look at",
+    "what": "Beth's handkerchiefs",
+    "where": null
+   }
+  ]
+ },
+ {
+  "id": 29,
+  "roles": []
+ },
+ {
+  "id": 30,
+  "roles": [
+   {
+    "who": "Beth",
+    "did": "mark",
+    "what": "Beth's handkerchiefs",
+    "where": null
+   }
+  ]
+ },
+ {
+  "id": 31,
+  "roles": []
+ },
+ {
+  "id": 32,
+  "roles": []
+ },
+ {
+  "id": 33,
+  "roles": [
+   {
+    "who": "Jo",
+    "did": "take up",
+    "what": "Beth's handkerchiefs",
+    "where": null
+   }
+  ]
+ },
+ {
+  "id": 34,
+  "roles": []
+ },
+ {
+  "id": 35,
+  "roles": [
+   {
+    "who": "Beth",
+    "did": "mark",
+    "what": "Beth's handkerchiefs",
+    "where": null
+   },
+   {
+    "who": "Beth",
+    "did": "want",
+    "what": "Mrs. March",
+    "where": null
+   }
+  ]
+ },
+ {
+  "id": 36,
+  "roles": []
+ },
+ {
+  "id": 37,
+  "roles": [
+   {
+    "who": "Beth's handkerchiefs",
+    "did": "please",
+    "what": "Mrs. March",
+    "where": null
+   },
+   {
+    "who": "Meg",
+    "did": "frown at",
+    "what": "Jo",
+    "where": null
+   },
+   {
+    "who": "Meg",
+    "did": "smile at",
+    "what": "Beth",
+    "where": null
+   }
+  ]
+ },
+ {
+  "id": 38,
+  "roles": [
+   {
+    "who": "Mrs. March",
+    "did": "come",
+    "what": null,
+    "where": null
+   }
+  ]
+ },
+ {
+  "id": 39,
+  "roles": [
+   {
+    "who": "the girls",
+    "did": "hide",
+    "what": "the basket",
+    "where": null
+   }
+  ]
+ },
+ {
+  "id": 40,
+  "roles": [
+   {
+    "who": "Jo",
+    "did": "cry",
+    "what": null,
+    "where": null
+   },
+   {
+    "who": "someone",
+    "did": "slam",
+    "what": "the door",
+    "where": "the hall"
+   }
+  ]
+ },
+ {
+  "id": 41,
+  "roles": [
+   {
+    "who": "Amy",
+    "did": "come in",
+    "what": null,
+    "where": null
+   },
+   {
+    "who": "Amy",
+    "did": "see",
+    "what": "her sisters",
+    "where": null
+   }
+  ]
+ },
+ {
+  "id": 42,
+  "roles": [
+   {
+    "who": "Amy",
+    "did": "hide",
+    "what": "Amy's cologne",
+    "where": null
+   }
+  ]
+ },
+ {
+  "id": 43,
+  "roles": [
+   {
+    "who": "Meg",
+    "did": "ask",
+    "what": "Amy",
+    "where": null
+   },
+   {
+    "who": "Amy",
+    "did": "go out",
+    "what": null,
+    "where": null
+   }
+  ]
+ },
+ {
+  "id": 44,
+  "roles": [
+   {
+    "who": "Jo",
+    "did": "laugh at",
+    "what": "Amy",
+    "where": null
+   }
+  ]
+ },
+ {
+  "id": 45,
+  "roles": []
+ },
+ {
+  "id": 46,
+  "roles": [
+   {
+    "who": "Amy",
+    "did": "change",
+    "what": "Amy's cologne",
+    "where": null
+   },
+   {
+    "who": "Amy",
+    "did": "give",
+    "what": "Amy's money",
+    "where": null
+   },
+   {
+    "who": "Amy",
+    "did": "try not to be selfish",
+    "what": null,
+    "where": null
+   }
+  ]
+ },
+ {
+  "id": 47,
+  "roles": [
+   {
+    "who": "Amy",
+    "did": "show",
+    "what": "Amy's cologne",
+    "where": null
+   },
+   {
+    "who": "Meg",
+    "did": "hug",
+    "what": "Amy",
+    "where": null
+   },
+   {
+    "who": "Jo",
+    "did": "call trump",
+    "what": "Amy",
+    "where": null
+   },
+   {
+    "who": "Beth",
+    "did": "run to",
+    "what": "the window",
+    "where": null
+   }
+  ]
+ },
+ {
+  "id": 48,
+  "roles": [
+   {
+    "who": "Amy",
+    "did": "feel ashamed",
+    "what": "Amy's present",
+    "where": null
+   },
+   {
+    "who": "Amy",
+    "did": "run round",
+    "what": "the corner",
+    "where": null
+   },
+   {
+    "who": "Amy",
+    "did": "change",
+    "what": "Amy's cologne",
+    "where": null
+   }
+  ]
+ },
+ {
+  "id": 49,
+  "roles": [
+   {
+    "who": "someone",
+    "did": "bang",
+    "what": "the door",
+    "where": null
+   },
+   {
+    "who": "the girls",
+    "did": "put",
+    "what": "the basket",
+    "where": "under the sofa"
+   },
+   {
+    "who": "the girls",
+    "did": "go to",
+    "what": "the table",
+    "where": null
+   }
+  ]
+ },
+ {
+  "id": 50,
+  "roles": [
+   {
+    "who": "the girls",
+    "did": "wish merry Christmas",
+    "what": "Mrs. March",
+    "where": null
+   }
+  ]
+ },
+ {
+  "id": 51,
+  "roles": []
+ },
+ {
+  "id": 52,
+  "roles": [
+   {
+    "who": "the girls",
+    "did": "thank",
+    "what": "Mrs. March",
+    "where": null
+   }
+  ]
+ },
+ {
+  "id": 53,
+  "roles": [
+   {
+    "who": "the girls",
+    "did": "read",
+    "what": "the little book",
+    "where": null
+   }
+  ]
+ },
+ {
+  "id": 54,
+  "roles": [
+   {
+    "who": "Mrs. March",
+    "did": "greet",
+    "what": "the girls",
+    "where": null
+   }
+  ]
+ },
+ {
+  "id": 55,
+  "roles": [
+   {
+    "who": "the girls",
+    "did": "begin",
+    "what": "the little book",
+    "where": null
+   }
+  ]
+ },
+ {
+  "id": 56,
+  "roles": [
+   {
+    "who": "Mrs. March",
+    "did": "want",
+    "what": "one word",
+    "where": null
+   }
+  ]
+ },
+ {
+  "id": 57,
+  "roles": [
+   {
+    "who": "the poor woman",
+    "did": "lie",
+    "what": null,
+    "where": "the poor family"
+   }
+  ]
+ },
+ {
+  "id": 58,
+  "roles": [
+   {
+    "who": "the Hummel children",
+    "did": "huddle into",
+    "what": "one bed",
+    "where": null
+   },
+   {
+    "who": "the Hummel children",
+    "did": "have no",
+    "what": "fire",
+    "where": null
+   }
+  ]
+ },
+ {
+  "id": 59,
+  "roles": [
+   {
+    "who": "the oldest boy",
+    "did": "tell",
+    "what": "Mrs. March",
+    "where": null
+   },
+   {
+    "who": "the Hummel children",
+    "did": "suffer",
+    "what": "hunger and cold",
+    "where": null
+   }
+  ]
+ },
+ {
+  "id": 60,
+  "roles": [
+   {
+    "who": "the girls",
+    "did": "give",
+    "what": "breakfast",
+    "where": null
+   }
+  ]
+ },
+ {
+  "id": 61,
+  "roles": [
+   {
+    "who": "the girls",
+    "did": "wait",
+    "what": null,
+    "where": null
+   },
+   {
+    "who": "Jo",
+    "did": "exclaim",
+    "what": null,
+    "where": null
+   }
+  ]
+ },
+ {
+  "id": 62,
+  "roles": [
+   {
+    "who": "Beth",
+    "did": "carry",
+    "what": "the things",
+    "where": null
+   },
+   {
+    "who": "Beth",
+    "did": "help",
+    "what": "the Hummel children",
+    "where": null
+   }
+  ]
+ },
+ {
+  "id": 63,
+  "roles": []
+ },
+ {
+  "id": 64,
+  "roles": [
+   {
+    "who": "Amy",
+    "did": "take",
+    "what": "the cream and muffins",
+    "where": null
+   },
+   {
+    "who": "Amy",
+    "did": "give up",
+    "what": "the cream and muffins",
+    "where": null
+   }
+  ]
+ },
+ {
+  "id": 65,
+  "roles": [
+   {
+    "who": "Meg",
+    "did": "cover",
+    "what": "the buckwheats",
+    "where": null
+   },
+   {
+    "who": "Meg",
+    "did": "pile",
+    "what": "the bread",
+    "where": null
+   }
+  ]
+ },
+ {
+  "id": 66,
+  "roles": [
+   {
+    "who": "Mrs. March",
+    "did": "smile",
+    "what": null,
+    "where": null
+   }
+  ]
+ },
+ {
+  "id": 67,
+  "roles": [
+   {
+    "who": "the girls",
+    "did": "go",
+    "what": null,
+    "where": null
+   },
+   {
+    "who": "the girls",
+    "did": "help",
+    "what": "Mrs. March",
+    "where": null
+   },
+   {
+    "who": "the girls",
+    "did": "have",
+    "what": "bread and milk",
+    "where": null
+   }
+  ]
+ },
+ {
+  "id": 68,
+  "roles": [
+   {
+    "who": "the girls",
+    "did": "set out",
+    "what": null,
+    "where": null
+   }
+  ]
+ },
+ {
+  "id": 69,
+  "roles": [
+   {
+    "who": "the girls",
+    "did": "go through",
+    "what": "back streets",
+    "where": null
+   },
+   {
+    "who": "no one",
+    "did": "laugh at",
+    "what": "the girls",
+    "where": null
+   }
+  ]
+ },
+ {
+  "id": 70,
+  "roles": [
+   {
+    "who": "the Hummel children",
+    "did": "keep warm",
+    "what": null,
+    "where": "the poor family"
+   }
+  ]
+ },
+ {
+  "id": 71,
+  "roles": [
+   {
+    "who": "the Hummel children",
+    "did": "stare",
+    "what": null,
+    "where": null
+   },
+   {
+    "who": "the girls",
+    "did": "go in",
+    "what": null,
+    "where": "the poor family"
+   }
+  ]
+ },
+ {
+  "id": 72,
+  "roles": []
+ },
+ {
+  "id": 73,
+  "roles": [
+   {
+    "who": "angels",
+    "did": "come",
+    "what": null,
+    "where": null
+   }
+  ]
+ },
+ {
+  "id": 74,
+  "roles": [
+   {
+    "who": "the poor woman",
+    "did": "cry for joy",
+    "what": null,
+    "where": null
+   }
+  ]
+ },
+ {
+  "id": 75,
+  "roles": [
+   {
+    "who": "Jo",
+    "did": "say",
+    "what": null,
+    "where": null
+   },
+   {
+    "who": "Jo",
+    "did": "set laughing",
+    "what": "the Hummel children",
+    "where": null
+   }
+  ]
+ },
+ {
+  "id": 76,
+  "roles": []
+ },
+ {
+  "id": 77,
+  "roles": [
+   {
+    "who": "Hannah",
+    "did": "carry",
+    "what": "wood",
+    "where": null
+   },
+   {
+    "who": "Hannah",
+    "did": "make",
+    "what": "fire",
+    "where": null
+   },
+   {
+    "who": "Hannah",
+    "did": "stop up",
+    "what": "the broken panes",
+    "where": null
+   }
+  ]
+ },
+ {
+  "id": 78,
+  "roles": [
+   {
+    "who": "Mrs. March",
+    "did": "give",
+    "what": "tea and gruel",
+    "where": null
+   },
+   {
+    "who": "Mrs. March",
+    "did": "comfort",
+    "what": "the poor woman",
+    "where": null
+   },
+   {
+    "who": "Mrs. March",
+    "did": "dress",
+    "what": "the baby",
+    "where": null
+   }
+  ]
+ },
+ {
+  "id": 79,
+  "roles": [
+   {
+    "who": "the girls",
+    "did": "spread",
+    "what": "the table",
+    "where": null
+   },
+   {
+    "who": "the girls",
+    "did": "set",
+    "what": "the Hummel children",
+    "where": null
+   },
+   {
+    "who": "the girls",
+    "did": "feed",
+    "what": "the Hummel children",
+    "where": null
+   }
+  ]
+ },
+ {
+  "id": 80,
+  "roles": []
+ },
+ {
+  "id": 81,
+  "roles": []
+ },
+ {
+  "id": 82,
+  "roles": [
+   {
+    "who": "the Hummel children",
+    "did": "cry",
+    "what": null,
+    "where": null
+   },
+   {
+    "who": "the Hummel children",
+    "did": "eat",
+    "what": "breakfast",
+    "where": null
+   },
+   {
+    "who": "the Hummel children",
+    "did": "warm",
+    "what": "their hands",
+    "where": null
+   }
+  ]
+ },
+ {
+  "id": 83,
+  "roles": [
+   {
+    "who": "the girls",
+    "did": "be called",
+    "what": "angel children",
+    "where": null
+   }
+  ]
+ },
+ {
+  "id": 84,
+  "roles": [
+   {
+    "who": "the girls",
+    "did": "not get",
+    "what": "breakfast",
+    "where": null
+   }
+  ]
+ },
+ {
+  "id": 85,
+  "roles": [
+   {
+    "who": "the girls",
+    "did": "go away",
+    "what": null,
+    "where": null
+   },
+   {
+    "who": "the girls",
+    "did": "give away",
+    "what": "breakfast",
+    "where": null
+   },
+   {
+    "who": "the girls",
+    "did": "have",
+    "what": "bread and milk",
+    "where": null
+   }
+  ]
+ },
+ {
+  "id": 86,
+  "roles": [
+   {
+    "who": "Meg",
+    "did": "say",
+    "what": null,
+    "where": null
+   },
+   {
+    "who": "the girls",
+    "did": "set out",
+    "what": "the presents",
+    "where": null
+   },
+   {
+    "who": "Mrs. March",
+    "did": "collect",
+    "what": "clothes",
+    "where": "upstairs"
+   }
+  ]
+ },
+ {
+  "id": 87,
+  "roles": [
+   {
+    "who": "the tall vase",
+    "did": "stand",
+    "what": "the table",
+    "where": null
+   }
+  ]
+ },
+ {
+  "id": 88,
+  "roles": [
+   {
+    "who": "Mrs. March",
+    "did": "come",
+    "what": null,
+    "where": null
+   }
+  ]
+ },
+ {
+  "id": 89,
+  "roles": [
+   {
+    "who": "Beth",
+    "did": "strike up",
+    "what": "the march",
+    "where": null
+   }
+  ]
+ },
+ {
+  "id": 90,
+  "roles": [
+   {
+    "who": "Amy",
+    "did": "open",
+    "what": "the door",
+    "where": null
+   }
+  ]
+ },
+ {
+  "id": 91,
+  "roles": [
+   {
+    "who": "the girls",
+    "did": "cheer",
+    "what": "Mrs. March",
+    "where": null
+   }
+  ]
+ },
+ {
+  "id": 92,
+  "roles": [
+   {
+    "who": "Jo",
+    "did": "prance",
+    "what": null,
+    "where": null
+   },
+   {
+    "who": "Meg",
+    "did": "conduct",
+    "what": "Mrs. March",
+    "where": "the seat of honor"
+   }
+  ]
+ },
+ {
+  "id": 93,
+  "roles": [
+   {
+    "who": "Beth",
+    "did": "play",
+    "what": "the march",
+    "where": null
+   },
+   {
+    "who": "Amy",
+    "did": "open",
+    "what": "the door",
+    "where": null
+   },
+   {
+    "who": "Meg",
+    "did": "escort",
+    "what": "Mrs. March",
+    "where": null
+   }
+  ]
+ },
+ {
+  "id": 94,
+  "roles": [
+   {
+    "who": "Mrs. March",
+    "did": "smile",
+    "what": null,
+    "where": null
+   },
+   {
+    "who": "Mrs. March",
+    "did": "examine",
+    "what": "the presents",
+    "where": null
+   },
+   {
+    "who": "Mrs. March",
+    "did": "read",
+    "what": "the notes",
+    "where": null
+   }
+  ]
+ },
+ {
+  "id": 95,
+  "roles": [
+   {
+    "who": "Mrs. March",
+    "did": "put on",
+    "what": "the slippers",
+    "where": null
+   },
+   {
+    "who": "Mrs. March",
+    "did": "pocket",
+    "what": "Beth's handkerchiefs",
+    "where": null
+   },
+   {
+    "who": "Mrs. March",
+    "did": "fasten",
+    "what": "the rose",
+    "where": null
+   },
+   {
+    "who": "Mrs. March",
+    "did": "try on",
+    "what": "the gloves",
+    "where": null
+   }
+  ]
+ },
+ {
+  "id": 96,
+  "roles": [
+   {
+    "who": "the girls",
+    "did": "laugh",
+    "what": null,
+    "where": null
+   },
+   {
+    "who": "the girls",
+    "did": "kiss",
+    "what": null,
+    "where": null
+   },
+   {
+    "who": "the girls",
+    "did": "fall to work",
+    "what": null,
+    "where": null
+   }
+  ]
+ },
+ {
+  "id": 97,
+  "roles": [
+   {
+    "who": "the girls",
+    "did": "prepare",
+    "what": "the play",
+    "where": null
+   }
+  ]
+ },
+ {
+  "id": 98,
+  "roles": [
+   {
+    "who": "the girls",
+    "did": "make",
+    "what": "the costumes",
+    "where": null
+   }
+  ]
+ },
+ {
+  "id": 99,
+  "roles": [
+   {
+    "who": "the girls",
+    "did": "make",
+    "what": "the costumes",
+    "where": null
+   }
+  ]
+ },
+ {
+  "id": 100,
+  "roles": [
+   {
+    "who": "the girls",
+    "did": "revel",
+    "what": null,
+    "where": "the big chamber"
+   }
+  ]
+ },
+ {
+  "id": 101,
+  "roles": [
+   {
+    "who": "Jo",
+    "did": "play",
+    "what": "male parts",
+    "where": null
+   },
+   {
+    "who": "Jo",
+    "did": "like",
+    "what": "the boots",
+    "where": null
+   },
+   {
+    "who": "a friend",
+    "did": "give",
+    "what": "the boots",
+    "where": null
+   }
+  ]
+ },
+ {
+  "id": 102,
+  "roles": [
+   {
+    "who": "Jo",
+    "did": "treasure",
+    "what": "the boots",
+    "where": null
+   }
+  ]
+ },
+ {
+  "id": 103,
+  "roles": [
+   {
+    "who": "Jo",
+    "did": "take",
+    "what": "several parts",
+    "where": null
+   },
+   {
+    "who": "Meg",
+    "did": "take",
+    "what": "several parts",
+    "where": null
+   },
+   {
+    "who": "Jo",
+    "did": "learn",
+    "what": "the parts",
+    "where": null
+   },
+   {
+    "who": "Meg",
+    "did": "learn",
+    "what": "the parts",
+    "where": null
+   }
+  ]
+ },
+ {
+  "id": 104,
+  "roles": []
+ },
+ {
+  "id": 105,
+  "roles": [
+   {
+    "who": "the audience",
+    "did": "pile onto",
+    "what": "the bed",
+    "where": null
+   },
+   {
+    "who": "the audience",
+    "did": "sit",
+    "what": null,
+    "where": "the curtains"
+   }
+  ]
+ },
+ {
+  "id": 106,
+  "roles": [
+   {
+    "who": "Amy",
+    "did": "giggle",
+    "what": null,
+    "where": "the curtains"
+   }
+  ]
+ },
+ {
+  "id": 107,
+  "roles": [
+   {
+    "who": "a bell",
+    "did": "sound",
+    "what": null,
+    "where": null
+   },
+   {
+    "who": "the curtains",
+    "did": "fly apart",
+    "what": null,
+    "where": null
+   },
+   {
+    "who": "the play",
+    "did": "begin",
+    "what": null,
+    "where": null
+   }
+  ]
+ },
+ {
+  "id": 108,
+  "roles": [
+   {
+    "who": "the play",
+    "did": "represent",
+    "what": "a gloomy wood",
+    "where": null
+   }
+  ]
+ },
+ {
+  "id": 109,
+  "roles": [
+   {
+    "who": "the girls",
+    "did": "make",
+    "what": "the cave",
+    "where": null
+   },
+   {
+    "who": "the witch",
+    "did": "bend over",
+    "what": "the black pot",
+    "where": "the cave"
+   }
+  ]
+ },
+ {
+  "id": 110,
+  "roles": [
+   {
+    "who": "the witch",
+    "did": "take off",
+    "what": "the cover",
+    "where": null
+   }
+  ]
+ },
+ {
+  "id": 111,
+  "roles": [
+   {
+    "who": "Hugo",
+    "did": "stalk in",
+    "what": null,
+    "where": null
+   },
+   {
+    "who": "Hugo",
+    "did": "wear",
+    "what": "the boots",
+    "where": null
+   }
+  ]
+ },
+ {
+  "id": 112,
+  "roles": [
+   {
+    "who": "Hugo",
+    "did": "pace",
+    "what": null,
+    "where": null
+   },
+   {
+    "who": "Hugo",
+    "did": "strike",
+    "what": "his forehead",
+    "where": null
+   },
+   {
+    "who": "Hugo",
+    "did": "sing",
+    "what": null,
+    "where": null
+   },
+   {
+    "who": "Hugo",
+    "did": "hate",
+    "what": "Roderigo",
+    "where": null
+   }
+  ]
+ },
+ {
+  "id": 113,
+  "roles": [
+   {
+    "who": "the audience",
+    "did": "applaud",
+    "what": "Hugo",
+    "where": null
+   }
+  ]
+ },
+ {
+  "id": 114,
+  "roles": [
+   {
+    "who": "Hugo",
+    "did": "bow",
+    "what": null,
+    "where": null
+   },
+   {
+    "who": "Hugo",
+    "did": "steal to",
+    "what": "the cave",
+    "where": null
+   },
+   {
+    "who": "Hugo",
+    "did": "order",
+    "what": "Hagar",
+    "where": null
+   }
+  ]
+ },
+ {
+  "id": 115,
+  "roles": [
+   {
+    "who": "Hugo",
+    "did": "need",
+    "what": "Hagar",
+    "where": null
+   }
+  ]
+ },
+ {
+  "id": 116,
+  "roles": [
+   {
+    "who": "Meg",
+    "did": "come out",
+    "what": "the cave",
+    "where": null
+   },
+   {
+    "who": "Meg",
+    "did": "play",
+    "what": "Hagar",
+    "where": null
+   }
+  ]
+ },
+ {
+  "id": 117,
+  "roles": [
+   {
+    "who": "Hugo",
+    "did": "demand",
+    "what": "the potions",
+    "where": null
+   }
+  ]
+ },
+ {
+  "id": 118,
+  "roles": [
+   {
+    "who": "Hagar",
+    "did": "promise",
+    "what": "the potions",
+    "where": null
+   },
+   {
+    "who": "Hagar",
+    "did": "call up",
+    "what": "the spirit",
+    "where": null
+   }
+  ]
+ },
+ {
+  "id": 119,
+  "roles": [
+   {
+    "who": "Hagar",
+    "did": "bid come",
+    "what": "the spirit",
+    "where": null
+   }
+  ]
+ },
+ {
+  "id": 120,
+  "roles": []
+ },
+ {
+  "id": 121,
+  "roles": [
+   {
+    "who": "the spirit",
+    "did": "bring",
+    "what": "the love philter",
+    "where": null
+   }
+  ]
+ },
+ {
+  "id": 122,
+  "roles": []
+ },
+ {
+  "id": 123,
+  "roles": [
+   {
+    "who": "the spirit",
+    "did": "appear",
+    "what": null,
+    "where": "the cave"
+   }
+  ]
+ },
+ {
+  "id": 124,
+  "roles": [
+   {
+    "who": "the spirit",
+    "did": "wave",
+    "what": "a wand",
+    "where": null
+   },
+   {
+    "who": "the spirit",
+    "did": "sing",
+    "what": null,
+    "where": null
+   }
+  ]
+ },
+ {
+  "id": 125,
+  "roles": [
+   {
+    "who": "the spirit",
+    "did": "come",
+    "what": null,
+    "where": null
+   }
+  ]
+ },
+ {
+  "id": 126,
+  "roles": [
+   {
+    "who": "Hagar",
+    "did": "take",
+    "what": "the magic spell",
+    "where": null
+   }
+  ]
+ },
+ {
+  "id": 127,
+  "roles": [
+   {
+    "who": "the spirit",
+    "did": "drop",
+    "what": "the gilded bottle",
+    "where": null
+   },
+   {
+    "who": "the spirit",
+    "did": "vanish",
+    "what": null,
+    "where": null
+   }
+  ]
+ },
+ {
+  "id": 128,
+  "roles": [
+   {
+    "who": "Hagar",
+    "did": "chant",
+    "what": null,
+    "where": null
+   },
+   {
+    "who": "the imp",
+    "did": "appear",
+    "what": null,
+    "where": null
+   },
+   {
+    "who": "the imp",
+    "did": "toss",
+    "what": "the dark bottle",
+    "where": null
+   },
+   {
+    "who": "the imp",
+    "did": "disappear",
+    "what": null,
+    "where": null
+   }
+  ]
+ },
+ {
+  "id": 129,
+  "roles": [
+   {
+    "who": "Hugo",
+    "did": "put",
+    "what": "the potions",
+    "where": "the boots"
+   },
+   {
+    "who": "Hugo",
+    "did": "depart",
+    "what": null,
+    "where": null
+   },
+   {
+    "who": "Hugo",
+    "did": "kill",
+    "what": "Hagar's friends",
+    "where": null
+   },
+   {
+    "who": "Hagar",
+    "did": "curse",
+    "what": "Hugo",
+    "where": null
+   }
+  ]
+ },
+ {
+  "id": 130,
+  "roles": [
+   {
+    "who": "the curtains",
+    "did": "fall",
+    "what": null,
+    "where": null
+   },
+   {
+    "who": "the audience",
+    "did": "eat",
+    "what": "candy",
+    "where": null
+   },
+   {
+    "who": "the audience",
+    "did": "discuss",
+    "what": "the play",
+    "where": null
+   }
+  ]
+ },
+ {
+  "id": 131,
+  "roles": [
+   {
+    "who": "the girls",
+    "did": "hammer",
+    "what": null,
+    "where": null
+   },
+   {
+    "who": "the curtains",
+    "did": "rise",
+    "what": null,
+    "where": null
+   }
+  ]
+ },
+ {
+  "id": 132,
+  "roles": []
+ },
+ {
+  "id": 133,
+  "roles": [
+   {
+    "who": "the tower",
+    "did": "rise",
+    "what": null,
+    "where": null
+   },
+   {
+    "who": "Zara",
+    "did": "wait for",
+    "what": "Roderigo",
+    "where": "the tower"
+   }
+  ]
+ },
+ {
+  "id": 134,
+  "roles": [
+   {
+    "who": "Roderigo",
+    "did": "come",
+    "what": null,
+    "where": null
+   },
+   {
+    "who": "Roderigo",
+    "did": "wear",
+    "what": "the boots",
+    "where": null
+   }
+  ]
+ },
+ {
+  "id": 135,
+  "roles": [
+   {
+    "who": "Roderigo",
+    "did": "kneel",
+    "what": null,
+    "where": "the tower"
+   },
+   {
+    "who": "Roderigo",
+    "did": "sing",
+    "what": "a serenade",
+    "where": null
+   }
+  ]
+ },
+ {
+  "id": 136,
+  "roles": [
+   {
+    "who": "Zara",
+    "did": "reply",
+    "what": null,
+    "where": null
+   },
+   {
+    "who": "Zara",
+    "did": "consent",
+    "what": "to fly",
+    "where": null
+   }
+  ]
+ },
+ {
+  "id": 137,
+  "roles": []
+ },
+ {
+  "id": 138,
+  "roles": [
+   {
+    "who": "Roderigo",
+    "did": "produce",
+    "what": "the rope ladder",
+    "where": null
+   },
+   {
+    "who": "Roderigo",
+    "did": "invite",
+    "what": "Zara",
+    "where": null
+   }
+  ]
+ },
+ {
+  "id": 139,
+  "roles": [
+   {
+    "who": "Zara",
+    "did": "creep from",
+    "what": "the window",
+    "where": null
+   },
+   {
+    "who": "Zara",
+    "did": "put hand on",
+    "what": "Roderigo",
+    "where": null
+   }
+  ]
+ },
+ {
+  "id": 140,
+  "roles": []
+ },
+ {
+  "id": 141,
+  "roles": [
+   {
+    "who": "Zara",
+    "did": "forget",
+    "what": "her train",
+    "where": null
+   }
+  ]
+ },
+ {
+  "id": 142,
+  "roles": [
+   {
+    "who": "the tower",
+    "did": "fall",
+    "what": null,
+    "where": null
+   },
+   {
+    "who": "the tower",
+    "did": "bury",
+    "what": "Roderigo",
+    "where": null
+   }
+  ]
+ },
+ {
+  "id": 143,
+  "roles": [
+   {
+    "who": "the audience",
+    "did": "shriek",
+    "what": null,
+    "where": null
+   },
+   {
+    "who": "the boots",
+    "did": "wave",
+    "what": null,
+    "where": null
+   },
+   {
+    "who": "Zara",
+    "did": "emerge",
+    "what": null,
+    "where": null
+   }
+  ]
+ },
+ {
+  "id": 144,
+  "roles": []
+ },
+ {
+  "id": 145,
+  "roles": [
+   {
+    "who": "Don Pedro",
+    "did": "rush in",
+    "what": null,
+    "where": null
+   },
+   {
+    "who": "Don Pedro",
+    "did": "drag out",
+    "what": "Zara",
+    "where": null
+   }
+  ]
+ },
+ {
+  "id": 146,
+  "roles": []
+ },
+ {
+  "id": 147,
+  "roles": []
+ },
+ {
+  "id": 148,
+  "roles": [
+   {
+    "who": "Don Pedro",
+    "did": "order up",
+    "what": "Roderigo",
+    "where": null
+   },
+   {
+    "who": "Don Pedro",
+    "did": "banish",
+    "what": "Roderigo",
+    "where": null
+   }
+  ]
+ },
+ {
+  "id": 149,
+  "roles": [
+   {
+    "who": "Roderigo",
+    "did": "defy",
+    "what": "Don Pedro",
+    "where": null
+   },
+   {
+    "who": "Roderigo",
+    "did": "refuse",
+    "what": null,
+    "where": null
+   }
+  ]
+ },
+ {
+  "id": 150,
+  "roles": []
+ },
+ {
+  "id": 151,
+  "roles": [
+   {
+    "who": "Zara",
+    "did": "defy",
+    "what": "Don Pedro",
+    "where": null
+   },
+   {
+    "who": "Don Pedro",
+    "did": "order",
+    "what": "the dungeons",
+    "where": null
+   }
+  ]
+ },
+ {
+  "id": 152,
+  "roles": [
+   {
+    "who": "the servant",
+    "did": "come in",
+    "what": "chains",
+    "where": null
+   },
+   {
+    "who": "the servant",
+    "did": "lead away",
+    "what": "Roderigo",
+    "where": null
+   },
+   {
+    "who": "the servant",
+    "did": "forget",
+    "what": "his speech",
+    "where": null
+   }
+  ]
+ },
+ {
+  "id": 153,
+  "roles": [
+   {
+    "who": "Hagar",
+    "did": "appear",
+    "what": null,
+    "where": "the castle hall"
+   },
+   {
+    "who": "Hagar",
+    "did": "free",
+    "what": "Roderigo",
+    "where": null
+   },
+   {
+    "who": "Hagar",
+    "did": "finish",
+    "what": "Hugo",
+    "where": null
+   }
+  ]
+ },
+ {
+  "id": 154,
+  "roles": [
+   {
+    "who": "Hagar",
+    "did": "hide",
+    "what": null,
+    "where": null
+   },
+   {
+    "who": "Hugo",
+    "did": "put",
+    "what": "the potions",
+    "where": "the cups"
+   },
+   {
+    "who": "Hugo",
+    "did": "bid",
+    "what": "the servant",
+    "where": null
+   }
+  ]
+ },
+ {
+  "id": 155,
+  "roles": [
+   {
+    "who": "the servant",
+    "did": "take aside",
+    "what": "Hugo",
+    "where": null
+   },
+   {
+    "who": "Hagar",
+    "did": "change",
+    "what": "the cups",
+    "where": null
+   }
+  ]
+ },
+ {
+  "id": 156,
+  "roles": [
+   {
+    "who": "the servant",
+    "did": "carry away",
+    "what": "the cups",
+    "where": null
+   },
+   {
+    "who": "Hagar",
+    "did": "put back",
+    "what": "the poisoned cup",
+    "where": null
+   }
+  ]
+ },
+ {
+  "id": 157,
+  "roles": [
+   {
+    "who": "Hugo",
+    "did": "drink",
+    "what": "the poisoned cup",
+    "where": null
+   },
+   {
+    "who": "Hugo",
+    "did": "die",
+    "what": null,
+    "where": null
+   },
+   {
+    "who": "Hagar",
+    "did": "inform",
+    "what": "Hugo",
+    "where": null
+   }
+  ]
+ },
+ {
+  "id": 158,
+  "roles": [
+   {
+    "who": "Hugo",
+    "did": "die",
+    "what": null,
+    "where": null
+   }
+  ]
+ },
+ {
+  "id": 159,
+  "roles": [
+   {
+    "who": "Hugo",
+    "did": "appear",
+    "what": null,
+    "where": "the curtains"
+   },
+   {
+    "who": "Hugo",
+    "did": "lead",
+    "what": "Hagar",
+    "where": null
+   }
+  ]
+ },
+ {
+  "id": 160,
+  "roles": [
+   {
+    "who": "Roderigo",
+    "did": "stab",
+    "what": "himself",
+    "where": null
+   },
+   {
+    "who": "Zara",
+    "did": "desert",
+    "what": "Roderigo",
+    "where": null
+   }
+  ]
+ },
+ {
+  "id": 161,
+  "roles": [
+   {
+    "who": "someone",
+    "did": "sing",
+    "what": "a song",
+    "where": null
+   },
+   {
+    "who": "Roderigo",
+    "did": "save",
+    "what": "Zara",
+    "where": null
+   }
+  ]
+ },
+ {
+  "id": 162,
+  "roles": [
+   {
+    "who": "someone",
+    "did": "throw in",
+    "what": "a key",
+    "where": null
+   },
+   {
+    "who": "Roderigo",
+    "did": "tear off",
+    "what": "chains",
+    "where": null
+   },
+   {
+    "who": "Roderigo",
+    "did": "rescue",
+    "what": "Zara",
+    "where": null
+   }
+  ]
+ },
+ {
+  "id": 163,
+  "roles": [
+   {
+    "who": "Zara",
+    "did": "quarrel with",
+    "what": "Don Pedro",
+    "where": null
+   }
+  ]
+ },
+ {
+  "id": 164,
+  "roles": [
+   {
+    "who": "Don Pedro",
+    "did": "want",
+    "what": "a convent",
+    "where": null
+   },
+   {
+    "who": "Zara",
+    "did": "refuse",
+    "what": "a convent",
+    "where": null
+   },
+   {
+    "who": "Roderigo",
+    "did": "dash in",
+    "what": null,
+    "where": null
+   },
+   {
+    "who": "Roderigo",
+    "did": "demand",
+    "what": "Zara's hand",
+    "where": null
+   }
+  ]
+ },
+ {
+  "id": 165,
+  "roles": [
+   {
+    "who": "Don Pedro",
+    "did": "refuse",
+    "what": "Roderigo",
+    "where": null
+   }
+  ]
+ },
+ {
+  "id": 166,
+  "roles": [
+   {
+    "who": "Roderigo",
+    "did": "bear away",
+    "what": "Zara",
+    "where": null
+   },
+   {
+    "who": "the servant",
+    "did": "bring",
+    "what": "a letter and a bag",
+    "where": null
+   },
+   {
+    "who": "Hagar",
+    "did": "disappear",
+    "what": null,
+    "where": null
+   }
+  ]
+ },
+ {
+  "id": 167,
+  "roles": [
+   {
+    "who": "Hagar",
+    "did": "bequeath",
+    "what": "wealth",
+    "where": null
+   }
+  ]
+ },
+ {
+  "id": 168,
+  "roles": [
+   {
+    "who": "the bag",
+    "did": "open",
+    "what": null,
+    "where": null
+   },
+   {
+    "who": "tin money",
+    "did": "shower down",
+    "what": "the stage",
+    "where": null
+   }
+  ]
+ },
+ {
+  "id": 169,
+  "roles": [
+   {
+    "who": "tin money",
+    "did": "soften",
+    "what": "Don Pedro",
+    "where": null
+   }
+  ]
+ },
+ {
+  "id": 170,
+  "roles": [
+   {
+    "who": "Don Pedro",
+    "did": "consent",
+    "what": null,
+    "where": null
+   },
+   {
+    "who": "the actors",
+    "did": "sing",
+    "what": "a chorus",
+    "where": null
+   },
+   {
+    "who": "the curtains",
+    "did": "fall",
+    "what": null,
+    "where": null
+   },
+   {
+    "who": "Roderigo",
+    "did": "kneel",
+    "what": null,
+    "where": null
+   }
+  ]
+ },
+ {
+  "id": 171,
+  "roles": [
+   {
+    "who": "the audience",
+    "did": "applaud",
+    "what": null,
+    "where": null
+   },
+   {
+    "who": "the cot bed",
+    "did": "shut up",
+    "what": null,
+    "where": null
+   },
+   {
+    "who": "the cot bed",
+    "did": "extinguish",
+    "what": "the audience",
+    "where": null
+   }
+  ]
+ },
+ {
+  "id": 172,
+  "roles": [
+   {
+    "who": "Roderigo",
+    "did": "rescue",
+    "what": "the audience",
+    "where": null
+   },
+   {
+    "who": "Don Pedro",
+    "did": "rescue",
+    "what": "the audience",
+    "where": null
+   }
+  ]
+ },
+ {
+  "id": 173,
+  "roles": [
+   {
+    "who": "Hannah",
+    "did": "appear",
+    "what": null,
+    "where": null
+   },
+   {
+    "who": "Mrs. March",
+    "did": "invite",
+    "what": "the audience",
+    "where": "supper"
+   }
+  ]
+ },
+ {
+  "id": 174,
+  "roles": [
+   {
+    "who": "the actors",
+    "did": "see",
+    "what": "the table",
+    "where": null
+   }
+  ]
+ },
+ {
+  "id": 175,
+  "roles": [
+   {
+    "who": "Mrs. March",
+    "did": "get up",
+    "what": "a treat",
+    "where": null
+   }
+  ]
+ },
+ {
+  "id": 176,
+  "roles": []
+ },
+ {
+  "id": 177,
+  "roles": [
+   {
+    "who": "the girls",
+    "did": "stare at",
+    "what": "the table",
+    "where": null
+   },
+   {
+    "who": "the girls",
+    "did": "stare at",
+    "what": "Mrs. March",
+    "where": null
+   },
+   {
+    "who": "Mrs. March",
+    "did": "enjoy",
+    "what": "the supper",
+    "where": null
+   }
+  ]
+ },
+ {
+  "id": 178,
+  "roles": []
+ },
+ {
+  "id": 179,
+  "roles": [
+   {
+    "who": "Amy",
+    "did": "ask",
+    "what": null,
+    "where": null
+   }
+  ]
+ },
+ {
+  "id": 180,
+  "roles": []
+ },
+ {
+  "id": 181,
+  "roles": [
+   {
+    "who": "Mrs. March",
+    "did": "do",
+    "what": "the supper",
+    "where": null
+   }
+  ]
+ },
+ {
+  "id": 182,
+  "roles": [
+   {
+    "who": "Meg",
+    "did": "smile",
+    "what": null,
+    "where": null
+   }
+  ]
+ },
+ {
+  "id": 183,
+  "roles": [
+   {
+    "who": "Aunt March",
+    "did": "send",
+    "what": "the supper",
+    "where": null
+   }
+  ]
+ },
+ {
+  "id": 184,
+  "roles": []
+ },
+ {
+  "id": 185,
+  "roles": [
+   {
+    "who": "Mr. Laurence",
+    "did": "send",
+    "what": "the supper",
+    "where": null
+   }
+  ]
+ },
+ {
+  "id": 186,
+  "roles": []
+ },
+ {
+  "id": 187,
+  "roles": []
+ },
+ {
+  "id": 188,
+  "roles": [
+   {
+    "who": "the girls",
+    "did": "not know",
+    "what": "Mr. Laurence",
+    "where": null
+   }
+  ]
+ },
+ {
+  "id": 189,
+  "roles": []
+ },
+ {
+  "id": 190,
+  "roles": [
+   {
+    "who": "Hannah",
+    "did": "tell",
+    "what": "his servants",
+    "where": "breakfast"
+   }
+  ]
+ },
+ {
+  "id": 191,
+  "roles": [
+   {
+    "who": "breakfast",
+    "did": "please",
+    "what": "Mr. Laurence",
+    "where": null
+   }
+  ]
+ },
+ {
+  "id": 192,
+  "roles": [
+   {
+    "who": "Mr. Laurence",
+    "did": "know",
+    "what": "Mrs. March's father",
+    "where": null
+   },
+   {
+    "who": "Mr. Laurence",
+    "did": "send",
+    "what": "a note",
+    "where": null
+   },
+   {
+    "who": "Mr. Laurence",
+    "did": "send",
+    "what": "the supper",
+    "where": null
+   }
+  ]
+ },
+ {
+  "id": 193,
+  "roles": [
+   {
+    "who": "Mrs. March",
+    "did": "not refuse",
+    "what": "the supper",
+    "where": null
+   },
+   {
+    "who": "the girls",
+    "did": "have",
+    "what": "the supper",
+    "where": null
+   },
+   {
+    "who": "the girls",
+    "did": "have",
+    "what": "bread and milk",
+    "where": null
+   }
+  ]
+ },
+ {
+  "id": 194,
+  "roles": [
+   {
+    "who": "the Laurence boy",
+    "did": "put idea into",
+    "what": "Mr. Laurence",
+    "where": null
+   }
+  ]
+ },
+ {
+  "id": 195,
+  "roles": [
+   {
+    "who": "Jo",
+    "did": "wish",
+    "what": "to get acquainted",
+    "where": null
+   }
+  ]
+ },
+ {
+  "id": 196,
+  "roles": [
+   {
+    "who": "the Laurence boy",
+    "did": "like",
+    "what": "the girls",
+    "where": null
+   },
+   {
+    "who": "Meg",
+    "did": "not let",
+    "what": "Jo",
+    "where": null
+   },
+   {
+    "who": "Jo",
+    "did": "speak to",
+    "what": "the Laurence boy",
+    "where": null
+   }
+  ]
+ },
+ {
+  "id": 197,
+  "roles": [
+   {
+    "who": "Mr. Laurence",
+    "did": "live",
+    "what": null,
+    "where": "the big house next door"
+   }
+  ]
+ },
+ {
+  "id": 198,
+  "roles": [
+   {
+    "who": "one of the girls",
+    "did": "ask",
+    "what": null,
+    "where": null
+   }
+  ]
+ },
+ {
+  "id": 199,
+  "roles": [
+   {
+    "who": "her mother",
+    "did": "know",
+    "what": "Mr. Laurence",
+    "where": null
+   },
+   {
+    "who": "Mr. Laurence",
+    "did": "not mix with",
+    "what": "his neighbors",
+    "where": null
+   }
+  ]
+ },
+ {
+  "id": 200,
+  "roles": [
+   {
+    "who": "Mr. Laurence",
+    "did": "keep shut up",
+    "what": "the Laurence boy",
+    "where": null
+   },
+   {
+    "who": "the Laurence boy",
+    "did": "ride",
+    "what": null,
+    "where": null
+   },
+   {
+    "who": "the Laurence boy",
+    "did": "walk",
+    "what": "his tutor",
+    "where": null
+   },
+   {
+    "who": "the Laurence boy",
+    "did": "study",
+    "what": null,
+    "where": null
+   }
+  ]
+ },
+ {
+  "id": 201,
+  "roles": [
+   {
+    "who": "her family",
+    "did": "invite",
+    "what": "the Laurence boy",
+    "where": null
+   },
+   {
+    "who": "the Laurence boy",
+    "did": "not come",
+    "what": null,
+    "where": null
+   }
+  ]
+ },
+ {
+  "id": 202,
+  "roles": [
+   {
+    "who": "the Laurence boy",
+    "did": "not speak to",
+    "what": "the girls",
+    "where": null
+   }
+  ]
+ },
+ {
+  "id": 203,
+  "roles": [
+   {
+    "who": "our cat",
+    "did": "run away",
+    "what": null,
+    "where": null
+   },
+   {
+    "who": "the Laurence boy",
+    "did": "bring back",
+    "what": "our cat",
+    "where": null
+   },
+   {
+    "who": "Jo",
+    "did": "talk with",
+    "what": "the Laurence boy",
+    "where": "the fence"
+   },
+   {
+    "who": "the Laurence boy",
+    "did": "see",
+    "what": "Meg",
+    "where": null
+   }
+  ]
+ },
+ {
+  "id": 204,
+  "roles": [
+   {
+    "who": "Jo",
+    "did": "know",
+    "what": "the Laurence boy",
+    "where": null
+   },
+   {
+    "who": "the Laurence boy",
+    "did": "need",
+    "what": "fun",
+    "where": null
+   }
+  ]
+ },
+ {
+  "id": 205,
+  "roles": [
+   {
+    "who": "Mrs. March",
+    "did": "like",
+    "what": "the Laurence boy",
+    "where": null
+   },
+   {
+    "who": "Jo",
+    "did": "know",
+    "what": "the Laurence boy",
+    "where": null
+   }
+  ]
+ },
+ {
+  "id": 206,
+  "roles": [
+   {
+    "who": "the Laurence boy",
+    "did": "bring",
+    "what": "the flowers",
+    "where": null
+   },
+   {
+    "who": "Mrs. March",
+    "did": "ask in",
+    "what": "the Laurence boy",
+    "where": null
+   }
+  ]
+ },
+ {
+  "id": 207,
+  "roles": [
+   {
+    "who": "the Laurence boy",
+    "did": "go away",
+    "what": null,
+    "where": null
+   },
+   {
+    "who": "the Laurence boy",
+    "did": "hear",
+    "what": "the frolic",
+    "where": null
+   }
+  ]
+ },
+ {
+  "id": 208,
+  "roles": []
+ },
+ {
+  "id": 209,
+  "roles": [
+   {
+    "who": "Jo",
+    "did": "laugh",
+    "what": null,
+    "where": null
+   },
+   {
+    "who": "Jo",
+    "did": "look at",
+    "what": "the boots",
+    "where": null
+   }
+  ]
+ },
+ {
+  "id": 210,
+  "roles": [
+   {
+    "who": "the girls",
+    "did": "have",
+    "what": "the play",
+    "where": null
+   },
+   {
+    "who": "the Laurence boy",
+    "did": "see",
+    "what": "the play",
+    "where": null
+   }
+  ]
+ },
+ {
+  "id": 211,
+  "roles": [
+   {
+    "who": "the Laurence boy",
+    "did": "help act",
+    "what": "the play",
+    "where": null
+   }
+  ]
+ },
+ {
+  "id": 212,
+  "roles": []
+ },
+ {
+  "id": 213,
+  "roles": [
+   {
+    "who": "Meg",
+    "did": "have",
+    "what": "the flowers",
+    "where": null
+   }
+  ]
+ },
+ {
+  "id": 214,
+  "roles": []
+ },
+ {
+  "id": 215,
+  "roles": [
+   {
+    "who": "Meg",
+    "did": "examine",
+    "what": "the flowers",
+    "where": null
+   }
+  ]
+ },
+ {
+  "id": 216,
+  "roles": []
+ },
+ {
+  "id": 217,
+  "roles": [
+   {
+    "who": "Mrs. March",
+    "did": "smell",
+    "what": "Beth's roses",
+    "where": null
+   }
+  ]
+ },
+ {
+  "id": 218,
+  "roles": [
+   {
+    "who": "Beth",
+    "did": "nestle up to",
+    "what": "Mrs. March",
+    "where": null
+   },
+   {
+    "who": "Beth",
+    "did": "whisper",
+    "what": null,
+    "where": null
+   },
+   {
+    "who": "Beth",
+    "did": "send",
+    "what": "the flowers",
+    "where": "Mr. March"
+   }
+  ]
+ },
+ {
+  "id": 219,
+  "roles": [
+   {
+    "who": "Mr. March",
+    "did": "have",
+    "what": "a merry Christmas",
+    "where": null
+   }
+  ]
+ }
+]

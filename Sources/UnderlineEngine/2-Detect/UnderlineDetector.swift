@@ -15,8 +15,6 @@ enum UnderlineKnobs {
     /// often right as the ones shown (20 of 40 sampled, Little Women). Two overlapping phrases still never both show, and a
     /// reference in the phrase's own paragraph is still dropped (`explainedInParagraph`).
     static let maxPerParagraph = Int.max
-    /// Tie-break order in the limiter; `person` last (spec §4.2).
-    static let kindOrder: [UnderlineKind] = [.reaction, .action, .feeling, .outcome, .place, .thing, .person]
 }
 
 /// One phrase that might get an underline, before any search.

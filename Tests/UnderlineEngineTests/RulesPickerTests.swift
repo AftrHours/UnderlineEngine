@@ -2,79 +2,57 @@ import Foundation
 import Testing
 @testable import UnderlineEngine
 
-private func candidate(_ sentence: Int, raw: Double) -> Candidate {
-    Candidate(sentence: sentence, rawMeaning: 0, rawWords: raw, meaning: 0, words: 0, bonus: 0, score: raw, rawScore: raw)
+private func candidate(_ sentence: Int, raw: Double, score: Double? = nil) -> Candidate {
+    Candidate(sentence: sentence, rawWords: raw, words: raw, bonus: 0, score: score ?? raw)
 }
 
-@Test func decideNeedsAClearlyGoodTopThatIsClearlyAhead() {
-    #expect(RulesPicker.decide([], mode: .words) == nil)
-    #expect(RulesPicker.decide([candidate(3, raw: 0.40)], mode: .words) == nil)
-    #expect(RulesPicker.decide([candidate(3, raw: 0.60), candidate(2, raw: 0.50)], mode: .words) == nil)
-    #expect(RulesPicker.decide([candidate(3, raw: 0.80), candidate(2, raw: 0.40)], mode: .words) == 3)
+@Test func evidenceOrderKeepsOnlyCandidatesThatShareAWord() {
+    let order = RulesPicker.evidenceOrder([candidate(5, raw: 0.6), candidate(4, raw: 0), candidate(2, raw: 0.3)])
+    #expect(order.map(\.sentence) == [5, 2])
+}
+
+@Test func evidenceOrderPutsTheNearerOfTwoCloseScoresFirst() {
+    let order = RulesPicker.evidenceOrder([candidate(3, raw: 0.62), candidate(9, raw: 0.60), candidate(1, raw: 0.2)])
+    #expect(order.map(\.sentence) == [9, 3, 1])
+}
+
+@Test func evidenceOrderLooksAtTheTopSixOnly() {
+    let ranking = (0..<10).map { candidate(100 - $0, raw: 1 - Double($0) / 10) }
+    #expect(RulesPicker.evidenceOrder(ranking).count == SearchKnobs.maxCandidates)
+}
+
+/// `count` sentences of one paragraph each; the first is `first`, the last is `last`, the rest are filler.
+private func sentences(first: String, last: String, count: Int) -> (IndexedSentence, IndexedSentence) {
+    let filler = (0..<(count - 2)).map { _ in "Nothing happened then." }
+    let text = ([first] + filler + [last]).joined(separator: "\n\n")
+    var all = ChapterIndexSvc().index(ChapterInput(chapterIndex: 0, plainText: text))
+    for i in all.indices { all[i].events = EventSplitter.events(in: all[i]) }
+    return (all[0], all[all.count - 1])
 }
 
 private func phrase(_ text: String, in s: IndexedSentence) -> EventPhrase {
-    s.events.first { $0.text == text } ?? EventPhrase(text: text, range: (s.text as NSString).range(of: text), role: nil, track: .character)
+    EventPhrase(text: text, range: (s.text as NSString).range(of: text), role: nil, track: .goal)
 }
 
-@Test func confirmAcceptsASharedContentWord() {
-    let s = indexed("Jo immediately sat up, put her hands in her pockets, and began to whistle.")
-    let ref = indexed("Amy hated it when Jo would whistle at dinner.")
-    #expect(RulesPicker.confirm(phrase: phrase("began to whistle", in: s), in: s, reference: ref))
+@Test func aSharedNounNearbyIsEnough() {
+    let (ref, s) = sentences(first: "Beth found the silver thimble under the chair.", last: "Meg lost the silver thimble again.", count: 5)
+    #expect(RulesPicker.evidencePoints(phrase: phrase("lost the silver thimble", in: s), in: s, reference: ref, stats: nil) { nil })
 }
 
-@Test func confirmAcceptsTheSameName() {
-    let s = indexed("Then Hannah came in with the tea.")
-    let ref = indexed("Old Hannah had lived with the family for years.")
-    #expect(RulesPicker.confirm(phrase: phrase("Hannah", in: s), in: s, reference: ref))
+@Test func farBackOneSharedNounNeedsMoreEvidence() {
+    let (ref, s) = sentences(first: "Beth sewed a thimble for her doll.", last: "Meg dropped the thimble on the floor.", count: 30)
+    let p = phrase("dropped the thimble on the floor", in: s)
+    #expect(!RulesPicker.evidencePoints(phrase: p, in: s, reference: ref, stats: nil) { nil })
+    #expect(!RulesPicker.evidencePoints(phrase: p, in: s, reference: ref, stats: nil) { 0.1 })
+    #expect(RulesPicker.evidencePoints(phrase: p, in: s, reference: ref, stats: nil) { 0.5 })
 }
 
-@Test func confirmRejectsATopicallyCloseSentenceWithNothingShared() {
-    let s = indexed("Jo immediately sat up, put her hands in her pockets, and began to whistle.")
-    let ref = indexed("The parlor was cold and quiet.")
-    #expect(!RulesPicker.confirm(phrase: phrase("began to whistle", in: s), in: s, reference: ref))
-}
-
-private func stats(_ filler: String, with extra: [IndexedSentence]) -> WordStats {
-    WordStats(sentences: (0..<300).map { _ in indexed(filler) } + extra)
-}
-
-@Test func confirmAcceptsARareSharedNoun() {
-    let s = indexed("Jo said she would whistle a tune on the porch.")
-    let ref = indexed("Amy sat alone on the porch.")
-    #expect(RulesPicker.confirm(phrase: phrase("would whistle a tune on the porch", in: s), in: s, reference: ref,
-                                stats: stats("The parlor was quiet.", with: [s, ref])))
-    #expect(!RulesPicker.confirm(phrase: phrase("would whistle a tune on the porch", in: s), in: s, reference: ref,
-                                 stats: stats("Everyone sat on the porch.", with: [s, ref])))
-}
-
-@Test func confirmRejectsARareVerbAlone() {
-    let s = indexed("Jo said she came to amuse him.")
-    let ref = indexed("The idea amused Meg greatly.")
-    #expect(!RulesPicker.confirm(phrase: phrase("came to amuse him", in: s), in: s, reference: ref,
-                                 stats: stats("The parlor was quiet.", with: [s, ref])))
-}
-
-@Test func confirmAcceptsTwoRareWordsEvenIfOneIsAVerb() {
-    let s = indexed("Amy decided that virtue was its own reward.")
-    let ref = indexed("She felt that virtue was not always rewarded, or its own reward.")
-    #expect(RulesPicker.confirm(phrase: phrase("decided that virtue was its own reward", in: s), in: s, reference: ref,
-                                stats: stats("The parlor was quiet.", with: [s, ref])))
-}
-
-@Test func confirmNeedsTheSameWordClass() {
-    // NLTagger reads "a cold" as an adjective, so it can't tell that pair apart; a noun against a verb it can.
-    let s = indexed("After dinner they took a long walk by the river.")
-    let verb = indexed("Meg will walk to the river tomorrow.")
-    let noun = indexed("Amy enjoyed her walk in the park.")
-    #expect(!RulesPicker.confirm(phrase: phrase("took a long walk", in: s), in: s, reference: verb,
-                                 stats: stats("The parlor was quiet.", with: [s, verb])))
-    #expect(RulesPicker.confirm(phrase: phrase("took a long walk", in: s), in: s, reference: noun,
-                                stats: stats("The parlor was quiet.", with: [s, noun])))
-}
-
-@Test func confirmNoLongerAcceptsARoleLinkAlone() {
-    let s = indexed("Jo immediately sat up, put her hands in her pockets, and began to whistle.")
-    let ref = indexed("Meg planned a quiet evening by the fire.")
-    #expect(!RulesPicker.confirm(phrase: phrase("began to whistle", in: s), in: s, reference: ref, stats: WordStats(sentences: [s, ref])))
+@Test func theSoftMatchIsOnlyAskedForWhenItDecides() {
+    var asked = 0
+    let (ref, s) = sentences(first: "Beth found the silver thimble under the chair.", last: "Meg lost the silver thimble again.", count: 5)
+    _ = RulesPicker.evidencePoints(phrase: phrase("lost the silver thimble", in: s), in: s, reference: ref, stats: nil) { asked += 1; return nil }
+    #expect(asked == 0)
+    let (ref2, s2) = sentences(first: "The kitten slept by the fire.", last: "Jo laughed at the joke.", count: 5)
+    _ = RulesPicker.evidencePoints(phrase: phrase("laughed at the joke", in: s2), in: s2, reference: ref2, stats: nil) { asked += 1; return nil }
+    #expect(asked == 0)
 }

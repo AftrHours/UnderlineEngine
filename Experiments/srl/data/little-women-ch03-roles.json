@@ -1,0 +1,3841 @@
+[
+ {
+  "id": 0,
+  "roles": [
+   {
+    "who": "Meg",
+    "did": "call",
+    "what": "Jo",
+    "where": "the garret"
+   }
+  ]
+ },
+ {
+  "id": 1,
+  "roles": []
+ },
+ {
+  "id": 2,
+  "roles": [
+   {
+    "who": "Meg",
+    "did": "look for",
+    "what": "Jo",
+    "where": "the garret"
+   }
+  ]
+ },
+ {
+  "id": 3,
+  "roles": [
+   {
+    "who": "Meg",
+    "did": "call",
+    "what": "Jo",
+    "where": "the garret"
+   }
+  ]
+ },
+ {
+  "id": 4,
+  "roles": [
+   {
+    "who": "Jo",
+    "did": "answer",
+    "what": "Meg",
+    "where": "the garret"
+   }
+  ]
+ },
+ {
+  "id": 5,
+  "roles": [
+   {
+    "who": "Jo",
+    "did": "answer",
+    "what": "Meg",
+    "where": "the garret"
+   },
+   {
+    "who": "Meg",
+    "did": "run up",
+    "what": "the garret stairs",
+    "where": "the garret"
+   },
+   {
+    "who": "Jo",
+    "did": "eat",
+    "what": "apples",
+    "where": "the garret"
+   },
+   {
+    "who": "Jo",
+    "did": "cry over",
+    "what": "the Heir of Redclyffe",
+    "where": "the garret"
+   }
+  ]
+ },
+ {
+  "id": 6,
+  "roles": [
+   {
+    "who": "Jo",
+    "did": "retire",
+    "what": "the garret",
+    "where": "the garret"
+   },
+   {
+    "who": "Jo",
+    "did": "read",
+    "what": "a book",
+    "where": "the garret"
+   },
+   {
+    "who": "Scrabble",
+    "did": "live",
+    "what": null,
+    "where": "the garret"
+   }
+  ]
+ },
+ {
+  "id": 7,
+  "roles": [
+   {
+    "who": "Meg",
+    "did": "appear",
+    "what": null,
+    "where": "the garret"
+   },
+   {
+    "who": "Scrabble",
+    "did": "whisk into",
+    "what": "his hole",
+    "where": "the garret"
+   }
+  ]
+ },
+ {
+  "id": 8,
+  "roles": [
+   {
+    "who": "Jo",
+    "did": "shake off",
+    "what": "the tears",
+    "where": "the garret"
+   },
+   {
+    "who": "Jo",
+    "did": "wait",
+    "what": "the news",
+    "where": "the garret"
+   }
+  ]
+ },
+ {
+  "id": 9,
+  "roles": []
+ },
+ {
+  "id": 10,
+  "roles": []
+ },
+ {
+  "id": 11,
+  "roles": [
+   {
+    "who": "Mrs. Gardiner",
+    "did": "send",
+    "what": "the invitation",
+    "where": null
+   }
+  ]
+ },
+ {
+  "id": 12,
+  "roles": [
+   {
+    "who": "Meg",
+    "did": "wave",
+    "what": "the invitation",
+    "where": "the garret"
+   },
+   {
+    "who": "Meg",
+    "did": "read",
+    "what": "the invitation",
+    "where": "the garret"
+   }
+  ]
+ },
+ {
+  "id": 13,
+  "roles": [
+   {
+    "who": "Mrs. Gardiner",
+    "did": "invite",
+    "what": "Jo",
+    "where": null
+   },
+   {
+    "who": "Mrs. Gardiner",
+    "did": "invite",
+    "what": "Meg",
+    "where": null
+   },
+   {
+    "who": "Mrs. Gardiner",
+    "did": "give",
+    "what": "the party",
+    "where": "the Gardiner house"
+   }
+  ]
+ },
+ {
+  "id": 14,
+  "roles": [
+   {
+    "who": "Mrs. March",
+    "did": "allow",
+    "what": "going to the party",
+    "where": null
+   },
+   {
+    "who": "Meg",
+    "did": "ask",
+    "what": "what to wear",
+    "where": null
+   }
+  ]
+ },
+ {
+  "id": 15,
+  "roles": [
+   {
+    "who": "Jo",
+    "did": "wear",
+    "what": "the poplins",
+    "where": null
+   },
+   {
+    "who": "Meg",
+    "did": "wear",
+    "what": "the poplins",
+    "where": null
+   }
+  ]
+ },
+ {
+  "id": 16,
+  "roles": [
+   {
+    "who": "Jo",
+    "did": "answer",
+    "what": "Meg",
+    "where": null
+   }
+  ]
+ },
+ {
+  "id": 17,
+  "roles": [
+   {
+    "who": "Meg",
+    "did": "want",
+    "what": "a silk",
+    "where": null
+   }
+  ]
+ },
+ {
+  "id": 18,
+  "roles": [
+   {
+    "who": "Meg",
+    "did": "sigh",
+    "what": null,
+    "where": null
+   }
+  ]
+ },
+ {
+  "id": 19,
+  "roles": [
+   {
+    "who": "Mrs. March",
+    "did": "allow",
+    "what": "a silk",
+    "where": null
+   },
+   {
+    "who": "Meg",
+    "did": "wait",
+    "what": "a silk",
+    "where": null
+   }
+  ]
+ },
+ {
+  "id": 20,
+  "roles": []
+ },
+ {
+  "id": 21,
+  "roles": [
+   {
+    "who": "Jo",
+    "did": "forget",
+    "what": "the burn",
+    "where": null
+   }
+  ]
+ },
+ {
+  "id": 22,
+  "roles": []
+ },
+ {
+  "id": 23,
+  "roles": [
+   {
+    "who": "Jo",
+    "did": "burn",
+    "what": "Jo's dress",
+    "where": null
+   }
+  ]
+ },
+ {
+  "id": 24,
+  "roles": [
+   {
+    "who": "Jo",
+    "did": "sit still",
+    "what": null,
+    "where": null
+   },
+   {
+    "who": "Jo",
+    "did": "hide",
+    "what": "the burn",
+    "where": null
+   }
+  ]
+ },
+ {
+  "id": 25,
+  "roles": []
+ },
+ {
+  "id": 26,
+  "roles": [
+   {
+    "who": "Meg",
+    "did": "have",
+    "what": "a new ribbon",
+    "where": null
+   },
+   {
+    "who": "Mrs. March",
+    "did": "lend",
+    "what": "the pearl pin",
+    "where": null
+   },
+   {
+    "who": "Meg",
+    "did": "have",
+    "what": "the slippers",
+    "where": null
+   },
+   {
+    "who": "Meg",
+    "did": "have",
+    "what": "the gloves",
+    "where": null
+   }
+  ]
+ },
+ {
+  "id": 27,
+  "roles": [
+   {
+    "who": "Jo",
+    "did": "spoil",
+    "what": "the gloves",
+    "where": null
+   },
+   {
+    "who": "Jo",
+    "did": "go without",
+    "what": "the gloves",
+    "where": null
+   }
+  ]
+ },
+ {
+  "id": 28,
+  "roles": [
+   {
+    "who": "Jo",
+    "did": "have",
+    "what": "the gloves",
+    "where": null
+   },
+   {
+    "who": "Meg",
+    "did": "refuse",
+    "what": "going to the party",
+    "where": null
+   }
+  ]
+ },
+ {
+  "id": 29,
+  "roles": []
+ },
+ {
+  "id": 30,
+  "roles": [
+   {
+    "who": "Jo",
+    "did": "dance",
+    "what": null,
+    "where": null
+   }
+  ]
+ },
+ {
+  "id": 31,
+  "roles": [
+   {
+    "who": "Jo",
+    "did": "stay still",
+    "what": null,
+    "where": null
+   }
+  ]
+ },
+ {
+  "id": 32,
+  "roles": [
+   {
+    "who": "Jo",
+    "did": "dislike",
+    "what": "company dancing",
+    "where": null
+   }
+  ]
+ },
+ {
+  "id": 33,
+  "roles": []
+ },
+ {
+  "id": 34,
+  "roles": [
+   {
+    "who": "Jo",
+    "did": "cut capers",
+    "what": null,
+    "where": null
+   }
+  ]
+ },
+ {
+  "id": 35,
+  "roles": [
+   {
+    "who": "Jo",
+    "did": "ask",
+    "what": "the gloves",
+    "where": null
+   }
+  ]
+ },
+ {
+  "id": 36,
+  "roles": [
+   {
+    "who": "Jo",
+    "did": "spoil",
+    "what": "the gloves",
+    "where": null
+   },
+   {
+    "who": "Mrs. March",
+    "did": "refuse",
+    "what": "the gloves",
+    "where": null
+   }
+  ]
+ },
+ {
+  "id": 37,
+  "roles": [
+   {
+    "who": "Jo",
+    "did": "make do",
+    "what": "the gloves",
+    "where": null
+   }
+  ]
+ },
+ {
+  "id": 38,
+  "roles": [
+   {
+    "who": "Jo",
+    "did": "hold",
+    "what": "the gloves",
+    "where": null
+   }
+  ]
+ },
+ {
+  "id": 39,
+  "roles": []
+ },
+ {
+  "id": 40,
+  "roles": []
+ },
+ {
+  "id": 41,
+  "roles": [
+   {
+    "who": "Jo",
+    "did": "wear",
+    "what": "the gloves",
+    "where": null
+   },
+   {
+    "who": "Jo",
+    "did": "carry",
+    "what": "the gloves",
+    "where": null
+   }
+  ]
+ },
+ {
+  "id": 42,
+  "roles": []
+ },
+ {
+  "id": 43,
+  "roles": [
+   {
+    "who": "Jo",
+    "did": "stretch",
+    "what": "the gloves",
+    "where": null
+   }
+  ]
+ },
+ {
+  "id": 44,
+  "roles": [
+   {
+    "who": "Jo",
+    "did": "go without",
+    "what": "the gloves",
+    "where": null
+   }
+  ]
+ },
+ {
+  "id": 45,
+  "roles": []
+ },
+ {
+  "id": 46,
+  "roles": [
+   {
+    "who": "Jo",
+    "did": "take up",
+    "what": "the Heir of Redclyffe",
+    "where": "the garret"
+   }
+  ]
+ },
+ {
+  "id": 47,
+  "roles": [
+   {
+    "who": "Meg",
+    "did": "lend",
+    "what": "the gloves",
+    "where": null
+   }
+  ]
+ },
+ {
+  "id": 48,
+  "roles": [
+   {
+    "who": "Jo",
+    "did": "stain",
+    "what": "the gloves",
+    "where": null
+   },
+   {
+    "who": "Jo",
+    "did": "behave",
+    "what": null,
+    "where": null
+   }
+  ]
+ },
+ {
+  "id": 49,
+  "roles": [
+   {
+    "who": "Jo",
+    "did": "stare",
+    "what": null,
+    "where": null
+   }
+  ]
+ },
+ {
+  "id": 50,
+  "roles": []
+ },
+ {
+  "id": 51,
+  "roles": []
+ },
+ {
+  "id": 52,
+  "roles": [
+   {
+    "who": "Jo",
+    "did": "behave",
+    "what": null,
+    "where": null
+   }
+  ]
+ },
+ {
+  "id": 53,
+  "roles": [
+   {
+    "who": "Meg",
+    "did": "answer",
+    "what": "the invitation",
+    "where": null
+   },
+   {
+    "who": "Jo",
+    "did": "finish",
+    "what": "the Heir of Redclyffe",
+    "where": null
+   }
+  ]
+ },
+ {
+  "id": 54,
+  "roles": [
+   {
+    "who": "Meg",
+    "did": "accept",
+    "what": "the invitation",
+    "where": null
+   },
+   {
+    "who": "Meg",
+    "did": "do up",
+    "what": "the lace frill",
+    "where": null
+   },
+   {
+    "who": "Jo",
+    "did": "finish",
+    "what": "the Heir of Redclyffe",
+    "where": "the garret"
+   },
+   {
+    "who": "Jo",
+    "did": "play",
+    "what": "a game of romps",
+    "where": "the garret"
+   }
+  ]
+ },
+ {
+  "id": 55,
+  "roles": [
+   {
+    "who": "Beth",
+    "did": "play",
+    "what": "dressing maids",
+    "where": null
+   },
+   {
+    "who": "Amy",
+    "did": "play",
+    "what": "dressing maids",
+    "where": null
+   },
+   {
+    "who": "Meg",
+    "did": "get ready",
+    "what": "the party",
+    "where": null
+   },
+   {
+    "who": "Jo",
+    "did": "get ready",
+    "what": "the party",
+    "where": null
+   }
+  ]
+ },
+ {
+  "id": 56,
+  "roles": [
+   {
+    "who": null,
+    "did": "smell",
+    "what": "burned hair",
+    "where": "the March house"
+   }
+  ]
+ },
+ {
+  "id": 57,
+  "roles": [
+   {
+    "who": "Meg",
+    "did": "want",
+    "what": "curls",
+    "where": null
+   },
+   {
+    "who": "Jo",
+    "did": "pinch",
+    "what": "Meg's hair",
+    "where": null
+   },
+   {
+    "who": "Jo",
+    "did": "use",
+    "what": "the tongs",
+    "where": null
+   }
+  ]
+ },
+ {
+  "id": 58,
+  "roles": [
+   {
+    "who": null,
+    "did": "smoke",
+    "what": "Meg's hair",
+    "where": null
+   }
+  ]
+ },
+ {
+  "id": 59,
+  "roles": [
+   {
+    "who": "Beth",
+    "did": "ask",
+    "what": null,
+    "where": "the bed"
+   }
+  ]
+ },
+ {
+  "id": 60,
+  "roles": [
+   {
+    "who": "Jo",
+    "did": "reply",
+    "what": "Beth",
+    "where": null
+   }
+  ]
+ },
+ {
+  "id": 61,
+  "roles": []
+ },
+ {
+  "id": 62,
+  "roles": [
+   {
+    "who": "Amy",
+    "did": "smooth",
+    "what": "Amy's curls",
+    "where": null
+   }
+  ]
+ },
+ {
+  "id": 63,
+  "roles": [
+   {
+    "who": "Jo",
+    "did": "take off",
+    "what": "the papers",
+    "where": null
+   },
+   {
+    "who": "Jo",
+    "did": "put down",
+    "what": "the tongs",
+    "where": null
+   }
+  ]
+ },
+ {
+  "id": 64,
+  "roles": [
+   {
+    "who": "Jo",
+    "did": "take off",
+    "what": "the papers",
+    "where": null
+   },
+   {
+    "who": "Jo",
+    "did": "lay",
+    "what": "Meg's hair",
+    "where": "the bureau"
+   }
+  ]
+ },
+ {
+  "id": 65,
+  "roles": []
+ },
+ {
+  "id": 66,
+  "roles": [
+   {
+    "who": "Jo",
+    "did": "do",
+    "what": "Meg's hair",
+    "where": null
+   }
+  ]
+ },
+ {
+  "id": 67,
+  "roles": [
+   {
+    "who": "Jo",
+    "did": "spoil",
+    "what": "Meg's hair",
+    "where": null
+   }
+  ]
+ },
+ {
+  "id": 68,
+  "roles": [
+   {
+    "who": "Meg",
+    "did": "miss",
+    "what": "the party",
+    "where": null
+   }
+  ]
+ },
+ {
+  "id": 69,
+  "roles": []
+ },
+ {
+  "id": 70,
+  "roles": [
+   {
+    "who": "Meg",
+    "did": "wail",
+    "what": null,
+    "where": null
+   },
+   {
+    "who": "Meg",
+    "did": "look at",
+    "what": "Meg's hair",
+    "where": null
+   }
+  ]
+ },
+ {
+  "id": 71,
+  "roles": []
+ },
+ {
+  "id": 72,
+  "roles": [
+   {
+    "who": "Meg",
+    "did": "ask",
+    "what": "Jo",
+    "where": null
+   }
+  ]
+ },
+ {
+  "id": 73,
+  "roles": [
+   {
+    "who": "Jo",
+    "did": "spoil",
+    "what": "everything",
+    "where": null
+   }
+  ]
+ },
+ {
+  "id": 74,
+  "roles": [
+   {
+    "who": "Jo",
+    "did": "spoil",
+    "what": "Meg's hair",
+    "where": null
+   },
+   {
+    "who": "Jo",
+    "did": "regard",
+    "what": "Meg's hair",
+    "where": null
+   }
+  ]
+ },
+ {
+  "id": 75,
+  "roles": []
+ },
+ {
+  "id": 76,
+  "roles": [
+   {
+    "who": "Meg",
+    "did": "frizzle",
+    "what": "Meg's hair",
+    "where": null
+   },
+   {
+    "who": "Meg",
+    "did": "tie",
+    "what": "a new ribbon",
+    "where": null
+   }
+  ]
+ },
+ {
+  "id": 77,
+  "roles": [
+   {
+    "who": "Amy",
+    "did": "comfort",
+    "what": "Meg",
+    "where": null
+   }
+  ]
+ },
+ {
+  "id": 78,
+  "roles": []
+ },
+ {
+  "id": 79,
+  "roles": [
+   {
+    "who": "Meg",
+    "did": "regret",
+    "what": "Meg's hair",
+    "where": null
+   }
+  ]
+ },
+ {
+  "id": 80,
+  "roles": []
+ },
+ {
+  "id": 81,
+  "roles": [
+   {
+    "who": "Beth",
+    "did": "kiss",
+    "what": "Meg",
+    "where": null
+   },
+   {
+    "who": "Beth",
+    "did": "comfort",
+    "what": "Meg",
+    "where": null
+   }
+  ]
+ },
+ {
+  "id": 82,
+  "roles": [
+   {
+    "who": "Meg",
+    "did": "finish",
+    "what": "getting ready",
+    "where": null
+   },
+   {
+    "who": "Jo",
+    "did": "put up",
+    "what": "Jo's hair",
+    "where": null
+   },
+   {
+    "who": "Jo",
+    "did": "put on",
+    "what": "Jo's dress",
+    "where": null
+   }
+  ]
+ },
+ {
+  "id": 83,
+  "roles": [
+   {
+    "who": "Meg",
+    "did": "wear",
+    "what": "Meg's dress",
+    "where": null
+   },
+   {
+    "who": "Meg",
+    "did": "wear",
+    "what": "the pearl pin",
+    "where": null
+   }
+  ]
+ },
+ {
+  "id": 84,
+  "roles": [
+   {
+    "who": "Jo",
+    "did": "wear",
+    "what": "Jo's dress",
+    "where": null
+   },
+   {
+    "who": "Jo",
+    "did": "wear",
+    "what": "a chrysanthemum",
+    "where": null
+   }
+  ]
+ },
+ {
+  "id": 85,
+  "roles": [
+   {
+    "who": "Meg",
+    "did": "wear",
+    "what": "the gloves",
+    "where": null
+   },
+   {
+    "who": "Jo",
+    "did": "wear",
+    "what": "the gloves",
+    "where": null
+   },
+   {
+    "who": "Meg",
+    "did": "carry",
+    "what": "the gloves",
+    "where": null
+   },
+   {
+    "who": "Jo",
+    "did": "carry",
+    "what": "the gloves",
+    "where": null
+   }
+  ]
+ },
+ {
+  "id": 86,
+  "roles": [
+   {
+    "who": "the slippers",
+    "did": "hurt",
+    "what": "Meg",
+    "where": null
+   },
+   {
+    "who": "Jo",
+    "did": "wear",
+    "what": "hairpins",
+    "where": null
+   }
+  ]
+ },
+ {
+  "id": 87,
+  "roles": [
+   {
+    "who": "Mrs. March",
+    "did": "wish",
+    "what": null,
+    "where": null
+   }
+  ]
+ },
+ {
+  "id": 88,
+  "roles": [
+   {
+    "who": "Meg",
+    "did": "go down",
+    "what": "the walk",
+    "where": null
+   },
+   {
+    "who": "Jo",
+    "did": "go down",
+    "what": "the walk",
+    "where": null
+   }
+  ]
+ },
+ {
+  "id": 89,
+  "roles": [
+   {
+    "who": "Mrs. March",
+    "did": "send",
+    "what": "Hannah",
+    "where": null
+   },
+   {
+    "who": "Meg",
+    "did": "come away",
+    "what": null,
+    "where": null
+   }
+  ]
+ },
+ {
+  "id": 90,
+  "roles": [
+   {
+    "who": "Mrs. March",
+    "did": "cry",
+    "what": null,
+    "where": "a window"
+   }
+  ]
+ },
+ {
+  "id": 91,
+  "roles": []
+ },
+ {
+  "id": 92,
+  "roles": [
+   {
+    "who": "Mrs. March",
+    "did": "ask",
+    "what": "pocket handkerchiefs",
+    "where": null
+   }
+  ]
+ },
+ {
+  "id": 93,
+  "roles": [
+   {
+    "who": "Meg",
+    "did": "have",
+    "what": "cologne",
+    "where": null
+   },
+   {
+    "who": "Jo",
+    "did": "laugh",
+    "what": null,
+    "where": null
+   }
+  ]
+ },
+ {
+  "id": 94,
+  "roles": [
+   {
+    "who": "Meg",
+    "did": "reply",
+    "what": "Jo",
+    "where": null
+   }
+  ]
+ },
+ {
+  "id": 95,
+  "roles": [
+   {
+    "who": "Jo",
+    "did": "hide",
+    "what": "the burn",
+    "where": null
+   }
+  ]
+ },
+ {
+  "id": 96,
+  "roles": [
+   {
+    "who": "Meg",
+    "did": "ask",
+    "what": "Meg's sash",
+    "where": null
+   }
+  ]
+ },
+ {
+  "id": 97,
+  "roles": [
+   {
+    "who": "Meg",
+    "did": "ask",
+    "what": "Meg's hair",
+    "where": null
+   }
+  ]
+ },
+ {
+  "id": 98,
+  "roles": [
+   {
+    "who": "Meg",
+    "did": "turn from",
+    "what": "the glass",
+    "where": "the dressing room"
+   },
+   {
+    "who": "Meg",
+    "did": "prink",
+    "what": null,
+    "where": "the dressing room"
+   }
+  ]
+ },
+ {
+  "id": 99,
+  "roles": [
+   {
+    "who": "Jo",
+    "did": "forget",
+    "what": null,
+    "where": null
+   }
+  ]
+ },
+ {
+  "id": 100,
+  "roles": [
+   {
+    "who": "Meg",
+    "did": "wink",
+    "what": null,
+    "where": null
+   }
+  ]
+ },
+ {
+  "id": 101,
+  "roles": [
+   {
+    "who": "Jo",
+    "did": "twitch",
+    "what": "Jo's collar",
+    "where": "the dressing room"
+   },
+   {
+    "who": "Jo",
+    "did": "brush",
+    "what": "Jo's hair",
+    "where": "the dressing room"
+   }
+  ]
+ },
+ {
+  "id": 102,
+  "roles": []
+ },
+ {
+  "id": 103,
+  "roles": [
+   {
+    "who": "Meg",
+    "did": "lift",
+    "what": "her eyebrows",
+    "where": null
+   },
+   {
+    "who": "Meg",
+    "did": "nod",
+    "what": null,
+    "where": null
+   }
+  ]
+ },
+ {
+  "id": 104,
+  "roles": [
+   {
+    "who": "Jo",
+    "did": "hold",
+    "what": "her shoulder",
+    "where": null
+   },
+   {
+    "who": "Jo",
+    "did": "take",
+    "what": "short steps",
+    "where": null
+   },
+   {
+    "who": "Jo",
+    "did": "shake hands",
+    "what": null,
+    "where": null
+   }
+  ]
+ },
+ {
+  "id": 105,
+  "roles": []
+ },
+ {
+  "id": 106,
+  "roles": [
+   {
+    "who": "Meg",
+    "did": "learn",
+    "what": "the proper ways",
+    "where": null
+   }
+  ]
+ },
+ {
+  "id": 107,
+  "roles": []
+ },
+ {
+  "id": 108,
+  "roles": []
+ },
+ {
+  "id": 109,
+  "roles": [
+   {
+    "who": "Meg",
+    "did": "go down",
+    "what": null,
+    "where": "the Gardiner house"
+   },
+   {
+    "who": "Jo",
+    "did": "go down",
+    "what": null,
+    "where": "the Gardiner house"
+   }
+  ]
+ },
+ {
+  "id": 110,
+  "roles": [
+   {
+    "who": "Mrs. Gardiner",
+    "did": "greet",
+    "what": "Meg",
+    "where": "the Gardiner house"
+   },
+   {
+    "who": "Mrs. Gardiner",
+    "did": "greet",
+    "what": "Jo",
+    "where": "the Gardiner house"
+   },
+   {
+    "who": "Mrs. Gardiner",
+    "did": "hand over",
+    "what": "Meg",
+    "where": "the Gardiner house"
+   }
+  ]
+ },
+ {
+  "id": 111,
+  "roles": [
+   {
+    "who": "Meg",
+    "did": "know",
+    "what": "Sallie",
+    "where": "the Gardiner house"
+   },
+   {
+    "who": "Jo",
+    "did": "stand",
+    "what": "the wall",
+    "where": "the Gardiner house"
+   }
+  ]
+ },
+ {
+  "id": 112,
+  "roles": [
+   {
+    "who": "the lads",
+    "did": "talk about",
+    "what": "skates",
+    "where": "the Gardiner house"
+   },
+   {
+    "who": "Jo",
+    "did": "long",
+    "what": "skating",
+    "where": "the Gardiner house"
+   }
+  ]
+ },
+ {
+  "id": 113,
+  "roles": [
+   {
+    "who": "Jo",
+    "did": "signal",
+    "what": "her wish",
+    "where": "the Gardiner house"
+   },
+   {
+    "who": "Meg",
+    "did": "lift",
+    "what": "her eyebrows",
+    "where": "the Gardiner house"
+   }
+  ]
+ },
+ {
+  "id": 114,
+  "roles": [
+   {
+    "who": "Jo",
+    "did": "be left alone",
+    "what": null,
+    "where": "the Gardiner house"
+   }
+  ]
+ },
+ {
+  "id": 115,
+  "roles": [
+   {
+    "who": "Jo",
+    "did": "hide",
+    "what": "the burn",
+    "where": "the Gardiner house"
+   },
+   {
+    "who": "Jo",
+    "did": "stare at",
+    "what": "people",
+    "where": "the Gardiner house"
+   }
+  ]
+ },
+ {
+  "id": 116,
+  "roles": [
+   {
+    "who": "Meg",
+    "did": "dance",
+    "what": null,
+    "where": "the Gardiner house"
+   },
+   {
+    "who": "the slippers",
+    "did": "hurt",
+    "what": "Meg",
+    "where": "the Gardiner house"
+   }
+  ]
+ },
+ {
+  "id": 117,
+  "roles": [
+   {
+    "who": "Jo",
+    "did": "see",
+    "what": "the red-headed youth",
+    "where": "the Gardiner house"
+   },
+   {
+    "who": "Jo",
+    "did": "slip into",
+    "what": "the recess",
+    "where": "the recess"
+   }
+  ]
+ },
+ {
+  "id": 118,
+  "roles": [
+   {
+    "who": "Jo",
+    "did": "meet",
+    "what": "Laurie",
+    "where": "the recess"
+   },
+   {
+    "who": "Laurie",
+    "did": "hide",
+    "what": null,
+    "where": "the recess"
+   }
+  ]
+ },
+ {
+  "id": 119,
+  "roles": [
+   {
+    "who": "Jo",
+    "did": "stammer",
+    "what": null,
+    "where": "the recess"
+   }
+  ]
+ },
+ {
+  "id": 120,
+  "roles": [
+   {
+    "who": "Jo",
+    "did": "back out",
+    "what": null,
+    "where": "the recess"
+   }
+  ]
+ },
+ {
+  "id": 121,
+  "roles": [
+   {
+    "who": "Laurie",
+    "did": "laugh",
+    "what": null,
+    "where": "the recess"
+   },
+   {
+    "who": "Laurie",
+    "did": "invite",
+    "what": "Jo",
+    "where": "the recess"
+   }
+  ]
+ },
+ {
+  "id": 122,
+  "roles": [
+   {
+    "who": "Jo",
+    "did": "disturb",
+    "what": "Laurie",
+    "where": "the recess"
+   }
+  ]
+ },
+ {
+  "id": 123,
+  "roles": []
+ },
+ {
+  "id": 124,
+  "roles": [
+   {
+    "who": "Laurie",
+    "did": "come",
+    "what": null,
+    "where": "the recess"
+   },
+   {
+    "who": "Laurie",
+    "did": "feel",
+    "what": "strange",
+    "where": "the recess"
+   }
+  ]
+ },
+ {
+  "id": 125,
+  "roles": []
+ },
+ {
+  "id": 126,
+  "roles": [
+   {
+    "who": "Laurie",
+    "did": "ask",
+    "what": "Jo",
+    "where": "the recess"
+   }
+  ]
+ },
+ {
+  "id": 127,
+  "roles": [
+   {
+    "who": "Laurie",
+    "did": "sit down",
+    "what": null,
+    "where": "the recess"
+   },
+   {
+    "who": "Laurie",
+    "did": "look at",
+    "what": "his pumps",
+    "where": "the recess"
+   },
+   {
+    "who": "Jo",
+    "did": "see",
+    "what": "Laurie",
+    "where": null
+   }
+  ]
+ },
+ {
+  "id": 128,
+  "roles": [
+   {
+    "who": "Laurie",
+    "did": "live",
+    "what": "next door",
+    "where": null
+   }
+  ]
+ },
+ {
+  "id": 129,
+  "roles": [
+   {
+    "who": "Laurie",
+    "did": "live",
+    "what": "next door",
+    "where": null
+   }
+  ]
+ },
+ {
+  "id": 130,
+  "roles": [
+   {
+    "who": "Laurie",
+    "did": "laugh",
+    "what": null,
+    "where": "the recess"
+   },
+   {
+    "who": "Laurie",
+    "did": "remember",
+    "what": "cricket",
+    "where": null
+   },
+   {
+    "who": "Jo",
+    "did": "chat about",
+    "what": "cricket",
+    "where": null
+   },
+   {
+    "who": "Laurie",
+    "did": "bring home",
+    "what": "the cat",
+    "where": null
+   }
+  ]
+ },
+ {
+  "id": 131,
+  "roles": [
+   {
+    "who": "Jo",
+    "did": "laugh",
+    "what": null,
+    "where": "the recess"
+   },
+   {
+    "who": "Laurie",
+    "did": "give",
+    "what": "the Christmas present",
+    "where": null
+   }
+  ]
+ },
+ {
+  "id": 132,
+  "roles": [
+   {
+    "who": "Mr. Laurence",
+    "did": "send",
+    "what": "the Christmas present",
+    "where": null
+   }
+  ]
+ },
+ {
+  "id": 133,
+  "roles": [
+   {
+    "who": "Laurie",
+    "did": "suggest",
+    "what": "the Christmas present",
+    "where": null
+   }
+  ]
+ },
+ {
+  "id": 134,
+  "roles": [
+   {
+    "who": "Laurie",
+    "did": "ask about",
+    "what": "the cat",
+    "where": null
+   }
+  ]
+ },
+ {
+  "id": 135,
+  "roles": [
+   {
+    "who": "Laurie",
+    "did": "ask",
+    "what": "Jo",
+    "where": null
+   }
+  ]
+ },
+ {
+  "id": 136,
+  "roles": []
+ },
+ {
+  "id": 137,
+  "roles": []
+ },
+ {
+  "id": 138,
+  "roles": []
+ },
+ {
+  "id": 139,
+  "roles": []
+ },
+ {
+  "id": 140,
+  "roles": [
+   {
+    "who": "Laurie",
+    "did": "dislike",
+    "what": "his name",
+    "where": null
+   },
+   {
+    "who": "the fellows",
+    "did": "call",
+    "what": "Laurie",
+    "where": null
+   },
+   {
+    "who": "Laurie",
+    "did": "make",
+    "what": "the fellows",
+    "where": null
+   }
+  ]
+ },
+ {
+  "id": 141,
+  "roles": [
+   {
+    "who": "Jo",
+    "did": "hate",
+    "what": "her name",
+    "where": null
+   }
+  ]
+ },
+ {
+  "id": 142,
+  "roles": [
+   {
+    "who": "Jo",
+    "did": "wish",
+    "what": "her name",
+    "where": null
+   }
+  ]
+ },
+ {
+  "id": 143,
+  "roles": [
+   {
+    "who": "Laurie",
+    "did": "make",
+    "what": "the fellows",
+    "where": null
+   }
+  ]
+ },
+ {
+  "id": 144,
+  "roles": [
+   {
+    "who": "Laurie",
+    "did": "thrash",
+    "what": "the fellows",
+    "where": null
+   }
+  ]
+ },
+ {
+  "id": 145,
+  "roles": [
+   {
+    "who": "Jo",
+    "did": "thrash",
+    "what": "Aunt March",
+    "where": null
+   },
+   {
+    "who": "Jo",
+    "did": "bear",
+    "what": "her name",
+    "where": null
+   }
+  ]
+ },
+ {
+  "id": 146,
+  "roles": [
+   {
+    "who": "Jo",
+    "did": "sigh",
+    "what": null,
+    "where": null
+   }
+  ]
+ },
+ {
+  "id": 147,
+  "roles": [
+   {
+    "who": "Laurie",
+    "did": "ask",
+    "what": "Jo",
+    "where": null
+   }
+  ]
+ },
+ {
+  "id": 148,
+  "roles": []
+ },
+ {
+  "id": 149,
+  "roles": [
+   {
+    "who": "Jo",
+    "did": "like",
+    "what": "dancing",
+    "where": null
+   }
+  ]
+ },
+ {
+  "id": 150,
+  "roles": [
+   {
+    "who": "Jo",
+    "did": "upset",
+    "what": "something",
+    "where": null
+   },
+   {
+    "who": "Jo",
+    "did": "tread on",
+    "what": "people's toes",
+    "where": null
+   },
+   {
+    "who": "Jo",
+    "did": "keep out",
+    "what": "mischief",
+    "where": null
+   },
+   {
+    "who": "Meg",
+    "did": "dance",
+    "what": null,
+    "where": null
+   }
+  ]
+ },
+ {
+  "id": 151,
+  "roles": [
+   {
+    "who": "Laurie",
+    "did": "dance",
+    "what": null,
+    "where": null
+   }
+  ]
+ },
+ {
+  "id": 152,
+  "roles": []
+ },
+ {
+  "id": 153,
+  "roles": [
+   {
+    "who": "Laurie",
+    "did": "live",
+    "what": "abroad",
+    "where": null
+   }
+  ]
+ },
+ {
+  "id": 154,
+  "roles": []
+ },
+ {
+  "id": 155,
+  "roles": []
+ },
+ {
+  "id": 156,
+  "roles": [
+   {
+    "who": "Laurie",
+    "did": "tell",
+    "what": "his travels",
+    "where": null
+   }
+  ]
+ },
+ {
+  "id": 157,
+  "roles": [
+   {
+    "who": "Jo",
+    "did": "love",
+    "what": "travels",
+    "where": null
+   }
+  ]
+ },
+ {
+  "id": 158,
+  "roles": [
+   {
+    "who": "Jo",
+    "did": "question",
+    "what": "Laurie",
+    "where": "the recess"
+   },
+   {
+    "who": "Laurie",
+    "did": "tell",
+    "what": "his travels",
+    "where": "the recess"
+   },
+   {
+    "who": "Laurie",
+    "did": "attend",
+    "what": "school",
+    "where": "Vevay"
+   },
+   {
+    "who": "the boys",
+    "did": "walk",
+    "what": null,
+    "where": "Switzerland"
+   }
+  ]
+ },
+ {
+  "id": 159,
+  "roles": [
+   {
+    "who": "Jo",
+    "did": "wish",
+    "what": "Vevay",
+    "where": null
+   }
+  ]
+ },
+ {
+  "id": 160,
+  "roles": []
+ },
+ {
+  "id": 161,
+  "roles": [
+   {
+    "who": "Laurie",
+    "did": "go",
+    "what": null,
+    "where": "Paris"
+   }
+  ]
+ },
+ {
+  "id": 162,
+  "roles": [
+   {
+    "who": "Laurie",
+    "did": "spend",
+    "what": "last winter",
+    "where": "Paris"
+   }
+  ]
+ },
+ {
+  "id": 163,
+  "roles": [
+   {
+    "who": "Laurie",
+    "did": "speak",
+    "what": "French",
+    "where": null
+   }
+  ]
+ },
+ {
+  "id": 164,
+  "roles": [
+   {
+    "who": "Laurie",
+    "did": "speak",
+    "what": "French",
+    "where": "Vevay"
+   }
+  ]
+ },
+ {
+  "id": 165,
+  "roles": [
+   {
+    "who": "Laurie",
+    "did": "speak",
+    "what": "French",
+    "where": null
+   }
+  ]
+ },
+ {
+  "id": 166,
+  "roles": [
+   {
+    "who": "Jo",
+    "did": "read",
+    "what": "French",
+    "where": null
+   },
+   {
+    "who": "Jo",
+    "did": "pronounce",
+    "what": "French",
+    "where": null
+   }
+  ]
+ },
+ {
+  "id": 167,
+  "roles": [
+   {
+    "who": "Laurie",
+    "did": "ask about",
+    "what": "Meg",
+    "where": null
+   }
+  ]
+ },
+ {
+  "id": 168,
+  "roles": []
+ },
+ {
+  "id": 169,
+  "roles": []
+ },
+ {
+  "id": 170,
+  "roles": [
+   {
+    "who": "Laurie",
+    "did": "ask about",
+    "what": "Meg",
+    "where": null
+   }
+  ]
+ },
+ {
+  "id": 171,
+  "roles": []
+ },
+ {
+  "id": 172,
+  "roles": []
+ },
+ {
+  "id": 173,
+  "roles": [
+   {
+    "who": "Jo",
+    "did": "ask about",
+    "what": "Meg",
+    "where": null
+   }
+  ]
+ },
+ {
+  "id": 174,
+  "roles": [
+   {
+    "who": "Meg",
+    "did": "dance",
+    "what": null,
+    "where": "the Gardiner house"
+   }
+  ]
+ },
+ {
+  "id": 175,
+  "roles": [
+   {
+    "who": "Jo",
+    "did": "glow",
+    "what": null,
+    "where": "the recess"
+   },
+   {
+    "who": "Jo",
+    "did": "store",
+    "what": "the praise",
+    "where": null
+   }
+  ]
+ },
+ {
+  "id": 176,
+  "roles": [
+   {
+    "who": "Jo",
+    "did": "peep",
+    "what": null,
+    "where": "the recess"
+   },
+   {
+    "who": "Laurie",
+    "did": "peep",
+    "what": null,
+    "where": "the recess"
+   },
+   {
+    "who": "Jo",
+    "did": "chat",
+    "what": null,
+    "where": "the recess"
+   },
+   {
+    "who": "Laurie",
+    "did": "chat",
+    "what": null,
+    "where": "the recess"
+   }
+  ]
+ },
+ {
+  "id": 177,
+  "roles": [
+   {
+    "who": "Jo",
+    "did": "amuse",
+    "what": "Laurie",
+    "where": "the recess"
+   },
+   {
+    "who": "Jo",
+    "did": "forget",
+    "what": "Jo's dress",
+    "where": "the recess"
+   }
+  ]
+ },
+ {
+  "id": 178,
+  "roles": [
+   {
+    "who": "Jo",
+    "did": "like",
+    "what": "Laurie",
+    "where": "the recess"
+   },
+   {
+    "who": "Jo",
+    "did": "look at",
+    "what": "Laurie",
+    "where": "the recess"
+   },
+   {
+    "who": "Jo",
+    "did": "describe",
+    "what": "Laurie",
+    "where": null
+   }
+  ]
+ },
+ {
+  "id": 179,
+  "roles": [
+   {
+    "who": "Jo",
+    "did": "describe",
+    "what": "Laurie",
+    "where": null
+   }
+  ]
+ },
+ {
+  "id": 180,
+  "roles": [
+   {
+    "who": "Jo",
+    "did": "wonder",
+    "what": "Laurie's age",
+    "where": null
+   }
+  ]
+ },
+ {
+  "id": 181,
+  "roles": [
+   {
+    "who": "Jo",
+    "did": "ask",
+    "what": "Laurie's age",
+    "where": null
+   }
+  ]
+ },
+ {
+  "id": 182,
+  "roles": [
+   {
+    "who": "Laurie",
+    "did": "go to",
+    "what": "college",
+    "where": null
+   }
+  ]
+ },
+ {
+  "id": 183,
+  "roles": [
+   {
+    "who": "Jo",
+    "did": "see",
+    "what": "Laurie",
+    "where": null
+   },
+   {
+    "who": "Laurie",
+    "did": "study",
+    "what": "his books",
+    "where": null
+   }
+  ]
+ },
+ {
+  "id": 184,
+  "roles": [
+   {
+    "who": "Jo",
+    "did": "blush",
+    "what": null,
+    "where": "the recess"
+   }
+  ]
+ },
+ {
+  "id": 185,
+  "roles": [
+   {
+    "who": "Laurie",
+    "did": "smile",
+    "what": null,
+    "where": "the recess"
+   },
+   {
+    "who": "Laurie",
+    "did": "shrug",
+    "what": null,
+    "where": "the recess"
+   }
+  ]
+ },
+ {
+  "id": 186,
+  "roles": []
+ },
+ {
+  "id": 187,
+  "roles": [
+   {
+    "who": "Laurie",
+    "did": "go to",
+    "what": "college",
+    "where": null
+   }
+  ]
+ },
+ {
+  "id": 188,
+  "roles": []
+ },
+ {
+  "id": 189,
+  "roles": [
+   {
+    "who": "Jo",
+    "did": "ask",
+    "what": "Laurie's age",
+    "where": null
+   },
+   {
+    "who": "Jo",
+    "did": "look at",
+    "what": "Laurie",
+    "where": null
+   }
+  ]
+ },
+ {
+  "id": 190,
+  "roles": []
+ },
+ {
+  "id": 191,
+  "roles": [
+   {
+    "who": "Jo",
+    "did": "wish",
+    "what": "college",
+    "where": null
+   }
+  ]
+ },
+ {
+  "id": 192,
+  "roles": [
+   {
+    "who": "Laurie",
+    "did": "like",
+    "what": "college",
+    "where": null
+   }
+  ]
+ },
+ {
+  "id": 193,
+  "roles": [
+   {
+    "who": "Laurie",
+    "did": "hate",
+    "what": "college",
+    "where": null
+   }
+  ]
+ },
+ {
+  "id": 194,
+  "roles": []
+ },
+ {
+  "id": 195,
+  "roles": [
+   {
+    "who": "Laurie",
+    "did": "dislike",
+    "what": "the fellows",
+    "where": null
+   }
+  ]
+ },
+ {
+  "id": 196,
+  "roles": [
+   {
+    "who": "Jo",
+    "did": "ask",
+    "what": "Laurie",
+    "where": null
+   }
+  ]
+ },
+ {
+  "id": 197,
+  "roles": [
+   {
+    "who": "Laurie",
+    "did": "want",
+    "what": "to live in Italy",
+    "where": "Italy"
+   }
+  ]
+ },
+ {
+  "id": 198,
+  "roles": [
+   {
+    "who": "Jo",
+    "did": "want",
+    "what": "to ask",
+    "where": null
+   },
+   {
+    "who": "Laurie",
+    "did": "knit",
+    "what": "his brows",
+    "where": "the recess"
+   },
+   {
+    "who": "Jo",
+    "did": "change",
+    "what": "the subject",
+    "where": "the recess"
+   }
+  ]
+ },
+ {
+  "id": 199,
+  "roles": [
+   {
+    "who": "Laurie",
+    "did": "dance",
+    "what": "the polka",
+    "where": null
+   }
+  ]
+ },
+ {
+  "id": 200,
+  "roles": [
+   {
+    "who": "Laurie",
+    "did": "bow",
+    "what": null,
+    "where": "the recess"
+   },
+   {
+    "who": "Laurie",
+    "did": "invite",
+    "what": "Jo",
+    "where": null
+   }
+  ]
+ },
+ {
+  "id": 201,
+  "roles": [
+   {
+    "who": "Jo",
+    "did": "tell",
+    "what": "Meg",
+    "where": null
+   }
+  ]
+ },
+ {
+  "id": 202,
+  "roles": [
+   {
+    "who": "Jo",
+    "did": "stop",
+    "what": null,
+    "where": "the recess"
+   }
+  ]
+ },
+ {
+  "id": 203,
+  "roles": []
+ },
+ {
+  "id": 204,
+  "roles": [
+   {
+    "who": "Laurie",
+    "did": "tell",
+    "what": null,
+    "where": null
+   }
+  ]
+ },
+ {
+  "id": 205,
+  "roles": []
+ },
+ {
+  "id": 206,
+  "roles": [
+   {
+    "who": "Jo",
+    "did": "stand before",
+    "what": "the fire",
+    "where": null
+   },
+   {
+    "who": "Jo",
+    "did": "burn",
+    "what": "Jo's dress",
+    "where": null
+   },
+   {
+    "who": "Meg",
+    "did": "tell",
+    "what": "Jo",
+    "where": null
+   },
+   {
+    "who": "Jo",
+    "did": "hide",
+    "what": "the burn",
+    "where": null
+   }
+  ]
+ },
+ {
+  "id": 207,
+  "roles": [
+   {
+    "who": "Laurie",
+    "did": "laugh",
+    "what": null,
+    "where": null
+   }
+  ]
+ },
+ {
+  "id": 208,
+  "roles": []
+ },
+ {
+  "id": 209,
+  "roles": [
+   {
+    "who": "Laurie",
+    "did": "laugh",
+    "what": null,
+    "where": null
+   }
+  ]
+ },
+ {
+  "id": 210,
+  "roles": [
+   {
+    "who": "Laurie",
+    "did": "look down",
+    "what": null,
+    "where": "the recess"
+   }
+  ]
+ },
+ {
+  "id": 211,
+  "roles": []
+ },
+ {
+  "id": 212,
+  "roles": [
+   {
+    "who": "Jo",
+    "did": "dance",
+    "what": null,
+    "where": "the hall"
+   },
+   {
+    "who": "Laurie",
+    "did": "dance",
+    "what": null,
+    "where": "the hall"
+   }
+  ]
+ },
+ {
+  "id": 213,
+  "roles": [
+   {
+    "who": "Laurie",
+    "did": "invite",
+    "what": "Jo",
+    "where": null
+   }
+  ]
+ },
+ {
+  "id": 214,
+  "roles": [
+   {
+    "who": "Jo",
+    "did": "thank",
+    "what": "Laurie",
+    "where": null
+   },
+   {
+    "who": "Jo",
+    "did": "go",
+    "what": null,
+    "where": "the hall"
+   },
+   {
+    "who": "Jo",
+    "did": "wish",
+    "what": "the gloves",
+    "where": null
+   },
+   {
+    "who": "Laurie",
+    "did": "wear",
+    "what": "gloves",
+    "where": null
+   }
+  ]
+ },
+ {
+  "id": 215,
+  "roles": [
+   {
+    "who": "Jo",
+    "did": "dance",
+    "what": "the polka",
+    "where": "the hall"
+   },
+   {
+    "who": "Laurie",
+    "did": "dance",
+    "what": "the polka",
+    "where": "the hall"
+   },
+   {
+    "who": "Laurie",
+    "did": "teach",
+    "what": "the German step",
+    "where": "the hall"
+   }
+  ]
+ },
+ {
+  "id": 216,
+  "roles": [
+   {
+    "who": "Jo",
+    "did": "sit down",
+    "what": null,
+    "where": "the stairs"
+   },
+   {
+    "who": "Laurie",
+    "did": "sit down",
+    "what": null,
+    "where": "the stairs"
+   },
+   {
+    "who": "Laurie",
+    "did": "tell about",
+    "what": "a students' festival",
+    "where": "the stairs"
+   },
+   {
+    "who": "Meg",
+    "did": "look for",
+    "what": "Jo",
+    "where": "the Gardiner house"
+   }
+  ]
+ },
+ {
+  "id": 217,
+  "roles": [
+   {
+    "who": "Meg",
+    "did": "beckon",
+    "what": "Jo",
+    "where": null
+   },
+   {
+    "who": "Jo",
+    "did": "follow",
+    "what": "Meg",
+    "where": "the side room"
+   },
+   {
+    "who": "Meg",
+    "did": "hold",
+    "what": "Meg's ankle",
+    "where": "the side room"
+   }
+  ]
+ },
+ {
+  "id": 218,
+  "roles": [
+   {
+    "who": "Meg",
+    "did": "sprain",
+    "what": "Meg's ankle",
+    "where": "the side room"
+   }
+  ]
+ },
+ {
+  "id": 219,
+  "roles": [
+   {
+    "who": "the slippers",
+    "did": "wrench",
+    "what": "Meg's ankle",
+    "where": null
+   }
+  ]
+ },
+ {
+  "id": 220,
+  "roles": [
+   {
+    "who": "Meg",
+    "did": "go home",
+    "what": null,
+    "where": "home"
+   }
+  ]
+ },
+ {
+  "id": 221,
+  "roles": [
+   {
+    "who": "Meg",
+    "did": "hurt",
+    "what": "Meg's ankle",
+    "where": null
+   }
+  ]
+ },
+ {
+  "id": 222,
+  "roles": []
+ },
+ {
+  "id": 223,
+  "roles": [
+   {
+    "who": "Meg",
+    "did": "get",
+    "what": "a carriage",
+    "where": null
+   },
+   {
+    "who": "Meg",
+    "did": "stay",
+    "what": null,
+    "where": "the Gardiner house"
+   },
+   {
+    "who": "Jo",
+    "did": "rub",
+    "what": "Meg's ankle",
+    "where": "the side room"
+   }
+  ]
+ },
+ {
+  "id": 224,
+  "roles": [
+   {
+    "who": "Meg",
+    "did": "get",
+    "what": "a carriage",
+    "where": null
+   }
+  ]
+ },
+ {
+  "id": 225,
+  "roles": [
+   {
+    "who": "Meg",
+    "did": "get",
+    "what": "a carriage",
+    "where": null
+   },
+   {
+    "who": null,
+    "did": "send",
+    "what": null,
+    "where": "the stable"
+   }
+  ]
+ },
+ {
+  "id": 226,
+  "roles": [
+   {
+    "who": "Jo",
+    "did": "go",
+    "what": null,
+    "where": "the stable"
+   }
+  ]
+ },
+ {
+  "id": 227,
+  "roles": []
+ },
+ {
+  "id": 228,
+  "roles": []
+ },
+ {
+  "id": 229,
+  "roles": [
+   {
+    "who": "Meg",
+    "did": "stay",
+    "what": null,
+    "where": "the Gardiner house"
+   }
+  ]
+ },
+ {
+  "id": 230,
+  "roles": [
+   {
+    "who": "Sallie",
+    "did": "have",
+    "what": "guests",
+    "where": "the Gardiner house"
+   }
+  ]
+ },
+ {
+  "id": 231,
+  "roles": [
+   {
+    "who": "Meg",
+    "did": "rest",
+    "what": null,
+    "where": null
+   },
+   {
+    "who": "Meg",
+    "did": "wait",
+    "what": "Hannah",
+    "where": null
+   }
+  ]
+ },
+ {
+  "id": 232,
+  "roles": [
+   {
+    "who": "Jo",
+    "did": "ask",
+    "what": "Laurie",
+    "where": null
+   }
+  ]
+ },
+ {
+  "id": 233,
+  "roles": [
+   {
+    "who": "Laurie",
+    "did": "go",
+    "what": null,
+    "where": null
+   }
+  ]
+ },
+ {
+  "id": 234,
+  "roles": []
+ },
+ {
+  "id": 235,
+  "roles": [
+   {
+    "who": "Jo",
+    "did": "tell",
+    "what": null,
+    "where": null
+   }
+  ]
+ },
+ {
+  "id": 236,
+  "roles": [
+   {
+    "who": "Jo",
+    "did": "get",
+    "what": "the rubbers",
+    "where": null
+   },
+   {
+    "who": "Jo",
+    "did": "put away",
+    "what": "the slippers",
+    "where": null
+   }
+  ]
+ },
+ {
+  "id": 237,
+  "roles": [
+   {
+    "who": "Meg",
+    "did": "dance",
+    "what": null,
+    "where": null
+   },
+   {
+    "who": "Jo",
+    "did": "watch",
+    "what": "Hannah",
+    "where": null
+   }
+  ]
+ },
+ {
+  "id": 238,
+  "roles": []
+ },
+ {
+  "id": 239,
+  "roles": [
+   {
+    "who": "Jo",
+    "did": "stay",
+    "what": "Meg",
+    "where": "the side room"
+   }
+  ]
+ },
+ {
+  "id": 240,
+  "roles": []
+ },
+ {
+  "id": 241,
+  "roles": [
+   {
+    "who": "Jo",
+    "did": "bring",
+    "what": "the coffee",
+    "where": null
+   }
+  ]
+ },
+ {
+  "id": 242,
+  "roles": [
+   {
+    "who": "Meg",
+    "did": "rest",
+    "what": null,
+    "where": null
+   }
+  ]
+ },
+ {
+  "id": 243,
+  "roles": [
+   {
+    "who": "Meg",
+    "did": "recline",
+    "what": null,
+    "where": "the side room"
+   },
+   {
+    "who": "Meg",
+    "did": "hide",
+    "what": "the rubbers",
+    "where": "the side room"
+   },
+   {
+    "who": "Jo",
+    "did": "go",
+    "what": null,
+    "where": "the dining room"
+   },
+   {
+    "who": "Mr. Gardiner",
+    "did": "take",
+    "what": "refreshment",
+    "where": "the Gardiner house"
+   }
+  ]
+ },
+ {
+  "id": 244,
+  "roles": [
+   {
+    "who": "Jo",
+    "did": "get",
+    "what": "the coffee",
+    "where": "the dining room"
+   },
+   {
+    "who": "Jo",
+    "did": "spill",
+    "what": "the coffee",
+    "where": "the dining room"
+   },
+   {
+    "who": "Jo",
+    "did": "stain",
+    "what": "Jo's dress",
+    "where": "the dining room"
+   }
+  ]
+ },
+ {
+  "id": 245,
+  "roles": []
+ },
+ {
+  "id": 246,
+  "roles": [
+   {
+    "who": "Jo",
+    "did": "scrub",
+    "what": "Jo's dress",
+    "where": "the dining room"
+   },
+   {
+    "who": "Jo",
+    "did": "stain",
+    "what": "the gloves",
+    "where": "the dining room"
+   }
+  ]
+ },
+ {
+  "id": 247,
+  "roles": [
+   {
+    "who": "Laurie",
+    "did": "help",
+    "what": "Jo",
+    "where": "the dining room"
+   }
+  ]
+ },
+ {
+  "id": 248,
+  "roles": []
+ },
+ {
+  "id": 249,
+  "roles": [
+   {
+    "who": "Laurie",
+    "did": "carry",
+    "what": "the coffee",
+    "where": "the dining room"
+   },
+   {
+    "who": "Laurie",
+    "did": "carry",
+    "what": "ice",
+    "where": "the dining room"
+   }
+  ]
+ },
+ {
+  "id": 250,
+  "roles": [
+   {
+    "who": "Jo",
+    "did": "get",
+    "what": "the coffee",
+    "where": null
+   },
+   {
+    "who": null,
+    "did": "shake",
+    "what": "Jo",
+    "where": null
+   },
+   {
+    "who": "Jo",
+    "did": "look at",
+    "what": "Jo's dress",
+    "where": null
+   },
+   {
+    "who": "Jo",
+    "did": "look at",
+    "what": "the gloves",
+    "where": null
+   }
+  ]
+ },
+ {
+  "id": 251,
+  "roles": []
+ },
+ {
+  "id": 252,
+  "roles": [
+   {
+    "who": "Laurie",
+    "did": "look for",
+    "what": "someone",
+    "where": null
+   }
+  ]
+ },
+ {
+  "id": 253,
+  "roles": [
+   {
+    "who": "Laurie",
+    "did": "take",
+    "what": "the coffee",
+    "where": null
+   }
+  ]
+ },
+ {
+  "id": 254,
+  "roles": [
+   {
+    "who": "Jo",
+    "did": "thank",
+    "what": "Laurie",
+    "where": null
+   }
+  ]
+ },
+ {
+  "id": 255,
+  "roles": [
+   {
+    "who": "Jo",
+    "did": "show",
+    "what": "Meg",
+    "where": null
+   }
+  ]
+ },
+ {
+  "id": 256,
+  "roles": [
+   {
+    "who": "Jo",
+    "did": "take",
+    "what": "the coffee",
+    "where": null
+   }
+  ]
+ },
+ {
+  "id": 257,
+  "roles": [
+   {
+    "who": "Jo",
+    "did": "lead",
+    "what": "Laurie",
+    "where": "the side room"
+   },
+   {
+    "who": "Laurie",
+    "did": "draw up",
+    "what": "a table",
+    "where": "the side room"
+   },
+   {
+    "who": "Laurie",
+    "did": "bring",
+    "what": "the coffee",
+    "where": "the side room"
+   },
+   {
+    "who": "Meg",
+    "did": "praise",
+    "what": "Laurie",
+    "where": "the side room"
+   }
+  ]
+ },
+ {
+  "id": 258,
+  "roles": [
+   {
+    "who": "Jo",
+    "did": "eat",
+    "what": "the bonbons",
+    "where": "the side room"
+   },
+   {
+    "who": "Jo",
+    "did": "play",
+    "what": "Buzz",
+    "where": "the side room"
+   },
+   {
+    "who": "Hannah",
+    "did": "appear",
+    "what": null,
+    "where": "the side room"
+   }
+  ]
+ },
+ {
+  "id": 259,
+  "roles": [
+   {
+    "who": "Meg",
+    "did": "forget",
+    "what": "Meg's ankle",
+    "where": "the side room"
+   },
+   {
+    "who": "Meg",
+    "did": "rise",
+    "what": null,
+    "where": "the side room"
+   },
+   {
+    "who": "Meg",
+    "did": "catch hold",
+    "what": "Jo",
+    "where": "the side room"
+   }
+  ]
+ },
+ {
+  "id": 260,
+  "roles": []
+ },
+ {
+  "id": 261,
+  "roles": [
+   {
+    "who": "Meg",
+    "did": "whisper",
+    "what": null,
+    "where": null
+   }
+  ]
+ },
+ {
+  "id": 262,
+  "roles": [
+   {
+    "who": "Meg",
+    "did": "hurt",
+    "what": "Meg's ankle",
+    "where": null
+   },
+   {
+    "who": "Meg",
+    "did": "limp",
+    "what": null,
+    "where": "upstairs"
+   },
+   {
+    "who": "Meg",
+    "did": "put on",
+    "what": "her things",
+    "where": null
+   }
+  ]
+ },
+ {
+  "id": 263,
+  "roles": [
+   {
+    "who": "Hannah",
+    "did": "scold",
+    "what": null,
+    "where": null
+   },
+   {
+    "who": "Meg",
+    "did": "cry",
+    "what": null,
+    "where": null
+   },
+   {
+    "who": "Jo",
+    "did": "take",
+    "what": "things into her own hands",
+    "where": null
+   }
+  ]
+ },
+ {
+  "id": 264,
+  "roles": [
+   {
+    "who": "Jo",
+    "did": "run down",
+    "what": null,
+    "where": "the Gardiner house"
+   },
+   {
+    "who": "Jo",
+    "did": "find",
+    "what": "a servant",
+    "where": "the Gardiner house"
+   },
+   {
+    "who": "Jo",
+    "did": "ask for",
+    "what": "a carriage",
+    "where": "the Gardiner house"
+   }
+  ]
+ },
+ {
+  "id": 265,
+  "roles": [
+   {
+    "who": "Laurie",
+    "did": "hear",
+    "what": "Jo",
+    "where": "the Gardiner house"
+   },
+   {
+    "who": "Laurie",
+    "did": "offer",
+    "what": "the Laurence carriage",
+    "where": "the Gardiner house"
+   }
+  ]
+ },
+ {
+  "id": 266,
+  "roles": []
+ },
+ {
+  "id": 267,
+  "roles": [
+   {
+    "who": "Laurie",
+    "did": "go",
+    "what": null,
+    "where": null
+   }
+  ]
+ },
+ {
+  "id": 268,
+  "roles": [
+   {
+    "who": "Jo",
+    "did": "hesitate",
+    "what": "the offer",
+    "where": null
+   }
+  ]
+ },
+ {
+  "id": 269,
+  "roles": [
+   {
+    "who": "Laurie",
+    "did": "go early",
+    "what": null,
+    "where": null
+   }
+  ]
+ },
+ {
+  "id": 270,
+  "roles": [
+   {
+    "who": "Laurie",
+    "did": "take home",
+    "what": "Jo",
+    "where": "home"
+   }
+  ]
+ },
+ {
+  "id": 271,
+  "roles": [
+   {
+    "who": null,
+    "did": "rain",
+    "what": null,
+    "where": null
+   }
+  ]
+ },
+ {
+  "id": 272,
+  "roles": [
+   {
+    "who": "Jo",
+    "did": "tell",
+    "what": "Laurie",
+    "where": null
+   },
+   {
+    "who": "Jo",
+    "did": "accept",
+    "what": "the offer",
+    "where": null
+   },
+   {
+    "who": "Jo",
+    "did": "bring down",
+    "what": "the party",
+    "where": "the Gardiner house"
+   }
+  ]
+ },
+ {
+  "id": 273,
+  "roles": [
+   {
+    "who": "Hannah",
+    "did": "hate",
+    "what": "rain",
+    "where": null
+   },
+   {
+    "who": "Jo",
+    "did": "ride",
+    "what": "the Laurence carriage",
+    "where": null
+   },
+   {
+    "who": "Meg",
+    "did": "ride",
+    "what": "the Laurence carriage",
+    "where": null
+   },
+   {
+    "who": "Hannah",
+    "did": "ride",
+    "what": "the Laurence carriage",
+    "where": null
+   }
+  ]
+ },
+ {
+  "id": 274,
+  "roles": [
+   {
+    "who": "Laurie",
+    "did": "ride",
+    "what": "the box",
+    "where": null
+   },
+   {
+    "who": "Meg",
+    "did": "keep up",
+    "what": "Meg's ankle",
+    "where": null
+   },
+   {
+    "who": "Jo",
+    "did": "talk over",
+    "what": "the party",
+    "where": "the Laurence carriage"
+   },
+   {
+    "who": "Meg",
+    "did": "talk over",
+    "what": "the party",
+    "where": "the Laurence carriage"
+   }
+  ]
+ },
+ {
+  "id": 275,
+  "roles": [
+   {
+    "who": "Jo",
+    "did": "enjoy",
+    "what": "the party",
+    "where": null
+   }
+  ]
+ },
+ {
+  "id": 276,
+  "roles": [
+   {
+    "who": "Meg",
+    "did": "enjoy",
+    "what": "the party",
+    "where": null
+   }
+  ]
+ },
+ {
+  "id": 277,
+  "roles": [
+   {
+    "who": "Jo",
+    "did": "ask",
+    "what": "Meg",
+    "where": "the Laurence carriage"
+   },
+   {
+    "who": "Jo",
+    "did": "rumple",
+    "what": "Jo's hair",
+    "where": "the Laurence carriage"
+   }
+  ]
+ },
+ {
+  "id": 278,
+  "roles": [
+   {
+    "who": "Meg",
+    "did": "hurt",
+    "what": "Meg's ankle",
+    "where": null
+   }
+  ]
+ },
+ {
+  "id": 279,
+  "roles": [
+   {
+    "who": "Annie Moffat",
+    "did": "take a fancy",
+    "what": "Meg",
+    "where": null
+   },
+   {
+    "who": "Annie Moffat",
+    "did": "invite",
+    "what": "Meg",
+    "where": null
+   }
+  ]
+ },
+ {
+  "id": 280,
+  "roles": [
+   {
+    "who": "Annie Moffat",
+    "did": "go",
+    "what": null,
+    "where": null
+   },
+   {
+    "who": "Mrs. March",
+    "did": "allow",
+    "what": "the visit",
+    "where": null
+   },
+   {
+    "who": "Meg",
+    "did": "cheer up",
+    "what": null,
+    "where": null
+   }
+  ]
+ },
+ {
+  "id": 281,
+  "roles": [
+   {
+    "who": "Jo",
+    "did": "see",
+    "what": "Meg",
+    "where": "the Gardiner house"
+   },
+   {
+    "who": "Meg",
+    "did": "dance",
+    "what": "the red-headed youth",
+    "where": "the Gardiner house"
+   },
+   {
+    "who": "Jo",
+    "did": "run from",
+    "what": "the red-headed youth",
+    "where": "the Gardiner house"
+   }
+  ]
+ },
+ {
+  "id": 282,
+  "roles": [
+   {
+    "who": "Jo",
+    "did": "ask about",
+    "what": "the red-headed youth",
+    "where": null
+   }
+  ]
+ },
+ {
+  "id": 283,
+  "roles": []
+ },
+ {
+  "id": 284,
+  "roles": [
+   {
+    "who": "Meg",
+    "did": "dance",
+    "what": "the red-headed youth",
+    "where": null
+   }
+  ]
+ },
+ {
+  "id": 285,
+  "roles": [
+   {
+    "who": "the red-headed youth",
+    "did": "dance",
+    "what": "the new step",
+    "where": null
+   }
+  ]
+ },
+ {
+  "id": 286,
+  "roles": [
+   {
+    "who": "Jo",
+    "did": "laugh at",
+    "what": "the red-headed youth",
+    "where": null
+   },
+   {
+    "who": "Laurie",
+    "did": "laugh at",
+    "what": "the red-headed youth",
+    "where": null
+   }
+  ]
+ },
+ {
+  "id": 287,
+  "roles": [
+   {
+    "who": "Meg",
+    "did": "hear",
+    "what": "Jo",
+    "where": null
+   }
+  ]
+ },
+ {
+  "id": 288,
+  "roles": []
+ },
+ {
+  "id": 289,
+  "roles": [
+   {
+    "who": "Meg",
+    "did": "ask",
+    "what": "Jo",
+    "where": null
+   },
+   {
+    "who": "Jo",
+    "did": "hide",
+    "what": null,
+    "where": "the recess"
+   }
+  ]
+ },
+ {
+  "id": 290,
+  "roles": [
+   {
+    "who": "Jo",
+    "did": "tell",
+    "what": "her adventures",
+    "where": "the Laurence carriage"
+   },
+   {
+    "who": "Jo",
+    "did": "arrive",
+    "what": null,
+    "where": "home"
+   },
+   {
+    "who": "Meg",
+    "did": "arrive",
+    "what": null,
+    "where": "home"
+   }
+  ]
+ },
+ {
+  "id": 291,
+  "roles": [
+   {
+    "who": "Jo",
+    "did": "thank",
+    "what": "Laurie",
+    "where": null
+   },
+   {
+    "who": "Jo",
+    "did": "creep in",
+    "what": null,
+    "where": "home"
+   },
+   {
+    "who": "Beth",
+    "did": "cry",
+    "what": null,
+    "where": "home"
+   },
+   {
+    "who": "Amy",
+    "did": "cry",
+    "what": null,
+    "where": "home"
+   }
+  ]
+ },
+ {
+  "id": 292,
+  "roles": [
+   {
+    "who": "Jo",
+    "did": "tell about",
+    "what": "the party",
+    "where": "home"
+   }
+  ]
+ },
+ {
+  "id": 293,
+  "roles": [
+   {
+    "who": "Jo",
+    "did": "tell about",
+    "what": "the party",
+    "where": "home"
+   }
+  ]
+ },
+ {
+  "id": 294,
+  "roles": [
+   {
+    "who": "Jo",
+    "did": "save",
+    "what": "the bonbons",
+    "where": null
+   },
+   {
+    "who": "Beth",
+    "did": "hear",
+    "what": "the party",
+    "where": "home"
+   },
+   {
+    "who": "Amy",
+    "did": "hear",
+    "what": "the party",
+    "where": "home"
+   }
+  ]
+ },
+ {
+  "id": 295,
+  "roles": [
+   {
+    "who": "Meg",
+    "did": "come home",
+    "what": null,
+    "where": "home"
+   },
+   {
+    "who": "Meg",
+    "did": "ride",
+    "what": "the Laurence carriage",
+    "where": null
+   },
+   {
+    "who": "Jo",
+    "did": "bind up",
+    "what": "Meg's ankle",
+    "where": "home"
+   },
+   {
+    "who": "Jo",
+    "did": "brush",
+    "what": "Meg's hair",
+    "where": "home"
+   }
+  ]
+ },
+ {
+  "id": 296,
+  "roles": [
+   {
+    "who": "Jo",
+    "did": "enjoy",
+    "what": "the party",
+    "where": null
+   },
+   {
+    "who": "Meg",
+    "did": "burn",
+    "what": "Meg's hair",
+    "where": null
+   },
+   {
+    "who": "Meg",
+    "did": "sprain",
+    "what": "Meg's ankle",
+    "where": null
+   },
+   {
+    "who": "Meg",
+    "did": "wear",
+    "what": "the slippers",
+    "where": null
+   }
+  ]
+ },
+ {
+  "id": 297,
+  "roles": []
+ }
+]

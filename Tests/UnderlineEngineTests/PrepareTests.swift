@@ -2,12 +2,12 @@ import Foundation
 import Testing
 @testable import UnderlineEngine
 
-@Test func prepareFillsEventsAndVectorsForWholeChapter() async throws {
+@Test func prepareFillsEventsForWholeChapter() async throws {
     let input = ChapterInput(chapterIndex: 0, plainText: try String(contentsOf: datasetURL("little-women-ch1.txt"), encoding: .utf8))
-    let ch = await ChapterIndexSvc().prepare(input, embedding: EmbeddingSvcApple())
+    let ch = await ChapterIndexSvc().prepare(input, embedding: EmbeddingSvcUnavailable())
     #expect(ch.sentences.count == 227)
     #expect(ch.sentence(39)?.events.count == 3)
-    if ch.embedding != .none { #expect(ch.sentences.allSatisfy { $0.vector?.count == 512 }) }
+    #expect(ch.sentences.allSatisfy { ($0.wordVectors ?? []).isEmpty })
 }
 
 @Test func indexedChapterRoundTripsThroughJSON() async throws {
@@ -16,12 +16,6 @@ import Testing
     #expect(back.sentences.map(\.text) == ch.sentences.map(\.text))
     #expect(back.embedding == .none)
     #expect(back.chapterIndex == 2)
-}
-
-@Test func cosineHandlesEmptyAndMismatched() {
-    #expect(Cosine.similarity([], [1]) == 0)
-    #expect(abs(Cosine.similarity([1, 0], [1, 0]) - 1) < 1e-9)
-    #expect(abs(Cosine.similarity([1, 0], [-1, 0])) < 1e-9)
 }
 
 /// One paragraph of four sentences, given to the engine with the global sentence indexes in `indexes`.
@@ -54,7 +48,7 @@ private func chapterWithIndexes(_ indexes: [Int], extra: [SentenceInput] = [], d
 }
 
 @Test func bookStatsCountTheWholeBookAndReplaceTheChapters() async {
-    let engine = UnderlineCtrl(model: .rulesOnly, embedding: .none)
+    let engine = UnderlineCtrl(embeddingSvc: EmbeddingSvcUnavailable())
     let one = ChapterInput(chapterIndex: 0, plainText: "Jo found a parrot. Meg sewed by the fire.")
     let two = ChapterInput(chapterIndex: 1, plainText: "The parrot screamed. Amy drew a picture.", firstParagraph: 1, firstSentence: 2)
     let stats = engine.prepareBook([one, two])
@@ -67,7 +61,7 @@ private func chapterWithIndexes(_ indexes: [Int], extra: [SentenceInput] = [], d
 }
 
 @Test func preparingByBookUsesTheWholeBookOnceAndRedoesItForAnotherBook() async {
-    let engine = UnderlineCtrl(model: .rulesOnly, embedding: .none)
+    let engine = UnderlineCtrl(embeddingSvc: EmbeddingSvcUnavailable())
     let one = ChapterInput(chapterIndex: 0, plainText: "Jo found a parrot. Meg sewed by the fire.")
     let two = ChapterInput(chapterIndex: 1, plainText: "The parrot screamed. Amy drew a picture.", firstParagraph: 1, firstSentence: 2)
     let other = ChapterInput(chapterIndex: 0, plainText: "A dragon slept. The hobbit crept by.")
@@ -87,8 +81,4 @@ private final class Calls: @unchecked Sendable {
     private var value = 0
     var count: Int { lock.withLock { value } }
     func add() { lock.withLock { value += 1 } }
-}
-
-@Test func contextualFallsBackWhenAskedFromTheSyncInit() {
-    #expect(UnderlineCtrl(model: .rulesOnly, embedding: .contextual).embeddingEngine != .contextual)
 }

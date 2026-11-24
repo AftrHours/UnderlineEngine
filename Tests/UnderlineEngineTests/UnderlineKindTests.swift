@@ -22,15 +22,17 @@ private func phrase(_ role: EventRole?, _ track: Track) -> EventPhrase {
 @Test func underlineAndRecordRoundTripThroughJSON() throws {
     let ref = AnswerPassage(sentence: 38, paragraph: 19, range: NSRange(location: 0, length: 12), text: "Jo does use such slang words!")
     let u = Underline(sentence: 39, paragraph: 20, range: NSRange(location: 55, length: 16), text: "began to whistle",
-                      kind: .action, role: .attempt, reference: ref, decidedBy: .model)
+                      kind: .action, role: .attempt, reference: ref, decidedBy: .rules)
     #expect(try JSONDecoder().decode(Underline.self, from: JSONEncoder().encode(u)) == u)
     #expect(u.id == "39:55")
-    let r = UnderlineRecord(chapterIndex: 0, sentence: 39, phrase: "began to whistle", kind: .action, path: .model,
-                            searchModeUsed: .both, embedding: .sentence, candidates: [38, 36],
-                            promptSentences: [39, 38, 36], pickedSentence: 38,
-                            confirm: ConfirmTrace(explains: true, evidence: "Amy scolds Jo"), kept: true, dropped: nil,
-                            times: StepTimes(searchMs: 3, confirmMs: 300))
+    var r = UnderlineRecord(chapterIndex: 0, sentence: 39, phrase: "began to whistle", kind: .action, embedding: .contextual,
+                            phraseRange: NSRange(location: 0, length: 16))
+    r.candidates = [38, 36]
+    r.candidateScores = [0.8, 0.4]
+    r.pickedSentence = 38
+    r.confirmed = true
+    r.kept = true
+    r.searchMs = 3
     let back = try JSONDecoder().decode(UnderlineRecord.self, from: JSONEncoder().encode(r))
-    #expect(back.promptSentences == [39, 38, 36])
-    #expect(back.confirm == ConfirmTrace(explains: true, evidence: "Amy scolds Jo"))
+    #expect(back == r)
 }

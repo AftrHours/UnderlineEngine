@@ -5,7 +5,7 @@ import Testing
 private func kept(_ sentence: Int, paragraph: Int, at location: Int, length: Int = 5, score: Double, kind: UnderlineKind = .action) -> KeptUnderline {
     let ref = AnswerPassage(sentence: 0, paragraph: 0, range: NSRange(location: 0, length: 1), text: "r")
     let u = Underline(sentence: sentence, paragraph: paragraph, range: NSRange(location: location, length: length), text: "x",
-                      kind: kind, role: nil, reference: ref, decidedBy: .model)
+                      kind: kind, role: nil, reference: ref, decidedBy: .rules)
     return KeptUnderline(underline: u, score: score)
 }
 

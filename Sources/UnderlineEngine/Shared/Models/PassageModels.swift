@@ -1,13 +1,8 @@
 import Foundation
 
-/// Which main search signals are used (spec §5.5). The app always uses `.both`; only the harness compares the others.
-enum SearchMode: String, Sendable, Codable, Hashable, CaseIterable {
-    case embed, words, both
-}
-
-/// How an answer was decided.
+/// How an answer was decided. Always the rules; kept because iRead saves it (`decidedBy`).
 public enum AnswerPath: String, Sendable, Codable, Hashable {
-    case model, rules
+    case rules
 }
 
 /// The answer passage, with the same fields as iRead's `ContextPassage` plus the sentence index.

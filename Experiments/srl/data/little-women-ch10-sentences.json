@@ -1,0 +1,1381 @@
+[
+{
+"id": 0,
+"paragraph": 0,
+"start": 0,
+"end": 140,
+"text": "As spring came on, a new set of amusements became the fashion, and the lengthening days gave long afternoons for work and play of all sorts."
+},
+{
+"id": 1,
+"paragraph": 0,
+"start": 141,
+"end": 251,
+"text": "The garden had to be put in order, and each sister had a quarter of the little plot to do what she liked with."
+},
+{
+"id": 2,
+"paragraph": 0,
+"start": 252,
+"end": 424,
+"text": "Hannah used to say, \"I'd know which each of them gardings belonged to, ef I see 'em in Chiny,\" and so she might, for the girls' tastes differed as much as their characters."
+},
+{
+"id": 3,
+"paragraph": 0,
+"start": 425,
+"end": 496,
+"text": "Meg's had roses and heliotrope, myrtle, and a little orange tree in it."
+},
+{
+"id": 4,
+"paragraph": 0,
+"start": 497,
+"end": 573,
+"text": "Jo's bed was never alike two seasons, for she was always trying experiments."
+},
+{
+"id": 5,
+"paragraph": 0,
+"start": 574,
+"end": 727,
+"text": "This year it was to be a plantation of sun flowers, the seeds of which cheerful and aspiring plant were to feed Aunt Cockle-top and her family of chicks."
+},
+{
+"id": 6,
+"paragraph": 0,
+"start": 728,
+"end": 910,
+"text": "Beth had old-fashioned fragrant flowers in her garden, sweet peas and mignonette, larkspur, pinks, pansies, and southernwood, with chickweed for the birds and catnip for the pussies."
+},
+{
+"id": 7,
+"paragraph": 0,
+"start": 911,
+"end": 1210,
+"text": "Amy had a bower in hers, rather small and earwiggy, but very pretty to look at, with honeysuckle and morning-glories hanging their colored horns and bells in graceful wreaths all over it, tall white lilies, delicate ferns, and as many brilliant, picturesque plants as would consent to blossom there."
+},
+{
+"id": 8,
+"paragraph": 1,
+"start": 1212,
+"end": 1383,
+"text": "Gardening, walks, rows on the river, and flower hunts employed the fine days, and for rainy ones, they had house diversions, some old, some new, all more or less original."
+},
+{
+"id": 9,
+"paragraph": 1,
+"start": 1384,
+"end": 1572,
+"text": "One of these was the 'P.C.', for as secret societies were the fashion, it was thought proper to have one, and as all of the girls admired Dickens, they called themselves the Pickwick Club."
+},
+{
+"id": 10,
+"paragraph": 1,
+"start": 1573,
+"end": 1847,
+"text": "With a few interruptions, they had kept this up for a year, and met every Saturday evening in the big garret, on which occasions the ceremonies were as follows: Three chairs were arranged in a row before a table on which was a lamp, also four white badges, with a big 'P.C.'"
+},
+{
+"id": 11,
+"paragraph": 1,
+"start": 1848,
+"end": 2024,
+"text": "in different colors on each, and the weekly newspaper called, The Pickwick Portfolio, to which all contributed something, while Jo, who reveled in pens and ink, was the editor."
+},
+{
+"id": 12,
+"paragraph": 1,
+"start": 2025,
+"end": 2165,
+"text": "At seven o'clock, the four members ascended to the clubroom, tied their badges round their heads, and took their seats with great solemnity."
+},
+{
+"id": 13,
+"paragraph": 1,
+"start": 2166,
+"end": 2386,
+"text": "Meg, as the eldest, was Samuel Pickwick, Jo, being of a literary turn, Augustus Snodgrass, Beth, because she was round and rosy, Tracy Tupman, and Amy, who was always trying to do what she couldn't, was Nathaniel Winkle."
+},
+{
+"id": 14,
+"paragraph": 1,
+"start": 2387,
+"end": 2602,
+"text": "Pickwick, the president, read the paper, which was filled with original tales, poetry, local news, funny advertisements, and hints, in which they good-naturedly reminded each other of their faults and short comings."
+},
+{
+"id": 15,
+"paragraph": 1,
+"start": 2603,
+"end": 2836,
+"text": "On one occasion, Mr. Pickwick put on a pair of spectacles without any glass, rapped upon the table, hemmed, and having stared hard at Mr. Snodgrass, who was tilting back in his chair, till he arranged himself properly, began to read:"
+},
+{
+"id": 16,
+"paragraph": 2,
+"start": 2838,
+"end": 2862,
+"text": "\"THE PICKWICK PORTFOLIO\""
+},
+{
+"id": 17,
+"paragraph": 3,
+"start": 2864,
+"end": 2875,
+"text": "MAY 20, 18—"
+},
+{
+"id": 18,
+"paragraph": 4,
+"start": 2877,
+"end": 2890,
+"text": "POET'S CORNER"
+},
+{
+"id": 19,
+"paragraph": 5,
+"start": 2892,
+"end": 2907,
+"text": "ANNIVERSARY ODE"
+},
+{
+"id": 20,
+"paragraph": 6,
+"start": 2909,
+"end": 3020,
+"text": "Again we meet to celebrate With badge and solemn rite, Our fifty-second anniversary, In Pickwick Hall, tonight."
+},
+{
+"id": 21,
+"paragraph": 6,
+"start": 3021,
+"end": 3151,
+"text": "We all are here in perfect health, None gone from our small band: Again we see each well-known face, And press each friendly hand."
+},
+{
+"id": 22,
+"paragraph": 6,
+"start": 3152,
+"end": 3273,
+"text": "Our Pickwick, always at his post, With reverence we greet, As, spectacles on nose, he reads Our well-filled weekly sheet."
+},
+{
+"id": 23,
+"paragraph": 6,
+"start": 3274,
+"end": 3396,
+"text": "Although he suffers from a cold, We joy to hear him speak, For words of wisdom from him fall, In spite of croak or squeak."
+},
+{
+"id": 24,
+"paragraph": 6,
+"start": 3397,
+"end": 3514,
+"text": "Old six-foot Snodgrass looms on high, With elephantine grace, And beams upon the company, With brown and jovial face."
+},
+{
+"id": 25,
+"paragraph": 6,
+"start": 3515,
+"end": 3575,
+"text": "Poetic fire lights up his eye, He struggles 'gainst his lot."
+},
+{
+"id": 26,
+"paragraph": 6,
+"start": 3576,
+"end": 3629,
+"text": "Behold ambition on his brow, And on his nose, a blot."
+},
+{
+"id": 27,
+"paragraph": 6,
+"start": 3630,
+"end": 3752,
+"text": "Next our peaceful Tupman comes, So rosy, plump, and sweet, Who chokes with laughter at the puns, And tumbles off his seat."
+},
+{
+"id": 28,
+"paragraph": 6,
+"start": 3753,
+"end": 3866,
+"text": "Prim little Winkle too is here, With every hair in place, A model of propriety, Though he hates to wash his face."
+},
+{
+"id": 29,
+"paragraph": 6,
+"start": 3867,
+"end": 3985,
+"text": "The year is gone, we still unite To joke and laugh and read, And tread the path of literature That doth to glory lead."
+},
+{
+"id": 30,
+"paragraph": 6,
+"start": 3986,
+"end": 4101,
+"text": "Long may our paper prosper well, Our club unbroken be, And coming years their blessings pour On the useful, gay 'P."
+},
+{
+"id": 31,
+"paragraph": 6,
+"start": 4102,
+"end": 4106,
+"text": "C.'."
+},
+{
+"id": 32,
+"paragraph": 7,
+"start": 4108,
+"end": 4110,
+"text": "A."
+},
+{
+"id": 33,
+"paragraph": 7,
+"start": 4111,
+"end": 4120,
+"text": "SNODGRASS"
+},
+{
+"id": 34,
+"paragraph": 8,
+"start": 4122,
+"end": 4160,
+"text": "THE MASKED MARRIAGE (A Tale Of Venice)"
+},
+{
+"id": 35,
+"paragraph": 9,
+"start": 4162,
+"end": 4315,
+"text": "Gondola after gondola swept up to the marble steps, and left its lovely load to swell the brilliant throng that filled the stately halls of Count Adelon."
+},
+{
+"id": 36,
+"paragraph": 9,
+"start": 4316,
+"end": 4408,
+"text": "Knights and ladies, elves and pages, monks and flower girls, all mingled gaily in the dance."
+},
+{
+"id": 37,
+"paragraph": 9,
+"start": 4409,
+"end": 4505,
+"text": "Sweet voices and rich melody filled the air, and so with mirth and music the masquerade went on."
+},
+{
+"id": 38,
+"paragraph": 9,
+"start": 4506,
+"end": 4554,
+"text": "\"Has your Highness seen the Lady Viola tonight?\""
+},
+{
+"id": 39,
+"paragraph": 9,
+"start": 4555,
+"end": 4640,
+"text": "asked a gallant troubadour of the fairy queen who floated down the hall upon his arm."
+},
+{
+"id": 40,
+"paragraph": 10,
+"start": 4642,
+"end": 4681,
+"text": "\"Yes, is she not lovely, though so sad!"
+},
+{
+"id": 41,
+"paragraph": 10,
+"start": 4682,
+"end": 4780,
+"text": "Her dress is well chosen, too, for in a week she weds Count Antonio, whom she passionately hates.\""
+},
+{
+"id": 42,
+"paragraph": 11,
+"start": 4782,
+"end": 4807,
+"text": "\"By my faith, I envy him."
+},
+{
+"id": 43,
+"paragraph": 11,
+"start": 4808,
+"end": 4874,
+"text": "Yonder he comes, arrayed like a bridegroom, except the black mask."
+},
+{
+"id": 44,
+"paragraph": 11,
+"start": 4875,
+"end": 5028,
+"text": "When that is off we shall see how he regards the fair maid whose heart he cannot win, though her stern father bestows her hand,\" returned the troubadour."
+},
+{
+"id": 45,
+"paragraph": 12,
+"start": 5030,
+"end": 5181,
+"text": "\"Tis whispered that she loves the young English artist who haunts her steps, and is spurned by the old Count,\" said the lady, as they joined the dance."
+},
+{
+"id": 46,
+"paragraph": 12,
+"start": 5182,
+"end": 5330,
+"text": "The revel was at its height when a priest appeared, and withdrawing the young pair to an alcove, hung with purple velvet, he motioned them to kneel."
+},
+{
+"id": 47,
+"paragraph": 12,
+"start": 5331,
+"end": 5518,
+"text": "Instant silence fell on the gay throng, and not a sound, but the dash of fountains or the rustle of orange groves sleeping in the moonlight, broke the hush, as Count de Adelon spoke thus:"
+},
+{
+"id": 48,
+"paragraph": 13,
+"start": 5520,
+"end": 5631,
+"text": "\"My lords and ladies, pardon the ruse by which I have gathered you here to witness the marriage of my daughter."
+},
+{
+"id": 49,
+"paragraph": 13,
+"start": 5632,
+"end": 5663,
+"text": "Father, we wait your services.\""
+},
+{
+"id": 50,
+"paragraph": 13,
+"start": 5664,
+"end": 5804,
+"text": "All eyes turned toward the bridal party, and a murmur of amazement went through the throng, for neither bride nor groom removed their masks."
+},
+{
+"id": 51,
+"paragraph": 13,
+"start": 5805,
+"end": 5911,
+"text": "Curiosity and wonder possessed all hearts, but respect restrained all tongues till the holy rite was over."
+},
+{
+"id": 52,
+"paragraph": 13,
+"start": 5912,
+"end": 5989,
+"text": "Then the eager spectators gathered round the count, demanding an explanation."
+},
+{
+"id": 53,
+"paragraph": 14,
+"start": 5991,
+"end": 6103,
+"text": "\"Gladly would I give it if I could, but I only know that it was the whim of my timid Viola, and I yielded to it."
+},
+{
+"id": 54,
+"paragraph": 14,
+"start": 6104,
+"end": 6139,
+"text": "Now, my children, let the play end."
+},
+{
+"id": 55,
+"paragraph": 14,
+"start": 6140,
+"end": 6172,
+"text": "Unmask and receive my blessing.\""
+},
+{
+"id": 56,
+"paragraph": 15,
+"start": 6174,
+"end": 6479,
+"text": "But neither bent the knee, for the young bridegroom replied in a tone that startled all listeners as the mask fell, disclosing the noble face of Ferdinand Devereux, the artist lover, and leaning on the breast where now flashed the star of an English earl was the lovely Viola, radiant with joy and beauty."
+},
+{
+"id": 57,
+"paragraph": 16,
+"start": 6481,
+"end": 6608,
+"text": "\"My lord, you scornfully bade me claim your daughter when I could boast as high a name and vast a fortune as the Count Antonio."
+},
+{
+"id": 58,
+"paragraph": 16,
+"start": 6609,
+"end": 6816,
+"text": "I can do more, for even your ambitious soul cannot refuse the Earl of Devereux and De Vere, when he gives his ancient name and boundless wealth in return for the beloved hand of this fair lady, now my wife.\""
+},
+{
+"id": 59,
+"paragraph": 17,
+"start": 6818,
+"end": 7112,
+"text": "The count stood like one changed to stone, and turning to the bewildered crowd, Ferdinand added, with a gay smile of triumph, \"To you, my gallant friends, I can only wish that your wooing may prosper as mine has done, and that you may all win as fair a bride as I have by this masked marriage.\""
+},
+{
+"id": 60,
+"paragraph": 18,
+"start": 7114,
+"end": 7116,
+"text": "S."
+},
+{
+"id": 61,
+"paragraph": 18,
+"start": 7117,
+"end": 7125,
+"text": "PICKWICK"
+},
+{
+"id": 62,
+"paragraph": 19,
+"start": 7127,
+"end": 7140,
+"text": "Why is the P."
+},
+{
+"id": 63,
+"paragraph": 19,
+"start": 7141,
+"end": 7143,
+"text": "C."
+},
+{
+"id": 64,
+"paragraph": 19,
+"start": 7144,
+"end": 7168,
+"text": "like the Tower of Babel?"
+},
+{
+"id": 65,
+"paragraph": 19,
+"start": 7169,
+"end": 7198,
+"text": "It is full of unruly members."
+},
+{
+"id": 66,
+"paragraph": 20,
+"start": 7200,
+"end": 7223,
+"text": "THE HISTORY OF A SQUASH"
+},
+{
+"id": 67,
+"paragraph": 21,
+"start": 7225,
+"end": 7359,
+"text": "Once upon a time a farmer planted a little seed in his garden, and after a while it sprouted and became a vine and bore many squashes."
+},
+{
+"id": 68,
+"paragraph": 21,
+"start": 7360,
+"end": 7437,
+"text": "One day in October, when they were ripe, he picked one and took it to market."
+},
+{
+"id": 69,
+"paragraph": 21,
+"start": 7438,
+"end": 7480,
+"text": "A grocerman bought and put it in his shop."
+},
+{
+"id": 70,
+"paragraph": 21,
+"start": 7481,
+"end": 7612,
+"text": "That same morning, a little girl in a brown hat and blue dress, with a round face and snub nose, went and bought it for her mother."
+},
+{
+"id": 71,
+"paragraph": 21,
+"start": 7613,
+"end": 7725,
+"text": "She lugged it home, cut it up, and boiled it in the big pot, mashed some of it with salt and butter, for dinner."
+},
+{
+"id": 72,
+"paragraph": 21,
+"start": 7726,
+"end": 7941,
+"text": "And to the rest she added a pint of milk, two eggs, four spoons of sugar, nutmeg, and some crackers, put it in a deep dish, and baked it till it was brown and nice, and next day it was eaten by a family named March."
+},
+{
+"id": 73,
+"paragraph": 22,
+"start": 7943,
+"end": 7945,
+"text": "T."
+},
+{
+"id": 74,
+"paragraph": 22,
+"start": 7946,
+"end": 7952,
+"text": "TUPMAN"
+},
+{
+"id": 75,
+"paragraph": 23,
+"start": 7954,
+"end": 8465,
+"text": "Mr. Pickwick, Sir:— I address you upon the subject of sin the sinner I mean is a man named Winkle who makes trouble in his club by laughing and sometimes won't write his piece in this fine paper I hope you will pardon his badness and let him send a French fable because he can't write out of his head as he has so many lessons to do and no brains in future I will try to take time by the fetlock and prepare some work which will be all commy la fo that means all right I am in haste as it is nearly school time."
+},
+{
+"id": 76,
+"paragraph": 24,
+"start": 8467,
+"end": 8488,
+"text": "Yours respectably, N."
+},
+{
+"id": 77,
+"paragraph": 24,
+"start": 8489,
+"end": 8495,
+"text": "WINKLE"
+},
+{
+"id": 78,
+"paragraph": 25,
+"start": 8497,
+"end": 8568,
+"text": "[The above is a manly and handsome acknowledgment of past misdemeanors."
+},
+{
+"id": 79,
+"paragraph": 25,
+"start": 8569,
+"end": 8628,
+"text": "If our young friend studied punctuation, it would be well.]"
+},
+{
+"id": 80,
+"paragraph": 26,
+"start": 8630,
+"end": 8644,
+"text": "A SAD ACCIDENT"
+},
+{
+"id": 81,
+"paragraph": 27,
+"start": 8646,
+"end": 8745,
+"text": "On Friday last, we were startled by a violent shock in our basement, followed by cries of distress."
+},
+{
+"id": 82,
+"paragraph": 27,
+"start": 8746,
+"end": 8911,
+"text": "On rushing in a body to the cellar, we discovered our beloved President prostrate upon the floor, having tripped and fallen while getting wood for domestic purposes."
+},
+{
+"id": 83,
+"paragraph": 27,
+"start": 8912,
+"end": 9109,
+"text": "A perfect scene of ruin met our eyes, for in his fall Mr. Pickwick had plunged his head and shoulders into a tub of water, upset a keg of soft soap upon his manly form, and torn his garments badly."
+},
+{
+"id": 84,
+"paragraph": 27,
+"start": 9110,
+"end": 9270,
+"text": "On being removed from this perilous situation, it was discovered that he had suffered no injury but several bruises, and we are happy to add, is now doing well."
+},
+{
+"id": 85,
+"paragraph": 28,
+"start": 9272,
+"end": 9275,
+"text": "ED."
+},
+{
+"id": 86,
+"paragraph": 29,
+"start": 9277,
+"end": 9299,
+"text": "THE PUBLIC BEREAVEMENT"
+},
+{
+"id": 87,
+"paragraph": 30,
+"start": 9301,
+"end": 9421,
+"text": "It is our painful duty to record the sudden and mysterious disappearance of our cherished friend, Mrs. Snowball Pat Paw."
+},
+{
+"id": 88,
+"paragraph": 30,
+"start": 9422,
+"end": 9647,
+"text": "This lovely and beloved cat was the pet of a large circle of warm and admiring friends; for her beauty attracted all eyes, her graces and virtues endeared her to all hearts, and her loss is deeply felt by the whole community."
+},
+{
+"id": 89,
+"paragraph": 30,
+"start": 9648,
+"end": 9798,
+"text": "When last seen, she was sitting at the gate, watching the butcher's cart, and it is feared that some villain, tempted by her charms, basely stole her."
+},
+{
+"id": 90,
+"paragraph": 30,
+"start": 9799,
+"end": 9984,
+"text": "Weeks have passed, but no trace of her has been discovered, and we relinquish all hope, tie a black ribbon to her basket, set aside her dish, and weep for her as one lost to us forever."
+},
+{
+"id": 91,
+"paragraph": 31,
+"start": 9986,
+"end": 10032,
+"text": "A sympathizing friend sends the following gem:"
+},
+{
+"id": 92,
+"paragraph": 32,
+"start": 10034,
+"end": 10049,
+"text": "A LAMENT FOR S."
+},
+{
+"id": 93,
+"paragraph": 32,
+"start": 10050,
+"end": 10052,
+"text": "B."
+},
+{
+"id": 94,
+"paragraph": 32,
+"start": 10053,
+"end": 10060,
+"text": "PAT PAW"
+},
+{
+"id": 95,
+"paragraph": 33,
+"start": 10062,
+"end": 10201,
+"text": "We mourn the loss of our little pet, And sigh o'er her hapless fate, For never more by the fire she'll sit, Nor play by the old green gate."
+},
+{
+"id": 96,
+"paragraph": 33,
+"start": 10202,
+"end": 10271,
+"text": "The little grave where her infant sleeps Is 'neath the chestnut tree."
+},
+{
+"id": 97,
+"paragraph": 33,
+"start": 10272,
+"end": 10336,
+"text": "But o'er her grave we may not weep, We know not where it may be."
+},
+{
+"id": 98,
+"paragraph": 33,
+"start": 10337,
+"end": 10450,
+"text": "Her empty bed, her idle ball, Will never see her more; No gentle tap, no loving purr Is heard at the parlor door."
+},
+{
+"id": 99,
+"paragraph": 33,
+"start": 10451,
+"end": 10581,
+"text": "Another cat comes after her mice, A cat with a dirty face, But she does not hunt as our darling did, Nor play with her airy grace."
+},
+{
+"id": 100,
+"paragraph": 33,
+"start": 10582,
+"end": 10712,
+"text": "Her stealthy paws tread the very hall Where Snowball used to play, But she only spits at the dogs our pet So gallantly drove away."
+},
+{
+"id": 101,
+"paragraph": 33,
+"start": 10713,
+"end": 10859,
+"text": "She is useful and mild, and does her best, But she is not fair to see, And we cannot give her your place dear, Nor worship her as we worship thee."
+},
+{
+"id": 102,
+"paragraph": 34,
+"start": 10861,
+"end": 10865,
+"text": "A.S."
+},
+{
+"id": 103,
+"paragraph": 35,
+"start": 10867,
+"end": 10881,
+"text": "ADVERTISEMENTS"
+},
+{
+"id": 104,
+"paragraph": 36,
+"start": 10883,
+"end": 11077,
+"text": "MISS ORANTHY BLUGGAGE, the accomplished strong-minded lecturer, will deliver her famous lecture on \"WOMAN AND HER POSITION\" at Pickwick Hall, next Saturday Evening, after the usual performances."
+},
+{
+"id": 105,
+"paragraph": 37,
+"start": 11079,
+"end": 11161,
+"text": "A WEEKLY MEETING will be held at Kitchen Place, to teach young ladies how to cook."
+},
+{
+"id": 106,
+"paragraph": 37,
+"start": 11162,
+"end": 11219,
+"text": "Hannah Brown will preside, and all are invited to attend."
+},
+{
+"id": 107,
+"paragraph": 38,
+"start": 11221,
+"end": 11318,
+"text": "THE DUSTPAN SOCIETY will meet on Wednesday next, and parade in the upper story of the Club House."
+},
+{
+"id": 108,
+"paragraph": 38,
+"start": 11319,
+"end": 11396,
+"text": "All members to appear in uniform and shoulder their brooms at nine precisely."
+},
+{
+"id": 109,
+"paragraph": 39,
+"start": 11398,
+"end": 11402,
+"text": "MRS."
+},
+{
+"id": 110,
+"paragraph": 39,
+"start": 11403,
+"end": 11475,
+"text": "BETH BOUNCER will open her new assortment of Doll's Millinery next week."
+},
+{
+"id": 111,
+"paragraph": 39,
+"start": 11476,
+"end": 11554,
+"text": "The latest Paris fashions have arrived, and orders are respectfully solicited."
+},
+{
+"id": 112,
+"paragraph": 40,
+"start": 11556,
+"end": 11695,
+"text": "A NEW PLAY will appear at the Barnville Theatre, in the course of a few weeks, which will surpass anything ever seen on the American stage."
+},
+{
+"id": 113,
+"paragraph": 40,
+"start": 11696,
+"end": 11781,
+"text": "\"THE GREEK SLAVE, or Constantine the Avenger,\" is the name of this thrilling drama!!!"
+},
+{
+"id": 114,
+"paragraph": 41,
+"start": 11783,
+"end": 11788,
+"text": "HINTS"
+},
+{
+"id": 115,
+"paragraph": 42,
+"start": 11790,
+"end": 11797,
+"text": "If S.P."
+},
+{
+"id": 116,
+"paragraph": 42,
+"start": 11798,
+"end": 11876,
+"text": "didn't use so much soap on his hands, he wouldn't always be late at breakfast."
+},
+{
+"id": 117,
+"paragraph": 42,
+"start": 11877,
+"end": 11881,
+"text": "A.S."
+},
+{
+"id": 118,
+"paragraph": 42,
+"start": 11882,
+"end": 11924,
+"text": "is requested not to whistle in the street."
+},
+{
+"id": 119,
+"paragraph": 42,
+"start": 11925,
+"end": 11929,
+"text": "T.T."
+},
+{
+"id": 120,
+"paragraph": 42,
+"start": 11930,
+"end": 11963,
+"text": "please don't forget Amy's napkin."
+},
+{
+"id": 121,
+"paragraph": 42,
+"start": 11964,
+"end": 11968,
+"text": "N.W."
+},
+{
+"id": 122,
+"paragraph": 42,
+"start": 11969,
+"end": 12020,
+"text": "must not fret because his dress has not nine tucks."
+},
+{
+"id": 123,
+"paragraph": 43,
+"start": 12022,
+"end": 12035,
+"text": "WEEKLY REPORT"
+},
+{
+"id": 124,
+"paragraph": 44,
+"start": 12037,
+"end": 12046,
+"text": "Meg—Good."
+},
+{
+"id": 125,
+"paragraph": 44,
+"start": 12047,
+"end": 12054,
+"text": "Jo—Bad."
+},
+{
+"id": 126,
+"paragraph": 44,
+"start": 12055,
+"end": 12070,
+"text": "Beth—Very Good."
+},
+{
+"id": 127,
+"paragraph": 44,
+"start": 12071,
+"end": 12084,
+"text": "Amy—Middling."
+},
+{
+"id": 128,
+"paragraph": 45,
+"start": 12086,
+"end": 12323,
+"text": "As the President finished reading the paper (which I beg leave to assure my readers is a bona fide copy of one written by bona fide girls once upon a time), a round of applause followed, and then Mr. Snodgrass rose to make a proposition."
+},
+{
+"id": 129,
+"paragraph": 46,
+"start": 12325,
+"end": 12640,
+"text": "\"Mr. President and gentlemen,\" he began, assuming a parliamentary attitude and tone, \"I wish to propose the admission of a new member—one who highly deserves the honor, would be deeply grateful for it, and would add immensely to the spirit of the club, the literary value of the paper, and be no end jolly and nice."
+},
+{
+"id": 130,
+"paragraph": 46,
+"start": 12641,
+"end": 12704,
+"text": "I propose Mr. Theodore Laurence as an honorary member of the P."
+},
+{
+"id": 131,
+"paragraph": 46,
+"start": 12705,
+"end": 12707,
+"text": "C."
+},
+{
+"id": 132,
+"paragraph": 46,
+"start": 12708,
+"end": 12731,
+"text": "Come now, do have him.\""
+},
+{
+"id": 133,
+"paragraph": 47,
+"start": 12733,
+"end": 12863,
+"text": "Jo's sudden change of tone made the girls laugh, but all looked rather anxious, and no one said a word as Snodgrass took his seat."
+},
+{
+"id": 134,
+"paragraph": 48,
+"start": 12865,
+"end": 12910,
+"text": "\"We'll put it to a vote,\" said the President."
+},
+{
+"id": 135,
+"paragraph": 48,
+"start": 12911,
+"end": 12980,
+"text": "\"All in favor of this motion please to manifest it by saying, 'Aye'.\""
+},
+{
+"id": 136,
+"paragraph": 49,
+"start": 12982,
+"end": 13074,
+"text": "A loud response from Snodgrass, followed, to everybody's surprise, by a timid one from Beth."
+},
+{
+"id": 137,
+"paragraph": 50,
+"start": 13076,
+"end": 13104,
+"text": "\"Contrary-minded say, 'No'.\""
+},
+{
+"id": 138,
+"paragraph": 51,
+"start": 13106,
+"end": 13245,
+"text": "Meg and Amy were contrary-minded, and Mr. Winkle rose to say with great elegance, \"We don't wish any boys, they only joke and bounce about."
+},
+{
+"id": 139,
+"paragraph": 51,
+"start": 13246,
+"end": 13308,
+"text": "This is a ladies' club, and we wish to be private and proper.\""
+},
+{
+"id": 140,
+"paragraph": 52,
+"start": 13310,
+"end": 13471,
+"text": "\"I'm afraid he'll laugh at our paper, and make fun of us afterward,\" observed Pickwick, pulling the little curl on her forehead, as she always did when doubtful."
+},
+{
+"id": 141,
+"paragraph": 53,
+"start": 13473,
+"end": 13513,
+"text": "Up rose Snodgrass, very much in earnest."
+},
+{
+"id": 142,
+"paragraph": 53,
+"start": 13514,
+"end": 13592,
+"text": "\"Sir, I give you my word as a gentleman, Laurie won't do anything of the sort."
+},
+{
+"id": 143,
+"paragraph": 53,
+"start": 13593,
+"end": 13705,
+"text": "He likes to write, and he'll give a tone to our contributions and keep us from being sentimental, don't you see?"
+},
+{
+"id": 144,
+"paragraph": 53,
+"start": 13706,
+"end": 13855,
+"text": "We can do so little for him, and he does so much for us, I think the least we can do is to offer him a place here, and make him welcome if he comes.\""
+},
+{
+"id": 145,
+"paragraph": 54,
+"start": 13857,
+"end": 13972,
+"text": "This artful allusion to benefits conferred brought Tupman to his feet, looking as if he had quite made up his mind."
+},
+{
+"id": 146,
+"paragraph": 55,
+"start": 13974,
+"end": 14021,
+"text": "\"Yes; we ought to do it, even if we are afraid."
+},
+{
+"id": 147,
+"paragraph": 55,
+"start": 14022,
+"end": 14076,
+"text": "I say he may come, and his grandpa, too, if he likes.\""
+},
+{
+"id": 148,
+"paragraph": 56,
+"start": 14078,
+"end": 14178,
+"text": "This spirited burst from Beth electrified the club, and Jo left her seat to shake hands approvingly."
+},
+{
+"id": 149,
+"paragraph": 56,
+"start": 14179,
+"end": 14201,
+"text": "\"Now then, vote again."
+},
+{
+"id": 150,
+"paragraph": 56,
+"start": 14202,
+"end": 14254,
+"text": "Everybody remember it's our Laurie, and say, 'Aye!'\""
+},
+{
+"id": 151,
+"paragraph": 56,
+"start": 14255,
+"end": 14281,
+"text": "cried Snodgrass excitedly."
+},
+{
+"id": 152,
+"paragraph": 57,
+"start": 14283,
+"end": 14288,
+"text": "\"Aye!"
+},
+{
+"id": 153,
+"paragraph": 57,
+"start": 14289,
+"end": 14293,
+"text": "Aye!"
+},
+{
+"id": 154,
+"paragraph": 57,
+"start": 14294,
+"end": 14299,
+"text": "Aye!\""
+},
+{
+"id": 155,
+"paragraph": 57,
+"start": 14300,
+"end": 14329,
+"text": "replied three voices at once."
+},
+{
+"id": 156,
+"paragraph": 58,
+"start": 14331,
+"end": 14337,
+"text": "\"Good!"
+},
+{
+"id": 157,
+"paragraph": 58,
+"start": 14338,
+"end": 14348,
+"text": "Bless you!"
+},
+{
+"id": 158,
+"paragraph": 58,
+"start": 14349,
+"end": 14483,
+"text": "Now, as there's nothing like 'taking time by the fetlock', as Winkle characteristically observes, allow me to present the new member.\""
+},
+{
+"id": 159,
+"paragraph": 58,
+"start": 14484,
+"end": 14656,
+"text": "And, to the dismay of the rest of the club, Jo threw open the door of the closet, and displayed Laurie sitting on a rag bag, flushed and twinkling with suppressed laughter."
+},
+{
+"id": 160,
+"paragraph": 59,
+"start": 14658,
+"end": 14669,
+"text": "\"You rogue!"
+},
+{
+"id": 161,
+"paragraph": 59,
+"start": 14670,
+"end": 14682,
+"text": "You traitor!"
+},
+{
+"id": 162,
+"paragraph": 59,
+"start": 14683,
+"end": 14702,
+"text": "Jo, how could you?\""
+},
+{
+"id": 163,
+"paragraph": 59,
+"start": 14703,
+"end": 14839,
+"text": "cried the three girls, as Snodgrass led her friend triumphantly forth, and producing both a chair and a badge, installed him in a jiffy."
+},
+{
+"id": 164,
+"paragraph": 60,
+"start": 14841,
+"end": 14989,
+"text": "\"The coolness of you two rascals is amazing,\" began Mr. Pickwick, trying to get up an awful frown and only succeeding in producing an amiable smile."
+},
+{
+"id": 165,
+"paragraph": 60,
+"start": 14990,
+"end": 15254,
+"text": "But the new member was equal to the occasion, and rising, with a grateful salutation to the Chair, said in the most engaging manner, \"Mr. President and ladies—I beg pardon, gentlemen—allow me to introduce myself as Sam Weller, the very humble servant of the club.\""
+},
+{
+"id": 166,
+"paragraph": 61,
+"start": 15256,
+"end": 15262,
+"text": "\"Good!"
+},
+{
+"id": 167,
+"paragraph": 61,
+"start": 15263,
+"end": 15269,
+"text": "Good!\""
+},
+{
+"id": 168,
+"paragraph": 61,
+"start": 15270,
+"end": 15348,
+"text": "cried Jo, pounding with the handle of the old warming pan on which she leaned."
+},
+{
+"id": 169,
+"paragraph": 62,
+"start": 15350,
+"end": 15524,
+"text": "\"My faithful friend and noble patron,\" continued Laurie with a wave of the hand, \"who has so flatteringly presented me, is not to be blamed for the base stratagem of tonight."
+},
+{
+"id": 170,
+"paragraph": 62,
+"start": 15525,
+"end": 15583,
+"text": "I planned it, and she only gave in after lots of teasing.\""
+},
+{
+"id": 171,
+"paragraph": 63,
+"start": 15585,
+"end": 15625,
+"text": "\"Come now, don't lay it all on yourself."
+},
+{
+"id": 172,
+"paragraph": 63,
+"start": 15626,
+"end": 15717,
+"text": "You know I proposed the cupboard,\" broke in Snodgrass, who was enjoying the joke amazingly."
+},
+{
+"id": 173,
+"paragraph": 64,
+"start": 15719,
+"end": 15745,
+"text": "\"Never mind what she says."
+},
+{
+"id": 174,
+"paragraph": 64,
+"start": 15746,
+"end": 15840,
+"text": "I'm the wretch that did it, sir,\" said the new member, with a Welleresque nod to Mr. Pickwick."
+},
+{
+"id": 175,
+"paragraph": 64,
+"start": 15841,
+"end": 15953,
+"text": "\"But on my honor, I never will do so again, and henceforth devote myself to the interest of this immortal club.\""
+},
+{
+"id": 176,
+"paragraph": 65,
+"start": 15955,
+"end": 15961,
+"text": "\"Hear!"
+},
+{
+"id": 177,
+"paragraph": 65,
+"start": 15962,
+"end": 15968,
+"text": "Hear!\""
+},
+{
+"id": 178,
+"paragraph": 65,
+"start": 15969,
+"end": 16029,
+"text": "cried Jo, clashing the lid of the warming pan like a cymbal."
+},
+{
+"id": 179,
+"paragraph": 66,
+"start": 16031,
+"end": 16046,
+"text": "\"Go on, go on!\""
+},
+{
+"id": 180,
+"paragraph": 66,
+"start": 16047,
+"end": 16107,
+"text": "added Winkle and Tupman, while the President bowed benignly."
+},
+{
+"id": 181,
+"paragraph": 67,
+"start": 16109,
+"end": 16487,
+"text": "\"I merely wish to say, that as a slight token of my gratitude for the honor done me, and as a means of promoting friendly relations between adjoining nations, I have set up a post office in the hedge in the lower corner of the garden, a fine, spacious building with padlocks on the doors and every convenience for the mails, also the females, if I may be allowed the expression."
+},
+{
+"id": 182,
+"paragraph": 67,
+"start": 16488,
+"end": 16632,
+"text": "It's the old martin house, but I've stopped up the door and made the roof open, so it will hold all sorts of things, and save our valuable time."
+},
+{
+"id": 183,
+"paragraph": 67,
+"start": 16633,
+"end": 16764,
+"text": "Letters, manuscripts, books, and bundles can be passed in there, and as each nation has a key, it will be uncommonly nice, I fancy."
+},
+{
+"id": 184,
+"paragraph": 67,
+"start": 16765,
+"end": 16850,
+"text": "Allow me to present the club key, and with many thanks for your favor, take my seat.\""
+},
+{
+"id": 185,
+"paragraph": 68,
+"start": 16852,
+"end": 17025,
+"text": "Great applause as Mr. Weller deposited a little key on the table and subsided, the warming pan clashed and waved wildly, and it was some time before order could be restored."
+},
+{
+"id": 186,
+"paragraph": 68,
+"start": 17026,
+"end": 17114,
+"text": "A long discussion followed, and everyone came out surprising, for everyone did her best."
+},
+{
+"id": 187,
+"paragraph": 68,
+"start": 17115,
+"end": 17253,
+"text": "So it was an unusually lively meeting, and did not adjourn till a late hour, when it broke up with three shrill cheers for the new member."
+},
+{
+"id": 188,
+"paragraph": 69,
+"start": 17255,
+"end": 17378,
+"text": "No one ever regretted the admittance of Sam Weller, for a more devoted, well-behaved, and jovial member no club could have."
+},
+{
+"id": 189,
+"paragraph": 69,
+"start": 17379,
+"end": 17602,
+"text": "He certainly did add 'spirit' to the meetings, and 'a tone' to the paper, for his orations convulsed his hearers and his contributions were excellent, being patriotic, classical, comical, or dramatic, but never sentimental."
+},
+{
+"id": 190,
+"paragraph": 69,
+"start": 17603,
+"end": 17722,
+"text": "Jo regarded them as worthy of Bacon, Milton, or Shakespeare, and remodeled her own works with good effect, she thought."
+},
+{
+"id": 191,
+"paragraph": 70,
+"start": 17724,
+"end": 17730,
+"text": "The P."
+},
+{
+"id": 192,
+"paragraph": 70,
+"start": 17731,
+"end": 17733,
+"text": "O."
+},
+{
+"id": 193,
+"paragraph": 70,
+"start": 17734,
+"end": 17878,
+"text": "was a capital little institution, and flourished wonderfully, for nearly as many queer things passed through it as through the real post office."
+},
+{
+"id": 194,
+"paragraph": 70,
+"start": 17879,
+"end": 18021,
+"text": "Tragedies and cravats, poetry and pickles, garden seeds and long letters, music and gingerbread, rubbers, invitations, scoldings, and puppies."
+},
+{
+"id": 195,
+"paragraph": 70,
+"start": 18022,
+"end": 18237,
+"text": "The old gentleman liked the fun, and amused himself by sending odd bundles, mysterious messages, and funny telegrams, and his gardener, who was smitten with Hannah's charms, actually sent a love letter to Jo's care."
+},
+{
+"id": 196,
+"paragraph": 70,
+"start": 18238,
+"end": 18374,
+"text": "How they laughed when the secret came out, never dreaming how many love letters that little post office would hold in the years to come."
+}
+]

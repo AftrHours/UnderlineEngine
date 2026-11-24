@@ -53,8 +53,8 @@ private func assertContract(_ method: any LinkMethod, sourceLocation: SourceLoca
     #expect(underliner.summary == method.summary, sourceLocation: sourceLocation)
 }
 
-@Test func r8KeepsTheContract() async throws {
-    try await assertContract(await Linker.make(embedding: .automatic))
+@Test func r9KeepsTheContract() async throws {
+    try await assertContract(await Linker.make(embedding: .none))
 }
 
 @Test func aSecondMethodKeepsTheSameContractWithoutAnyOtherCodeChanging() async throws {
@@ -64,7 +64,7 @@ private func assertContract(_ method: any LinkMethod, sourceLocation: SourceLoca
     #expect(batches.flatMap(\.underlines).count == 2)
 }
 
-@Test func releasePresetIsR8AndTestingPresetNeedsNoDownload() async {
+@Test func releasePresetIsR9AndTestingPresetNeedsNoDownload() async {
     let testing = await Underliner.make(.testing)
     #expect(testing.version == Linker.version)
     #expect(Underliner.releaseVersion == testing.version)

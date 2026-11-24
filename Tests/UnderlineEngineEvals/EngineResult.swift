@@ -8,16 +8,13 @@ struct EngineResult: Codable, Sendable {
     var phrase: String?
     var referenceSentence: Int?
     var referenceText: String?
-    var path: String?
-    /// Highest sentence among the candidates and prompts, for the spoiler check.
+    /// Highest sentence among the candidates and the pick, for the spoiler check.
     var highestUsed: Int?
     var candidates: [Int] = []
     var pickedSentence: Int?
     var confirm: Bool?
-    var confirmEvidence: String?
     var dropped: String?
     var searchMs: Int?
-    var confirmMs: Int?
     /// The outcome against the golden item (golden runs only).
     var outcome: Outcome?
 
@@ -43,23 +40,19 @@ struct EngineResult: Codable, Sendable {
             r.phrase = u.text
             r.referenceSentence = u.reference.sentence
             r.referenceText = u.reference.text
-            r.path = u.decidedBy.rawValue
         }
         if let rec = matching.first(where: \.kept) ?? matching.first { r.fill(from: rec) }
-        let used = records.filter { $0.sentence == item.sentence }.flatMap { $0.candidates + $0.promptSentences.filter { $0 != item.sentence } }
+        let used = records.filter { $0.sentence == item.sentence }.flatMap { $0.candidates + [$0.pickedSentence].compactMap { $0 } }
         r.highestUsed = used.max()
         return r
     }
 
     mutating func fill(from rec: UnderlineRecord) {
         phrase = phrase ?? rec.phrase
-        path = path ?? rec.path?.rawValue
         candidates = rec.candidates
         pickedSentence = rec.pickedSentence
-        confirm = rec.confirm?.explains
-        confirmEvidence = rec.confirm?.evidence
+        confirm = rec.confirmed
         dropped = rec.dropped?.rawValue
-        searchMs = rec.times.searchMs
-        confirmMs = rec.times.confirmMs
+        searchMs = rec.searchMs
     }
 }

@@ -2,35 +2,18 @@ import Foundation
 
 /// Why a candidate phrase got no underline (spec §5.7).
 public enum DropReason: String, Sendable, Codable, Hashable {
-    case noCandidate, pickedNone, confirmRejected, guardRejected, densityLimit
-    /// The model failed for a reason other than its context size; precision first, so no rules fallback.
-    case modelFailed
+    /// The phrase's sentence is not in the chapter.
+    case noCandidate
+    /// No earlier sentence shares a content word with the phrase.
+    case pickedNone
     /// The picked reference is in the phrase's own paragraph: the reader has just read it, so no underline.
     case explainedInParagraph
-    /// The model said yes, but its evidence is not a quote from the passage it was shown (it repeated the phrase or made words up),
-    /// so the yes is not trusted.
-    case evidenceNotInPassage
-}
-
-/// What the confirm step said about the one picked passage.
-public struct ConfirmTrace: Sendable, Codable, Hashable {
-    public let explains: Bool
-    public let evidence: String?
-
-    public init(explains: Bool, evidence: String?) {
-        self.explains = explains
-        self.evidence = evidence
-    }
-}
-
-public struct StepTimes: Sendable, Codable, Hashable {
-    public var searchMs: Int?
-    public var confirmMs: Int?
-
-    public init(searchMs: Int? = nil, confirmMs: Int? = nil) {
-        self.searchMs = searchMs
-        self.confirmMs = confirmMs
-    }
+    /// Not enough evidence for the distance to the reference.
+    case confirmRejected
+    /// The phrase's text does not sit at its own range in the sentence.
+    case guardRejected
+    /// It overlaps a better underline in the same sentence.
+    case densityLimit
 }
 
 /// One finished paragraph: its underlines and a record for every phrase considered.
@@ -50,43 +33,26 @@ public struct UnderlineRecord: Sendable, Codable, Hashable {
     public let sentence: Int
     public let phrase: String
     public let kind: UnderlineKind
-    public var path: AnswerPath?
-    /// Harness only: the app always searches with `.both`, or `.words` when there are no vectors.
-    var searchModeUsed: SearchMode?
     public let embedding: EmbeddingEngine
-    /// Sentences sent to the model (or ranked top by the rules), best first.
-    public var candidates: [Int]
-    /// Every sentence index inside every prompt actually sent (pick and confirm), for the spoiler check.
-    public var promptSentences: [Int]
+    /// The candidates in pick's order, best first.
+    public var candidates: [Int] = []
+    /// The share of the phrase's word weight each candidate shares, in the same order.
+    public var candidateScores: [Double] = []
     public var pickedSentence: Int?
-    public var confirm: ConfirmTrace?
-    public var kept: Bool
+    /// Confirm's answer for the picked sentence; `nil` when confirm was not reached.
+    public var confirmed: Bool?
+    public var kept = false
     public var dropped: DropReason?
-    public var times: StepTimes
+    public var searchMs: Int?
     /// The phrase's range within its sentence, UTF-16.
     public var phraseRange: NSRange?
-    /// The unscaled search score of each entry in `candidates`, in the same order.
-    public var candidateScores: [Double]
 
-    init(chapterIndex: Int, sentence: Int, phrase: String, kind: UnderlineKind, path: AnswerPath?,
-         searchModeUsed: SearchMode?, embedding: EmbeddingEngine, candidates: [Int], promptSentences: [Int], pickedSentence: Int?,
-                confirm: ConfirmTrace?, kept: Bool, dropped: DropReason?, times: StepTimes,
-                phraseRange: NSRange? = nil, candidateScores: [Double] = []) {
+    init(chapterIndex: Int, sentence: Int, phrase: String, kind: UnderlineKind, embedding: EmbeddingEngine, phraseRange: NSRange?) {
         self.chapterIndex = chapterIndex
         self.sentence = sentence
         self.phrase = phrase
         self.kind = kind
-        self.path = path
-        self.searchModeUsed = searchModeUsed
         self.embedding = embedding
-        self.candidates = candidates
-        self.promptSentences = promptSentences
-        self.pickedSentence = pickedSentence
-        self.confirm = confirm
-        self.kept = kept
-        self.dropped = dropped
-        self.times = times
         self.phraseRange = phraseRange
-        self.candidateScores = candidateScores
     }
 }

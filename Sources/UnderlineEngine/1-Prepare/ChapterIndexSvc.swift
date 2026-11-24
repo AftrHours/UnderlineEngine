@@ -19,7 +19,8 @@ struct ChapterIndexSvc: Sendable {
 
     /// Sentences come back sorted by index. Sentences with a duplicate index, a missing paragraph or a range
     /// outside their paragraph are left out instead of crashing; the first of duplicate paragraphs is kept.
-    func index(_ input: ChapterInput) -> [IndexedSentence] {
+    /// `names: false` skips finding names (word counts and phrase lemmas don't need them); the words come out the same.
+    func index(_ input: ChapterInput, names wantNames: Bool = true) -> [IndexedSentence] {
         let paragraphText = Dictionary(input.paragraphs.map { ($0.index, $0.text as NSString) }, uniquingKeysWith: { first, _ in first })
         let tagger = NLTagger(tagSchemes: [.lexicalClass, .lemma, .nameType])
         var seen = Set<Int>()
@@ -30,13 +31,13 @@ struct ChapterIndexSvc: Sendable {
         }
         return valid.map { sentence in
             let text = paragraphText[sentence.paragraph]?.substring(with: sentence.range) ?? ""
-            let (tokens, names) = engine == .naturalLanguage ? tag(text, with: tagger) : fallbackTag(text)
+            let (tokens, names) = engine == .naturalLanguage ? tag(text, with: tagger, names: wantNames) : fallbackTag(text, names: wantNames)
             return IndexedSentence(index: sentence.index, paragraph: sentence.paragraph, range: sentence.range,
                                    text: text, tokens: tokens, names: names)
         }
     }
 
-    private func tag(_ text: String, with tagger: NLTagger) -> ([WordToken], [NameMention]) {
+    private func tag(_ text: String, with tagger: NLTagger, names wantNames: Bool) -> ([WordToken], [NameMention]) {
         tagger.string = text
         let whole = text.startIndex..<text.endIndex
         tagger.setLanguage(.english, range: whole)
@@ -48,6 +49,7 @@ struct ChapterIndexSvc: Sendable {
             return true
         }
         var names: [NameMention] = []
+        guard wantNames else { return (tokens, names) }
         tagger.enumerateTags(in: whole, unit: .word, scheme: .nameType, options: [.omitPunctuation, .omitWhitespace, .joinNames]) { tag, range in
             let kind: NameKind? = switch tag {
             case .personalName?: .person
@@ -62,7 +64,7 @@ struct ChapterIndexSvc: Sendable {
     }
 
     /// Capitalised words that don't start the sentence are person names; the lemma is the lowercased word.
-    private func fallbackTag(_ text: String) -> ([WordToken], [NameMention]) {
+    private func fallbackTag(_ text: String, names wantNames: Bool) -> ([WordToken], [NameMention]) {
         var tokens: [WordToken] = []
         var names: [NameMention] = []
         text.enumerateSubstrings(in: text.startIndex..<text.endIndex, options: .byWords) { word, range, _, _ in
@@ -70,7 +72,7 @@ struct ChapterIndexSvc: Sendable {
             let isCapitalised = word.first?.isUppercase == true
             let range = NSRange(range, in: text)
             tokens.append(WordToken(text: word, lemma: word.lowercased(), wordClass: isCapitalised ? "Noun" : "Other", range: range))
-            if isCapitalised, tokens.count > 1, !TaggingKnobs.notNames.contains(word) {
+            if wantNames, isCapitalised, tokens.count > 1, !TaggingKnobs.notNames.contains(word) {
                 names.append(NameMention(text: word, range: range, kind: .person))
             }
         }

@@ -5,7 +5,7 @@ public enum TaggingEngine: String, Sendable, Codable {
 }
 
 public enum EmbeddingEngine: String, Sendable, Codable {
-    case sentence, wordAverage, contextual, none
+    case contextual, none
 }
 
 public enum NameKind: String, Sendable, Codable {
@@ -27,7 +27,7 @@ public struct NameMention: Sendable, Codable, Hashable {
     public let kind: NameKind
 }
 
-/// One prepared sentence: text, tags, names, events and its vector (spec §5.2).
+/// One prepared sentence: text, tags, names, events and its content words' vectors (spec §5.2).
 public struct IndexedSentence: Sendable, Codable {
     /// Global sentence index.
     public let index: Int
@@ -39,7 +39,15 @@ public struct IndexedSentence: Sendable, Codable {
     public let tokens: [WordToken]
     public let names: [NameMention]
     public var events: [EventPhrase] = []
-    public var vector: [Float]?
+    /// Contextual vectors of the content words, centred on the chapter and normalised (R9's soft lexical match).
+    public var wordVectors: [WordVector]? = nil
+}
+
+/// One content word's contextual vector, as used in its sentence. `range` is within the sentence, UTF-16.
+public struct WordVector: Sendable, Codable, Hashable {
+    public let lemma: String
+    public let range: NSRange
+    public let vector: [Float]
 }
 
 /// A prepared chapter (spec §5.2). The app keeps it in memory; a later round may save it (§12).

@@ -1,0 +1,2797 @@
+[
+  {
+    "id" : 0,
+    "roles" : [
+      {
+        "did" : "grumble",
+        "what" : "presents",
+        "where" : "rug",
+        "who" : "Jo"
+      }
+    ]
+  },
+  {
+    "id" : 1,
+    "roles" : [
+      {
+        "did" : "say",
+        "what" : "be dreadful",
+        "where" : "nowhere",
+        "who" : "Meg"
+      }
+    ]
+  },
+  {
+    "id" : 2,
+    "roles" : [
+      {
+        "did" : "look down at",
+        "what" : "old dress",
+        "where" : "rug",
+        "who" : "Meg"
+      }
+    ]
+  },
+  {
+    "id" : 3,
+    "roles" : [
+      {
+        "did" : "add",
+        "what" : "words",
+        "where" : "dialogue",
+        "who" : "Amy"
+      }
+    ]
+  },
+  {
+    "id" : 4,
+    "roles" : [
+      {
+        "did" : "say",
+        "what" : "We've got Father and Mother",
+        "where" : "her corner",
+        "who" : "Beth"
+      }
+    ]
+  },
+  {
+    "id" : 5,
+    "roles" : [
+      {
+        "did" : "darkened",
+        "what" : "the firelight",
+        "where" : "the corner",
+        "who" : "Jo"
+      }
+    ]
+  },
+  {
+    "id" : 6,
+    "roles" : [
+      {
+        "did" : "thought",
+        "what" : "Father",
+        "where" : "where the fighting was",
+        "who" : "Beth"
+      }
+    ]
+  },
+  {
+    "id" : 7,
+    "roles" : [
+
+    ]
+  },
+  {
+    "id" : 8,
+    "roles" : [
+
+    ]
+  },
+  {
+    "id" : 9,
+    "roles" : [
+
+    ]
+  },
+  {
+    "id" : 10,
+    "roles" : [
+      {
+        "did" : "think",
+        "what" : "the little we should spend",
+        "where" : "her mind",
+        "who" : "Meg"
+      }
+    ]
+  },
+  {
+    "id" : 11,
+    "roles" : [
+      {
+        "did" : "give",
+        "what" : "a dollar",
+        "where" : "her hands",
+        "who" : "Meg"
+      }
+    ]
+  },
+  {
+    "id" : 12,
+    "roles" : [
+      {
+        "did" : "want",
+        "what" : "buy Undine and Sintran",
+        "where" : "her pocket",
+        "who" : "Meg"
+      }
+    ]
+  },
+  {
+    "id" : 13,
+    "roles" : [
+      {
+        "did" : "say",
+        "what" : "I've wanted it so long",
+        "where" : "her mouth",
+        "who" : "Jo"
+      }
+    ]
+  },
+  {
+    "id" : 14,
+    "roles" : [
+      {
+        "did" : "plan",
+        "what" : "spend",
+        "where" : "hearth brush and kettle-holder",
+        "who" : "Beth"
+      }
+    ]
+  },
+  {
+    "id" : 15,
+    "roles" : [
+      {
+        "did" : "get",
+        "what" : "box of Faber's drawing pencils",
+        "where" : "home",
+        "who" : "Amy"
+      }
+    ]
+  },
+  {
+    "id" : 16,
+    "roles" : [
+      {
+        "did" : "say",
+        "where" : "about our money",
+        "who" : "Mother"
+      }
+    ]
+  },
+  {
+    "id" : 17,
+    "roles" : [
+      {
+        "did" : "examine",
+        "what" : "the heels of her shoes",
+        "where" : "in a gentlemanly manner",
+        "who" : "Jo"
+      }
+    ]
+  },
+  {
+    "id" : 18,
+    "roles" : [
+      {
+        "did" : "begin",
+        "what" : "complaining",
+        "where" : "home",
+        "who" : "Meg"
+      }
+    ]
+  },
+  {
+    "id" : 19,
+    "roles" : [
+      {
+        "did" : "say",
+        "what" : "You don't have half such a hard time as I do",
+        "where" : "nowhere",
+        "who" : "Jo"
+      }
+    ]
+  },
+  {
+    "id" : 20,
+    "roles" : [
+      {
+        "did" : "describe",
+        "what" : "shut up for hours with a nervous, fussy old lady, who keeps you trotting, is never satisfied, and worries you till you're ready to fly out the window or cry",
+        "where" : "nowhere",
+        "who" : "Jo"
+      }
+    ]
+  },
+  {
+    "id" : 21,
+    "roles" : [
+      {
+        "did" : "think",
+        "what" : "washing dishes and keeping things tidy",
+        "where" : "the world",
+        "who" : "Jo"
+      },
+      {
+        "did" : "work out",
+        "what" : "the worst work",
+        "where" : "the world",
+        "who" : "Jo"
+      }
+    ]
+  },
+  {
+    "id" : 22,
+    "roles" : [
+      {
+        "did" : "make",
+        "what" : "my hands",
+        "where" : "the world",
+        "who" : "Jo"
+      },
+      {
+        "did" : "get",
+        "what" : "my hands",
+        "where" : "the world",
+        "who" : "Jo"
+      }
+    ]
+  },
+  {
+    "id" : 23,
+    "roles" : [
+      {
+        "did" : "look at",
+        "what" : "her rough hands",
+        "where" : "the world",
+        "who" : "Beth"
+      }
+    ]
+  },
+  {
+    "id" : 24,
+    "roles" : [
+
+    ]
+  },
+  {
+    "id" : 25,
+    "roles" : [
+      {
+        "did" : "advise",
+        "what" : "labels",
+        "where" : "school",
+        "who" : "Jo"
+      },
+      {
+        "did" : "laugh",
+        "what" : "pickle bottle",
+        "where" : "school",
+        "who" : "Jo"
+      }
+    ]
+  },
+  {
+    "id" : 26,
+    "roles" : [
+      {
+        "did" : "work out",
+        "what" : "libel",
+        "where" : "home",
+        "who" : "Jo"
+      }
+    ]
+  },
+  {
+    "id" : 27,
+    "roles" : [
+      {
+        "did" : "use",
+        "what" : "good words",
+        "where" : "home",
+        "who" : "Amy"
+      }
+    ]
+  },
+  {
+    "id" : 28,
+    "roles" : [
+      {
+        "did" : "peck",
+        "what" : "one another",
+        "where" : "children",
+        "who" : "Meg"
+      }
+    ]
+  },
+  {
+    "id" : 29,
+    "roles" : [
+      {
+        "did" : "wish",
+        "what" : "money",
+        "where" : "Papa lost when we were little",
+        "who" : "Meg"
+      }
+    ]
+  },
+  {
+    "id" : 30,
+    "roles" : [
+      {
+        "did" : "exclaim",
+        "what" : "me",
+        "where" : "Dear me!",
+        "who" : "Meg"
+      }
+    ]
+  },
+  {
+    "id" : 31,
+    "roles" : [
+      {
+        "did" : "wish",
+        "what" : "worry",
+        "where" : "we",
+        "who" : "Meg"
+      }
+    ]
+  },
+  {
+    "id" : 32,
+    "roles" : [
+      {
+        "did" : "remember",
+        "what" : "times",
+        "where" : "better times",
+        "who" : "Meg"
+      }
+    ]
+  },
+  {
+    "id" : 33,
+    "roles" : [
+      {
+        "did" : "say",
+        "what" : "we were a deal happier",
+        "where" : "in spite of their money",
+        "who" : "Meg"
+      }
+    ]
+  },
+  {
+    "id" : 34,
+    "roles" : [
+      {
+        "did" : "did",
+        "what" : "deal",
+        "where" : "nowhere",
+        "who" : "Beth"
+      }
+    ]
+  },
+  {
+    "id" : 35,
+    "roles" : [
+      {
+        "did" : "think",
+        "what" : "we",
+        "where" : "nowhere",
+        "who" : "Beth"
+      }
+    ]
+  },
+  {
+    "id" : 36,
+    "roles" : [
+      {
+        "did" : "make",
+        "what" : "fun",
+        "where" : "nowhere",
+        "who" : "Beth"
+      }
+    ]
+  },
+  {
+    "id" : 37,
+    "roles" : [
+      {
+        "did" : "use",
+        "what" : "slang words",
+        "where" : "rug",
+        "who" : "Jo"
+      }
+    ]
+  },
+  {
+    "id" : 38,
+    "roles" : [
+      {
+        "did" : "observed",
+        "what" : "long figure",
+        "where" : "rug",
+        "who" : "Amy"
+      }
+    ]
+  },
+  {
+    "id" : 39,
+    "roles" : [
+      {
+        "did" : "sat up",
+        "what" : "her hands",
+        "where" : "rug",
+        "who" : "Jo"
+      },
+      {
+        "did" : "put",
+        "what" : "her pockets",
+        "where" : "rug",
+        "who" : "Jo"
+      },
+      {
+        "did" : "whistle",
+        "what" : "air",
+        "where" : "rug",
+        "who" : "Jo"
+      }
+    ]
+  },
+  {
+    "id" : 40,
+    "roles" : [
+      {
+        "did" : "say",
+        "what" : "Don't",
+        "where" : "nowhere",
+        "who" : "Meg"
+      },
+      {
+        "did" : "say",
+        "what" : "boyish",
+        "where" : "nowhere",
+        "who" : "Meg"
+      }
+    ]
+  },
+  {
+    "id" : 41,
+    "roles" : [
+
+    ]
+  },
+  {
+    "id" : 42,
+    "roles" : [
+      {
+        "did" : "do",
+        "what" : "it",
+        "where" : "the situation",
+        "who" : "Meg"
+      }
+    ]
+  },
+  {
+    "id" : 43,
+    "roles" : [
+
+    ]
+  },
+  {
+    "id" : 44,
+    "roles" : [
+
+    ]
+  },
+  {
+    "id" : 45,
+    "roles" : [
+      {
+        "did" : "sang",
+        "what" : "Birds in their little nests",
+        "where" : "nest",
+        "who" : "Beth"
+      }
+    ]
+  },
+  {
+    "id" : 46,
+    "roles" : [
+      {
+        "did" : "lecture",
+        "what" : "girls",
+        "where" : "work",
+        "who" : "Meg"
+      }
+    ]
+  },
+  {
+    "id" : 47,
+    "roles" : [
+      {
+        "did" : "instruct",
+        "what" : "boyish tricks",
+        "where" : "work",
+        "who" : "Josephine"
+      }
+    ]
+  },
+  {
+    "id" : 48,
+    "roles" : [
+      {
+        "did" : "remind",
+        "what" : "young lady",
+        "where" : "work",
+        "who" : "Josephine"
+      }
+    ]
+  },
+  {
+    "id" : 49,
+    "roles" : [
+
+    ]
+  },
+  {
+    "id" : 50,
+    "roles" : [
+
+    ]
+  },
+  {
+    "id" : 51,
+    "roles" : [
+
+    ]
+  },
+  {
+    "id" : 52,
+    "roles" : [
+
+    ]
+  },
+  {
+    "id" : 53,
+    "roles" : [
+
+    ]
+  },
+  {
+    "id" : 54,
+    "roles" : [
+
+    ]
+  },
+  {
+    "id" : 55,
+    "roles" : [
+
+    ]
+  },
+  {
+    "id" : 56,
+    "roles" : [
+      {
+        "did" : "shook",
+        "what" : "blue army sock",
+        "where" : "room",
+        "who" : "Jo"
+      }
+    ]
+  },
+  {
+    "id" : 57,
+    "roles" : [
+      {
+        "did" : "shake",
+        "what" : "blue army sock",
+        "where" : "room",
+        "who" : "Jo"
+      }
+    ]
+  },
+  {
+    "id" : 58,
+    "roles" : [
+      {
+        "did" : "state",
+        "what" : "it can't be helped",
+        "where" : "room"
+      }
+    ]
+  },
+  {
+    "id" : 59,
+    "roles" : [
+      {
+        "did" : "stroke",
+        "what" : "rough head",
+        "where" : "room",
+        "who" : "Beth"
+      }
+    ]
+  },
+  {
+    "id" : 60,
+    "roles" : [
+      {
+        "did" : "continue",
+        "what" : "a conversation",
+        "where" : "unknown",
+        "who" : "Meg"
+      },
+      {
+        "did" : "speak",
+        "what" : "an opinion",
+        "where" : "unknown",
+        "who" : "Meg"
+      }
+    ]
+  },
+  {
+    "id" : 61,
+    "roles" : [
+      {
+        "did" : "comment",
+        "what" : "an observation",
+        "where" : "unknown",
+        "who" : "Meg"
+      }
+    ]
+  },
+  {
+    "id" : 62,
+    "roles" : [
+      {
+        "did" : "comment",
+        "what" : "an observation",
+        "where" : "unknown",
+        "who" : "Meg"
+      }
+    ]
+  },
+  {
+    "id" : 63,
+    "roles" : [
+      {
+        "did" : "compare",
+        "what" : "words",
+        "where" : "unknown",
+        "who" : "Meg"
+      }
+    ]
+  },
+  {
+    "id" : 64,
+    "roles" : [
+      {
+        "did" : "ask",
+        "what" : "question",
+        "where" : "lecture",
+        "who" : "Meg"
+      },
+      {
+        "did" : "compare",
+        "what" : "Jo",
+        "where" : "lecture",
+        "who" : "Meg"
+      }
+    ]
+  },
+  {
+    "id" : 65,
+    "roles" : [
+      {
+        "did" : "share",
+        "what" : "lecture",
+        "where" : "lecture",
+        "who" : "Beth"
+      }
+    ]
+  },
+  {
+    "id" : 66,
+    "roles" : [
+      {
+        "did" : "answered",
+        "what" : "the 'Mouse'",
+        "where" : "the family",
+        "who" : "Meg"
+      }
+    ]
+  },
+  {
+    "id" : 67,
+    "roles" : [
+      {
+        "did" : "knit",
+        "what" : "the four sisters",
+        "where" : "the twilight",
+        "who" : "the four sisters"
+      }
+    ]
+  },
+  {
+    "id" : 68,
+    "roles" : [
+      {
+        "did" : "hang",
+        "what" : "the carpet",
+        "where" : "the room",
+        "who" : "the carpet"
+      },
+      {
+        "did" : "hang",
+        "what" : "the furniture",
+        "where" : "the room",
+        "who" : "the furniture"
+      },
+      {
+        "did" : "fill",
+        "what" : "the recesses",
+        "where" : "the room",
+        "who" : "the books"
+      },
+      {
+        "did" : "bloom",
+        "what" : "the windows",
+        "where" : "the room",
+        "who" : "the windows"
+      }
+    ]
+  },
+  {
+    "id" : 69,
+    "roles" : [
+      {
+        "did" : "be",
+        "what" : "pretty",
+        "where" : "room",
+        "who" : "Margaret"
+      },
+      {
+        "did" : "have",
+        "what" : "plump and fair",
+        "where" : "room",
+        "who" : "Margaret"
+      },
+      {
+        "did" : "have",
+        "what" : "large eyes",
+        "where" : "room",
+        "who" : "Margaret"
+      },
+      {
+        "did" : "have",
+        "what" : "plenty of soft brown hair",
+        "where" : "room",
+        "who" : "Margaret"
+      }
+    ]
+  },
+  {
+    "id" : 70,
+    "roles" : [
+      {
+        "did" : "be",
+        "what" : "tall, thin, brown",
+        "where" : "room",
+        "who" : "Jo"
+      },
+      {
+        "did" : "have",
+        "what" : "long limbs",
+        "where" : "room",
+        "who" : "Jo"
+      }
+    ]
+  },
+  {
+    "id" : 71,
+    "roles" : [
+      {
+        "did" : "have",
+        "what" : "a decided mouth",
+        "where" : "room",
+        "who" : "Beth"
+      },
+      {
+        "did" : "have",
+        "what" : "a comical nose",
+        "where" : "room",
+        "who" : "Beth"
+      },
+      {
+        "did" : "have",
+        "what" : "sharp, gray eyes",
+        "where" : "room",
+        "who" : "Beth"
+      }
+    ]
+  },
+  {
+    "id" : 72,
+    "roles" : [
+      {
+        "did" : "have",
+        "what" : "long, thick hair",
+        "where" : "room",
+        "who" : "Beth"
+      },
+      {
+        "did" : "have",
+        "what" : "it was usually bundled into a net",
+        "where" : "room",
+        "who" : "Beth"
+      }
+    ]
+  },
+  {
+    "id" : 73,
+    "roles" : [
+
+    ]
+  },
+  {
+    "id" : 74,
+    "roles" : [
+
+    ]
+  },
+  {
+    "id" : 75,
+    "roles" : [
+
+    ]
+  },
+  {
+    "id" : 76,
+    "roles" : [
+
+    ]
+  },
+  {
+    "id" : 77,
+    "roles" : [
+
+    ]
+  },
+  {
+    "id" : 78,
+    "roles" : [
+
+    ]
+  },
+  {
+    "id" : 79,
+    "roles" : [
+      {
+        "did" : "sweep up",
+        "what" : "the hearth",
+        "where" : "the hearth",
+        "who" : "Beth"
+      },
+      {
+        "did" : "put",
+        "what" : "a pair of slippers",
+        "where" : "the hearth",
+        "who" : "Beth"
+      }
+    ]
+  },
+  {
+    "id" : 80,
+    "roles" : [
+      {
+        "did" : "have a good effect",
+        "what" : "the old shoes",
+        "where" : "the old shoes",
+        "who" : "the girls"
+      },
+      {
+        "did" : "come",
+        "what" : "the girls",
+        "where" : "the girls",
+        "who" : "Mother"
+      }
+    ]
+  },
+  {
+    "id" : 81,
+    "roles" : [
+      {
+        "did" : "stop lecturing",
+        "what" : "the lecture",
+        "where" : "the room",
+        "who" : "Meg"
+      },
+      {
+        "did" : "light",
+        "what" : "the lamp",
+        "where" : "the lamp",
+        "who" : "Meg"
+      },
+      {
+        "did" : "get out",
+        "what" : "the easy chair",
+        "where" : "the easy chair",
+        "who" : "Amy"
+      },
+      {
+        "did" : "sit up",
+        "what" : "the slippers",
+        "where" : "the blaze",
+        "who" : "Jo"
+      }
+    ]
+  },
+  {
+    "id" : 82,
+    "roles" : [
+      {
+        "did" : "describe",
+        "what" : "the old shoes",
+        "where" : "the hearth",
+        "who" : "Meg"
+      }
+    ]
+  },
+  {
+    "id" : 83,
+    "roles" : [
+      {
+        "did" : "need",
+        "what" : "a new pair",
+        "where" : "the hearth",
+        "who" : "Mother"
+      }
+    ]
+  },
+  {
+    "id" : 84,
+    "roles" : [
+      {
+        "did" : "get",
+        "what" : "some with",
+        "where" : "her",
+        "who" : "Beth"
+      }
+    ]
+  },
+  {
+    "id" : 85,
+    "roles" : [
+      {
+        "did" : "cry",
+        "what" : "no",
+        "where" : "nowhere",
+        "who" : "Amy"
+      }
+    ]
+  },
+  {
+    "id" : 86,
+    "roles" : [
+      {
+        "did" : "cry",
+        "what" : "no",
+        "where" : "nowhere",
+        "who" : "Amy"
+      }
+    ]
+  },
+  {
+    "id" : 87,
+    "roles" : [
+      {
+        "did" : "begin",
+        "what" : "the statement",
+        "where" : "the beginning",
+        "who" : "Meg"
+      },
+      {
+        "did" : "cut in",
+        "what" : "the statement",
+        "where" : "the conversation",
+        "who" : "Jo"
+      },
+      {
+        "did" : "provide",
+        "what" : "the slippers",
+        "where" : "the house",
+        "who" : "Jo"
+      },
+      {
+        "did" : "take",
+        "what" : "special care",
+        "where" : "Mother",
+        "who" : "Jo"
+      }
+    ]
+  },
+  {
+    "id" : 88,
+    "roles" : [
+      {
+        "did" : "tell",
+        "what" : "her",
+        "where" : "Christmas",
+        "who" : "Beth"
+      }
+    ]
+  },
+  {
+    "id" : 89,
+    "roles" : [
+      {
+        "did" : "compare",
+        "what" : "you",
+        "where" : "Christmas",
+        "who" : "Jo"
+      }
+    ]
+  },
+  {
+    "id" : 90,
+    "roles" : [
+      {
+        "did" : "ask",
+        "what" : "we",
+        "where" : "Christmas",
+        "who" : "Beth"
+      }
+    ]
+  },
+  {
+    "id" : 91,
+    "roles" : [
+      {
+        "did" : "exclaim",
+        "what" : "what",
+        "where" : "Christmas",
+        "who" : "Jo"
+      }
+    ]
+  },
+  {
+    "id" : 92,
+    "roles" : [
+      {
+        "did" : "announce",
+        "what" : "a nice pair of gloves",
+        "where" : "the room",
+        "who" : "Meg"
+      }
+    ]
+  },
+  {
+    "id" : 93,
+    "roles" : [
+      {
+        "did" : "cried",
+        "what" : "Army shoes",
+        "where" : "Army shoes",
+        "who" : "Jo"
+      }
+    ]
+  },
+  {
+    "id" : 94,
+    "roles" : [
+      {
+        "did" : "say",
+        "what" : "some handkerchiefs",
+        "where" : "nowhere",
+        "who" : "Beth"
+      }
+    ]
+  },
+  {
+    "id" : 95,
+    "roles" : [
+      {
+        "did" : "get",
+        "what" : "bottle of cologne",
+        "where" : "store",
+        "who" : "Amy"
+      }
+    ]
+  },
+  {
+    "id" : 96,
+    "roles" : [
+      {
+        "did" : "like",
+        "what" : "cologne",
+        "where" : "home",
+        "who" : "Amy"
+      },
+      {
+        "did" : "have",
+        "what" : "pencils",
+        "where" : "home",
+        "who" : "Amy"
+      }
+    ]
+  },
+  {
+    "id" : 97,
+    "roles" : [
+      {
+        "did" : "ask",
+        "what" : "how",
+        "where" : "Meg",
+        "who" : "Meg"
+      }
+    ]
+  },
+  {
+    "id" : 98,
+    "roles" : [
+
+    ]
+  },
+  {
+    "id" : 99,
+    "roles" : [
+      {
+        "did" : "put",
+        "what" : "them",
+        "where" : "the table",
+        "who" : "Meg"
+      },
+      {
+        "did" : "bring",
+        "what" : "her",
+        "where" : "in",
+        "who" : "Meg"
+      },
+      {
+        "did" : "see",
+        "what" : "her",
+        "where" : "open the bundles",
+        "who" : "Meg"
+      }
+    ]
+  },
+  {
+    "id" : 100,
+    "roles" : [
+
+    ]
+  },
+  {
+    "id" : 101,
+    "roles" : [
+      {
+        "did" : "answered",
+        "what" : "how",
+        "where" : "our birthdays",
+        "who" : "Jo"
+      }
+    ]
+  },
+  {
+    "id" : 102,
+    "roles" : [
+      {
+        "did" : "be frightened",
+        "what" : "chair with the crown",
+        "where" : "chair",
+        "who" : "Beth"
+      }
+    ]
+  },
+  {
+    "id" : 103,
+    "roles" : [
+      {
+        "did" : "sit looking",
+        "what" : "me",
+        "where" : "me",
+        "who" : "Beth"
+      }
+    ]
+  },
+  {
+    "id" : 104,
+    "roles" : [
+      {
+        "did" : "think",
+        "what" : "we are getting things for ourselves",
+        "where" : "the house",
+        "who" : "Meg"
+      },
+      {
+        "did" : "surprise",
+        "what" : "her",
+        "where" : "the house",
+        "who" : "Meg"
+      }
+    ]
+  },
+  {
+    "id" : 105,
+    "roles" : [
+      {
+        "did" : "go shopping",
+        "what" : "tomorrow afternoon",
+        "where" : "the town",
+        "who" : "Meg"
+      }
+    ]
+  },
+  {
+    "id" : 106,
+    "roles" : [
+      {
+        "did" : "march up and down",
+        "what" : "her hands",
+        "where" : "the hallway",
+        "who" : "Jo"
+      },
+      {
+        "did" : "keep her nose in the air",
+        "what" : "the play",
+        "where" : "the living room",
+        "who" : "Jo"
+      }
+    ]
+  },
+  {
+    "id" : 107,
+    "roles" : [
+      {
+        "did" : "think",
+        "what" : "time",
+        "where" : "nowhere",
+        "who" : "Jo"
+      }
+    ]
+  },
+  {
+    "id" : 108,
+    "roles" : [
+      {
+        "did" : "observe",
+        "what" : "dressing-up frolics",
+        "where" : "nowhere",
+        "who" : "Meg"
+      }
+    ]
+  },
+  {
+    "id" : 109,
+    "roles" : [
+      {
+        "did" : "trail",
+        "what" : "white gown",
+        "where" : "around",
+        "who" : "Jo"
+      },
+      {
+        "did" : "wear",
+        "what" : "gold-paper jewelry",
+        "where" : "around",
+        "who" : "Jo"
+      }
+    ]
+  },
+  {
+    "id" : 110,
+    "roles" : [
+      {
+        "did" : "say",
+        "what" : "actress",
+        "where" : "boards",
+        "who" : "Jo"
+      }
+    ]
+  },
+  {
+    "id" : 111,
+    "roles" : [
+      {
+        "did" : "suggest",
+        "what" : "rehearse",
+        "where" : "tonight",
+        "who" : "Meg"
+      }
+    ]
+  },
+  {
+    "id" : 112,
+    "roles" : [
+      {
+        "did" : "ask",
+        "what" : "fainting scene",
+        "where" : "here",
+        "who" : "Meg"
+      }
+    ]
+  },
+  {
+    "id" : 113,
+    "roles" : [
+      {
+        "did" : "feel",
+        "what" : "the inability to comply",
+        "where" : "unknown",
+        "who" : "Amy"
+      }
+    ]
+  },
+  {
+    "id" : 114,
+    "roles" : [
+      {
+        "did" : "observe",
+        "what" : "the act of fainting",
+        "where" : "unknown",
+        "who" : "Amy"
+      }
+    ]
+  },
+  {
+    "id" : 115,
+    "roles" : [
+      {
+        "did" : "attempt",
+        "what" : "the act of falling",
+        "where" : "unknown",
+        "who" : "Amy"
+      }
+    ]
+  },
+  {
+    "id" : 116,
+    "roles" : [
+      {
+        "did" : "fall",
+        "what" : "a chair",
+        "where" : "unknown",
+        "who" : "Amy"
+      }
+    ]
+  },
+  {
+    "id" : 117,
+    "roles" : [
+      {
+        "did" : "declare",
+        "what" : "the refusal to engage in a physical confrontation",
+        "where" : "unknown",
+        "who" : "Amy"
+      }
+    ]
+  },
+  {
+    "id" : 118,
+    "roles" : [
+      {
+        "did" : "do",
+        "what" : "this way",
+        "where" : "room",
+        "who" : "Amy"
+      }
+    ]
+  },
+  {
+    "id" : 119,
+    "roles" : [
+      {
+        "did" : "clasp",
+        "what" : "hands",
+        "where" : "room",
+        "who" : "Amy"
+      }
+    ]
+  },
+  {
+    "id" : 120,
+    "roles" : [
+      {
+        "did" : "save",
+        "what" : "me",
+        "where" : "room",
+        "who" : "Amy"
+      }
+    ]
+  },
+  {
+    "id" : 121,
+    "roles" : [
+      {
+        "did" : "save",
+        "what" : "me",
+        "where" : "room",
+        "who" : "Amy"
+      }
+    ]
+  },
+  {
+    "id" : 122,
+    "roles" : [
+      {
+        "did" : "go",
+        "what" : "away",
+        "where" : "room",
+        "who" : "Jo"
+      }
+    ]
+  },
+  {
+    "id" : 123,
+    "roles" : [
+      {
+        "did" : "poked",
+        "what" : "her hands",
+        "where" : "before her",
+        "who" : "Amy"
+      }
+    ]
+  },
+  {
+    "id" : 124,
+    "roles" : [
+      {
+        "did" : "run",
+        "what" : "pins",
+        "where" : "into her",
+        "who" : "Meg"
+      }
+    ]
+  },
+  {
+    "id" : 125,
+    "roles" : [
+      {
+        "did" : "gave",
+        "what" : "a despairing groan",
+        "where" : "while Beth let her bread burn",
+        "who" : "Jo"
+      },
+      {
+        "did" : "laughed",
+        "what" : "outright",
+        "where" : "while Beth let her bread burn",
+        "who" : "Meg"
+      },
+      {
+        "did" : "let",
+        "what" : "her bread burn",
+        "where" : "as she watched the fun with interest",
+        "who" : "Beth"
+      }
+    ]
+  },
+  {
+    "id" : 126,
+    "roles" : [
+      {
+        "did" : "said",
+        "what" : "It's no use!",
+        "who" : "Meg"
+      }
+    ]
+  },
+  {
+    "id" : 127,
+    "roles" : [
+      {
+        "did" : "said",
+        "what" : "Do the best you can when the time comes, and if the audience laughs, don't blame me.",
+        "where" : "when the time comes, and if the audience laughs, don't blame me",
+        "who" : "Meg"
+      }
+    ]
+  },
+  {
+    "id" : 128,
+    "roles" : [
+      {
+        "did" : "said",
+        "what" : "Come on.",
+        "who" : "Meg"
+      }
+    ]
+  },
+  {
+    "id" : 129,
+    "roles" : [
+      {
+        "did" : "defy",
+        "what" : "the world",
+        "where" : "a speech of two pages",
+        "who" : "Don Pedro"
+      }
+    ]
+  },
+  {
+    "id" : 130,
+    "roles" : [
+      {
+        "did" : "chant",
+        "what" : "an awful incantation",
+        "where" : "her kettleful of simmering toads",
+        "who" : "Hagar"
+      }
+    ]
+  },
+  {
+    "id" : 131,
+    "roles" : [
+      {
+        "did" : "rent",
+        "what" : "his chains",
+        "where" : "manfully",
+        "who" : "Roderigo"
+      },
+      {
+        "did" : "die",
+        "what" : "in agonies of remorse and arsenic",
+        "where" : "with a wild, \"Ha! Ha!",
+        "who" : "Hugo"
+      }
+    ]
+  },
+  {
+    "id" : 132,
+    "roles" : [
+
+    ]
+  },
+  {
+    "id" : 133,
+    "roles" : [
+      {
+        "did" : "say",
+        "what" : "It's the best we've had yet",
+        "where" : "nowhere",
+        "who" : "Meg"
+      }
+    ]
+  },
+  {
+    "id" : 134,
+    "roles" : [
+      {
+        "did" : "write",
+        "what" : "splendid things",
+        "where" : "nowhere",
+        "who" : "Meg"
+      }
+    ]
+  },
+  {
+    "id" : 135,
+    "roles" : [
+      {
+        "did" : "act",
+        "what" : "Shakespeare",
+        "where" : "nowhere",
+        "who" : "Meg"
+      }
+    ]
+  },
+  {
+    "id" : 136,
+    "roles" : [
+      {
+        "did" : "believed",
+        "what" : "genius",
+        "where" : "nowhere",
+        "who" : "Beth"
+      }
+    ]
+  },
+  {
+    "id" : 137,
+    "roles" : [
+      {
+        "did" : "replied",
+        "what" : "modestly",
+        "where" : "nowhere",
+        "who" : "Jo"
+      }
+    ]
+  },
+  {
+    "id" : 138,
+    "roles" : [
+      {
+        "did" : "think",
+        "what" : "The Witches Curse, an Operatic Tragedy",
+        "where" : "nowhere",
+        "who" : "Jo"
+      },
+      {
+        "did" : "want to try",
+        "what" : "Macbeth",
+        "where" : "nowhere",
+        "who" : "Jo"
+      },
+      {
+        "did" : "want to have",
+        "what" : "a trapdoor for Banquo",
+        "where" : "nowhere",
+        "who" : "Jo"
+      }
+    ]
+  },
+  {
+    "id" : 139,
+    "roles" : [
+      {
+        "did" : "want to do",
+        "what" : "the killing part",
+        "where" : "nowhere",
+        "who" : "Jo"
+      }
+    ]
+  },
+  {
+    "id" : 140,
+    "roles" : [
+      {
+        "did" : "ask",
+        "what" : "a dagger",
+        "where" : "nowhere",
+        "who" : "Jo"
+      }
+    ]
+  },
+  {
+    "id" : 141,
+    "roles" : [
+      {
+        "did" : "mutter",
+        "what" : "rolling her eyes and clutching at the air",
+        "where" : "nowhere",
+        "who" : "Jo"
+      }
+    ]
+  },
+  {
+    "id" : 142,
+    "roles" : [
+      {
+        "did" : "place",
+        "what" : "toasting fork",
+        "where" : "air",
+        "who" : "Meg"
+      },
+      {
+        "did" : "replace",
+        "what" : "bread",
+        "where" : "toasting fork",
+        "who" : "Meg"
+      }
+    ]
+  },
+  {
+    "id" : 143,
+    "roles" : [
+      {
+        "did" : "exclaim",
+        "what" : "Beth",
+        "where" : "stage",
+        "who" : "Meg"
+      }
+    ]
+  },
+  {
+    "id" : 144,
+    "roles" : [
+      {
+        "did" : "cry",
+        "what" : "rehearsal",
+        "where" : "stage",
+        "who" : "Meg"
+      }
+    ]
+  },
+  {
+    "id" : 145,
+    "roles" : [
+      {
+        "did" : "say",
+        "what" : "you",
+        "where" : "door",
+        "who" : "Meg"
+      },
+      {
+        "did" : "turn",
+        "what" : "welcome",
+        "where" : "door",
+        "who" : "actors"
+      },
+      {
+        "did" : "turn",
+        "what" : "welcome",
+        "where" : "door",
+        "who" : "audience"
+      },
+      {
+        "did" : "look",
+        "what" : "about her",
+        "where" : "door",
+        "who" : "tall, motherly lady"
+      }
+    ]
+  },
+  {
+    "id" : 146,
+    "roles" : [
+
+    ]
+  },
+  {
+    "id" : 147,
+    "roles" : [
+      {
+        "did" : "ask",
+        "what" : "how have you got on today",
+        "where" : "home",
+        "who" : "Meg"
+      }
+    ]
+  },
+  {
+    "id" : 148,
+    "roles" : [
+      {
+        "did" : "get",
+        "what" : "boxes",
+        "where" : "kitchen",
+        "who" : "Meg"
+      }
+    ]
+  },
+  {
+    "id" : 149,
+    "roles" : [
+      {
+        "did" : "ask",
+        "what" : "has anyone called",
+        "where" : "door",
+        "who" : "Meg"
+      }
+    ]
+  },
+  {
+    "id" : 150,
+    "roles" : [
+      {
+        "did" : "check",
+        "what" : "cold",
+        "where" : "bedroom",
+        "who" : "Meg"
+      }
+    ]
+  },
+  {
+    "id" : 151,
+    "roles" : [
+      {
+        "did" : "observe",
+        "what" : "tired",
+        "where" : "living room",
+        "who" : "Meg"
+      }
+    ]
+  },
+  {
+    "id" : 152,
+    "roles" : [
+      {
+        "did" : "offer",
+        "what" : "kiss",
+        "where" : "bedroom",
+        "who" : "Meg"
+      }
+    ]
+  },
+  {
+    "id" : 153,
+    "roles" : [
+      {
+        "did" : "get wet things off",
+        "what" : "slippers",
+        "where" : "easy chair",
+        "who" : "Mrs. March"
+      },
+      {
+        "did" : "put warm slippers on",
+        "what" : "slippers",
+        "where" : "easy chair",
+        "who" : "Mrs. March"
+      },
+      {
+        "did" : "sit down",
+        "what" : "easy chair",
+        "where" : "easy chair",
+        "who" : "Mrs. March"
+      },
+      {
+        "did" : "draw Amy to her lap",
+        "what" : "Amy",
+        "where" : "easy chair",
+        "who" : "Mrs. March"
+      }
+    ]
+  },
+  {
+    "id" : 154,
+    "roles" : [
+      {
+        "did" : "fly about",
+        "what" : "things",
+        "where" : "various locations",
+        "who" : "the girls"
+      }
+    ]
+  },
+  {
+    "id" : 155,
+    "roles" : [
+      {
+        "did" : "arrange tea table",
+        "what" : "tea table",
+        "where" : "tea table",
+        "who" : "Meg"
+      },
+      {
+        "did" : "bring wood",
+        "what" : "wood",
+        "where" : "various locations",
+        "who" : "Jo"
+      },
+      {
+        "did" : "set chairs",
+        "what" : "chairs",
+        "where" : "various locations",
+        "who" : "Jo"
+      },
+      {
+        "did" : "dropping, over-turning, and clattering everything she touched",
+        "what" : "everything",
+        "where" : "various locations",
+        "who" : "Jo"
+      }
+    ]
+  },
+  {
+    "id" : 156,
+    "roles" : [
+      {
+        "did" : "trot to and fro",
+        "what" : "places",
+        "where" : "parlor kitchen",
+        "who" : "Beth"
+      },
+      {
+        "did" : "move between parlor kitchen",
+        "what" : "places",
+        "where" : "parlor kitchen",
+        "who" : "Beth"
+      },
+      {
+        "did" : "give directions",
+        "what" : "everyone",
+        "where" : "various locations",
+        "who" : "Amy"
+      },
+      {
+        "did" : "sit with hands folded",
+        "what" : "hands",
+        "where" : "various locations",
+        "who" : "Amy"
+      }
+    ]
+  },
+  {
+    "id" : 157,
+    "roles" : [
+      {
+        "did" : "offer",
+        "what" : "a treat",
+        "where" : "the table",
+        "who" : "Mrs. March"
+      }
+    ]
+  },
+  {
+    "id" : 158,
+    "roles" : [
+      {
+        "did" : "smile",
+        "what" : "a streak of sunshine",
+        "where" : "the table",
+        "who" : "Beth"
+      }
+    ]
+  },
+  {
+    "id" : 159,
+    "roles" : [
+      {
+        "did" : "clapped",
+        "what" : "her hands",
+        "where" : "the table",
+        "who" : "Beth"
+      },
+      {
+        "did" : "tossed",
+        "what" : "her napkin",
+        "where" : "the table",
+        "who" : "Jo"
+      }
+    ]
+  },
+  {
+    "id" : 160,
+    "roles" : [
+      {
+        "did" : "held",
+        "what" : "the biscuit",
+        "where" : "the table",
+        "who" : "Beth"
+      }
+    ]
+  },
+  {
+    "id" : 161,
+    "roles" : [
+      {
+        "did" : "cheer",
+        "what" : "Father",
+        "where" : "the table",
+        "who" : "Beth"
+      }
+    ]
+  },
+  {
+    "id" : 162,
+    "roles" : [
+      {
+        "did" : "send",
+        "what" : "letter",
+        "where" : "home",
+        "who" : "Mrs. March"
+      }
+    ]
+  },
+  {
+    "id" : 163,
+    "roles" : [
+      {
+        "did" : "think",
+        "what" : "cold season",
+        "where" : "home",
+        "who" : "Mrs. March"
+      }
+    ]
+  },
+  {
+    "id" : 164,
+    "roles" : [
+      {
+        "did" : "send",
+        "what" : "wishes",
+        "where" : "home",
+        "who" : "Mrs. March"
+      }
+    ]
+  },
+  {
+    "id" : 165,
+    "roles" : [
+      {
+        "did" : "crying",
+        "what" : "Hurry and get done!",
+        "where" : "empty",
+        "who" : "Jo"
+      },
+      {
+        "did" : "choking",
+        "what" : "tea",
+        "where" : "empty",
+        "who" : "Jo"
+      }
+    ]
+  },
+  {
+    "id" : 166,
+    "roles" : [
+      {
+        "did" : "dropping",
+        "what" : "bread",
+        "where" : "carpet",
+        "who" : "Jo"
+      },
+      {
+        "did" : "choking",
+        "what" : "tea",
+        "where" : "empty",
+        "who" : "Jo"
+      }
+    ]
+  },
+  {
+    "id" : 167,
+    "roles" : [
+      {
+        "did" : "ate",
+        "what" : "no more",
+        "where" : "her shadowy corner",
+        "who" : "Beth"
+      }
+    ]
+  },
+  {
+    "id" : 168,
+    "roles" : [
+      {
+        "did" : "think",
+        "what" : "it was so splendid",
+        "where" : "Father",
+        "who" : "Meg"
+      }
+    ]
+  },
+  {
+    "id" : 169,
+    "roles" : [
+      {
+        "did" : "wish",
+        "what" : "go as a drummer",
+        "where" : "nowhere",
+        "who" : "Meg"
+      },
+      {
+        "did" : "ask",
+        "what" : "what's its name",
+        "where" : "nowhere",
+        "who" : "Meg"
+      }
+    ]
+  },
+  {
+    "id" : 170,
+    "roles" : [
+      {
+        "did" : "exclaim",
+        "what" : "be near him and help him",
+        "where" : "nowhere",
+        "who" : "Jo"
+      }
+    ]
+  },
+  {
+    "id" : 171,
+    "roles" : [
+      {
+        "did" : "sigh",
+        "what" : "sleep in a tent",
+        "where" : "tent",
+        "who" : "Amy"
+      }
+    ]
+  },
+  {
+    "id" : 172,
+    "roles" : [
+      {
+        "did" : "come home",
+        "what" : "home",
+        "where" : "home",
+        "who" : "Marmee"
+      }
+    ]
+  },
+  {
+    "id" : 173,
+    "roles" : [
+      {
+        "did" : "ask",
+        "what" : "question",
+        "where" : "Marmee",
+        "who" : "Beth"
+      }
+    ]
+  },
+  {
+    "id" : 174,
+    "roles" : [
+      {
+        "did" : "wait",
+        "what" : "months",
+        "where" : "home",
+        "who" : "Meg"
+      }
+    ]
+  },
+  {
+    "id" : 175,
+    "roles" : [
+      {
+        "did" : "stay",
+        "what" : "work",
+        "where" : "home",
+        "who" : "Meg"
+      }
+    ]
+  },
+  {
+    "id" : 176,
+    "roles" : [
+      {
+        "did" : "give",
+        "what" : "letter",
+        "where" : "room",
+        "who" : "Meg"
+      }
+    ]
+  },
+  {
+    "id" : 177,
+    "roles" : [
+      {
+        "did" : "draw",
+        "what" : "to the fire",
+        "where" : "the big chair",
+        "who" : "Mother"
+      },
+      {
+        "did" : "sit",
+        "what" : "at her feet",
+        "where" : "the big chair",
+        "who" : "Beth"
+      },
+      {
+        "did" : "perch",
+        "what" : "on either arm of the chair",
+        "where" : "the big chair",
+        "who" : "Meg"
+      },
+      {
+        "did" : "lean",
+        "what" : "on the back",
+        "where" : "the big chair",
+        "who" : "Jo"
+      }
+    ]
+  },
+  {
+    "id" : 178,
+    "roles" : [
+      {
+        "did" : "write",
+        "what" : "letters",
+        "where" : "those hard times",
+        "who" : "fathers"
+      }
+    ]
+  },
+  {
+    "id" : 179,
+    "roles" : [
+      {
+        "did" : "say",
+        "what" : "was said of the hardships endured, the dangers faced, or the homesickness conquered",
+        "where" : "this one little",
+        "who" : "little"
+      }
+    ]
+  },
+  {
+    "id" : 180,
+    "roles" : [
+      {
+        "did" : "write",
+        "what" : "a cheerful, hopeful letter, full of lively descriptions of camp life, marches, and military news, and only at the end did the writer's heart over-flow with fatherly love and longing for the little girls at home",
+        "where" : "the letter",
+        "who" : "writer"
+      }
+    ]
+  },
+  {
+    "id" : 181,
+    "roles" : [
+      {
+        "did" : "give",
+        "what" : "love and a kiss",
+        "where" : "the fire",
+        "who" : "Meg"
+      }
+    ]
+  },
+  {
+    "id" : 182,
+    "roles" : [
+      {
+        "did" : "think of",
+        "what" : "them",
+        "where" : "the fire",
+        "who" : "Meg"
+      }
+    ]
+  },
+  {
+    "id" : 183,
+    "roles" : [
+      {
+        "did" : "work",
+        "what" : "the hard days",
+        "where" : "the fire",
+        "who" : "Meg"
+      }
+    ]
+  },
+  {
+    "id" : 184,
+    "roles" : [
+      {
+        "did" : "remember",
+        "what" : "all I said to them",
+        "where" : "the fire",
+        "who" : "Meg"
+      }
+    ]
+  },
+  {
+    "id" : 185,
+    "roles" : [
+      {
+        "did" : "sniff",
+        "what" : "that part",
+        "where" : "the fire",
+        "who" : "everyone"
+      }
+    ]
+  },
+  {
+    "id" : 186,
+    "roles" : [
+      {
+        "did" : "drop",
+        "what" : "a tear",
+        "where" : "the fire",
+        "who" : "Jo"
+      },
+      {
+        "did" : "rumple",
+        "what" : "her curls",
+        "where" : "the fire",
+        "who" : "Amy"
+      },
+      {
+        "did" : "hide",
+        "what" : "her face",
+        "where" : "the fire",
+        "who" : "Amy"
+      }
+    ]
+  },
+  {
+    "id" : 187,
+    "roles" : [
+      {
+        "did" : "try",
+        "what" : "to be better",
+        "where" : "the fire",
+        "who" : "Meg"
+      }
+    ]
+  },
+  {
+    "id" : 188,
+    "roles" : [
+      {
+        "did" : "cried",
+        "what" : "We all",
+        "where" : "nowhere",
+        "who" : "Meg"
+      }
+    ]
+  },
+  {
+    "id" : 189,
+    "roles" : [
+      {
+        "did" : "think",
+        "what" : "my looks",
+        "where" : "nowhere",
+        "who" : "Meg"
+      },
+      {
+        "did" : "hate",
+        "what" : "work",
+        "where" : "nowhere",
+        "who" : "Meg"
+      },
+      {
+        "did" : "won't",
+        "what" : "any more",
+        "where" : "nowhere",
+        "who" : "Meg"
+      }
+    ]
+  },
+  {
+    "id" : 190,
+    "roles" : [
+      {
+        "did" : "try",
+        "what" : "to be",
+        "where" : "home",
+        "who" : "Jo"
+      },
+      {
+        "did" : "keep",
+        "what" : "her temper",
+        "where" : "home",
+        "who" : "Jo"
+      }
+    ]
+  },
+  {
+    "id" : 191,
+    "roles" : [
+      {
+        "did" : "wiped away",
+        "what" : "her tears",
+        "where" : "the blue army sock",
+        "who" : "Beth"
+      },
+      {
+        "did" : "knit",
+        "what" : "the duty",
+        "where" : "nearest her",
+        "who" : "Beth"
+      }
+    ]
+  },
+  {
+    "id" : 192,
+    "roles" : [
+      {
+        "did" : "broke",
+        "what" : "silence",
+        "where" : "the silence that followed Jo's words",
+        "who" : "Mrs. March"
+      },
+      {
+        "did" : "say",
+        "what" : "words",
+        "where" : "in her cheery voice",
+        "who" : "Mrs. March"
+      }
+    ]
+  },
+  {
+    "id" : 193,
+    "roles" : [
+
+    ]
+  },
+  {
+    "id" : 194,
+    "roles" : [
+      {
+        "did" : "pass",
+        "what" : "valley",
+        "where" : "valley",
+        "who" : "Jo"
+      }
+    ]
+  },
+  {
+    "id" : 195,
+    "roles" : [
+      {
+        "did" : "liked",
+        "what" : "the place",
+        "where" : "the place where the bundles fell off and tumbled downstairs",
+        "who" : "Meg"
+      }
+    ]
+  },
+  {
+    "id" : 196,
+    "roles" : [
+      {
+        "did" : "remember",
+        "what" : "much about it",
+        "where" : "the cellar and the dark entry",
+        "who" : "Meg"
+      },
+      {
+        "did" : "like",
+        "what" : "the cake and milk",
+        "where" : "up at the top",
+        "who" : "Meg"
+      }
+    ]
+  },
+  {
+    "id" : 197,
+    "roles" : [
+      {
+        "did" : "talk",
+        "what" : "of renouncing childish things",
+        "where" : "the mature age of twelve",
+        "who" : "Amy"
+      }
+    ]
+  },
+  {
+    "id" : 198,
+    "roles" : [
+      {
+        "did" : "play",
+        "what" : "play",
+        "where" : "one way or another",
+        "who" : "Meg"
+      }
+    ]
+  },
+  {
+    "id" : 199,
+    "roles" : [
+      {
+        "did" : "lead",
+        "what" : "guide",
+        "where" : "many troubles and mistakes to the peace which is a true Celestial City",
+        "who" : "Meg"
+      }
+    ]
+  },
+  {
+    "id" : 200,
+    "roles" : [
+      {
+        "did" : "begin",
+        "what" : "see",
+        "where" : "before Father comes home",
+        "who" : "Meg"
+      }
+    ]
+  },
+  {
+    "id" : 201,
+    "roles" : [
+      {
+        "did" : "ask",
+        "what" : "Mother",
+        "where" : "Celestial City",
+        "who" : "Amy"
+      }
+    ]
+  },
+  {
+    "id" : 202,
+    "roles" : [
+      {
+        "did" : "look",
+        "what" : "bundles",
+        "where" : "Celestial City",
+        "who" : "Amy"
+      }
+    ]
+  },
+  {
+    "id" : 203,
+    "roles" : [
+      {
+        "did" : "ask",
+        "what" : "Mother",
+        "where" : "Celestial City",
+        "who" : "Amy"
+      }
+    ]
+  },
+  {
+    "id" : 204,
+    "roles" : [
+      {
+        "did" : "told",
+        "what" : "burden",
+        "where" : "room",
+        "who" : "Beth"
+      },
+      {
+        "did" : "told",
+        "what" : "burden",
+        "where" : "room",
+        "who" : "Amy"
+      }
+    ]
+  },
+  {
+    "id" : 205,
+    "roles" : [
+      {
+        "did" : "think",
+        "what" : "burden",
+        "where" : "room",
+        "who" : "Mother"
+      }
+    ]
+  },
+  {
+    "id" : 206,
+    "roles" : [
+      {
+        "did" : "have",
+        "what" : "burdens",
+        "where" : "now",
+        "who" : "Beth"
+      }
+    ]
+  },
+  {
+    "id" : 207,
+    "roles" : [
+      {
+        "did" : "have",
+        "what" : "dishes and dusters",
+        "where" : "now",
+        "who" : "Beth"
+      }
+    ]
+  },
+  {
+    "id" : 208,
+    "roles" : [
+      {
+        "did" : "made",
+        "what" : "bundle",
+        "where" : "everyone",
+        "who" : "Beth"
+      }
+    ]
+  },
+  {
+    "id" : 209,
+    "roles" : [
+      {
+        "did" : "say",
+        "what" : "do it",
+        "where" : "nowhere",
+        "who" : "Meg"
+      }
+    ]
+  },
+  {
+    "id" : 210,
+    "roles" : [
+      {
+        "did" : "talk",
+        "what" : "be good",
+        "where" : "nowhere",
+        "who" : "Meg"
+      }
+    ]
+  },
+  {
+    "id" : 211,
+    "roles" : [
+      {
+        "did" : "pulled",
+        "what" : "us",
+        "where" : "the Slough of Despond",
+        "who" : "Mother"
+      }
+    ]
+  },
+  {
+    "id" : 212,
+    "roles" : [
+      {
+        "did" : "have",
+        "what" : "our roll of directions",
+        "where" : "the Slough of Despond",
+        "who" : "Christian"
+      }
+    ]
+  },
+  {
+    "id" : 213,
+    "roles" : [
+      {
+        "did" : "ask",
+        "what" : "about that",
+        "where" : "the Slough of Despond",
+        "who" : "Meg"
+      }
+    ]
+  },
+  {
+    "id" : 214,
+    "roles" : [
+      {
+        "did" : "do",
+        "what" : "her duty",
+        "where" : "the Slough of Despond",
+        "who" : "Jo"
+      }
+    ]
+  },
+  {
+    "id" : 215,
+    "roles" : [
+      {
+        "did" : "give",
+        "what" : "guidebook",
+        "where" : "under your pillows",
+        "who" : "Mrs. March"
+      }
+    ]
+  },
+  {
+    "id" : 216,
+    "roles" : [
+      {
+        "did" : "cleared",
+        "what" : "the table",
+        "where" : "the kitchen",
+        "who" : "Hannah"
+      },
+      {
+        "did" : "made",
+        "what" : "sheets",
+        "where" : "the living room",
+        "who" : "the girls"
+      },
+      {
+        "did" : "made",
+        "what" : "sheets",
+        "where" : "the living room",
+        "who" : "the girls"
+      },
+      {
+        "did" : "made",
+        "what" : "sheets",
+        "where" : "the living room",
+        "who" : "the girls"
+      }
+    ]
+  },
+  {
+    "id" : 217,
+    "roles" : [
+
+    ]
+  },
+  {
+    "id" : 218,
+    "roles" : [
+      {
+        "did" : "divided",
+        "what" : "the long seams",
+        "where" : "the sewing table",
+        "who" : "the girls"
+      },
+      {
+        "did" : "called",
+        "what" : "the quarters",
+        "where" : "the sewing table",
+        "who" : "the girls"
+      },
+      {
+        "did" : "stitched",
+        "what" : "their way through them",
+        "where" : "the sewing table",
+        "who" : "the girls"
+      }
+    ]
+  },
+  {
+    "id" : 219,
+    "roles" : [
+      {
+        "did" : "stopped",
+        "what" : "work",
+        "where" : "home",
+        "who" : "Meg"
+      }
+    ]
+  },
+  {
+    "id" : 220,
+    "roles" : [
+      {
+        "did" : "touch",
+        "what" : "keys",
+        "where" : "old piano",
+        "who" : "Beth"
+      }
+    ]
+  },
+  {
+    "id" : 221,
+    "roles" : [
+      {
+        "did" : "lead",
+        "what" : "choir",
+        "where" : "home",
+        "who" : "Meg"
+      }
+    ]
+  },
+  {
+    "id" : 222,
+    "roles" : [
+      {
+        "did" : "wander",
+        "what" : "airs",
+        "where" : "home",
+        "who" : "Jo"
+      }
+    ]
+  },
+  {
+    "id" : 223,
+    "roles" : [
+      {
+        "did" : "done",
+        "what" : "this",
+        "where" : "home",
+        "who" : "Meg"
+      }
+    ]
+  },
+  {
+    "id" : 224,
+    "roles" : [
+      {
+        "did" : "play",
+        "what" : "little guitar",
+        "where" : "bedroom",
+        "who" : "Meg"
+      }
+    ]
+  },
+  {
+    "id" : 225,
+    "roles" : [
+      {
+        "did" : "become",
+        "what" : "custom",
+        "where" : "household",
+        "who" : "mother"
+      }
+    ]
+  },
+  {
+    "id" : 226,
+    "roles" : [
+      {
+        "did" : "sing",
+        "what" : "voice",
+        "where" : "house",
+        "who" : "mother"
+      },
+      {
+        "did" : "sing",
+        "what" : "sound",
+        "where" : "night",
+        "who" : "mother"
+      }
+    ]
+  }
+]

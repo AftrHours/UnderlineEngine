@@ -1,67 +1,24 @@
 import Foundation
 import NaturalLanguage
 
-/// Turns text into a vector that stands for its meaning (spec §5.5). A protocol, so the model can change
-/// (a bundled Core ML model later) and tests can run without embeddings.
+/// Gives the contextual vector of words as they are used in a sentence (spec §5.5). A protocol so tests can run without the
+/// model, and the model can change later.
 protocol EmbeddingSvc: Sendable {
     var engine: EmbeddingEngine { get }
-    func vector(for text: String) -> [Float]?
+    /// The raw (not centred) vector of each word at `words` in `text`, from one model pass; `nil` where there is none.
+    func wordVectors(for text: String, words: [NSRange]) -> [[Double]?]
 }
 
-/// Apple's built-in English sentence embedding, or averaged word vectors when that is missing.
-final class EmbeddingSvcApple: EmbeddingSvc, @unchecked Sendable {
-    let engine: EmbeddingEngine
-    private let sentence: NLEmbedding?
-    private let word: NLEmbedding?
-    // NLEmbedding isn't documented as thread-safe, so calls go through one lock.
-    private let lock = NSLock()
-
-    init() {
-        sentence = NLEmbedding.sentenceEmbedding(for: .english)
-        word = sentence == nil ? NLEmbedding.wordEmbedding(for: .english) : nil
-        engine = sentence != nil ? .sentence : word != nil ? .wordAverage : .none
-    }
-
-    func vector(for text: String) -> [Float]? {
-        lock.lock()
-        defer { lock.unlock() }
-        if let sentence {
-            return sentence.vector(for: text).map { $0.map(Float.init) }
-        }
-        guard let word else { return nil }
-        let vectors = text.lowercased().split { !$0.isLetter }.compactMap { word.vector(for: String($0)) }
-        guard let first = vectors.first else { return nil }
-        var sum = [Double](repeating: 0, count: first.count)
-        for vector in vectors { for i in sum.indices { sum[i] += vector[i] } }
-        return sum.map { Float($0 / Double(vectors.count)) }
-    }
-}
-
-/// Apple's contextual (BERT-style) embedding: one vector per token, averaged into one per sentence. Its assets download
-/// on first use, so `make()` returns `nil` when they can't be loaded in time. The app's default (R22) through `UnderlineCtrl.make()`.
+/// Apple's contextual (BERT-style) embedding: one vector per token, averaged into one per word. Its assets download on first
+/// use, so `make()` returns `nil` when they can't be loaded in time; the engine then runs without word vectors.
 final class EmbeddingSvcContextual: EmbeddingSvc, @unchecked Sendable {
     let engine: EmbeddingEngine = .contextual
     private let model: NLContextualEmbedding
     private let lock = NSLock()
-    /// The average vector of the book, subtracted from every vector. Averaged token vectors all point the same way
-    /// (half the sentence pairs in Little Women chapter 1 score 0.94 or more); removing the shared part spreads them out.
-    private var center: [Double]?
-
     private init(model: NLContextualEmbedding) { self.model = model }
 
-    /// Sets the center from these texts (a sample of the book is enough).
-    func center(on texts: [String]) {
-        let vectors = texts.compactMap(raw)
-        guard let first = vectors.first else { return }
-        var sum = [Double](repeating: 0, count: first.count)
-        for v in vectors { for i in sum.indices where i < v.count { sum[i] += v[i] } }
-        lock.lock()
-        center = sum.map { $0 / Double(vectors.count) }
-        lock.unlock()
-    }
-
     /// How long `make()` waits for the assets to download. The request can wait forever (offline, or in the Simulator),
-    /// and the caller then falls back to `NLEmbedding` instead of never underlining.
+    /// and the caller then runs without word vectors instead of never underlining.
     static let assetWait: Duration = .seconds(10)
 
     static func make(wait: Duration = assetWait) async -> EmbeddingSvcContextual? {
@@ -88,69 +45,30 @@ final class EmbeddingSvcContextual: EmbeddingSvc, @unchecked Sendable {
         }
     }
 
-    func vector(for text: String) -> [Float]? {
-        guard let v = raw(text) else { return nil }
+    /// One model pass: each word's vector is the average of the token vectors overlapping it (not centred).
+    func wordVectors(for text: String, words: [NSRange]) -> [[Double]?] {
         lock.lock()
-        let c = center
+        let result = try? model.embeddingResult(for: text, language: .english)
         lock.unlock()
-        guard let c else { return v.map(Float.init) }
-        return v.indices.map { Float(v[$0] - (c.indices.contains($0) ? c[$0] : 0)) }
-    }
-
-    /// The contextual vector of the words at `range` as they are used in `text` (token vectors averaged, not centered).
-    /// "stairs" in a sentence about two sisters hugging and "stairs" Laurie runs down get different vectors.
-    func wordVector(in text: String, at range: NSRange) -> [Double]? {
-        guard let span = Range(range, in: text) else { return nil }
-        lock.lock()
-        defer { lock.unlock() }
-        guard let result = try? model.embeddingResult(for: text, language: .english) else { return nil }
-        var sum: [Double] = []
-        var count = 0
-        result.enumerateTokenVectors(in: text.startIndex..<text.endIndex) { vector, tokenRange in
-            guard tokenRange.overlaps(span) else { return true }
-            if sum.isEmpty { sum = vector } else { for i in sum.indices where i < vector.count { sum[i] += vector[i] } }
-            count += 1
-            return true
+        guard let result else { return words.map { _ in nil } }
+        var pieces: [(Range<String.Index>, [Double])] = []
+        result.enumerateTokenVectors(in: text.startIndex..<text.endIndex) { vector, range in
+            pieces.append((range, vector)); return true
         }
-        guard count > 0 else { return nil }
-        return sum.map { $0 / Double(count) }
-    }
-
-    private func raw(_ text: String) -> [Double]? {
-        lock.lock()
-        defer { lock.unlock() }
-        guard let result = try? model.embeddingResult(for: text, language: .english) else { return nil }
-        var sum: [Double] = []
-        var count = 0
-        result.enumerateTokenVectors(in: text.startIndex..<text.endIndex) { vector, _ in
-            if sum.isEmpty { sum = vector } else { for i in sum.indices where i < vector.count { sum[i] += vector[i] } }
-            count += 1
-            return true
+        return words.map { range in
+            guard let span = Range(range, in: text) else { return nil }
+            let hits = pieces.filter { $0.0.overlaps(span) }.map(\.1)
+            guard var v = hits.first else { return nil }
+            for h in hits.dropFirst() { for i in v.indices where i < h.count { v[i] += h[i] } }
+            return v.map { $0 / Double(hits.count) }
         }
-        guard count > 0 else { return nil }
-        return sum.map { $0 / Double(count) }
     }
 }
 
-/// No embeddings: search runs on words only.
+/// No embedding: no word vectors, so the soft lexical match never gives a point.
 struct EmbeddingSvcUnavailable: EmbeddingSvc {
     var engine: EmbeddingEngine { .none }
-    func vector(for text: String) -> [Float]? { nil }
-}
-
-enum Cosine {
-    /// Cosine similarity mapped to 0…1 as `(1 + cos) / 2`; 0 for empty or mismatched vectors.
-    static func similarity(_ a: [Float], _ b: [Float]) -> Double {
-        guard !a.isEmpty, a.count == b.count else { return 0 }
-        var dot = 0.0, normA = 0.0, normB = 0.0
-        for i in a.indices {
-            dot += Double(a[i]) * Double(b[i])
-            normA += Double(a[i]) * Double(a[i])
-            normB += Double(b[i]) * Double(b[i])
-        }
-        guard normA > 0, normB > 0 else { return 0 }
-        return (1 + dot / (normA.squareRoot() * normB.squareRoot())) / 2
-    }
+    func wordVectors(for text: String, words: [NSRange]) -> [[Double]?] { words.map { _ in nil } }
 }
 
 /// Resumes a continuation once, from whichever task gets there first.

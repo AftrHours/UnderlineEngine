@@ -37,10 +37,9 @@ struct SweepEvaluation: Evaluation {
             r.phrase = u.text
             r.referenceSentence = u.reference.sentence
             r.referenceText = u.reference.text
-            r.path = u.decidedBy.rawValue
             let inSentence = records.filter { $0.sentence == u.sentence }
             if let rec = inSentence.first(where: { $0.kept && $0.phrase == u.text }) { r.fill(from: rec) }
-            r.highestUsed = inSentence.flatMap { $0.candidates + $0.promptSentences.filter { $0 != u.sentence } }.max()
+            r.highestUsed = inSentence.flatMap { $0.candidates + [$0.pickedSentence].compactMap { $0 } }.max()
             samples.append(sample)
             results[sample.key] = r
         }

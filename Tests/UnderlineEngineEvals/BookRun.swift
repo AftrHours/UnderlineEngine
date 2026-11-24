@@ -1,5 +1,6 @@
 import Foundation
 import Testing
+import NaturalLanguage
 @testable import UnderlineEngine
 @testable import UnderlineKit
 
@@ -29,9 +30,9 @@ func chapterNumbers(_ spec: String?, count: Int) -> Set<Int> {
 /// sentence numbering differs: here each chapter starts at 0 (so the labels in `Dataset/labels/` keep matching), the app numbers
 /// across the book; no decision depends on it, because search only ever looks inside the chapter (`BookRunNumberingTests`).
 ///
-///     UNDERLINE_BOOK=little-women UNDERLINE_BOOK_EMBEDDING=contextual swift test --filter bookRun   # R8, every chapter
+///     UNDERLINE_BOOK=little-women UNDERLINE_BOOK_EMBEDDING=contextual swift test --filter bookRun   # R9, every chapter
 ///     UNDERLINE_BOOK=little-women UNDERLINE_BOOK_CHAPTERS=1-5 …                                       # a range
-///     UNDERLINE_METHOD=r8 …                                                                           # the method, by name
+///     UNDERLINE_METHOD=r9 …                                                                           # the method, by name
 ///
 /// Output: `Eval/results/book-<book>-<method>[-contextual]/`: `chNN.md`, `chNN.csv`, `summary.md`, `summary.csv`.
 @available(macOS 27, *)
@@ -49,8 +50,8 @@ func bookRun() async throws {
     let index = try JSONDecoder().decode([BookChapter].self, from: Data(contentsOf: dir.appendingPathComponent("index.json")))
     let wanted = chapterNumbers(env["UNDERLINE_BOOK_CHAPTERS"], count: index.count)
     let contextual = env["UNDERLINE_BOOK_EMBEDDING"] == "contextual"
-    let methodName = env["UNDERLINE_METHOD"] ?? "r8"
-    guard let method = await BookRunMethods.make(methodName, embedding: contextual ? .contextual : .automatic) else {
+    let methodName = env["UNDERLINE_METHOD"] ?? "r9"
+    guard let method = await BookRunMethods.make(methodName, embedding: contextual ? .contextual : .none) else {
         Issue.record("Unknown UNDERLINE_METHOD \(methodName); known: \(BookRunMethods.names.joined(separator: ", "))")
         return
     }
@@ -81,11 +82,11 @@ func bookRun() async throws {
             shown += paragraph.underlines
             records += paragraph.records
         }
-        let leaks = records.filter { r in r.candidates.contains { $0 >= r.sentence } || r.promptSentences.contains { $0 > r.sentence } }
+        let leaks = records.filter { r in r.candidates.contains { $0 >= r.sentence } || (r.pickedSentence ?? -1) >= r.sentence }
         #expect(leaks.isEmpty, "chapter \(c.number): spoiler in \(leaks.map { "S\($0.sentence) \"\($0.phrase)\"" })")
 
         let name = String(format: "ch%02d", c.number)
-        let run = RunInfo(runID: "\(book)-\(name)", runKind: kind, searchMode: SearchMode.both.rawValue)
+        let run = RunInfo(runID: "\(book)-\(name)", runKind: kind)
         let rows = QualitativeReport.rows(run: run, chapter: chapter, records: records,
                                           gold: nil, outcomes: [:], judge: [:])
         _ = try Evals.saveQualitative(rows, run: run, beside: out.appendingPathComponent("\(name).json"))
@@ -113,13 +114,14 @@ func bookRun() async throws {
     print("summary: \(out.appendingPathComponent("summary.md").path)")
 }
 
-/// The methods a book run can measure, by name. A new `LinkMethod` is added here to be measured like R8.
+/// The methods a book run can measure, by name. A new `LinkMethod` is added here to be measured like R9.
+@available(macOS 27, *)
 enum BookRunMethods {
-    static let names = ["r8"]
+    static let names = ["r9"]
 
     static func make(_ name: String, embedding: EmbeddingChoice) async -> (any LinkMethod)? {
         switch name {
-        case "r8": await Linker.make(embedding: embedding)
+        case "r9": await Linker.make(embedding: embedding)
         default: nil
         }
     }

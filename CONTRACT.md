@@ -47,12 +47,12 @@ iRead saves these fields to disk and to iCloud, and sends `kind`, `decidedBy` an
 - `summary` and `ConsideredPhrase.detail` are free text for a debug screen. Their wording is **not** part of the contract, and an app must not parse them.
 
 **Presets**
-- `.release`: what the engine ships. Today R8, rules only, contextual embedding.
+- `.release`: what the engine ships. Today R9 (`Linker`, version 6), rules only, contextual embedding. R8 (version 5) was removed from the package on 2026-11-24; it is still in tag 1.2.0.
 - `.testing`: the same method with an embedding that needs no download, for tests that must not wait.
 
 ## 3. Three kinds of change
 
-| Kind | Example | Version tag | `Linker.version` | iRead must |
+| Kind | Example | Version tag | `Underliner.releaseVersion` | iRead must |
 |---|---|---|---|---|
 | **Pipeline, same output** | Faster search, refactor, cleanup | patch: `1.2.1` → `1.2.2` | unchanged | bump the pin only |
 | **Pipeline, different underlines** | New rule, new knob values, new method behind `.release` | minor: `1.2.x` → `1.3.0` | **bump** | bump the pin and regenerate the seeds |
@@ -60,7 +60,7 @@ iRead saves these fields to disk and to iCloud, and sends `kind`, `decidedBy` an
 
 When unsure whether underlines change, run the book run (`bookRun` in the README) before and after. If any underline differs, it's the second row.
 
-## 4. Why `Linker.version` matters to iRead
+## 4. Why `Underliner.releaseVersion` matters to iRead
 
 iRead saves the engine version with every chapter it underlines. When it opens a chapter saved with a different version, it underlines that chapter again. So bumping the version means:
 
@@ -81,7 +81,7 @@ Forgetting to bump is worse: iRead keeps the old underlines and nobody sees the 
 ## 6. Releasing a change
 
 1. `swift test`. `UnderlineKitTests` must pass unchanged (rule 2).
-2. Decide the kind of change (§3). Bump `Linker.version` if underlines change.
+2. Decide the kind of change (§3). Bump `Underliner.releaseVersion` (the default method's version) if underlines change.
 3. Update the version in the README's title.
 4. Merge to `dev`, then tag the merge commit with the new version.
 5. Tell iRead which kind of change it is.
@@ -92,7 +92,7 @@ Forgetting to bump is worse: iRead keeps the old underlines and nobody sees the 
    `git diff <old commit> <new commit> -- Sources/UnderlineKit`
    Empty means a pipeline-only change. Anything else, read it against §2.
 2. **Bump the pin** in iRead's `project.yml` (`revision:`, with the tag in the comment), run `xcodegen generate`, open the project once so Xcode re-resolves, and commit `project.yml` and `Package.resolved` together.
-3. **If `Linker.version` changed, regenerate the seeds:** in iRead's debug sheet, run "Underline whole book" for each sample book, "Export saved chapters", and copy the files into `App/Resources/UnderlineSeed/<book fingerprint>/`.
+3. **If `Underliner.releaseVersion` (the default method's version) changed, regenerate the seeds:** in iRead's debug sheet, run "Underline whole book" for each sample book, "Export saved chapters", and copy the files into `App/Resources/UnderlineSeed/<book fingerprint>/`.
 4. **Run iRead's `Unit` test plan.**
 5. **Open one book** and check that underlines appear and that the seeded books show theirs right away. The tests use `.testing`; only the app runs `.release`.
 

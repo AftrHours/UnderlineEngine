@@ -1,61 +1,58 @@
 import Foundation
 
 enum JudgeKnobs {
-    /// Compared with `Candidate.rawScore` (unscaled), because scaled scores collapse to 0 with one candidate.
-    /// `.both` is 0.60 from the rules parameter sweep on Little Women: the strict rare-word confirm keeps precision,
-    /// so a lower floor nearly doubles the right links (about 188 → 345) for a small precision cost (54% → 50%).
-    static let minScore: [SearchMode: Double] = [.embed: 0.85, .words: 0.50, .both: 0.60]
-    static let margin: [SearchMode: Double] = [.embed: 0.03, .words: 0.15, .both: 0.05]
+    /// Pick: candidates whose scores are this close count as tied, and the nearer one goes first
+    /// (wrong links reach a median 54 sentences back, right ones 22).
+    static let tieWindow = 0.05
+    /// Confirm, evidence points: +2 a shared rare noun or adjective, +1 two or more shared rare words, +1 a soft lexical match
+    /// of at least `softMatch`. Needed: 2 within 20 sentences back, 3 further, so a soft lexical match alone never confirms
+    /// (with 1 point enough nearby, near links doubled and were mostly wrong). The bar rises at 20 sentences, not 50
+    /// (2026-11-24): links 21–50 back were 30–39% right against 49–51% within 20.
+    static let softMatch = 0.3
+    static let pointsNeeded: [(within: Int, points: Int)] = [(20, 2), (Int.max, 3)]
 }
 
-/// Pick and confirm without a model (spec §5.5).
+/// Pick and confirm by rules (spec §5.5).
 enum RulesPicker {
-    /// The top candidate wins only when it's clearly good and clearly ahead.
-    static func decide(_ ranking: [Candidate], mode: SearchMode) -> Int? {
-        guard let top = ranking.first else { return nil }
-        let second = ranking.dropFirst().first?.rawScore ?? 0
-        guard top.rawScore >= JudgeKnobs.minScore[mode, default: 1],
-              top.rawScore - second >= JudgeKnobs.margin[mode, default: 1] else { return nil }
-        return top.sentence
-    }
-
-    /// The rules path's confirm: the phrase and the reference share a rare noun or adjective, two rare words
-    /// of any class, or a person name. Words count as shared only with the same lemma and word class.
-    /// `rareShare` and `nounOrTwo` exist for the harness's parameter sweep; the engine uses the defaults.
-    static func confirm(phrase: EventPhrase, in sentence: IndexedSentence, reference: IndexedSentence, stats: WordStats? = nil,
-                        rareShare: Double = WordKnobs.rareShare, nounOrTwo: Bool = true) -> Bool {
-        let phraseTokens = sentence.tokens.filter { NSIntersectionRange($0.range, phrase.range).length > 0 }
-        let shared = contentWords(phraseTokens).intersection(contentWords(reference.tokens))
-        if let stats {
-            let rare = shared.filter { stats.isRare($0.lemma, share: rareShare) }
-            let rareOK = !nounOrTwo ? !rare.isEmpty
-                : rare.contains(where: { $0.wordClass != "Verb" }) || Set(rare.map(\.lemma)).count >= 2
-            if rareOK { return true }
-        } else if !shared.isEmpty {
-            return true
+    /// Pick's order: the top `limit` candidates that share at least one content word with the phrase, best score first;
+    /// when the next candidates score within `JudgeKnobs.tieWindow` of the best one left, the nearest of them goes first.
+    static func evidenceOrder(_ ranking: [Candidate], limit: Int = SearchKnobs.maxCandidates) -> [Candidate] {
+        var left = Array(ranking.filter { $0.rawWords > 0 }.prefix(limit))
+        var ordered: [Candidate] = []
+        while let best = left.first {
+            let tied = left.filter { best.score - $0.score <= JudgeKnobs.tieWindow }
+            let nearest = tied.max { $0.sentence < $1.sentence } ?? best
+            ordered.append(nearest)
+            left.removeAll { $0.sentence == nearest.sentence }
         }
-        let names = sentence.names.filter { $0.kind == .person && NSIntersectionRange($0.range, phrase.range).length > 0 }.map(\.text)
-        return names.contains(where: { name in reference.names.contains { $0.text == name } })
+        return ordered
     }
 
-    /// The rare words and person names the phrase shares with the reference, for the model's prompt.
-    static func sharedRareWords(phrase: EventPhrase, in sentence: IndexedSentence, reference: IndexedSentence, stats: WordStats?) -> [String] {
-        let phraseTokens = sentence.tokens.filter { NSIntersectionRange($0.range, phrase.range).length > 0 }
-        let shared = contentWords(phraseTokens).intersection(contentWords(reference.tokens))
-        let words = stats.map { st in shared.filter { st.isRare($0.lemma) } } ?? shared
-        let names = sentence.names.filter { $0.kind == .person && NSIntersectionRange($0.range, phrase.range).length > 0 }.map(\.text)
-            .filter { name in reference.names.contains { $0.text == name } }
-        return Array(Set(words.map(\.lemma))).sorted() + names
+    /// Confirm: evidence points against a bar that rises with distance (`JudgeKnobs.pointsNeeded`), lemma-level. `soft` gives
+    /// the soft lexical match of the phrase's words that the reference doesn't share (token MaxSim), or `nil` without word
+    /// vectors (then it gives no point); it is only asked for when its one point decides the outcome. A shared person name
+    /// on its own never confirms.
+    static func evidencePoints(phrase: EventPhrase, in sentence: IndexedSentence, reference: IndexedSentence, stats: WordStats?,
+                               soft: () -> Double?) -> Bool {
+        let inPhrase = ChapterTokenVectors.contentTokens(sentence).filter { NSIntersectionRange($0.range, phrase.range).length > 0 }
+        let refLemmas = Set(ChapterTokenVectors.contentTokens(reference).map(\.lemma))
+        let shared = Set(inPhrase.map(\.lemma)).intersection(refLemmas)
+        let rare = stats.map { st in shared.filter { st.isRare($0) } } ?? shared
+        let rareNounAdj = inPhrase.contains { $0.wordClass != "Verb" && rare.contains($0.lemma) }
+        let wordPoints = (rareNounAdj ? 2 : 0) + (rare.count >= 2 ? 1 : 0)
+        let distance = sentence.index - reference.index
+        let needed = JudgeKnobs.pointsNeeded.first { distance <= $0.within }?.points ?? Int.max
+        if wordPoints >= needed { return true }
+        if wordPoints + 1 < needed { return false }
+        return (soft() ?? 0) >= JudgeKnobs.softMatch
     }
 
-    private struct Word: Hashable {
-        let lemma: String
-        let wordClass: String
-    }
-
-    /// Nouns, verbs and adjectives, with their class, without the lemmas that say little.
-    private static func contentWords(_ tokens: [WordToken]) -> Set<Word> {
-        Set(tokens.filter { ["Noun", "Verb", "Adjective"].contains($0.wordClass) && !SearchKnobs.stopLemmas.contains($0.lemma) }
-            .map { Word(lemma: $0.lemma, wordClass: $0.wordClass) })
+    /// The soft lexical match for `evidencePoints`: the phrase's content words that the reference doesn't share, each matched
+    /// to its closest word of the reference, IDF-weighted. `nil` when the sentences have no word vectors.
+    static func softMatch(phrase: EventPhrase, in sentence: IndexedSentence, reference: IndexedSentence, stats: WordStats?) -> Double? {
+        guard let words = sentence.wordVectors else { return nil }
+        let refLemmas = Set(ChapterTokenVectors.contentTokens(reference).map(\.lemma))
+        let novel = words.filter { NSIntersectionRange($0.range, phrase.range).length > 0 && !refLemmas.contains($0.lemma) }
+        return novel.isEmpty ? 0 : ChapterTokenVectors.softScore(query: novel, target: reference.wordVectors ?? [], stats: stats)
     }
 }

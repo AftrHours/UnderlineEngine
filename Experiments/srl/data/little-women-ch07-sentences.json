@@ -1,0 +1,954 @@
+[
+{
+"id": 0,
+"paragraph": 0,
+"start": 0,
+"end": 42,
+"text": "\"That boy is a perfect cyclops, isn't he?\""
+},
+{
+"id": 1,
+"paragraph": 0,
+"start": 43,
+"end": 139,
+"text": "said Amy one day, as Laurie clattered by on horseback, with a flourish of his whip as he passed."
+},
+{
+"id": 2,
+"paragraph": 1,
+"start": 141,
+"end": 191,
+"text": "\"How dare you say so, when he's got both his eyes?"
+},
+{
+"id": 3,
+"paragraph": 1,
+"start": 192,
+"end": 293,
+"text": "And very handsome ones they are, too,\" cried Jo, who resented any slighting remarks about her friend."
+},
+{
+"id": 4,
+"paragraph": 2,
+"start": 295,
+"end": 397,
+"text": "\"I didn't say anything about his eyes, and I don't see why you need fire up when I admire his riding.\""
+},
+{
+"id": 5,
+"paragraph": 3,
+"start": 399,
+"end": 416,
+"text": "\"Oh, my goodness!"
+},
+{
+"id": 6,
+"paragraph": 3,
+"start": 417,
+"end": 522,
+"text": "That little goose means a centaur, and she called him a Cyclops,\" exclaimed Jo, with a burst of laughter."
+},
+{
+"id": 7,
+"paragraph": 4,
+"start": 524,
+"end": 641,
+"text": "\"You needn't be so rude, it's only a 'lapse of lingy', as Mr. Davis says,\" retorted Amy, finishing Jo with her Latin."
+},
+{
+"id": 8,
+"paragraph": 4,
+"start": 642,
+"end": 776,
+"text": "\"I just wish I had a little of the money Laurie spends on that horse,\" she added, as if to herself, yet hoping her sisters would hear."
+},
+{
+"id": 9,
+"paragraph": 5,
+"start": 778,
+"end": 784,
+"text": "\"Why?\""
+},
+{
+"id": 10,
+"paragraph": 5,
+"start": 785,
+"end": 864,
+"text": "asked Meg kindly, for Jo had gone off in another laugh at Amy's second blunder."
+},
+{
+"id": 11,
+"paragraph": 6,
+"start": 866,
+"end": 885,
+"text": "\"I need it so much."
+},
+{
+"id": 12,
+"paragraph": 6,
+"start": 886,
+"end": 969,
+"text": "I'm dreadfully in debt, and it won't be my turn to have the rag money for a month.\""
+},
+{
+"id": 13,
+"paragraph": 7,
+"start": 971,
+"end": 985,
+"text": "\"In debt, Amy?"
+},
+{
+"id": 14,
+"paragraph": 7,
+"start": 986,
+"end": 1004,
+"text": "What do you mean?\""
+},
+{
+"id": 15,
+"paragraph": 7,
+"start": 1005,
+"end": 1026,
+"text": "And Meg looked sober."
+},
+{
+"id": 16,
+"paragraph": 8,
+"start": 1028,
+"end": 1182,
+"text": "\"Why, I owe at least a dozen pickled limes, and I can't pay them, you know, till I have money, for Marmee forbade my having anything charged at the shop.\""
+},
+{
+"id": 17,
+"paragraph": 9,
+"start": 1184,
+"end": 1206,
+"text": "\"Tell me all about it."
+},
+{
+"id": 18,
+"paragraph": 9,
+"start": 1207,
+"end": 1233,
+"text": "Are limes the fashion now?"
+},
+{
+"id": 19,
+"paragraph": 9,
+"start": 1234,
+"end": 1287,
+"text": "It used to be pricking bits of rubber to make balls.\""
+},
+{
+"id": 20,
+"paragraph": 9,
+"start": 1288,
+"end": 1361,
+"text": "And Meg tried to keep her countenance, Amy looked so grave and important."
+},
+{
+"id": 21,
+"paragraph": 10,
+"start": 1363,
+"end": 1471,
+"text": "\"Why, you see, the girls are always buying them, and unless you want to be thought mean, you must do it too."
+},
+{
+"id": 22,
+"paragraph": 10,
+"start": 1472,
+"end": 1647,
+"text": "It's nothing but limes now, for everyone is sucking them in their desks in schooltime, and trading them off for pencils, bead rings, paper dolls, or something else, at recess."
+},
+{
+"id": 23,
+"paragraph": 10,
+"start": 1648,
+"end": 1696,
+"text": "If one girl likes another, she gives her a lime."
+},
+{
+"id": 24,
+"paragraph": 10,
+"start": 1697,
+"end": 1780,
+"text": "If she's mad with her, she eats one before her face, and doesn't offer even a suck."
+},
+{
+"id": 25,
+"paragraph": 10,
+"start": 1781,
+"end": 1906,
+"text": "They treat by turns, and I've had ever so many but haven't returned them, and I ought for they are debts of honor, you know.\""
+},
+{
+"id": 26,
+"paragraph": 11,
+"start": 1908,
+"end": 1961,
+"text": "\"How much will pay them off and restore your credit?\""
+},
+{
+"id": 27,
+"paragraph": 11,
+"start": 1962,
+"end": 1994,
+"text": "asked Meg, taking out her purse."
+},
+{
+"id": 28,
+"paragraph": 12,
+"start": 1996,
+"end": 2077,
+"text": "\"A quarter would more than do it, and leave a few cents over for a treat for you."
+},
+{
+"id": 29,
+"paragraph": 12,
+"start": 2078,
+"end": 2100,
+"text": "Don't you like limes?\""
+},
+{
+"id": 30,
+"paragraph": 13,
+"start": 2102,
+"end": 2112,
+"text": "\"Not much."
+},
+{
+"id": 31,
+"paragraph": 13,
+"start": 2113,
+"end": 2135,
+"text": "You may have my share."
+},
+{
+"id": 32,
+"paragraph": 13,
+"start": 2136,
+"end": 2153,
+"text": "Here's the money."
+},
+{
+"id": 33,
+"paragraph": 13,
+"start": 2154,
+"end": 2223,
+"text": "Make it last as long as you can, for it isn't very plenty, you know.\""
+},
+{
+"id": 34,
+"paragraph": 14,
+"start": 2225,
+"end": 2240,
+"text": "\"Oh, thank you!"
+},
+{
+"id": 35,
+"paragraph": 14,
+"start": 2241,
+"end": 2281,
+"text": "It must be so nice to have pocket money!"
+},
+{
+"id": 36,
+"paragraph": 14,
+"start": 2282,
+"end": 2345,
+"text": "I'll have a grand feast, for I haven't tasted a lime this week."
+},
+{
+"id": 37,
+"paragraph": 14,
+"start": 2346,
+"end": 2443,
+"text": "I felt delicate about taking any, as I couldn't return them, and I'm actually suffering for one.\""
+},
+{
+"id": 38,
+"paragraph": 15,
+"start": 2445,
+"end": 2646,
+"text": "Next day Amy was rather late at school, but could not resist the temptation of displaying, with pardonable pride, a moist brown-paper parcel, before she consigned it to the inmost recesses of her desk."
+},
+{
+"id": 39,
+"paragraph": 15,
+"start": 2647,
+"end": 2874,
+"text": "During the next few minutes the rumor that Amy March had got twenty-four delicious limes (she ate one on the way) and was going to treat circulated through her 'set', and the attentions of her friends became quite overwhelming."
+},
+{
+"id": 40,
+"paragraph": 15,
+"start": 2875,
+"end": 2928,
+"text": "Katy Brown invited her to her next party on the spot."
+},
+{
+"id": 41,
+"paragraph": 15,
+"start": 2929,
+"end": 3167,
+"text": "Mary Kingsley insisted on lending her her watch till recess, and Jenny Snow, a satirical young lady, who had basely twitted Amy upon her limeless state, promptly buried the hatchet and offered to furnish answers to certain appalling sums."
+},
+{
+"id": 42,
+"paragraph": 15,
+"start": 3168,
+"end": 3508,
+"text": "But Amy had not forgotten Miss Snow's cutting remarks about 'some persons whose noses were not too flat to smell other people's limes, and stuck-up people who were not too proud to ask for them', and she instantly crushed 'that Snow girl's' hopes by the withering telegram, \"You needn't be so polite all of a sudden, for you won't get any.\""
+},
+{
+"id": 43,
+"paragraph": 16,
+"start": 3510,
+"end": 3755,
+"text": "A distinguished personage happened to visit the school that morning, and Amy's beautifully drawn maps received praise, which honor to her foe rankled in the soul of Miss Snow, and caused Miss March to assume the airs of a studious young peacock."
+},
+{
+"id": 44,
+"paragraph": 16,
+"start": 3756,
+"end": 3772,
+"text": "But, alas, alas!"
+},
+{
+"id": 45,
+"paragraph": 16,
+"start": 3773,
+"end": 3865,
+"text": "Pride goes before a fall, and the revengeful Snow turned the tables with disastrous success."
+},
+{
+"id": 46,
+"paragraph": 16,
+"start": 3866,
+"end": 4084,
+"text": "No sooner had the guest paid the usual stale compliments and bowed himself out, than Jenny, under pretense of asking an important question, informed Mr. Davis, the teacher, that Amy March had pickled limes in her desk."
+},
+{
+"id": 47,
+"paragraph": 17,
+"start": 4086,
+"end": 4228,
+"text": "Now Mr. Davis had declared limes a contraband article, and solemnly vowed to publicly ferrule the first person who was found breaking the law."
+},
+{
+"id": 48,
+"paragraph": 17,
+"start": 4229,
+"end": 4570,
+"text": "This much-enduring man had succeeded in banishing chewing gum after a long and stormy war, had made a bonfire of the confiscated novels and newspapers, had suppressed a private post office, had forbidden distortions of the face, nicknames, and caricatures, and done all that one man could do to keep half a hundred rebellious girls in order."
+},
+{
+"id": 49,
+"paragraph": 17,
+"start": 4571,
+"end": 4768,
+"text": "Boys are trying enough to human patience, goodness knows, but girls are infinitely more so, especially to nervous gentlemen with tyrannical tempers and no more talent for teaching than Dr. Blimber."
+},
+{
+"id": 50,
+"paragraph": 17,
+"start": 4769,
+"end": 4974,
+"text": "Mr. Davis knew any quantity of Greek, Latin, algebra, and ologies of all sorts so he was called a fine teacher, and manners, morals, feelings, and examples were not considered of any particular importance."
+},
+{
+"id": 51,
+"paragraph": 17,
+"start": 4975,
+"end": 5046,
+"text": "It was a most unfortunate moment for denouncing Amy, and Jenny knew it."
+},
+{
+"id": 52,
+"paragraph": 17,
+"start": 5047,
+"end": 5243,
+"text": "Mr. Davis had evidently taken his coffee too strong that morning, there was an east wind, which always affected his neuralgia, and his pupils had not done him the credit which he felt he deserved."
+},
+{
+"id": 53,
+"paragraph": 17,
+"start": 5244,
+"end": 5374,
+"text": "Therefore, to use the expressive, if not elegant, language of a schoolgirl, \"He was as nervous as a witch and as cross as a bear\"."
+},
+{
+"id": 54,
+"paragraph": 17,
+"start": 5375,
+"end": 5539,
+"text": "The word 'limes' was like fire to powder, his yellow face flushed, and he rapped on his desk with an energy which made Jenny skip to her seat with unusual rapidity."
+},
+{
+"id": 55,
+"paragraph": 18,
+"start": 5541,
+"end": 5582,
+"text": "\"Young ladies, attention, if you please!\""
+},
+{
+"id": 56,
+"paragraph": 19,
+"start": 5584,
+"end": 5722,
+"text": "At the stern order the buzz ceased, and fifty pairs of blue, black, gray, and brown eyes were obediently fixed upon his awful countenance."
+},
+{
+"id": 57,
+"paragraph": 20,
+"start": 5724,
+"end": 5755,
+"text": "\"Miss March, come to the desk.\""
+},
+{
+"id": 58,
+"paragraph": 21,
+"start": 5757,
+"end": 5875,
+"text": "Amy rose to comply with outward composure, but a secret fear oppressed her, for the limes weighed upon her conscience."
+},
+{
+"id": 59,
+"paragraph": 22,
+"start": 5877,
+"end": 6004,
+"text": "\"Bring with you the limes you have in your desk,\" was the unexpected command which arrested her before she got out of her seat."
+},
+{
+"id": 60,
+"paragraph": 23,
+"start": 6006,
+"end": 6023,
+"text": "\"Don't take all.\""
+},
+{
+"id": 61,
+"paragraph": 23,
+"start": 6024,
+"end": 6087,
+"text": "whispered her neighbor, a young lady of great presence of mind."
+},
+{
+"id": 62,
+"paragraph": 24,
+"start": 6089,
+"end": 6265,
+"text": "Amy hastily shook out half a dozen and laid the rest down before Mr. Davis, feeling that any man possessing a human heart would relent when that delicious perfume met his nose."
+},
+{
+"id": 63,
+"paragraph": 24,
+"start": 6266,
+"end": 6380,
+"text": "Unfortunately, Mr. Davis particularly detested the odor of the fashionable pickle, and disgust added to his wrath."
+},
+{
+"id": 64,
+"paragraph": 25,
+"start": 6382,
+"end": 6396,
+"text": "\"Is that all?\""
+},
+{
+"id": 65,
+"paragraph": 26,
+"start": 6398,
+"end": 6425,
+"text": "\"Not quite,\" stammered Amy."
+},
+{
+"id": 66,
+"paragraph": 27,
+"start": 6427,
+"end": 6456,
+"text": "\"Bring the rest immediately.\""
+},
+{
+"id": 67,
+"paragraph": 28,
+"start": 6458,
+"end": 6506,
+"text": "With a despairing glance at her set, she obeyed."
+},
+{
+"id": 68,
+"paragraph": 29,
+"start": 6508,
+"end": 6541,
+"text": "\"You are sure there are no more?\""
+},
+{
+"id": 69,
+"paragraph": 30,
+"start": 6543,
+"end": 6562,
+"text": "\"I never lie, sir.\""
+},
+{
+"id": 70,
+"paragraph": 31,
+"start": 6564,
+"end": 6574,
+"text": "\"So I see."
+},
+{
+"id": 71,
+"paragraph": 31,
+"start": 6575,
+"end": 6654,
+"text": "Now take these disgusting things two by two, and throw them out of the window.\""
+},
+{
+"id": 72,
+"paragraph": 32,
+"start": 6656,
+"end": 6796,
+"text": "There was a simultaneous sigh, which created quite a little gust, as the last hope fled, and the treat was ravished from their longing lips."
+},
+{
+"id": 73,
+"paragraph": 32,
+"start": 6797,
+"end": 7130,
+"text": "Scarlet with shame and anger, Amy went to and fro six dreadful times, and as each doomed couple, looking oh, so plump and juicy, fell from her reluctant hands, a shout from the street completed the anguish of the girls, for it told them that their feast was being exulted over by the little Irish children, who were their sworn foes."
+},
+{
+"id": 74,
+"paragraph": 32,
+"start": 7131,
+"end": 7154,
+"text": "This—this was too much."
+},
+{
+"id": 75,
+"paragraph": 32,
+"start": 7155,
+"end": 7270,
+"text": "All flashed indignant or appealing glances at the inexorable Davis, and one passionate lime lover burst into tears."
+},
+{
+"id": 76,
+"paragraph": 33,
+"start": 7272,
+"end": 7342,
+"text": "As Amy returned from her last trip, Mr. Davis gave a portentous \"Hem!\""
+},
+{
+"id": 77,
+"paragraph": 33,
+"start": 7343,
+"end": 7385,
+"text": "and said, in his most impressive manner..."
+},
+{
+"id": 78,
+"paragraph": 34,
+"start": 7387,
+"end": 7445,
+"text": "\"Young ladies, you remember what I said to you a week ago."
+},
+{
+"id": 79,
+"paragraph": 34,
+"start": 7446,
+"end": 7546,
+"text": "I am sorry this has happened, but I never allow my rules to be infringed, and I never break my word."
+},
+{
+"id": 80,
+"paragraph": 34,
+"start": 7547,
+"end": 7579,
+"text": "Miss March, hold out your hand.\""
+},
+{
+"id": 81,
+"paragraph": 35,
+"start": 7581,
+"end": 7722,
+"text": "Amy started, and put both hands behind her, turning on him an imploring look which pleaded for her better than the words she could not utter."
+},
+{
+"id": 82,
+"paragraph": 35,
+"start": 7723,
+"end": 7939,
+"text": "She was rather a favorite with 'old Davis', as, of course, he was called, and it's my private belief that he would have broken his word if the indignation of one irrepressible young lady had not found vent in a hiss."
+},
+{
+"id": 83,
+"paragraph": 35,
+"start": 7940,
+"end": 8033,
+"text": "That hiss, faint as it was, irritated the irascible gentleman, and sealed the culprit's fate."
+},
+{
+"id": 84,
+"paragraph": 36,
+"start": 8035,
+"end": 8059,
+"text": "\"Your hand, Miss March!\""
+},
+{
+"id": 85,
+"paragraph": 36,
+"start": 8060,
+"end": 8258,
+"text": "was the only answer her mute appeal received, and too proud to cry or beseech, Amy set her teeth, threw back her head defiantly, and bore without flinching several tingling blows on her little palm."
+},
+{
+"id": 86,
+"paragraph": 36,
+"start": 8259,
+"end": 8328,
+"text": "They were neither many nor heavy, but that made no difference to her."
+},
+{
+"id": 87,
+"paragraph": 36,
+"start": 8329,
+"end": 8454,
+"text": "For the first time in her life she had been struck, and the disgrace, in her eyes, was as deep as if he had knocked her down."
+},
+{
+"id": 88,
+"paragraph": 37,
+"start": 8456,
+"end": 8578,
+"text": "\"You will now stand on the platform till recess,\" said Mr. Davis, resolved to do the thing thoroughly, since he had begun."
+},
+{
+"id": 89,
+"paragraph": 38,
+"start": 8580,
+"end": 8598,
+"text": "That was dreadful."
+},
+{
+"id": 90,
+"paragraph": 38,
+"start": 8599,
+"end": 8919,
+"text": "It would have been bad enough to go to her seat, and see the pitying faces of her friends, or the satisfied ones of her few enemies, but to face the whole school, with that shame fresh upon her, seemed impossible, and for a second she felt as if she could only drop down where she stood, and break her heart with crying."
+},
+{
+"id": 91,
+"paragraph": 38,
+"start": 8920,
+"end": 9226,
+"text": "A bitter sense of wrong and the thought of Jenny Snow helped her to bear it, and, taking the ignominious place, she fixed her eyes on the stove funnel above what now seemed a sea of faces, and stood there, so motionless and white that the girls found it hard to study with that pathetic figure before them."
+},
+{
+"id": 92,
+"paragraph": 39,
+"start": 9228,
+"end": 9355,
+"text": "During the fifteen minutes that followed, the proud and sensitive little girl suffered a shame and pain which she never forgot."
+},
+{
+"id": 93,
+"paragraph": 39,
+"start": 9356,
+"end": 9578,
+"text": "To others it might seem a ludicrous or trivial affair, but to her it was a hard experience, for during the twelve years of her life she had been governed by love alone, and a blow of that sort had never touched her before."
+},
+{
+"id": 94,
+"paragraph": 39,
+"start": 9579,
+"end": 9742,
+"text": "The smart of her hand and the ache of her heart were forgotten in the sting of the thought, \"I shall have to tell at home, and they will be so disappointed in me!\""
+},
+{
+"id": 95,
+"paragraph": 40,
+"start": 9744,
+"end": 9835,
+"text": "The fifteen minutes seemed an hour, but they came to an end at last, and the word 'Recess!'"
+},
+{
+"id": 96,
+"paragraph": 40,
+"start": 9836,
+"end": 9878,
+"text": "had never seemed so welcome to her before."
+},
+{
+"id": 97,
+"paragraph": 41,
+"start": 9880,
+"end": 9957,
+"text": "\"You can go, Miss March,\" said Mr. Davis, looking, as he felt, uncomfortable."
+},
+{
+"id": 98,
+"paragraph": 42,
+"start": 9959,
+"end": 10177,
+"text": "He did not soon forget the reproachful glance Amy gave him, as she went, without a word to anyone, straight into the anteroom, snatched her things, and left the place \"forever,\" as she passionately declared to herself."
+},
+{
+"id": 99,
+"paragraph": 42,
+"start": 10178,
+"end": 10311,
+"text": "She was in a sad state when she got home, and when the older girls arrived, some time later, an indignation meeting was held at once."
+},
+{
+"id": 100,
+"paragraph": 42,
+"start": 10312,
+"end": 10430,
+"text": "Mrs. March did not say much but looked disturbed, and comforted her afflicted little daughter in her tenderest manner."
+},
+{
+"id": 101,
+"paragraph": 42,
+"start": 10431,
+"end": 10744,
+"text": "Meg bathed the insulted hand with glycerine and tears, Beth felt that even her beloved kittens would fail as a balm for griefs like this, Jo wrathfully proposed that Mr. Davis be arrested without delay, and Hannah shook her fist at the 'villain' and pounded potatoes for dinner as if she had him under her pestle."
+},
+{
+"id": 102,
+"paragraph": 43,
+"start": 10746,
+"end": 10922,
+"text": "No notice was taken of Amy's flight, except by her mates, but the sharp-eyed demoiselles discovered that Mr. Davis was quite benignant in the afternoon, also unusually nervous."
+},
+{
+"id": 103,
+"paragraph": 43,
+"start": 10923,
+"end": 11215,
+"text": "Just before school closed, Jo appeared, wearing a grim expression as she stalked up to the desk, and delivered a letter from her mother, then collected Amy's property, and departed, carefully scraping the mud from her boots on the door mat, as if she shook the dust of the place off her feet."
+},
+{
+"id": 104,
+"paragraph": 44,
+"start": 11217,
+"end": 11344,
+"text": "\"Yes, you can have a vacation from school, but I want you to study a little every day with Beth,\" said Mrs. March that evening."
+},
+{
+"id": 105,
+"paragraph": 44,
+"start": 11345,
+"end": 11407,
+"text": "\"I don't approve of corporal punishment, especially for girls."
+},
+{
+"id": 106,
+"paragraph": 44,
+"start": 11408,
+"end": 11587,
+"text": "I dislike Mr. Davis's manner of teaching and don't think the girls you associate with are doing you any good, so I shall ask your father's advice before I send you anywhere else.\""
+},
+{
+"id": 107,
+"paragraph": 45,
+"start": 11589,
+"end": 11602,
+"text": "\"That's good!"
+},
+{
+"id": 108,
+"paragraph": 45,
+"start": 11603,
+"end": 11662,
+"text": "I wish all the girls would leave, and spoil his old school."
+},
+{
+"id": 109,
+"paragraph": 45,
+"start": 11663,
+"end": 11758,
+"text": "It's perfectly maddening to think of those lovely limes,\" sighed Amy, with the air of a martyr."
+},
+{
+"id": 110,
+"paragraph": 46,
+"start": 11760,
+"end": 11962,
+"text": "\"I am not sorry you lost them, for you broke the rules, and deserved some punishment for disobedience,\" was the severe reply, which rather disappointed the young lady, who expected nothing but sympathy."
+},
+{
+"id": 111,
+"paragraph": 47,
+"start": 11964,
+"end": 12031,
+"text": "\"Do you mean you are glad I was disgraced before the whole school?\""
+},
+{
+"id": 112,
+"paragraph": 47,
+"start": 12032,
+"end": 12042,
+"text": "cried Amy."
+},
+{
+"id": 113,
+"paragraph": 48,
+"start": 12044,
+"end": 12190,
+"text": "\"I should not have chosen that way of mending a fault,\" replied her mother, \"but I'm not sure that it won't do you more good than a bolder method."
+},
+{
+"id": 114,
+"paragraph": 48,
+"start": 12191,
+"end": 12289,
+"text": "You are getting to be rather conceited, my dear, and it is quite time you set about correcting it."
+},
+{
+"id": 115,
+"paragraph": 48,
+"start": 12290,
+"end": 12413,
+"text": "You have a good many little gifts and virtues, but there is no need of parading them, for conceit spoils the finest genius."
+},
+{
+"id": 116,
+"paragraph": 48,
+"start": 12414,
+"end": 12623,
+"text": "There is not much danger that real talent or goodness will be overlooked long, even if it is, the consciousness of possessing and using it well should satisfy one, and the great charm of all power is modesty.\""
+},
+{
+"id": 117,
+"paragraph": 49,
+"start": 12625,
+"end": 12636,
+"text": "\"So it is!\""
+},
+{
+"id": 118,
+"paragraph": 49,
+"start": 12637,
+"end": 12693,
+"text": "cried Laurie, who was playing chess in a corner with Jo."
+},
+{
+"id": 119,
+"paragraph": 49,
+"start": 12694,
+"end": 12911,
+"text": "\"I knew a girl once, who had a really remarkable talent for music, and she didn't know it, never guessed what sweet little things she composed when she was alone, and wouldn't have believed it if anyone had told her.\""
+},
+{
+"id": 120,
+"paragraph": 50,
+"start": 12913,
+"end": 12946,
+"text": "\"I wish I'd known that nice girl."
+},
+{
+"id": 121,
+"paragraph": 50,
+"start": 12947,
+"end": 13046,
+"text": "Maybe she would have helped me, I'm so stupid,\" said Beth, who stood beside him, listening eagerly."
+},
+{
+"id": 122,
+"paragraph": 51,
+"start": 13048,
+"end": 13323,
+"text": "\"You do know her, and she helps you better than anyone else could,\" answered Laurie, looking at her with such mischievous meaning in his merry black eyes that Beth suddenly turned very red, and hid her face in the sofa cushion, quite overcome by such an unexpected discovery."
+},
+{
+"id": 123,
+"paragraph": 52,
+"start": 13325,
+"end": 13458,
+"text": "Jo let Laurie win the game to pay for that praise of her Beth, who could not be prevailed upon to play for them after her compliment."
+},
+{
+"id": 124,
+"paragraph": 52,
+"start": 13459,
+"end": 13612,
+"text": "So Laurie did his best, and sang delightfully, being in a particularly lively humor, for to the Marches he seldom showed the moody side of his character."
+},
+{
+"id": 125,
+"paragraph": 52,
+"start": 13613,
+"end": 13748,
+"text": "When he was gone, Amy, who had been pensive all evening, said suddenly, as if busy over some new idea, \"Is Laurie an accomplished boy?\""
+},
+{
+"id": 126,
+"paragraph": 53,
+"start": 13750,
+"end": 13811,
+"text": "\"Yes, he has had an excellent education, and has much talent."
+},
+{
+"id": 127,
+"paragraph": 53,
+"start": 13812,
+"end": 13884,
+"text": "He will make a fine man, if not spoiled by petting,\" replied her mother."
+},
+{
+"id": 128,
+"paragraph": 54,
+"start": 13886,
+"end": 13918,
+"text": "\"And he isn't conceited, is he?\""
+},
+{
+"id": 129,
+"paragraph": 54,
+"start": 13919,
+"end": 13929,
+"text": "asked Amy."
+},
+{
+"id": 130,
+"paragraph": 55,
+"start": 13931,
+"end": 13949,
+"text": "\"Not in the least."
+},
+{
+"id": 131,
+"paragraph": 55,
+"start": 13950,
+"end": 14009,
+"text": "That is why he is so charming and we all like him so much.\""
+},
+{
+"id": 132,
+"paragraph": 56,
+"start": 14011,
+"end": 14018,
+"text": "\"I see."
+},
+{
+"id": 133,
+"paragraph": 56,
+"start": 14019,
+"end": 14130,
+"text": "It's nice to have accomplishments and be elegant, but not to show off or get perked up,\" said Amy thoughtfully."
+},
+{
+"id": 134,
+"paragraph": 57,
+"start": 14132,
+"end": 14287,
+"text": "\"These things are always seen and felt in a person's manner and conversations, if modestly used, but it is not necessary to display them,\" said Mrs. March."
+},
+{
+"id": 135,
+"paragraph": 58,
+"start": 14289,
+"end": 14453,
+"text": "\"Any more than it's proper to wear all your bonnets and gowns and ribbons at once, that folks may know you've got them,\" added Jo, and the lecture ended in a laugh."
+}
+]

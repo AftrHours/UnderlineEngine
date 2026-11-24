@@ -2,7 +2,7 @@ import Foundation
 import Testing
 @testable import UnderlineEngine
 
-private let run = RunInfo(runID: "R1", runKind: "golden", searchMode: "both")
+private let run = RunInfo(runID: "R1", runKind: "golden")
 
 private func chapter(_ text: String) async -> IndexedChapter {
     await ChapterIndexSvc().prepare(ChapterInput(chapterIndex: 0, plainText: text), embedding: EmbeddingSvcUnavailable())
@@ -10,10 +10,15 @@ private func chapter(_ text: String) async -> IndexedChapter {
 
 private func record(_ sentence: Int, _ phrase: String, range: NSRange? = nil, kept: Bool = false, dropped: DropReason? = nil,
                     picked: Int? = nil, candidates: [Int] = []) -> UnderlineRecord {
-    UnderlineRecord(chapterIndex: 0, sentence: sentence, phrase: phrase, kind: .action, path: .model, searchModeUsed: .words, embedding: .none, candidates: candidates, promptSentences: [], pickedSentence: picked,
-                    confirm: dropped == .confirmRejected ? ConfirmTrace(explains: false, evidence: "no") : nil,
-                    kept: kept, dropped: dropped, times: StepTimes(searchMs: 2), phraseRange: range,
-                    candidateScores: candidates.indices.map { [0.62, 0.40, 0.3, 0.2][min($0, 3)] })
+    var r = UnderlineRecord(chapterIndex: 0, sentence: sentence, phrase: phrase, kind: .action, embedding: .none, phraseRange: range)
+    r.candidates = candidates
+    r.candidateScores = candidates.indices.map { [0.62, 0.40, 0.3, 0.2][min($0, 3)] }
+    r.pickedSentence = picked
+    r.confirmed = dropped == .confirmRejected ? false : nil
+    r.kept = kept
+    r.dropped = dropped
+    r.searchMs = 2
+    return r
 }
 
 private func column(_ row: QualitativeRow, _ name: String) -> String {
@@ -23,14 +28,14 @@ private func column(_ row: QualitativeRow, _ name: String) -> String {
 
 @Test func headerMatchesSpecOrder() {
     #expect(QualitativeRow.header == [
-        "run_id", "run_kind", "search_mode", "gold_id",
+        "run_id", "run_kind", "gold_id",
         "sentence", "paragraph", "sentence_text", "sentence_with_underline", "phrase", "phrase_range",
         "tagging_engine", "words", "names", "events", "phrase_role",
-        "embedding", "search_mode_used", "candidates", "top_candidate_text",
-        "path", "pick", "picked_sentence", "confirm", "confirm_evidence",
+        "embedding", "candidates", "top_candidate_text",
+        "pick", "picked_sentence", "confirm",
         "underlined", "dropped_reason", "reference", "reference_text", "distance",
         "expected", "outcome", "miss_cause", "judge", "judge_rationale",
-        "search_ms", "confirm_ms"
+        "search_ms"
     ])
 }
 
@@ -87,7 +92,6 @@ private func column(_ row: QualitativeRow, _ name: String) -> String {
     #expect(column(rows[0], "outcome") == Outcome.missed(.detectMiss).label)
     #expect(column(rows[0], "miss_cause") == "detect miss")
     #expect(column(rows[0], "expected") == "underline: S0")
-    #expect(column(rows[0], "path").isEmpty)
 }
 
 @Test func rowsSortedWorstFirst() async throws {
@@ -110,7 +114,7 @@ private func column(_ row: QualitativeRow, _ name: String) -> String {
 
 @Test func sweepRowsHaveNoExpectedOrOutcome() async {
     let ch = await chapter("Meg sewed. Jo began to whistle.")
-    let sweep = RunInfo(runID: "R2", runKind: "sweep", searchMode: "both")
+    let sweep = RunInfo(runID: "R2", runKind: "sweep")
     let rows = QualitativeReport.rows(run: sweep, chapter: ch, records: [record(1, "began to whistle", kept: true, picked: 0)], gold: nil, outcomes: [:], judge: [:])
     #expect(column(rows[0], "expected").isEmpty)
     #expect(column(rows[0], "outcome").isEmpty)

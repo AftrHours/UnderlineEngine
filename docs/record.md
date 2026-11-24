@@ -1,0 +1,41 @@
+# UnderlineEngine: run records
+
+One row per run. Summaries, the ablation, analyses and notes stay in `docs/result.md`.
+
+## Runs
+
+Right / partial / wrong count the run's underlines. Most runs are **fully reviewed**: each underline has a verdict, so their precision is exact. R37–R39 are **sampled**: earlier verdicts plus a random sample of the rest, so their precision is an estimate with a range (precision = right ÷ underlines; partial counts as not right).
+
+| Run | Book | Method | Parameters (change from the previous run) | Underlines | Right | Partial | Wrong | Reviewed | Precision |
+|---|---|---|---|---|---|---|---|---|---|
+| R1 | Little Women | Rules · NLEmbedding · unweighted shared words | minScore 0.70 · margin 0.05 · old confirm (shared content word or role link) · names 1+ words (30-sentence gap) · 1 per paragraph · no word statistics | 986 | 364 | 97 | 525 | 986 (all) | **36.9%** exact |
+| R2 | Little Women | R1 + IDF | R1 + IDF word weights (`ln(1+N/df)`), book-level statistics | 485 | 280 | 39 | 166 | 485 (all) | **57.7%** exact |
+| R3 | Little Women | R2 + rare-word confirm + stub ban | R2 + confirm: rare noun/adjective (≤ 0.85%), two rare lemmas, or same name · references of ≤ 3 tokens or a speech tag dropped | 367 | 235 | 24 | 108 | 367 (all) | **64.0%** exact (includes name-only links) |
+| R5 | Little Women | R3 + 3-word minimum, NLEmbedding | R3 + `minPhraseWords` 3 for names | 271 | 153 | 24 | 94 | 271 (all) | **56.5%** exact |
+| R6 | Little Women | R5 with NLContextual | R5 + NLC (mean-pooled tokens, centred on 1/5 of the book, scale 0.703 / 0.295) | 349 | 206 | 39 | 104 | 349 (all) | **59.0%** exact |
+| R7 | Little Women | R6 + knobs from the parameter sweep | minScore 0.60 · rare share 0.4% | 684 | 360 | 106 | 218 | 684 (all) | **52.6%** exact |
+| R8 | Little Women | R7 without the paragraph cap ← **current** | `maxPerParagraph` unlimited (overlaps still prevented) | 831 | 432 | 129 | 270 | 831 (all) | **52.0%** exact |
+| R15 | Before the Coffee Gets Cold | R8 | identical to R8, no tuning | 549 | 266 | 95 | 188 | 549 (all) | **48.5%** exact |
+| RC | Before the Coffee Gets Cold | Release 1.1.0 engine | as RH | 1,289 | 455 | 217 | 617 | 1,289 (all) | **35.3%** exact |
+| Release seed | Little Women | Release 1.1.0 seed in iRead | iRead commit `1e94ca8`, engine 4 | 1,826 | 453 | 241 | 1,132 | 1,826 (all) | **24.8%** exact (27 links in the Gutenberg licence) |
+| Release seed | Pride and Prejudice | Release 1.1.0 seed in iRead (rules) | same | 284 | 128 | 78 | 78 | 284 (all) | **45.1%** exact (16 in the licence) |
+| Release seed | Anne of Green Gables | Release 1.1.0 seed in iRead | same | 1,020 | 280 | 182 | 558 | 1,020 (all) | **27.5%** exact (28 in the licence) |
+| Release seed | Moby-Dick | Release 1.1.0 seed in iRead | same | 1,175 | 288 | 217 | 670 | 1,175 (all) | **24.5%** exact (27 in the licence) |
+| R16 | The Hobbit | R8 | identical to R8, no tuning | 525 | 319 | 86 | 120 | 525 (all) | **60.8%** exact |
+| RH | The Hobbit | Release 1.1.0 engine | no IDF · no word statistics · names 1+ words · 1 per paragraph · model confirms the top candidate | 1,009 | 365 | 172 | 472 | 1,009 (all) | **36.2%** exact |
+| R17 | The Adventures of Sherlock Holmes | R8 | identical to R8, no tuning; compared with the iRead seed Claude made by hand (516 links) | 857 | 468 | 99 | 290 | 857 (all) | **54.6%** exact; 50 links identical to the hand seed |
+| Silver standard | The Adventures of Sherlock Holmes | Hand seed by Claude (not an engine) | 516 links chosen while reading; 15 are shorter than 3 words | 516 | 492 | 22 | 2 | 516 (all) | **95.3%** (reviewed by Claude, who also made it, so likely optimistic) |
+| R22 | The Adventures of Sherlock Holmes | R8 − kind − tracks | removed: `UnderlineKind`, `Track`, the track-hint bonus (place / time / goal words) and the cause-nearby bonus; a name still searches only sentences that mention it | 871 | 479 | 99 | 293 | 871 (all) | **55.0%** exact (R8: 54.6%) |
+| R23 | Little Women | same as R22 | identical | 851 | 451 | 130 | 270 | 851 (all) | **53.0%** exact (R8: 51.6%) |
+| R24 | The Hobbit | same as R22 | identical | 535 | 329 | 86 | 120 | 535 (all) | **61.5%** exact (R8: 60.8%) |
+| R25 | Before the Coffee Gets Cold | same as R22 | identical | 537 | 264 | 87 | 186 | 537 (all) | **49.2%** exact (R8: 48.5%) |
+| R26 | Sunrise on the Reaping | same as R22 | identical, no tuning; compared with the links Claude picked for the whole book (silver standard, 2,655 links) | 812 | 344 | 198 | 270 | 812 (all) | **42.4%** exact; 111 links identical to the silver standard, 206 more on a silver-standard phrase with a different reference |
+| Silver standard | Sunrise on the Reaping | Picked by Claude (not an engine) | every chapter read in full; each link = phrase + earlier sentence in the same chapter, text-checked | 2,655 | – | – | – | – | not reviewed (used as the reference set, not scored) |
+| Silver standard | Little Women | Picked by Claude (not an engine) | same rules as the Sunrise silver standard: every chapter read in full; phrase + earlier passage in an earlier paragraph of the same chapter; text-checked by `Dataset/labels/handpick_check.py` | 1,507 | 1,195 | 296 | 16 | 1,507 (all) | **79.3%** exact (84.8% without the strictest reviewer, see Notes); R8 finds 92 of them (6%), and 94 of R8's 836 links (11%) are identical to one |
+| Silver standard | Pride and Prejudice | Picked by Claude (not an engine) | identical | 788 | 645 | 135 | 8 | 788 (all) | **81.9%** exact |
+| Silver standard | Anne of Green Gables | Picked by Claude (not an engine) | identical | 722 | 646 | 72 | 4 | 722 (all) | **89.5%** exact |
+| Silver standard | Moby-Dick | Picked by Claude (not an engine) | identical | 1,353 | 1,175 | 172 | 6 | 1,353 (all) | **86.8%** exact |
+| E1 | Little Women ch1–5 | SRL matching, roles by Claude (not an engine) | each sentence's events labelled with semantic roles, who (agent) · did (predicate) · what (patient) · where (location), names and pronouns resolved by Claude; a later sentence links to the earlier sentence (earlier paragraph, same chapter) whose roles have the same *what* plus one more equal role, most slots then nearest | 311 | 145 | 88 | 78 | 311 (all) | **46.6%** exact (R8 on the same chapters: 97 links, 51.5%); finds 18% of the silver standard (R8 10%) |
+| R37 | Little Women | Words-only search · loose pick | Search scores shared words weighted by rarity and no longer uses the sentence embedding. Pick has no minimum score and no required lead over the second candidate: of the top 6 candidates, those sharing at least one content word go first, and candidates within 0.05 of each other are ordered nearest first. Verification needs a shared rare noun or adjective, or two shared rare words; a shared name alone is not enough. Kind is computed but not used in scoring. Book run method `r8-pick`. | 2,532 | ≈ 881 | – | – | 1,137 + a 150-link sample of the other 1,395 | **≈ 34.8%** sampled (95% CI about 31–39%; R8: 431 right, 51.6%); finds 15.5% of the silver standard (R8 7.0%) |
+| R38 | Little Women | R37 + evidence points by distance | A shared rare noun or adjective gives 2 points, two shared rare words give 1 point, and a soft lexical match of at least 0.3 (the phrase's unshared words close in meaning to the reference) gives 1 point. A reference within 20 sentences needs 1 point, within 50 needs 2, further needs 3. A shared name alone is not enough. Book run method `r9`; results kept in `Eval/results/book-little-women-r9-contextual.first-try/`. | 2,732 | ≈ 922 | – | – | 1,000 + a 150-link sample of the other 1,732 | **≈ 33.7%** sampled (95% CI about 29–38%; R37 ≈ 34.8%, R8 51.6%); finds 15.6% of the silver standard |
+| R39 | Little Women | R38 with a softer distance rule | A shared rare noun or adjective gives 2 points, two shared rare words give 1 point, and a soft lexical match of at least 0.3 gives 1 point. A reference within 50 sentences needs 2 points, further needs 3. A shared name alone is not enough. Book run method `r9`. | 1,980 | ≈ 757 | – | – | 1,066 + a 150-link sample of the other 914 | **≈ 38.2%** sampled (95% CI about 35–42%; R8: 431 right, 51.6%); finds 14.5% of the silver standard (R8 7.0%) |
